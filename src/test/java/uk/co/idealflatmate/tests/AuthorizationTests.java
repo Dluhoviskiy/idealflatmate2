@@ -17,7 +17,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (enabled = false)
+    @Test
     //Facebook authorization doen`t work on staging
     public void SuccessfulSignInViaFacebook() {
         authorizationHelper.clickSignInButton();
@@ -26,7 +26,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationAleksandrNameOnHomePage();
     }
 
-    @Test (dependsOnGroups = "MessagesTest")
+    @Test
     public void InvalidAuthorizationWithEmptyFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickLoginSubmitButton();

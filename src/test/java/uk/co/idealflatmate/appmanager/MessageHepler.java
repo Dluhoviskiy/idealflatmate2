@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -24,8 +25,9 @@ public class MessageHepler {
     public void click(By locator) {
         $(locator).click();
     }
+
     public void chooseMessageTab() {
-        $(byXpath("/html/body/header/div/ul[2]/li[3]/a")).click();
+        $(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
     }
 
 }

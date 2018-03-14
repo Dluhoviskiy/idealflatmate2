@@ -2,6 +2,7 @@ package uk.co.idealflatmate.tests;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import uk.co.idealflatmate.appmanager.*;
@@ -19,10 +20,10 @@ public class TestBase {
 
     @BeforeMethod
     public void setupClass() {
-        ChromeDriverManager.getInstance().setup();
-        Configuration.browser = "chrome";
+        FirefoxDriverManager.getInstance().setup();
+        Configuration.browser = "firefox";
         Configuration.timeout = 10000;
-        open("http://idealflatematefront.apache70.devplatform1.com");
+        open("https://www.idealflatmate.co.uk/");
     }
 
     @AfterMethod

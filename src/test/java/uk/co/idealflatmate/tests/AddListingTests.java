@@ -42,6 +42,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().setMonthlyRent();
         setDeposit();
         //setTotalBills();
+
         //setLeasePeriod();
         //setRoomDescription();
         //getAddPropertyHelper().pressContinueButton();

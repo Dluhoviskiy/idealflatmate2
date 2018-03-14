@@ -18,9 +18,9 @@ public class AuthorizationHelper {
 
     public void setLoginAsUserWithoutPackage() {
         $("#loginform-username").click();
-        $(".form-group.floating-label-group.field-loginform-username.required").shouldBe(visible).waitUntil(appears, 4000);
-        $("#loginform-username").setValue("cro.gen4@gmail.com");
-        $("#loginform-username").shouldHave(value("cro.gen4@gmail.com"));
+        $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
+        $("#loginform-username").shouldBe(visible);
+        $("#loginform-username").setValue("cro.gen44@gmail.com");
 
     }
 
@@ -39,7 +39,8 @@ public class AuthorizationHelper {
 
     public void setLoginAsUserWithPremiumFlathunterPackage() {
         $("#loginform-username").click();
-        $(".form-group.floating-label-group.field-loginform-username.required").shouldBe(visible);
+        $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
+        $("#loginform-username").shouldBe(visible);
         $("#loginform-username").setValue("cro.gen49@gmail.com");
     }
 

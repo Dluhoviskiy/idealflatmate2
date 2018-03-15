@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="uk.co.idealflatmate.tests.AuthorizationTests">
+        <methods>
+          <include name="InvalidAuthorizationWithEmptyFields"/>
+          <include name="SuccessfulClassicSignIn"/>
+          <include name="tearDown"/>
+          <include name="SuccessfulSignInViaFacebook"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AuthorizationTests -->
+      <class name="uk.co.idealflatmate.tests.MessagesTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="readMessage"/>
+          <include name="answerMessage"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.MessagesTest -->
+      <class name="uk.co.idealflatmate.tests.AddListingTests">
+        <methods>
+          <include name="SuccessfulPropertyAddingOnlyWithRequiredFields"/>
+          <include name="SuccessfulPropertyAddingWithAllFields"/>
+          <include name="tearDown"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
+      <class name="uk.co.idealflatmate.tests.PremiumFlathunterTests">
+        <methods>
+          <include name="AbilityToSeePhone"/>
+          <include name="tearDown"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.PremiumFlathunterTests -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

@@ -10,7 +10,7 @@ public class MessageHepler {
 
 
     public void chooseAnyMessageFromList() {
-        $(".list-group").click();
+        $(".list-group").shouldBe(Condition.visible).click();
     }
 
     public void typeAndSendMessage() {

@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/TestBase.class" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/TestBase.class" />
+      <change beforePath="$PROJECT_DIR$/debug.log" afterPath="$PROJECT_DIR$/debug.log" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MessageHepler.class" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MessageHepler.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,7 +23,7 @@
       <file leaf-file-name="AuthorizationTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="168">
               <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -41,8 +44,21 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageHepler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="12" column="61" lean-forward="true" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+              <folding>
+                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,29 +86,31 @@
       <file leaf-file-name="AddPropertyHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="428">
+              <caret line="47" column="64" lean-forward="false" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
               <folding>
                 <element signature="e#1291#1292#0" expanded="true" />
                 <element signature="e#1365#1366#0" expanded="true" />
+                <element signature="e#1412#1413#0" expanded="true" />
+                <element signature="e#1483#1484#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddListingTests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddListingTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="777">
+              <caret line="37" column="53" lean-forward="true" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3537#3538#0" expanded="true" />
-                <element signature="e#3609#3610#0" expanded="true" />
-                <element signature="e#3654#3655#0" expanded="true" />
-                <element signature="e#3728#3729#0" expanded="true" />
-                <element signature="e#3903#3904#0" expanded="true" />
-                <element signature="e#3962#3963#0" expanded="true" />
+                <element signature="e#3683#3684#0" expanded="true" />
+                <element signature="e#3755#3756#0" expanded="true" />
+                <element signature="e#3800#3801#0" expanded="true" />
+                <element signature="e#3874#3875#0" expanded="true" />
+                <element signature="e#4049#4050#0" expanded="true" />
+                <element signature="e#4108#4109#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="84">
+              <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
               <folding>
                 <element signature="e#1224#1225#0" expanded="true" />
                 <element signature="e#1293#1294#0" expanded="true" />
@@ -168,16 +186,16 @@
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentsHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java" />
         <option value="$PROJECT_DIR$/src/test/resources/allure.properties" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PremiumFlathunterTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" />
       </list>
     </option>
   </component>
@@ -194,9 +212,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-61" />
-    <option name="y" value="57" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1098" />
   </component>
@@ -216,6 +234,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,10 +304,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,7 +339,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.PremiumFlathunterTests.AbilityToSeePhone">
+  <component name="RunManager" selected="TestNG.AddListingTests">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -572,9 +590,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.PremiumFlathunterTests.AbilityToSeePhone" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.uk.co.idealflatmate.tests" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.AddListingTests" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.AddListingTests" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.PremiumFlathunterTests.AbilityToSeePhone" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.uk.co.idealflatmate.tests" />
         <item index="3" class="java.lang.String" itemvalue="TestNG.MessagesTest.readMessage" />
         <item index="4" class="java.lang.String" itemvalue="TestNG.AuthorizationTests.SuccessfulSignInViaFacebook" />
       </list>
@@ -597,20 +615,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddListingTests - 2018.03.15 at 12h 07m 36s.xml">
+    <history-entry file="AddListingTests - 2018.03.16 at 14h 57m 07s.xml">
       <configuration name="AddListingTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AuthorizationTests_SuccessfulSignInViaFacebook - 2018.03.14 at 15h 47m 18s.xml">
-      <configuration name="AuthorizationTests.SuccessfulSignInViaFacebook" configurationId="TestNG" />
+    <history-entry file="AddListingTests - 2018.03.16 at 22h 31m 24s.xml">
+      <configuration name="AddListingTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="MessagesTest_readMessage - 2018.03.14 at 15h 31m 43s.xml">
-      <configuration name="MessagesTest.readMessage" configurationId="TestNG" />
+    <history-entry file="AddListingTests - 2018.03.16 at 22h 33m 04s.xml">
+      <configuration name="AddListingTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="MessagesTest_readMessage - 2018.03.14 at 15h 33m 57s.xml">
-      <configuration name="MessagesTest.readMessage" configurationId="TestNG" />
+    <history-entry file="AddListingTests - 2018.03.16 at 23h 30m 52s.xml">
+      <configuration name="AddListingTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="MessagesTest_readMessage - 2018.03.14 at 15h 36m 36s.xml">
-      <configuration name="MessagesTest.readMessage" configurationId="TestNG" />
+    <history-entry file="AddListingTests - 2018.03.16 at 23h 32m 08s.xml">
+      <configuration name="AddListingTests" configurationId="TestNG" />
     </history-entry>
     <history-entry file="MessagesTest_readMessage - 2018.03.15 at 12h 04m 22s.xml">
       <configuration name="MessagesTest.readMessage" configurationId="TestNG" />
@@ -629,7 +647,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -640,18 +658,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3398058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35490832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3398058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35490832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27389902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27765843" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -978,18 +996,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/ApplicationManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/testng.xml" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PremiumFlathunterTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1007,81 +1042,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/testng.xml" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="84">
+          <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
           <folding>
-            <element signature="e#1291#1292#0" expanded="true" />
-            <element signature="e#1365#1366#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="168">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3537#3538#0" expanded="true" />
-            <element signature="e#3609#3610#0" expanded="true" />
-            <element signature="e#3654#3655#0" expanded="true" />
-            <element signature="e#3728#3729#0" expanded="true" />
-            <element signature="e#3903#3904#0" expanded="true" />
-            <element signature="e#3962#3963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PremiumFlathunterTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="168">
+          <caret line="12" column="61" lean-forward="true" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
           <folding>
-            <element signature="e#1224#1225#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="47" column="64" lean-forward="false" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+          <folding>
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1365#1366#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="37" column="53" lean-forward="true" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3683#3684#0" expanded="true" />
+            <element signature="e#3755#3756#0" expanded="true" />
+            <element signature="e#3800#3801#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#4049#4050#0" expanded="true" />
+            <element signature="e#4108#4109#0" expanded="true" />
           </folding>
         </state>
       </provider>

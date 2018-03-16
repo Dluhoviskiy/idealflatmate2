@@ -22,9 +22,10 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
         verificationHelper.verifyAddedProperty();
+        $(byXpath("//*[@id=\"listing-14501\"]/div[1]/button")).click();
     }
 
-    @Test
+    //@Test
     public void SuccessfulPropertyAddingWithAllFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
@@ -48,6 +49,7 @@ public class AddListingTests extends TestBase {
         //getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.uploadProperty3Photos();
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
+        $(byXpath("//*[@id=\"listing-14501\"]/div[1]/button")).click();
 
     }
 

@@ -3,10 +3,8 @@ package uk.co.idealflatmate.tests;
 import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class PremiumFlathunterTests extends TestBase {
 
@@ -40,7 +38,7 @@ public class PremiumFlathunterTests extends TestBase {
 
     //@Test
     public void BuyPremiumFlathunterpackage() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpButton();
         authorizationHelper.setLoginAsUserWithoutPackage2(authorizationHelper);
         authorizationHelper.setPassword();
         paymentsHelper.goToPaymentsTab();

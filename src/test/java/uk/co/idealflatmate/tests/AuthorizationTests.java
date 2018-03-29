@@ -10,25 +10,25 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessfulClassicSignIn() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
         authorizationHelper.setPassword();
         verificationHelper.verificationAlexNameOnHomePage();
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    /*@Test
     //Facebook authorization doen`t work on staging
     public void SuccessfulSignInViaFacebook() {
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.ClickLoginWithFacebook();
+        authorizationHelper.clickSignUpButton();
+        authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.setLoginAndPasswordOnFacebook();
         verificationHelper.verificationAleksandrNameOnHomePage();
-    }
+    }*/
 
     @Test
     public void InvalidAuthorizationWithEmptyFields() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpButton();
         authorizationHelper.clickLoginSubmitButton();
         verificationHelper.VerificationLoginError();
         verificationHelper.VerificationPasswordError();

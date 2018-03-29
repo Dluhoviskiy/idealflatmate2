@@ -22,12 +22,11 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
         verificationHelper.verifyAddedProperty();
-        $(byXpath("//*[@id=\"listing-14501\"]/div[1]/button")).click();
     }
 
     //@Test
     public void SuccessfulPropertyAddingWithAllFields() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
         authorizationHelper.setPassword();
         openDropDownMenu();

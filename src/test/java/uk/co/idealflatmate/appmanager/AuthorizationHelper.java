@@ -33,8 +33,8 @@ public class AuthorizationHelper {
         $("#pass").setValue("Apple210189").pressEnter();
     }
 
-    public void ClickLoginWithFacebook() {
-        $("#login-form > div.text-center.u_p15-top > a").click();
+    public void clickSignUpWithFacebook() {
+        $(byXpath("//*[@id=\"signup-need-form\"]/div[1]/a")).click();
     }
 
     public void setLoginAsUserWithPremiumFlathunterPackage() {
@@ -46,6 +46,10 @@ public class AuthorizationHelper {
 
     public void setLoginAsUserWithoutPackage2(AuthorizationHelper authorizationHelper) {
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage();
+    }
+
+    public void clickSignUpButton() {
+        $(".signup-modal-test").click();
     }
 
     public void clickSignInButton() {

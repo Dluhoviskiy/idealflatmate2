@@ -10,7 +10,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessfulClassicSignIn() {
-        authorizationHelper.clickSignUpButton();
+        authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
         authorizationHelper.setPassword();
         verificationHelper.verificationAlexNameOnHomePage();
@@ -28,7 +28,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void InvalidAuthorizationWithEmptyFields() {
-        authorizationHelper.clickSignUpButton();
+        authorizationHelper.clickSignInButton();
         authorizationHelper.clickLoginSubmitButton();
         verificationHelper.VerificationLoginError();
         verificationHelper.VerificationPasswordError();

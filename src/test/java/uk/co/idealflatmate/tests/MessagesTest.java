@@ -8,7 +8,7 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void readMessage() {
-        authorizationHelper.clickSignUpButton();
+        authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
         authorizationHelper.setPassword();
         getMessageHepler().chooseMessageTab();
@@ -19,7 +19,7 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void answerMessage() {
-        authorizationHelper.clickSignUpButton();
+        authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage();
         authorizationHelper.setPassword();
         getMessageHepler().chooseMessageTab();

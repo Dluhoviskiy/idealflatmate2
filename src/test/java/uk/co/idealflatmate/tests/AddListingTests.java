@@ -26,7 +26,7 @@ public class AddListingTests extends TestBase {
 
     //@Test
     public void SuccessfulPropertyAddingWithAllFields() {
-        authorizationHelper.clickSignUpButton();
+        authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
         authorizationHelper.setPassword();
         openDropDownMenu();

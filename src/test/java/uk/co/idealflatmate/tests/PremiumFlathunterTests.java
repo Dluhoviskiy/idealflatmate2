@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PremiumFlathunterTests extends TestBase {
 
-    @Test
+    /*@Test
     public void AbilityToSeePhone() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage();
@@ -30,7 +30,7 @@ public class PremiumFlathunterTests extends TestBase {
 
         $(byXpath("//*[@id=\"property-infos\"]/div/div[2]/div[1]/div/div[2]/button")).click();
         $(byXpath("//*[@id=\"property-infos\"]/div/div[2]/div[1]/div")).waitUntil(Condition.appears, 4000).shouldBe(Condition.text("+44256461312"));
-    }
+    } */
 
 
 
@@ -38,7 +38,7 @@ public class PremiumFlathunterTests extends TestBase {
 
     //@Test
     public void BuyPremiumFlathunterpackage() {
-        authorizationHelper.clickSignUpButton();
+        authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage2(authorizationHelper);
         authorizationHelper.setPassword();
         paymentsHelper.goToPaymentsTab();

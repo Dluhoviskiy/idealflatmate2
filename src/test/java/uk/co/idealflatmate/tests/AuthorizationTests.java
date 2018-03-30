@@ -17,14 +17,14 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    /*@Test
+    @Test
     //Facebook authorization doen`t work on staging
     public void SuccessfulSignInViaFacebook() {
-        authorizationHelper.clickSignUpButton();
-        authorizationHelper.clickSignUpWithFacebook();
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInWithFacebook();
         authorizationHelper.setLoginAndPasswordOnFacebook();
         verificationHelper.verificationAleksandrNameOnHomePage();
-    }*/
+    }
 
     @Test
     public void InvalidAuthorizationWithEmptyFields() {

@@ -21,7 +21,10 @@ public class TestBase {
     @BeforeMethod
     public void setupClass() {
         ChromeDriverManager.getInstance().setup();
+        //FirefoxDriverManager.getInstance().setup();
         Configuration.browser = "chrome";
+        //Configuration.browser = "firefox";
+
         Configuration.timeout = 10000;
         open("https://www.idealflatmate.co.uk/");
     }

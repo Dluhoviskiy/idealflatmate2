@@ -16,6 +16,12 @@ public class AuthorizationHelper {
         $(byXpath("/html/body/header/div/ul[1]/li/ul/li[13]/a")).click();
     }
 
+    public void goToPropertyPage() {
+        $( byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Browse ')]")).click();
+        $( byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[@href='/search' and contains(text(), 'Properties')]")).click();
+    }
+
+
     public void setLoginAsUserWithoutPackage() {
         $("#loginform-username").click();
         $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);

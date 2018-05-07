@@ -8,21 +8,22 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AddListingTests extends TestBase {
 
-    /*@Test
+    @Test
     public void SuccessfulPropertyAddingOnlyWithRequiredFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
         authorizationHelper.setPassword();
         paymentsHelper.addPropertyHelper.pressAddListingFromHeader();
         paymentsHelper.addPropertyHelper.setPostalCode();
+        getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.chooseAreaforLondon();
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.setTotalBedrooms();
         paymentsHelper.addPropertyHelper.setMonthlyRent();
-        //paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
+        paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
         verificationHelper.verifyAddedProperty();
-    } */
+    }
 
     //@Test
     public void SuccessfulPropertyAddingWithAllFields() {

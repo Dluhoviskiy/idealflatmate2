@@ -17,6 +17,17 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
+
+    @Test
+    public void SuccessfulClassicSignInPropertyPage() {
+        authorizationHelper.goToPropertyPage();
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.setLoginAsUserWithoutPackage();
+        authorizationHelper.setPassword();
+        verificationHelper.verificationAlexNameOnHomePage();
+        authorizationHelper.logoutFromApp();
+    }
+
     @Test
     //Facebook authorization doen`t work on staging
     public void SuccessfulSignInViaFacebook() {

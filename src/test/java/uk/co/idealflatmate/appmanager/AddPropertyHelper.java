@@ -49,7 +49,8 @@ public class AddPropertyHelper {
     }
 
     public void uploadPropertyPhoto() {
-        $("#uploadimageform-imagefiles").uploadFile(new File("C:\\Users\\Lenovo\\Documents\\Photos for testing\\Property1.jpg"));
+       //$("#uploadimageform-imagefiles").uploadFile(new File("C:\\Users\\Lenovo\\Documents\\Photos for testing\\Property1.jpg"));
+        $("#uploadimageform-imagefiles").uploadFile(new File("\\src\\test\\resources\\Property1.jpg"));
         $(".file-preview-frame.krajee-default.file-preview-initial.file-sortable.kv-preview-thumb ").shouldBe(Condition.visible);
     }
 

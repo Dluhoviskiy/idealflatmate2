@@ -10,6 +10,7 @@ public class MessageHepler {
 
 
     public void chooseAnyMessageFromList() {
+
         $(".list-group").shouldBe(Condition.visible).click();
     }
 
@@ -27,7 +28,11 @@ public class MessageHepler {
     }
 
     public void chooseMessageTab() {
-        $(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
+        //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//a[@class='text-normal']")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//p[contains(text(), 'testDmitriy for message')]")).waitUntil(Condition.appears, 4000).click();
+
     }
 
 }

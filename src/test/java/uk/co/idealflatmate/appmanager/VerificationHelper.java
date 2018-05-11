@@ -34,7 +34,7 @@ public class VerificationHelper {
     }
 
     public void verifyTextMessage() {
-        $(".msg-body").shouldHave(Condition.text("It looks great"));
+        $(".msg-body").shouldHave(Condition.text("Test Upgrade"));
     }
 
     public void verifyAddedProperty() {

@@ -11,11 +11,12 @@ public class MessageHepler {
 
     public void chooseAnyMessageFromList() {
 
-        $(".list-group").shouldBe(Condition.visible).click();
+        //$(".list-group").shouldBe(Condition.visible).click();
+        $(byXpath("//p[contains(text(), 'Hi there! It looks great!')]")).waitUntil(Condition.appears, 4000).click();
     }
 
     public void typeAndSendMessage() {
-        $("#conversationmessage-message").setValue("Hi there! It looks great!");
+        $("#conversationmessage-message").setValue("Test Upgrade");
         $(".btn.btn-primary.btn-msg-send").click();
     }
 

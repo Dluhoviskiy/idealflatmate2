@@ -24,7 +24,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage();
         authorizationHelper.setPassword();
         getMessageHepler().chooseMessageTab();
-        paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
+        //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
         paymentsHelper.addPropertyHelper.messageHepler.typeAndSendMessage();
         verificationHelper.verifyTextMessage();
         authorizationHelper.logoutFromApp();

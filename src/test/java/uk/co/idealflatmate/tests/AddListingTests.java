@@ -36,6 +36,7 @@ public class AddListingTests extends TestBase {
         chooseListingsFromDropDownMenu();
         pressAddListingFromBody();
         getAddPropertyHelper().setPostalCode();
+        getAddPropertyHelper().pressContinueButton();
         getAddPropertyHelper().chooseAreaforLondon();
         getAddPropertyHelper().pressContinueButton();
         setPhoneNumber();

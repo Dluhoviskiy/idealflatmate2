@@ -58,9 +58,14 @@ public class AddPropertyHelper {
 
     public void uploadPropertyPhoto() {
        //$("#uploadimageform-imagefiles").uploadFile(new File("C:\\Users\\Lenovo\\Documents\\Photos for testing\\Property1.jpg"));
-        $("#uploadimageform-imagefiles").uploadFile(new File("ws/src/test/resources/Property1.jpg"));
+        $("#uploadimageform-imagefiles").uploadFile(new File("src/test/resources/Property1.jpg"));
         $(".file-preview-frame.krajee-default.file-preview-initial.file-sortable.kv-preview-thumb ").shouldBe(Condition.visible);
     }
+   /* http://jenkinsmobile.zfort.net:8080/job/IdealflatmateTests_live/ws/src/test/resources/Property1.jpg
+    https://github.com/Aserdiuk2/idealflatmatetest/blob/master/src/test/resources/Property1.jpg
+    C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\resources\Property1.jpg
+    /Users/jenkins/.jenkins/workspace/IdealflatmateTests_live
+    */
 
     public void uploadProperty3Photos() {
         $("#uploadimageform-imagefiles").uploadFile(new File("C:\\Users\\Lenovo\\Documents\\Photos for testing\\Property1.jpg"));

@@ -3,8 +3,7 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byName;
-import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class VerificationHelper {
@@ -40,8 +39,14 @@ public class VerificationHelper {
 
     public void verifyAddedProperty() {
         $(".dropdown.nav-ihm-profile-bars").click();
-        $(byXpath("/html/body/header/div/ul[1]/li/ul/li[10]/a")).hover().shouldBe(enabled).click();
+        $(byXpath("//span[@class='pull-left' and contains(text(), 'Listings')]")).hover().shouldBe(enabled).click();
         $(".col-sm-7.col-lg-8").shouldHave(text("London SE1, UK"));
+
+    }
+
+    public void verifyNoAddedProperty() {
+        $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
+        $(byXpath("//section[@class='u_p20-top-xs u_p40-top-sm u_p20-bottom-xs u_p40-bottom-sm u_bg-gray-lighter']")).shouldNotHave(text("London SE1, UK"));
 
     }
 

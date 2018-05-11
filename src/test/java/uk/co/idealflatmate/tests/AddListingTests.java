@@ -23,6 +23,8 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
         verificationHelper.verifyAddedProperty();
+        getAddPropertyHelper().RemoveListing();
+        verificationHelper.verifyNoAddedProperty();
     }
 
     //@Test

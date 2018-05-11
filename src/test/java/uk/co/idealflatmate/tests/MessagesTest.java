@@ -7,15 +7,16 @@ import static com.codeborne.selenide.Selenide.$;
 public class MessagesTest extends TestBase {
 
     @Test
-    public void readMessage() {
+    public void readMessageByLandlordWithoutSubscription() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage();
         authorizationHelper.setPassword();
         getMessageHepler().chooseMessageTab();
-        paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
+
+
 
     @Test
     public void answerMessage() {

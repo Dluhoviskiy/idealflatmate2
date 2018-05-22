@@ -25,6 +25,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.setTotalBedrooms();
         paymentsHelper.addPropertyHelper.setMonthlyRent();
+        getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
         verificationHelper.verifyAddedProperty();

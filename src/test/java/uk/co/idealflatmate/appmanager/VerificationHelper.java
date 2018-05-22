@@ -44,6 +44,53 @@ public class VerificationHelper {
 
     }
 
+    public void verifyAddedPropertyWithAllFields() {
+       // $(".dropdown.nav-ihm-profile-bars").click();
+       // $(byXpath("//span[@class='pull-left' and contains(text(), 'Listings')]")).hover().shouldBe(enabled).click();
+        $(byXpath("//div[@class='col-md-8 col-lg-9']")).shouldHave(text("London SE1, UK"));
+        $(byXpath("//span[@class='text-bold js-phone-box']")).shouldHave(text("+44 20"));
+        //$(byXpath("//div[@id='room1']/div[@class='u_bg-info u_p10 text-center text-18']/strong")).shouldHave(text("500"));
+        $(byXpath("//div[@id='room1']")).shouldHave(text("£ 500 per month\n" +
+                "Deposit £1,000\n" +
+                "Available now\n" +
+                "Min. stay 1 months\n" +
+                "Max. stay 12 months\n" +
+                "Total bills 400.00"));
+        $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//li/a[contains(text(), 'Room 2')]")).click();
+        $(byXpath("//div[@id='room2']")).waitUntil(visible, 4000).shouldHave(text("£ 500 per month\n" +
+                "Deposit £1,000\n" +
+                "Available now\n" +
+                "Min. stay 1 months\n" +
+                "Max. stay 12 months\n" +
+                "Total bills 400.00"));
+       // $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'MORE')]")).click();
+       // $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'Room 3')]")).waitUntil(visible, 4000).click();
+        $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//li/a[contains(text(), 'Room 3')]")).click();
+        $(byXpath("//div[@id='room3']")).waitUntil(visible, 4000).shouldHave(text("£ 800 per month\n" +
+                "Available from 2025-06-11\n" +
+                "\n" +
+                "Total bills 0"));
+        $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
+        $(byXpath("//div[@class='col-md-4 text-primary u_m10-bottom' and contains(text(), 'Room 1')]/parent::div/parent::div")).shouldHave(text("Very comfortable room"));
+        $(byXpath("//div[@class='col-md-4 text-primary u_m10-bottom' and contains(text(), 'Room 2')]/parent::div/parent::div")).shouldHave(text("Very comfortable room"));
+        $(byXpath("//div[@class='col-md-4 text-primary u_m10-bottom' and contains(text(), 'Room 3')]/parent::div/parent::div")).shouldHave(text("No description available."));
+        $(byXpath("//div/div[contains(text(), 'About the Property')]/parent::div/parent::div")).shouldHave(text("\n" +
+                "Total rooms: 3\n" +
+                "\n" +
+                "Available rooms: 3\n" +
+                "\n" +
+                "Smoking: Accepted\n" +
+                "\n" +
+                "Pets: Accepted"));
+        $(byXpath("//div/div[contains(text(), 'Added Features')]/parent::div/parent::div")).shouldHave(text("Garden\n" +
+                "\n" +
+                "Communal living room\n" +
+                "\n" +
+                "Balcony/patio\n" +
+                "\n" +
+                "Parking"));
+    }
+
     public void verifyNoAddedProperty() {
         $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
         $(byXpath("//section[@class='u_p20-top-xs u_p40-top-sm u_p20-bottom-xs u_p40-bottom-sm u_bg-gray-lighter']")).shouldNotHave(text("London SE1, UK"));
@@ -54,3 +101,4 @@ public class VerificationHelper {
         $(".u_p20-bottom.u_b-bottom").shouldHave(Condition.value("Congratulations John!"));
     }
 }
+

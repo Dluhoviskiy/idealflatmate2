@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
@@ -18,29 +19,29 @@ public class VerificationHelper {
     }
 
     public void VerificationPasswordError() {
-        $("#login-form > div:nth-child(3) > div:nth-child(2) > div > p > span").shouldHave(text("Password cannot be blank."));
+        $("#login-form > div:nth-child(3) > div:nth-child(2) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
     }
 
     public void VerificationLoginError() {
-        $("#login-form > div:nth-child(3) > div:nth-child(1) > div > p > span").shouldHave(text("Username cannot be blank."));
+        $("#login-form > div:nth-child(3) > div:nth-child(1) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
     }
 
     public void VerificationMessagesTabIsAbsent() {
-        $("body > header > div > ul.nav.navbar-nav.navbar-right.nav-aux.hidden-xs.hidden-sm > li:nth-child(3) > a").shouldNotBe(text("Messages"));
+        $("body > header > div > ul.nav.navbar-nav.navbar-right.nav-aux.hidden-xs.hidden-sm > li:nth-child(3) > a").waitUntil(visible, 4000).shouldNotBe(text("Messages"));
     }
 
     public void verifyUpgradeButton() {
-        $(".fa-credit-card").shouldBe(Condition.visible);
+        $(".fa-credit-card").waitUntil(visible, 4000).shouldBe(Condition.visible);
     }
 
     public void verifyTextMessage() {
-        $(".msg-body").shouldHave(Condition.text("Test Upgrade"));
+        $(".msg-body").waitUntil(visible, 4000).shouldHave(Condition.text("Test Upgrade"));
     }
 
     public void verifyAddedProperty() {
         $(".dropdown.nav-ihm-profile-bars").click();
         $(byXpath("//span[@class='pull-left' and contains(text(), 'Listings')]")).hover().shouldBe(enabled).click();
-        $(".col-sm-7.col-lg-8").shouldHave(text("London SE1, UK"));
+        $(".col-sm-7.col-lg-8").waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
 
     }
 
@@ -91,9 +92,14 @@ public class VerificationHelper {
                 "Parking"));
     }
 
-    public void verifyNoAddedProperty() {
+    public void verifyNoUnfinishedProperty() {
         $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
-        $(byXpath("//section[@class='u_p20-top-xs u_p40-top-sm u_p20-bottom-xs u_p40-bottom-sm u_bg-gray-lighter']")).shouldNotHave(text("London SE1, UK"));
+        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
+        /* $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).click();
+            $(byXpath("(//input[1][@type='radio'])[1]")).selectRadio("0");
+            $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
+        */
+
 
     }
 

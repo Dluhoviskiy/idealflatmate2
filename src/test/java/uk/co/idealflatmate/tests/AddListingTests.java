@@ -1,13 +1,7 @@
 package uk.co.idealflatmate.tests;
 
-import com.codeborne.selenide.Condition;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byId;
-import static com.codeborne.selenide.Selectors.byName;
-import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -30,7 +24,7 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
         verificationHelper.verifyAddedProperty();
         getAddPropertyHelper().RemoveListing();
-        verificationHelper.verifyNoAddedProperty();
+        verificationHelper.verifyNoUnfinishedProperty();
     }
 
     @Test
@@ -40,7 +34,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.setPassword();
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        verificationHelper.verifyNoAddedProperty();
+        verificationHelper.verifyNoUnfinishedProperty();
         getAddPropertyHelper().pressAddListingFromBody();
         getAddPropertyHelper().setPostalCode();
         getAddPropertyHelper().pressContinueButton();
@@ -73,7 +67,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().RemoveListing();
-        verificationHelper.verifyNoAddedProperty();
+        verificationHelper.verifyNoUnfinishedProperty();
     }
 }
 

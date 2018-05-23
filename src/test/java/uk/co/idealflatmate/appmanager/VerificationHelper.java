@@ -30,7 +30,7 @@ public class VerificationHelper {
     }
 
     public void verifyUpgradeButton() {
-        $(".fa.fa-credit-card").shouldBe(Condition.visible);
+        $(".fa-credit-card").shouldBe(Condition.visible);
     }
 
     public void verifyTextMessage() {

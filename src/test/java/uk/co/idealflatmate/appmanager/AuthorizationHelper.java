@@ -13,7 +13,7 @@ public class AuthorizationHelper {
 
     public void logoutFromApp() {
         $(".nav.navbar-right.nav-ihm-profile").click();
-        $(byXpath("/html/body/header/div/ul[1]/li/ul/li[13]/a")).click();
+        $(byXpath("//li/a[contains(text(), ' Log out')]")).click();
     }
 
     public void goToPropertyPage() {
@@ -59,7 +59,7 @@ public class AuthorizationHelper {
     }
 
     public void clickSignInButton() {
-        $(byXpath("/html/body/header/div/ul[2]/li[3]/a")).click();
+        $(byXpath("//li/a[contains(text(), 'Log in')]")).click();
     }
 
     public void clickLoginSubmitButton() {

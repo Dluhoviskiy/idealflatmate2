@@ -36,6 +36,7 @@ public class AddPropertyHelper {
 
     public void setPhoneNumber() {
         $("#property-phone_number").waitUntil(visible, 4000).setValue("+44 20 7234 3456");
+        $("#property-phone_number").waitUntil(visible, 4000).click();
     }
 
 
@@ -179,12 +180,12 @@ public class AddPropertyHelper {
     }
 
     public void viewListing() {
-        $(byXpath("//a[@class='btn btn-half btn-primary listing-panel-button u_m10-bottom-xs']")).click();
+        $(byXpath("//a[@class='btn btn-half btn-primary listing-panel-button u_m10-bottom-xs']")).waitUntil(appear, 4000).click();
     }
 
     public void RemoveListing() {
-        $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).click();
-        $(byXpath("(//input[1][@type='radio'])[1]")).selectRadio("0");
+        $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).waitUntil(appear, 4000).click();
+        $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
         $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
     }
 

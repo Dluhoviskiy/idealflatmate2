@@ -31,23 +31,23 @@ public class AuthorizationHelper {
     }
 
     public void setPassword() {
-        $("#loginform-password").setValue("123456").pressEnter();
+        $("#loginform-password").waitUntil(visible, 4000).setValue("123456").pressEnter();
     }
 
     public void setLoginAndPasswordOnFacebook() {
-        $("#email").setValue("aleksandr.serdiuk@gmail.com");
-        $("#pass").setValue("Apple210189").pressEnter();
+        $("#email").waitUntil(visible, 4000).setValue("aleksandr.serdiuk@gmail.com");
+        $("#pass").waitUntil(visible, 4000).setValue("Apple210189").pressEnter();
     }
 
     public void  clickSignInWithFacebook() {
-        $(byXpath("//*[@id=\"login-form\"]/div[1]/a")).click();
+        $(byXpath("//*[@id=\"login-form\"]/div[1]/a")).waitUntil(visible, 4000).click();
     }
 
     public void setLoginAsUserWithPremiumFlathunterPackage() {
-        $("#loginform-username").click();
+        $("#loginform-username").waitUntil(visible, 4000).click();
         $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
         $("#loginform-username").shouldBe(visible);
-        $("#loginform-username").setValue("cro.gen49@gmail.com");
+        $("#loginform-username").waitUntil(visible, 4000).setValue("cro.gen49@gmail.com");
     }
 
     public void setLoginAsUserWithoutPackage2(AuthorizationHelper authorizationHelper) {

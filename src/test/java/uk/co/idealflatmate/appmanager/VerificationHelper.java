@@ -95,6 +95,7 @@ public class VerificationHelper {
     public void verifyNoUnfinishedProperty() {
         $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
+        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("London SE1, UK")));
         /* $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).click();
             $(byXpath("(//input[1][@type='radio'])[1]")).selectRadio("0");
             $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();

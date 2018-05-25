@@ -1,7 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
@@ -10,12 +9,12 @@ import static com.codeborne.selenide.Selenide.$;
 public class VerificationHelper {
 
 
-    public void verificationAlexNameOnHomePage() {
-        $(".nav.navbar-right.nav-ihm-profile").shouldHave(text("Alex"));
+    public void verificationAlexNameOnHomePage(String nameUser) {
+        $(".nav.navbar-right.nav-ihm-profile").shouldHave(text(nameUser));
     }
 
-    public void verificationAleksandrNameOnHomePage() {
-        $(".nav.navbar-right.nav-ihm-profile").shouldHave(text("Alex"));
+    public void verificationUserNameOnHomePage(String nameUser) {
+        verificationAlexNameOnHomePage(nameUser);
     }
 
     public void VerificationPasswordError() {

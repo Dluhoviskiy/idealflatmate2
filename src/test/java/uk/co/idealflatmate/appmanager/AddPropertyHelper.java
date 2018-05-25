@@ -34,8 +34,31 @@ public class AddPropertyHelper {
         $(byXpath("//span[@class='pull-left' and contains(text(), ' Listings')]")).click();
     }
 
-    public void setPhoneNumber() {
-        $("#property-phone_number").waitUntil(visible, 4000).setValue("+44 20 7234 3456");
+
+    public void setPostalCode(String postCode) {
+        $(".form-control.u_ed-block").setValue(postCode).pressEnter();
+    }
+
+    public void pressContinueButton() {
+        $("#wizard-next").click();
+    }
+
+    public void chooseRoadfor(String road) {
+        messageHepler.click(byXpath("//input[@id='property-route']"));
+        $(byXpath("//input[@id='property-route']")).setValue(road).pressEnter();;
+    }
+
+    public void chooseAreaforLondon() {
+        messageHepler.click(byName("Property[area_link_id]"));
+        messageHepler.click(byXpath("//*[@id=\"property-area_link_id\"]/option[2]"));
+    }
+
+    public void pressAddListingFromHeader() {
+        messageHepler.click(byXpath("/html/body/header/div/a"));
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        $("#property-phone_number").waitUntil(visible, 4000).setValue(phoneNumber);
         $("#property-phone_number").waitUntil(visible, 4000).click();
     }
 
@@ -67,44 +90,22 @@ public class AddPropertyHelper {
         // $(byXpath("//div[@class='form-group field-property-description']/div[1]/textarea")).shouldHave(text("Very good flat"));
     }
 
-    public void setMonthlyRent() {
+    public void setMonthlyRent(String rent) {
         $("#room-1-price").click();
-        $("#room-1-price").setValue("500");
+        $("#room-1-price").setValue(rent);
         $("#room-1-price").shouldHave(Condition.value("500"));
         //$("#wizard-next").click();
     }
 
-    public void setDeposit() {
+    public void setDeposit(String deposit) {
         $("input#room-1-deposit").click();
-        $("input#room-1-deposit").setValue("1000");
+        $("input#room-1-deposit").setValue(deposit);
         $("#room-1-deposit").shouldHave(value("1000"));
         // $("#wizard-next").click();
     }
 
-    public void setPostalCode() {
-        $(".form-control.u_ed-block").setValue("SE1").pressEnter();
-    }
-
-    public void pressContinueButton() {
-        $("#wizard-next").click();
-    }
-
-    public void chooseRoadfor() {
-        messageHepler.click(byXpath("//input[@id='property-route']"));
-        $(byXpath("//input[@id='property-route']")).setValue("Idealstreet").pressEnter();;
-    }
-
-    public void chooseAreaforLondon() {
-        messageHepler.click(byName("Property[area_link_id]"));
-        messageHepler.click(byXpath("//*[@id=\"property-area_link_id\"]/option[2]"));
-    }
-
-    public void pressAddListingFromHeader() {
-        messageHepler.click(byXpath("/html/body/header/div/a"));
-    }
-
-    public void setTotalBills() {
-        $("input#room-1-bills").scrollIntoView(true).setValue("400");
+    public void setTotalBills(String bills) {
+        $("input#room-1-bills").scrollIntoView(true).setValue(bills);
         $("#room-1-bills").shouldHave(value("400"));
     }
 
@@ -140,9 +141,9 @@ public class AddPropertyHelper {
     }
 
 
-    public void setAnotherMonthlyRent() {
+    public void setAnotherMonthlyRent(String rent) {
         $(byXpath("//div/input[@id='room-3-price']")).click();
-        $(byXpath("//div/input[@id='room-3-price']")).setValue("800");
+        $(byXpath("//div/input[@id='room-3-price']")).setValue(rent);
         $(byXpath("//div/input[@id='room-3-price']")).shouldHave(Condition.value("800"));
         //$("#wizard-next").click();
     }

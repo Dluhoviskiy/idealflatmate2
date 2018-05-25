@@ -10,15 +10,15 @@ public class AddListingTests extends TestBase {
     @Test
     public void SuccessfulPropertyAddingOnlyWithRequiredFields() {
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setLoginAsUserWithoutPackage();
-        authorizationHelper.setPassword();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
+        authorizationHelper.setPassword("123456");
         paymentsHelper.addPropertyHelper.pressAddListingFromHeader();
-        paymentsHelper.addPropertyHelper.setPostalCode();
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.chooseAreaforLondon();
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.setTotalBedrooms();
-        paymentsHelper.addPropertyHelper.setMonthlyRent();
+        paymentsHelper.addPropertyHelper.setMonthlyRent("500");
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
@@ -30,31 +30,31 @@ public class AddListingTests extends TestBase {
     @Test
     public void SuccessfulPropertyAddingWithAllFields() {
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setLoginAsUserWithoutPackage();
-        authorizationHelper.setPassword();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
+        authorizationHelper.setPassword("123456");
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoUnfinishedProperty();
         getAddPropertyHelper().pressAddListingFromBody();
-        getAddPropertyHelper().setPostalCode();
+        getAddPropertyHelper().setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
-        getAddPropertyHelper().chooseRoadfor();
+        getAddPropertyHelper().chooseRoadfor("Idealstreet");
         getAddPropertyHelper().chooseAreaforLondon();
         getAddPropertyHelper().pressContinueButton();
-        getAddPropertyHelper().setPhoneNumber();
+        getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456");
         getAddPropertyHelper().setTotalBedrooms();
         getAddPropertyHelper().setAllAmanities();
         getAddPropertyHelper().setPropertyDescription();
-        getAddPropertyHelper().setMonthlyRent();
-        getAddPropertyHelper().setDeposit();
-        getAddPropertyHelper().setTotalBills();
+        getAddPropertyHelper().setMonthlyRent("500");
+        getAddPropertyHelper().setDeposit("1000");
+        getAddPropertyHelper().setTotalBills("400");
         getAddPropertyHelper().setLeasePeriodFirstRoom();
         getAddPropertyHelper().setRoomDescription();
         getAddPropertyHelper().copySecondRoom();
         getAddPropertyHelper().removeSecondRoom();
         getAddPropertyHelper().copySecondRoom();
         getAddPropertyHelper().addAnotherRoom();
-        getAddPropertyHelper().setAnotherMonthlyRent();
+        getAddPropertyHelper().setAnotherMonthlyRent("800");
         getAddPropertyHelper().setLeasePeriodSecondRoom();
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.uploadProperty3Photos();

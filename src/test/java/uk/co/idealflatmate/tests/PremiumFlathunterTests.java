@@ -1,8 +1,5 @@
 package uk.co.idealflatmate.tests;
 
-import com.codeborne.selenide.Condition;
-import org.testng.annotations.Test;
-
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -40,13 +37,13 @@ public class PremiumFlathunterTests extends TestBase {
     public void BuyPremiumFlathunterpackage() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage2(authorizationHelper);
-        authorizationHelper.setPassword();
+        authorizationHelper.setPassword("123456");
         paymentsHelper.goToPaymentsTab();
         paymentsHelper.selectPremiumFlathunterPlan();
         paymentsHelper.startCheckout();
         paymentsHelper.chooseWorldPay();
         $(byXpath("//*[@id=\"_el_input_nameoncard\"]")).setValue("Alex");
-        paymentsHelper.fillinDebitCardData();
+        paymentsHelper.fillinDebitCardData("Alex", "4444333322221111", "11", "2020", "123");
         verificationHelper.verifyPackagePurchase();
 
     }

@@ -7,15 +7,13 @@ public class PaymentsHelper {
 
     public final AddPropertyHelper addPropertyHelper = new AddPropertyHelper();
 
-    public void fillinDebitCardData() {
-        $(byXpath("//*[@id=\"_el_input_nameoncard\"]/input")).setValue("Alex");
-        $(byXpath("//*[@id=\"_el_input_cardnumber\"]/input")).setValue("4444333322221111");
-        $(byXpath("//*[@id=\"_el_input_expirationmonth\"]/input")).setValue("11");
-        $(byXpath("//*[@id=\"_el_input_expirationyear\"]/input")).setValue("2020");
-        $(byXpath("//*[@id=\"_el_input_cvc\"]/input")).setValue("123");
+    public void fillinDebitCardData(String name, String cardNumber, String month, String year, String cvc) {
+        $(byXpath("//*[@id=\"_el_input_nameoncard\"]/input")).setValue(name);
+        $(byXpath("//*[@id=\"_el_input_cardnumber\"]/input")).setValue(cardNumber);
+        $(byXpath("//*[@id=\"_el_input_expirationmonth\"]/input")).setValue(month);
+        $(byXpath("//*[@id=\"_el_input_expirationyear\"]/input")).setValue(year);
+        $(byXpath("//*[@id=\"_el_input_cvc\"]/input")).setValue(cvc);
         addPropertyHelper.messageHepler.click(byXpath("//*[@id=\"_el_button_save\"]/button"));
-
-
     }
 
     public void chooseWorldPay() {

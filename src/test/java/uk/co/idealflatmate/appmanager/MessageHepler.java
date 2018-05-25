@@ -15,8 +15,8 @@ public class MessageHepler {
         $(byXpath("//p[contains(text(), 'Hi there! It looks great!')]")).waitUntil(Condition.appears, 4000).click();
     }
 
-    public void typeAndSendMessage() {
-        $("#conversationmessage-message").setValue("Test Upgrade");
+    public void typeAndSendMessage(String message) {
+        $("#conversationmessage-message").setValue(message);
         $(".btn.btn-primary.btn-msg-send").click();
     }
 
@@ -33,6 +33,9 @@ public class MessageHepler {
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
         $(byXpath("//a[@class='text-normal']")).waitUntil(Condition.appears, 4000).click();
         $(byXpath("//p[contains(text(), 'Test Upgrade')]")).waitUntil(Condition.appears, 4000).click();
+    }
+
+    public  void clickCardMessage(){
 
     }
 

@@ -3,6 +3,7 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -35,8 +36,19 @@ public class MessageHepler {
         $(byXpath("//p[contains(text(), 'Test Upgrade')]")).waitUntil(Condition.appears, 4000).click();
     }
 
-    public  void clickCardMessage(){
+    public void clickPropertyCardMessage() {
+        $(byXpath("//section//div[1]/div/div/a[@class='card-start-chat btn btn-circle']")).waitUntil(visible, 4000).click();
+        $(byXpath("//div[@class='modal fade in'][1]//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')]")).waitUntil(visible, 4000).click();
 
     }
 
+
+
+    public  void clickPropertyCard(){
+        $(byXpath("(//div[@class='owl-item active']/a/img)[1]")).waitUntil(visible, 4000).click();
+    }
+
+    public  void clickPropertyContact(){
+        $(byXpath("//button[@class='btn btn-primary btn-lg u_m10-bottom u_ed-block']")).waitUntil(visible, 4000).click();
+    }
 }

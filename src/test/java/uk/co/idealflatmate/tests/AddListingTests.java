@@ -12,6 +12,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
+        //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.pressAddListingFromHeader();
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
@@ -24,7 +25,7 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.finishPropertyCreating();
         verificationHelper.verifyAddedProperty();
         getAddPropertyHelper().RemoveListing();
-        verificationHelper.verifyNoUnfinishedProperty();
+        verificationHelper.verifyNoProperty();
     }
 
     @Test
@@ -34,7 +35,8 @@ public class AddListingTests extends TestBase {
         authorizationHelper.setPassword("123456");
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        verificationHelper.verifyNoUnfinishedProperty();
+        //verificationHelper.verifyNoOldProperty();
+        getAddPropertyHelper().RemoveListing();
         getAddPropertyHelper().pressAddListingFromBody();
         getAddPropertyHelper().setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
@@ -67,7 +69,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().RemoveListing();
-        verificationHelper.verifyNoUnfinishedProperty();
+        verificationHelper.verifyNoProperty();
     }
 }
 

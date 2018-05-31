@@ -58,8 +58,8 @@ public class AddPropertyHelper {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        $("#property-phone_number").waitUntil(visible, 4000).setValue(phoneNumber);
-        $("#property-phone_number").waitUntil(visible, 4000).click();
+        $("#property-phone_number").waitUntil(visible, 6000).setValue(phoneNumber);
+
     }
 
 

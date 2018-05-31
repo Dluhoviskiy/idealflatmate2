@@ -14,9 +14,10 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 public class TestBase {
 
-    protected final VerificationHelper verificationHelper = new VerificationHelper();
-    protected final AuthorizationHelper authorizationHelper = new AuthorizationHelper();
-    protected final PaymentsHelper paymentsHelper = new PaymentsHelper();
+    public final VerificationHelper verificationHelper = new VerificationHelper();
+    public final AuthorizationHelper authorizationHelper = new AuthorizationHelper();
+    public final PaymentsHelper paymentsHelper = new PaymentsHelper();
+    public final AddPropertyHelper addPropertyHelper = new AddPropertyHelper();
 
     @BeforeMethod
     public void setupClass() {
@@ -50,6 +51,8 @@ public class TestBase {
     public AddPropertyHelper getAddPropertyHelper() {
         return paymentsHelper.addPropertyHelper;
     }
+
+
 
     public PaymentsHelper getPaymentsHelper() {
         return paymentsHelper;

@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -66,4 +67,9 @@ public class AuthorizationHelper {
     public void removeAccount() {
 
     }
+    public void clickFormSignInPropertyContact() {
+        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[2]")).waitUntil(visible, 4000).click();
+
+    }
+
 }

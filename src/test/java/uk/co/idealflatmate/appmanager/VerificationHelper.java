@@ -2,9 +2,11 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
 
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
+
 
 public class VerificationHelper {
 
@@ -36,6 +38,11 @@ public class VerificationHelper {
     public void verifyTextMessage() {
         $(".msg-body").waitUntil(visible, 4000).shouldHave(Condition.text("Test Upgrade"));
     }
+    public void verifyPageMessage() {
+        $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));
+    }
+
+
 
     public void verifyAddedProperty() {
         $(".dropdown.nav-ihm-profile-bars").click();
@@ -63,7 +70,8 @@ public class VerificationHelper {
                 "Min. stay 1 months\n" +
                 "Max. stay 12 months\n" +
                 "Total bills 400.00"));
-       // $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'MORE')]")).click();
+        //$(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'MORE')]")).click();
+
        // $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'Room 3')]")).waitUntil(visible, 4000).click();
         $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//li/a[contains(text(), 'Room 3')]")).click();
         $(byXpath("//div[@id='room3']")).waitUntil(visible, 4000).shouldHave(text("£ 800 per month\n" +
@@ -90,21 +98,29 @@ public class VerificationHelper {
                 "\n" +
                 "Parking"));
     }
+    /*public void verifyNoOldProperty1() {
+        exist$(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
+        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
+        if text("Complete your listing now!")==null {}
+        {
+        }
 
-    public void verifyNoUnfinishedProperty() {
+        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("London SE1, UK")));
+    }*/
+
+
+    public void verifyNoProperty() {
         $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("London SE1, UK")));
-        /* $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).click();
-            $(byXpath("(//input[1][@type='radio'])[1]")).selectRadio("0");
-            $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
-        */
-
-
     }
+
 
     public void verifyPackagePurchase() {
         $(".u_p20-bottom.u_b-bottom").shouldHave(Condition.value("Congratulations John!"));
     }
+
+
+
 }
 

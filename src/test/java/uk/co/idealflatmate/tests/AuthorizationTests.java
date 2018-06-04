@@ -17,10 +17,19 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
+    @Test
+    public void SuccessfulClassiclogOnPropertyPage() {
+        authorizationHelper.goToPropertyPage();
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
+        authorizationHelper.setPassword("123456");
+        verificationHelper.verificationAlexNameOnHomePage("Alex");
+        authorizationHelper.logoutFromApp();
+    }
 
     @Test
-    public void SuccessfulClassiclogInPropertyPage() {
-        authorizationHelper.goToPropertyPage();
+    public void SuccessfulClassiclogOnFMPage() {
+        authorizationHelper.goToFMpage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
@@ -35,7 +44,24 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickSignInWithFacebook();
         authorizationHelper.setLoginAndPasswordOnFacebook("aleksandr.serdiuk@gmail.com", "Apple210189");
         verificationHelper.verificationUserNameOnHomePage("Alex");
+        authorizationHelper.logoutFromApp();
     }
+
+    @Test
+    public void SuccessfulLogInWithMatchingFB() {
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.clickContinueMatching();
+        matchingHelper.clickContinueMatching3();
+        matchingHelper.clickContinueMatching4();
+        matchingHelper.clickContinueMatching5();
+        matchingHelper.clickContinueMatching6();
+        matchingHelper.clickContinueMatching7();
+        authorizationHelper.clickSignInWithFacebookMatching();
+        authorizationHelper.setLoginAndPasswordOnFacebook("aleksandr.serdiuk@gmail.com", "Apple210189");
+        verificationHelper.verificationUserNameOnHomePage("Alex");
+        authorizationHelper.logoutFromApp();
+    }
+
 
     @Test
     public void InvalidAuthorizationWithEmptyFields() {
@@ -46,50 +72,51 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-
     @Test
     public void SuccessfulLogInMessageProperty() {
-        getMessageHepler().clickPropertyCardMessage();
+        getMessageHelper().clickPropertyCardMessageUnlogged();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Adam");
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
     }
+
     @Test
     public void SuccessfulLogInContactProperty() {
-        getMessageHepler().clickPropertyCard();
-        getMessageHepler().clickPropertyContact();
+        getMessageHelper().clickPropertyCardFirstOnPage();
+        getMessageHelper().clickPropertyContact();
         authorizationHelper.clickFormSignInPropertyContact();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Adam");
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
-
     }
-    /*
-        @Test
+
+    @Test
     public void SuccessfulLogInMessageFM() {
-        getMessageHepler().clickCardMessage();
+        authorizationHelper.goToFMpage();
+        getMessageHelper().clickFMCardMessageUnlogged();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Adam");
-        verificationHelper.verifyUpgradeButton();
+        verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
-
     }
+
     @Test
     public void SuccessfulLogInContactFM() {
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
-        authorizationHelper.setPassword("123456");
-        verificationHelper.verificationAlexNameOnHomePage("Alex");
+        authorizationHelper.goToFMpage();
+        getMessageHelper().clickFMCardFirstOnPage();
+        getMessageHelper().clickFMContact();
+        authorizationHelper.clickFormSignInPropertyContact();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
+        verificationHelper.verificationUserNameOnHomePage("Adam");
+        verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
-
-
     }
-    */
 
 
 }

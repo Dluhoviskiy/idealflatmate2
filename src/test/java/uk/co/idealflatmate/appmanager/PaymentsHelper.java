@@ -13,23 +13,23 @@ public class PaymentsHelper {
         $(byXpath("//*[@id=\"_el_input_expirationmonth\"]/input")).setValue(month);
         $(byXpath("//*[@id=\"_el_input_expirationyear\"]/input")).setValue(year);
         $(byXpath("//*[@id=\"_el_input_cvc\"]/input")).setValue(cvc);
-        addPropertyHelper.messageHepler.click(byXpath("//*[@id=\"_el_button_save\"]/button"));
+        addPropertyHelper.messageHelper.click(byXpath("//*[@id=\"_el_button_save\"]/button"));
     }
 
     public void chooseWorldPay() {
-        addPropertyHelper.messageHepler.click(byXpath("/html/body/div[3]/div/div[2]/div[3]/a[1]/div[1]"));
+        addPropertyHelper.messageHelper.click(byXpath("/html/body/div[3]/div/div[2]/div[3]/a[1]/div[1]"));
     }
 
     public void startCheckout() {
-        addPropertyHelper.messageHepler.click(byXpath("//*[@id=\"paymentForm\"]/div[2]/div[2]/button"));
+        addPropertyHelper.messageHelper.click(byXpath("//*[@id=\"paymentForm\"]/div[2]/div[2]/button"));
     }
 
     public void selectPremiumFlathunterPlan() {
-        addPropertyHelper.messageHepler.click(byXpath("//*[@id=\"ProfessionalPaymentForm\"]/div/table/tbody/tr[4]/td/button"));
+        addPropertyHelper.messageHelper.click(byXpath("//*[@id=\"ProfessionalPaymentForm\"]/div/table/tbody/tr[4]/td/button"));
     }
 
     public void goToPaymentsTab() {
-        addPropertyHelper.messageHepler.click(byXpath("/html/body/header/div/ul[1]/li/a/img"));
-        addPropertyHelper.messageHepler.click(byXpath("/html/body/header/div/ul[1]/li/ul/li[11]/a"));
+        addPropertyHelper.messageHelper.click(byXpath("/html/body/header/div/ul[1]/li/a/img"));
+        addPropertyHelper.messageHelper.click(byXpath("/html/body/header/div/ul[1]/li/ul/li[11]/a"));
     }
 }

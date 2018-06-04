@@ -40,7 +40,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().pressAddListingFromBody();
         getAddPropertyHelper().setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
-        getAddPropertyHelper().chooseRoadfor("Idealstreet");
+        getAddPropertyHelper().chooseRoadFor("Idealstreet");
         getAddPropertyHelper().chooseAreaforLondon();
         getAddPropertyHelper().pressContinueButton();
         getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456");

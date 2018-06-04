@@ -12,8 +12,8 @@ import static com.codeborne.selenide.Condition.*;
 public class AddPropertyHelper {
 
 
-    public final MessageHepler messageHepler = new MessageHepler();
 
+    public final MessageHelper messageHelper = new MessageHelper();
 
     public void openDropDownMenu() {
         $(".dropdown.nav-ihm-profile-bars").click();
@@ -43,18 +43,18 @@ public class AddPropertyHelper {
         $("#wizard-next").click();
     }
 
-    public void chooseRoadfor(String road) {
-        messageHepler.click(byXpath("//input[@id='property-route']"));
+    public void chooseRoadFor(String road) {
+        messageHelper.click(byXpath("//input[@id='property-route']"));
         $(byXpath("//input[@id='property-route']")).setValue(road).pressEnter();;
     }
 
     public void chooseAreaforLondon() {
-        messageHepler.click(byName("Property[area_link_id]"));
-        messageHepler.click(byXpath("//*[@id=\"property-area_link_id\"]/option[2]"));
+        messageHelper.click(byName("Property[area_link_id]"));
+        messageHelper.click(byXpath("//*[@id=\"property-area_link_id\"]/option[2]"));
     }
 
     public void pressAddListingFromHeader() {
-        messageHepler.click(byXpath("/html/body/header/div/a"));
+        messageHelper.click(byXpath("/html/body/header/div/a"));
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -65,7 +65,7 @@ public class AddPropertyHelper {
 
     public void setTotalBedrooms() {
         $("#property-bedrooms_no").click();
-        messageHepler.click(byXpath("//*[@id=\"property-bedrooms_no\"]/option[4]"));
+        messageHelper.click(byXpath("//*[@id=\"property-bedrooms_no\"]/option[4]"));
     }
 
     public void setAllAmanities() {
@@ -155,7 +155,7 @@ public class AddPropertyHelper {
         $(byXpath("//input[@id='room-3-available_from']")).waitUntil(appear, 4000).click();
         $(".ui-icon.ui-icon-circle-triangle-e").waitUntil(appear, 4000).click();
         $(".ui-datepicker-year").waitUntil(appear, 4000).click();
-        messageHepler.click(byXpath("//option[@value='2025']"));
+        messageHelper.click(byXpath("//option[@value='2025']"));
         $(byXpath("//a[@class='ui-state-default' and contains(text(), '11')]")).waitUntil(appear, 4000).click();
 
     }

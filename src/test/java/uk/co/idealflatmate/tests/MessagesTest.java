@@ -1,17 +1,22 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.MessageHelper;
 
 import static com.codeborne.selenide.Selenide.$;
 
+
+
 public class MessagesTest extends TestBase {
+
+   public final MessageHelper messageHelper = new MessageHelper();
 
     @Test
     public void readMessageByLandlordWithoutSubscription() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
-        getMessageHepler().chooseMessageTab();
+        getMessageHelper().chooseMessageTab();
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
@@ -23,9 +28,9 @@ public class MessagesTest extends TestBase {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");
         authorizationHelper.setPassword("123456");
-        getMessageHepler().chooseMessageTab();
+        messageHelper.chooseMessageTab();
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
-        paymentsHelper.addPropertyHelper.messageHepler.typeAndSendMessage("Test Upgrade");
+        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Test Upgrade");
         verificationHelper.verifyTextMessage();
         authorizationHelper.logoutFromApp();
     }

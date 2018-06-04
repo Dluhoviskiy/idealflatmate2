@@ -2,7 +2,6 @@ package uk.co.idealflatmate.tests;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import uk.co.idealflatmate.appmanager.*;
@@ -18,6 +17,8 @@ public class TestBase {
     public final AuthorizationHelper authorizationHelper = new AuthorizationHelper();
     public final PaymentsHelper paymentsHelper = new PaymentsHelper();
     public final AddPropertyHelper addPropertyHelper = new AddPropertyHelper();
+    public final MessageHelper messageHelper = new MessageHelper();
+    public final MatchingHelper matchingHelper = new MatchingHelper();
 
     @BeforeMethod
     public void setupClass() {
@@ -36,13 +37,9 @@ public class TestBase {
     }
 
 
-    public VerificationHelper getVerificationHelper() {
-        return verificationHelper;
-    }
+    public VerificationHelper getVerificationHelper() { return verificationHelper; }
 
-    public MessageHepler getMessageHepler() {
-        return paymentsHelper.addPropertyHelper.messageHepler;
-    }
+    public MessageHelper getMessageHelper() { return paymentsHelper.addPropertyHelper.messageHelper;    }
 
     public AuthorizationHelper getAuthorizationHelper() {
         return authorizationHelper;

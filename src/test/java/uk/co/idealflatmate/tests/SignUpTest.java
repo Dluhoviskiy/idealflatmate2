@@ -6,9 +6,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 
 public class SignUpTest extends TestBase {
-/*
+
     @Test
-    public void SuccessfulClassicSignIn() {
+    public void TestSuccessfulClassicSignIn() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
@@ -17,7 +17,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-
+    /*
     @Test
     public void SuccessfulClassicSignInPropertyPage() {
         authorizationHelper.goToPropertyPage();

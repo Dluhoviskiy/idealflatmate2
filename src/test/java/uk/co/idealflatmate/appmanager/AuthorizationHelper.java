@@ -30,7 +30,7 @@ public class AuthorizationHelper {
 
 
     public void setLoginAsUserWithoutPackage(String email) {
-        $("#loginform-username").click();
+        $("#loginform-username").waitUntil(appears, 4000).click();
         $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
         $("#loginform-username").shouldBe(visible);
         $("#loginform-username").setValue(email);

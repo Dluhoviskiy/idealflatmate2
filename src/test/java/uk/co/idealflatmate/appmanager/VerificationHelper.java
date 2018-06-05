@@ -129,5 +129,30 @@ public class VerificationHelper {
         $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
 
     }
+    //span[contains(text(), 'This email address has already been taken.')]
+    public void emailAlreadyExistedAlert() {
+        $(byXpath("//div[@class='form-group floating-label-group  required hasvalue has-error']")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));
+    }
+
+    public void NameFirstBlankAlert() {
+        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[1]")).waitUntil(exist, 4000).shouldHave(text("Firstname cannot be blank."));
+    }
+
+    public void emailBlankAlert() {
+        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[3]")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+    }
+
+    public void NameLastBlankAlert() {
+        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
+    }
+
+    public void passwordBlankAlert() {
+        $(byXpath("//div[@class='form-group floating-label-group required has-error']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
+
+    }
+
+    public void checkAgeBlankAlert() {
+        $(byXpath("//div[@class='required has-error']")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
+    }
 }
 

@@ -26,6 +26,31 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
+    @Test
+    public void TestClassicSignUpWithExistingEmail() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpButtonInForm();
+        authorizationHelper.setNewLoginMail("cro.gen44@gmail.com");
+        authorizationHelper.setNewLoginPassword("123456");
+        authorizationHelper.setNewLoginNameF("Ronald");
+        authorizationHelper.setNewLoginNameL("NewOne");
+        verificationHelper.AgeConfirmCheck();
+        authorizationHelper.clickFormSignUp();
+        verificationHelper.emailAlreadyExistedAlert();
+     }
+
+    @Test
+    public void TestClassicSignUpWithBlankRequiredFields() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpButtonInForm();
+        authorizationHelper.clickFormSignUp();
+        verificationHelper.emailBlankAlert();
+        verificationHelper.NameFirstBlankAlert();
+        verificationHelper.NameLastBlankAlert();
+        verificationHelper.passwordBlankAlert();
+        verificationHelper.checkAgeBlankAlert();
+    }
+
     /*
     @Test
     public void SuccessfulClassicSignInPropertyPage() {

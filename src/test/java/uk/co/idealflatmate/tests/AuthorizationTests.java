@@ -13,7 +13,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
-        verificationHelper.verificationAlexNameOnHomePage("Alex");
+        verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
     }
 
@@ -23,7 +23,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
-        verificationHelper.verificationAlexNameOnHomePage("Alex");
+        verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
     }
 
@@ -33,7 +33,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
-        verificationHelper.verificationAlexNameOnHomePage("Alex");
+        verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
     }
 

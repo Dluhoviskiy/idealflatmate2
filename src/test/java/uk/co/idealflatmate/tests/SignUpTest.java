@@ -8,13 +8,22 @@ import static com.codeborne.selenide.Selenide.open;
 public class SignUpTest extends TestBase {
 
     @Test
-    public void TestSuccessfulClassicSignIn() {
+    public void TestSuccessfulClassicSignUp() {
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
-        authorizationHelper.setPassword("123456");
-        verificationHelper.verificationAlexNameOnHomePage("Alex");
+        authorizationHelper.clickSignUpButtonInForm();
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest@gmail.com");
+        authorizationHelper.setNewLoginPassword("123456");
+        authorizationHelper.setNewLoginNameF("Ronald");
+        authorizationHelper.setNewLoginNameL("NewOne");
+        verificationHelper.AgeConfirmCheck();
+        authorizationHelper.clickFormSignUp();
+        authorizationHelper.clickCloseMoreAboutYou();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
-        authorizationHelper.logoutFromApp();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
     /*
@@ -24,7 +33,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
-        verificationHelper.verificationAlexNameOnHomePage("Alex");
+        verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
     }
 

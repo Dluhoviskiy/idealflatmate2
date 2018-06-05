@@ -11,13 +11,17 @@ import static com.codeborne.selenide.Selenide.$;
 public class VerificationHelper {
 
 
-    public void verificationAlexNameOnHomePage(String nameUser) {
+    public void verificationUserNameOnHomePage(String nameUser) {
         $(".nav.navbar-right.nav-ihm-profile").shouldHave(text(nameUser));
     }
 
-    public void verificationUserNameOnHomePage(String nameUser) {
-        verificationAlexNameOnHomePage(nameUser);
+    public void verificationUserNoNameOnHomePage(String nameUser) {
+        $(".nav.navbar-right.nav-ihm-profile").shouldNotHave(text(nameUser));
     }
+
+  /*  public void verificationUserNameOnHomePage(String nameUser) {
+        verificationUserNameOnHomePage(nameUser);
+    }*/
 
     public void VerificationPasswordError() {
         $("#login-form > div:nth-child(3) > div:nth-child(2) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
@@ -121,6 +125,9 @@ public class VerificationHelper {
     }
 
 
+    public void AgeConfirmCheck() {
+        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
 
+    }
 }
 

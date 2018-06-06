@@ -36,7 +36,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         //verificationHelper.verifyNoOldProperty();
-        getAddPropertyHelper().RemoveListing();
+       // getAddPropertyHelper().RemoveListing();
         getAddPropertyHelper().pressAddListingFromBody();
         getAddPropertyHelper().setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();

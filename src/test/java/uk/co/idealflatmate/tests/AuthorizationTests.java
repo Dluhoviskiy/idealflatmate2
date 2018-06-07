@@ -94,7 +94,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    //@Test
     public void SuccessfulLogInMessageFM() {
         authorizationHelper.goToFMpage();
         getMessageHelper().clickFMCardMessageUnlogged();
@@ -105,7 +105,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    //@Test
     public void SuccessfulLogInContactFM() {
         authorizationHelper.goToFMpage();
         getMessageHelper().clickFMCardFirstOnPage();

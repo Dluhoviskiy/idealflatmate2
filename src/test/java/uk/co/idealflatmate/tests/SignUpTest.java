@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SignUpTest extends TestBase {
 
-    @Test
+    //@Test
     public void TestSuccessfulClassicSignUp() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpButtonInForm();
@@ -26,7 +26,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test
+    //@Test
     public void TestClassicSignUpWithExistingEmail() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpButtonInForm();
@@ -39,7 +39,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.emailAlreadyExistedAlert();
      }
 
-    @Test
+    //@Test
     public void TestClassicSignUpWithBlankRequiredFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpButtonInForm();

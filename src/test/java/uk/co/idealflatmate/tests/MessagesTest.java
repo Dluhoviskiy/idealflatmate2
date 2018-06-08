@@ -11,7 +11,7 @@ public class MessagesTest extends TestBase {
 
    public final MessageHelper messageHelper = new MessageHelper();
 
-    @Test
+    //@Test
     public void readMessageByLandlordWithoutSubscription() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -23,7 +23,7 @@ public class MessagesTest extends TestBase {
 
 
 
-    @Test
+    //@Test
     public void answerMessage() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");

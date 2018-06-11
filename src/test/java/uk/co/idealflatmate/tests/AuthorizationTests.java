@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class AuthorizationTests extends TestBase {
 
-  //  @Test
+    @Test
     public void SuccessfulClassicLogIn() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -17,7 +17,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void SuccessfulClassiclogOnPropertyPage() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickSignInButton();

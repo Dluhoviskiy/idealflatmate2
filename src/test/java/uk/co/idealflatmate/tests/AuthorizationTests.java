@@ -27,7 +27,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void SuccessfulClassiclogOnFMPage() {
         authorizationHelper.goToFMpage();
         authorizationHelper.clickSignInButton();
@@ -37,7 +37,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     //Facebook authorization doen`t work on staging
     public void SuccessfulLogInViaFacebook() {
         authorizationHelper.clickSignInButton();
@@ -47,7 +47,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+   @Test
     public void SuccessfulLogInWithMatchingFB() {
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching();
@@ -63,7 +63,7 @@ public class AuthorizationTests extends TestBase {
     }
 
 
-    //@Test
+    @Test
     public void InvalidAuthorizationWithEmptyFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickLoginSubmitButton();
@@ -72,7 +72,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-   // @Test
+    @Test
     public void SuccessfulLogInMessageProperty() {
         getMessageHelper().clickPropertyCardMessageUnlogged();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
@@ -82,7 +82,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void SuccessfulLogInContactProperty() {
         getMessageHelper().clickPropertyCardFirstOnPage();
         getMessageHelper().clickPropertyContact();
@@ -94,7 +94,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void SuccessfulLogInMessageFM() {
         authorizationHelper.goToFMpage();
         getMessageHelper().clickFMCardMessageUnlogged();
@@ -105,7 +105,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void SuccessfulLogInContactFM() {
         authorizationHelper.goToFMpage();
         getMessageHelper().clickFMCardFirstOnPage();

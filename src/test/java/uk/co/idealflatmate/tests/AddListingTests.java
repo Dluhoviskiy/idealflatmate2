@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AddListingTests extends TestBase {
 
-    //@Test
+    @Test
     public void TestSuccessfulPropertyAddingOnlyWithRequiredFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -28,7 +28,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyNoProperty();
     }
 
-    //@Test
+    @Test
     public void TestSuccessfulPropertyAddingWithAllFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");

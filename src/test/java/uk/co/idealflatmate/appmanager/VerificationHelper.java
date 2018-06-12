@@ -39,8 +39,8 @@ public class VerificationHelper {
         $(".fa-credit-card").waitUntil(visible, 4000).shouldBe(Condition.visible);
     }
 
-    public void verifyTextMessage() {
-        $(".msg-body").waitUntil(visible, 4000).shouldHave(Condition.text("Test Upgrade"));
+    public void verifyTextMessage(String text) {
+        $(".msg-body").waitUntil(visible, 8000).shouldHave(Condition.text(text));
     }
     public void verifyPageMessage() {
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));
@@ -152,7 +152,16 @@ public class VerificationHelper {
     }
 
     public void checkAgeBlankAlert() {
-        $(byXpath("//div[@class='required has-error']")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
+        $(byXpath("//div[@class='required flex-form-row has-error']")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
+    }
+
+    public void upgradeToFasterReply() {
+        $(byXpath("//div[@class='alert alert-warning text-center u_m0']")).waitUntil(exist, 4000).shouldHave(text("Upgrade to get a faster reply"));
+
+    }
+
+    public void messageGroup(String text) {
+        $(byXpath("//select[@id='property-select']")).waitUntil(exist, 4000).shouldHave(text(text));
     }
 }
 

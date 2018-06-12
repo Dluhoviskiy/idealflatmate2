@@ -35,7 +35,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         verificationHelper.AgeConfirmCheck();
-        authorizationHelper.clickFormSignUp();
+        authorizationHelper.clickFormSignUpSave();
         verificationHelper.emailAlreadyExistedAlert();
      }
 
@@ -43,7 +43,7 @@ public class SignUpTest extends TestBase {
     public void TestClassicSignUpWithBlankRequiredFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.clickFormSignUp();
+        authorizationHelper.clickFormSignUpSave();
         verificationHelper.emailBlankAlert();
         verificationHelper.NameFirstBlankAlert();
         verificationHelper.NameLastBlankAlert();

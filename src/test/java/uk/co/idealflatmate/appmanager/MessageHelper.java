@@ -3,9 +3,12 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.open;
 
 public class MessageHelper {
 
@@ -51,6 +54,10 @@ public class MessageHelper {
     }
 
 
+    public  void clickPropertyPageMessage(){
+        $(byXpath("//a[@class='btn btn-primary u_ed-block u_m20-top'  and contains(text(), ' Message ')]")).waitUntil(visible, 4000).click();
+    }
+
     public void clickFMCardMessageUnlogged() {
 
         $(byXpath("//div[1]/div/div/a[@class='card-start-chat btn btn-circle']")).click();
@@ -67,4 +74,32 @@ public class MessageHelper {
     }
 
 
+    public void searchProperty(String postcode) {
+        //click(byCssSelector("input#property-location"));
+        $("input#property-location").waitUntil(visible, 4000).click();
+        $("input#property-location").waitUntil(empty, 4000).setValue(postcode);
+        sleep(4000);
+        $(byXpath("//button[@class='btn btn-primary u_p60-left-sm u_p60-right-sm js-search-submit']")).waitUntil(visible, 4000).click();
+
+    }
+
+    public void clickCardMessageLogged() {
+        $(byXpath("//a[@href='/conversation/contact?user_id=40037&property_id=16189']")).waitUntil(visible, 6000).click();
+
+    }
+
+    public void clickPropertyCardPagelogged() {
+        $(byXpath("//a[@href='/spare-room/ipswich/property-id16189']")).waitUntil(visible, 6000).click();
+
+    }
+
+    public void clickPropertyCardFMnamePagelogged() {
+        $(byXpath("//span[@class='card-top-username u_ed-block' and contains(text(), 'Dora Palmer')]")).waitUntil(visible, 6000).click();
+
+    }
+
+    public void clickFMPageMessage() {
+        $(byXpath("//a[contains(text(), ' send message')][1]")).waitUntil(visible, 6000).click();
+
+    }
 }

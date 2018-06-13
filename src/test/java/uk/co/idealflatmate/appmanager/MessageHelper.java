@@ -50,7 +50,7 @@ public class MessageHelper {
     }
 
     public  void clickPropertyContact(){
-        $(byXpath("//button[@class='btn btn-primary btn-lg u_m10-bottom u_ed-block']")).waitUntil(visible, 4000).click();
+        $(byXpath("//a[@class='btn btn-primary u_ed-block u_m20-top']")).waitUntil(visible, 4000).click();
     }
 
 
@@ -66,11 +66,11 @@ public class MessageHelper {
     }
 
     public void clickFMCardFirstOnPage() {
-        $(byXpath("(//div[@class='card card-flatmate cards-container ']/div/div[2]/a[2]/img)[1]")).waitUntil(visible, 4000).click();
+        $(byXpath("((//div[@class='card-img'])[1])//img")).waitUntil(visible, 6000).click();
     }
 
     public void clickFMContact() {
-        $(byXpath("//button[@class='btn btn-primary btn-lg u_m10-bottom u_ed-block-xs u_ed-block-lg']")).waitUntil(visible, 4000).click();
+        $(byXpath("//button[@class='btn btn-primary btn-lg u_m10-bottom u_ed-block-xs u_ed-block-lg']")).waitUntil(visible, 6000).click();
     }
 
 

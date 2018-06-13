@@ -42,7 +42,7 @@ public class AuthorizationTests extends TestBase {
     public void SuccessfulLogInViaFacebook() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInWithFacebook();
-        authorizationHelper.setLoginAndPasswordOnFacebook("aleksandr.serdiuk@gmail.com", "Apple210189");
+        authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
     }
@@ -50,14 +50,14 @@ public class AuthorizationTests extends TestBase {
    @Test
     public void SuccessfulLogInWithMatchingFB() {
         matchingHelper.clickHomePageMatching();
-        matchingHelper.clickContinueMatching();
+        matchingHelper.clickContinueMatching2();
         matchingHelper.clickContinueMatching3();
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
         matchingHelper.clickContinueMatching7();
         authorizationHelper.clickSignInWithFacebookMatching();
-        authorizationHelper.setLoginAndPasswordOnFacebook("aleksandr.serdiuk@gmail.com", "Apple210189");
+        authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
     }

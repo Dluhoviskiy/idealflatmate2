@@ -34,16 +34,25 @@ public class AuthorizationHelper {
         $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
         $("#loginform-username").shouldBe(visible);
         $("#loginform-username").setValue(email);
+        sleep(2000);
 
     }
 
     public void setPassword(String password) {
         $("#loginform-password").waitUntil(visible, 4000).setValue(password).pressEnter();
+        sleep(2000);
     }
 
-    public void setLoginAndPasswordOnFacebook(String email, String password) {
+    public void LoginFacebookWithActiveAccount(String email, String password) {
         $("#email").waitUntil(visible, 4000).setValue(email);
         $("#pass").waitUntil(visible, 4000).setValue(password).pressEnter();
+       // $(byXpath("//button[@type='submit' and (contains(text(), 'Продолжить как Александр'))]")).waitUntil(visible, 4000).click();
+    }
+
+    public void LoginFacebookWithNewAccount(String email, String password) {
+        $("#email").waitUntil(visible, 4000).setValue(email);
+        $("#pass").waitUntil(visible, 4000).setValue(password).pressEnter();
+       // $(byXpath("//button[@type='submit' and (contains(text(), 'Продолжить как Ronald'))]")).waitUntil(visible, 4000).click();
     }
 
     public void clickSignInWithFacebook() {
@@ -126,6 +135,36 @@ public class AuthorizationHelper {
         $("#signup-need-lastname").shouldBe(visible);
         $("#signup-need-lastname").setValue(nameL);
     }
+
+    public void setNewLoginMailMatching(String email) {
+        $("#signup-survey-email").click();
+        $("#signup-survey-email").waitUntil(appears, 4000).clear();
+        $("#signup-survey-email").shouldBe(visible);
+        $("#signup-survey-email").setValue(email);
+    }
+
+    public void setNewLoginPasswordMatching(String password) {
+        $("#signup-survey-password").click();
+        $("#signup-survey-password").waitUntil(appears, 4000).clear();
+        $("#signup-survey-password").shouldBe(visible);
+        $("#signup-survey-password").setValue(password);
+    }
+
+    public void setNewLoginNameFMatching(String nameF) {
+        $("#signup-survey-firstname").click();
+        $("#signup-survey-firstname").waitUntil(appears, 4000).clear();
+        $("#signup-survey-firstname").shouldBe(visible);
+        $("#signup-survey-firstname").setValue(nameF);
+    }
+
+    public void setNewLoginNameLMatching(String nameL) {
+        $("#signup-survey-lastname").click();
+        $("#signup-survey-lastname").waitUntil(appears, 4000).clear();
+        $("#signup-survey-lastname").shouldBe(visible);
+        $("#signup-survey-lastname").setValue(nameL);
+    }
+
+
 
     public void clickFormSignUp() {
         $(byXpath("(//button[@class='btn btn-primary text-uppercase'])[1]")).waitUntil(appears, 4000).click();

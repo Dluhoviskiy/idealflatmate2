@@ -7,6 +7,7 @@ import java.io.File;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class AddPropertyHelper {
@@ -41,6 +42,7 @@ public class AddPropertyHelper {
 
     public void pressContinueButton() {
         $("#wizard-next").click();
+        sleep(3000);
     }
 
     public void chooseRoadFor(String road) {

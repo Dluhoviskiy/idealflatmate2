@@ -51,9 +51,23 @@ public class SignUpTest extends TestBase {
         verificationHelper.checkAgeBlankAlert();
     }
 
-    /*
     @Test
-    public void SuccessfulClassicSignInPropertyPage() {
+    //Facebook authorization doen`t work on staging
+    public void SuccessfulSignUpViaFacebook() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInWithFacebook();
+        authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
+
+
+    @Test
+    public void SuccessfulClassicSignUpPropertyPage() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -63,14 +77,99 @@ public class SignUpTest extends TestBase {
     }
 
     @Test
-    //Facebook authorization doen`t work on staging
-    public void SuccessfulSignInViaFacebook() {
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.clickSignInWithFacebook();
-        authorizationHelper.setLoginAndPasswordOnFacebook("aleksandr.serdiuk@gmail.com", "Apple210189");
-        verificationHelper.verificationUserNameOnHomePage("Alex");
+    public void SuccessfulSignUpWithMatchingWithRequiredFields() {
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.clickContinueMatching2();
+        matchingHelper.clickContinueMatching3();
+        matchingHelper.clickContinueMatching4();
+        matchingHelper.clickContinueMatching5();
+        matchingHelper.clickContinueMatching6();
+        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest@gmail.com");
+        authorizationHelper.setNewLoginPasswordMatching("123456");
+        authorizationHelper.setNewLoginNameFMatching("Ronald");
+        authorizationHelper.setNewLoginNameLMatching("NewOne");
+        verificationHelper.AgeConfirmCheckMatching();
+        matchingHelper.clickContinueMatchingAfterSignUp();
+        matchingHelper.clickContinueMatching7();
+        matchingHelper.clickContinueMatching8();
+        matchingHelper.clickContinueMatching9();
+        matchingHelper.clickContinueMatching10();
+        matchingHelper.clickContinueMatching11();
+        matchingHelper.clickContinueMatching12();
+        matchingHelper.clickContinueMatching13();
+        matchingHelper.clickContinueMatching14();
+        matchingHelper.clickContinueMatching15();
+        matchingHelper.clickContinueMatching16();
+        matchingHelper.clickContinueMatching17();
+        matchingHelper.clickContinueMatching18();
+        matchingHelper.clickContinueMatching19();
+        matchingHelper.clickContinueMatching20();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
+    @Test
+    public void SuccessfulSignUpWithMatchingWithBlankRequiredFields() {
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.clickContinueMatching2();
+        matchingHelper.clickContinueMatching3();
+        matchingHelper.clickContinueMatching4();
+        matchingHelper.clickContinueMatching5();
+        matchingHelper.clickContinueMatching6();
+        matchingHelper.clickContinueMatchingAfterSignUp();
+        verificationHelper.emailBlankAlertMatching();
+        verificationHelper.NameFirstBlankAlertMatching();
+        verificationHelper.NameLastBlankAlertMatching();
+        verificationHelper.passwordBlankAlertMatching();
+        verificationHelper.checkAgeBlankAlertMatching();
+    }
+
+   // @Test
+    public void SuccessfulSignUpWithMatchingWithAllFields() {
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.clickContinueMatching2();
+        matchingHelper.clickContinueMatching3();
+        matchingHelper.clickContinueMatching4();
+        matchingHelper.clickContinueMatching5();
+        matchingHelper.clickContinueMatching6();
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest@gmail.com");
+        authorizationHelper.setNewLoginPassword("123456");
+        authorizationHelper.setNewLoginNameF("Ronald");
+        authorizationHelper.setNewLoginNameL("NewOne");
+        verificationHelper.AgeConfirmCheck();
+
+
+        matchingHelper.clickContinueMatchingAfterSignUp();
+        matchingHelper.clickContinueMatching7();
+        matchingHelper.clickContinueMatching8();
+        matchingHelper.clickContinueMatching9();
+        matchingHelper.clickContinueMatching10();
+        matchingHelper.clickContinueMatching11();
+        matchingHelper.clickContinueMatching12();
+        matchingHelper.clickContinueMatching13();
+        matchingHelper.clickContinueMatching14();
+        matchingHelper.clickContinueMatching15();
+        matchingHelper.clickContinueMatching16();
+        matchingHelper.clickContinueMatching17();
+        matchingHelper.clickContinueMatching18();
+        matchingHelper.clickContinueMatching19();
+        matchingHelper.clickContinueMatching20();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
+
+    /*
     @Test
     public void InvalidSignInWithEmptyFields() {
         authorizationHelper.clickSignInButton();
@@ -80,19 +179,5 @@ public class SignUpTest extends TestBase {
         verificationHelper.VerificationMessagesTabIsAbsent();
     }
      */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

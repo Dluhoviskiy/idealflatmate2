@@ -75,6 +75,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void SuccessfulLogInMessageProperty() {
         getMessageHelper().clickPropertyCardMessageUnlogged();
+        //authorizationHelper.clickFormSignInPropertyContact();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Adam");

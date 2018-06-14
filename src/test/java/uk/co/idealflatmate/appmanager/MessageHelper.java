@@ -40,6 +40,7 @@ public class MessageHelper {
     }
 
     public void clickPropertyCardMessageUnlogged() {
+        sleep(2000);
         $(byXpath("//div[1]/div/div/a[@class='card-start-chat btn btn-circle']")).waitUntil(visible, 4000).click();
         $(byXpath("//div[@class='modal fade in'][1]//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')]")).waitUntil(visible, 4000).click();
 

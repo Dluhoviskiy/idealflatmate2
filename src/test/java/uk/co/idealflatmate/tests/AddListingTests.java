@@ -28,7 +28,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyNoProperty();
     }
 
-    //@Test
+    @Test
     public void TestSuccessfulPropertyAddingWithAllFields() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");

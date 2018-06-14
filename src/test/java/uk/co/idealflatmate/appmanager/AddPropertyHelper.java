@@ -42,10 +42,10 @@ public class AddPropertyHelper {
 
     public void pressContinueButton() {
         $("#wizard-next").click();
-        sleep(3000);
     }
 
     public void chooseRoadFor(String road) {
+        sleep(2000);
         messageHelper.click(byXpath("//input[@id='property-route']"));
         $(byXpath("//input[@id='property-route']")).setValue(road).pressEnter();;
     }
@@ -60,7 +60,8 @@ public class AddPropertyHelper {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        $("#property-phone_number").waitUntil(visible, 6000).setValue(phoneNumber);
+        sleep(2000);
+        $("#property-phone_number").waitUntil(exist, 6000).setValue(phoneNumber);
 
     }
 

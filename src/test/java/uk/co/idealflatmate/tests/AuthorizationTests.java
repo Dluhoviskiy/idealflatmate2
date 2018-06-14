@@ -50,12 +50,12 @@ public class AuthorizationTests extends TestBase {
    @Test
     public void SuccessfulLogInWithMatchingFB() {
         matchingHelper.clickHomePageMatching();
+        matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
         matchingHelper.clickContinueMatching3();
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        matchingHelper.clickContinueMatching7();
         authorizationHelper.clickSignInWithFacebookMatching();
         authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
         verificationHelper.verificationUserNameOnHomePage("Alex");

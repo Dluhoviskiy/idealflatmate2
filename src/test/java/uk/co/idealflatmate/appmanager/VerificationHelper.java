@@ -59,17 +59,10 @@ public class VerificationHelper {
        // $(".dropdown.nav-ihm-profile-bars").click();
        // $(byXpath("//span[@class='pull-left' and contains(text(), 'Listings')]")).hover().shouldBe(enabled).click();
         //$(byXpath("//div[@class='col-md-8 col-lg-9']")).shouldHave(text("London SE1, UK"));
-        $(byXpath("//h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']")).shouldHave(text("3 rooms for rent in Bankside, South, London from\n" +
-                "                        £500                        "));
-        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[1]")).shouldHave(text("\n" +
-                "                                        +44 20 7234                                         "));
+        $(byXpath("//h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']")).shouldHave(text("3 rooms for rent in Bankside, South, London from\n" + "£500"));
+        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[1]")).shouldHave(text("\n" + "+44 20 7234"));
         //$(byXpath("//div[@id='room1']/div[@class='u_bg-info u_p10 text-center text-18']/strong")).shouldHave(text("500"));
-        $(byXpath("//li[@class='dropdown pull-right tabdrop hide']")).shouldHave(text("£ 500 per month\n" +
-                "Deposit £1,000\n" +
-                "Available now\n" +
-                "Min. stay 1 months\n" +
-                "Max. stay 12 months\n" +
-                "Total bills 400.00"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]")).shouldHave(text("£500" + "month" + "Deposit" + "£1,000" + "Bills pcm" + "£400" + "Lease length" + "1 month+"));
         $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//li/a[contains(text(), 'Room 2')]")).click();
         $(byXpath("//div[@id='room2']")).waitUntil(visible, 4000).shouldHave(text("Room 1" + "Room 2" + "Room 3"));
         //$(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'MORE')]")).click();

@@ -15,8 +15,8 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
-        verificationHelper.AgeConfirmCheck();
-        authorizationHelper.clickFormSignUp();
+        verificationHelper.AgeConfirmCheckClassicSignUp();
+        authorizationHelper.clickFormSignUpSave();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
@@ -34,7 +34,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
-        verificationHelper.AgeConfirmCheck();
+        verificationHelper.AgeConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
         verificationHelper.emailAlreadyExistedAlert();
      }
@@ -143,7 +143,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
-        verificationHelper.AgeConfirmCheck();
+        verificationHelper.AgeConfirmCheckMatching();
 
 
         matchingHelper.clickContinueMatchingAfterSignUp();

@@ -115,11 +115,6 @@ public class VerificationHelper {
         $(".u_p20-bottom.u_b-bottom").shouldHave(Condition.value("Congratulations John!"));
     }
 
-
-    public void AgeConfirmCheck() {
-        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
-
-    }
     //span[contains(text(), 'This email address has already been taken.')]
     public void emailAlreadyExistedAlert() {
         $(byXpath("//div[@class='form-group floating-label-group  required hasvalue has-error']")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));
@@ -143,9 +138,15 @@ public class VerificationHelper {
     }
 
     public void AgeConfirmCheckMatching() {
-        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[1]")).waitUntil(appears, 4000).click();
 
     }
+
+    public void AgeConfirmCheckClassicSignUp() {
+        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[1]")).waitUntil(appears, 4000).click();
+
+    }
+
     //span[contains(text(), 'This email address has already been taken.')]
     public void emailAlreadyExistedAlertMatching() {
         $(byXpath("//div[@class='form-group floating-label-group  required has-error hasvalue']")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));

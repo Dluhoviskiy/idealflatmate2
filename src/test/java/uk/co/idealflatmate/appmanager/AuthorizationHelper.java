@@ -173,11 +173,16 @@ public class AuthorizationHelper {
 
     public void clickFormSignUpSave() {
         $(byXpath("(//button[contains(text(), 'Save & Continue')])[1]")).waitUntil(appears, 4000).click();
+        sleep(2000);
+    }
+
+    public void clickCloseMoreAboutYouMatching() {
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[1]")).waitUntil(appears, 4000).click();
 
     }
 
     public void clickCloseMoreAboutYou() {
-        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[1]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 4000).click();
 
     }
 

@@ -143,7 +143,7 @@ public class VerificationHelper {
     }
 
     public void AgeConfirmCheckClassicSignUp() {
-        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[1]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
 
     }
 

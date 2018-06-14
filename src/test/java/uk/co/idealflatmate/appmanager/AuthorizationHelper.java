@@ -86,6 +86,7 @@ public class AuthorizationHelper {
 
     public void clickLoginSubmitButton() {
         $(byXpath("//*[@id=\"login-form\"]/div[5]/div/button")).click();
+        sleep(2000);
     }
 
     public void removeAccount() {
@@ -106,6 +107,7 @@ public class AuthorizationHelper {
 
     public void clickSignUpButtonInForm() {
         $(byXpath("//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign up')]")).waitUntil(appears, 4000).click();
+        sleep(2000);
     }
 
     public void setNewLoginMail(String email) {

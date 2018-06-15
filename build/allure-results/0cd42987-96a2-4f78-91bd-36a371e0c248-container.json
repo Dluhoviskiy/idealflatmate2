@@ -1,0 +1,1 @@
+{"uuid":"0cd42987-96a2-4f78-91bd-36a371e0c248","name":"uk.co.idealflatmate.tests.TestBase.tearDown","description":"","start":1529081141768,"stop":1529081143561,"children":["8692e202-4a95-480d-93c5-b1f0dab66846"],"afters":[{"name":"tearDown","status":"passed","stage":"finished","description":"","start":1529081141769,"stop":1529081143561}]}

@@ -42,6 +42,7 @@ public class MatchingHelper {
 
     public void clickContinueMatchingAfterSignUp() {
         $(byXpath("(//button[contains(text(), 'Continue')])[7]")).waitUntil(visible, 4000).click();
+        sleep(2000);
     }
     public void clickContinueMatching7() {
         $(byXpath("//button[@id='19' and contains(text(), 'Continue')]")).waitUntil(visible, 4000).click();

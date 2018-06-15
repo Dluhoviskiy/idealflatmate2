@@ -56,42 +56,40 @@ public class VerificationHelper {
     }
 
     public void verifyAddedPropertyWithAllFields() {
-       // $(".dropdown.nav-ihm-profile-bars").click();
-       // $(byXpath("//span[@class='pull-left' and contains(text(), 'Listings')]")).hover().shouldBe(enabled).click();
-        //$(byXpath("//div[@class='col-md-8 col-lg-9']")).shouldHave(text("London SE1, UK"));
         $(byXpath("//h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']")).shouldHave(text("3 rooms for rent in Bankside, South, London from\n" + "£500"));
         $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[1]")).shouldHave(text("\n" + "+44 20 7234"));
-        //$(byXpath("//div[@id='room1']/div[@class='u_bg-info u_p10 text-center text-18']/strong")).shouldHave(text("500"));
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]")).shouldHave(text("£500" + "month" + "Deposit" + "£1,000" + "Bills pcm" + "£400" + "Lease length" + "1 month+"));
-        $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//li/a[contains(text(), 'Room 2')]")).click();
-        $(byXpath("//div[@id='room2']")).waitUntil(visible, 4000).shouldHave(text("Room 1" + "Room 2" + "Room 3"));
-        //$(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'MORE')]")).click();
-
-       // $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//a[contains(text(), 'Room 3')]")).waitUntil(visible, 4000).click();
-        $(byXpath("//div[@class='panel panel-ihm panel-room-details u_m20-bottom-xs u_m40-bottom-sm hidden-xs']//li/a[contains(text(), 'Room 3')]")).click();
-        $(byXpath("//div[@id='room3']")).waitUntil(visible, 4000).shouldHave(text("£ 800 per month\n" +
-                "Available from 2025-06-11\n" +
-                "\n" +
-                "Total bills 0"));
-        $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
-        $(byXpath("//div[@class='col-md-4 text-primary u_m10-bottom' and contains(text(), 'Room 1')]/parent::div/parent::div")).shouldHave(text("Very comfortable room"));
-        $(byXpath("//div[@class='col-md-4 text-primary u_m10-bottom' and contains(text(), 'Room 2')]/parent::div/parent::div")).shouldHave(text("Very comfortable room"));
-        $(byXpath("//div[@class='col-md-4 text-primary u_m10-bottom' and contains(text(), 'Room 3')]/parent::div/parent::div")).shouldHave(text("No description available."));
-        $(byXpath("//div/div[contains(text(), 'About the Property')]/parent::div/parent::div")).shouldHave(text("\n" +
-                "Total rooms: 3\n" +
-                "\n" +
-                "Available rooms: 3\n" +
-                "\n" +
-                "Smoking: Accepted\n" +
-                "\n" +
-                "Pets: Accepted"));
-        $(byXpath("//div/div[contains(text(), 'Added Features')]/parent::div/parent::div")).shouldHave(text("Garden\n" +
-                "\n" +
-                "Communal living room\n" +
-                "\n" +
-                "Balcony/patio\n" +
-                "\n" +
-                "Parking"));
+        $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]")).shouldHave(text("£500\n" +
+                "month\n" +
+                "Deposit\n" +
+                "£1,000\n" +
+                "Bills pcm\n" +
+                "£400\n" +
+                "Lease length\n" +
+                "1 month+"));
+        $(byXpath("//div[@class='tab-pane fade active in']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
+        $(byXpath("//a[contains(text(), 'Room 2')]")).click();
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[2]")).shouldHave(text("£500\n" +
+                "month\n" +
+                "Deposit\n" +
+                "£1,000\n" +
+                "Bills pcm\n" +
+                "£400\n" +
+                "Lease length\n" +
+                "1 month+"));
+        $(byXpath("//div[@class='tab-pane fade  in active']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
+        $(byXpath("//a[contains(text(), 'Room 3')]")).click();
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th July 2025"));
+       // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
+        $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text("About the property\n" +
+                "3 bedrooms\n" +
+                "Garden\n" +
+                "Parking space\n" +
+                "Smokers accepted\n" +
+                "Pet friendly\n" +
+                "Very good flat"));
+        $(byXpath("//div[@class='u_p10-bottom u_b-bottom u_m30-bottom']")).shouldHave(text("Looking for pets accepted."));
+        $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("Bankside South London"));
     }
     /*public void verifyNoOldProperty1() {
         exist$(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));

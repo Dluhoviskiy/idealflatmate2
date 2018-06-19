@@ -21,8 +21,8 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.setTotalBedrooms();
         paymentsHelper.addPropertyHelper.setMonthlyRent("500");
         getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.uploadPropertyPhoto();
-        paymentsHelper.addPropertyHelper.finishPropertyCreating();
+        paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
+        paymentsHelper.addPropertyHelper.finishPropertyCreatingWithoutPhoto();
         verificationHelper.verifyAddedProperty();
         getAddPropertyHelper().RemoveListing();
         verificationHelper.verifyNoProperty();
@@ -65,6 +65,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().viewListing();
+        verificationHelper.photoListingExist();
         verificationHelper.verifyAddedPropertyWithAllFields();
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();

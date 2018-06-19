@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class AuthorizationTests extends TestBase {
 
     @Test
-    public void SuccessfulClassicLogIn() {
+    public void SuccessClassicLogIn() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
@@ -18,7 +18,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessfulClassiclogOnPropertyPage() {
+    public void SuccessClassiclogOnPropertyPage() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -28,7 +28,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessfulClassiclogOnFMPage() {
+    public void SuccessClassiclogOnFMPage() {
         authorizationHelper.goToFMpage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -39,7 +39,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     //Facebook authorization doen`t work on staging
-    public void SuccessfulLogInViaFacebook() {
+    public void SuccessLogInViaFacebook() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInWithFacebook();
         authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
@@ -48,7 +48,7 @@ public class AuthorizationTests extends TestBase {
     }
 
    @Test
-    public void SuccessfulLogInWithMatchingFB() {
+    public void SuccessLogInWithMatchingFB() {
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
@@ -73,7 +73,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessfulLogInMessageProperty() {
+    public void SuccessLogInMessageProperty() {
         getMessageHelper().clickPropertyCardMessageUnlogged();
         //authorizationHelper.clickFormSignInPropertyContact();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
@@ -84,7 +84,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessfulLogInContactProperty() {
+    public void SuccessLogInContactProperty() {
         getMessageHelper().clickPropertyCardFirstOnPage();
         getMessageHelper().clickPropertyContact();
         authorizationHelper.clickFormSignInPropertyContact();
@@ -96,7 +96,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessfulLogInMessageFM() {
+    public void SuccessLogInMessageFM() {
         authorizationHelper.goToFMpage();
         getMessageHelper().clickFMCardMessageUnlogged();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
@@ -107,7 +107,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessfulLogInContactFM() {
+    public void SuccessLogInContactFM() {
         authorizationHelper.goToFMpage();
         getMessageHelper().clickFMCardFirstOnPage();
         getMessageHelper().clickFMContact();

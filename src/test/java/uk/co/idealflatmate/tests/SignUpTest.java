@@ -168,6 +168,20 @@ public class SignUpTest extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
+    // @Test
+    public void SuccessfulSignUpWithListingWithAllFields() {
+
+        verificationHelper.AgeConfirmCheckMatching();
+
+
+
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
 
     /*
     @Test

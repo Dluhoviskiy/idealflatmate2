@@ -7,6 +7,7 @@ import java.io.File;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.confirm;
 import static com.codeborne.selenide.Selenide.sleep;
 
 
@@ -163,22 +164,32 @@ public class AddPropertyHelper {
 
     }
 
-    public void uploadPropertyPhoto() {
-       //$("#uploadimageform-imagefiles").uploadFile(new File("C:\\Users\\Lenovo\\Documents\\Photos for testing\\Property1.jpg"));
-        $("#uploadimageform-imagefiles").uploadFile(new File("src/test/resources/Property1.jpg"));
-        $(".file-preview-frame.krajee-default.file-preview-initial.file-sortable.kv-preview-thumb ").shouldBe(Condition.visible);
+    public void ContinueListingWithoutPhoto() {
+        $(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(appear, 4000).click();
+        confirm("Are you sure you want to continue without photos?");
+       // $("#uploadimageform-imagefiles").uploadFile(new File("src/test/resources/Property1.jpg"));
+       // $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[1]")).shouldBe(Condition.visible);
     }
 
     public void uploadProperty3Photos() {
-        $("#uploadimageform-imagefiles").uploadFile(new File("src/test/resources/listing1.jpg"));
-        $("#uploadimageform-imagefiles").uploadFile(new File("src/test/resources/listing2.jpeg"));
-        $("#uploadimageform-imagefiles").uploadFile(new File("src/test/resources/listing3.jpg"));
-        $(".file-preview-frame.krajee-default.file-preview-initial.file-sortable.kv-preview-thumb ").shouldBe(Condition.visible);
+        $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing1.jpg"));
+        $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[1]")).shouldBe(Condition.visible);
+        $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing2.jpeg"));
+        $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[2]")).shouldBe(Condition.visible);
+        $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing3.jpg"));
+        $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[3]")).shouldBe(Condition.visible);
+        sleep(3000);
+
     }
 
     public void finishPropertyCreating() {
         $(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(appear, 4000).click();
         //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
+        $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
+        $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
+    }
+
+    public void finishPropertyCreatingWithoutPhoto() {
         $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
         $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
     }

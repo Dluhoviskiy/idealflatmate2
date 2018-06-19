@@ -183,5 +183,12 @@ public class VerificationHelper {
     public void messageGroup(String text) {
         $(byXpath("//select[@id='property-select']")).waitUntil(exist, 4000).shouldHave(text(text));
     }
+
+    public void photoListingExist(){
+        $(byXpath("//div[@class='owl-item active'][1]")).shouldBe(visible);
+        $(byXpath("//div[@class='owl-item active'][2]")).shouldBe(visible);
+        $(byXpath("//div[@class='owl-item active'][3]")).shouldBe(visible);
+
+    }
 }
 

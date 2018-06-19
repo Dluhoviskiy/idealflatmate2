@@ -30,7 +30,6 @@ public class AuthorizationHelper {
 
 
     public void setLoginAsUserWithoutPackage(String email) {
-        sleep(2000);
         $("#loginform-username").waitUntil(appears, 4000).click();
         $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
         $("#loginform-username").shouldBe(visible);
@@ -112,7 +111,8 @@ public class AuthorizationHelper {
     }
 
     public void setNewLoginMail(String email) {
-        $("#signup-need-email").click();
+
+        $("#signup-need-email").waitUntil(visible, 6000).click();
         $("#signup-need-email").waitUntil(appears, 4000).clear();
         $("#signup-need-email").shouldBe(visible);
         $("#signup-need-email").setValue(email);

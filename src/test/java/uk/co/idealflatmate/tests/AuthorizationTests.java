@@ -18,7 +18,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessClassiclogOnPropertyPage() {
+    public void SuccessClassiclogInOnPropertyPage() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -28,7 +28,7 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessClassiclogOnFMPage() {
+    public void SuccessClassiclogInOnFMPage() {
         authorizationHelper.goToFMpage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");

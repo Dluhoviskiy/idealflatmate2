@@ -61,7 +61,7 @@ public class MatchingTests extends TestBase {
         matchingHelper.clickContinueMatching1();
     }
 
-    @Test
+    //@Test
     public void StartMatchingByStartQuizOnFMCard() {
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();

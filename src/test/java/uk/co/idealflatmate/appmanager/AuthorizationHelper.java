@@ -104,6 +104,11 @@ public class AuthorizationHelper {
         $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[2]")).waitUntil(visible, 4000).click();
 
     }
+    public void clickFormSignInFMmessage() {
+        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[3]")).waitUntil(visible, 4000).click();
+
+    }
+
 
     public void clickSignUpButtonInForm() {
         $(byXpath("//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign up')]")).waitUntil(appears, 4000).click();

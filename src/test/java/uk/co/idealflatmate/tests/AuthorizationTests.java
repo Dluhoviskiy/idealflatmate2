@@ -99,6 +99,7 @@ public class AuthorizationTests extends TestBase {
     public void SuccessLogInMessageFM() {
         authorizationHelper.goToFMpage();
         getMessageHelper().clickFMCardMessageUnlogged();
+     //   authorizationHelper.clickFormSignInFMmessage();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen666D@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Adam");

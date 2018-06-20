@@ -51,7 +51,6 @@ public class MatchingTests extends TestBase {
         matchingHelper.clickContinueMatching19();
         matchingHelper.clickContinueMatching20();
         verificationHelper.checkMatchingConcurrence("100% complete");
-        getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseAccountFromDropDownMenu();
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();

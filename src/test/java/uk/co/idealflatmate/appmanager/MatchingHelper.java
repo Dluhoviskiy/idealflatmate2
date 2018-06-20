@@ -101,4 +101,8 @@ public class MatchingHelper {
         $(byXpath("//span[@class='pull-left' and contains(text(), ' Matching')]")).click();
 
     }
+
+    public void clickSkip7stepFromHome() {
+        $(byXpath("(//div[@class='col-sm-3 col-sm-push-6'])[1]/a")).waitUntil(visible, 4000).click();
+    }
 }

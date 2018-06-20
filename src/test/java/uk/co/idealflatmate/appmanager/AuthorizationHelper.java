@@ -60,7 +60,8 @@ public class AuthorizationHelper {
 
     }
     public void clickSignInWithFacebookMatching() {
-        $(byXpath("(//a[@class=\"btn btn-block btn-social btn-facebook u_m10-bottom auth-link facebook\"])[1]")).waitUntil(visible, 4000).click();
+        $(byXpath("(//a[@class=\"btn btn-block btn-social btn-facebook u_m10-bottom auth-link facebook js-facebook-url\"])[1]")).waitUntil(visible, 4000).click();
+
     }
 
     public void setLoginAsUserWithPremiumFlathunterPackage(String email) {

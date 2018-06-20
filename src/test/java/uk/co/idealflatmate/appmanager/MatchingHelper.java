@@ -94,5 +94,11 @@ public class MatchingHelper {
         $(byXpath("//button[@id='16' and contains(text(), 'Continue')]")).waitUntil(visible, 4000).click();
     }
 
+    public void clickSkip7step() {
+        $(byXpath("(//div[@class='col-sm-3 col-sm-push-6'])[7]/a")).waitUntil(visible, 4000).click();
+    }
+    public void chooseMatchingFromDropDownMenu() {
+        $(byXpath("//span[@class='pull-left' and contains(text(), ' Matching')]")).click();
 
+    }
 }

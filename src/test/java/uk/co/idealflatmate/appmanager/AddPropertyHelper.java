@@ -18,7 +18,7 @@ public class AddPropertyHelper {
     public final MessageHelper messageHelper = new MessageHelper();
 
     public void openDropDownMenu() {
-        $(".dropdown.nav-ihm-profile-bars").click();
+        $("span.hidden-xs").click();
     }
 
     public void pressAddListingFromBody() {

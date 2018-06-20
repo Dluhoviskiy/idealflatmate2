@@ -190,5 +190,10 @@ public class VerificationHelper {
         $(byXpath("//div[@class='owl-item active'][3]")).shouldBe(visible);
 
     }
+
+    public void checkMatchingConcurrence(String text) {
+        $("span.hidden-xs").click();
+        $(byXpath("(//a[@data-target='#matchModal'])[1]")).waitUntil(exist, 4000).shouldHave(text(text));
+    }
 }
 

@@ -104,4 +104,6 @@ public class MessageHelper {
         $(byXpath("//a[contains(text(), ' send message')][1]")).waitUntil(visible, 6000).click();
 
     }
+
+
 }

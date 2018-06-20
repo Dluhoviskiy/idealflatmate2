@@ -12,20 +12,30 @@ import static com.codeborne.selenide.Selenide.open;
 public class MatchingTests extends TestBase {
 
     @Test
-    public void FullMatchingWithNewUserFromMenu() {
-        matchingHelper.clickHomePageMatching();
+    public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpButtonInForm();
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest@gmail.com");
+        authorizationHelper.setNewLoginPassword("123456");
+        authorizationHelper.setNewLoginNameF("Ronald");
+        authorizationHelper.setNewLoginNameL("NewOne");
+        verificationHelper.AgeConfirmCheckClassicSignUp();
+        authorizationHelper.clickFormSignUpSave();
+        authorizationHelper.clickCloseMoreAboutYou();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        verificationHelper.checkMatchingConcurrence("NOT taken!");
+        matchingHelper.chooseMatchingFromDropDownMenu();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
         matchingHelper.clickContinueMatching3();
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest@gmail.com");
-        authorizationHelper.setNewLoginPasswordMatching("123456");
-        authorizationHelper.setNewLoginNameFMatching("Ronald");
-        authorizationHelper.setNewLoginNameLMatching("NewOne");
-        verificationHelper.AgeConfirmCheckMatching();
-        matchingHelper.clickContinueMatchingAfterSignUp();
+        matchingHelper.clickSkip7step();
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        verificationHelper.checkMatchingConcurrence("30% complete");
+        matchingHelper.chooseMatchingFromDropDownMenu();
         matchingHelper.clickContinueMatching7();
         matchingHelper.clickContinueMatching8();
         matchingHelper.clickContinueMatching9();
@@ -40,7 +50,7 @@ public class MatchingTests extends TestBase {
         matchingHelper.clickContinueMatching18();
         matchingHelper.clickContinueMatching19();
         matchingHelper.clickContinueMatching20();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        verificationHelper.checkMatchingConcurrence("100% complete");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseAccountFromDropDownMenu();
         authorizationHelper.chooseSettingsFromDashboard();

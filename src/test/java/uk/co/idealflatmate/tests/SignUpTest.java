@@ -11,7 +11,7 @@ public class SignUpTest extends TestBase {
     public void TestSuccessfulClassicSignUp() {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest2@gmail.com");
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
@@ -85,7 +85,7 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest@gmail.com");
+        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest1@gmail.com");
         authorizationHelper.setNewLoginPasswordMatching("123456");
         authorizationHelper.setNewLoginNameFMatching("Ronald");
         authorizationHelper.setNewLoginNameLMatching("NewOne");
@@ -139,7 +139,7 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest3@gmail.com");
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");

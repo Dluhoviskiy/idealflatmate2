@@ -61,7 +61,7 @@ public class AddPropertyHelper {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        sleep(2000);
+        sleep(3000);
         $("#property-phone_number").waitUntil(exist, 6000).setValue(phoneNumber);
 
     }

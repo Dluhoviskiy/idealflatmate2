@@ -34,7 +34,8 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
-        verificationHelper.AgeConfirmCheckClassicSignUp();
+        //verificationHelper.AgeConfirmCheckClassicSignUp();
+        verificationHelper.AgeConfirmCheckClassicSignUpIf();
         authorizationHelper.clickFormSignUpSave();
         verificationHelper.emailAlreadyExistedAlert();
      }

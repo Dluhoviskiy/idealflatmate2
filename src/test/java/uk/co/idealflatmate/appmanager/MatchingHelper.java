@@ -10,6 +10,10 @@ import static com.codeborne.selenide.Selenide.sleep;
 public class MatchingHelper {
 
     public void clickHomePageMatching() {
+        if(!$(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
+            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(visible, 4000).click();
+            sleep(2000);
+        }
         $(byXpath("//button[contains(text(), 'Find your new flatmate!')]")).waitUntil(visible, 4000).click();
         //$(byXpath("//button[contains(text(), 'Start the match test')] ")).waitUntil(visible, 4000).click();
 

@@ -19,21 +19,22 @@ public class AuthorizationHelper {
     }
 
     public void goToPropertyPage() {
-        if(!$(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
+        if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
             $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
             sleep(2000);
+        }else {
+            $(byXpath("(//a[@href='/search' and contains(text(), 'Find a room')])[2]")).waitUntil(appears, 4000).click();
         }
-        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a room')])[2]")).waitUntil(appears, 4000).click();
-
   //      $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[@href='/search' and contains(text(), 'Properties')]")).click();
     }
 
     public void goToFMpage() {
-        if(!$(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
+        if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
             $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
             sleep(2000);
+        }else {
+            $(byXpath("(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[2]")).waitUntil(appears, 4000).click();
         }
-        $(byXpath("(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[2]")).waitUntil(appears, 4000).click();
         //      $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[@href='/search' and contains(text(), 'Properties')]")).click();
     }
 
@@ -91,11 +92,12 @@ public class AuthorizationHelper {
 
 
     public void clickSignInButton() {
-        if(!$(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
+        if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
             $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
             sleep(2000);
+        }else {
+            $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
         }
-        $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
     }
 
     public void clickLoginSubmitButton() {

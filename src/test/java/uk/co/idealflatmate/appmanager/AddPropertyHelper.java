@@ -56,13 +56,26 @@ public class AddPropertyHelper {
         messageHelper.click(byXpath("//*[@id=\"property-area_link_id\"]/option[2]"));
     }
 
-    public void pressAddListingFromHeader() {
-        messageHelper.click(byXpath("/html/body/header/div/a"));
+    public void pressAddListingFromHeaderWithVerificationUnfinishedlisting() {
+        if($(byXpath("/html/body/header/div/a[contains(text(), ' Continue ')]")).exists()) {
+            openDropDownMenu();
+            chooseListingsFromDropDownMenu();
+            RemoveUnfinishedListing();
+            messageHelper.click(byXpath("/html/body/header/div/a"));
+        }else {
+            //pressAddListingFromBody();
+            messageHelper.click(byXpath("/html/body/header/div/a"));
+        }
+
+
     }
+
+
 
     public void setPhoneNumber(String phoneNumber) {
         sleep(3000);
         $("#property-phone_number").waitUntil(exist, 6000).setValue(phoneNumber);
+        sleep(2000);
 
     }
 
@@ -203,5 +216,9 @@ public class AddPropertyHelper {
         $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
         $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
     }
-
+    private void RemoveUnfinishedListing() {
+        $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
+        $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
+        $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
+    }
 }

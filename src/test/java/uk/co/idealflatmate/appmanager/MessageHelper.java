@@ -49,11 +49,12 @@ public class MessageHelper {
     }
 
     public  void clickPropertyCardFirstOnPage(){
-        if(!$(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)) {
+        if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)) {
             $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
             sleep(2000);
+        }else {
+            $(byXpath("(//div[@class='owl-item active']/a/img)[1]")).waitUntil(visible, 4000).click();
         }
-        $(byXpath("(//div[@class='owl-item active']/a/img)[1]")).waitUntil(visible, 4000).click();
     }
 
     public  void clickPropertyContact(){

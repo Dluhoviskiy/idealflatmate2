@@ -13,7 +13,8 @@ public class AddListingTests extends TestBase {
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
         //verificationHelper.verifyNoProperty();
-        paymentsHelper.addPropertyHelper.pressAddListingFromHeader();
+        paymentsHelper.addPropertyHelper.pressAddListingFromHeaderWithVerificationUnfinishedlisting();
+
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.chooseAreaforLondon();

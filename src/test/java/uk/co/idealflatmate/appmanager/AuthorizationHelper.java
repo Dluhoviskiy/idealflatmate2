@@ -69,6 +69,12 @@ public class AuthorizationHelper {
         $(byXpath("//*[@id=\"login-form\"]/div[1]/a")).waitUntil(visible, 4000).click();
 
     }
+    public void clickSignUpWithFacebook() {
+        $(byXpath("(//a[@class='btn btn-block btn-social btn-facebook u_m10-bottom auth-link facebook js-facebook-url'])[3]")).waitUntil(visible, 4000).click();
+
+    }
+
+
     public void clickSignInWithFacebookMatching() {
         $(byXpath("(//a[@class=\"btn btn-block btn-social btn-facebook u_m10-bottom auth-link facebook js-facebook-url\"])[1]")).waitUntil(visible, 4000).click();
 
@@ -129,6 +135,12 @@ public class AuthorizationHelper {
     public void clickSignUpButtonInForm() {
         sleep(2000);
         $(byXpath("//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign up')]")).waitUntil(appears, 6000).click();
+        sleep(2000);
+    }
+
+    public void clickSignInButtonInForm() {
+        sleep(2000);
+        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[1]")).waitUntil(appears, 6000).click();
         sleep(2000);
     }
 
@@ -216,6 +228,22 @@ public class AuthorizationHelper {
     }
     public void chooseSettingsFromDashboard() {
         $(byXpath("//a[@class='btn btn-tabs ' and contains(text(), 'Settings')]")).click();
+    }
+
+    public void setPhoneNumber(String PhoneNumber) {
+        $("#signup-need-phone").click();
+        $("#signup-need-phone").waitUntil(appears, 4000).clear();
+        $("#signup-need-phone").shouldBe(visible);
+        $("#signup-need-phone").setValue(PhoneNumber);
+    }
+
+    public void clickCloseSignUp() {
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(appears, 4000).click();
+
+    }
+
+    public void clickCloseSignUpFMPage() {
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
     }
 
 

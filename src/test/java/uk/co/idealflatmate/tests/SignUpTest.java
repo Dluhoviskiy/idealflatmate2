@@ -171,6 +171,16 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
+    @Test
+    //Facebook authorization doen`t work on staging
+    public void SuccessSignUpViaFacebook() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpWithFacebook();
+        authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
+        verificationHelper.verificationUserNameOnHomePage("Alex");
+        authorizationHelper.logoutFromApp();
+    }
+
     /*
     @Test
     public void InvalidSignInWithEmptyFields() {

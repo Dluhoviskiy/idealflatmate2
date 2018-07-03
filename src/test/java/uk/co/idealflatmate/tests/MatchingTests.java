@@ -14,11 +14,12 @@ public class MatchingTests extends TestBase {
     @Test
     public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
         authorizationHelper.clickSignInButton();
-        authorizationHelper.clickSignUpButtonInForm();
+        //authorizationHelper.clickSignUpButtonInForm();
         authorizationHelper.setNewLoginMail("cro.genNewOneTest4@gmail.com");
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
+        authorizationHelper.setPhoneNumber("777777777");
         verificationHelper.AgeConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
         authorizationHelper.clickCloseMoreAboutYou();

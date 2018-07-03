@@ -10,6 +10,7 @@ public class AddListingTests extends TestBase {
     @Test
     public void TestSuccessfulPropertyAddingOnlyWithRequiredFields() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
         //verificationHelper.verifyNoProperty();
@@ -32,6 +33,7 @@ public class AddListingTests extends TestBase {
     @Test
     public void TestSuccessfulPropertyAddingWithAllFields() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
         getAddPropertyHelper().openDropDownMenu();

@@ -14,6 +14,7 @@ public class MessagesTest extends TestBase {
     @Test
     public void readMessageByLandlordWithoutSubscription() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
         getMessageHelper().chooseMessageTab();
@@ -26,6 +27,7 @@ public class MessagesTest extends TestBase {
     @Test
     public void answerMessageFmWithoutSubscriptionToFM() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         messageHelper.chooseMessageTab();
@@ -38,6 +40,7 @@ public class MessagesTest extends TestBase {
     @Test
     public void answerMessagePremiumFHtoLandlordWithoutSubscription() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");
         authorizationHelper.setPassword("123456");
         messageHelper.chooseMessageTab();
@@ -51,6 +54,7 @@ public class MessagesTest extends TestBase {
     @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromSearch() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         messageHelper.searchProperty("CO11");
@@ -65,6 +69,7 @@ public class MessagesTest extends TestBase {
     @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         messageHelper.searchProperty("CO11");
@@ -80,6 +85,7 @@ public class MessagesTest extends TestBase {
     @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage() {
         authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         messageHelper.searchProperty("CO11");

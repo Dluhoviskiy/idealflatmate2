@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MatchingTests extends TestBase {
 
-    @Test
+   // @Test
     public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();

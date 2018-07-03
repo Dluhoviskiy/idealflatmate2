@@ -69,6 +69,16 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
+    @Test
+    //Facebook authorization doen`t work on staging
+    public void SuccessSignInViaFacebook() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpWithFacebook();
+        authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
+        verificationHelper.verificationUserNameOnHomePage("Alex");
+        authorizationHelper.logoutFromApp();
+    }
+
    @Test
     public void SuccessLogInWithMatchingFB() {
         matchingHelper.clickHomePageMatching();

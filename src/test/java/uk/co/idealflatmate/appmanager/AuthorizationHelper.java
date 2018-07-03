@@ -246,6 +246,10 @@ public class AuthorizationHelper {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
     }
 
+    public void acceptMissedPreferredLocation() {
+        confirm("Missed preferred location");
+    }
+
 
     /*
     public void closeFormSignupFMPage2() {

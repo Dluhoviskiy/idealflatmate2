@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class VerificationHelper {
@@ -169,6 +170,7 @@ public class VerificationHelper {
     }
 
     public void emailBlankAlertMatching() {
+        sleep(2000);
         $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[3]")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
     }
 
@@ -182,11 +184,11 @@ public class VerificationHelper {
     }
 
     public void checkAgeBlankAlert() {
-        $(byXpath("//div[@class='required flex-form-row has-error']")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
+        $(byXpath("//div[@class='required checkbox has-error']")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
     }
 
     public void checkAgeBlankAlertMatching() {
-        $(byXpath("//div[@class='required flex-form-row has-error']")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
+        $(byXpath("(//div[@class='required checkbox has-error'])[1]")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
     }
 
     public void upgradeToFasterReply() {
@@ -208,6 +210,10 @@ public class VerificationHelper {
     public void checkMatchingConcurrence(String text) {
         $("span.hidden-xs").click();
         $(byXpath("(//a[@data-target='#matchModal'])[1]")).waitUntil(exist, 4000).shouldHave(text(text));
+    }
+
+    public void checkPhoneAlert() {
+        $(byXpath("(//div/p/span)[5]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
     }
 }
 

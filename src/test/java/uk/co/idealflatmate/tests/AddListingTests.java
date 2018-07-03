@@ -40,6 +40,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         //verificationHelper.verifyNoOldProperty();
        // getAddPropertyHelper().RemoveListing();
+        //paymentsHelper.addPropertyHelper.pressAddListingFromHeaderWithVerificationUnfinishedlisting();
         getAddPropertyHelper().pressAddListingFromBody();
         getAddPropertyHelper().setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
@@ -72,6 +73,29 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyAddedPropertyWithAllFields();
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        getAddPropertyHelper().RemoveListing();
+        verificationHelper.verifyNoProperty();
+    }
+
+    @Test
+    public void TestSuccessfulPropertyAddingWithSignUp() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
+        authorizationHelper.setPassword("123456");
+        //verificationHelper.verifyNoProperty();
+        paymentsHelper.addPropertyHelper.pressAddListingFromHeaderWithVerificationUnfinishedlisting();
+
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1");
+        getAddPropertyHelper().pressContinueButton();
+        paymentsHelper.addPropertyHelper.chooseAreaforLondon();
+        getAddPropertyHelper().pressContinueButton();
+        paymentsHelper.addPropertyHelper.setTotalBedrooms();
+        paymentsHelper.addPropertyHelper.setMonthlyRent("500");
+        getAddPropertyHelper().pressContinueButton();
+        paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
+        paymentsHelper.addPropertyHelper.finishPropertyCreatingWithoutPhoto();
+        verificationHelper.verifyAddedProperty();
         getAddPropertyHelper().RemoveListing();
         verificationHelper.verifyNoProperty();
     }

@@ -11,8 +11,8 @@ public class SignUpTest extends TestBase {
     public void TestSuccessfulClassicSignUp() {
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest2@gmail.com");
-        authorizationHelper.setNewLoginPassword("123456");
+        authorizationHelper.setNewLoginMail("cro.gen777@gmail.com");
+        authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumber("777777777");

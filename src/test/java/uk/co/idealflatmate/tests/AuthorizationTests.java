@@ -21,7 +21,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void SuccessClassiclogInOnPropertyPage() {
         authorizationHelper.goToPropertyPage();
-        authorizationHelper.clickSignInButton();
+       // authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
@@ -32,7 +32,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void SuccessClassiclogInOnFMPage() {
         authorizationHelper.goToFMpage();
-        authorizationHelper.clickSignInButton();
+       // authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
@@ -46,7 +46,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44q@gmail.com");
         authorizationHelper.setPassword("123456");
-        verificationHelper.emailWrongAlert();
+        verificationHelper.emailWrongAlertHome();
     }
 
     @Test
@@ -55,7 +55,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44q@gmail.com");
         authorizationHelper.setPassword("123456q");
-        verificationHelper.emailWrongAlert();
+        verificationHelper.emailWrongAlertHome();
     }
 
     @Test

@@ -22,7 +22,16 @@ public class AddPropertyHelper {
     }
 
     public void pressAddListingFromBody() {
-        $(byXpath("/html/body/section/section/div/div/a")).click();
+        //$(byXpath("/html/body/section/section/div/div/a")).click();
+        if($(byXpath("//div[@class=\"container\"]/div[@id='property1']")).exists()) {
+            RemoveUnfinishedListing();
+            messageHelper.click(byXpath("/html/body/header/div/a"));
+        }else {
+            //pressAddListingFromBody();
+            messageHelper.click(byXpath("/html/body/header/div/a"));
+        }
+
+
     }
 
 
@@ -34,6 +43,7 @@ public class AddPropertyHelper {
 
     public void chooseListingsFromDropDownMenu() {
         $(byXpath("//span[@class='pull-left' and contains(text(), ' Listings')]")).click();
+
     }
 
 
@@ -178,8 +188,12 @@ public class AddPropertyHelper {
     }
 
     public void ContinueListingWithoutPhoto() {
-        $(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(appear, 4000).click();
-        confirm("Are you sure you want to continue without photos?");
+        $(byXpath("//*[@id=\"wizard-finish-btn\"]")).waitUntil(appear, 4000).click();
+        sleep(4000);
+        $(byXpath("//button[@class='confirm']")).waitUntil(appear, 6000).click();
+        sleep(4000);
+
+        //confirm("Are you sure you want to continue without photos?");
        // $("#uploadimageform-imagefiles").uploadFile(new File("src/test/resources/Property1.jpg"));
        // $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[1]")).shouldBe(Condition.visible);
     }
@@ -196,7 +210,7 @@ public class AddPropertyHelper {
     }
 
     public void finishPropertyCreating() {
-        $(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(appear, 4000).click();
+        $(byXpath("//*[@id='wizard-finish-btn']")).waitUntil(appear, 4000).click();
         //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
         $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
         $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
@@ -220,5 +234,6 @@ public class AddPropertyHelper {
         $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
         $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
         $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
+        sleep(4000);
     }
 }

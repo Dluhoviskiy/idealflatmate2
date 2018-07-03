@@ -54,13 +54,13 @@ public class VerificationHelper {
     public void verifyAddedProperty() {
         $(".dropdown.nav-ihm-profile-bars").click();
         $(byXpath("//span[@class='pull-left' and contains(text(), 'Listings')]")).hover().shouldBe(enabled).click();
-        $(".col-sm-7.col-lg-8").waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
+        $(byXpath("(//h2[@class='h3 u_m0-top text-info'])[1]")).waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
 
     }
 
     public void verifyAddedPropertyWithAllFields() {
         $(byXpath("//h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']")).shouldHave(text("3 rooms for rent in Bankside, South, London from\n" + "£500"));
-        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[1]")).shouldHave(text("\n" + "+44 20 7234"));
+        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[1]")).shouldHave(text("\n" + "+44 2 XXXX"));
         $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]")).shouldHave(text("£500\n" +
                 "month\n" +
@@ -82,7 +82,7 @@ public class VerificationHelper {
                 "1 month+"));
         $(byXpath("//div[@class='tab-pane fade  in active']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
         $(byXpath("//a[contains(text(), 'Room 3')]")).click();
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th July 2025"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th August 2025"));
        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
         $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text("About the property\n" +
                 "3 bedrooms\n" +
@@ -91,7 +91,7 @@ public class VerificationHelper {
                 "Smokers accepted\n" +
                 "Pet friendly\n" +
                 "Very good flat"));
-        $(byXpath("//div[@class='u_p10-bottom u_b-bottom u_m30-bottom']")).shouldHave(text("Looking for pets accepted."));
+        //$(byXpath("//div[@class='u_p10-bottom u_b-bottom u_m30-bottom']")).shouldHave(text("Looking for pets accepted."));
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("London SE1, UK"));
     }
     /*public void verifyNoOldProperty1() {
@@ -121,8 +121,9 @@ public class VerificationHelper {
         $(byXpath("//div[@class='form-group floating-label-group  required hasvalue has-error']")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));
     }
 
-    public void emailWrongAlert() {
-        $(byXpath("//div[@class='form-group floating-label-group  required hasvalue has-error']/p[@class='help-block help-block-error']")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
+    public void emailWrongAlertHome() {
+        sleep(2000);
+        $(byXpath("(//form[@id='login-form']//div/p[@class='help-block help-block-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
     }
 
     public void NameFirstBlankAlert() {

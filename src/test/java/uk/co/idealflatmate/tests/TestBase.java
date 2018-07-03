@@ -19,6 +19,7 @@ public class TestBase {
     public final AddPropertyHelper addPropertyHelper = new AddPropertyHelper();
     public final MessageHelper messageHelper = new MessageHelper();
     public final MatchingHelper matchingHelper = new MatchingHelper();
+    public final EmailHelper emailHelper = new EmailHelper();
 
     @BeforeMethod
     public void setupClass() {

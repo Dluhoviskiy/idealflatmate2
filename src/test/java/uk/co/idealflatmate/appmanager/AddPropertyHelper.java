@@ -67,20 +67,32 @@ public class AddPropertyHelper {
     }
 
     public void pressAddListingFromHeaderWithVerificationUnfinishedlisting() {
-        if($(byXpath("/html/body/header/div/a[contains(text(), ' Continue ')]")).exists()) {
+            if($(byXpath("/html/body/header/div/a[contains(text(), ' Continue ')]")).exists()) {
+                openDropDownMenu();
+                chooseListingsFromDropDownMenu();
+                RemoveUnfinishedListing();
+                messageHelper.click(byXpath("/html/body/header/div/a"));
+            }else {
+                //pressAddListingFromBody();
+                messageHelper.click(byXpath("/html/body/header/div/a"));
+            }
+
+         }
+
+    public void pressAddListingFromHeaderNotLoggedUser() {
+        if($(byXpath("//div[@class='ub-emb-iframe-wrapper ub-emb-visible']")).is(exist)){
+            //sleep(4000);
+            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
+            // sleep(4000);
             openDropDownMenu();
             chooseListingsFromDropDownMenu();
-            RemoveUnfinishedListing();
-            messageHelper.click(byXpath("/html/body/header/div/a"));
+            sleep(2000);
         }else {
-            //pressAddListingFromBody();
-            messageHelper.click(byXpath("/html/body/header/div/a"));
+            openDropDownMenu();
+            chooseListingsFromDropDownMenu();
+            sleep(2000);
         }
-
-
     }
-
-
 
     public void setPhoneNumber(String phoneNumber) {
         sleep(3000);

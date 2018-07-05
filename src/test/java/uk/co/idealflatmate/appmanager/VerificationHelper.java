@@ -94,17 +94,6 @@ public class VerificationHelper {
         //$(byXpath("//div[@class='u_p10-bottom u_b-bottom u_m30-bottom']")).shouldHave(text("Looking for pets accepted."));
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("London SE1, UK"));
     }
-    /*public void verifyNoOldProperty1() {
-        exist$(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
-        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
-        if text("Complete your listing now!")==null {}
-        {
-        }
-
-        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("London SE1, UK")));
-    }*/
-
-
     public void verifyNoProperty() {
         $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));

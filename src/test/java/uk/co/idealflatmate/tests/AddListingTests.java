@@ -30,6 +30,32 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyNoProperty();
     }
 
+    //@Test
+    public void TestSignUpSuccessfulPropertyAddingEmailVerification() {
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
+        authorizationHelper.setPassword("123456");
+        //verificationHelper.verifyNoProperty();
+        paymentsHelper.addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
+        //addPropertyHelper.selectLandlord();
+        //addPropertyHelper.pressContinue();
+
+
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1");
+        getAddPropertyHelper().pressContinueButton();
+        paymentsHelper.addPropertyHelper.chooseAreaforLondon();
+        getAddPropertyHelper().pressContinueButton();
+        paymentsHelper.addPropertyHelper.setTotalBedrooms();
+        paymentsHelper.addPropertyHelper.setMonthlyRent("500");
+        getAddPropertyHelper().pressContinueButton();
+        paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
+        paymentsHelper.addPropertyHelper.finishPropertyCreatingWithoutPhoto();
+        verificationHelper.verifyAddedProperty();
+        getAddPropertyHelper().RemoveListing();
+        verificationHelper.verifyNoProperty();
+    }
+
     @Test
     public void TestSuccessfulPropertyAddingWithAllFields() {
         authorizationHelper.clickSignInButton();

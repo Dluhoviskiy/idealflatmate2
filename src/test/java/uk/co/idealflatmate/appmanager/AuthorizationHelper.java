@@ -98,11 +98,15 @@ public class AuthorizationHelper {
 
 
     public void clickSignInButton() {
-        if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
+        if($(byXpath("//div[@class='ub-emb-iframe-wrapper ub-emb-visible']")).is(exist)){
+            //sleep(4000);
             $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
+           // sleep(4000);
+            $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
             sleep(2000);
         }else {
             $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
+            sleep(2000);
         }
     }
 

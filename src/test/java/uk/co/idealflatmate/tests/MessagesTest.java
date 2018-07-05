@@ -13,6 +13,7 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void readMessageByLandlordWithoutSubscription() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -22,10 +23,9 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-
-
     @Test
     public void answerMessageFmWithoutSubscriptionToFM() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
@@ -39,6 +39,7 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void answerMessagePremiumFHtoLandlordWithoutSubscription() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");
@@ -50,9 +51,9 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-
     @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromSearch() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
@@ -68,6 +69,7 @@ public class MessagesTest extends TestBase {
     }
     @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
@@ -82,8 +84,10 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
     }
+
     @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");

@@ -1,16 +1,11 @@
 package uk.co.idealflatmate.appmanager;
 
 
-import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.testng.Assert;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
-public class AuthorizationHelper {
+public class AuthorizationHelper extends HelperBase {
 
 
     public void logoutFromApp() {
@@ -19,33 +14,20 @@ public class AuthorizationHelper {
     }
 
     public void goToPropertyPage() {
-        if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
-            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
-            sleep(2000);
-        }else {
-            $(byXpath("(//a[@href='/search' and contains(text(), 'Find a room')])[2]")).waitUntil(appears, 4000).click();
-        }
-  //      $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[@href='/search' and contains(text(), 'Properties')]")).click();
+        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a room')])[2]")).waitUntil(appears, 4000).click();
     }
 
     public void goToFMpage() {
-        if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
-            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
-            sleep(2000);
-        }else {
-            $(byXpath("(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[2]")).waitUntil(appears, 4000).click();
-        }
-        //      $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[@href='/search' and contains(text(), 'Properties')]")).click();
-    }
-
+         $(byXpath("(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[2]")).waitUntil(appears, 4000).click();
+     }
 
     public void setLoginAsUserWithoutPackage(String email) {
-        $("#loginform-username").waitUntil(appears, 4000).click();
-        $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
-        $("#loginform-username").shouldBe(visible);
-        $("#loginform-username").setValue(email);
+        signIn(email, $("#loginform-username"), "#loginform-username");
         sleep(2000);
-
+    }
+    public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
+        signIn(email, $("#loginform-username"), "#loginform-username");
+        sleep(2000);
     }
 
     public void setPassword(String password) {
@@ -66,25 +48,14 @@ public class AuthorizationHelper {
     }
 
     public void clickSignInWithFacebook() {
-        $(byXpath("//*[@id=\"login-form\"]/div[1]/a")).waitUntil(visible, 4000).click();
-
+        $(byXpath("//*[@id='login-form']/div[1]/a")).waitUntil(visible, 4000).click();
     }
     public void clickSignUpWithFacebook() {
         $(byXpath("(//a[@class='btn btn-block btn-social btn-facebook u_m10-bottom auth-link facebook js-facebook-url'])[3]")).waitUntil(visible, 4000).click();
-
     }
-
 
     public void clickSignInWithFacebookMatching() {
         $(byXpath("(//a[@class=\"btn btn-block btn-social btn-facebook u_m10-bottom auth-link facebook js-facebook-url\"])[1]")).waitUntil(visible, 4000).click();
-
-    }
-
-    public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
-        $("#loginform-username").waitUntil(visible, 4000).click();
-        $(".form-group.floating-label-group.field-loginform-username.required").waitUntil(appears, 4000);
-        $("#loginform-username").shouldBe(visible);
-        $("#loginform-username").waitUntil(visible, 4000).setValue(email);
     }
 
     public void setLoginAsUserWithoutPackage2(AuthorizationHelper authorizationHelper) {
@@ -95,23 +66,13 @@ public class AuthorizationHelper {
         $(".signup-modal-test").click();
     }
 
-
-
     public void clickSignInButton() {
-        if($(byXpath("//div[@class='ub-emb-iframe-wrapper ub-emb-visible']")).is(exist)){
-            //sleep(4000);
-            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
-           // sleep(4000);
-            $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
-            sleep(2000);
-        }else {
-            $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
-            sleep(2000);
-        }
+        $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
+        sleep(2000);
     }
 
     public void clickLoginSubmitButton() {
-        $(byXpath("//*[@id=\"login-form\"]/div[5]/div/button")).click();
+        $(byXpath("//*[@id=\"signIn-form\"]/div[5]/div/button")).click();
         sleep(2000);
     }
 
@@ -132,9 +93,7 @@ public class AuthorizationHelper {
     }
     public void clickFormSignInFMmessage() {
         $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[3]")).waitUntil(visible, 4000).click();
-
     }
-
 
     public void clickSignUpButtonInForm() {
         sleep(2000);
@@ -149,67 +108,39 @@ public class AuthorizationHelper {
     }
 
     public void setNewLoginMail(String email) {
-
-        $("#signup-need-email").waitUntil(visible, 6000).click();
-        $("#signup-need-email").waitUntil(appears, 4000).clear();
-        $("#signup-need-email").shouldBe(visible);
-        $("#signup-need-email").setValue(email);
+        signIn(email, $("#signup-need-email").waitUntil(visible, 6000), "#signup-need-email");
     }
 
     public void setNewLoginPassword(String password) {
-        $("#signup-need-password").click();
-        $("#signup-need-password").waitUntil(appears, 4000).clear();
-        $("#signup-need-password").shouldBe(visible);
-        $("#signup-need-password").setValue(password);
+        signIn(password, $("#signup-need-password"), "#signup-need-password");
     }
 
     public void setNewLoginNameF(String nameF) {
-        $("#signup-need-firstname").click();
-        $("#signup-need-firstname").waitUntil(appears, 4000).clear();
-        $("#signup-need-firstname").shouldBe(visible);
-        $("#signup-need-firstname").setValue(nameF);
+        signIn(nameF, $("#signup-need-firstname"), "#signup-need-firstname");
     }
 
     public void setNewLoginNameL(String nameL) {
-        $("#signup-need-lastname").click();
-        $("#signup-need-lastname").waitUntil(appears, 4000).clear();
-        $("#signup-need-lastname").shouldBe(visible);
-        $("#signup-need-lastname").setValue(nameL);
+        signIn(nameL, $("#signup-need-lastname"), "#signup-need-lastname");
     }
 
     public void setNewLoginMailMatching(String email) {
-        $("#signup-survey-email").click();
-        $("#signup-survey-email").waitUntil(appears, 4000).clear();
-        $("#signup-survey-email").shouldBe(visible);
-        $("#signup-survey-email").setValue(email);
+        signIn(email, $("#signup-survey-email"), "#signup-survey-email");
     }
 
     public void setNewLoginPasswordMatching(String password) {
-        $("#signup-survey-password").click();
-        $("#signup-survey-password").waitUntil(appears, 4000).clear();
-        $("#signup-survey-password").shouldBe(visible);
-        $("#signup-survey-password").setValue(password);
+        signIn(password, $("#signup-survey-password"), "#signup-survey-password");
     }
 
     public void setNewLoginNameFMatching(String nameF) {
-        $("#signup-survey-firstname").click();
-        $("#signup-survey-firstname").waitUntil(appears, 4000).clear();
-        $("#signup-survey-firstname").shouldBe(visible);
-        $("#signup-survey-firstname").setValue(nameF);
+        signIn(nameF, $("#signup-survey-firstname"), "#signup-survey-firstname");
     }
 
     public void setNewLoginNameLMatching(String nameL) {
-        $("#signup-survey-lastname").click();
-        $("#signup-survey-lastname").waitUntil(appears, 4000).clear();
-        $("#signup-survey-lastname").shouldBe(visible);
-        $("#signup-survey-lastname").setValue(nameL);
+        signIn(nameL, $("#signup-survey-lastname"), "#signup-survey-lastname");
     }
-
-
 
     public void clickFormSignUp() {
         $(byXpath("(//button[@class='btn btn-primary text-uppercase'])[1]")).waitUntil(appears, 4000).click();
-
     }
 
     public void clickFormSignUpSave() {
@@ -219,31 +150,26 @@ public class AuthorizationHelper {
 
     public void clickCloseMoreAboutYouMatching() {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[1]")).waitUntil(appears, 4000).click();
-
     }
 
     public void clickCloseMoreAboutYou() {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 4000).click();
-
     }
 
     public void chooseAccountFromDropDownMenu() {
         $(byXpath("//span[@class='pull-left' and contains(text(), ' Account')]")).click();
     }
+
     public void chooseSettingsFromDashboard() {
         $(byXpath("//a[@class='btn btn-tabs ' and contains(text(), 'Settings')]")).click();
     }
 
     public void setPhoneNumber(String PhoneNumber) {
-        $("#signup-need-phone").click();
-        $("#signup-need-phone").waitUntil(appears, 4000).clear();
-        $("#signup-need-phone").shouldBe(visible);
-        $("#signup-need-phone").setValue(PhoneNumber);
+        signIn(PhoneNumber, $("#signup-need-phone"), "#signup-need-phone");
     }
 
     public void clickCloseSignUp() {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(appears, 4000).click();
-
     }
 
     public void clickCloseSignUpFMPage() {
@@ -253,42 +179,29 @@ public class AuthorizationHelper {
     public void acceptMissedPreferredLocation() {
         confirm("Missed preferred location");
     }
-
-
-    /*
-    public void closeFormSignupFMPage2() {
-        $(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')]/preceding-sibling::button)[1]")).waitUntil(visible, 8000).click();
-
+    public void acceptFBageRestriction() {
+        confirm("Sorry! Ideal Flatmate is restricted for use by those under the age of 18.");
+    }
+    public void setNewLoginMailListing(String email) {
+        signIn(email, $("#signupnewform-email").waitUntil(visible, 6000), "#signupnewform-email");
     }
 
-
-
-    public void closeFormSignupFMPage() {
-
-        if (isElementPresent(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')]/preceding-sibling::button)[3])"))) {
-            $(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')]/preceding-sibling::button)[1]")).waitUntil(visible, 4000).click();}
+    public void setNewLoginPasswordListing(String password) {
+        signIn(password, $("#signupnewform-password"), "#signupnewform-password");
+    }
+    public void setNewLoginPasswordPasswordConfirm(String password) {
+        signIn(password, $("#signupnewform-password_confirm"), "#signupnewform-password_confirm");
     }
 
-    public boolean isElementPresent(By xpathExpression) {
-        try {
-            findElement($x(String.valueOf(xpathExpression)));
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+    public void setNewLoginNameFListing(String nameF) {
+        signIn(nameF, $("#signupnewform-firstname"), "#signupnewform-firstname");
     }
 
-    private void findElement(SelenideElement selenideElement) {
-
+    public void setNewLoginNameLListing(String nameL) {
+        signIn(nameL, $("#signupnewform-lastname"), "#signupnewform-lastname");
     }
-
-    public void clickPage2() {
-
-    $(byXpath("//ul[@class='pagination']//a[contains(text(), '2')]")).waitUntil(visible, 4000).click();
-
+    public void setPhoneNumberListing(String PhoneNumber) {
+        signIn(PhoneNumber, $("#signupnewform-phone"), "#signupnewform-phone");
     }
-    */
-
-
 
 }

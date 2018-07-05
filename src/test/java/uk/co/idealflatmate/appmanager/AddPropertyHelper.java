@@ -31,15 +31,7 @@ public class AddPropertyHelper {
             messageHelper.click(byXpath("/html/body/header/div/a"));
         }
 
-
     }
-
-
-     /* public void pressAddListingFromHello() {
-        $(byXpath("html/body/header/div/ul/li/a/span[@class='hidden-xs']")).click();
-    }
-      */
-
 
     public void chooseListingsFromDropDownMenu() {
         $(byXpath("//span[@class='pull-left' and contains(text(), ' Listings')]")).click();
@@ -52,7 +44,7 @@ public class AddPropertyHelper {
     }
 
     public void pressContinueButton() {
-        $("#wizard-next").click();
+        $("#wizard-next").waitUntil(visible, 6000).click();
     }
 
     public void chooseRoadFor(String road) {
@@ -80,18 +72,13 @@ public class AddPropertyHelper {
          }
 
     public void pressAddListingFromHeaderNotLoggedUser() {
-        if($(byXpath("//div[@class='ub-emb-iframe-wrapper ub-emb-visible']")).is(exist)){
-            //sleep(4000);
-            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
-            // sleep(4000);
-            openDropDownMenu();
-            chooseListingsFromDropDownMenu();
-            sleep(2000);
-        }else {
-            openDropDownMenu();
-            chooseListingsFromDropDownMenu();
-            sleep(2000);
-        }
+        openDropDownMenu();
+        chooseListingsFromDropDownMenu();
+        sleep(2000);
+    }
+
+    public void pressAddYourListingNotLoggedUser() {
+        $(byXpath("//a[@href=\"/create\"  and contains(text(), 'your listing')]")).click();;
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -247,5 +234,20 @@ public class AddPropertyHelper {
         $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
         $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
         sleep(4000);
+    }
+
+    public void selectLandlord() {
+        $("#type_id_3").waitUntil(appear, 4000).click();
+    }
+
+    public void pressContinue() {
+        $("#wizard-next").waitUntil(appear, 4000).click();
+
+    }
+
+    public void pressContinue1() {
+        sleep(4000);
+        $("#wizard-next").waitUntil(appear, 4000).click();
+        sleep(2000);
     }
 }

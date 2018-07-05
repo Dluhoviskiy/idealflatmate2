@@ -40,19 +40,22 @@ public class EmailHelper {
         $(byXpath("(//content[@class='CwaK9'])[2]/span")).waitUntil(visible, 6000).click();
     }
     public void enterInbox() {
-        $(byXpath("//a[@title='Inbox (1)']")).waitUntil(visible, 6000).click();
+        $(byXpath("(//span[@class='nU n1']/a)[1]")).waitUntil(visible, 6000).click();
     }
 
     public void verificationWelcome() {
-        $(byXpath("//tr[@class='zA zE']")).shouldHave((text("Welcome to Ideal Flatmate!")));
+        $(byXpath("(//tbody)[6]/tr")).shouldHave((text("Welcome to Ideal Flatmate!")));
 
     }
     public void verificationListingisLive() {
-        $(byXpath("//tr[@class='zA yO']")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+        $(byXpath("(//tbody)[6]/tr")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
     }
 
     public void verificationNoListingisLive() {
-        $(byXpath("//tr[@class='zA yO']")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+        $(byXpath("(//tbody)[6]/tr']")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+    }
+    public void verificationNoWelcome() {
+        $(byXpath("(//tbody)[6]/tr")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
     }
 
     public void tipCheckboxWelcome() {
@@ -62,9 +65,7 @@ public class EmailHelper {
     public void removeEmail() {
         $(byXpath("//div[@class='ar9 T-I-J3 J-J5-Ji']")).waitUntil(visible, 6000).click();
     }
-    public void verificationNoWelcome() {
-        $(byXpath("//tr[@class='zA zE']")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
-    }
+
 
     public void tipCheckboxListingisLive() {
         $(byXpath("//span[contains(text(), 'Congratulations! Your listing on Ideal Flatmate is live!')]//ancestor::tr//td[@id=':3m']")).waitUntil(visible, 6000).click();

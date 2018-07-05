@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class EmailTests extends TestBase {
 
 
-   @Test
+   //@Test
     public void TestSuccessfulEmailReceiving() {
         emailHelper.openGmailPage();
         emailHelper.setLoginAsUserEmail("cro.gen777@gmail.com");
@@ -18,7 +18,7 @@ public class EmailTests extends TestBase {
        emailHelper.tipCheckboxListingisLive();
         emailHelper.removeEmail();
         emailHelper.verificationNoWelcome();
-        emailHelper.verificationListingisLive();
+        emailHelper.verificationNoListingisLive();
 
     }
 }

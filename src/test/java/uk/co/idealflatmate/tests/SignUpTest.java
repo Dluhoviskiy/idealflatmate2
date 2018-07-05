@@ -9,14 +9,15 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void TestSuccessfulClassicSignUp() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.gen777@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.gen7778@gmail.com");
         authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumber("777777777");
-        verificationHelper.AgeConfirmCheckClassicSignUp();
+        verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -29,6 +30,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void TestClassicSignUpWithExistingEmail() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
         authorizationHelper.setNewLoginMail("cro.gen44@gmail.com");
@@ -36,20 +38,21 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumber("777777777");
-        //verificationHelper.AgeConfirmCheckClassicSignUp();
-        verificationHelper.AgeConfirmCheckClassicSignUpIf();
+        //verificationHelper.ageConfirmCheckClassicSignUp();
+        verificationHelper.ageConfirmCheckClassicSignUpIf();
         authorizationHelper.clickFormSignUpSave();
         verificationHelper.emailAlreadyExistedAlert();
      }
 
     @Test
     public void TestClassicSignUpWithBlankRequiredFields() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
        // authorizationHelper.clickSignUpButtonInForm();
         authorizationHelper.clickFormSignUpSave();
         verificationHelper.emailBlankAlert();
-        verificationHelper.NameFirstBlankAlert();
-        verificationHelper.NameLastBlankAlert();
+        verificationHelper.nameFirstBlankAlert();
+        verificationHelper.nameLastBlankAlert();
         verificationHelper.passwordBlankAlert();
         verificationHelper.checkAgeBlankAlert();
         verificationHelper.checkPhoneAlert();
@@ -57,9 +60,11 @@ public class SignUpTest extends TestBase {
 
     @Test
     //Facebook authorization doen`t work on staging
+
     public void SuccessfulSignUpViaFacebook() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.clickSignInWithFacebook();
+        authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
@@ -69,9 +74,23 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
+    @Test
+    //Facebook authorization doen`t work on staging
+
+    public void SignUpViaFacebookAgeUnder18() {
+        verificationHelper.closeAdvPopUp();
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignUpWithFacebook();
+        authorizationHelper.LoginFacebookWithNewAccount("ron666ddd@gmail.com", "qqqqqq666D");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        authorizationHelper.acceptFBageRestriction();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
+
 
    // @Test
     public void SuccessfulClassicSignUpPropertyPage() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -80,8 +99,9 @@ public class SignUpTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void SuccessfulSignUpWithMatchingWithRequiredFields() {
+        verificationHelper.closeAdvPopUp();
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
@@ -94,7 +114,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginNameFMatching("Ronald");
         authorizationHelper.setNewLoginNameLMatching("NewOne");
         authorizationHelper.setPhoneNumber("777777777");
-        verificationHelper.AgeConfirmCheckMatching();
+        verificationHelper.ageConfirmCheckMatching();
         matchingHelper.clickContinueMatchingAfterSignUp();
         matchingHelper.clickSkip7stepFromHome();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -105,8 +125,9 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    //@Test
+    @Test
     public void SignUpWithMatchingWithBlankRequiredFields() {
+        verificationHelper.closeAdvPopUp();
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
@@ -126,6 +147,7 @@ public class SignUpTest extends TestBase {
 
    // @Test
     public void SuccessfulSignUpWithMatchingWithAllFields() {
+        verificationHelper.closeAdvPopUp();
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
@@ -138,7 +160,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumber("777777777");
-        verificationHelper.AgeConfirmCheckMatching();
+        verificationHelper.ageConfirmCheckMatching();
 
 
         matchingHelper.clickContinueMatchingAfterSignUp();
@@ -165,8 +187,8 @@ public class SignUpTest extends TestBase {
     }
     // @Test
     public void SuccessfulSignUpWithListingWithAllFields() {
-
-        verificationHelper.AgeConfirmCheckMatching();
+        verificationHelper.closeAdvPopUp();
+        verificationHelper.ageConfirmCheckMatching();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseAccountFromDropDownMenu();

@@ -27,11 +27,11 @@ public class VerificationHelper {
     }*/
 
     public void VerificationPasswordError() {
-        $("#login-form > div:nth-child(3) > div:nth-child(2) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
+        $("#signIn-form > div:nth-child(3) > div:nth-child(2) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
     }
 
     public void VerificationLoginError() {
-        $("#login-form > div:nth-child(3) > div:nth-child(1) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
+        $("#signIn-form > div:nth-child(3) > div:nth-child(1) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
     }
 
     public void VerificationMessagesTabIsAbsent() {
@@ -112,10 +112,10 @@ public class VerificationHelper {
 
     public void emailWrongAlertHome() {
         sleep(2000);
-        $(byXpath("(//form[@id='login-form']//div/p[@class='help-block help-block-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
+        $(byXpath("(//form[@id='signIn-form']//div/p[@class='help-block help-block-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
     }
 
-    public void NameFirstBlankAlert() {
+    public void nameFirstBlankAlert() {
         $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[1]")).waitUntil(exist, 4000).shouldHave(text("Firstname cannot be blank."));
     }
 
@@ -123,7 +123,7 @@ public class VerificationHelper {
         $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[3]")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
     }
 
-    public void NameLastBlankAlert() {
+    public void nameLastBlankAlert() {
         $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
     }
 
@@ -132,11 +132,11 @@ public class VerificationHelper {
 
     }
 
-    public void AgeConfirmCheckMatching() {
+    public void ageConfirmCheckMatching() {
        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[1]")).waitUntil(appears, 4000).click();
 
     }
-    public void AgeConfirmCheckClassicSignUpIf() {
+    public void ageConfirmCheckClassicSignUpIf() {
         if (!$(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).is(selected)) {
               $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
         }
@@ -145,10 +145,17 @@ public class VerificationHelper {
         }
     }
 
-    public void AgeConfirmCheckClassicSignUp() {
+    public void ageConfirmCheckClassicSignUp() {
         $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
-
     }
+    public void ageConfirmCheckClassicSignUpListing() {
+        $(byCssSelector("#signupnewform-is_age_confirm")).waitUntil(appears, 4000).click();
+    }
+    public void is_subscribedClassicSignUpListing() {
+        $(byCssSelector("#signupnewform-is_subscribed")).waitUntil(appears, 4000).click();
+    }
+
+
 
     //span[contains(text(), 'This email address has already been taken.')]
     public void emailAlreadyExistedAlertMatching() {
@@ -204,6 +211,40 @@ public class VerificationHelper {
 
     public void checkPhoneAlert() {
         $(byXpath("(//div/p/span)[5]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+    }
+
+    public void closeAdvPopUp() {
+        if ($(byXpath("(//button[@class='ub-emb-close'])[1]")).is(exist)) {
+            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 8000).click();
+            sleep(2000);
+        }
+    }
+
+    public void verificationEmailErrorListing() {
+        $(byXpath("//label[@for='signupnewform-email']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Email cannot be blank."));
+    }
+
+    public void verificationNameFErrorListing() {
+        $(byXpath("//label[@for='signupnewform-firstname']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("First Name cannot be blank."));
+    }
+
+    public void verificationNameLErrorListing() {
+        $(byXpath("//label[@for='signupnewform-lastname']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Last Name cannot be blank."));
+    }
+
+    public void verificationPasswordErrorListing() {
+        $(byXpath("//label[@for='signupnewform-password']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
+    }
+
+    public void verificationPasswordConfirmErrorListing() {
+        $(byXpath("//label[@for='signupnewform-password_confirm']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Confirm Password cannot be blank."));
+    }
+    public void verificationPhoneConfirmErrorListing() {
+        $(byXpath("//label[@for='signupnewform-phone']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Phone cannot be blank."));
+    }
+
+    public void verificationCheckAgeError() {
+        $(byXpath("//label[@for='signupnewform-is_age_confirm']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Please confirm your age to continue"));
     }
 }
 

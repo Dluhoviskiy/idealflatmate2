@@ -1,8 +1,6 @@
 package uk.co.idealflatmate.tests;
 
 
-import org.testng.annotations.Test;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -20,7 +18,7 @@ public class MatchingTests extends TestBase {
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumber("777777777");
-        verificationHelper.AgeConfirmCheckClassicSignUp();
+        verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");

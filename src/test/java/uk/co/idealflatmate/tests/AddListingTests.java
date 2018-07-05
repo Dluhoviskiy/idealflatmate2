@@ -8,40 +8,34 @@ import static com.codeborne.selenide.Selenide.$$;
 public class AddListingTests extends TestBase {
 
     @Test
-    public void TestSuccessfulPropertyAddingOnlyWithRequiredFields() {
+    public void TestSuccessfulLoginStartListing() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
         //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.pressAddListingFromHeaderWithVerificationUnfinishedlisting();
-
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
-        getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.chooseAreaforLondon();
-        getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.setTotalBedrooms();
-        paymentsHelper.addPropertyHelper.setMonthlyRent("500");
-        getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
-        paymentsHelper.addPropertyHelper.finishPropertyCreatingWithoutPhoto();
-        verificationHelper.verifyAddedProperty();
-        getAddPropertyHelper().RemoveListing();
-        verificationHelper.verifyNoProperty();
+        getAddPropertyHelper().pressContinue1();
+        authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void TestSignUpSuccessfulPropertyAddingEmailVerification() {
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
-        authorizationHelper.setPassword("123456");
-        //verificationHelper.verifyNoProperty();
-        paymentsHelper.addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
-        //addPropertyHelper.selectLandlord();
-        //addPropertyHelper.pressContinue();
-
-
+        verificationHelper.closeAdvPopUp();
+        paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
+        addPropertyHelper.selectLandlord();
+        addPropertyHelper.pressContinue();
+        authorizationHelper.setNewLoginMailListing("cro.gen777@gmail.com");
+        authorizationHelper.setNewLoginNameFListing("Ronald");
+        authorizationHelper.setNewLoginNameLListing("Tramp");
+        authorizationHelper.setNewLoginPasswordListing("qqqqqq");
+        authorizationHelper.setNewLoginPasswordPasswordConfirm("qqqqqq");
+        authorizationHelper.setPhoneNumberListing("555555555");
+        verificationHelper.is_subscribedClassicSignUpListing();
+        verificationHelper.ageConfirmCheckClassicSignUpListing();
+        addPropertyHelper.pressContinue();
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.chooseAreaforLondon();
@@ -54,10 +48,16 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyAddedProperty();
         getAddPropertyHelper().RemoveListing();
         verificationHelper.verifyNoProperty();
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
     @Test
     public void TestSuccessfulPropertyAddingWithAllFields() {
+        verificationHelper.closeAdvPopUp();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -101,29 +101,23 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().RemoveListing();
         verificationHelper.verifyNoProperty();
+        authorizationHelper.logoutFromApp();
     }
 
     @Test
-    public void TestSuccessfulPropertyAddingWithSignUp() {
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
-        authorizationHelper.setPassword("123456");
-        //verificationHelper.verifyNoProperty();
-        paymentsHelper.addPropertyHelper.pressAddListingFromHeaderWithVerificationUnfinishedlisting();
+    public void TestSignUpWithBlankFieldsPropertyAdding() {
+        verificationHelper.closeAdvPopUp();
+        paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
+        addPropertyHelper.selectLandlord();
+        addPropertyHelper.pressContinue();
+        addPropertyHelper.pressContinue1();
+        verificationHelper.verificationEmailErrorListing();
+        verificationHelper.verificationNameFErrorListing();
+        verificationHelper.verificationNameLErrorListing();
+        verificationHelper.verificationPasswordErrorListing();
+        verificationHelper.verificationPasswordConfirmErrorListing();
+        verificationHelper.verificationCheckAgeError();
 
-        paymentsHelper.addPropertyHelper.setPostalCode("SE1");
-        getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.chooseAreaforLondon();
-        getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.setTotalBedrooms();
-        paymentsHelper.addPropertyHelper.setMonthlyRent("500");
-        getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
-        paymentsHelper.addPropertyHelper.finishPropertyCreatingWithoutPhoto();
-        verificationHelper.verifyAddedProperty();
-        getAddPropertyHelper().RemoveListing();
-        verificationHelper.verifyNoProperty();
     }
 }
 

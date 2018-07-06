@@ -31,7 +31,8 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void setPassword(String password) {
-        $("#loginform-password").waitUntil(visible, 4000).setValue(password).pressEnter();
+        $("#loginform-password").waitUntil(visible, 4000).setValue(password);
+        $(byXpath("//button[@name='login-button']")).waitUntil(visible, 4000).click();
         sleep(2000);
     }
 
@@ -72,7 +73,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickLoginSubmitButton() {
-        $(byXpath("//*[@id=\"signIn-form\"]/div[5]/div/button")).click();
+        $(byXpath("//button[@name='login-button']")).click();
         sleep(2000);
     }
 
@@ -165,7 +166,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void setPhoneNumber(String PhoneNumber) {
-        signIn(PhoneNumber, $("#signup-need-phone"), "#signup-need-phone");
+        signIn(PhoneNumber, $("#signup-survey-phone"), "#signup-survey-phone");
     }
 
     public void clickCloseSignUp() {
@@ -176,8 +177,14 @@ public class AuthorizationHelper extends HelperBase {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
     }
 
+    public void rejectMissedPreferredLocation() {
+        $(byXpath("//button[@class='cancel']")).waitUntil(appears, 4000).click();
+        sleep(4000);
+    }
+
     public void acceptMissedPreferredLocation() {
-        confirm("Missed preferred location");
+        $(byXpath("//button[@class='confirm']")).waitUntil(appears, 4000).click();
+        sleep(4000);
     }
     public void acceptFBageRestriction() {
         confirm("Sorry! Ideal Flatmate is restricted for use by those under the age of 18.");

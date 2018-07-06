@@ -111,8 +111,8 @@ public class VerificationHelper {
     }
 
     public void emailWrongAlertHome() {
-        sleep(2000);
-        $(byXpath("(//form[@id='signIn-form']//div/p[@class='help-block help-block-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
+        //sleep(2000);
+        $(byXpath("//div[@class='form-group floating-label-group  required hasvalue has-error']/p[@class='help-block help-block-error']")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
     }
 
     public void nameFirstBlankAlert() {
@@ -210,7 +210,7 @@ public class VerificationHelper {
     }
 
     public void checkPhoneAlert() {
-        $(byXpath("(//div/p/span)[5]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[5]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
     }
 
     public void closeAdvPopUp() {

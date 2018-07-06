@@ -40,26 +40,26 @@ public class EmailHelper {
         $(byXpath("(//content[@class='CwaK9'])[2]/span")).waitUntil(visible, 6000).click();
     }
     public void enterInbox() {
-        $(byXpath("(//span[@class='nU n1']/a)[1]")).waitUntil(visible, 6000).click();
+        $(byXpath("(//span[starts-with(@class, 'nU ')])[1]")).waitUntil(visible, 6000).click();
     }
 
     public void verificationWelcome() {
-        $(byXpath("(//tbody)[6]/tr")).shouldHave((text("Welcome to Ideal Flatmate!")));
+        $(byXpath("(//tbody)[5]")).shouldHave((text("Welcome to Ideal Flatmate!")));
 
     }
     public void verificationListingisLive() {
-        $(byXpath("(//tbody)[6]/tr")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+        $(byXpath("(//tbody)[5]")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
     }
 
     public void verificationNoListingisLive() {
-        $(byXpath("(//tbody)[6]/tr']")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+        $(byXpath("(//tbody)[5]")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
     }
     public void verificationNoWelcome() {
-        $(byXpath("(//tbody)[6]/tr")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
+        $(byXpath("(//tbody)[5]")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
     }
 
     public void tipCheckboxWelcome() {
-        $(byXpath("(//b[contains(text(), 'Welcome to Ideal Flatmate!')])[2]//ancestor::tr//div[@id=':3d']")).waitUntil(visible, 6000).click();
+        $(byXpath("((//b[contains(text(), 'Welcome to Ideal Flatmate!')])[2]//ancestor::tr//div[@role='checkbox'])[1]")).waitUntil(visible, 6000).click();
     }
 
     public void removeEmail() {
@@ -68,6 +68,6 @@ public class EmailHelper {
 
 
     public void tipCheckboxListingisLive() {
-        $(byXpath("//span[contains(text(), 'Congratulations! Your listing on Ideal Flatmate is live!')]//ancestor::tr//td[@id=':3m']")).waitUntil(visible, 6000).click();
+        $(byXpath("(//b[contains(text(), 'Congratulations! Your listing on Ideal Flatmate is live!')]//ancestor::tr//div[@role='checkbox'])[1]")).waitUntil(visible, 6000).click();
     }
 }

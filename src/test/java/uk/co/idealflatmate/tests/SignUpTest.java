@@ -82,7 +82,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron666ddd@gmail.com", "qqqqqq666D");
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        //verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.acceptFBageRestriction();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
@@ -116,6 +116,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setPhoneNumber("777777777");
         verificationHelper.ageConfirmCheckMatching();
         matchingHelper.clickContinueMatchingAfterSignUp();
+        authorizationHelper.rejectMissedPreferredLocation();
         matchingHelper.clickSkip7stepFromHome();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
@@ -136,7 +137,7 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
         matchingHelper.clickContinueMatchingAfterSignUp();
-        authorizationHelper.acceptMissedPreferredLocation();
+        authorizationHelper.rejectMissedPreferredLocation();
         verificationHelper.emailBlankAlertMatching();
         verificationHelper.NameFirstBlankAlertMatching();
         verificationHelper.NameLastBlankAlertMatching();

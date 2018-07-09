@@ -24,7 +24,9 @@ public class MessageHelper {
         $("#conversationmessage-message").setValue(message);
         sleep(4000);
         //$(".btn.btn-primary.btn-msg-send").scrollIntoView(String.valueOf(visible)).waitUntil(Condition.appears, 4000).click();
-        $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).waitUntil(Condition.appears, 4000).click();
+        //$(byXpath("//button[@class='btn btn-primary btn-msg-send']")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(Condition.appears, 4000).click();
+
 
     }
 

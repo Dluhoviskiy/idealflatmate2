@@ -246,5 +246,10 @@ public class VerificationHelper {
     public void verificationCheckAgeError() {
         $(byXpath("//label[@for='signupnewform-is_age_confirm']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Please confirm your age to continue"));
     }
+
+    public void checkPhoneAlertMatching() {
+        $(byXpath("(//div[input[@id='signup-survey-phone']]/p)[1]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+
+    }
 }
 

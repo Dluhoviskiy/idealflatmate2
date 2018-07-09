@@ -142,7 +142,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.NameFirstBlankAlertMatching();
         verificationHelper.NameLastBlankAlertMatching();
         verificationHelper.passwordBlankAlertMatching();
-        verificationHelper.checkPhoneAlert();
+        verificationHelper.checkPhoneAlertMatching();
         verificationHelper.checkAgeBlankAlertMatching();
     }
 

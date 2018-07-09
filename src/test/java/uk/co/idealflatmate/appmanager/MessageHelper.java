@@ -23,7 +23,9 @@ public class MessageHelper {
     public void typeAndSendMessage(String message) {
         $("#conversationmessage-message").setValue(message);
         sleep(4000);
-        $(".btn.btn-primary.btn-msg-send").waitUntil(Condition.appears, 4000).click();
+        //$(".btn.btn-primary.btn-msg-send").scrollIntoView(String.valueOf(visible)).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).waitUntil(Condition.appears, 4000).click();
+
     }
 
     public void chooseAnyMessageFromPopup() {

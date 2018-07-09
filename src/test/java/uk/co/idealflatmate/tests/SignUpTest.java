@@ -16,7 +16,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumber("777777777");
+        authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
         authorizationHelper.clickCloseMoreAboutYou();
@@ -37,7 +37,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumber("777777777");
+        authorizationHelper.setPhoneNumberHomePage("777777777");
         //verificationHelper.ageConfirmCheckClassicSignUp();
         verificationHelper.ageConfirmCheckClassicSignUpIf();
         authorizationHelper.clickFormSignUpSave();

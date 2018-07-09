@@ -168,6 +168,10 @@ public class AuthorizationHelper extends HelperBase {
     public void setPhoneNumber(String PhoneNumber) {
         signIn(PhoneNumber, $("#signup-survey-phone"), "#signup-survey-phone");
     }
+    public void setPhoneNumberHomePage(String PhoneNumber) {
+        signIn(PhoneNumber, $("#signup-need-phone"), "#signup-need-phone");
+    }
+
 
     public void clickCloseSignUp() {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(appears, 4000).click();

@@ -22,7 +22,8 @@ public class MessageHelper {
 
     public void typeAndSendMessage(String message) {
         $("#conversationmessage-message").setValue(message);
-        $(".btn.btn-primary.btn-msg-send").click();
+        sleep(4000);
+        $(".btn.btn-primary.btn-msg-send").waitUntil(Condition.appears, 4000).click();
     }
 
     public void chooseAnyMessageFromPopup() {
@@ -63,6 +64,7 @@ public class MessageHelper {
 
 
     public  void clickPropertyPageMessage(){
+        sleep(2000);
         $(byXpath("//a[@class='btn btn-primary u_ed-block u_m20-top'  and contains(text(), ' Message ')]")).waitUntil(visible, 4000).click();
     }
 

@@ -27,11 +27,11 @@ public class VerificationHelper {
     }*/
 
     public void VerificationPasswordError() {
-        $("#signIn-form > div:nth-child(3) > div:nth-child(2) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
+        $(byXpath("//div[input[@id='loginform-username']]/p")).waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
     }
 
     public void VerificationLoginError() {
-        $("#signIn-form > div:nth-child(3) > div:nth-child(1) > div > p > span").waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[input[@id='loginform-password']]/p")).waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
     }
 
     public void VerificationMessagesTabIsAbsent() {
@@ -210,7 +210,7 @@ public class VerificationHelper {
     }
 
     public void checkPhoneAlert() {
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[5]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+        $(byXpath("(//div[input[@id='signup-need-phone']]/p)[1]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
     }
 
     public void closeAdvPopUp() {

@@ -3,9 +3,7 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.appears;
-import static com.codeborne.selenide.Condition.empty;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -22,10 +20,16 @@ public class MessageHelper {
 
     public void typeAndSendMessage(String message) {
         $("#conversationmessage-message").setValue(message);
-        sleep(4000);
+        sleep(5000);
         //$(".btn.btn-primary.btn-msg-send").scrollIntoView(String.valueOf(visible)).waitUntil(Condition.appears, 4000).click();
         //$(byXpath("//button[@class='btn btn-primary btn-msg-send']")).waitUntil(Condition.appears, 4000).click();
-        $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(Condition.appears, 4000).click();
+        if ($(byXpath("//img[@id='imgSrc']")).is(exist)){
+            $(byXpath("//div[@id='message-write']//button[@type='submit']")).hover();
+            $(byXpath("//div[@id='message-write']//button[@type='submit']")).click();
+            $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(appears, 4000).click();
+        } else {
+        $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(appears, 4000).click();
+        }
 
 
     }

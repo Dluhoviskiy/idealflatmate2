@@ -25,8 +25,11 @@ public class MessageHelper {
         //$(byXpath("//button[@class='btn btn-primary btn-msg-send']")).waitUntil(Condition.appears, 4000).click();
         if ($(byXpath("//img[@id='imgSrc']")).is(exist)){
             $(byXpath("//div[@id='message-write']//button[@type='submit']")).hover();
+            sleep(15000);
             $(byXpath("//div[@id='message-write']//button[@type='submit']")).click();
+            sleep(15000);
             $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(appears, 4000).click();
+            sleep(15000);
         } else {
         $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(appears, 4000).click();
         }

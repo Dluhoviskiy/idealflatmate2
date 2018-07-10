@@ -20,6 +20,7 @@ public class TestBase {
     public final MessageHelper messageHelper = new MessageHelper();
     public final MatchingHelper matchingHelper = new MatchingHelper();
     public final EmailHelper emailHelper = new EmailHelper();
+    public final HomePageHelper homePageHelper = new HomePageHelper();
 
     @BeforeMethod
     public void setupClass() {

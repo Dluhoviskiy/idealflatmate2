@@ -81,7 +81,12 @@ public class FooterTest extends TestBase {
         footerHelper.verificationTipsWorks();
     }
 
-
+    @Test
+    public void footerNLALink() {
+        verificationHelper.closeAdvPopUp();
+        footerHelper.footerNLAWorks();
+        footerHelper.verificationNLAWorks();
+    }
 
 
 

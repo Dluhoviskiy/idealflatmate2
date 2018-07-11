@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.switchTo;
 
 public class FooterHelper {
 
@@ -93,5 +94,14 @@ public class FooterHelper {
 
     public void verificationTipsWorks() {
         $(byXpath("//title[contains(text(), 'Tips')]")).waitUntil(exist, 6000).should(exist);
+    }
+
+    public void footerNLAWorks() {
+        $(byXpath("//div[@class='col-md-6 hidden-xs hidden-sm text-right']/a")).waitUntil(visible, 4000).click();
+    }
+
+    public void verificationNLAWorks() {
+        switchTo().window(0);
+        $(byXpath("//a[@class='nav__link-1 has-children' and contains(text(), 'Join the NLA')]")).waitUntil(exist, 6000).should(exist);
     }
 }

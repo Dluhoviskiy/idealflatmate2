@@ -26,6 +26,7 @@ public class AuthorizationHelper extends HelperBase {
         sleep(2000);
     }
     public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
+        sleep(2000);
         signIn(email, $("#loginform-username"), "#loginform-username");
         sleep(2000);
     }
@@ -60,7 +61,8 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void setLoginAsUserWithoutPackage2(AuthorizationHelper authorizationHelper) {
-        authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");
+        sleep(2000);
+        setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");
     }
 
     public void clickSignUpButton() {

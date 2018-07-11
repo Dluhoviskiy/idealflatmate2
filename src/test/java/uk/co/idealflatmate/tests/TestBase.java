@@ -21,6 +21,7 @@ public class TestBase {
     public final MatchingHelper matchingHelper = new MatchingHelper();
     public final EmailHelper emailHelper = new EmailHelper();
     public final HomePageHelper homePageHelper = new HomePageHelper();
+    public final FooterHelper footerHelper = new FooterHelper();
 
     @BeforeMethod
     public void setupClass() {

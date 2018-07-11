@@ -54,7 +54,7 @@ public class HomePageHelper {
     }
 
     public void verificationLandlordBlog() {
-        $(byXpath("(//title[contains(text(), 'Flatmate HQ')])[1]")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("(//title[contains(text(), 'Landlords HQ')])[1]")).waitUntil(exist, 6000).should(exist);
     }
 
     public void clickLandlordBlog() {
@@ -62,7 +62,7 @@ public class HomePageHelper {
     }
 
     public void verificationFMBlog() {
-        $(byXpath("//title[contains(text(), 'Landlords HQ')]")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("//title[contains(text(), 'Flatmate HQ')]")).waitUntil(exist, 6000).should(exist);
     }
 
     public void clickLogo() {
@@ -72,6 +72,23 @@ public class HomePageHelper {
     public void verificationLogo() {
         switchTo().window(1);
         $(byXpath("html//body//div//div//input[@placeholder='Search City A.M...']")).waitUntil(exist, 5000).should(exist);
-        
+
     }
+
+    public void clickBlogFMImgLink() {
+        $(byXpath("(//div[@class='col-xs-6 u_p5-right-xs u_ed-flex']/div/div/a/img)[1]")).waitUntil(visible, 4000).click();
+    }
+
+    public void clickBlogLandlordImgLink() {
+        $(byXpath("(//div[@class='col-xs-6 u_p5-right-xs u_ed-flex']/div/div/a/img)[2]")).waitUntil(visible, 4000).click();
+    }
+
+    public void clickBlogFMTextLink() {
+        $(byXpath("(//div[@class='u_p10-xs u_p15-sm']/a)[1]")).waitUntil(visible, 4000).click();
+    }
+
+    public void clickBlogLandlordTextLink() {
+        $(byXpath("(//div[@class='u_p10-xs u_p15-sm']/a)[2]")).waitUntil(visible, 4000).click();
+    }
+
 }

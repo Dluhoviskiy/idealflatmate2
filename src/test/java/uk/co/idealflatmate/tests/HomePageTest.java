@@ -43,14 +43,14 @@ public class HomePageTest extends TestBase {
     public void blogFM() {
         verificationHelper.closeAdvPopUp();
         homePageHelper.clickFMBlog();
-        homePageHelper.verificationLandlordBlog();
+        homePageHelper.verificationFMBlog();
     }
 
     @Test
     public void blogLandlord() {
         verificationHelper.closeAdvPopUp();
         homePageHelper.clickLandlordBlog();
-        homePageHelper.verificationFMBlog();
+        homePageHelper.verificationLandlordBlog();
     }
 
     @Test
@@ -59,5 +59,34 @@ public class HomePageTest extends TestBase {
         homePageHelper.clickLogo();
         homePageHelper.verificationLogo();
     }
+
+    @Test
+    public void blogImgLink() {
+        verificationHelper.closeAdvPopUp();
+        homePageHelper.clickBlogFMImgLink();
+        homePageHelper.verificationFMBlog();
+    }
+
+    @Test
+    public void blogLordImgLink() {
+        verificationHelper.closeAdvPopUp();
+        homePageHelper.clickBlogLandlordImgLink();
+        homePageHelper.verificationLandlordBlog();
+    }
+    @Test
+    public void blogTextFMLink() {
+        verificationHelper.closeAdvPopUp();
+        homePageHelper.clickBlogFMTextLink();
+        homePageHelper.verificationFMBlog();
+    }
+
+    @Test
+    public void blogTextLordLink() {
+        verificationHelper.closeAdvPopUp();
+        homePageHelper.clickBlogLandlordTextLink();
+        homePageHelper.verificationLandlordBlog();
+    }
+
+
 
 }

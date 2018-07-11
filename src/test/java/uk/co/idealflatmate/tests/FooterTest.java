@@ -88,7 +88,33 @@ public class FooterTest extends TestBase {
         footerHelper.verificationNLAWorks();
     }
 
+    @Test
+    public void footerFBLink() {
+        verificationHelper.closeAdvPopUp();
+        footerHelper.footerFB();
+        footerHelper.verificationFB();
+    }
 
+    @Test
+    public void footerTwitterLink() {
+        verificationHelper.closeAdvPopUp();
+        footerHelper.footerTwitter();
+        footerHelper.verificationTwitter();
+    }
+
+    @Test
+    public void footerInstagramLink() {
+        verificationHelper.closeAdvPopUp();
+        footerHelper.footerInstagram();
+        footerHelper.verificationInstagram();
+    }
+
+    @Test
+    public void footerYoutubeLink() {
+        verificationHelper.closeAdvPopUp();
+        footerHelper.footerYoutube();
+        footerHelper.verificationYoutube();
+    }
 
 
 

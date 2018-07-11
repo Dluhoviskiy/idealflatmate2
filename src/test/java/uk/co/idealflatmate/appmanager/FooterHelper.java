@@ -104,4 +104,40 @@ public class FooterHelper {
         switchTo().window(0);
         $(byXpath("//a[@class='nav__link-1 has-children' and contains(text(), 'Join the NLA')]")).waitUntil(exist, 6000).should(exist);
     }
+
+    public void footerFB() {
+        $(byXpath("//img[@alt='Facebook']")).waitUntil(visible, 4000).click();
+    }
+
+    public void verificationFB() {
+        switchTo().window(1);
+        $(byXpath("//a[@class='_64-f' and @href='https://www.facebook.com/idealflatmate/']")).waitUntil(exist, 6000).should(exist);
+    }
+
+    public void footerTwitter() {
+        $(byXpath("//img[@alt='Twitter']")).waitUntil(visible, 4000).click();
+    }
+
+    public void verificationTwitter() {
+        switchTo().window(1);
+        $(byXpath("//img[@class='ProfileAvatar-image ' and @alt='Ideal Flatmate']")).waitUntil(exist, 6000).should(exist);
+    }
+
+    public void footerInstagram() {
+        $(byXpath("//img[@alt='Instagram']")).waitUntil(visible, 4000).click();
+    }
+
+    public void verificationInstagram() {
+        switchTo().window(1);
+        $(byXpath("//h1[@class='AC5d8 notranslate' and @title='idealflatmate']")).waitUntil(exist, 6000).should(exist);
+    }
+
+    public void footerYoutube() {
+        $(byXpath("//img[@alt='YouTube']")).waitUntil(visible, 4000).click();
+    }
+
+    public void verificationYoutube() {
+        switchTo().window(1);
+        $(byXpath("//span[@id='channel-title' and contains(text(), 'Ideal Flatmate')]")).waitUntil(exist, 6000).should(exist);
+    }
 }

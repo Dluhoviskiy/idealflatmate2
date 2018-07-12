@@ -22,13 +22,11 @@ public class AuthorizationHelper extends HelperBase {
      }
 
     public void setLoginAsUserWithoutPackage(String email) {
-        signIn(email, $("#loginform-username"), "#loginform-username");
         sleep(2000);
+        signIn(email, $("#loginform-username"), "#loginform-username");
     }
     public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
-        sleep(2000);
         signIn(email, $("#loginform-username"), "#loginform-username");
-        sleep(2000);
     }
 
     public void setPassword(String password) {
@@ -105,9 +103,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickSignInButtonInForm() {
-        sleep(2000);
-        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[1]")).waitUntil(appears, 6000).click();
-        sleep(2000);
+        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[1]")).waitUntil(visible, 6000).click();
     }
 
     public void setNewLoginMail(String email) {
@@ -180,7 +176,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickCloseSignUpFMPage() {
-        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(visible, 4000).click();
     }
 
     public void rejectMissedPreferredLocation() {

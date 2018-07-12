@@ -22,10 +22,6 @@ public class VerificationHelper {
         $(".nav.navbar-right.nav-ihm-profile").shouldNotHave(text(nameUser));
     }
 
-  /*  public void verificationUserNameOnHomePage(String nameUser) {
-        verificationUserNameOnHomePage(nameUser);
-    }*/
-
     public void VerificationPasswordError() {
         $(byXpath("//div[input[@id='loginform-username']]/p")).waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
     }
@@ -48,8 +44,6 @@ public class VerificationHelper {
     public void verifyPageMessage() {
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));
     }
-
-
 
     public void verifyAddedProperty() {
         $(".dropdown.nav-ihm-profile-bars").click();

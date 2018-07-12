@@ -9,7 +9,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void TestSuccessfulClassicSignUp() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
         authorizationHelper.setNewLoginMail("cro.gen7778@gmail.com");
@@ -30,7 +30,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void TestClassicSignUpWithExistingEmail() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
         authorizationHelper.setNewLoginMail("cro.gen44@gmail.com");
@@ -46,7 +46,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void TestClassicSignUpWithBlankRequiredFields() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
        // authorizationHelper.clickSignUpButtonInForm();
         authorizationHelper.clickFormSignUpSave();
@@ -62,7 +62,7 @@ public class SignUpTest extends TestBase {
     //Facebook authorization doen`t work on staging
 
     public void SuccessfulSignUpViaFacebook() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -78,7 +78,7 @@ public class SignUpTest extends TestBase {
     //Facebook authorization doen`t work on staging
 
     public void SignUpViaFacebookAgeUnder18() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron666ddd@gmail.com", "qqqqqq666D");
@@ -90,7 +90,7 @@ public class SignUpTest extends TestBase {
 
    // @Test
     public void SuccessfulClassicSignUpPropertyPage() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -101,7 +101,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void SuccessfulSignUpWithMatchingWithRequiredFields() {
-        verificationHelper.closeAdvPopUp();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
@@ -128,7 +128,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void SignUpWithMatchingWithBlankRequiredFields() {
-        verificationHelper.closeAdvPopUp();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
@@ -148,7 +148,7 @@ public class SignUpTest extends TestBase {
 
    // @Test
     public void SuccessfulSignUpWithMatchingWithAllFields() {
-        verificationHelper.closeAdvPopUp();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();

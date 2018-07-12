@@ -9,7 +9,7 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void TestSuccessfulLoginStartListing() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -23,7 +23,7 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void TestSignUpSuccessfulPropertyAddingEmailVerification() {
-        verificationHelper.closeAdvPopUp();
+
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectLandlord();
         addPropertyHelper.pressContinue();
@@ -57,7 +57,7 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void TestSuccessfulPropertyAddingWithAllFields() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");

@@ -10,7 +10,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessClassicLogIn() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
@@ -21,7 +21,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessClassiclogInOnPropertyPage() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.goToPropertyPage();
        // authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -33,7 +33,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessClassiclogInOnFMPage() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.goToFMpage();
        // authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -45,7 +45,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void EmailWronglogInHomePage() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44q@gmail.com");
@@ -55,7 +55,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void PasswordWronglogInHomePage() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44q@gmail.com");
@@ -66,7 +66,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     //Facebook authorization doen`t work on staging
     public void SuccessLogInViaFacebook() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickSignInWithFacebook();
@@ -78,7 +78,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     //Facebook authorization doen`t work on staging
     public void SuccessSignInViaFacebook() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickSignInWithFacebook();
@@ -89,7 +89,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessLogInWithMatchingFB() {
-       verificationHelper.closeAdvPopUp();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
@@ -105,7 +105,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void InvalidAuthorizationWithEmptyFields() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickLoginSubmitButton();
@@ -116,7 +116,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessLogInMessageProperty() {
-        verificationHelper.closeAdvPopUp();
+
         getMessageHelper().clickPropertyCardMessageUnlogged();
         //authorizationHelper.clickFormSignInPropertyContact();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.genTestD@gmail.com");
@@ -128,7 +128,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessLogInContactProperty() {
-        verificationHelper.closeAdvPopUp();
+
         getMessageHelper().clickPropertyCardFirstOnPage();
         //authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickPropertyContact();
@@ -142,7 +142,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessLogInMessageFM() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUpFMPage();
         getMessageHelper().clickFMCardMessageUnlogged();
@@ -156,7 +156,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessLogInContactFM() {
-        verificationHelper.closeAdvPopUp();
+
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUpFMPage();
         getMessageHelper().clickFMCardFirstOnPage();

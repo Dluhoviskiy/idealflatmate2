@@ -104,14 +104,14 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerInstagramLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerInstagram();
         footerHelper.verificationInstagram();
     }
 
     @Test
     public void footerYoutubeLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerYoutube();
         footerHelper.verificationYoutube();
     }

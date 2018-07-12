@@ -1,6 +1,8 @@
 package uk.co.idealflatmate.tests;
 
 
+import org.testng.annotations.Test;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -9,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MatchingTests extends TestBase {
 
-   // @Test
+    @Test
     public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
@@ -17,7 +19,7 @@ public class MatchingTests extends TestBase {
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumber("777777777");
+        authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
         authorizationHelper.clickCloseMoreAboutYou();

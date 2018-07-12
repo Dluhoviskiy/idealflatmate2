@@ -109,4 +109,8 @@ public class MatchingHelper {
     public void clickSkip7stepFromHome() {
         $(byXpath("(//div[@class='col-sm-3 col-sm-push-6'])[1]/a")).waitUntil(visible, 4000).click();
     }
+
+    public void clickTakeTheMatchTestFMscreen() {
+        $(byXpath("//a[@data-target='#matchModal']")).waitUntil(visible, 4000).click();
+    }
 }

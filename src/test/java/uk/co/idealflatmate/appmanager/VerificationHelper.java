@@ -245,5 +245,10 @@ public class VerificationHelper {
         $(byXpath("(//div[input[@id='signup-survey-phone']]/p)[1]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
 
     }
+
+    public void ContinueMatching1() {
+        $(byXpath("//button[@id='2']")).waitUntil(exist, 4000).shouldHave(text("Continue"));
+
+    }
 }
 

@@ -59,10 +59,12 @@ public class MatchingTests extends TestBase {
     }
 
 
-    //@Test
+    @Test
     public void StartMatchingOnFMSearchPage() {
-        matchingHelper.clickHomePageMatching();
-        matchingHelper.clickContinueMatching1();
+        authorizationHelper.goToFMpage();
+        authorizationHelper.clickCloseSignUpFMPage();
+        matchingHelper.clickTakeTheMatchTestFMscreen();
+        verificationHelper.ContinueMatching1();
     }
 
     //@Test

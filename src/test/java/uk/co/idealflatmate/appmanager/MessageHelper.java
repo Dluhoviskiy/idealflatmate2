@@ -19,19 +19,14 @@ public class MessageHelper {
     }
 
     public void typeAndSendMessage(String message) {
-        $("#conversationmessage-message").setValue(message);
-        sleep(5000);
-        //$(".btn.btn-primary.btn-msg-send").scrollIntoView(String.valueOf(visible)).waitUntil(Condition.appears, 4000).click();
-        //$(byXpath("//button[@class='btn btn-primary btn-msg-send']")).waitUntil(Condition.appears, 4000).click();
-        if ($(byXpath("//img[@id='imgSrc']")).is(exist)){
-            $(byXpath("//div[@id='message-write']//button[@type='submit']")).hover();
-            sleep(15000);
-            $(byXpath("//div[@id='message-write']//button[@type='submit']")).click();
-            sleep(15000);
-            $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(appears, 4000).click();
-            sleep(15000);
+        $("#conversationmessage-message").shouldBe(visible).setValue(message);
+
+        if ($(byXpath("//img[@id='imgSrc']")).is(visible)){
+            $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).should(appear).hover();
+            $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
+            $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).shouldBe(visible).click();
         } else {
-        $(byXpath("//div[@id='message-write']//button[@type='submit']")).waitUntil(appears, 4000).click();
+            $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).shouldBe(visible).click();
         }
 
 

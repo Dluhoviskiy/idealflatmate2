@@ -22,7 +22,6 @@ public class AuthorizationHelper extends HelperBase {
      }
 
     public void setLoginAsUserWithoutPackage(String email) {
-        sleep(2000);
         signIn(email, $("#loginform-username"), "#loginform-username");
     }
     public void setLoginAsUserWithPremiumFlathunterPackage(String email) {

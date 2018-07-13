@@ -161,7 +161,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickCloseSignUpFMPage();
         getMessageHelper().clickFMCardFirstOnPage();
         getMessageHelper().clickFMContact();
-        authorizationHelper.clickFormSignInPropertyContact();
+        authorizationHelper.clickFormSignInContact();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.genTestD@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Ron");

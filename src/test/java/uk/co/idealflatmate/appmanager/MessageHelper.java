@@ -22,7 +22,7 @@ public class MessageHelper {
         $("#conversationmessage-message").shouldBe(visible).setValue(message);
 
         if ($(byXpath("//img[@id='imgSrc']")).is(visible)){
-            $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).should(appear).hover();
+            $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).shouldBe(appear).hover();
             $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
             $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).shouldBe(visible).click();
         } else {

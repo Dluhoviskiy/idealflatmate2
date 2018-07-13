@@ -31,6 +31,7 @@ public class TestBase {
     public final FooterHelper footerHelper = new FooterHelper();
 
 
+
     @BeforeMethod
     public void setupClass() {
         ChromeDriverManager.getInstance().setup();

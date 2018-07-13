@@ -3,6 +3,7 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.Condition;
 import com.typesafe.config.ConfigException;
 import org.openqa.selenium.By;
+import uk.co.idealflatmate.tests.TestBase;
 
 
 import static com.codeborne.selenide.Condition.*;
@@ -11,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 
-public class VerificationHelper {
+public class VerificationHelper  {
 
 
     public void verificationUserNameOnHomePage(String nameUser) {
@@ -91,9 +92,14 @@ public class VerificationHelper {
     public void verifyNoProperty() {
         $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
-        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("London SE1, UK")));
+        sleep(2000);
+        if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))){
+            $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
+            $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
+            $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
+            sleep(4000);
+        }
     }
-
 
     public void verifyPackagePurchase() {
         $(".u_p20-bottom.u_b-bottom").shouldHave(Condition.value("Congratulations John!"));

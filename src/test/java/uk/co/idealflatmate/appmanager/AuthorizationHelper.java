@@ -89,12 +89,14 @@ public class AuthorizationHelper extends HelperBase {
 
     public void clickFormSignInPropertyContact() {
         $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[2]")).waitUntil(visible, 4000).click();
+    }
 
+    public void clickFormSignInContact() {
+        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[2]")).waitUntil(visible, 4000).click();
     }
     public void clickFormSignInFMmessage() {
         $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[3]")).waitUntil(visible, 4000).click();
     }
-
     public void clickSignUpButtonInForm() {
         sleep(2000);
         $(byXpath("//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign up')]")).waitUntil(appears, 6000).click();
@@ -211,5 +213,6 @@ public class AuthorizationHelper extends HelperBase {
     public void setPhoneNumberListing(String PhoneNumber) {
         signIn(PhoneNumber, $("#signupnewform-phone"), "#signupnewform-phone");
     }
+
 
 }

@@ -51,7 +51,7 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown() {
-        screenshot("screenshotFail1");
+        //screenshot("screenshotFail1");
         closeWebDriver();
     }
 

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class AuthorizationTests extends TestBase {
 
-   // @Test
+    @Test
     public void SuccessClassicLogIn() {
 
         authorizationHelper.clickSignInButton();
@@ -19,7 +19,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void SuccessClassiclogInOnPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
@@ -31,7 +31,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void SuccessClassiclogInOnFMPage() {
 
         authorizationHelper.goToFMpage();
@@ -43,7 +43,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void EmailWronglogInHomePage() {
 
         authorizationHelper.clickSignInButton();
@@ -53,7 +53,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.emailWrongAlertHome();
     }
 
-   // @Test
+    @Test
     public void PasswordWronglogInHomePage() {
 
         authorizationHelper.clickSignInButton();
@@ -63,7 +63,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.emailWrongAlertHome();
     }
 
-  //  @Test
+    @Test
     //Facebook authorization doen`t work on staging
     public void SuccessLogInViaFacebook() {
 
@@ -75,7 +75,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     //Facebook authorization doen`t work on staging
     public void SuccessSignInViaFacebook() {
 
@@ -87,7 +87,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void SuccessLogInWithMatchingFB() {
 
         matchingHelper.clickHomePageMatching();
@@ -103,7 +103,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void InvalidAuthorizationWithEmptyFields() {
 
         authorizationHelper.clickSignInButton();
@@ -114,7 +114,7 @@ public class AuthorizationTests extends TestBase {
        // verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-    //@Test
+    @Test
     public void SuccessLogInMessageProperty() {
 
         getMessageHelper().clickPropertyCardMessageUnlogged();
@@ -126,7 +126,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void SuccessLogInContactProperty() {
 
         getMessageHelper().clickPropertyCardFirstOnPage();
@@ -140,7 +140,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void SuccessLogInMessageFM() {
 
         authorizationHelper.goToFMpage();
@@ -154,7 +154,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test
+    @Test
     public void SuccessLogInContactFM() {
 
         authorizationHelper.goToFMpage();

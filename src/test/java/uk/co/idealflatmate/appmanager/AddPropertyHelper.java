@@ -208,7 +208,7 @@ public class AddPropertyHelper {
     }
 
     public void finishPropertyCreating() {
-        $(byXpath("//*[@id='wizard-finish-btn']")).waitUntil(appear, 4000).click();
+        $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
         //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
         $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
         $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));

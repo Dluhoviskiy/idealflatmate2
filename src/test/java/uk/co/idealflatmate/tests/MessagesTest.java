@@ -11,7 +11,7 @@ public class MessagesTest extends TestBase {
 
    public final MessageHelper messageHelper = new MessageHelper();
 
-   // @Test
+    @Test
     public void readMessageByLandlordWithoutSubscription() {
 
         authorizationHelper.clickSignInButton();
@@ -23,7 +23,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void answerMessageFmWithoutSubscriptionToFM() {
 
         authorizationHelper.clickSignInButton();
@@ -37,7 +37,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void answerMessagePremiumFHtoLandlordWithoutSubscription() {
 
         authorizationHelper.clickSignInButton();
@@ -51,7 +51,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromSearch() {
 
         authorizationHelper.clickSignInButton();
@@ -67,7 +67,7 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
     }
-  //  @Test
+    @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing() {
 
         authorizationHelper.clickSignInButton();
@@ -85,7 +85,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage() {
 
         authorizationHelper.clickSignInButton();

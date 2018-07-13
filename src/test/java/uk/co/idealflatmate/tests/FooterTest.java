@@ -4,105 +4,105 @@ import org.testng.annotations.Test;
 
 public class FooterTest extends TestBase {
 
-   // @Test
+    @Test
     public void footerHomeLink() {
 
         footerHelper.footerHome();
         footerHelper.verificationFooterHome();
     }
 
-   // @Test
+    @Test
     public void footerAboutUsLink() {
 
         footerHelper.footerAboutUs();
         footerHelper.verificationFooterAboutUs();
     }
 
-  //  @Test
+    @Test
     public void footerContactLink() {
 
         footerHelper.footerContact();
         footerHelper.verificationFooterContact();
     }
 
-  //  @Test
+    @Test
     public void footerPressLink() {
 
         footerHelper.footerPress();
         footerHelper.verificationFooterPress();
     }
 
-  //  @Test
+    @Test
     public void footerPricingLink() {
 
         footerHelper.footerPricing();
         footerHelper.verificationFooterPricing();
     }
 
-  //  @Test
+    @Test
     public void footerMediaLink() {
 
         footerHelper.footerMedia();
         footerHelper.verificationFooterMedia();
     }
 
-  //  @Test
+    @Test
     public void footerStaySafeLink() {
 
         footerHelper.footerStaySafe();
         footerHelper.verificationFooterStaySafe();
     }
 
-  //  @Test
+    @Test
     public void footerBlogLink() {
 
         footerHelper.footerBlog();
         homePageHelper.verificationFMBlog();
     }
 
- //   @Test
+    @Test
     public void footerBrowseFlatsharesLink() {
 
         footerHelper.footerBrowseFlatshares();
         footerHelper.verificationBrowseFlatshares();
     }
 
-  //  @Test
+    @Test
     public void footerBrowseHowItWorksLink() {
 
         footerHelper.footerHowItWorks();
         footerHelper.verificationHowItWorks();
     }
 
-  //  @Test
+    @Test
     public void footerBrowseTipsLink() {
 
         footerHelper.footerTipsWorks();
         footerHelper.verificationTipsWorks();
     }
 
-    //@Test
+    @Test
     public void footerNLALink() {
 
         footerHelper.footerNLAWorks();
         footerHelper.verificationNLAWorks();
     }
 
-    //@Test
+    @Test
     public void footerFBLink() {
 
         footerHelper.footerFB();
         footerHelper.verificationFB();
     }
 
-    //@Test
+    @Test
     public void footerTwitterLink() {
 
         footerHelper.footerTwitter();
         footerHelper.verificationTwitter();
     }
 
-  //  @Test
+    @Test
     public void footerInstagramLink() {
 
         footerHelper.footerInstagram();

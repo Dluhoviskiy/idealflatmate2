@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SignUpTest extends TestBase {
 
-   // @Test
+    @Test
     public void TestSuccessfulClassicSignUp() {
 
         authorizationHelper.clickSignInButton();
@@ -28,7 +28,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-  //  @Test
+    @Test
     public void TestClassicSignUpWithExistingEmail() {
 
         authorizationHelper.clickSignInButton();
@@ -44,7 +44,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.emailAlreadyExistedAlert();
      }
 
-  //  @Test
+    @Test
     public void TestClassicSignUpWithBlankRequiredFields() {
 
         authorizationHelper.clickSignInButton();
@@ -58,7 +58,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.checkPhoneAlert();
     }
 
-   // @Test
+    @Test
     //Facebook authorization doen`t work on staging
 
     public void SuccessfulSignUpViaFacebook() {
@@ -74,7 +74,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-   // @Test
+    @Test
     //Facebook authorization doen`t work on staging
 
     public void SignUpViaFacebookAgeUnder18() {
@@ -88,7 +88,7 @@ public class SignUpTest extends TestBase {
     }
 
 
-   // @Test
+    @Test
     public void SuccessfulClassicSignUpPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
@@ -99,7 +99,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void SuccessfulSignUpWithMatchingWithRequiredFields() {
 
         matchingHelper.clickHomePageMatching();
@@ -126,7 +126,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-   // @Test
+    @Test
     public void SignUpWithMatchingWithBlankRequiredFields() {
 
         matchingHelper.clickHomePageMatching();
@@ -146,7 +146,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.checkAgeBlankAlertMatching();
     }
 
-   // @Test
+    @Test
     public void SuccessfulSignUpWithMatchingWithAllFields() {
 
         matchingHelper.clickHomePageMatching();
@@ -186,7 +186,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
-    // @Test
+    @Test
     public void SuccessfulSignUpWithListingWithAllFields() {
         verificationHelper.closeAdvPopUp();
         verificationHelper.ageConfirmCheckMatching();

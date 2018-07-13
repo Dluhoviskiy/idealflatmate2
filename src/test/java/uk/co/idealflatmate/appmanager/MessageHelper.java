@@ -21,7 +21,7 @@ public class MessageHelper {
     public void typeAndSendMessage(String message) {
         $("#conversationmessage-message").shouldBe(visible).setValue(message);
 
-        if ($(byXpath("//img[@id='imgSrc']")).is(visible)){
+        if ($(byXpath("//img[@id='imgSrc']")).is(exist)){
             $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).shouldBe(appear).hover();
             $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
             $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).shouldBe(visible).click();

@@ -4,83 +4,83 @@ import org.testng.annotations.Test;
 
 public class HomePageTest extends TestBase {
 
-    @Test
+   // @Test
     public void latestFlatmatesNonLogged() {
         verificationHelper.closeAdvPopUp();
         homePageHelper.clickFM();
         homePageHelper.verificationFM();
     }
 
-    @Test
+   // @Test
     public void findOutMore() {
         verificationHelper.closeAdvPopUp();
         homePageHelper.clickFind();
         homePageHelper.verificationPageLinkHowItWorks();
     }
 
-    @Test
+  //  @Test
     public void findStartMatching() {
 
         homePageHelper.clickFindYourNewFM();
         homePageHelper.verificationMatchingStart();
     }
 
-    @Test
+   // @Test
     public void findStartMatchingLink() {
 
         homePageHelper.clickTakeMatching();
         homePageHelper.verificationMatchingStart();
     }
 
-    @Test
+  //  @Test
     public void findStartListing() {
 
         homePageHelper.clickAddListing();
         homePageHelper.verificationListingStart();
     }
 
-    @Test
+  //  @Test
     public void blogFM() {
 
         homePageHelper.clickFMBlog();
         homePageHelper.verificationFMBlog();
     }
 
-    @Test
+  //  @Test
     public void blogLandlord() {
 
         homePageHelper.clickLandlordBlog();
         homePageHelper.verificationLandlordBlog();
     }
 
-    @Test
+  //  @Test
     public void pressLogo() {
 
         homePageHelper.clickLogo();
         homePageHelper.verificationLogo();
     }
 
-    @Test
+   // @Test
     public void blogImgLink() {
 
         homePageHelper.clickBlogFMImgLink();
         homePageHelper.verificationFMBlog();
     }
 
-    @Test
+  //  @Test
     public void blogLordImgLink() {
 
         homePageHelper.clickBlogLandlordImgLink();
         homePageHelper.verificationLandlordBlog();
     }
-    @Test
+   // @Test
     public void blogTextFMLink() {
 
         homePageHelper.clickBlogFMTextLink();
         homePageHelper.verificationFMBlog();
     }
 
-    @Test
+   // @Test
     public void blogTextLordLink() {
 
         homePageHelper.clickBlogLandlordTextLink();

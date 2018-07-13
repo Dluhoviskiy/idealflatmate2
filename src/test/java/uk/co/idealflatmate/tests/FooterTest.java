@@ -81,14 +81,14 @@ public class FooterTest extends TestBase {
         footerHelper.verificationTipsWorks();
     }
 
-    @Test
+    //@Test
     public void footerNLALink() {
         verificationHelper.closeAdvPopUp();
         footerHelper.footerNLAWorks();
         footerHelper.verificationNLAWorks();
     }
 
-    @Test
+    //@Test
     public void footerFBLink() {
         verificationHelper.closeAdvPopUp();
         footerHelper.footerFB();

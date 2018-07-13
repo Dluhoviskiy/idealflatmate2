@@ -4,105 +4,105 @@ import org.testng.annotations.Test;
 
 public class FooterTest extends TestBase {
 
-    @Test
+   // @Test
     public void footerHomeLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerHome();
         footerHelper.verificationFooterHome();
     }
 
-    @Test
+   // @Test
     public void footerAboutUsLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerAboutUs();
         footerHelper.verificationFooterAboutUs();
     }
 
-    @Test
+  //  @Test
     public void footerContactLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerContact();
         footerHelper.verificationFooterContact();
     }
 
-    @Test
+  //  @Test
     public void footerPressLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerPress();
         footerHelper.verificationFooterPress();
     }
 
-    @Test
+  //  @Test
     public void footerPricingLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerPricing();
         footerHelper.verificationFooterPricing();
     }
 
-    @Test
+  //  @Test
     public void footerMediaLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerMedia();
         footerHelper.verificationFooterMedia();
     }
 
-    @Test
+  //  @Test
     public void footerStaySafeLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerStaySafe();
         footerHelper.verificationFooterStaySafe();
     }
 
-    @Test
+  //  @Test
     public void footerBlogLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerBlog();
         homePageHelper.verificationFMBlog();
     }
 
-    @Test
+ //   @Test
     public void footerBrowseFlatsharesLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerBrowseFlatshares();
         footerHelper.verificationBrowseFlatshares();
     }
 
-    @Test
+  //  @Test
     public void footerBrowseHowItWorksLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerHowItWorks();
         footerHelper.verificationHowItWorks();
     }
 
-    @Test
+  //  @Test
     public void footerBrowseTipsLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerTipsWorks();
         footerHelper.verificationTipsWorks();
     }
 
     //@Test
     public void footerNLALink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerNLAWorks();
         footerHelper.verificationNLAWorks();
     }
 
     //@Test
     public void footerFBLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerFB();
         footerHelper.verificationFB();
     }
 
-    @Test
+    //@Test
     public void footerTwitterLink() {
-        verificationHelper.closeAdvPopUp();
+
         footerHelper.footerTwitter();
         footerHelper.verificationTwitter();
     }
 
-    @Test
+  //  @Test
     public void footerInstagramLink() {
 
         footerHelper.footerInstagram();

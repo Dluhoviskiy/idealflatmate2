@@ -111,7 +111,7 @@ public class FooterHelper {
 
     public void verificationFB() {
         switchTo().window(1);
-        $(byXpath("//a[@class='_64-f' and @href='https://www.facebook.com/idealflatmate/']")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("//a[@class='_64-f' and @href='https://www.facebook.com/idealflatmate/']")).shouldBe(visible);
     }
 
     public void footerTwitter() {

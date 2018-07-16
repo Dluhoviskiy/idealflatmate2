@@ -92,11 +92,22 @@ public class SignUpTest extends TestBase {
     public void SuccessfulClassicSignUpPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
+        authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
-        authorizationHelper.setPassword("123456");
-        verificationHelper.verificationUserNameOnHomePage("Alex");
-        authorizationHelper.logoutFromApp();
+        authorizationHelper.setNewLoginMail("cro.gen7778@gmail.com");
+        authorizationHelper.setNewLoginPassword("wwwwww666D");
+        authorizationHelper.setNewLoginNameF("Ronald");
+        authorizationHelper.setNewLoginNameL("NewOne");
+        authorizationHelper.setPhoneNumberHomePage("777777777");
+        verificationHelper.ageConfirmCheckClassicSignUp();
+        authorizationHelper.clickFormSignUpSave();
+        authorizationHelper.clickCloseMoreAboutYou();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
     @Test
@@ -146,7 +157,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.checkAgeBlankAlertMatching();
     }
 
-    @Test
+    //@Test
     public void SuccessfulSignUpWithMatchingWithAllFields() {
 
         matchingHelper.clickHomePageMatching();
@@ -156,10 +167,10 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest3@gmail.com");
-        authorizationHelper.setNewLoginPassword("123456");
-        authorizationHelper.setNewLoginNameF("Ronald");
-        authorizationHelper.setNewLoginNameL("NewOne");
+        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest3@gmail.com");
+        authorizationHelper.setNewLoginPasswordMatching("123456");
+        authorizationHelper.setNewLoginNameFMatching("Ronald");
+        authorizationHelper.setNewLoginNameLMatching("NewOne");
         authorizationHelper.setPhoneNumber("777777777");
         verificationHelper.ageConfirmCheckMatching();
 
@@ -186,7 +197,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
-    @Test
+    //@Test
     public void SuccessfulSignUpWithListingWithAllFields() {
         verificationHelper.closeAdvPopUp();
         verificationHelper.ageConfirmCheckMatching();

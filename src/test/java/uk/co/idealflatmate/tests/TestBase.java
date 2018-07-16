@@ -43,9 +43,9 @@ public class TestBase {
       //  Configuration.browser = "edge";
 
         Configuration.timeout = 10000;
-        open("https://www.idealflatmate.co.uk/");
+        //open("https://www.idealflatmate.co.uk/");
         verificationHelper.closeAdvPopUp();
-        //open("http://front.idealflatmate.demo.devplatform2.com");
+        open("http://front.idealflatmate.demo.devplatform2.com");
 
     }
 

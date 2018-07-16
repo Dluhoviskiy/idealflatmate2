@@ -138,6 +138,6 @@ public class FooterHelper {
 
     public void verificationYoutube() {
         switchTo().window(1);
-        $(byXpath("//span[@id='channel-title' and contains(text(), 'Ideal Flatmate9999999')]")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("//span[@id='channel-title' and contains(text(), 'Ideal Flatmate')]")).waitUntil(exist, 6000).should(exist);
     }
 }

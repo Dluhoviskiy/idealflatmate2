@@ -79,6 +79,7 @@ public class AuthorizationHelper extends HelperBase {
     public void removeAccount() {
         $(byXpath("//button[@type='submit' and contains(text(), 'Delete!')]")).waitUntil(appears, 4000).click();
         confirm("Are you sure you wish to delete your account?");
+        sleep(2000);
     }
 
     public void alertAccept() {

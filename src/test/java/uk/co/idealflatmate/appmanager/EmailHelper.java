@@ -44,11 +44,14 @@ public class EmailHelper {
     }
 
     public void verificationWelcome() {
-        $(byXpath("(//tbody)[5]")).shouldHave((text("Welcome to Ideal Flatmate!")));
+        $(byXpath("(//tbody)[5]/tr[td/span[contains (text(), ':')]]")).shouldHave((text("Welcome to Ideal Flatmate!")));
 
     }
     public void verificationListingisLive() {
-        $(byXpath("(//tbody)[5]")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+        $(byXpath("(//tbody)[5]/tr[td/span/b[contains (text(), ':')]]")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+    }
+    public void verificationMessage() {
+        $(byXpath("(//tbody)[5]/tr[td/span/b[contains (text(), ':')]]")).shouldHave((text("You have a new message!")));
     }
 
     public void verificationNoListingisLive() {
@@ -57,9 +60,19 @@ public class EmailHelper {
     public void verificationNoWelcome() {
         $(byXpath("(//tbody)[5]")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
     }
+    public void verificationNoMessageEmail() {
+        $(byXpath("(//tbody)[5]")).shouldNotHave((text("You have a new message!")));
+    }
 
     public void tipCheckboxWelcome() {
-        $(byXpath("((//b[contains(text(), 'Welcome to Ideal Flatmate!')])[2]//ancestor::tr//div[@role='checkbox'])[1]")).waitUntil(visible, 6000).click();
+        $(byXpath("//b[contains(text(), ':')]//ancestor::tr//div[span[contains(text(), 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+    }
+    public void tipCheckboxListingisLive() {
+        $(byXpath("//b[contains(text(), ':')]//ancestor::tr//td//div//span[contains(text(), 'Congratulations')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+    }
+
+    public void tipCheckboxMessage() {
+        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'You have')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
     }
 
     public void removeEmail() {
@@ -67,7 +80,5 @@ public class EmailHelper {
     }
 
 
-    public void tipCheckboxListingisLive() {
-        $(byXpath("(//b[contains(text(), 'Congratulations! Your listing on Ideal Flatmate is live!')]//ancestor::tr//div[@role='checkbox'])[1]")).waitUntil(visible, 6000).click();
-    }
+
 }

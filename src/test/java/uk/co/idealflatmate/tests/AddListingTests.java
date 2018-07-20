@@ -12,8 +12,9 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
-        authorizationHelper.setPassword("123456");
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHListingPaid@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
+        verificationHelper.closeMatchingPopup();
         //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.pressAddListingFromHeaderWithVerificationUnfinishedlisting();
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
@@ -27,7 +28,7 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectLandlord();
         addPropertyHelper.pressContinue();
-        authorizationHelper.setNewLoginMailListing("cro.gen777@gmail.com");
+        authorizationHelper.setNewLoginMailListing("cro.genNewTestOne4@gmail.com");
         authorizationHelper.setNewLoginNameFListing("Ronald");
         authorizationHelper.setNewLoginNameLListing("Tramp");
         authorizationHelper.setNewLoginPasswordListing("qqqqqq");
@@ -60,8 +61,8 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
-        authorizationHelper.setPassword("123456");
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         //verificationHelper.verifyNoOldProperty();
@@ -106,7 +107,7 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void TestSignUpWithBlankFieldsPropertyAdding() {
-        verificationHelper.closeAdvPopUp();
+
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectLandlord();
         addPropertyHelper.pressContinue();

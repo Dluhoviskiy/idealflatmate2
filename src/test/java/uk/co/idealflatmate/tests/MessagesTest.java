@@ -18,7 +18,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen44@gmail.com");
         authorizationHelper.setPassword("123456");
-        getMessageHelper().chooseMessageTab();
+        getMessageHelper().chooseMessageTab("Upgrade Test");
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
@@ -28,26 +28,26 @@ public class MessagesTest extends TestBase {
 
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen488@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        messageHelper.chooseMessageTab();
+        authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");
+        authorizationHelper.setPassword("123456");
+        messageHelper.chooseMessageTab("Upgrade Test");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Test Upgrade");
-        verificationHelper.verifyTextMessage("Test Upgrade");
+        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Can answer without subscription");
+        verificationHelper.verifyTextMessage("Can answer without subscription");
         authorizationHelper.logoutFromApp();
     }
 
     @Test
-    public void answerMessagePremiumFHtoLandlordWithoutSubscription() {
+    public void answerMessagePremiumFHLandlordToWithoutSubscription() {
 
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen49@gmail.com");
-        authorizationHelper.setPassword("123456");
-        messageHelper.chooseMessageTab();
+        authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro30prem3@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
+        messageHelper.chooseMessageTab("Can answer without subscription");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Test Upgrade");
-        verificationHelper.verifyTextMessage("Test Upgrade");
+        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Answer to FM");
+        verificationHelper.verifyTextMessage("Answer to FM");
         authorizationHelper.logoutFromApp();
     }
 

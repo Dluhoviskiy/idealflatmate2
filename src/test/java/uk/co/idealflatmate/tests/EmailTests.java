@@ -8,17 +8,20 @@ public class EmailTests extends TestBase {
     @Test
     public void TestSuccessfulEmailReceivingWelcomeAndListing() {
         emailHelper.openGmailPage();
-        emailHelper.setLoginAsUserEmail("cro.gen777@gmail.com");
-        emailHelper.setLoginAsUserPassword("wwwwww666D");
+        emailHelper.setLoginAsUserEmail("cro.gen.idealflatmate@gmail.com");
+        emailHelper.setLoginAsUserPassword("qqqqqq666D");
         //emailHelper.enterEmail();
         emailHelper.enterInbox();
-        emailHelper.verificationWelcome();
-        emailHelper.verificationListingisLive();
+        //emailHelper.verificationWelcome();
+       // emailHelper.verificationListingisLive();
+      //  emailHelper.verificationMessage();
         emailHelper.tipCheckboxWelcome();
-       emailHelper.tipCheckboxListingisLive();
+        emailHelper.tipCheckboxListingisLive();
+        emailHelper.tipCheckboxMessage();
         emailHelper.removeEmail();
-        emailHelper.verificationNoWelcome();
-        emailHelper.verificationNoListingisLive();
+       // emailHelper.verificationNoWelcome();
+       // emailHelper.verificationNoListingisLive();
+       // emailHelper.verificationNoMessageEmail();
 
     }
 }

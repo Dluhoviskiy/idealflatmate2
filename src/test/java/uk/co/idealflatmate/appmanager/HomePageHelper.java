@@ -12,13 +12,14 @@ import static com.codeborne.selenide.Selenide.*;
 public class HomePageHelper {
 
 
+
+
     public void clickFM() {
         $(byXpath("(//div[@class='circle-card-img'])[1]")).waitUntil(visible, 4000).click();
     }
 
     public void verificationFM() {
-        $(byXpath("//h1[@class='flatmate-profile-title u_m0-top-xs u_m5-top-sm u_m20-top-md']")).waitUntil(visible, 4000).shouldHave(text("Hey,"));
-
+        $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[1]")).waitUntil(visible, 4000).shouldHave(text("About me"));
     }
 
     public void clickFind() {

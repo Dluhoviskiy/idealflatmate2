@@ -15,7 +15,7 @@ public class MatchingTests extends TestBase {
     public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest4@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.genNewTestOne3@gmail.com");
         authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");

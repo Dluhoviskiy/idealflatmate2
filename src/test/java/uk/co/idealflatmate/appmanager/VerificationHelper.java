@@ -256,5 +256,12 @@ public class VerificationHelper  {
         $(byXpath("//button[@id='2']")).waitUntil(exist, 4000).shouldHave(text("Continue"));
 
     }
+
+    public void closeMatchingPopup() {
+        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).is(exist)) {
+            $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).waitUntil(appears, 8000).click();
+            sleep(2000);
+        }
+    }
 }
 

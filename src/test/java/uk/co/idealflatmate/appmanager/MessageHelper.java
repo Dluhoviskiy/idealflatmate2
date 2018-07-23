@@ -57,10 +57,10 @@ public class MessageHelper {
 
     public  void clickPropertyCardFirstOnPage(){
         if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)) {
-            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 4000).click();
+            $(byXpath("(//a[@class='card-main-link'])[1]/img")).waitUntil(appears, 4000).click();
             sleep(2000);
         }else {
-            $(byXpath("(//div[@class='owl-item active']/a/img)[1]")).waitUntil(visible, 4000).click();
+            $(byXpath("(//a[@class='card-main-link'])[1]/img")).waitUntil(visible, 4000).click();
         }
     }
 
@@ -87,7 +87,7 @@ public class MessageHelper {
     }
 
     public void clickFMContact() {
-        $(byXpath("//button[@class='btn btn-primary btn-lg u_m10-bottom u_ed-block-xs u_ed-block-lg']")).waitUntil(visible, 6000).click();
+        $(byXpath("//button[@class='btn btn-primary btn-sm text-16 u_m10-bottom u_ed-block-xs u_ed-block-lg']")).waitUntil(visible, 6000).click();
     }
 
 
@@ -101,22 +101,22 @@ public class MessageHelper {
     }
 
     public void clickCardMessageLogged() {
-        $(byXpath("//a[@href='/conversation/contact?user_id=40037&property_id=16189']")).waitUntil(visible, 6000).click();
+        $(byXpath("(//div[contains(text(), 'Newport PO30 2DN, UK')]//ancestor::div[starts-with(@id, 'property_card')]//a/img)[2]")).waitUntil(visible, 6000).click();
 
     }
 
     public void clickPropertyCardPagelogged() {
-        $(byXpath("//a[@href='/spare-room/ipswich/property-id16189']")).waitUntil(visible, 6000).click();
+        $(byXpath("(//div[contains(text(), 'Newport PO30 2DN, UK')]//ancestor::div[starts-with(@id, 'property_card')]//a/img)[1]")).waitUntil(visible, 6000).click();
 
     }
 
     public void clickPropertyCardFMnamePagelogged() {
-        $(byXpath("//span[@class='card-top-username u_ed-block' and contains(text(), 'Dora Palmer')]")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[@class='card-top-username u_ed-block' and contains(text(), 'Jason, 40')]")).waitUntil(visible, 6000).click();
 
     }
 
     public void clickFMPageMessage() {
-        $(byXpath("//a[contains(text(), ' send message')][1]")).waitUntil(visible, 6000).click();
+        $(byXpath("(//a[contains(text(), 'Message')])[2]")).waitUntil(visible, 6000).click();
 
     }
 

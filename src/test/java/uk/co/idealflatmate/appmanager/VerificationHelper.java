@@ -192,6 +192,10 @@ public class VerificationHelper  {
         $(byXpath("//div[@class='alert alert-warning text-center u_m0']")).waitUntil(exist, 4000).shouldHave(text("Upgrade to get a faster reply"));
 
     }
+    public void noTextUpgradeToFasterReply() {
+        $(byXpath("//div[@class='page-content main-content dashboard messages']")).waitUntil(exist, 4000).shouldNotHave(text("Upgrade to get a faster reply"));
+
+    }
 
     public void messageGroup(String text) {
         $(byXpath("//select[@id='property-select']")).waitUntil(exist, 4000).shouldHave(text(text));

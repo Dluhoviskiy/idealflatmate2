@@ -7,12 +7,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SignUpTest extends TestBase {
 
-    @Test
+    @Test (priority = 1)
     public void TestSuccessfulClassicSignUp() {
 
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.gen7778@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest1@gmail.com");
         authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
@@ -28,13 +28,13 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test
+    @Test (priority = 1)
     public void TestClassicSignUpWithExistingEmail() {
 
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.gen44@gmail.com");
-        authorizationHelper.setNewLoginPassword("123456");
+        authorizationHelper.setNewLoginMail("cro.gen.Landlord101@gmail.com");
+        authorizationHelper.setNewLoginPassword("qqqqqq");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
@@ -44,7 +44,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.emailAlreadyExistedAlert();
      }
 
-    @Test
+    @Test (priority = 1)
     public void TestClassicSignUpWithBlankRequiredFields() {
 
         authorizationHelper.clickSignInButton();
@@ -58,11 +58,11 @@ public class SignUpTest extends TestBase {
         verificationHelper.checkPhoneAlert();
     }
 
-    @Test
+    @Test (priority = 1)
     //Facebook authorization doen`t work on staging
 
     public void SuccessfulSignUpViaFacebook() {
-
+        open("https://www.idealflatmate.co.uk/");
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -74,11 +74,11 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test
+    @Test (priority = 1)
     //Facebook authorization doen`t work on staging
 
     public void SignUpViaFacebookAgeUnder18() {
-
+        open("https://www.idealflatmate.co.uk/");
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron666ddd@gmail.com", "qqqqqq666D");
@@ -88,13 +88,13 @@ public class SignUpTest extends TestBase {
     }
 
 
-    @Test
+    @Test (priority = 1)
     public void SuccessfulClassicSignUpPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.gen7778@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest1@gmail.com");
         authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
@@ -110,7 +110,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test
+    @Test (priority = 1)
     public void SuccessfulSignUpWithMatchingWithRequiredFields() {
 
         matchingHelper.clickHomePageMatching();
@@ -137,7 +137,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test
+    @Test (priority = 1)
     public void SignUpWithMatchingWithBlankRequiredFields() {
 
         matchingHelper.clickHomePageMatching();

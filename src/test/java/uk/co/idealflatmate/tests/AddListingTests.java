@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AddListingTests extends TestBase {
 
-    @Test
+    @Test (priority = 1)
     public void TestSuccessfulLoginStartListing() {
 
         authorizationHelper.clickSignInButton();
@@ -22,7 +22,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    @Test (priority = 1)
     public void TestSignUpSuccessfulPropertyAddingEmailVerification() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
@@ -56,7 +56,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test
+    @Test (priority = 1)
     public void TestSuccessfulPropertyAddingWithAllFields() {
 
         authorizationHelper.clickSignInButton();
@@ -105,7 +105,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    @Test (priority = 1)
     public void TestSignUpWithBlankFieldsPropertyAdding() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();

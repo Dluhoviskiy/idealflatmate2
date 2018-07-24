@@ -43,7 +43,7 @@ public class MessageHelper {
     public void chooseMessageTab(final String massage) {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
-        $(byXpath("//a[@class='text-normal']")).waitUntil(Condition.appears, 4000).click();
+      //  $(byXpath("//a[@class='text-normal']")).waitUntil(Condition.appears, 4000).click();
         $(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 4000).click();
     }
 

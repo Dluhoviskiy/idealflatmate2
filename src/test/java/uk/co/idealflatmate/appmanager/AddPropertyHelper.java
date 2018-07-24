@@ -213,6 +213,12 @@ public class AddPropertyHelper {
         $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
         $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
     }
+    public void finishPropertyCreatingAgency() {
+        $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
+        //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
+        $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
+        $(byXpath("//p[@class='u_m20-top']")).shouldHave(text("In order to list your property you need to"));
+    }
 
     public void finishPropertyCreatingWithoutPhoto() {
         $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();

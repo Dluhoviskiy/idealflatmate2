@@ -26,8 +26,8 @@ public class AuthorizationTests extends TestBase {
        // authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
-        authorizationHelper.setPassword("Borris");
-        verificationHelper.verificationUserNameOnHomePage("Alex");
+        authorizationHelper.setPassword("qqqqqq");
+        verificationHelper.verificationUserNameOnHomePage("Borris");
         authorizationHelper.logoutFromApp();
     }
 

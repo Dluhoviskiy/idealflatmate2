@@ -3,11 +3,9 @@ package uk.co.idealflatmate.appmanager;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
-public class EmailHelper {
+public class EmailHelper extends HelperBase {
 
     public void openGmailPage() {
         if($(byXpath("//div[@class='ub-emb-iframe-wrapper ub-emb-visible']")).is(exist)) {
@@ -20,20 +18,11 @@ public class EmailHelper {
         }
     }
     public void setLoginAsUserEmail(String email) {
-        $(byXpath("//input[@type='email']")).waitUntil(appears, 4000).click();
-        $(byXpath("//input[@type='email']")).waitUntil(appears, 4000);
-        $(byXpath("//input[@type='email']")).shouldBe(visible);
-        $(byXpath("//input[@type='email']")).setValue(email);
-        $(byXpath("(//content[@class='CwaK9'])[3]/span")).click();
-        sleep(2000);
+        gmailLogin(email, "//input[@type='email']", "(//content[@class='CwaK9'])[3]/span");
     }
+
     public void setLoginAsUserPassword(String password) {
-        $(byXpath("//input[@type='password']")).waitUntil(appears, 4000).click();
-        $(byXpath("//input[@type='password']")).waitUntil(appears, 4000);
-        $(byXpath("//input[@type='password']")).shouldBe(visible);
-        $(byXpath("//input[@type='password']")).setValue(password);
-        $(byXpath("(//content[@class='CwaK9'])[1]/span")).click();
-        sleep(2000);
+        gmailLogin(password, "//input[@type='password']", "(//content[@class='CwaK9'])[1]/span");
     }
 
     public void enterEmail() {
@@ -79,6 +68,56 @@ public class EmailHelper {
         $(byXpath("//div[@class='ar9 T-I-J3 J-J5-Ji']")).waitUntil(visible, 6000).click();
     }
 
+    public void verificationPageAfterSignUp() {
+        $(byXpath("//h4[contains(text(), 'Please Verify Your Email to Continue')]")).shouldBe(visible);
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(visible, 6000).click();
+    }
+    public void verificationPageAfterSignUpListing() {
+        $(byXpath("//div[contains(text(), 'Please check your inbox and follow the instructions.')]")).shouldBe(visible);
+    }
 
+    public void accountConfirm() {
+
+        open("https://mail.google.com/");
+        setLoginAsUserEmail("cro.gen.idealflatmate@gmail.com");
+        setLoginAsUserPassword("qqqqqq666D");
+        enterInbox();
+        openEmail();
+        clickLinkInEmail();
+       // tipCheckboxConfirm();
+       // removeEmail();
+    }
+
+    private void tipCheckboxConfirm() {
+        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'Account')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+    }
+
+    public void openEmail() {
+        $(byXpath("//b[contains(text(), ':')]//ancestor::tr//td//span//b[contains(text(), 'Ideal Flatmate - Account confirmation')]")).waitUntil(visible, 6000).click();
+        sleep(2000);
+    }
+
+    public void clickLinkInEmail() {
+        if($(byXpath(("//div[@data-tooltip='Show trimmed content']"))).is(visible)) {
+            $(byXpath(("//div[@data-tooltip='Show trimmed content']"))).waitUntil(visible, 6000).click();
+            sleep(2000);
+            $(byXpath(("//a[contains(text(), 'Confirm registration')]"))).waitUntil(visible, 6000).click();
+            sleep(2000);
+        }else {
+            $(byXpath(("//a[contains(text(), 'Confirm registration')]"))).waitUntil(visible, 6000).click();
+            sleep(2000);
+        }
+
+
+    }
+    public void verificationSuccessfulLogin() {
+        switchTo().window(1);
+        $(byXpath("//div[@id='w0-success-0']")).waitUntil(appear, 6000).shouldHave(text("Email verified successfully!"));
+        }
+
+    public void clickContinue() {
+        $(byXpath("//a[contains(text(), 'Continue')]")).waitUntil(visible, 6000).click();
+
+    }
 
 }

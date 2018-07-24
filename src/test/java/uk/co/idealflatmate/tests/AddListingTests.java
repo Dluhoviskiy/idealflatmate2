@@ -28,7 +28,7 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectLandlord();
         addPropertyHelper.pressContinue();
-        authorizationHelper.setNewLoginMailListing("cro.genNewTestOne4@gmail.com");
+        authorizationHelper.setNewLoginMailListing("cro.genNewTestOne23@gmail.com");
         authorizationHelper.setNewLoginNameFListing("Ronald");
         authorizationHelper.setNewLoginNameLListing("Tramp");
         authorizationHelper.setNewLoginPasswordListing("qqqqqq");
@@ -36,6 +36,12 @@ public class AddListingTests extends TestBase {
         authorizationHelper.setPhoneNumberListing("555555555");
         verificationHelper.is_subscribedClassicSignUpListing();
         verificationHelper.ageConfirmCheckClassicSignUpListing();
+        addPropertyHelper.pressContinue();
+        emailHelper.verificationPageAfterSignUpListing();
+        emailHelper.accountConfirm();
+        emailHelper.verificationSuccessfulLogin();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        emailHelper.clickContinue();
         addPropertyHelper.pressContinue();
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
@@ -61,7 +67,7 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Agency@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
@@ -90,8 +96,8 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().setAnotherMonthlyRent("800");
         getAddPropertyHelper().setLeasePeriodSecondRoom();
         getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.uploadProperty3Photos();
-        paymentsHelper.addPropertyHelper.finishPropertyCreating();
+        addPropertyHelper.uploadProperty3Photos();
+        addPropertyHelper.finishPropertyCreatingAgency();
        // getAddPropertyHelper().pressAddListingFromHello();
         getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();

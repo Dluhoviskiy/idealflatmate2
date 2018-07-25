@@ -246,7 +246,7 @@ public class AddPropertyHelper {
     }
 
     public void pressContinue() {
-        $("#wizard-next").waitUntil(appear, 4000).click();
+        $("#wizard-next").waitUntil(appear, 8000).click();
 
     }
 

@@ -18,9 +18,32 @@ public class MessagesTest extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
-        getMessageHelper().chooseMessageTab("Upgrade Test");
+        getMessageHelper().chooseMessageTab("Test Message to Landlord without subscription");
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
+    }
+    @Test (priority = 1)
+    public void sendMessageByLandlordWithoutSubscriptionToFM() {
+
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
+        homePageHelper.clickFM();
+        getMessageHelper().clickUpgradeToMessage();
+        verificationHelper.paymentPage();
+    }
+
+    @Test (priority = 1)
+    public void sendMessageByLandlordWithSubscriptionToFM() {
+
+        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickSignInButtonInForm();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.AgencyPaid@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
+        homePageHelper.clickFM();
+        getMessageHelper().clickFMPageMessage();
+        verificationHelper.chatPage();
     }
 
     @Test (priority = 1)
@@ -30,24 +53,24 @@ public class MessagesTest extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.FHMatching@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
-        messageHelper.chooseMessageTab("Upgrade Test");
+        messageHelper.chooseMessageTab("FM can answer to FM");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Can answer without subscription");
-        verificationHelper.verifyTextMessage("Can answer without subscription");
+        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("FM can answer to FM");
+        verificationHelper.verifyTextMessage("FM can answer to FM");
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 1)
+    @Test (priority = 2)
     public void answerMessageLandlordToPremiumFHWithoutSubscription() {
 
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.Landlord101@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
-        messageHelper.chooseMessageTab("Upgrade Test");
+        messageHelper.chooseMessageTab("Landlord Answer to Prem FM");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Answer to FM");
-        verificationHelper.verifyTextMessage("Answer to FM");
+        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
+        verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
 
@@ -63,8 +86,8 @@ public class MessagesTest extends TestBase {
         //messageHelper.clickPropertyPageMessage();
         verificationHelper.noTextUpgradeToFasterReply();
         verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Test Message to Landlord Premium subscription");
-        verificationHelper.verifyTextMessage("Test Message to Landlord Premium subscription");
+        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
+        verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
     @Test (priority = 1)
@@ -102,5 +125,7 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
     }
+
+
 
 }

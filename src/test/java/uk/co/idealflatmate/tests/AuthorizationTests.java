@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class AuthorizationTests extends TestBase {
 
     @Test
-    public void SuccessClassicLogIn() {
+    public void SuccessClassicLogInLogout() {
 
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();

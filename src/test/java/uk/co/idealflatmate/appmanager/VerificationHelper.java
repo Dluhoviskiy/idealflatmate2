@@ -267,5 +267,13 @@ public class VerificationHelper  {
             sleep(2000);
         }
     }
+
+    public void paymentPage() {
+        $(byXpath("//h1[@class='list-property-title u_m0-top ']")).waitUntil(exist, 4000).shouldHave(text("Upgrade"));
+    }
+
+    public void chatPage() {
+        $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(exist, 4000).shouldBe(visible);
+    }
 }
 

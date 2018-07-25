@@ -43,8 +43,12 @@ public class MessageHelper {
     public void chooseMessageTab(final String massage) {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
-      //  $(byXpath("//a[@class='text-normal']")).waitUntil(Condition.appears, 4000).click();
-        $(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 4000).click();
+        if($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()){
+            $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
+            $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 4000).click();
+        }else {
+        $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 4000).click();
+        }
     }
 
     public void clickPropertyCardMessageUnlogged() {
@@ -120,5 +124,7 @@ public class MessageHelper {
 
     }
 
-
+    public void clickUpgradeToMessage() {
+        $(byXpath("(//a[contains(text(), 'Upgrade to message')])[1]")).waitUntil(visible, 6000).click();
+    }
 }

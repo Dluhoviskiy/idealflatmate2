@@ -28,7 +28,7 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectLandlord();
         addPropertyHelper.pressContinue();
-        authorizationHelper.setNewLoginMailListing("cro.genNewTestOne23@gmail.com");
+        authorizationHelper.setNewLoginMailListing("cro.genNewTestOne50@gmail.com");
         authorizationHelper.setNewLoginNameFListing("Ronald");
         authorizationHelper.setNewLoginNameLListing("Tramp");
         authorizationHelper.setNewLoginPasswordListing("qqqqqq");

@@ -29,6 +29,7 @@ public class TestBase {
     public final EmailHelper emailHelper = new EmailHelper();
     public final HomePageHelper homePageHelper = new HomePageHelper();
     public final FooterHelper footerHelper = new FooterHelper();
+    public final AreaPageHelper areaPageHelper = new AreaPageHelper();
 
 
 

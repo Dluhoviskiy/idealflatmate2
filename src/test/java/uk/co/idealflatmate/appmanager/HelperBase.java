@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class HelperBase {
 
-    public void signIn(String email, SelenideElement selenideElement, String locator) {
+    public void fillInField(String email, SelenideElement selenideElement, String locator) {
         selenideElement.shouldBe(visible).click();
         $(locator).clear();
         //$(locator).shouldBe(visible);

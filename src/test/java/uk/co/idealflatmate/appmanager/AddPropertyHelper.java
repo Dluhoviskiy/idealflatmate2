@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.confirm;
 import static com.codeborne.selenide.Selenide.sleep;
 
 
-public class AddPropertyHelper {
+public class AddPropertyHelper extends HelperBase {
 
 
 
@@ -82,11 +82,8 @@ public class AddPropertyHelper {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        sleep(4000);
-        $("#property-phone_number").waitUntil(exist, 6000).setValue(phoneNumber);
-        sleep(2000);
+       fillInField(phoneNumber, $("#property-phone_number"), "#property-phone_number");
     }
-
 
     public void setTotalBedrooms() {
         $("#property-bedrooms_no").click();
@@ -116,17 +113,11 @@ public class AddPropertyHelper {
     }
 
     public void setMonthlyRent(String rent) {
-        $("#room-1-price").click();
-        $("#room-1-price").setValue(rent);
-        $("#room-1-price").shouldHave(Condition.value("500"));
-        //$("#wizard-next").click();
-    }
+        fillInField(rent, $("#room-1-price"), "#room-1-price");
+     }
 
     public void setDeposit(String deposit) {
-        $("input#room-1-deposit").click();
-        $("input#room-1-deposit").setValue(deposit);
-        $("#room-1-deposit").shouldHave(value("1000"));
-        // $("#wizard-next").click();
+        fillInField(deposit, $("input#room-1-deposit"), "input#room-1-deposit");
     }
 
     public void setTotalBills(String bills) {

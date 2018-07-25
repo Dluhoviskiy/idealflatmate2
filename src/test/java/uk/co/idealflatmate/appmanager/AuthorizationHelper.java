@@ -22,10 +22,10 @@ public class AuthorizationHelper extends HelperBase {
      }
 
     public void setLoginAsUserWithoutPackage(String email) {
-        signIn(email, $("#loginform-username"), "#loginform-username");
+        fillInField(email, $("#loginform-username"), "#loginform-username");
     }
     public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
-        signIn(email, $("#loginform-username"), "#loginform-username");
+        fillInField(email, $("#loginform-username"), "#loginform-username");
     }
 
     public void setPassword(String password) {
@@ -109,35 +109,35 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void setNewLoginMail(String email) {
-        signIn(email, $("#signup-need-email").waitUntil(visible, 6000), "#signup-need-email");
+        fillInField(email, $("#signup-need-email").waitUntil(visible, 6000), "#signup-need-email");
     }
 
     public void setNewLoginPassword(String password) {
-        signIn(password, $("#signup-need-password"), "#signup-need-password");
+        fillInField(password, $("#signup-need-password"), "#signup-need-password");
     }
 
     public void setNewLoginNameF(String nameF) {
-        signIn(nameF, $("#signup-need-firstname"), "#signup-need-firstname");
+        fillInField(nameF, $("#signup-need-firstname"), "#signup-need-firstname");
     }
 
     public void setNewLoginNameL(String nameL) {
-        signIn(nameL, $("#signup-need-lastname"), "#signup-need-lastname");
+        fillInField(nameL, $("#signup-need-lastname"), "#signup-need-lastname");
     }
 
     public void setNewLoginMailMatching(String email) {
-        signIn(email, $("#signup-survey-email"), "#signup-survey-email");
+        fillInField(email, $("#signup-survey-email"), "#signup-survey-email");
     }
 
     public void setNewLoginPasswordMatching(String password) {
-        signIn(password, $("#signup-survey-password"), "#signup-survey-password");
+        fillInField(password, $("#signup-survey-password"), "#signup-survey-password");
     }
 
     public void setNewLoginNameFMatching(String nameF) {
-        signIn(nameF, $("#signup-survey-firstname"), "#signup-survey-firstname");
+        fillInField(nameF, $("#signup-survey-firstname"), "#signup-survey-firstname");
     }
 
     public void setNewLoginNameLMatching(String nameL) {
-        signIn(nameL, $("#signup-survey-lastname"), "#signup-survey-lastname");
+        fillInField(nameL, $("#signup-survey-lastname"), "#signup-survey-lastname");
     }
 
     public void clickFormSignUp() {
@@ -166,10 +166,10 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void setPhoneNumber(String PhoneNumber) {
-        signIn(PhoneNumber, $("#signup-survey-phone"), "#signup-survey-phone");
+        fillInField(PhoneNumber, $("#signup-survey-phone"), "#signup-survey-phone");
     }
     public void setPhoneNumberHomePage(String PhoneNumber) {
-        signIn(PhoneNumber, $("#signup-need-phone"), "#signup-need-phone");
+        fillInField(PhoneNumber, $("#signup-need-phone"), "#signup-need-phone");
     }
 
 
@@ -194,25 +194,25 @@ public class AuthorizationHelper extends HelperBase {
         confirm("Sorry! Ideal Flatmate is restricted for use by those under the age of 18.");
     }
     public void setNewLoginMailListing(String email) {
-        signIn(email, $("#signupnewform-email").waitUntil(visible, 6000), "#signupnewform-email");
+        fillInField(email, $("#signupnewform-email").waitUntil(visible, 6000), "#signupnewform-email");
     }
 
     public void setNewLoginPasswordListing(String password) {
-        signIn(password, $("#signupnewform-password"), "#signupnewform-password");
+        fillInField(password, $("#signupnewform-password"), "#signupnewform-password");
     }
     public void setNewLoginPasswordPasswordConfirm(String password) {
-        signIn(password, $("#signupnewform-password_confirm"), "#signupnewform-password_confirm");
+        fillInField(password, $("#signupnewform-password_confirm"), "#signupnewform-password_confirm");
     }
 
     public void setNewLoginNameFListing(String nameF) {
-        signIn(nameF, $("#signupnewform-firstname"), "#signupnewform-firstname");
+        fillInField(nameF, $("#signupnewform-firstname"), "#signupnewform-firstname");
     }
 
     public void setNewLoginNameLListing(String nameL) {
-        signIn(nameL, $("#signupnewform-lastname"), "#signupnewform-lastname");
+        fillInField(nameL, $("#signupnewform-lastname"), "#signupnewform-lastname");
     }
     public void setPhoneNumberListing(String PhoneNumber) {
-        signIn(PhoneNumber, $("#signupnewform-phone"), "#signupnewform-phone");
+        fillInField(PhoneNumber, $("#signupnewform-phone"), "#signupnewform-phone");
     }
 
 

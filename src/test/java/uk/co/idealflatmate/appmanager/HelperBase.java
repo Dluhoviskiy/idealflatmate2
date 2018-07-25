@@ -11,19 +11,19 @@ import static com.codeborne.selenide.Selenide.*;
 public class HelperBase {
 
     public void fillInField(String email, SelenideElement selenideElement, String locator) {
-        selenideElement.shouldBe(visible).click();
+        sleep(1000);
+        selenideElement.waitUntil(visible, 6000).click();
         $(locator).clear();
-        //$(locator).shouldBe(visible);
-        sleep(2000);
+        sleep(1000);
         $(locator).setValue(email);
     }
 
-    public void gmailLogin(String email, String s, String s2) {
-        $(byXpath(s)).waitUntil(appears, 4000).click();
-        $(byXpath(s)).waitUntil(appears, 4000);
-        $(byXpath(s)).shouldBe(visible);
-        $(byXpath(s)).setValue(email);
-        $(byXpath(s2)).click();
+    public void gmailLogin(String email, String field, String next) {
+        $(byXpath(field)).waitUntil(appears, 4000).click();
+        $(byXpath(field)).waitUntil(appears, 4000);
+        $(byXpath(field)).shouldBe(visible);
+        $(byXpath(field)).setValue(email);
+        $(byXpath(next)).click();
         sleep(2000);
     }
 }

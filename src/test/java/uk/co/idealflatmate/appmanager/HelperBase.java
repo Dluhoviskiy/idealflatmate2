@@ -12,7 +12,7 @@ public class HelperBase {
 
     public void fillInField(String email, SelenideElement selenideElement, String locator) {
         sleep(1000);
-        selenideElement.waitUntil(visible, 6000).click();
+        selenideElement.waitUntil(visible, 10000).click();
         $(locator).clear();
         sleep(1000);
         $(locator).setValue(email);

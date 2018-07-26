@@ -103,7 +103,7 @@ public class MessagesTest extends TestBase {
         messageHelper.clickPropertyPageMessage();
         verificationHelper.upgradeToFasterReply();
         verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
+        messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
     }

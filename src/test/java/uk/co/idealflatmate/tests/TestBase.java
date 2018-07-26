@@ -30,6 +30,7 @@ public class TestBase {
     public final HomePageHelper homePageHelper = new HomePageHelper();
     public final FooterHelper footerHelper = new FooterHelper();
     public final AreaPageHelper areaPageHelper = new AreaPageHelper();
+    public final SearchHelper searchHelper = new SearchHelper();
 
 
 

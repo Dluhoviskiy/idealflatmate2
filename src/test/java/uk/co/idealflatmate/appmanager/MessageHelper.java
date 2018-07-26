@@ -95,14 +95,7 @@ public class MessageHelper {
     }
 
 
-    public void searchProperty(String postcode) {
-        //click(byCssSelector("input#property-location"));
-        $("input#property-location").waitUntil(visible, 4000).click();
-        $("input#property-location").waitUntil(empty, 4000).setValue(postcode);
-        sleep(4000);
-        $(byXpath("//button[@class='btn btn-primary u_p60-left-sm u_p60-right-sm js-search-submit']")).waitUntil(visible, 4000).click();
 
-    }
 
     public void clickCardMessageLogged() {
         $(byXpath("(//div[contains(text(), 'Newport PO30 2DN, UK')]//ancestor::div[starts-with(@id, 'property_card')]//a/img)[2]")).waitUntil(visible, 6000).click();

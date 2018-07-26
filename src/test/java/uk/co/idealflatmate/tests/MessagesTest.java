@@ -81,7 +81,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.Premium@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
-        messageHelper.searchProperty("PO30");
+        searchHelper.searchProperty("PO30");
         messageHelper.clickCardMessageLogged();
         //messageHelper.clickPropertyPageMessage();
         verificationHelper.noTextUpgradeToFasterReply();
@@ -97,7 +97,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
-        messageHelper.searchProperty("PO30");
+        searchHelper.searchProperty("PO30");
         //messageHelper.clickCardMessageLogged();
         messageHelper.clickPropertyCardPagelogged();
         messageHelper.clickPropertyPageMessage();
@@ -115,7 +115,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
-        messageHelper.searchProperty("PO30");
+        searchHelper.searchProperty("PO30");
         //messageHelper.clickCardMessageLogged();
         messageHelper.clickPropertyCardFMnamePagelogged();
         messageHelper.clickFMPageMessage();

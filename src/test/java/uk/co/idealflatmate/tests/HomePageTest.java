@@ -87,6 +87,10 @@ public class HomePageTest extends TestBase {
         homePageHelper.verificationLandlordBlog();
     }
 
+    //@Test
+    public void experimentGet() {
 
+        //homePageHelper.experimentGetTest();
+    }
 
 }

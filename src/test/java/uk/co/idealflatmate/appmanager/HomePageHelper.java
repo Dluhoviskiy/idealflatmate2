@@ -1,6 +1,8 @@
 package uk.co.idealflatmate.appmanager;
 
 
+import org.testng.Assert;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
@@ -91,5 +93,10 @@ public class HomePageHelper {
     public void clickBlogLandlordTextLink() {
         $(byXpath("(//div[@class='u_p10-xs u_p15-sm']/a)[2]")).waitUntil(visible, 4000).click();
     }
+    /*
+    public void experimentGetTest() {
+        $$(byXpath("//div[@class='owl-item active']")).get();
+        Assert
 
+    }*/
 }

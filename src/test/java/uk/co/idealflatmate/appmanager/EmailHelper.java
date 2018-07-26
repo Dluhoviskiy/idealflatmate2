@@ -117,7 +117,7 @@ public class EmailHelper extends HelperBase {
 
     public void clickContinue() {
         $(byXpath("//a[contains(text(), 'Continue')]")).waitUntil(visible, 6000).click();
-
+        sleep(2000);
     }
 
 }

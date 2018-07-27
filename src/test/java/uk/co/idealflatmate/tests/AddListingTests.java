@@ -22,7 +22,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 1)
+    //@Test (priority = 1)
     public void TestSignUpSuccessfulPropertyAdding() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();

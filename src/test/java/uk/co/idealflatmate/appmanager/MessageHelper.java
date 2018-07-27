@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -119,5 +120,16 @@ public class MessageHelper {
 
     public void clickUpgradeToMessage() {
         $(byXpath("(//a[contains(text(), 'Upgrade to message')])[1]")).waitUntil(visible, 6000).click();
+    }
+
+    public void clickPhoneReveal() {
+        $(byXpath("//button[@class='btn btn-sm btn-primary-outline js-reveal-property-phone-button']")).waitUntil(visible, 6000).click();
+        //$(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 4000).click();
+        //$(byXpath("//span[@class='property-phone_reveal']/a")).waitUntil(visible, 6000).click();
+
+    }
+
+    public void clickMessage(String text) {
+         $(byText(text)).click();
     }
 }

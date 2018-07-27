@@ -1,9 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
-import com.typesafe.config.ConfigException;
-import org.openqa.selenium.By;
-import uk.co.idealflatmate.tests.TestBase;
 
 
 import static com.codeborne.selenide.Condition.*;
@@ -101,8 +98,8 @@ public class VerificationHelper  {
         }
     }
 
-    public void verifyPackagePurchase() {
-        $(".u_p20-bottom.u_b-bottom").shouldHave(Condition.value("Congratulations John!"));
+    public void verifyPackagePurchase(String text) {
+        $(byXpath("//div[@class='text-body-copy u_m20-top-md']")).shouldHave(text(text));
     }
 
     //span[contains(text(), 'This email address has already been taken.')]

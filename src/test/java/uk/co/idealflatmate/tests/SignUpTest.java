@@ -12,8 +12,8 @@ public class SignUpTest extends TestBase {
 
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest12@gmail.com");
-        authorizationHelper.setNewLoginPassword("wwwwww666D");
+        authorizationHelper.setNewLoginMail("cro.PremFHPayment@gmail.com");
+        authorizationHelper.setNewLoginPassword("qqqqqq");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
@@ -26,10 +26,7 @@ public class SignUpTest extends TestBase {
         emailHelper.clickContinue();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseAccountFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
+        authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
@@ -99,7 +96,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest30@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.ProfPayment@gmail.com");
         authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
@@ -118,6 +115,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+
     }
 
     @Test (priority = 2)

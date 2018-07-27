@@ -26,4 +26,7 @@ public class HelperBase {
         $(byXpath(next)).click();
         sleep(2000);
     }
+
+    protected void fillInField1(String nla, SelenideElement $, SelenideElement $1) {
+    }
 }

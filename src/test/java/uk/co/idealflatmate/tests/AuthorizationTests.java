@@ -168,7 +168,16 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
     }
+    @Test
+    public void SuccessLogInPhoneReveal() {
 
+        getMessageHelper().clickPropertyCardFirstOnPage();
+        getMessageHelper().clickPhoneReveal();
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
+        verificationHelper.verificationUserNameOnHomePage("Borris");
+        authorizationHelper.logoutFromApp();
+    }
 
 }
 

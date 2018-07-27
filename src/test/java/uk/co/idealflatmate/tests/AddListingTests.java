@@ -23,12 +23,12 @@ public class AddListingTests extends TestBase {
     }
 
     @Test (priority = 1)
-    public void TestSignUpSuccessfulPropertyAddingEmailVerification() {
+    public void TestSignUpSuccessfulPropertyAdding() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectLandlord();
         addPropertyHelper.pressContinue();
-        authorizationHelper.setNewLoginMailListing("cro.genNewTestOne50@gmail.com");
+        authorizationHelper.setNewLoginMailListing("cro.LandLordPayment@gmail.com");
         authorizationHelper.setNewLoginNameFListing("Ronald");
         authorizationHelper.setNewLoginNameLListing("Tramp");
         authorizationHelper.setNewLoginPasswordListing("qqqqqq");
@@ -53,12 +53,7 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreatingWithoutPhoto();
         verificationHelper.verifyAddedProperty();
-        getAddPropertyHelper().RemoveListing();
-        verificationHelper.verifyNoProperty();
-        getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseAccountFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
+        authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 

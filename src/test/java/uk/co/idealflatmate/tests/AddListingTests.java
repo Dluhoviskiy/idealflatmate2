@@ -22,7 +22,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    //@Test (priority = 1)
+    @Test (priority = 1)
     public void TestSignUpSuccessfulPropertyAdding() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
@@ -37,12 +37,8 @@ public class AddListingTests extends TestBase {
         verificationHelper.is_subscribedClassicSignUpListing();
         verificationHelper.ageConfirmCheckClassicSignUpListing();
         addPropertyHelper.pressContinue();
-        emailHelper.verificationPageAfterSignUpListing();
-        emailHelper.accountConfirm();
-        emailHelper.verificationSuccessfulLogin();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        emailHelper.clickContinue();
-        addPropertyHelper.pressContinue();
+        //emailHelper.emailVerification("Ronald");
+        //addPropertyHelper.pressContinue();
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.chooseAreaforLondon();

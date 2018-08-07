@@ -53,10 +53,18 @@ public class PaymentTests extends TestBase {
 
     @Test (priority = 8)
     public void PremiumFHPaymentWorldPay() {
+        authorizationHelper.goToPropertyPage();
+        authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.PremFHPayment@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
+        authorizationHelper.setNewLoginMail("cro.PremFHPayment4@gmail.com");
+        authorizationHelper.setNewLoginPassword("wwwwww666D");
+        authorizationHelper.setNewLoginNameF("Ronald");
+        authorizationHelper.setNewLoginNameL("NewOne");
+        authorizationHelper.setPhoneNumberHomePage("777777777");
+        verificationHelper.ageConfirmCheckClassicSignUp();
+        authorizationHelper.clickFormSignUpSave();
+        //emailHelper.emailVerification();
+        authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         paymentsHelper.goToPaymentsTab();
         paymentsHelper.verificationPaymentPage("Premium Flathunter");

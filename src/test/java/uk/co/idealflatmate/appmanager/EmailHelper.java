@@ -7,6 +7,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class EmailHelper extends HelperBase {
 
+    public final VerificationHelper verificationHelper = new VerificationHelper();
+
     public void openGmailPage() {
         if($(byXpath("//div[@class='ub-emb-iframe-wrapper ub-emb-visible']")).is(exist)) {
             //sleep(4000);
@@ -118,6 +120,13 @@ public class EmailHelper extends HelperBase {
     public void clickContinue() {
         $(byXpath("//a[contains(text(), 'Continue')]")).waitUntil(visible, 6000).click();
         sleep(2000);
+    }
+    public void emailVerification(String Name) {
+        verificationPageAfterSignUp();
+        accountConfirm();
+        verificationSuccessfulLogin();
+        verificationHelper.verificationUserNameOnHomePage(Name);
+        clickContinue();
     }
 
 }

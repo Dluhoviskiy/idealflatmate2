@@ -22,11 +22,7 @@ public class MatchingTests extends TestBase {
         authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
-        emailHelper.verificationPageAfterSignUp();
-        emailHelper.accountConfirm();
-        emailHelper.verificationSuccessfulLogin();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        emailHelper.clickContinue();
+        //emailHelper.emailVerification("Ronald");
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         verificationHelper.checkMatchingConcurrence("NOT taken!");

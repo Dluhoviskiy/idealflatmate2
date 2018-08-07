@@ -12,23 +12,21 @@ public class SignUpTest extends TestBase {
 
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.PremFHPayment@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.PremFHPayment4@gmail.com");
         authorizationHelper.setNewLoginPassword("qqqqqq");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
-        emailHelper.verificationPageAfterSignUp();
-        emailHelper.accountConfirm();
-        emailHelper.verificationSuccessfulLogin();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        emailHelper.clickContinue();
+        //emailHelper.emailVerification();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
+
+
 
     @Test (priority = 2)
     public void TestClassicSignUpWithExistingEmail() {
@@ -96,18 +94,14 @@ public class SignUpTest extends TestBase {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.ProfPayment@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.ProfPayment4@gmail.com");
         authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
-        emailHelper.verificationPageAfterSignUp();
-        emailHelper.accountConfirm();
-        emailHelper.verificationSuccessfulLogin();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        emailHelper.clickContinue();
+        //emailHelper.emailVerification();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
@@ -124,18 +118,14 @@ public class SignUpTest extends TestBase {
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest34@gmail.com");
+        authorizationHelper.setNewLoginMail("cro.genNewOneTest341@gmail.com");
         authorizationHelper.setNewLoginPassword("wwwwww666D");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
         authorizationHelper.clickFormSignUpSave();
-        emailHelper.verificationPageAfterSignUp();
-        emailHelper.accountConfirm();
-        emailHelper.verificationSuccessfulLogin();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        emailHelper.clickContinue();
+        //emailHelper.emailVerification("Ronald");
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
@@ -155,7 +145,7 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest32@gmail.com");
+        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest321@gmail.com");
         authorizationHelper.setNewLoginPasswordMatching("123456");
         authorizationHelper.setNewLoginNameFMatching("Ronald");
         authorizationHelper.setNewLoginNameLMatching("NewOne");
@@ -164,10 +154,7 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatchingAfterSignUp();
         authorizationHelper.rejectMissedPreferredLocation();
         //emailHelper.verificationPageAfterSignUp();
-        emailHelper.accountConfirm();
-        emailHelper.verificationSuccessfulLogin();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        emailHelper.clickContinue();
+        emailHelper.emailVerification("Ronald");
 
         matchingHelper.clickSkip7stepFromHome();
         verificationHelper.verificationUserNameOnHomePage("Ronald");

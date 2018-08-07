@@ -53,7 +53,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test (priority = 1)
+    @Test (priority = 2)
     public void TestSuccessfulPropertyAddingWithAllFields() {
 
         authorizationHelper.clickSignInButton();

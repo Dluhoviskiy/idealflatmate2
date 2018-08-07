@@ -74,7 +74,7 @@ public class VerificationHelper  {
                 "1 month+"));
         $(byXpath("//div[@class='tab-pane fade  in active']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
         $(byXpath("//a[contains(text(), 'Room 3')]")).click();
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th August 2025"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th September 2025"));
        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
         $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text("About the property\n" +
                 "3 bedrooms\n" +

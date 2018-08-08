@@ -82,7 +82,7 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-       sleep(2000);
+       sleep(5000);
        fillInField(phoneNumber, $("#property-phone_number"), "#property-phone_number");
     }
 

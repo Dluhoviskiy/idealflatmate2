@@ -154,7 +154,7 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatchingAfterSignUp();
         authorizationHelper.rejectMissedPreferredLocation();
         //emailHelper.verificationPageAfterSignUp();
-        emailHelper.emailVerification("Ronald");
+        //emailHelper.emailVerification("Ronald");
 
         matchingHelper.clickSkip7stepFromHome();
         verificationHelper.verificationUserNameOnHomePage("Ronald");

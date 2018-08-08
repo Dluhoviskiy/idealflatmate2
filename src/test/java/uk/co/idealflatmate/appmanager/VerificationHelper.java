@@ -101,6 +101,9 @@ public class VerificationHelper  {
     public void verifyPackagePurchase(String text) {
         $(byXpath("//div[@class='text-body-copy u_m20-top-md']")).shouldHave(text(text));
     }
+    public void verifyPackageCanceled(String text) {
+        $(byXpath("//div[@class='text-body-copy u_m20-top-md']")).shouldHave(text(text));
+    }
 
     //span[contains(text(), 'This email address has already been taken.')]
     public void emailAlreadyExistedAlert() {
@@ -272,5 +275,7 @@ public class VerificationHelper  {
     public void chatPage() {
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(exist, 4000).shouldBe(visible);
     }
+
+
 }
 

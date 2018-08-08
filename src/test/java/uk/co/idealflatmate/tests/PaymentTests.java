@@ -2,9 +2,7 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.switchTo;
 
 public class PaymentTests extends TestBase {
 
@@ -51,13 +49,13 @@ public class PaymentTests extends TestBase {
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
     }
 
-    @Test (priority = 8)
+    @Test (priority = 6)
     public void PremiumFHPaymentWorldPay() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.PremFHPayment4@gmail.com");
-        authorizationHelper.setNewLoginPassword("wwwwww666D");
+        authorizationHelper.setNewLoginMail("cro.PremFHPayment6@gmail.com");
+        authorizationHelper.setNewLoginPassword("qqqqqq");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
@@ -76,6 +74,9 @@ public class PaymentTests extends TestBase {
         paymentsHelper.chooseWorldPay("or Credit / Debit Card");
         paymentsHelper.fillinDebitCardData("Alex", "5454545454545454", "11", "2020", "123");
         verificationHelper.verifyPackagePurchase("Congratulations on choosing our Premium Flathunter plan for the property .\n");
+        paymentsHelper.removePackage();
+        verificationHelper.verifyPackageCanceled("You are using our Premium Flathunter plan for property .\n" +
+                "Your subscription will not renew automatically.");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();

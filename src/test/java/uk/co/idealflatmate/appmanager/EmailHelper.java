@@ -20,7 +20,7 @@ public class EmailHelper extends HelperBase {
         }
     }
     public void setLoginAsUserEmail(String email) {
-        gmailLogin(email, "//input[@type='email']", "(//content[@class='CwaK9'])[3]/span");
+        gmailLogin(email, "//input[@type='email']", "//span[contains(text(), 'Next')]");
     }
 
     public void setLoginAsUserPassword(String password) {
@@ -66,7 +66,14 @@ public class EmailHelper extends HelperBase {
         $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'You have')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
     }
 
-    public void removeEmail() {
+    public void tipCheckboxPremiumFHSubscription() {
+        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+    }
+    public void tipCheckboxPremiumFHSubscriptionCanceled() {
+        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'Subscription canceled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+    }
+
+    public void removeAllEmails() {
         $(byXpath("//div[@class='ar9 T-I-J3 J-J5-Ji']")).waitUntil(visible, 6000).click();
     }
 
@@ -87,7 +94,7 @@ public class EmailHelper extends HelperBase {
         openEmail();
         clickLinkInEmail();
        // tipCheckboxConfirm();
-       // removeEmail();
+       // removeAllEmails();
     }
 
     private void tipCheckboxConfirm() {
@@ -128,5 +135,6 @@ public class EmailHelper extends HelperBase {
         verificationHelper.verificationUserNameOnHomePage(Name);
         clickContinue();
     }
+
 
 }

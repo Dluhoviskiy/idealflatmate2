@@ -22,7 +22,10 @@ public class SignUpTest extends TestBase {
         //emailHelper.emailVerification();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        authorizationHelper.logoutFromApp();
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 

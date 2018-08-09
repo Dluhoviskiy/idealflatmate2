@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class AddListingTests extends TestBase {
 
@@ -28,7 +29,7 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectLandlord();
         addPropertyHelper.pressContinue();
-        authorizationHelper.setNewLoginMailListing("cro.LandLordPayment@gmail.com");
+        authorizationHelper.setNewLoginMailListing("cro.LandLordPayment1@gmail.com");
         authorizationHelper.setNewLoginNameFListing("Ronald");
         authorizationHelper.setNewLoginNameLListing("Tramp");
         authorizationHelper.setNewLoginPasswordListing("qqqqqq");
@@ -38,7 +39,8 @@ public class AddListingTests extends TestBase {
         verificationHelper.ageConfirmCheckClassicSignUpListing();
         addPropertyHelper.pressContinue();
         //emailHelper.emailVerification("Ronald");
-        //addPropertyHelper.pressContinue();
+        sleep(4000);
+        addPropertyHelper.pressContinue();
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.chooseAreaforLondon();
@@ -48,8 +50,11 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyCreatingWithoutPhoto();
-        verificationHelper.verifyAddedProperty();
-        authorizationHelper.logoutFromApp();
+        //verificationHelper.verifyAddedProperty();
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 

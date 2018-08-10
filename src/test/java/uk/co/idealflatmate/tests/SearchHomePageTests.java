@@ -2,7 +2,7 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
-public class SearchTests extends TestBase {
+public class SearchHomePageTests extends TestBase {
 
     @Test(priority = 1)
     public void testSearchHomeByButton() {

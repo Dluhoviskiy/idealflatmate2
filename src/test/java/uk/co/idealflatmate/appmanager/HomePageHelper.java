@@ -113,13 +113,26 @@ public class HomePageHelper {
     public void amountOfAreasBlocks(int size) {
 
         $$("div.card-btr-amenities.text-white").shouldHaveSize(size);
-        /*$$("div.owl-stage-outer").shouldHave(texts("Clapham", "South London", "ZONE 2", "Stratford",   "East London", "ZONE 3",  "Ealing",
-                    "West London",  "ZONE 3", "Walthamstow", "East London", "ZONE 4, , "));*/
+
         }
     public void amountOfMatchListRoom(int size) {
         $$(byXpath("//section[@class='homepage-quiz-list col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 u_p0 u_ed-flex-sm u_p25-top u_p25-bottom']/div")).shouldHaveSize(size);
     }
 
+    public void TextInAreas() {
+        $$("div.owl-stage-outer").shouldHave(texts("Clapham\n" +
+                "South London\n" +
+                "ZONE 2\n" +
+                "Stratford\n" +
+                "East London\n" +
+                "ZONE 3\n" +
+                "Ealing\n" +
+                "West London\n" +
+                "ZONE 3\n" +
+                "Walthamstow\n" +
+                "East London\n" +
+                "ZONE 4"));
+    }
 
 
     //private void $$(boolean equals) {

@@ -88,14 +88,21 @@ public class HomePageTest extends TestBase {
     }
 
     @Test
-    public void amountBlocs() {
+    public void amountOfBlocsAndTextOfAreas() {
 
         homePageHelper.amountOfFeedbackBlocks(4);
         homePageHelper.amountOfBlogBlocks(2);
         homePageHelper.amountOfLatestFMblocks(4);
         homePageHelper.amountOfFeaturedRoom(6);
         homePageHelper.amountOfAreasBlocks(4);
+        homePageHelper.TextInAreas();
         homePageHelper.amountOfMatchListRoom(2);
+    }
+
+    //@Test
+    public void amountBlocs1() {
+
+
     }
 
 }

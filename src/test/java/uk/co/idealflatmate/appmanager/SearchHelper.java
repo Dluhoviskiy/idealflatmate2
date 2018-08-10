@@ -5,8 +5,8 @@ import net.bytebuddy.asm.Advice;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchHelper extends HelperBase {
 
@@ -57,5 +57,15 @@ public class SearchHelper extends HelperBase {
 
     public void verificationSearchFromHomeLocationProperty(String location) {
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).waitUntil(visible, 10000).shouldHave(text(location));
+    }
+
+    public void amountPropertyCards(int size) {
+
+        $$(byXpath("//div[@class='row  cards-container']/div")).shouldHaveSize(size);
+    }
+
+    public void firstCard() {
+
+        $$(byXpath("//div[@class='row  cards-container']/div")).first().shouldHave(text("Co-living,"));
     }
 }

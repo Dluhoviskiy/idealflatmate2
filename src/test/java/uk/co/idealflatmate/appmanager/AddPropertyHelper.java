@@ -53,9 +53,9 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//input[@id='property-route']")).setValue(road).pressEnter();;
     }
 
-    public void chooseAreaforLondon() {
+    public void chooseAreaforLondon(final String AreaInDropDown) {
         messageHelper.click(byName("Property[area_link_id]"));
-        messageHelper.click(byXpath("//*[@id=\"property-area_link_id\"]/option[2]"));
+        messageHelper.click(byXpath("//*[@id=\"property-area_link_id\"]/option[" + AreaInDropDown + "]"));
     }
 
     public void pressAddListingFromHeaderWithVerificationUnfinishedlisting() {
@@ -86,9 +86,9 @@ public class AddPropertyHelper extends HelperBase {
        fillInField(phoneNumber, $("#property-phone_number"), "#property-phone_number");
     }
 
-    public void setTotalBedrooms() {
+    public void setTotalBedrooms(final String amount) {
         $("#property-bedrooms_no").click();
-        messageHelper.click(byXpath("//*[@id=\"property-bedrooms_no\"]/option[4]"));
+        messageHelper.click(byXpath("//*[@id=\"property-bedrooms_no\"]/option[" + amount + "]"));
     }
 
     public void setAllAmanities() {
@@ -190,12 +190,15 @@ public class AddPropertyHelper extends HelperBase {
 
     public void uploadProperty3Photos() {
         $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing1.jpg"));
+        sleep(2000);
         $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[1]")).shouldBe(Condition.visible);
         $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing2.jpeg"));
+        sleep(2000);
         $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[2]")).shouldBe(Condition.visible);
         $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing3.jpg"));
+        sleep(2000);
         $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[3]")).shouldBe(Condition.visible);
-        sleep(3000);
+        sleep(1000);
 
     }
 
@@ -233,8 +236,8 @@ public class AddPropertyHelper extends HelperBase {
         sleep(4000);
     }
 
-    public void selectLandlord() {
-        $("#type_id_3").waitUntil(appear, 4000).click();
+    public void selectTypeUser(final String checkBoxId) {
+        $("#type_id_" + checkBoxId).waitUntil(appear, 4000).click();
     }
 
     public void pressContinue() {

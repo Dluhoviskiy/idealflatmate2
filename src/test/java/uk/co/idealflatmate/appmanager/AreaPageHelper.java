@@ -56,6 +56,7 @@ public class AreaPageHelper {
     public void checklinkFH() {
         switchTo().window(1);
         $(byXpath("//a[contains(text(), 'See more flathunters')]")).waitUntil(exist, 5000).click();
+        sleep(3000);
         $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom']")).shouldHave(text("We've found"));
     }
 

@@ -52,7 +52,7 @@ public class VerificationHelper  {
 
     public void verifyAddedPropertyWithAllFields() {
         $(byXpath("//h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']")).shouldHave(text("3 rooms for rent in Bankside, South, London from\n" + "£500"));
-        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[1]")).shouldHave(text("\n" + "+44 2 XXXX"));
+            $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[2]")).shouldHave(text("\n" + "+44 2 XXXX"));
         $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]")).shouldHave(text("£500\n" +
                 "month\n" +

@@ -1,14 +1,12 @@
 package uk.co.idealflatmate.appmanager;
 
 
-import org.testng.Assert;
-
+import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.*;
 
 
 public class HomePageHelper {
@@ -93,6 +91,39 @@ public class HomePageHelper {
     public void clickBlogLandlordTextLink() {
         $(byXpath("(//div[@class='u_p10-xs u_p15-sm']/a)[2]")).waitUntil(visible, 4000).click();
     }
+
+    public void amountOfBlogBlocks(int size) {
+
+        $$("div.col-xs-6.u_p5-right-xs.u_ed-flex").shouldHaveSize(size);
+
+    }
+
+    public void amountOfLatestFMblocks(int size) {
+        $$("div.circle-card-img").shouldHaveSize(size);
+
+    }
+    public void amountOfFeedbackBlocks(int size) {
+
+        $$("#testimonials div.card").shouldHaveSize(size);
+    }
+
+    public void amountOfFeaturedRoom(int size) {
+        $$(byXpath("//div[@class='hp-featured-properties-container cards-container']/div")).shouldHaveSize(size);
+    }
+    public void amountOfAreasBlocks(int size) {
+
+        $$("div.card-btr-amenities.text-white").shouldHaveSize(size);
+        /*$$("div.owl-stage-outer").shouldHave(texts("Clapham", "South London", "ZONE 2", "Stratford",   "East London", "ZONE 3",  "Ealing",
+                    "West London",  "ZONE 3", "Walthamstow", "East London", "ZONE 4, , "));*/
+        }
+    public void amountOfMatchListRoom(int size) {
+        $$(byXpath("//section[@class='homepage-quiz-list col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 u_p0 u_ed-flex-sm u_p25-top u_p25-bottom']/div")).shouldHaveSize(size);
+    }
+
+
+
+    //private void $$(boolean equals) {
+
     /*
     public void experimentGetTest() {
         $$(byXpath("//div[@class='owl-item active']")).get();

@@ -27,7 +27,7 @@ public class AddListingTests extends TestBase {
     public void TestSignUpSuccessfulPropertyAdding() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
-        addPropertyHelper.selectLandlord();
+        addPropertyHelper.selectTypeUser("3"); //Landlord
         addPropertyHelper.pressContinue();
         authorizationHelper.setNewLoginMailListing("cro.LandLordPayment1@gmail.com");
         authorizationHelper.setNewLoginNameFListing("Ronald");
@@ -43,9 +43,9 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.pressContinue();
         paymentsHelper.addPropertyHelper.setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.chooseAreaforLondon();
+        paymentsHelper.addPropertyHelper.chooseAreaforLondon("2");
         getAddPropertyHelper().pressContinueButton();
-        paymentsHelper.addPropertyHelper.setTotalBedrooms();
+        paymentsHelper.addPropertyHelper.setTotalBedrooms("4");
         paymentsHelper.addPropertyHelper.setMonthlyRent("500");
         getAddPropertyHelper().pressContinueButton();
         paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
@@ -74,10 +74,10 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().setPostalCode("SE1");
         getAddPropertyHelper().pressContinueButton();
         getAddPropertyHelper().chooseRoadFor("Idealstreet");
-        getAddPropertyHelper().chooseAreaforLondon();
+        getAddPropertyHelper().chooseAreaforLondon("2");
         getAddPropertyHelper().pressContinueButton();
         getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456");
-        getAddPropertyHelper().setTotalBedrooms();
+        getAddPropertyHelper().setTotalBedrooms("4");
         getAddPropertyHelper().setAllAmanities();
         getAddPropertyHelper().setPropertyDescription();
         getAddPropertyHelper().setMonthlyRent("500");
@@ -111,7 +111,7 @@ public class AddListingTests extends TestBase {
     public void TestSignUpWithBlankFieldsPropertyAdding() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
-        addPropertyHelper.selectLandlord();
+        addPropertyHelper.selectTypeUser("3");
         addPropertyHelper.pressContinue();
         addPropertyHelper.pressContinue1();
         verificationHelper.verificationEmailErrorListing();

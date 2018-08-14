@@ -106,7 +106,7 @@ public class FooterHelper {
 
     public void verificationNLAWorks() {
         switchTo().window(0);
-        $(byXpath("//li/a[@class='nav__link-1 ' and contains(text(), 'Join the NLA')]")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("(//ul/li/a[contains(text(), 'Join the NLA')])[1]")).waitUntil(exist, 6000).should(exist);
     }
 
     public void footerFB() {

@@ -14,7 +14,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void goToPropertyPage() {
-        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a room')])[2]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 4000).click();
     }
 
     public void goToFMpage() {
@@ -216,4 +216,8 @@ public class AuthorizationHelper extends HelperBase {
     }
 
 
+    public void selectAllPropertyInMenu() {
+        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 4000).hover();
+        $(byXpath("//a[contains(text(), 'All properties')]")).waitUntil(appears, 4000).click();
+    }
 }

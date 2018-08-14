@@ -6,6 +6,7 @@ import com.codeborne.selenide.Condition;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 
@@ -37,7 +38,7 @@ public class VerificationHelper  {
     }
 
     public void verifyTextMessage(String text) {
-        $(".msg-body").waitUntil(visible, 8000).shouldHave(Condition.text(text));
+        $$(".msg-body").last().waitUntil(visible, 8000).shouldHave(Condition.text(text));
     }
     public void verifyPageMessage() {
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));

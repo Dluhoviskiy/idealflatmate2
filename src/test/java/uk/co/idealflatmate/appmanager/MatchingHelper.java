@@ -49,11 +49,11 @@ public class MatchingHelper {
         sleep(2000);
     }
     public void clickContinueMatching7() {
-        $(byXpath("//button[@id='19' and contains(text(), 'Continue')]")).waitUntil(visible, 4000).click();
+        $(byXpath("//button[@id='19' and contains(text(), 'Continue')]")).waitUntil(visible, 10000).click();
     }
 
     public void clickContinueMatching8() {
-        $(byXpath("//button[@id='18' and contains(text(), 'Continue')]")).waitUntil(visible, 4000).click();
+        $(byXpath("//button[@id='18' and contains(text(), 'Continue')]")).waitUntil(visible, 10000).click();
     }
     public void clickContinueMatching9() {
         $(byXpath("//button[@id='17' and contains(text(), 'Continue')]")).waitUntil(visible, 4000).click();

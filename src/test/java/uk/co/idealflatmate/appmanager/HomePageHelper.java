@@ -112,7 +112,7 @@ public class HomePageHelper {
     }
     public void amountOfAreasBlocks(int size) {
 
-        $$("div.card-btr-amenities.text-white").shouldHaveSize(size);
+        $$("#hp-areas div.card-btr-amenities.text-white").shouldHaveSize(size);
 
         }
     public void amountOfMatchListRoom(int size) {
@@ -120,7 +120,7 @@ public class HomePageHelper {
     }
 
     public void TextInAreas() {
-        $$("div.owl-stage-outer").shouldHave(texts("Clapham\n" +
+        $$("#hp-areas div.owl-stage-outer").shouldHave(texts("Clapham\n" +
                 "South London\n" +
                 "ZONE 2\n" +
                 "Stratford\n" +

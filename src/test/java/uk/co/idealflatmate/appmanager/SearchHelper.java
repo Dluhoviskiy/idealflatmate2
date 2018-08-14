@@ -1,9 +1,8 @@
 package uk.co.idealflatmate.appmanager;
 
-import net.bytebuddy.asm.Advice;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
@@ -64,8 +63,33 @@ public class SearchHelper extends HelperBase {
         $$(byXpath("//div[@class='row  cards-container']/div")).shouldHaveSize(size);
     }
 
-    public void firstCard() {
+    public void firstCardIsColivingAdv() {
 
         $$(byXpath("//div[@class='row  cards-container']/div")).first().shouldHave(text("Co-living,"));
+    }
+
+    public void moveToPage(int pageNumberInd, String pageNumber) {
+        $$("div ul li a").findBy(text(pageNumber)).click();
+        sleep(2000);
+        $$("ul.pagination li").get(pageNumberInd-1).shouldHave(cssClass("active"));
+
+
+    }
+
+    public void moveToFirstPage1(String page) {
+        $$("div ul li a").findBy(exactText(page)).click();
+        /*JavascriptExecutor jse;
+        jse = (JavascriptExecutor)getWebDriver();
+        jse.executeScript("document.getElementById('oauth-auth-forgot-link').click();");*/
+    }
+
+    public void moveToNext(int pageActiveInd) {
+        $(By.xpath("//span[contains(text(), 'Next')]")).click();
+        $$("ul.pagination li").get(pageActiveInd-1).shouldHave(cssClass("active"));
+    }
+
+    public void moveToPrevious(int pageActiveInd) {
+        $(By.xpath("//span[contains(text(), 'Previous')]")).click();
+        $$("ul.pagination li").get(pageActiveInd-1).shouldHave(cssClass("active"));
     }
 }

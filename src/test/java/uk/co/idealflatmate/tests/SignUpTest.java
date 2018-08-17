@@ -1,18 +1,20 @@
 package uk.co.idealflatmate.tests;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
 public class SignUpTest extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 2)
     public void TestSuccessfulClassicSignUpHomePage() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.PremFHPayment4@gmail.com");
+        authorizationHelper.setNewLoginMail("44");
         authorizationHelper.setNewLoginPassword("qqqqqq");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
@@ -47,7 +49,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.emailAlreadyExistedAlert();
      }
 
-    @Test (priority = 2)
+    @Test (priority = 1)
     public void TestClassicSignUpWithBlankRequiredFields() {
 
         authorizationHelper.clickSignInButton();
@@ -75,6 +77,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+        newDriverPage();
     }
 
     @Test (priority = 2)
@@ -88,12 +91,13 @@ public class SignUpTest extends TestBase {
         //verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.acceptFBageRestriction();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+        newDriverPage();
     }
 
 
-    @Test (priority = 2)
+    @Test (priority = 1)
     public void SuccessfulClassicSignUpPropertyPage() {
-
+        newDriverPage();
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
@@ -115,9 +119,9 @@ public class SignUpTest extends TestBase {
 
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1)
     public void SuccessfulClassicSignUpFMPage() {
-
+        newDriverPage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUpFMPage();
         authorizationHelper.clickSignInButton();
@@ -136,6 +140,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+        closeWebDriver();
     }
 
     @Test (priority = 2)
@@ -148,7 +153,7 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest321@gmail.com");
+        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest322@gmail.com");
         authorizationHelper.setNewLoginPasswordMatching("123456");
         authorizationHelper.setNewLoginNameFMatching("Ronald");
         authorizationHelper.setNewLoginNameLMatching("NewOne");
@@ -168,7 +173,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1)
     public void SignUpWithMatchingWithBlankRequiredFields() {
 
         matchingHelper.clickHomePageMatching();
@@ -186,6 +191,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.passwordBlankAlertMatching();
         verificationHelper.checkPhoneAlertMatching();
         verificationHelper.checkAgeBlankAlertMatching();
+       // authorizationHelper.clickCloseSignUpFMPage();
     }
 
     //@Test

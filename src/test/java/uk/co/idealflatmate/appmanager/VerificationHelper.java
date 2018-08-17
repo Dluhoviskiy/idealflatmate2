@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.commands.Find;
 
 
 import static com.codeborne.selenide.Condition.*;
@@ -53,7 +54,10 @@ public class VerificationHelper  {
 
     public void verifyAddedPropertyWithAllFields() {
         $(byXpath("//h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']")).shouldHave(text("3 rooms for rent in Bankside, South, London from\n" + "£500"));
-            $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[2]")).shouldHave(text("\n" + "+44 2 XXXX"));
+        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[2]")).shouldHave(text("\n" + "+44 2 XXXX"));
+
+        //$(byXpath("//div[@class='panel-heading']")).scrollTo();
+
         $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]")).shouldHave(text("£500\n" +
                 "month\n" +
@@ -64,7 +68,9 @@ public class VerificationHelper  {
                 "Lease length\n" +
                 "1 month+"));
         $(byXpath("//div[@class='tab-pane fade active in']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
+
         $(byXpath("//a[contains(text(), 'Room 2')]")).click();
+
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[2]")).shouldHave(text("£500\n" +
                 "month\n" +
                 "Deposit\n" +
@@ -73,8 +79,10 @@ public class VerificationHelper  {
                 "£400\n" +
                 "Lease length\n" +
                 "1 month+"));
-        $(byXpath("//div[@class='tab-pane fade  in active']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
+        $(byXpath("//div[@class='tab-pane fade in active']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
+
         $(byXpath("//a[contains(text(), 'Room 3')]")).click();
+
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th September 2025"));
        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
         $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text("About the property\n" +
@@ -108,28 +116,28 @@ public class VerificationHelper  {
 
     //span[contains(text(), 'This email address has already been taken.')]
     public void emailAlreadyExistedAlert() {
-        $(byXpath("//div[@class='form-group floating-label-group  required hasvalue has-error']")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));
+        $(byXpath("//p[@class='help-block help-block-error']/span")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));
     }
 
     public void emailWrongAlertHome() {
         //sleep(2000);
-        $(byXpath("//div[@class='form-group floating-label-group  required hasvalue has-error']/p[@class='help-block help-block-error']")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
+        $(byXpath("//label[contains(text(), 'Password')]/../p[1]/span")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
     }
 
     public void nameFirstBlankAlert() {
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[1]")).waitUntil(exist, 4000).shouldHave(text("Firstname cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'First Name')])[2]/../p")).waitUntil(exist, 10000).shouldHave(text("Firstname cannot be blank."));
     }
 
     public void emailBlankAlert() {
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[3]")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'Email address')])[2]/../p")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
     }
 
     public void nameLastBlankAlert() {
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'Last Name')])[2]/../p")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
     }
 
     public void passwordBlankAlert() {
-        $(byXpath("//div[@class='form-group floating-label-group required has-error']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'Password')])[3]/../p")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
 
     }
 
@@ -164,20 +172,20 @@ public class VerificationHelper  {
     }
 
     public void NameFirstBlankAlertMatching() {
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[1]")).waitUntil(exist, 4000).shouldHave(text("Firstname cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'First Name')])[1]/../p")).waitUntil(exist, 4000).shouldHave(text("Firstname cannot be blank."));
     }
 
     public void emailBlankAlertMatching() {
         sleep(2000);
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[3]")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'Email address')])[1]/../p")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
     }
 
     public void NameLastBlankAlertMatching() {
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[2]")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'Last Name')])[1]/../p")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
     }
 
     public void passwordBlankAlertMatching() {
-        $(byXpath("(//div[@class='form-group floating-label-group  required has-error'])[4]")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
+        $(byXpath("(//label[contains(text(), 'Password')])[1]/../p[1]")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
 
     }
 

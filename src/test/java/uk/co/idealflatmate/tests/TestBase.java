@@ -5,8 +5,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import io.github.bonigarcia.wdm.EdgeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import uk.co.idealflatmate.appmanager.*;
 import com.codeborne.selenide.testng.ScreenShooter;
 
@@ -31,10 +30,11 @@ public class TestBase {
     public final FooterHelper footerHelper = new FooterHelper();
     public final AreaPageHelper areaPageHelper = new AreaPageHelper();
     public final SearchHelper searchHelper = new SearchHelper();
+    public final HelperBase helperBase = new HelperBase();
 
 
 
-    @BeforeMethod
+    @BeforeClass
     public void setupClass() {
         ChromeDriverManager.getInstance().setup();
        // FirefoxDriverManager.getInstance().setup();
@@ -48,12 +48,17 @@ public class TestBase {
         //open("https://www.idealflatmate.co.uk/");
         verificationHelper.closeAdvPopUp();
         //open("http://front.idealflatmate.demo.devplatform2.com");
-        open("http://front.idealflatmate4test.demo.devplatform2.com");
 
+        open("http://front.idealflatmate4test.demo.devplatform2.com");
 
     }
 
     @AfterMethod
+    public void goHomePage(){
+        helperBase.toHomePage();
+    }
+
+    @AfterClass
     public void tearDown() {
         //screenshot("screenshotFail1");
         closeWebDriver();
@@ -76,5 +81,11 @@ public class TestBase {
 
     public PaymentsHelper getPaymentsHelper() {
         return paymentsHelper;
+    }
+
+    public void newDriverPage() {
+        closeWebDriver();
+        ChromeDriverManager.getInstance().setup();
+        open("http://front.idealflatmate4test.demo.devplatform2.com");
     }
 }

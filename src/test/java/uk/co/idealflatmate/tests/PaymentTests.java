@@ -17,6 +17,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.verificationPhone("XXXX");
         getMessageHelper().clickPhoneReveal();
         paymentsHelper.verificationPhoneVisible("777777777");
+        authorizationHelper.logoutFromApp();
     }
 
     @Test
@@ -32,6 +33,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.verificationPremiumPopup("Get access to all properties");
         paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
+        authorizationHelper.logoutFromApp();
     }
 
     @Test
@@ -47,6 +49,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
+        authorizationHelper.logoutFromApp();
     }
 
     @Test (priority = 6)

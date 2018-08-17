@@ -77,7 +77,7 @@ public class FooterHelper {
         $(byXpath("(//li/a[contains(text(), 'Barnet')])[1]")).waitUntil(visible, 4000).click();
         switchTo().window(1);
         if($(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')])[1]")).is(visible)){
-            $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(appears, 4000).click();
+            $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
             $(byXpath("//h1[@class='text-white h2 u_m0-top' and contains(text(), 'Rooms To Rent In Barnet, North London')]")).waitUntil(exist, 6000).should(exist);
         }else {
             $(byXpath("//h1[@class='text-white h2 u_m0-top' and contains(text(), 'Rooms To Rent In Barnet, North London')]")).waitUntil(exist, 6000).should(exist);

@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
@@ -24,9 +25,8 @@ public class SearchHelper extends HelperBase {
         $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham, London')]")).waitUntil(exist, 4000).pressEnter();
         //$(byXpath("//button[@class='btn btn-primary u_p60-left-sm u_p60-right-sm js-search-submit']")).waitUntil(visible, 10000).click();
         //$(byText("COMPOSE")).click();
-
-
     }
+
     public void searchPropertyBySelectfromList(String location) {
 
         $("input#property-location").waitUntil(visible, 4000).click();
@@ -58,6 +58,12 @@ public class SearchHelper extends HelperBase {
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).waitUntil(visible, 10000).shouldHave(text(location));
     }
 
+    public void zone1() {
+        $(By.xpath("//a[contains(text(), 'Zone 1')]")).click();
+    }
+    public void EastLDN1() {
+        $(By.xpath("//a[contains(text(), 'East LDN')]")).click();
+    }
     public void amountPropertyCards(int size) {
 
         $$(byXpath("//div[@class='row  cards-container']/div")).shouldHaveSize(size);
@@ -66,6 +72,17 @@ public class SearchHelper extends HelperBase {
     public void firstCardIsColivingAdv() {
 
         $$(byXpath("//div[@class='row  cards-container']/div")).first().shouldHave(text("Co-living,"));
+        $(By.xpath("//a[contains(text(), 'View all co-living providers')]")).click();
+        $(By.xpath("//h1[contains(text(), 'Co-living, the new renting')]")).exists();
+
+    }
+    public void colivingButton() {
+
+        $(By.xpath("//a[contains(text(), 'NEW! View')]")).click();
+        $(By.xpath("//h1[contains(text(), 'Co-living, the new renting')]")).exists();
+    }
+    public void colivingButtonOnFirstPage() {
+        $(By.xpath("//a[contains(text(), 'NEW! View')]")).exists();
     }
 
     public void moveToPage(int pageNumberInd, String pageNumber) {
@@ -92,4 +109,13 @@ public class SearchHelper extends HelperBase {
         $(By.xpath("//span[contains(text(), 'Previous')]")).click();
         $$("ul.pagination li").get(pageActiveInd-1).shouldHave(cssClass("active"));
     }
+    public void shouldHaveResultText (int pageActiveInd, String text) {
+        $(By.xpath("//span[contains(text(), 'Previous')]")).click();
+        $$("ul.pagination li").get(pageActiveInd-1).shouldHave(text(text));
+    }
+
+
+
+
+
 }

@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.appears;
 import static com.codeborne.selenide.Condition.visible;
@@ -28,5 +29,10 @@ public class HelperBase {
     }
 
     protected void fillInField1(String nla, SelenideElement $, SelenideElement $1) {
+    }
+
+    public void toHomePage() {
+        //$(By.xpath("//a[@class='navbar-brand']")).click();
+        open("http://front.idealflatmate4test.demo.devplatform2.com");
     }
 }

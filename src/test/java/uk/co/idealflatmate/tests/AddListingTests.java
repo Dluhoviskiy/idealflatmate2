@@ -23,7 +23,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 1)
+    @Test (priority = 2)
     public void TestSignUpSuccessfulPropertyAdding() {
 
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
@@ -58,7 +58,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 3)
     public void TestSuccessfulPropertyAddingWithAllFields() {
 
         authorizationHelper.clickSignInButton();
@@ -76,7 +76,8 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().chooseRoadFor("Idealstreet");
         getAddPropertyHelper().chooseAreaforLondon("2");
         getAddPropertyHelper().pressContinueButton();
-        getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456");
+        //getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456", "\n" + "Don't display on my listing");
+        getAddPropertyHelper().setPhoneNumber1("+44 20 7234 3456");
         getAddPropertyHelper().setTotalBedrooms("4");
         getAddPropertyHelper().setAllAmanities();
         getAddPropertyHelper().setPropertyDescription();
@@ -84,7 +85,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().setDeposit("1000");
         getAddPropertyHelper().setTotalBills("400");
         getAddPropertyHelper().setLeasePeriodFirstRoom();
-        getAddPropertyHelper().setRoomDescription();
+        getAddPropertyHelper().setRoomDescription("Very comfortable room");
         getAddPropertyHelper().copySecondRoom();
         getAddPropertyHelper().removeSecondRoom();
         getAddPropertyHelper().copySecondRoom();

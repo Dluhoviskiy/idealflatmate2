@@ -41,21 +41,25 @@ public class AddPropertyHelper extends HelperBase {
 
     public void setPostalCode(String postCode) {
         $(".form-control.u_ed-block").setValue(postCode).pressEnter();
+        sleep(2000);
     }
 
     public void pressContinueButton() {
         $("#wizard-next").waitUntil(visible, 6000).click();
+        sleep(4000);
     }
 
     public void chooseRoadFor(String road) {
-        sleep(2000);
+
         messageHelper.click(byXpath("//input[@id='property-route']"));
-        $(byXpath("//input[@id='property-route']")).setValue(road).pressEnter();;
+        $(byXpath("//input[@id='property-route']")).setValue(road).pressEnter();
+        sleep(2000);
     }
 
     public void chooseAreaforLondon(final String AreaInDropDown) {
         messageHelper.click(byName("Property[area_link_id]"));
         messageHelper.click(byXpath("//*[@id=\"property-area_link_id\"]/option[" + AreaInDropDown + "]"));
+        sleep(2000);
     }
 
     public void pressAddListingFromHeaderWithVerificationUnfinishedlisting() {
@@ -81,9 +85,18 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//a[@href=\"/create\"  and contains(text(), 'your listing')]")).click();;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-       sleep(5000);
+    public void setPhoneNumber(String phoneNumber, String text) {
+       $(byXpath("//label[contains(text(), 'Phone Number')]")).scrollIntoView(text);
        fillInField(phoneNumber, $("#property-phone_number"), "#property-phone_number");
+    }
+
+    public void setPhoneNumber1(String Number) {
+        sleep(2000);
+        //$(byXpath("//label[contains(text(), 'Phone Number')]")).scrollTo();
+        $(byXpath("//div//h2[contains(text(), 'Phone number')]/..//input[@id='property-phone_number']")).click();
+        $(byXpath("//input[@id='property-phone_number']")).clear();
+        $(byXpath("//input[@id='property-phone_number']")).setValue(Number);
+        sleep(2000);
     }
 
     public void setTotalBedrooms(final String amount) {
@@ -135,10 +148,10 @@ public class AddPropertyHelper extends HelperBase {
     }
 
 
-    public void setRoomDescription() {
+    public void setRoomDescription(String text) {
         $(byXpath("//div[@class='form-group field-room-1-description']/textarea")).click();
-        $(byXpath("//div[@class='form-group field-room-1-description in-use']/textarea")).setValue("Very comfortable room");
-        // $("#room-1-description").shouldHave(text("Very comfortable room"));
+        $(byXpath("//div[@class='form-group field-room-1-description in-use']/textarea")).setValue(text);
+        // $("#room-1-description").shouldHave(text("text"));
     }
 
     public void copySecondRoom() {
@@ -250,4 +263,6 @@ public class AddPropertyHelper extends HelperBase {
         $("#wizard-next").waitUntil(appear, 4000).click();
         sleep(2000);
     }
+
+
 }

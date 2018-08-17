@@ -1,14 +1,16 @@
 package uk.co.idealflatmate.tests;
 
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
 public class AuthorizationTests extends TestBase {
 
-    @Test
+    @Test(priority = 1)
     public void SuccessClassicLogInLogout() {
 
         authorizationHelper.clickSignInButton();
@@ -19,7 +21,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    @Test(priority = 1)
     public void SuccessClassiclogInOnPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
@@ -31,7 +33,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    @Test(priority = 1)
     public void SuccessClassiclogInOnFMPage() {
 
         authorizationHelper.goToFMpage();
@@ -43,7 +45,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    @Test(priority = 2)
     public void EmailWronglogInHomePage() {
 
         authorizationHelper.clickSignInButton();
@@ -73,6 +75,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
+        newDriverPage();
     }
 
     @Test
@@ -85,6 +88,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
+        newDriverPage();
     }
 
     @Test
@@ -101,6 +105,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
+        newDriverPage();
     }
 
     @Test

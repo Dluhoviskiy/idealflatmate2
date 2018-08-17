@@ -147,7 +147,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void SuccessLogInMessageFM() {
-
+        newDriverPage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUpFMPage();
         getMessageHelper().clickFMCardMessageUnlogged();

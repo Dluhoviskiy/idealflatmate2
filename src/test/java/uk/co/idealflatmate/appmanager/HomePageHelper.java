@@ -131,7 +131,7 @@ public class HomePageHelper {
                 "ZONE 3\n" +
                 "Walthamstow\n" +
                 "East London\n" +
-                "ZONE 4"));
+                "ZONE 3"));
     }
 
 

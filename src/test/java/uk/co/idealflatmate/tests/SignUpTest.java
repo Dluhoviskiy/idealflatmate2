@@ -14,7 +14,7 @@ public class SignUpTest extends TestBase {
         newDriverPage();
         authorizationHelper.clickSignInButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("44");
+        authorizationHelper.setNewLoginMail("FMnew777@gmail.com");
         authorizationHelper.setNewLoginPassword("qqqqqq");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");

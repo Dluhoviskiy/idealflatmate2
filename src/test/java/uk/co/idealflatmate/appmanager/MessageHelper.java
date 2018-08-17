@@ -70,7 +70,7 @@ public class MessageHelper {
     }
 
     public  void clickPropertyContact(){
-        $(byXpath("//a[@class='btn btn-primary u_ed-block u_m20-top']")).waitUntil(visible, 4000).click();
+        $(byXpath("(//a[@class='btn btn-primary u_ed-block u_m20-top'])[2]")).waitUntil(visible, 4000).click();
     }
 
 
@@ -123,7 +123,7 @@ public class MessageHelper {
     }
 
     public void clickPhoneReveal() {
-        $(byXpath("//button[@class='btn btn-sm btn-primary-outline js-reveal-property-phone-button']")).waitUntil(visible, 6000).click();
+        $(byXpath("(//button[@class='btn btn-sm btn-primary-outline js-reveal-property-phone-button'])[2]")).waitUntil(visible, 6000).click();
         //$(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 4000).click();
         //$(byXpath("//span[@class='property-phone_reveal']/a")).waitUntil(visible, 6000).click();
 

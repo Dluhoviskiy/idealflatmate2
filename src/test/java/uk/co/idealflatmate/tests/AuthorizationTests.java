@@ -23,7 +23,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test(priority = 1)
     public void SuccessClassiclogInOnPropertyPage() {
-
+        newDriverPage();
         authorizationHelper.goToPropertyPage();
        // authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -110,7 +110,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void InvalidAuthorizationWithEmptyFields() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickLoginSubmitButton();

@@ -20,7 +20,7 @@ public class EmailHelper extends HelperBase {
         }
     }
     public void setLoginAsUserEmail(String email) {
-        gmailLogin(email, "//input[@type='email']", "//span[contains(text(), 'Next')]");
+        gmailLogin(email, "//input[@type='email']", "(//span[@class='RveJvd snByac'])[2]");
     }
 
     public void setLoginAsUserPassword(String password) {

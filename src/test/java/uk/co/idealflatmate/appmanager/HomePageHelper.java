@@ -67,12 +67,12 @@ public class HomePageHelper {
     }
 
     public void clickLogo() {
-        $(byXpath("(//div/a[@class='press-logo'])[1]")).waitUntil(visible, 4000).click();
+        $(byXpath("//div[@class='col-md-6 hidden-xs hidden-sm text-right']//img[@alt='NLA Recognised Supplier logo']")).waitUntil(visible, 4000).click();
     }
 
     public void verificationLogo() {
-        switchTo().window(1);
-        $(byXpath("html//body//div//div//input[@placeholder='Search City A.M...']")).waitUntil(exist, 5000).should(exist);
+        switchTo().window(0);
+        $(byXpath("//div[@class='site-header__controls']/a/img[@class='nla-logo']")).waitUntil(exist, 5000).should(exist);
 
     }
 

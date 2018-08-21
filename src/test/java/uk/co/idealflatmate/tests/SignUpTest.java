@@ -175,7 +175,7 @@ public class SignUpTest extends TestBase {
 
     @Test (priority = 1)
     public void SignUpWithMatchingWithBlankRequiredFields() {
-
+        newDriverPage();
         matchingHelper.clickHomePageMatching();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();

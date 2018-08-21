@@ -55,7 +55,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void pressLogo() {
-
+        //newDriverPage();
         homePageHelper.clickLogo();
         homePageHelper.verificationLogo();
     }

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
 
 import static com.codeborne.selenide.Selenide.$;
-
+import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class MessagesTest extends TestBase {
@@ -32,6 +32,8 @@ public class MessagesTest extends TestBase {
         homePageHelper.clickFM();
         getMessageHelper().clickUpgradeToMessage();
         verificationHelper.paymentPage();
+        authorizationHelper.logoutFromApp();
+        sleep(5000);
     }
 
     @Test (priority = 1)
@@ -44,6 +46,7 @@ public class MessagesTest extends TestBase {
         homePageHelper.clickFM();
         getMessageHelper().clickFMPageMessage();
         verificationHelper.chatPage();
+        authorizationHelper.logoutFromApp();
     }
 
     @Test (priority = 1)

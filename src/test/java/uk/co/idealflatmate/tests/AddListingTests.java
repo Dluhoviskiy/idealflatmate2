@@ -10,7 +10,7 @@ public class AddListingTests extends TestBase {
 
     @Test (priority = 1)
     public void TestSuccessfulLoginStartListing() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHListingPaid@gmail.com");
@@ -25,7 +25,7 @@ public class AddListingTests extends TestBase {
 
     @Test (priority = 2)
     public void TestSignUpSuccessfulPropertyAdding() {
-
+        newDriverPage();
         paymentsHelper.addPropertyHelper.pressAddYourListingNotLoggedUser();
         addPropertyHelper.selectTypeUser("3"); //Landlord
         addPropertyHelper.pressContinue();
@@ -60,7 +60,7 @@ public class AddListingTests extends TestBase {
 
     @Test (priority = 3)
     public void TestSuccessfulPropertyAddingWithAllFields() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Agency@gmail.com");

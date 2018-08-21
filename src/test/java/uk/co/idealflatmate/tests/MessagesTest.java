@@ -13,7 +13,7 @@ public class MessagesTest extends TestBase {
 
     @Test (priority = 1)
     public void readMessageByLandlordWithoutSubscription() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
@@ -24,7 +24,7 @@ public class MessagesTest extends TestBase {
     }
     @Test (priority = 1)
     public void sendMessageByLandlordWithoutSubscriptionToFM() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
@@ -38,7 +38,7 @@ public class MessagesTest extends TestBase {
 
     @Test (priority = 1)
     public void sendMessageByLandlordWithSubscriptionToFM() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.AgencyPaid@gmail.com");
@@ -51,7 +51,7 @@ public class MessagesTest extends TestBase {
 
     @Test (priority = 1)
     public void answerMessageFmWithoutSubscriptionToFM() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.FHMatching@gmail.com");
@@ -65,7 +65,7 @@ public class MessagesTest extends TestBase {
 
     @Test (priority = 2)
     public void answerMessageLandlordToPremiumFHWithoutSubscription() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.Landlord101@gmail.com");
@@ -79,7 +79,7 @@ public class MessagesTest extends TestBase {
 
     @Test (priority = 1)
     public void sendMessagePremiumFmToLandlordWithoutSubscriptionWithListingFromSearch() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.Premium@gmail.com");
@@ -95,7 +95,7 @@ public class MessagesTest extends TestBase {
     }
     @Test (priority = 1)
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.FH@gmail.com");
@@ -113,7 +113,7 @@ public class MessagesTest extends TestBase {
 
     @Test (priority = 1)
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage() {
-
+        newDriverPage();
         authorizationHelper.clickSignInButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.FH@gmail.com");

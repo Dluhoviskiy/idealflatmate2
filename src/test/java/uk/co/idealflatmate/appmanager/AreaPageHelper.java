@@ -42,6 +42,7 @@ public class AreaPageHelper {
     public void checklinkNearbyAreas() {
         switchTo().window(1);
         $(byXpath("//a[contains(text(), 'Click to search nearby areas')]")).waitUntil(exist, 5000).click();
+        sleep(3000);
         $(byXpath("//div[@class='map-container f-open']")).shouldBe(exist);
         $(byXpath("//h1[@class='text-white h2 u_m0-top']")).shouldHave(text("Rooms To Rent"));
     }

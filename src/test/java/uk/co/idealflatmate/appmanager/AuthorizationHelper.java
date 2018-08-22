@@ -105,7 +105,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickSignInButtonInForm() {
-        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[1]")).waitUntil(visible, 6000).click();
+        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[1]")).click();
     }
 
     public void setNewLoginMail(String email) {
@@ -154,7 +154,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickCloseMoreAboutYou() {
-        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 10000).click();
     }
 
     public void chooseAccountFromDropDownMenu() {
@@ -174,20 +174,20 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void clickCloseSignUp() {
-        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(appears, 10000).click();
     }
 
     public void clickCloseSignUpFMPage() {
-        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(visible, 4000).click();
+        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(visible, 10000).click();
     }
 
     public void rejectMissedPreferredLocation() {
-        $(byXpath("//button[@class='cancel']")).waitUntil(appears, 4000).click();
+        $(byXpath("//button[@class='cancel']")).waitUntil(appears, 10000).click();
         sleep(4000);
     }
 
     public void acceptMissedPreferredLocation() {
-        $(byXpath("//button[@class='confirm']")).waitUntil(appears, 4000).click();
+        $(byXpath("//button[@class='confirm']")).waitUntil(appears, 10000).click();
         sleep(4000);
     }
     public void acceptFBageRestriction() {
@@ -217,7 +217,7 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void selectAllPropertyInMenu() {
-        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 4000).hover();
-        $(byXpath("//a[contains(text(), 'All properties')]")).waitUntil(appears, 4000).click();
+        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 10000).hover();
+        $(byXpath("//a[contains(text(), 'All properties')]")).waitUntil(appears, 10000).click();
     }
 }

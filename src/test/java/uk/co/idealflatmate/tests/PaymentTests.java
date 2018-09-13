@@ -8,7 +8,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void AbilityToSeePhone() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Premium@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -22,7 +22,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void GoPremiumFHPaymentOnPhone() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -38,7 +38,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void GoPremiumFHPaymentOnMessage() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -56,14 +56,14 @@ public class PaymentTests extends TestBase {
     public void PremiumFHPaymentWorldPay() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.PremFHPayment6@gmail.com");
-        authorizationHelper.setNewLoginPassword("qqqqqq");
+        authorizationHelper.clickJoinFreeButton();
+        //authorizationHelper.setNewLoginMail("cro.PremFHPayment6@gmail.com");
+        //authorizationHelper.setNewLoginPassword("qqqqqq");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
-        authorizationHelper.clickFormSignUpSave();
+       // authorizationHelper.clickFormSignUpSave();
         //emailHelper.emailVerification();
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -87,7 +87,7 @@ public class PaymentTests extends TestBase {
     }
    // @Test (priority = 8)
     public void LandlordPaymentPayPal() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.LandLordPayment@gmail.com");
         authorizationHelper.setPassword("qqqqqq");

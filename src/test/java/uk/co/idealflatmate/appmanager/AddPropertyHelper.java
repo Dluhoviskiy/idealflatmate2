@@ -87,7 +87,7 @@ public class AddPropertyHelper extends HelperBase {
 
     public void setPhoneNumber(String phoneNumber, String text) {
        $(byXpath("//label[contains(text(), 'Phone Number')]")).scrollIntoView(text);
-       fillInField(phoneNumber, $("#property-phone_number"), "#property-phone_number");
+       fillInField(phoneNumber, $("#property-phone_number"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setPhoneNumber1(String Number) {
@@ -127,11 +127,11 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setMonthlyRent(String rent) {
-        fillInField(rent, $("#room-1-price"), "#room-1-price");
+        fillInField(rent, $("#room-1-price"), $(byXpath("#room-1-price")));
      }
 
     public void setDeposit(String deposit) {
-        fillInField(deposit, $("input#room-1-deposit"), "input#room-1-deposit");
+        fillInField(deposit, $("input#room-1-deposit"),  $(byXpath("input#room-1-deposit")));
     }
 
     public void setTotalBills(String bills) {

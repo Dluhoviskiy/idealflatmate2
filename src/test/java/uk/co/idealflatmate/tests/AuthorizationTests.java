@@ -1,11 +1,9 @@
 package uk.co.idealflatmate.tests;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
 public class AuthorizationTests extends TestBase {
@@ -13,7 +11,7 @@ public class AuthorizationTests extends TestBase {
     @Test(priority = 1)
     public void SuccessClassicLogInLogout() {
 
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -25,7 +23,7 @@ public class AuthorizationTests extends TestBase {
     public void SuccessClassiclogInOnPropertyPage() {
         newDriverPage();
         authorizationHelper.goToPropertyPage();
-       // authorizationHelper.clickSignInButton();
+       // authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -37,7 +35,7 @@ public class AuthorizationTests extends TestBase {
     public void SuccessClassiclogInOnFMPage() {
 
         authorizationHelper.goToFMpage();
-       // authorizationHelper.clickSignInButton();
+       // authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -48,7 +46,7 @@ public class AuthorizationTests extends TestBase {
     @Test(priority = 2)
     public void EmailWronglogInHomePage() {
 
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHq@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -58,7 +56,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void PasswordWronglogInHomePage() {
 
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq1");
@@ -69,7 +67,7 @@ public class AuthorizationTests extends TestBase {
     //Facebook authorization doen`t work on staging
     public void SuccessLogInViaFacebook() {
         open("https://www.idealflatmate.co.uk/");
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickSignInWithFacebook();
         authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
@@ -82,7 +80,7 @@ public class AuthorizationTests extends TestBase {
     //Facebook authorization doen`t work on staging
     public void SuccessSignInViaFacebook() {
         open("https://www.idealflatmate.co.uk/");
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickSignInWithFacebook();
         authorizationHelper.LoginFacebookWithActiveAccount("aleksandr.serdiuk@gmail.com", "Apple210189");
@@ -111,7 +109,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void InvalidAuthorizationWithEmptyFields() {
         newDriverPage();
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickLoginSubmitButton();
         verificationHelper.VerificationLoginError();

@@ -62,10 +62,10 @@ public class MessageHelper {
 
     public  void clickPropertyCardFirstOnPage(){
         if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)) {
-            $(byXpath("(//a[@class='card-main-link'])[1]/img")).waitUntil(appears, 4000).click();
+            $(byXpath("(//a[@class='card-main-link'])[3]/img")).waitUntil(appears, 4000).click();
             sleep(2000);
         }else {
-            $(byXpath("(//a[@class='card-main-link'])[1]/img")).waitUntil(visible, 4000).click();
+            $(byXpath("(//a[@class='card-main-link'])[3]/img")).waitUntil(visible, 4000).click();
         }
     }
 

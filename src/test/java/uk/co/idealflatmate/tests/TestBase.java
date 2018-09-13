@@ -31,6 +31,7 @@ public class TestBase {
     public final AreaPageHelper areaPageHelper = new AreaPageHelper();
     public final SearchHelper searchHelper = new SearchHelper();
     public final HelperBase helperBase = new HelperBase();
+    public final SignUpHelper signUpHelper = new SignUpHelper();
 
 
 
@@ -43,6 +44,8 @@ public class TestBase {
         Configuration.browser = "chrome";
        // Configuration.browser = "firefox";
       //  Configuration.browser = "edge";
+
+       // Configuration.assertionMode = Configuration.AssertionMode.SOFT;
 
         Configuration.timeout = 10000;
         //open("https://www.idealflatmate.co.uk/");

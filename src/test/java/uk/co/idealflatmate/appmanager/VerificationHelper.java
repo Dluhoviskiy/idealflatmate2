@@ -19,7 +19,7 @@ public class VerificationHelper  {
     }
 
     public void verificationUserNoNameOnHomePage(String nameUser) {
-        $(".nav.navbar-right.nav-ihm-profile").shouldNotHave(text(nameUser));
+        $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']")).shouldNotHave(text(nameUser));
     }
 
     public void VerificationPasswordError() {
@@ -116,7 +116,7 @@ public class VerificationHelper  {
 
     //span[contains(text(), 'This email address has already been taken.')]
     public void emailAlreadyExistedAlert() {
-        $(byXpath("//p[@class='help-block help-block-error']/span")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));
+        $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).shouldHave(text("This email address already has an Ideal Flatmate account"));
     }
 
     public void emailWrongAlertHome() {
@@ -125,20 +125,36 @@ public class VerificationHelper  {
     }
 
     public void nameFirstBlankAlert() {
-        $(byXpath("(//label[contains(text(), 'First Name')])[2]/../p")).waitUntil(exist, 10000).shouldHave(text("Firstname cannot be blank."));
+        $(byXpath("//div[@class='form-group required u_m15-bottom field-yourinfosignupform-username required has-error']/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
     }
 
     public void emailBlankAlert() {
-        $(byXpath("(//label[contains(text(), 'Email address')])[2]/../p")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+        $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
     }
 
-    public void nameLastBlankAlert() {
-        $(byXpath("(//label[contains(text(), 'Last Name')])[2]/../p")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
+    public void genderBlankAlert() {
+        $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
     }
 
     public void passwordBlankAlert() {
-        $(byXpath("(//label[contains(text(), 'Password')])[3]/../p")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
+        $(byXpath("//div[@class='form-group field-yourinfosignupform-password required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
 
+    }
+
+    public void dateMonthYearPhoneOccupationBlankError() {
+        $(byXpath("//div[select[@id='moreinfosignupform-day']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Day cannot be blank."));
+        $(byXpath("//div[select[@id='moreinfosignupform-month']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Month cannot be blank."));
+        $(byXpath("//div[select[@id='moreinfosignupform-year']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Year cannot be blank."));
+        $(byXpath("//div[div/input[@id='moreinfosignupform-phone']]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+        $(byXpath("//div[select[@id='moreinfosignupform-occupation_id']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Occupation Id cannot be blank."));
+    }
+
+    public void checkLocationBlank() {
+        $("div.error-summary ul li").shouldHave(text("Please choose location"));
+    }
+
+    public void budgetError() {
+        $(byXpath("//div[input[@id='js-signup-budget-max']]/div[@class='help-block']")).shouldHave(text("Please choose budget"));
     }
 
     public void ageConfirmCheckMatching() {
@@ -285,6 +301,17 @@ public class VerificationHelper  {
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(exist, 4000).shouldBe(visible);
     }
 
+    public void verifyAddListingPage() {
+        $("h1.list-property-title.u_m0-top").shouldHave(text("Where is your property"));
+    }
 
+    public void verifySearchListingPage() {
+        $("#property-sort").should(exist);
+    }
+
+    public void verifySearchFMPage() {
+        $(byXpath("//div[@class='col-xs-12 col-sm-4 u_m20-bottom u_b-top-xs u_p30-top-xs']")).shouldHave(text("Flatmate type:"));
+
+    }
 }
 

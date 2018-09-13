@@ -1,28 +1,46 @@
 package uk.co.idealflatmate.tests;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
 public class SignUpTest extends TestBase {
 
-    @Test (priority = 2)
-    public void TestSuccessfulClassicSignUpHomePage() {
-        newDriverPage();
-        authorizationHelper.clickSignInButton();
-        //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("FMnew777@gmail.com");
-        authorizationHelper.setNewLoginPassword("qqqqqq");
-        authorizationHelper.setNewLoginNameF("Ronald");
-        authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumberHomePage("777777777");
-        verificationHelper.ageConfirmCheckClassicSignUp();
-        authorizationHelper.clickFormSignUpSave();
-        //emailHelper.emailVerification();
-        authorizationHelper.clickCloseMoreAboutYou();
+    @Test (priority = 1)
+    public void headerRoomSignUpHomePage() {
+      //  newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickRoom();
+        signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew314@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("19");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.backLocation();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.preferredLocation("Watf", "Hackney");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.budget();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.toMoveCheckboxEnabled();
+        signUpHelper.selectMoveDate("8", "8", "2019");
+        signUpHelper.selectHappyReceiveNews();
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.verifySearchListingPage();
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        signUpHelper.verificationDataProfileFull();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseAccountFromDropDownMenu();
@@ -31,52 +49,180 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
-
-
     @Test (priority = 2)
-    public void TestClassicSignUpWithExistingEmail() {
+    public void headerFMSignUpHomePage() {
+        newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("2");
+        addPropertyHelper.pressContinue();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew330@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("5", "2", "1959");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("20");
+        //signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.verifyAddListingPage();
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        matchingHelper.closePopup();
+        signUpHelper.verificationDataProfileRole("live-in landlord");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
 
-        authorizationHelper.clickSignInButton();
-        //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.gen.Landlord101@gmail.com");
-        authorizationHelper.setNewLoginPassword("qqqqqq");
-        authorizationHelper.setNewLoginNameF("Ronald");
-        authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumberHomePage("777777777");
-        //verificationHelper.ageConfirmCheckClassicSignUp();
-        verificationHelper.ageConfirmCheckClassicSignUpIf();
-        authorizationHelper.clickFormSignUpSave();
+    @Test (priority = 3)
+    public void headerSignUpWithExistingEmail() {
+        newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("2");
+        addPropertyHelper.pressContinue();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew777@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
         verificationHelper.emailAlreadyExistedAlert();
      }
 
-    @Test (priority = 1)
-    public void TestClassicSignUpWithBlankRequiredFields() {
+    @Test (priority = 4)
+    public void headerSignUpWithBlankRequiredFieldsYourInf() {
+        newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("2");
+        addPropertyHelper.pressContinue();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.clickYourInformationContinue();
 
-        authorizationHelper.clickSignInButton();
-       // authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.clickFormSignUpSave();
         verificationHelper.emailBlankAlert();
         verificationHelper.nameFirstBlankAlert();
-        verificationHelper.nameLastBlankAlert();
+        verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
-        verificationHelper.checkAgeBlankAlert();
-        verificationHelper.checkPhoneAlert();
+
+    }
+    @Test (priority = 5)
+    public void headerSignUpWithBlankRequiredFieldsMoreAboutYou() {
+        newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("2");
+        addPropertyHelper.pressContinue();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew233@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.dateMonthYearPhoneOccupationBlankError();
+    }
+    @Test (priority = 2)
+    public void headerSignUpWithBlankRequiredFieldsLocation() {
+        newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickRoom();
+        signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew33674@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("19");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.backLocation();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.checkLocationBlank();
+    }
+
+    @Test (priority = 2)
+    public void headerSignUpWithBlankRequiredFieldsBudget() {
+        newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickRoom();
+        signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew3399@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("19");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.backLocation();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.preferredLocation("Watf", "Hackney");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.budgetError();
+        signUpHelper.quit();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
 
     @Test (priority = 2)
     //Facebook authorization doen`t work on staging
 
-    public void SuccessfulSignUpViaFacebook() {
+    public void headerSignUpViaFacebook() {
         open("https://www.idealflatmate.co.uk/");
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickRoom();
         authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
+
+        signUpHelper.genderMaleSelect();
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profileDateBirthAdd("5", "2", "1959");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("20");
+        //signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.preferredLocation("Watf", "Hackney");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.budget();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.clickYourInformationContinue();
+
+        verificationHelper.verificationUserNameOnHomePage("RonaldRetreive");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        //matchingHelper.closePopup();
+        signUpHelper.verificationDataProfile();
+        signUpHelper.verificationDataProfileFotoDashboard();
+
+
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseAccountFromDropDownMenu();
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
-        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+        verificationHelper.verificationUserNoNameOnHomePage("RonaldRetreive");
         newDriverPage();
     }
 
@@ -84,8 +230,9 @@ public class SignUpTest extends TestBase {
     //Facebook authorization doen`t work on staging
 
     public void SignUpViaFacebookAgeUnder18() {
-        open("https://www.idealflatmate.co.uk/");
-        authorizationHelper.clickSignInButton();
+        open("https://www.idealflatmate.co.uk/");open("https://www.idealflatmate.co.uk/");
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickRoom();
         authorizationHelper.clickSignUpWithFacebook();
         authorizationHelper.LoginFacebookWithNewAccount("ron666ddd@gmail.com", "qqqqqq666D");
         //verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -95,124 +242,42 @@ public class SignUpTest extends TestBase {
     }
 
 
-    @Test (priority = 1)
+   // @Test (priority = 1)
     public void SuccessfulClassicSignUpPropertyPage() {
         newDriverPage();
         authorizationHelper.goToPropertyPage();
-        authorizationHelper.clickCloseSignUpFMPage();
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.ProfPayment4@gmail.com");
-        authorizationHelper.setNewLoginPassword("wwwwww666D");
-        authorizationHelper.setNewLoginNameF("Ronald");
-        authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumberHomePage("777777777");
-        verificationHelper.ageConfirmCheckClassicSignUp();
-        authorizationHelper.clickFormSignUpSave();
-        //emailHelper.emailVerification();
-        authorizationHelper.clickCloseMoreAboutYou();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseAccountFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
-        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+
 
     }
 
-    @Test (priority = 1)
+ //   @Test (priority = 1)
     public void SuccessfulClassicSignUpFMPage() {
         newDriverPage();
         authorizationHelper.goToFMpage();
-        authorizationHelper.clickCloseSignUpFMPage();
-        authorizationHelper.clickSignInButton();
-        authorizationHelper.setNewLoginMail("cro.genNewOneTest341@gmail.com");
-        authorizationHelper.setNewLoginPassword("wwwwww666D");
-        authorizationHelper.setNewLoginNameF("Ronald");
-        authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumberHomePage("777777777");
-        verificationHelper.ageConfirmCheckClassicSignUp();
-        authorizationHelper.clickFormSignUpSave();
-        //emailHelper.emailVerification("Ronald");
-        authorizationHelper.clickCloseMoreAboutYou();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseAccountFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
-        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
-        closeWebDriver();
+
     }
 
     @Test (priority = 2)
-    public void SuccessfulSignUpWithMatchingWithRequiredFields() {
+
+    public void signUpMatchingWithBlankFirstName() {
 
         matchingHelper.clickHomePageMatching();
-        matchingHelper.clickContinueMatching1();
-        matchingHelper.clickContinueMatching2();
-        matchingHelper.clickContinueMatching3();
-        matchingHelper.clickContinueMatching4();
-        matchingHelper.clickContinueMatching5();
-        matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest322@gmail.com");
-        authorizationHelper.setNewLoginPasswordMatching("123456");
-        authorizationHelper.setNewLoginNameFMatching("Ronald");
-        authorizationHelper.setNewLoginNameLMatching("NewOne");
-        authorizationHelper.setPhoneNumber("777777777");
-        verificationHelper.ageConfirmCheckMatching();
-        matchingHelper.clickContinueMatchingAfterSignUp();
-        authorizationHelper.rejectMissedPreferredLocation();
-        //emailHelper.verificationPageAfterSignUp();
-        //emailHelper.emailVerification("Ronald");
-
-        matchingHelper.clickSkip7stepFromHome();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-        getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseAccountFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
-        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+        matchingHelper.verifBlankName();
     }
 
-    @Test (priority = 1)
-    public void SignUpWithMatchingWithBlankRequiredFields() {
+    @Test (priority = 2)
+    public void SignUpMatchingWithRequiredFieldsRoom() {
         newDriverPage();
         matchingHelper.clickHomePageMatching();
+        matchingHelper.enterFirstName("Donald");
+        matchingHelper.clickARoom();
+        //matchingHelper.clickAFM();
         matchingHelper.clickContinueMatching1();
         matchingHelper.clickContinueMatching2();
         matchingHelper.clickContinueMatching3();
         matchingHelper.clickContinueMatching4();
         matchingHelper.clickContinueMatching5();
         matchingHelper.clickContinueMatching6();
-        matchingHelper.clickContinueMatchingAfterSignUp();
-        authorizationHelper.rejectMissedPreferredLocation();
-        verificationHelper.emailBlankAlertMatching();
-        verificationHelper.NameFirstBlankAlertMatching();
-        verificationHelper.NameLastBlankAlertMatching();
-        verificationHelper.passwordBlankAlertMatching();
-        verificationHelper.checkPhoneAlertMatching();
-        verificationHelper.checkAgeBlankAlertMatching();
-       // authorizationHelper.clickCloseSignUpFMPage();
-    }
-
-    //@Test
-    public void SuccessfulSignUpWithMatchingWithAllFields() {
-
-        matchingHelper.clickHomePageMatching();
-        matchingHelper.clickContinueMatching1();
-        matchingHelper.clickContinueMatching2();
-        matchingHelper.clickContinueMatching3();
-        matchingHelper.clickContinueMatching4();
-        matchingHelper.clickContinueMatching5();
-        matchingHelper.clickContinueMatching6();
-        authorizationHelper.setNewLoginMailMatching("cro.genNewOneTest3@gmail.com");
-        authorizationHelper.setNewLoginPasswordMatching("123456");
-        authorizationHelper.setNewLoginNameFMatching("Ronald");
-        authorizationHelper.setNewLoginNameLMatching("NewOne");
-        authorizationHelper.setPhoneNumber("777777777");
-        verificationHelper.ageConfirmCheckMatching();
-
-
-        matchingHelper.clickContinueMatchingAfterSignUp();
         matchingHelper.clickContinueMatching7();
         matchingHelper.clickContinueMatching8();
         matchingHelper.clickContinueMatching9();
@@ -227,6 +292,37 @@ public class SignUpTest extends TestBase {
         matchingHelper.clickContinueMatching18();
         matchingHelper.clickContinueMatching19();
         matchingHelper.clickContinueMatching20();
+
+        signUpHelper.clickEmailMatching1();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew310@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("19");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.backLocation();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.preferredLocation("Watf", "Hackney");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.budget();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.toMoveCheckboxEnabled();
+        signUpHelper.selectMoveDate("8", "8", "2019");
+        signUpHelper.selectHappyReceiveNews();
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.clickShowMeMyMatches();
+        verificationHelper.verifySearchListingPage();
+        getAddPropertyHelper().openDropDownMenu();
+        matchingHelper.veryfyScoresInDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        signUpHelper.verificationDataProfileFull();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseAccountFromDropDownMenu();
@@ -234,6 +330,265 @@ public class SignUpTest extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserNoNameOnHomePage("Ronald");
     }
+
+    @Test (priority = 2)
+    public void SignUpMatchingWithRequiredFieldsFMRoom() {
+        newDriverPage();
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.enterFirstName("Donald");
+        //matchingHelper.clickARoom();
+        matchingHelper.clickAFM();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.clickContinueMatching2();
+        matchingHelper.clickContinueMatching3();
+        matchingHelper.clickContinueMatching4();
+        matchingHelper.clickContinueMatching5();
+        matchingHelper.clickContinueMatching6();
+        matchingHelper.clickContinueMatching7();
+        matchingHelper.clickContinueMatching8();
+        matchingHelper.clickContinueMatching9();
+        matchingHelper.clickContinueMatching10();
+        matchingHelper.clickContinueMatching11();
+        matchingHelper.clickContinueMatching12();
+        matchingHelper.clickContinueMatching13();
+        matchingHelper.clickContinueMatching14();
+        matchingHelper.clickContinueMatching15();
+        matchingHelper.clickContinueMatching16();
+        matchingHelper.clickContinueMatching17();
+        matchingHelper.clickContinueMatching18();
+        matchingHelper.clickContinueMatching19();
+        matchingHelper.clickContinueMatching20();
+
+        signUpHelper.clickEmailMatching1();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew309@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "1978");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("19");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.clickListYourRoomMatching();
+
+        verificationHelper.verifyAddListingPage();
+        getAddPropertyHelper().openDropDownMenu();
+        matchingHelper.veryfyScoresInDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+       // matchingHelper.closePopup();
+        signUpHelper.verificationDataProfileRole("flatmate");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
+
+    @Test (priority = 2)
+    public void SignUpMatchingWithRequiredFieldsFMRoomSearchFM() {
+        newDriverPage();
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.enterFirstName("Donald");
+        //matchingHelper.clickARoom();
+        matchingHelper.clickAFM();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.clickContinueMatching2();
+        matchingHelper.clickContinueMatching3();
+        matchingHelper.clickContinueMatching4();
+        matchingHelper.clickContinueMatching5();
+        matchingHelper.clickContinueMatching6();
+        matchingHelper.clickContinueMatching7();
+        matchingHelper.clickContinueMatching8();
+        matchingHelper.clickContinueMatching9();
+        matchingHelper.clickContinueMatching10();
+        matchingHelper.clickContinueMatching11();
+        matchingHelper.clickContinueMatching12();
+        matchingHelper.clickContinueMatching13();
+        matchingHelper.clickContinueMatching14();
+        matchingHelper.clickContinueMatching15();
+        matchingHelper.clickContinueMatching16();
+        matchingHelper.clickContinueMatching17();
+        matchingHelper.clickContinueMatching18();
+        matchingHelper.clickContinueMatching19();
+        matchingHelper.clickContinueMatching20();
+
+        signUpHelper.clickEmailMatching1();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew309@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "1978");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("19");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.clickSearchFMMatching();
+        verificationHelper.verifySearchFMPage();
+        //verificationHelper.verifyAddListingPage();
+        getAddPropertyHelper().openDropDownMenu();
+        matchingHelper.veryfyScoresInDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+       // matchingHelper.closePopup();
+        signUpHelper.verificationDataProfileRole("flatmate");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
+
+
+    @Test (priority = 1)
+    public void SignUpWithMatchingWithBlankRequiredFields() {
+        newDriverPage();
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.enterFirstName("Donald");
+        //matchingHelper.clickARoom();
+        matchingHelper.clickAFM();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.clickContinueMatching2();
+        matchingHelper.clickContinueMatching3();
+        matchingHelper.clickContinueMatching4();
+        matchingHelper.clickContinueMatching5();
+        matchingHelper.clickContinueMatching6();
+        matchingHelper.clickContinueMatching7();
+        matchingHelper.clickContinueMatching8();
+        matchingHelper.clickContinueMatching9();
+        matchingHelper.clickContinueMatching10();
+        matchingHelper.clickContinueMatching11();
+        matchingHelper.clickContinueMatching12();
+        matchingHelper.clickContinueMatching13();
+        matchingHelper.clickContinueMatching14();
+        matchingHelper.clickContinueMatching15();
+        matchingHelper.clickContinueMatching16();
+        matchingHelper.clickContinueMatching17();
+        matchingHelper.clickContinueMatching18();
+        matchingHelper.clickContinueMatching19();
+        matchingHelper.clickContinueMatching20();
+
+        signUpHelper.clickEmailMatching1();
+
+        signUpHelper.clickYourInformationContinue();
+
+        verificationHelper.emailBlankAlert();
+        verificationHelper.nameFirstBlankAlert();
+        verificationHelper.genderBlankAlert();
+        verificationHelper.passwordBlankAlert();
+    }
+
+
+    @Test (priority = 2)
+    public void popupRoomSignUpHomePage() {
+        newDriverPage();
+        authorizationHelper.goToPropertyPage();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew314@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("19");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.backLocation();
+        signUpHelper.profilePhotoAdd();
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.preferredLocation("Watf", "Hackney");
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.budget();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.toMoveCheckboxEnabled();
+        signUpHelper.selectMoveDate("8", "8", "2019");
+        signUpHelper.selectHappyReceiveNews();
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.verifySearchListingPage();
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        signUpHelper.verificationDataProfileFull();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+    }
+
+
+    @Test (priority = 3)
+    public void popupSignUpWithExistingEmail() {
+        newDriverPage();
+        authorizationHelper.goToFMpage();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew777@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.emailAlreadyExistedAlert();
+    }
+
+    @Test (priority = 4)
+    public void popupSignUpWithBlankRequiredFields() {
+        newDriverPage();
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("2");
+        addPropertyHelper.pressContinue();
+        signUpHelper.clickEmailHeader();
+        signUpHelper.clickYourInformationContinue();
+
+        verificationHelper.emailBlankAlert();
+        verificationHelper.nameFirstBlankAlert();
+        verificationHelper.genderBlankAlert();
+        verificationHelper.passwordBlankAlert();
+
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew330@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.dateMonthYearPhoneOccupationBlankError();
+
+        signUpHelper.profileDateBirthAdd("5", "2", "1959");
+        signUpHelper.profilephone("5555555555");
+        signUpHelper.occupation("20");
+        //signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.checkLocationBlank();
+
+        signUpHelper.clickYourInformationContinue();
+        signUpHelper.preferredLocation("Watf", "Hackney");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.budgetError();
+
+        signUpHelper.budget();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.toMoveCheckboxEnabled();
+        signUpHelper.quit();
+        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+
+    }
+
     //@Test
     public void SuccessfulSignUpWithListingWithAllFields() {
         verificationHelper.closeAdvPopUp();
@@ -251,7 +606,7 @@ public class SignUpTest extends TestBase {
     /*
     @Test
     public void InvalidSignInWithEmptyFields() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickLoginSubmitButton();
         verificationHelper.VerificationLoginError();
         verificationHelper.VerificationPasswordError();

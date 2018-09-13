@@ -22,10 +22,10 @@ public class AuthorizationHelper extends HelperBase {
      }
 
     public void setLoginAsUserWithoutPackage(String email) {
-        fillInField(email, $("#loginform-username"), "#loginform-username");
+        fillInField(email, $("#loginform-username"), $(byXpath("#loginform-username")));
     }
     public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
-        fillInField(email, $("#loginform-username"), "#loginform-username");
+        fillInField(email, $("#loginform-username"), $(byXpath("#loginform-username")));
     }
 
     public void setPassword(String password) {
@@ -50,7 +50,7 @@ public class AuthorizationHelper extends HelperBase {
         $(byXpath("//*[@id='login-form']/div[1]/a")).waitUntil(visible, 4000).click();
     }
     public void clickSignUpWithFacebook() {
-        $(byXpath("(//a[@class='btn btn-block btn-social btn-facebook u_m10-bottom auth-link facebook js-facebook-url'])[3]")).waitUntil(visible, 4000).click();
+        $("#js-signup-facebook").waitUntil(visible, 4000).click();
     }
 
     public void clickSignInWithFacebookMatching() {
@@ -66,9 +66,8 @@ public class AuthorizationHelper extends HelperBase {
         $(".signup-modal-test").click();
     }
 
-    public void clickSignInButton() {
-        $(byXpath("//li/a[contains(text(), 'Log in')]")).waitUntil(appears, 4000).click();
-        sleep(2000);
+    public void clickJoinFreeButton() {
+        $("#login-main-menu-button").click();
     }
 
     public void clickLoginSubmitButton() {
@@ -106,48 +105,40 @@ public class AuthorizationHelper extends HelperBase {
 
     public void clickSignInButtonInForm() {
         $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[1]")).click();
+        sleep(2000);
     }
 
-    public void setNewLoginMail(String email) {
-        fillInField(email, $("#signup-need-email").waitUntil(visible, 6000), "#signup-need-email");
-    }
 
-    public void setNewLoginPassword(String password) {
-        fillInField(password, $("#signup-need-password"), "#signup-need-password");
-    }
 
     public void setNewLoginNameF(String nameF) {
-        fillInField(nameF, $("#signup-need-firstname"), "#signup-need-firstname");
+        fillInField(nameF, $("#signup-need-firstname"), $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginNameL(String nameL) {
-        fillInField(nameL, $("#signup-need-lastname"), "#signup-need-lastname");
+        fillInField(nameL, $("#signup-need-lastname"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginMailMatching(String email) {
-        fillInField(email, $("#signup-survey-email"), "#signup-survey-email");
+        fillInField(email, $("#signup-survey-email"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginPasswordMatching(String password) {
-        fillInField(password, $("#signup-survey-password"), "#signup-survey-password");
+        fillInField(password, $("#signup-survey-password"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginNameFMatching(String nameF) {
-        fillInField(nameF, $("#signup-survey-firstname"), "#signup-survey-firstname");
+        fillInField(nameF, $("#signup-survey-firstname"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginNameLMatching(String nameL) {
-        fillInField(nameL, $("#signup-survey-lastname"), "#signup-survey-lastname");
+        fillInField(nameL, $("#signup-survey-lastname"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void clickFormSignUp() {
         $(byXpath("(//button[@class='btn btn-primary text-uppercase'])[1]")).waitUntil(appears, 4000).click();
     }
 
-    public void clickFormSignUpSave() {
-        $(byXpath("(//button[contains(text(), 'Save & Continue')])[1]")).waitUntil(appears, 4000).click();
-        sleep(2000);
-    }
+
 
     public void clickCloseMoreAboutYouMatching() {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[1]")).waitUntil(appears, 4000).click();
@@ -166,10 +157,10 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void setPhoneNumber(String PhoneNumber) {
-        fillInField(PhoneNumber, $("#signup-survey-phone"), "#signup-survey-phone");
+        fillInField(PhoneNumber, $("#signup-survey-phone"),  $(byXpath("#signup-need-firstname")));
     }
     public void setPhoneNumberHomePage(String PhoneNumber) {
-        fillInField(PhoneNumber, $("#signup-need-phone"), "#signup-need-phone");
+        fillInField(PhoneNumber, $("#signup-need-phone"),  $(byXpath("#signup-need-firstname")));
     }
 
 
@@ -178,7 +169,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickCloseSignUpFMPage() {
-        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(visible, 10000).click();
+        $(byXpath("//button[@class='btn btn-sm close text-normal u_m15']")).waitUntil(visible, 10000).click();
     }
 
     public void rejectMissedPreferredLocation() {
@@ -194,25 +185,25 @@ public class AuthorizationHelper extends HelperBase {
         confirm("Sorry! Ideal Flatmate is restricted for use by those under the age of 18.");
     }
     public void setNewLoginMailListing(String email) {
-        fillInField(email, $("#signupnewform-email").waitUntil(visible, 6000), "#signupnewform-email");
+        fillInField(email, $("#signupnewform-email").waitUntil(visible, 6000),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginPasswordListing(String password) {
-        fillInField(password, $("#signupnewform-password"), "#signupnewform-password");
+        fillInField(password, $("#signupnewform-password"),  $(byXpath("#signup-need-firstname")));
     }
     public void setNewLoginPasswordPasswordConfirm(String password) {
-        fillInField(password, $("#signupnewform-password_confirm"), "#signupnewform-password_confirm");
+        fillInField(password, $("#signupnewform-password_confirm"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginNameFListing(String nameF) {
-        fillInField(nameF, $("#signupnewform-firstname"), "#signupnewform-firstname");
+        fillInField(nameF, $("#signupnewform-firstname"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setNewLoginNameLListing(String nameL) {
-        fillInField(nameL, $("#signupnewform-lastname"), "#signupnewform-lastname");
+        fillInField(nameL, $("#signupnewform-lastname"),  $(byXpath("#signup-need-firstname")));
     }
     public void setPhoneNumberListing(String PhoneNumber) {
-        fillInField(PhoneNumber, $("#signupnewform-phone"), "#signupnewform-phone");
+        fillInField(PhoneNumber, $("#signupnewform-phone"),  $(byXpath("#signup-need-firstname")));
     }
 
 
@@ -220,4 +211,6 @@ public class AuthorizationHelper extends HelperBase {
         $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 10000).hover();
         $(byXpath("//a[contains(text(), 'All properties')]")).waitUntil(appears, 10000).click();
     }
+
+
 }

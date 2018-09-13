@@ -11,7 +11,7 @@ public class AddListingTests extends TestBase {
     @Test (priority = 1)
     public void TestSuccessfulLoginStartListing() {
         newDriverPage();
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHListingPaid@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
@@ -61,7 +61,7 @@ public class AddListingTests extends TestBase {
     @Test (priority = 3)
     public void TestSuccessfulPropertyAddingWithAllFields() {
         newDriverPage();
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Agency@gmail.com");
         authorizationHelper.setPassword("qqqqqq");

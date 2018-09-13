@@ -13,15 +13,15 @@ public class MatchingTests extends TestBase {
 
     @Test
     public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
-        authorizationHelper.clickSignInButton();
+        authorizationHelper.clickJoinFreeButton();
         //authorizationHelper.clickSignUpButtonInForm();
-        authorizationHelper.setNewLoginMail("cro.genNewTestOne444@gmail.com");
-        authorizationHelper.setNewLoginPassword("123456");
+        //authorizationHelper.setNewLoginMail("cro.genNewTestOne444@gmail.com");
+       // authorizationHelper.setNewLoginPassword("123456");
         authorizationHelper.setNewLoginNameF("Ronald");
         authorizationHelper.setNewLoginNameL("NewOne");
         authorizationHelper.setPhoneNumberHomePage("777777777");
         verificationHelper.ageConfirmCheckClassicSignUp();
-        authorizationHelper.clickFormSignUpSave();
+      //  authorizationHelper.clickFormSignUpSave();
         //emailHelper.emailVerification("Ronald");
         authorizationHelper.clickCloseMoreAboutYou();
         verificationHelper.verificationUserNameOnHomePage("Ronald");

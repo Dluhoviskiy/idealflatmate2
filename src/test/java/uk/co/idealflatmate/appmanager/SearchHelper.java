@@ -1,9 +1,15 @@
 package uk.co.idealflatmate.appmanager;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
@@ -115,7 +121,58 @@ public class SearchHelper extends HelperBase {
     }
 
 
+    public void clickAdvancedFilter() {
+        $(By.xpath("//span[@class='advanced-filters-closed']")).click();
+
+    }
+
+    public void clickAvailablePlus(String text) {
+        $(By.xpath("//div[contains(text(), 'Available bedrooms')]/..//button[@data-type='plus']")).click();
+        clickAdvancedFilterApply();
+        //$(By.xpath("//button[contains(text(), 'Rooms number: 2 ')]")).click();
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[4]")).shouldHave(text(text));
+
+    }
+
+    public void cardsWith2roomsAvailable(int number, String text) {
+        //$$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).shouldHaveSize(number).shouldHave(CollectionCondition.texts(text));
+        $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).shouldHaveSize(number);
+        $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).filterBy(textCaseSensitive(text)).shouldHaveSize(0);
+
+    }
 
 
+    public void clickApplyFilters() {
+        $(By.xpath("//button[@class='btn btn-sm btn-primary js-submit']")).click();
+    }
 
+    public void active3Fiters(int numberFilters, String text1, String text2, String text3) {
+        $$(byXpath("//button[@class='btn btn-xs btn-gray']")).shouldHaveSize(numberFilters);
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[1]")).shouldHave(text(text1));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[2]")).shouldHave(text(text2));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[3]")).shouldHave(text(text3));
+    }
+
+    public void active7Fiters(int numberFilters, String text1, String text2, String text3, String text4, String text5, String text6, String text7) {
+        $$(byXpath("//button[@class='btn btn-xs btn-gray']")).shouldHaveSize(numberFilters);
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[1]")).shouldHave(text(text1));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[2]")).shouldHave(text(text2));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[3]")).shouldHave(text(text3));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[4]")).shouldHave(text(text4));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[5]")).shouldHave(text(text5));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[6]")).shouldHave(text(text6));
+        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[7]")).shouldHave(text(text7));
+    }
+
+    public void clickAdvancedFilterApply() {
+        $(By.xpath("//button[@class='btn btn-primary js-submit']")).click();
+    }
+
+    public void clickHighestPrice(int number) {
+        $("select#property-sort").selectOption(number);
+
+
+        ElementsCollection expectedNames = $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']"));
+      //  Collections.sort(expectedNames);
+    }
 }

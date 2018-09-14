@@ -9,7 +9,7 @@ public class SignUpTest extends TestBase {
 
     @Test (priority = 1)
     public void headerRoomSignUpHomePage() {
-      //  newDriverPage();
+        newDriverPage();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
         signUpHelper.backFromEmailToRoom();
@@ -545,11 +545,24 @@ public class SignUpTest extends TestBase {
     public void popupSignUpWithBlankRequiredFields() {
         newDriverPage();
         authorizationHelper.clickJoinFreeButton();
-        signUpHelper.clickFM();
-        addPropertyHelper.selectTypeUser("2");
-        addPropertyHelper.pressContinue();
+        signUpHelper.clickRoom();
+
+
+
         signUpHelper.clickEmailHeader();
+        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("FMnew777@gmail.com");
+        signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
+        verificationHelper.emailAlreadyExistedAlert();
+
+        signUpHelper.clearEmail();
+        signUpHelper.clearFirstname();
+        //signUpHelper.clearGender();
+        signUpHelper.clearPassword();
+        signUpHelper.clickYourInformationContinue();
+
 
         verificationHelper.emailBlankAlert();
         verificationHelper.nameFirstBlankAlert();
@@ -557,8 +570,8 @@ public class SignUpTest extends TestBase {
         verificationHelper.passwordBlankAlert();
 
         signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew330@gmail.com");
+        signUpHelper.genderMaleSelectAfterBlank();
+        signUpHelper.setSignEmail("FMnew33096@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 

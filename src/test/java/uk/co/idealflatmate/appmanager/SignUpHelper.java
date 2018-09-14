@@ -36,6 +36,13 @@ public class SignUpHelper extends HelperBase {
       $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Female')]")).click();
       //$(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Female')]")).selectRadio("Female");
     }
+    public void genderMaleSelectAfterBlank() {
+
+        $(byXpath("//div[@id='yourinfosignupform-gender']/label[contains(text(), 'Male')]")).click();
+        //$(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Female')]")).selectRadio("Female");
+    }
+
+
     public void genderMaleSelect() {
         $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Male')]")).click();
     }
@@ -173,6 +180,18 @@ public class SignUpHelper extends HelperBase {
     }
     public void clickSearchFMMatching() {
         $(byXpath("//a[contains(., 'Search for a flatmate ')]")).click();
+    }
+
+    public void clearEmail() {
+        $(byXpath("//input[@id='yourinfosignupform-email']")).clear();
+    }
+
+    public void clearFirstname() {
+        $(byXpath("//input[@id='yourinfosignupform-username']")).clear();
+    }
+
+    public void clearPassword() {
+        $("input#yourinfosignupform-password").clear();
     }
 
     //a[contains(., 'Search for a flatmate ')]

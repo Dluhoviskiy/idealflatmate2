@@ -1,18 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 16, Failures: 1, Errors: 0, Skipped: 15, Time elapsed: 309.81 s <<< FAILURE! - in TestSuite
-setupClass(uk.co.idealflatmate.tests.AddListingTests)  Time elapsed: 309.506 s  <<< FAILURE!
-org.openqa.selenium.TimeoutException: 
-timeout
-  (Session info: chrome=64.0.3282.186)
-  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEX-PC', ip: '10.8.88.172', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_162'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-selenide.url: https://www.idealflatmate.co.uk/
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.36.540470 (e522d04694c7eb..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.186, webStorageEnabled: true}
-selenide.baseUrl: http://localhost:8080
-Session ID: 316fb2bb528b4fca2eb2cf52c961ecd3
+Tests run: 61, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 4,744.818 s <<< FAILURE! - in TestSuite
+TestSuccessfulPropertyAddingWithAllFields(uk.co.idealflatmate.tests.AddListingTests)  Time elapsed: 86.958 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text '3 rooms for rent in Bankside, South, London from
+£500' {By.xpath: //h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']}
+Element: '<h1 class="h2 u_m0-top u_p20-bottom text-normal u_b-bottom">3 rooms for rent in Bankside, South, London from ?500
+Property ref# 0023407</h1>'
+	at uk.co.idealflatmate.tests.AddListingTests.TestSuccessfulPropertyAddingWithAllFields(AddListingTests.java:99)
+
+SuccessLogInContactProperty(uk.co.idealflatmate.tests.AuthorizationTests)  Time elapsed: 22.813 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {#loginform-username}
+Element: '<input class="form-control" id="loginform-username" name="LoginForm[username]" type="text" displayed:false></input>'
+	at uk.co.idealflatmate.tests.AuthorizationTests.SuccessLogInContactProperty(AuthorizationTests.java:136)
+
+SuccessfulSignUpWithMatchingWithRequiredFields(uk.co.idealflatmate.tests.SignUpTest)  Time elapsed: 274.532 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {By.xpath: //button[@id='3' and contains(text(), 'Continue')]}
+Element: '<button class="btn btn-block btn-info btn-next btn-survey" id="3" onclick="dataLayer.push({'event':'Rebelhack','eventCategory': 'pre user activation','eventAction': 'match sociability question 2 of 20 continue click','eventLabel': 'flathunter'});" type="button">Continue</button>'
+	at uk.co.idealflatmate.tests.SignUpTest.SuccessfulSignUpWithMatchingWithRequiredFields(SignUpTest.java:107)
 

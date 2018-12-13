@@ -2,591 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_phantomjsdriver_1_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_selenide_4_10_01.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_selenide_4_10_01.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_selenide_4_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_6_jre.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_6_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_24_1_jre.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_11_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517774579694.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517774579694.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517781422287.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517781422287.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866455875.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866455875.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866469852.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866469852.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866483533.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866483533.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866617169.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866617169.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866786049.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517866786049.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517947506094.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517947506094.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517948526665.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517948526665.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517948698171.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517948698171.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517948768877.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517948768877.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949020487.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949274987.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949274987.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949552804.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949552804.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949754771.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949754771.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949868348.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517949868348.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950167539.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950167539.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950328238.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950328238.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950538679.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950538679.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950674353.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950674353.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950841542.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517950841542.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517951408552.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517951408552.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517951583971.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517951583971.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517952668267.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517952668267.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517952717670.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517952717670.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517953067202.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517953067202.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517953091821.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517953091821.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955278003.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955278003.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955292855.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955292855.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955931164.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955931164.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955963909.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517955963909.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517956048282.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517956048282.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517956132421.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517956132421.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517956180496.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1517956180496.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518862643936.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518862643936.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518862779294.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518862779294.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518863063939.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518863063939.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518863210347.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518863210347.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518863926578.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518863926578.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864108735.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864108735.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864335963.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864335963.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864398040.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864398040.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864497236.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864497236.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864725855.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518864725855.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518866758676.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518866758676.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518867987289.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518867987289.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518869771010.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518870841597.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518870841597.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518871084120.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518871084120.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518871302532.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1518871302532.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519052677969.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519052677969.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519052777950.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519052777950.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519052792292.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519052792292.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077063001.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077063001.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077251862.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077251862.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077453356.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077453356.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077626349.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519077626349.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519328306070.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519328306070.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519329007341.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519329503820.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519329503820.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519329783120.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519329783120.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519330144713.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519330144713.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519336133981.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519336133981.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519337722576.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519337722576.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519338339144.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519338339144.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339217033.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339217033.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339550597.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339550597.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339716878.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339716878.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339814897.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339814897.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339990085.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519339990085.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519340278492.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519340278492.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519340914953.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519340914953.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519341217699.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519341258735.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519341258735.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519341619032.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519341619032.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519341747491.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519341747491.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519342621570.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519342621570.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519342682898.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519342682898.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519343004610.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519343004610.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519397661479.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519397661479.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519399963409.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519399963409.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400091859.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400091859.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400326284.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400326284.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400442743.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400442743.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400878304.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519400878304.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519401023442.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519401023442.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519401889311.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519401889311.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519401990319.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519401990319.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519409359647.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519409359647.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519409548992.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519409548992.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519702845341.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519702845341.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519702879700.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519702879700.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519703003516.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519703003516.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519703107988.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519703107988.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519703420992.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519703420992.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519704745460.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519704745460.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519706142323.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519706142323.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519706458405.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519706458405.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519706948124.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519706948124.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519708105310.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519708105310.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519708142691.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519708142691.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519708299454.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519708299454.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709118091.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709118091.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709315720.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709315720.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709402586.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709402586.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709887344.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519709887344.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519710320991.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519710320991.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519711054691.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519711054691.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519722555212.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519722555212.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519722984015.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519722984015.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519723239234.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519723239234.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519723855610.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519723855610.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519749826696.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519749826696.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519750581202.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519750581202.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519750652315.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519750652315.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519750724687.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519750724687.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751112495.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751112495.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751154992.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751154992.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751434093.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751434093.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751944529.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751944529.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751989566.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519751989566.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519752440872.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519752440872.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519752488209.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519752488209.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519752819197.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519752819197.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519753183719.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519753183719.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519753311655.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519753311655.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519753651204.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519753651204.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754003711.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754003711.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754137218.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754137218.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754224107.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754224107.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754600578.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754600578.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754698275.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754698275.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754985714.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519754985714.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519755233058.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519755233058.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519755448367.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519755448367.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519755702365.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519755702365.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519756138960.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519756138960.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519756444876.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519756444876.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519756564344.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519756564344.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519761903637.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519761903637.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519761961815.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519761961815.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762066529.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762066529.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762363942.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762363942.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762518382.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762518382.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762880096.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519762880096.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519763128603.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519763128603.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519763253276.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519763253276.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519763870924.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519763870924.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764147545.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764147545.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764435860.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764435860.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764558011.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764558011.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764853790.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764853790.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764983233.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519764983233.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519766180588.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519766180588.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519766442858.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519766442858.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519766557049.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519766557049.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519821395386.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519821395386.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822014857.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822014857.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822038916.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822038916.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822094383.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822094383.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822147956.3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822147956.3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822704189.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519822704189.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519824425952.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519824425952.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519825589322.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519825589322.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519825659266.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519825659266.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519826240258.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519826240258.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519826505340.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519826505340.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519827102819.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519827102819.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519827299525.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519827299525.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519827398327.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1519827398327.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520240712094.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520240712094.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520262045882.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520262045882.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520262150179.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520262150179.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520263785177.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520263785177.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520264017439.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520264017439.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520264073018.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520264073018.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520264900971.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520264900971.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265045577.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265045577.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265474203.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265474203.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265539295.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265539295.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265567217.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520265567217.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520883278557.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520883278557.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520950346217.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520950478448.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520950478448.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520952102815.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520952102815.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520952317410.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520952317410.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520952355911.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520952355911.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955231194.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955231194.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955512825.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955512825.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955794913.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955794913.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955968268.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520955968268.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956416441.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956416441.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956565761.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956565761.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956769855.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956769855.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956827980.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956827980.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956968603.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520956968603.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520957365080.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520957365080.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520959724393.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520959724393.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520959744346.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520959744346.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520960772235.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520960772235.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520960930807.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520960930807.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520961040011.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520961040011.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520961201666.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520961201666.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520966397628.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520966397628.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520966604965.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520966604965.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520967098291.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520967098291.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520967255296.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1520967255296.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021482686.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021482686.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021648228.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021648228.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021769093.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021769093.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021957049.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521021957049.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521022270085.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521022270085.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521022477750.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521022477750.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521022949768.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521022949768.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521023130497.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521023130497.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521024086055.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521024086055.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521025482594.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521025482594.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521025599831.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521025599831.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026101908.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026101908.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026173424.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026173424.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026290229.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026290229.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026579007.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026579007.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026686794.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026686794.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026796824.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026796824.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026969021.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521026969021.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027162061.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027162061.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027239975.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027239975.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027307248.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027307248.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027540577.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521027540577.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521032035844.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521032035844.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521032095797.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521032095797.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521033547075.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521033547075.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521033918031.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521033918031.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521034433507.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521034433507.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521035234881.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521035234881.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521108258720.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521108258720.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521108388612.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521108388612.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521108453940.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521108453940.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521121961144.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521121961144.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521122006331.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521122006331.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521122119349.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521122119349.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521123130847.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521123130847.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521124662784.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521124662784.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521124695852.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521124695852.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521204955453.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521204955453.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521205024243.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521205024243.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521232381094.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1521232381094.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522156665242.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522156665242.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157359604.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157359604.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157607408.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157607408.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157845599.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157845599.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157952047.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522157952047.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522158005586.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522158066390.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522158066390.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316007619.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316007619.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316136194.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316633812.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316633812.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316656166.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316656166.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316680329.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522316680329.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522317057562.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522317057562.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522317572349.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522317572349.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522317715750.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522317715750.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522318486539.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522318486539.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522318556062.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522409992969.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522409992969.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522410156069.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522410156069.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522410410414.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1522410410414.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1526032772818.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1526032772818.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1526043910376.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1526043910376.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1526044199438.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1526044199438.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528299752804.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528299752804.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528299952085.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528299952085.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528990589863.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528990589863.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528990886497.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528990886497.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528991264697.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1528991264697.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529324452578.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529324452578.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529324665360.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529324665360.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529325557355.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529325557355.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529326824708.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529326824708.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529326901808.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529326901808.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529327075933.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529327075933.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529327679936.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529327679936.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529328384723.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529328384723.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529328654491.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529328654491.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529328740327.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529328740327.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529504188917.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529504188917.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529504730107.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529504730107.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529505136365.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1529505136365.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1531316769378.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1531316769378.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1531321774888.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1531321774888.0.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/idealflatmatetest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/idealflatmatetest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/jquery-1.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/jquery-1.7.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AddListingTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AddListingTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AuthorizationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AuthorizationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.MessagesTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.MessagesTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/testng.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire/surefirebooter9110130616289774694.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AddPropertyHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AddPropertyHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AuthorizationHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AuthorizationHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MessageHepler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/EmailHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/EmailHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/FooterHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/FooterHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HelperBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HelperBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HomePageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HomePageHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MatchingHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MatchingHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MessageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MessageHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/PaymentsHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/PaymentsHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/VerificationHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/VerificationHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AuthorizationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AuthorizationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/EmailTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/EmailTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/FooterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/FooterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/HomePageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/HomePageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MatchingTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MatchingTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MessagesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MessagesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/PremiumFlathunterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/PremiumFlathunterTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/PremiumFlathunterTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/TestBase.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -599,116 +94,92 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/idealflatmatetest$AuthorizationTests_SuccessLogInContactFM.ic" NAME="AuthorizationTests.SuccessLogInContactFM Coverage Results" MODIFIED="1530611166269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/idealflatmatetest$AddListingTests_TestSignUpSuccessfulPropertyAdding.ic" NAME="AddListingTests.TestSignUpSuccessfulPropertyAdding Coverage Results" MODIFIED="1543841149191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>uk.co.idealflatmate.tests.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/idealflatmatetest$SignUpTest.ic" NAME="SignUpTest Coverage Results" MODIFIED="1543423105946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>uk.co.idealflatmate.tests.*</FILTER>
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="VerificationHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FooterTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FooterHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="140" column="85" selection-start-line="140" selection-start-column="85" selection-end-line="140" selection-end-column="85" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4838#4839#0" expanded="true" />
-                <element signature="e#4923#4924#0" expanded="true" />
-                <element signature="e#5162#5163#0" expanded="true" />
-                <element signature="e#5246#5247#0" expanded="true" />
-                <element signature="e#5483#5484#0" expanded="true" />
-                <element signature="e#5569#5570#0" expanded="true" />
-                <element signature="e#5803#5804#0" expanded="true" />
-                <element signature="e#5887#5888#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddPropertyHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4796">
-              <caret line="232" column="5" selection-start-line="231" selection-end-line="234" selection-end-column="20" />
-              <folding>
-                <element signature="e#1319#1320#0" expanded="true" />
-                <element signature="e#1385#1386#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddListingTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2156">
-              <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="AuthorizationHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="6" selection-start-line="5" selection-end-line="5" selection-end-column="48" />
+            <state relative-caret-position="66">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorizationTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java">
+      <file leaf-file-name="VerificationHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="143" column="23" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="7914">
+              <caret line="685" column="1" selection-start-line="685" selection-start-column="1" selection-end-line="685" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
+      <file leaf-file-name="MatchingTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="1442">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelperBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
+      <file leaf-file-name="MessagesTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="66">
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePageHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HomePageHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchingHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="245" column="5" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePageTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="39">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testNG.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/testNG.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -724,41 +195,59 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing</find>
-      <find>SignUpTest.TestClassicSignUpWithBlankRequiredFields</find>
-      <find>TestClassicSignUpWithBlankRequiredFields</find>
-      <find>TestClassicSignUpWithExistingEmail</find>
-      <find>#signup-</find>
-      <find>TestSuccessfulClassicSignUp</find>
-      <find>.btn.btn-primary.btn-msg-send</find>
-      <find>#property-phone_number</find>
-      <find>(//div[input[@id='signup-need-phone']]/p)[1]</find>
-      <find>answerMessagePremiumFHtoLandlordWithoutSubscription</find>
-      <find>SignUpWithMatchingWithBlankRequiredFields</find>
-      <find>setLoginAsUserWithPremiumFlathunterPackage</find>
-      <find>#loginform-username</find>
-      <find>clickSignInButtonInForm</find>
+      <find>save</find>
+      <find>lickContinueMatching6</find>
+      <find>6</find>
+      <find>7</find>
+      <find>scroll</find>
+      <find>clickEmailHeader</find>
+      <find>room</find>
+      <find>chooseMatchingFromDropDownMenu</find>
       <find>goToFMpage</find>
-      <find>clickCloseSignUpFMPage</find>
-      <find>setPhoneNumber</find>
-      <find>clickFMCardMessageUnlogged</find>
-      <find>sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage</find>
-      <find>answerMessageFmWithoutSubscriptionToFM</find>
-      <find>clickContinueMatching1</find>
-      <find>//div[@id='message-write']//button[@type='submit']</find>
-      <find>typeAndSendMessage</find>
-      <find>clickFormSignInFMmessage</find>
-      <find>clickFormSignInPropertyContact</find>
-      <find>SuccessLogInContactFM</find>
-      <find>setLoginAsUserWithoutPackage</find>
-      <find>//section/div[@class='container']</find>
-      <find>footerFBLink</find>
-      <find>SuccessLogInMessageFM</find>
+      <find>(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[1]</find>
+      <find>//ul[@class='dropdown-menu']</find>
+      <find>verifyScoresInDropDownMenu</find>
+      <find>block</find>
+      <find>(//span[contains (text(), 'Sign up with email')])[2]</find>
+      <find>//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']/span[starts-with(@class,'label label-success')]</find>
+      <find>openDropDownMenu</find>
+      <find>(//li[@class='</find>
+      <find>go</find>
+      <find>endQ</find>
+      <find>end</find>
+      <find>//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']/span[2]</find>
+      <find>/span[2]</find>
+      <find>endQuizGo</find>
+      <find>heckMatchingConcurrence</find>
+      <find>clickTakeTheMatchTestFMscreen</find>
+      <find>match</find>
+      <find>matc</find>
+      <find>home</find>
+      <find>(//li[@class='dropdown nav-ihm-profile-bars'])[1]</find>
+      <find>checkMatchingConcurrence</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="flatmateStage" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -774,29 +263,44 @@
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/ApplicationManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentsHelper.java" />
         <option value="$PROJECT_DIR$/src/test/resources/allure.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PremiumFlathunterTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHepler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$USER_HOME$/Downloads/ideal1.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AreaPageTestHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/searchTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PremiumFlathunterTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/EmailTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchTestsHomePage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HomePageHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AreaPageHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SearchHelper.java" />
+        <option value="$PROJECT_DIR$/testNG.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/testNG.xml" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HomePageHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" />
       </list>
     </option>
   </component>
@@ -813,20 +317,18 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="243" />
-    <option name="width" value="1685" />
-    <option name="height" value="1098" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="147" />
+    <option name="y" value="1" />
+    <option name="width" value="1781" />
+    <option name="height" value="1092" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -839,11 +341,6 @@
             <path>
               <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
               <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -851,18 +348,17 @@
               <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
               <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
@@ -915,45 +411,44 @@
               <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="surefire-reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idealflatmatetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idealflatmatetest" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="test-classes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="driver&#9;FILE&#9;jar://C:/Users/lukhovytskyi/.m2/repository/io/github/bonigarcia/webdrivermanager/1.5.0/webdrivermanager-1.5.0.jar!/io/github/bonigarcia/wdm/ChromeDriverManager.class" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ideal1.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="uk.co.idealflatmate.appmanager" />
-      <recent name="uk.co.idealflatmate.tests" />
-      <recent name="uk.co.idealflatmate" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\resources" />
       <recent name="C:\Users\Lenovo\IdeaProjects\idealflatmatetest\target" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="uk.co.idealflatmate.tests" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests" />
+      <recent name="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest" />
+      <recent name="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target" />
       <recent name="C:\Users\Lenovo\IdeaProjects\idealflatmatetest\src\test" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="uk.co.idealflatmate.tests" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="uk.co.idealflatmate.appmanager" />
+      <recent name="uk.co.idealflatmate.tests" />
+      <recent name="uk.co.idealflatmate" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -968,7 +463,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.AuthorizationTests.SuccessLogInMessageFM">
+  <component name="RunManager" selected="TestNG.MessagesTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -991,7 +486,53 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="AddListingTests.TestSuccessfulPropertyAddingWithAllFields" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ClassAuthorization" type="TestNG" factoryName="TestNG">
+      <module name="idealflatmatetest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="contact" />
+      <option name="TEST_OBJECT" value="GROUP" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Contact" type="TestNG" factoryName="TestNG">
+      <module name="idealflatmatetest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="contact" />
+      <option name="TEST_OBJECT" value="GROUP" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="HomePageTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
         <pattern>
@@ -1003,8 +544,95 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.AddListingTests" />
-      <option name="METHOD_NAME" value="TestSuccessfulPropertyAddingWithAllFields" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.HomePageTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Login" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
+      <module name="idealflatmatetest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="Login" />
+      <option name="TEST_OBJECT" value="GROUP" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="MatchingTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="idealflatmatetest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.MatchingTests" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="idealflatmatetest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.MatchingTests" />
+      <option name="METHOD_NAME" value="CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1020,7 +648,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="AuthorizationTests.SuccessLogInContactFM" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="MatchingTests.StartMatchingOnFMSearchPage" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
         <pattern>
@@ -1032,8 +660,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.AuthorizationTests" />
-      <option name="METHOD_NAME" value="SuccessLogInContactFM" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.MatchingTests" />
+      <option name="METHOD_NAME" value="StartMatchingOnFMSearchPage" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1049,94 +677,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="AuthorizationTests.SuccessLogInMessageFM" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="idealflatmatetest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.AuthorizationTests" />
-      <option name="METHOD_NAME" value="SuccessLogInMessageFM" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="AuthorizationTests.SuccessfulLogInMessageFM" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
-      <module name="idealflatmatetest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.AuthorizationTests" />
-      <option name="METHOD_NAME" value="SuccessfulLogInMessageFM" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="FooterTest.footerFBLink" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="idealflatmatetest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.FooterTest" />
-      <option name="METHOD_NAME" value="footerFBLink" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="MessagesTest.answerMessageFmWithoutSubscriptionToFM" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="MessagesTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
         <pattern>
@@ -1149,9 +690,9 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
       <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.MessagesTest" />
-      <option name="METHOD_NAME" value="answerMessageFmWithoutSubscriptionToFM" />
+      <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -1187,6 +728,63 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="test1" type="TestNG" factoryName="TestNG">
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="GROUP" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="test11" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
+      <module name="idealflatmatetest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="test11" />
+      <option name="TEST_OBJECT" value="GROUP" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1201,20 +799,24 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list>
-      <item itemvalue="TestNG.AuthorizationTests.SuccessfulLogInMessageFM" />
-      <item itemvalue="TestNG.MessagesTest.answerMessageFmWithoutSubscriptionToFM" />
-      <item itemvalue="TestNG.AuthorizationTests.SuccessLogInContactFM" />
-      <item itemvalue="TestNG.AddListingTests.TestSuccessfulPropertyAddingWithAllFields" />
-      <item itemvalue="TestNG.FooterTest.footerFBLink" />
-      <item itemvalue="TestNG.AuthorizationTests.SuccessLogInMessageFM" />
+      <item itemvalue="TestNG.Login" />
+      <item itemvalue="TestNG.test1" />
+      <item itemvalue="TestNG.test11" />
+      <item itemvalue="TestNG.ClassAuthorization" />
+      <item itemvalue="TestNG.Contact" />
+      <item itemvalue="TestNG.HomePageTest" />
+      <item itemvalue="TestNG.MatchingTests" />
+      <item itemvalue="TestNG.MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" />
+      <item itemvalue="TestNG.MatchingTests.StartMatchingOnFMSearchPage" />
+      <item itemvalue="TestNG.MessagesTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AuthorizationTests.SuccessLogInMessageFM" />
-        <item itemvalue="TestNG.FooterTest.footerFBLink" />
-        <item itemvalue="TestNG.AddListingTests.TestSuccessfulPropertyAddingWithAllFields" />
-        <item itemvalue="TestNG.AuthorizationTests.SuccessLogInContactFM" />
-        <item itemvalue="TestNG.MessagesTest.answerMessageFmWithoutSubscriptionToFM" />
+        <item itemvalue="TestNG.MessagesTest" />
+        <item itemvalue="TestNG.MatchingTests.StartMatchingOnFMSearchPage" />
+        <item itemvalue="TestNG.MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" />
+        <item itemvalue="TestNG.MatchingTests" />
+        <item itemvalue="TestNG.HomePageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1232,95 +834,96 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AuthorizationTests_SuccessLogInContactFM - 2018.07.13 at 14h 52m 41s.xml">
-      <configuration name="AuthorizationTests.SuccessLogInContactFM" configurationId="TestNG" />
+    <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 18h 38m 00s.xml">
+      <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AuthorizationTests_SuccessLogInContactFM - 2018.07.13 at 14h 54m 41s.xml">
-      <configuration name="AuthorizationTests.SuccessLogInContactFM" configurationId="TestNG" />
+    <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 18h 43m 45s.xml">
+      <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AuthorizationTests_SuccessLogInContactFM - 2018.07.13 at 14h 56m 17s.xml">
-      <configuration name="AuthorizationTests.SuccessLogInContactFM" configurationId="TestNG" />
+    <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 18h 53m 15s.xml">
+      <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AuthorizationTests_SuccessLogInContactFM - 2018.07.13 at 14h 57m 25s.xml">
-      <configuration name="AuthorizationTests.SuccessLogInContactFM" configurationId="TestNG" />
+    <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 18h 58m 45s.xml">
+      <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddListingTests_TestSuccessfulPropertyAddingWithAllFields - 2018.07.13 at 15h 10m 30s.xml">
-      <configuration name="AddListingTests.TestSuccessfulPropertyAddingWithAllFields" configurationId="TestNG" />
+    <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 19h 03m 26s.xml">
+      <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddListingTests_TestSuccessfulPropertyAddingWithAllFields - 2018.07.13 at 15h 10m 45s.xml">
-      <configuration name="AddListingTests.TestSuccessfulPropertyAddingWithAllFields" configurationId="TestNG" />
+    <history-entry file="MatchingTests_StartMatchingOnFMSearchPage - 2018.12.12 at 19h 04m 33s.xml">
+      <configuration name="MatchingTests.StartMatchingOnFMSearchPage" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddListingTests_TestSuccessfulPropertyAddingWithAllFields - 2018.07.13 at 15h 11m 35s.xml">
-      <configuration name="AddListingTests.TestSuccessfulPropertyAddingWithAllFields" configurationId="TestNG" />
+    <history-entry file="MatchingTests_StartMatchingOnFMSearchPage - 2018.12.12 at 19h 05m 28s.xml">
+      <configuration name="MatchingTests.StartMatchingOnFMSearchPage" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddListingTests_TestSuccessfulPropertyAddingWithAllFields - 2018.07.13 at 15h 14m 32s.xml">
-      <configuration name="AddListingTests.TestSuccessfulPropertyAddingWithAllFields" configurationId="TestNG" />
+    <history-entry file="MatchingTests_StartMatchingOnFMSearchPage - 2018.12.12 at 19h 07m 55s.xml">
+      <configuration name="MatchingTests.StartMatchingOnFMSearchPage" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddListingTests_TestSuccessfulPropertyAddingWithAllFields - 2018.07.13 at 15h 19m 26s.xml">
-      <configuration name="AddListingTests.TestSuccessfulPropertyAddingWithAllFields" configurationId="TestNG" />
+    <history-entry file="MatchingTests_StartMatchingOnFMSearchPage - 2018.12.12 at 19h 10m 14s.xml">
+      <configuration name="MatchingTests.StartMatchingOnFMSearchPage" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="FooterTest_footerFBLink - 2018.07.13 at 16h 58m 48s.xml">
-      <configuration name="FooterTest.footerFBLink" configurationId="TestNG" />
+    <history-entry file="MessagesTest - 2018.12.12 at 19h 26m 18s.xml">
+      <configuration name="MessagesTest" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49739584" weight="0.2034588" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49739584" weight="0.19872476" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.10104167" side_tool="true" weight="0.4165781" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32975295" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895832" weight="0.33900106" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895832" weight="0.33687568" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.35490832" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14791666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22447917" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35414535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.41551542" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.39319873" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32943678" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.34325185" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895832" weight="0.33900106" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49739584" weight="0.2034588" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1959257" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895832" weight="0.33687568" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32943678" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22447917" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.34325185" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.39776194" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35414535" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.39319873" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.35490832" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.10104167" side_tool="true" weight="0.4165781" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.35490832" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49739584" weight="0.19872476" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32975295" />
       <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
@@ -1337,328 +940,227 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="241" />
+      <option name="time" value="511" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/Selenide.class" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/Selenide.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/../../Photos for testing/Property1.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/resources/allure.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/testng.xml" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/1.5.0/webdrivermanager-1.5.0.jar!/io/github/bonigarcia/wdm/ChromeDriverManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/reports/tests/1517774579694.0.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1836" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/ideal1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/internal/MethodInvocationHelper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="2420">
+          <caret line="110" column="86" selection-start-line="110" selection-start-column="86" selection-end-line="110" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="440">
+          <caret line="22" column="88" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/internal/TestResult.class">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AreaPageHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        <state relative-caret-position="22">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/internal/Invoker.class">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="616">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HomePageHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/allure.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="44">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/EmailTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/ApplicationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PremiumFlathunterTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-554">
-          <caret line="10" column="70" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352">
-          <caret line="164" selection-start-line="164" selection-end-line="164" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/reports/tests/1529505136365.0.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java">
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="5" column="6" selection-start-line="5" selection-end-line="5" selection-end-column="48" />
+          <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/impl/WebElementSource.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="176">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/impl/SelenideElementProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="242">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/impl/ElementFinder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2156">
-          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+        <state relative-caret-position="115">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/SuiteRunnerWorker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="1962" selection-start-line="1962" selection-end-line="1962" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1892">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/Selenide.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/internal/BaseTestMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.8.1/selenium-api-3.8.1.jar!/org/openqa/selenium/By.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/Selectors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4796">
-          <caret line="232" column="5" selection-start-line="231" selection-end-line="234" selection-end-column="20" />
+        <state relative-caret-position="88">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
           <folding>
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
+            <element signature="e#3567#3568#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.11.1/selenide-4.11.1.jar!/com/codeborne/selenide/impl/WebElementSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.11.1/selenide-4.11.1.jar!/com/codeborne/selenide/Selenide.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="214" selection-start-line="214" selection-end-line="214" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.11.1/selenide-4.11.1.jar!/com/codeborne/selenide/impl/ElementFinder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/EmailTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SearchHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="113" column="45" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="130" column="19" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-303">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4792">
+          <caret line="230" column="22" selection-start-line="230" selection-start-column="22" selection-end-line="230" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1667,43 +1169,146 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="-1271">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.11.0/selenium-api-3.11.0.jar!/org/openqa/selenium/By.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="140" column="85" selection-start-line="140" selection-start-column="85" selection-end-line="140" selection-end-column="85" />
+        <state relative-caret-position="169">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.11.1/selenide-4.11.1.jar!/com/codeborne/selenide/Selectors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4838#4839#0" expanded="true" />
-            <element signature="e#4923#4924#0" expanded="true" />
-            <element signature="e#5162#5163#0" expanded="true" />
-            <element signature="e#5246#5247#0" expanded="true" />
-            <element signature="e#5483#5484#0" expanded="true" />
-            <element signature="e#5569#5570#0" expanded="true" />
-            <element signature="e#5803#5804#0" expanded="true" />
-            <element signature="e#5887#5888#0" expanded="true" />
+            <element signature="e#1315#1316#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="143" column="23" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="37" />
+        <state relative-caret-position="-374">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/reports/tests/1544629939981.1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="28" column="71" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="68" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3740">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="281" selection-start-line="281" selection-end-line="281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/internal/Invoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="465" selection-start-line="465" selection-end-line="465" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="245" column="5" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7914">
+          <caret line="685" column="1" selection-start-line="685" selection-start-column="1" selection-end-line="685" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HomePageHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1442">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/testNG.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]" parallel="classes">
+  <test name="Surefire test(failed)" parallel="classes">
+    <classes>
+      <class name="uk.co.idealflatmate.tests.AuthorizationTests">
+        <methods>
+          <include name="SuccessLogInContactProperty"/>
+          <include name="tearDown"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AuthorizationTests -->
+      <class name="uk.co.idealflatmate.tests.SignUpTest">
+        <methods>
+          <include name="SuccessfulSignUpWithMatchingWithRequiredFields"/>
+          <include name="tearDown"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.SignUpTest -->
+      <class name="uk.co.idealflatmate.tests.AddListingTests">
+        <methods>
+          <include name="TestSuccessfulPropertyAddingWithAllFields"/>
+          <include name="tearDown"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

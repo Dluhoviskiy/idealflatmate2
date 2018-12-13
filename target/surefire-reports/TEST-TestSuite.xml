@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="4,744.818" tests="61" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="parallel" value="classes"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\bin"/>
+    <property name="java.vm.version" value="25.152-b16"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest"/>
+    <property name="java.runtime.version" value="1.8.0_152-b16"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\LUKHOV~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Program Files\Maven\apache-maven-3.5.3\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_152\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_152\bin;C:\Program Files (x86)\Python36-32\Scripts\;C:\Program Files (x86)\Python36-32\;C:\Program Files\Kerio\Outlook Connector (Offline Edition)\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Users\lukhovytskyi\Downloads\jmeter\apache-jmeter-3.3\bin;C:\Program Files\Git\cmd;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Maven\apache-maven-3.5.3\bin;C:\Program Files\Maven\apache-maven-3.5.3\bin;C:\Users\lukhovytskyi\Scripts\;C:\Users\lukhovytskyi\;C:\Users\lukhovytskyi\AppData\Local\Microsoft\WindowsApps;C:\Users\lukhovytskyi\AppData\Local\GitHubDesktop\bin;C:\Program Files\Maven\apache-maven-3.5.3\bin;C:\Program Files\Java\jdk1.8.0_152\bin;C:\Users\lukhovytskyi\Downloads\jmeter\apache-jmeter-3.3\bin;;."/>
+    <property name="maven.conf" value="C:\Program Files\Maven\apache-maven-3.5.3\bin\../conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\Maven\apache-maven-3.5.3\bin\..\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\lukhovytskyi"/>
+    <property name="user.timezone" value="Europe/Helsinki"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="user.name" value="lukhovytskyi"/>
+    <property name="java.class.path" value="C:\Program Files\Maven\apache-maven-3.5.3\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_152\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dparallel=classes test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_152"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_152\jre\classes"/>
+    <property name="sun.stderr.encoding" value="cp866"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\Maven\apache-maven-3.5.3\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.stdout.encoding" value="cp866"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="TestSignUpSuccessfulPropertyAddingEmailVerification" classname="uk.co.idealflatmate.tests.AddListingTests" time="71.793"/>
+  <testcase name="TestSignUpWithBlankFieldsPropertyAdding" classname="uk.co.idealflatmate.tests.AddListingTests" time="9.225"/>
+  <testcase name="TestSuccessfulLoginStartListing" classname="uk.co.idealflatmate.tests.AddListingTests" time="25.848"/>
+  <testcase name="TestSuccessfulPropertyAddingWithAllFields" classname="uk.co.idealflatmate.tests.AddListingTests" time="86.958">
+    <failure message="Element should have text &apos;3 rooms for rent in Bankside, South, London from&#10;ВЈ500&apos; {By.xpath: //h1[@class=&apos;h2 u_m0-top u_p20-bottom text-normal u_b-bottom&apos;]}&#10;Element: &apos;&lt;h1 class=&quot;h2 u_m0-top u_p20-bottom text-normal u_b-bottom&quot;&gt;3 rooms for rent in Bankside, South, London from £500&#10;Property ref# 0023407&lt;/h1&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
+Element should have text '3 rooms for rent in Bankside, South, London from
+ВЈ500' {By.xpath: //h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']}
+Element: '<h1 class="h2 u_m0-top u_p20-bottom text-normal u_b-bottom">3 rooms for rent in Bankside, South, London from £500
+Property ref# 0023407</h1>'
+	at uk.co.idealflatmate.tests.AddListingTests.TestSuccessfulPropertyAddingWithAllFields(AddListingTests.java:99)
+]]></failure>
+    <system-err><![CDATA[Jul 13, 2018 5:46:54 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 12 -> ChromeDriver: chrome on XP (5044fbf6541c1c8e4b3ad904592bbca2)
+Jul 13, 2018 5:46:54 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jul 13, 2018 5:46:59 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab) on port 21194
+Only local connections are allowed.
+Jul 13, 2018 5:47:09 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jul 13, 2018 5:47:11 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=67.0.3396.99 Platform=XP
+Jul 13, 2018 5:47:11 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.10.01
+Jul 13, 2018 5:47:11 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.8.1 build time: 2017-12-01T18:33:54.468Z
+Jul 13, 2018 5:47:11 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 12: ChromeDriver -> ChromeDriver: chrome on XP (9e0ded91afa6cfeaa28e970aec86a58d)
+]]></system-err>
+  </testcase>
+  <testcase name="EmailWronglogInHomePage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="8.355"/>
+  <testcase name="InvalidAuthorizationWithEmptyFields" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="5.841"/>
+  <testcase name="PasswordWronglogInHomePage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="8.692"/>
+  <testcase name="SuccessClassicLogIn" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="29.249"/>
+  <testcase name="SuccessClassiclogInOnFMPage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="18.566"/>
+  <testcase name="SuccessClassiclogInOnPropertyPage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="39.3"/>
+  <testcase name="SuccessLogInContactFM" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="27.364"/>
+  <testcase name="SuccessLogInContactProperty" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="22.813">
+    <failure message="Element should be visible {#loginform-username}&#10;Element: &apos;&lt;input class=&quot;form-control&quot; id=&quot;loginform-username&quot; name=&quot;LoginForm[username]&quot; type=&quot;text&quot; displayed:false&gt;&lt;/input&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {#loginform-username}
+Element: '<input class="form-control" id="loginform-username" name="LoginForm[username]" type="text" displayed:false></input>'
+	at uk.co.idealflatmate.tests.AuthorizationTests.SuccessLogInContactProperty(AuthorizationTests.java:136)
+]]></failure>
+    <system-err><![CDATA[Jul 13, 2018 5:55:24 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 12 -> ChromeDriver: chrome on XP (eb365f69641d231c9e97d9b60a174b10)
+Jul 13, 2018 5:55:24 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jul 13, 2018 5:55:29 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab) on port 44178
+Only local connections are allowed.
+Jul 13, 2018 5:55:45 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jul 13, 2018 5:55:46 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=67.0.3396.99 Platform=XP
+Jul 13, 2018 5:55:46 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.10.01
+Jul 13, 2018 5:55:46 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.8.1 build time: 2017-12-01T18:33:54.468Z
+Jul 13, 2018 5:55:46 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 12: ChromeDriver -> ChromeDriver: chrome on XP (ec8bcde980b84ec6890b97b9444fd746)
+]]></system-err>
+  </testcase>
+  <testcase name="SuccessLogInMessageFM" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="24.019"/>
+  <testcase name="SuccessLogInMessageProperty" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="18.262"/>
+  <testcase name="SuccessLogInViaFacebook" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="16.651"/>
+  <testcase name="SuccessLogInWithMatchingFB" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="38.387"/>
+  <testcase name="SuccessSignInViaFacebook" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="42.769"/>
+  <testcase name="TestSuccessfulEmailReceivingWelcomeAndListing" classname="uk.co.idealflatmate.tests.EmailTests" time="56.248"/>
+  <testcase name="footerAboutUsLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.321"/>
+  <testcase name="footerBlogLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.337"/>
+  <testcase name="footerBrowseFlatsharesLink" classname="uk.co.idealflatmate.tests.FooterTest" time="17.687"/>
+  <testcase name="footerBrowseHowItWorksLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.18"/>
+  <testcase name="footerBrowseTipsLink" classname="uk.co.idealflatmate.tests.FooterTest" time="5.727"/>
+  <testcase name="footerContactLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.133"/>
+  <testcase name="footerFBLink" classname="uk.co.idealflatmate.tests.FooterTest" time="13.86"/>
+  <testcase name="footerHomeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="5.363"/>
+  <testcase name="footerInstagramLink" classname="uk.co.idealflatmate.tests.FooterTest" time="13.42"/>
+  <testcase name="footerMediaLink" classname="uk.co.idealflatmate.tests.FooterTest" time="5.372"/>
+  <testcase name="footerNLALink" classname="uk.co.idealflatmate.tests.FooterTest" time="23.71"/>
+  <testcase name="footerPressLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.011"/>
+  <testcase name="footerPricingLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.775"/>
+  <testcase name="footerStaySafeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.592"/>
+  <testcase name="footerTwitterLink" classname="uk.co.idealflatmate.tests.FooterTest" time="11.012"/>
+  <testcase name="footerYoutubeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="21.361"/>
+  <testcase name="blogFM" classname="uk.co.idealflatmate.tests.HomePageTest" time="3.881"/>
+  <testcase name="blogImgLink" classname="uk.co.idealflatmate.tests.HomePageTest" time="6.502"/>
+  <testcase name="blogLandlord" classname="uk.co.idealflatmate.tests.HomePageTest" time="8.228"/>
+  <testcase name="blogLordImgLink" classname="uk.co.idealflatmate.tests.HomePageTest" time="5.204"/>
+  <testcase name="blogTextFMLink" classname="uk.co.idealflatmate.tests.HomePageTest" time="12.018"/>
+  <testcase name="blogTextLordLink" classname="uk.co.idealflatmate.tests.HomePageTest" time="12.485"/>
+  <testcase name="findOutMore" classname="uk.co.idealflatmate.tests.HomePageTest" time="5.979"/>
+  <testcase name="findStartListing" classname="uk.co.idealflatmate.tests.HomePageTest" time="156.346"/>
+  <testcase name="findStartMatching" classname="uk.co.idealflatmate.tests.HomePageTest" time="1.954"/>
+  <testcase name="findStartMatchingLink" classname="uk.co.idealflatmate.tests.HomePageTest" time="2.898"/>
+  <testcase name="latestFlatmatesNonLogged" classname="uk.co.idealflatmate.tests.HomePageTest" time="5.987"/>
+  <testcase name="pressLogo" classname="uk.co.idealflatmate.tests.HomePageTest" time="6.588"/>
+  <testcase name="CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" classname="uk.co.idealflatmate.tests.MatchingTests" time="104.092"/>
+  <testcase name="StartMatchingOnFMSearchPage" classname="uk.co.idealflatmate.tests.MatchingTests" time="8.47"/>
+  <testcase name="answerMessageFmWithoutSubscriptionToFM" classname="uk.co.idealflatmate.tests.MessagesTest" time="36.215"/>
+  <testcase name="answerMessagePremiumFHtoLandlordWithoutSubscription" classname="uk.co.idealflatmate.tests.MessagesTest" time="39.102"/>
+  <testcase name="readMessageByLandlordWithoutSubscription" classname="uk.co.idealflatmate.tests.MessagesTest" time="32.357"/>
+  <testcase name="sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage" classname="uk.co.idealflatmate.tests.MessagesTest" time="52.172"/>
+  <testcase name="sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing" classname="uk.co.idealflatmate.tests.MessagesTest" time="55.643"/>
+  <testcase name="sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromSearch" classname="uk.co.idealflatmate.tests.MessagesTest" time="64.761"/>
+  <testcase name="SignUpViaFacebookAgeUnder18" classname="uk.co.idealflatmate.tests.SignUpTest" time="15"/>
+  <testcase name="SignUpWithMatchingWithBlankRequiredFields" classname="uk.co.idealflatmate.tests.SignUpTest" time="27.059"/>
+  <testcase name="SuccessfulSignUpViaFacebook" classname="uk.co.idealflatmate.tests.SignUpTest" time="44.81"/>
+  <testcase name="SuccessfulSignUpWithMatchingWithRequiredFields" classname="uk.co.idealflatmate.tests.SignUpTest" time="274.532">
+    <failure message="Element should be visible {By.xpath: //button[@id=&apos;3&apos; and contains(text(), &apos;Continue&apos;)]}&#10;Element: &apos;&lt;button class=&quot;btn btn-block btn-info btn-next btn-survey&quot; id=&quot;3&quot; onclick=&quot;dataLayer.push({&apos;event&apos;:&apos;Rebelhack&apos;,&apos;eventCategory&apos;: &apos;pre user activation&apos;,&apos;eventAction&apos;: &apos;match sociability question 2 of 20 continue click&apos;,&apos;eventLabel&apos;: &apos;flathunter&apos;});&quot; type=&quot;button&quot;&gt;Continue&lt;/button&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {By.xpath: //button[@id='3' and contains(text(), 'Continue')]}
+Element: '<button class="btn btn-block btn-info btn-next btn-survey" id="3" onclick="dataLayer.push({'event':'Rebelhack','eventCategory': 'pre user activation','eventAction': 'match sociability question 2 of 20 continue click','eventLabel': 'flathunter'});" type="button">Continue</button>'
+	at uk.co.idealflatmate.tests.SignUpTest.SuccessfulSignUpWithMatchingWithRequiredFields(SignUpTest.java:107)
+]]></failure>
+    <system-err><![CDATA[Jul 13, 2018 6:50:27 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 12 -> ChromeDriver: chrome on XP (faecf461cbcf618723817f4be7231e0c)
+Jul 13, 2018 6:50:27 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jul 13, 2018 6:50:32 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab) on port 3615
+Only local connections are allowed.
+Jul 13, 2018 6:50:48 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jul 13, 2018 6:50:50 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=67.0.3396.99 Platform=XP
+Jul 13, 2018 6:50:50 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.10.01
+Jul 13, 2018 6:50:50 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.8.1 build time: 2017-12-01T18:33:54.468Z
+Jul 13, 2018 6:50:50 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 12: ChromeDriver -> ChromeDriver: chrome on XP (627ca98c060b1324d9036f40d4fa2be2)
+]]></system-err>
+  </testcase>
+  <testcase name="TestClassicSignUpWithBlankRequiredFields" classname="uk.co.idealflatmate.tests.SignUpTest" time="8.09"/>
+  <testcase name="TestClassicSignUpWithExistingEmail" classname="uk.co.idealflatmate.tests.SignUpTest" time="25.565"/>
+  <testcase name="TestSuccessfulClassicSignUp" classname="uk.co.idealflatmate.tests.SignUpTest" time="54.667"/>
+</testsuite>

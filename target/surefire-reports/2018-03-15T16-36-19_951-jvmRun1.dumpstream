@@ -1,0 +1,350 @@
+# Created on 2018-03-15T16:38:05.418
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:386)
+	at java.lang.Thread.run(Unknown Source)
+
+
+# Created on 2018-03-15T16:38:17.062
+Unexpected IOException: 8,1,uk.co.idealflatmate.tests.AuthorizationTests,InvalidAuthorizationWithEmptyFields(uk.co.idealflatmate.tests.AuthorizationTests),null,Element should be visible {By.xpath: //*[@id="login-form"]/div[5]/div/button}\000AElement: '<button class="btn btn-block btn-primary" name="login-button" onclick="dataLayer.push({'event':'Rebelhack'\002C'eventCategory': 'retention'\002C'eventAction': 'log in with email click'\002C'eventLabel': 'click'});" type="submit" displayed:false></button>',null,Element should be visible {By.xpath: //*[@id="login-form"]/div[5]/div/button}\000AElement: '<button class="btn btn-block btn-primary" name="login-button" onclick="dataLayer.push({'event':'Rebelhack'\002C'eventCategory': 'retention'\002C'eventAction': 'log in with email click'\002C'eventLabel': 'click'});" type="submit" displayed:false></button>',AuthorizationTests.InvalidAuthorizationWithEmptyFields:32 Element should be visible {By.xpath: //*[@id="login-form"]/div[5]/div/button}\000AElement: '<button class="btn btn-block btn-primary" name="login-button" onclick="dataLayer.push({'event':'Rebelhack'\002C'eventCategory': 'retention'\002C'eventAction': 'log in with email click'\002C'eventLabel': 'click'});" type="submit" displayed:false></button>',com.codeborne.selenide.ex.ElementShould: \000AElement should be visible {By.xpath: //*[@id="login-form"]/div[5]/div/button}\000AElement: '<button class="btn btn-block btn-primary" name="login-button" onclick="dataLayer.push({'event':'Rebelhack'\002C'eventCategory': 'retention'\002C'eventAction': 'log in with email click'\002C'eventLabel': 'click'});" type="submit" displayed:false></button>'\000A\0009at uk.co.idealflatmate.tests.AuthorizationTests.InvalidAuthorizationWithEmptyFields(AuthorizationTests.java:32)\000A
+
+
+# Created on 2018-03-15T16:38:17.069
+Unexpected IOException with stream: мар 15, 2018 4:38:17 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 1 -> ChromeDriver: chrome on XP (66a006256240b71e6e18cff765e85193)
+
+
+# Created on 2018-03-15T16:38:17.077
+Unexpected IOException with stream: мар 15, 2018 4:38:17 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+
+
+# Created on 2018-03-15T16:38:18.295
+Unexpected IOException with stream: мар 15, 2018 4:38:18 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 1216 ms
+
+
+# Created on 2018-03-15T16:38:19.651
+Unexpected IOException with stream: S
+
+# Created on 2018-03-15T16:38:19.657
+Unexpected IOException with stream: t
+
+# Created on 2018-03-15T16:38:19.663
+Unexpected IOException with stream: a
+
+# Created on 2018-03-15T16:38:19.669
+Unexpected IOException with stream: r
+
+# Created on 2018-03-15T16:38:19.675
+Unexpected IOException with stream: t
+
+# Created on 2018-03-15T16:38:19.681
+Unexpected IOException with stream: i
+
+# Created on 2018-03-15T16:38:19.688
+Unexpected IOException with stream: n
+
+# Created on 2018-03-15T16:38:19.693
+Unexpected IOException with stream: g
+
+# Created on 2018-03-15T16:38:19.699
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:19.705
+Unexpected IOException with stream: C
+
+# Created on 2018-03-15T16:38:19.712
+Unexpected IOException with stream: h
+
+# Created on 2018-03-15T16:38:19.718
+Unexpected IOException with stream: r
+
+# Created on 2018-03-15T16:38:19.725
+Unexpected IOException with stream: o
+
+# Created on 2018-03-15T16:38:19.732
+Unexpected IOException with stream: m
+
+# Created on 2018-03-15T16:38:19.739
+Unexpected IOException with stream: e
+
+# Created on 2018-03-15T16:38:19.746
+Unexpected IOException with stream: D
+
+# Created on 2018-03-15T16:38:19.751
+Unexpected IOException with stream: r
+
+# Created on 2018-03-15T16:38:19.757
+Unexpected IOException with stream: i
+
+# Created on 2018-03-15T16:38:19.764
+Unexpected IOException with stream: v
+
+# Created on 2018-03-15T16:38:19.770
+Unexpected IOException with stream: e
+
+# Created on 2018-03-15T16:38:19.776
+Unexpected IOException with stream: r
+
+# Created on 2018-03-15T16:38:19.782
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:19.787
+Unexpected IOException with stream: 2
+
+# Created on 2018-03-15T16:38:19.794
+Unexpected IOException with stream: .
+
+# Created on 2018-03-15T16:38:19.801
+Unexpected IOException with stream: 3
+
+# Created on 2018-03-15T16:38:19.806
+Unexpected IOException with stream: 6
+
+# Created on 2018-03-15T16:38:19.813
+Unexpected IOException with stream: .
+
+# Created on 2018-03-15T16:38:19.819
+Unexpected IOException with stream: 5
+
+# Created on 2018-03-15T16:38:19.824
+Unexpected IOException with stream: 4
+
+# Created on 2018-03-15T16:38:19.830
+Unexpected IOException with stream: 0
+
+# Created on 2018-03-15T16:38:19.837
+Unexpected IOException with stream: 4
+
+# Created on 2018-03-15T16:38:19.843
+Unexpected IOException with stream: 7
+
+# Created on 2018-03-15T16:38:19.849
+Unexpected IOException with stream: 0
+
+# Created on 2018-03-15T16:38:19.854
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:19.860
+Unexpected IOException with stream: (
+
+# Created on 2018-03-15T16:38:19.867
+Unexpected IOException with stream: e
+
+# Created on 2018-03-15T16:38:19.873
+Unexpected IOException with stream: 5
+
+# Created on 2018-03-15T16:38:19.879
+Unexpected IOException with stream: 2
+
+# Created on 2018-03-15T16:38:19.885
+Unexpected IOException with stream: 2
+
+# Created on 2018-03-15T16:38:19.890
+Unexpected IOException with stream: d
+
+# Created on 2018-03-15T16:38:19.897
+Unexpected IOException with stream: 0
+
+# Created on 2018-03-15T16:38:19.902
+Unexpected IOException with stream: 4
+
+# Created on 2018-03-15T16:38:19.908
+Unexpected IOException with stream: 6
+
+# Created on 2018-03-15T16:38:19.914
+Unexpected IOException with stream: 9
+
+# Created on 2018-03-15T16:38:19.920
+Unexpected IOException with stream: 4
+
+# Created on 2018-03-15T16:38:19.927
+Unexpected IOException with stream: c
+
+# Created on 2018-03-15T16:38:19.933
+Unexpected IOException with stream: 7
+
+# Created on 2018-03-15T16:38:19.939
+Unexpected IOException with stream: e
+
+# Created on 2018-03-15T16:38:19.946
+Unexpected IOException with stream: b
+
+# Created on 2018-03-15T16:38:19.952
+Unexpected IOException with stream: e
+
+# Created on 2018-03-15T16:38:19.958
+Unexpected IOException with stream: a
+
+# Created on 2018-03-15T16:38:19.966
+Unexpected IOException with stream: 4
+
+# Created on 2018-03-15T16:38:19.972
+Unexpected IOException with stream: b
+
+# Created on 2018-03-15T16:38:19.978
+Unexpected IOException with stream: a
+
+# Created on 2018-03-15T16:38:19.986
+Unexpected IOException with stream: 8
+
+# Created on 2018-03-15T16:38:19.998
+Unexpected IOException with stream: 8
+
+# Created on 2018-03-15T16:38:20.008
+Unexpected IOException with stream: 2
+
+# Created on 2018-03-15T16:38:20.017
+Unexpected IOException with stream: 1
+
+# Created on 2018-03-15T16:38:20.028
+Unexpected IOException with stream: 2
+
+# Created on 2018-03-15T16:38:20.038
+Unexpected IOException with stream: 7
+
+# Created on 2018-03-15T16:38:20.048
+Unexpected IOException with stream: 2
+
+# Created on 2018-03-15T16:38:20.060
+Unexpected IOException with stream: d
+
+# Created on 2018-03-15T16:38:20.066
+Unexpected IOException with stream: b
+
+# Created on 2018-03-15T16:38:20.074
+Unexpected IOException with stream: e
+
+# Created on 2018-03-15T16:38:20.081
+Unexpected IOException with stream: f
+
+# Created on 2018-03-15T16:38:20.090
+Unexpected IOException with stream: 4
+
+# Created on 2018-03-15T16:38:20.102
+Unexpected IOException with stream: f
+
+# Created on 2018-03-15T16:38:20.113
+Unexpected IOException with stream: 9
+
+# Created on 2018-03-15T16:38:20.123
+Unexpected IOException with stream: b
+
+# Created on 2018-03-15T16:38:20.134
+Unexpected IOException with stream: 8
+
+# Created on 2018-03-15T16:38:20.145
+Unexpected IOException with stream: 1
+
+# Created on 2018-03-15T16:38:20.162
+Unexpected IOException with stream: 8
+
+# Created on 2018-03-15T16:38:20.175
+Unexpected IOException with stream: c
+
+# Created on 2018-03-15T16:38:20.187
+Unexpected IOException with stream: 9
+
+# Created on 2018-03-15T16:38:20.196
+Unexpected IOException with stream: 1
+
+# Created on 2018-03-15T16:38:20.203
+Unexpected IOException with stream: )
+
+# Created on 2018-03-15T16:38:20.212
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:20.220
+Unexpected IOException with stream: o
+
+# Created on 2018-03-15T16:38:20.239
+Unexpected IOException with stream: n
+
+# Created on 2018-03-15T16:38:20.250
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:20.257
+Unexpected IOException with stream: p
+
+# Created on 2018-03-15T16:38:20.265
+Unexpected IOException with stream: o
+
+# Created on 2018-03-15T16:38:20.273
+Unexpected IOException with stream: r
+
+# Created on 2018-03-15T16:38:20.283
+Unexpected IOException with stream: t
+
+# Created on 2018-03-15T16:38:20.302
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:20.316
+Unexpected IOException with stream: 6
+
+# Created on 2018-03-15T16:38:20.328
+Unexpected IOException with stream: 8
+
+# Created on 2018-03-15T16:38:20.346
+Unexpected IOException with stream: 6
+
+# Created on 2018-03-15T16:38:20.356
+Unexpected IOException with stream: 4
+
+# Created on 2018-03-15T16:38:20.366
+Unexpected IOException with stream: 
+
+# Created on 2018-03-15T16:38:20.373
+Unexpected IOException with stream: 
+
+
+# Created on 2018-03-15T16:38:20.382
+Unexpected IOException with stream: O
+
+# Created on 2018-03-15T16:38:20.389
+Unexpected IOException with stream: n
+
+# Created on 2018-03-15T16:38:20.399
+Unexpected IOException with stream: l
+
+# Created on 2018-03-15T16:38:20.407
+Unexpected IOException with stream: y
+
+# Created on 2018-03-15T16:38:20.415
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:20.423
+Unexpected IOException with stream: l
+
+# Created on 2018-03-15T16:38:20.431
+Unexpected IOException with stream: o
+
+# Created on 2018-03-15T16:38:20.441
+Unexpected IOException with stream: c
+
+# Created on 2018-03-15T16:38:20.449
+Unexpected IOException with stream: a
+
+# Created on 2018-03-15T16:38:20.455
+Unexpected IOException with stream: l
+
+# Created on 2018-03-15T16:38:20.462
+Unexpected IOException with stream:  
+
+# Created on 2018-03-15T16:38:20.471
+Unexpected IOException with stream: c
+
+# Created on 2018-03-15T16:38:20.478
+Unexpected IOException with stream: o
+
+# Created on 2018-03-15T16:38:20.486
+Unexpected IOException with stream: n
+
+# Created on 2018-03-15T16:38:20.493
+Unexpected IOException with stream: n
+
+# Created on 2018-03-15T16:38:20.502
+Unexpected IOException with stream: e
+

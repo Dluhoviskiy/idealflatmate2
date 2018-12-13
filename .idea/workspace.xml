@@ -2,87 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_phantomjsdriver_1_4_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_selenide_4_10_01.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_selenide_4_10_01.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_selenide_4_11_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_6_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_6_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_24_1_jre.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_11_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idealflatmatetest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/idealflatmatetest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/testng-failed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/jquery-1.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/jquery-1.7.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AddListingTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AddListingTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AuthorizationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.AuthorizationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.MessagesTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-uk.co.idealflatmate.tests.MessagesTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/testng.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire/surefirebooter9110130616289774694.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AddPropertyHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AddPropertyHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AuthorizationHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AuthorizationHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/EmailHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/EmailHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/FooterHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/FooterHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HelperBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HelperBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HomePageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HomePageHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MatchingHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MatchingHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MessageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MessageHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/PaymentsHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/PaymentsHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/VerificationHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/VerificationHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AuthorizationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AuthorizationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/EmailTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/EmailTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/FooterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/FooterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/HomePageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/HomePageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MatchingTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MatchingTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MessagesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MessagesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/PremiumFlathunterTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/TestBase.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -103,15 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthorizationHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="VerificationHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -133,8 +44,35 @@
       <file leaf-file-name="MessagesTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+            <state relative-caret-position="990">
+              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaymentTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchHomePageTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchPropertiesPageTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -160,26 +98,17 @@
       <file leaf-file-name="HomePageTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="176">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testNG.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/testNG.xml">
+      <file leaf-file-name="AddListingTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="2046">
+              <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -204,18 +133,18 @@
       <find>room</find>
       <find>chooseMatchingFromDropDownMenu</find>
       <find>goToFMpage</find>
-      <find>(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[1]</find>
+      <find />
       <find>//ul[@class='dropdown-menu']</find>
       <find>verifyScoresInDropDownMenu</find>
       <find>block</find>
-      <find>(//span[contains (text(), 'Sign up with email')])[2]</find>
-      <find>//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']/span[starts-with(@class,'label label-success')]</find>
+      <find />
+      <find />
       <find>openDropDownMenu</find>
       <find>(//li[@class='</find>
       <find>go</find>
       <find>endQ</find>
       <find>end</find>
-      <find>//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']/span[2]</find>
+      <find />
       <find>/span[2]</find>
       <find>endQuizGo</find>
       <find>heckMatchingConcurrence</find>
@@ -223,8 +152,8 @@
       <find>match</find>
       <find>matc</find>
       <find>home</find>
-      <find>(//li[@class='dropdown nav-ihm-profile-bars'])[1]</find>
       <find>checkMatchingConcurrence</find>
+      <find />
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -291,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java" />
@@ -301,6 +229,7 @@
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HomePageHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java" />
       </list>
     </option>
   </component>
@@ -317,7 +246,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="147" />
     <option name="y" value="1" />
     <option name="width" value="1781" />
@@ -463,7 +392,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.MessagesTest">
+  <component name="RunManager" selected="TestNG.PaymentTests">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -532,35 +461,6 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="HomePageTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="idealflatmatetest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.HomePageTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
     <configuration name="Login" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
@@ -587,35 +487,6 @@
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="MatchingTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="idealflatmatetest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.MatchingTests" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
     </configuration>
@@ -690,6 +561,64 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
       <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.MessagesTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="MessagesTest.answerMessageFmWithoutSubscriptionToFM" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="idealflatmatetest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.MessagesTest" />
+      <option name="METHOD_NAME" value="answerMessageFmWithoutSubscriptionToFM" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="PaymentTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="idealflatmatetest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.PaymentTests" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -804,19 +733,19 @@
       <item itemvalue="TestNG.test11" />
       <item itemvalue="TestNG.ClassAuthorization" />
       <item itemvalue="TestNG.Contact" />
-      <item itemvalue="TestNG.HomePageTest" />
-      <item itemvalue="TestNG.MatchingTests" />
       <item itemvalue="TestNG.MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" />
       <item itemvalue="TestNG.MatchingTests.StartMatchingOnFMSearchPage" />
       <item itemvalue="TestNG.MessagesTest" />
+      <item itemvalue="TestNG.MessagesTest.answerMessageFmWithoutSubscriptionToFM" />
+      <item itemvalue="TestNG.PaymentTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PaymentTests" />
+        <item itemvalue="TestNG.MessagesTest.answerMessageFmWithoutSubscriptionToFM" />
         <item itemvalue="TestNG.MessagesTest" />
         <item itemvalue="TestNG.MatchingTests.StartMatchingOnFMSearchPage" />
         <item itemvalue="TestNG.MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" />
-        <item itemvalue="TestNG.MatchingTests" />
-        <item itemvalue="TestNG.HomePageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -834,12 +763,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 18h 38m 00s.xml">
-      <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 18h 43m 45s.xml">
-      <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="MatchingTests_CompleteMatchingFromMenuWithNewUserWithVerifyingPercent - 2018.12.12 at 18h 53m 15s.xml">
       <configuration name="MatchingTests.CompleteMatchingFromMenuWithNewUserWithVerifyingPercent" configurationId="TestNG" />
     </history-entry>
@@ -864,9 +787,16 @@
     <history-entry file="MessagesTest - 2018.12.12 at 19h 26m 18s.xml">
       <configuration name="MessagesTest" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="MessagesTest_answerMessageFmWithoutSubscriptionToFM - 2018.12.13 at 13h 45m 38s.xml">
+      <configuration name="MessagesTest.answerMessageFmWithoutSubscriptionToFM" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PaymentTests - 2018.12.13 at 13h 54m 49s.xml">
+      <configuration name="PaymentTests" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -881,14 +811,14 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.35490832" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22447917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22447917" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.35414535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.39319873" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.39319873" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1028,31 +958,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.10.01/selenide-4.10.01.jar!/com/codeborne/selenide/Selenide.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="142" selection-start-line="142" selection-end-line="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1147,13 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="130" column="19" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-303">
-          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1284,17 +1186,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="264">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1305,10 +1200,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="176">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2046">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
         </state>
       </provider>
     </entry>

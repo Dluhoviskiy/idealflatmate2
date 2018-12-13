@@ -16,7 +16,7 @@ public class PaymentTests extends TestBase {
         searchHelper.searchProperty("#0012906");
         paymentsHelper.verificationPhone("XXXX");
         getMessageHelper().clickPhoneReveal();
-        paymentsHelper.verificationPhoneVisible("777777777");
+        paymentsHelper.verificationPhoneVisible("778877777");
         authorizationHelper.logoutFromApp();
     }
 

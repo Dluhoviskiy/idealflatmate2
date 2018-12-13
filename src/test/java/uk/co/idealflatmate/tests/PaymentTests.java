@@ -83,7 +83,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
-        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+        verificationHelper.verificationUserIsUnlogged("Ronald");
     }
    // @Test (priority = 8)
     public void LandlordPaymentPayPal() {
@@ -106,10 +106,10 @@ public class PaymentTests extends TestBase {
         verificationHelper.verifyPackagePurchase("Congratulations on choosing our Premium Flathunter plan for the property .\n");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseAccountFromDropDownMenu();
+        authorizationHelper.chooseProfileFromDropDownMenu();
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
-        verificationHelper.verificationUserNoNameOnHomePage("Ronald");
+        verificationHelper.verificationUserIsUnlogged("Ronald");
     }
 
 }

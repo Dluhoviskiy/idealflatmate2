@@ -15,7 +15,8 @@ public class HomePageHelper {
 
 
     public void clickFM() {
-        $(byXpath("(//div[@class='circle-card-img'])[1]")).waitUntil(visible, 4000).click();
+
+        $(byXpath("(//div[@class='card-top-profile-img u_p5-right'])[1]")).waitUntil(visible, 4000).click();
     }
 
     public void verificationFM() {
@@ -35,39 +36,41 @@ public class HomePageHelper {
     }
 
     public void verificationMatchingStart() {
-        $(byXpath("//form[@id='modal-form_2']//h4")).waitUntil(visible, 4000).shouldHave(text("Question 1 of"));
+        $(byXpath("//h1")).waitUntil(visible, 4000).shouldHave(text("The ideal flatmate\n" +
+                "Compatibility Quiz"));
+
 
     }
 
-    public void clickAddListing() {
-        $(byXpath("(//a[@href='/create'])[3]")).waitUntil(visible, 4000).click();
+    public void clickAddListingFromHow() {
+        $(byXpath("//div[@class='skew-content clearfix']//a[@href='/create']")).waitUntil(visible, 4000).click();
     }
-    public void verificationListingStart() {
-        $(byXpath("//h1[@class='list-property-title u_m0-top ']")).waitUntil(visible, 4000).shouldHave(text("Which are you?"));
-    }
+
 
     public void clickTakeMatching() {
         $(byXpath("//a[@data-target='#matchModal']")).waitUntil(visible, 4000).click();
     }
 
-    public void clickFMBlog() {
-        $(byXpath("//a[contains(text(), 'Visit Flatmate HQ')]")).waitUntil(visible, 4000).click();
+    public void hoverCommunity() {
+
+        $(byXpath("//nav//ul[@class='dropdown-menu']/../a[contains(text(), 'Community')]")).hover();
     }
 
-    public void verificationLandlordBlog() {
-        $(byXpath("(//title[contains(text(), 'Landlords HQ')])[1]")).waitUntil(exist, 6000).should(exist);
+    public void clickFMBlog() {
+
+        $(byXpath("//a[contains(text(), 'Flatmate HQ')]")).waitUntil(visible, 4000).click();
     }
+
+
 
     public void clickLandlordBlog() {
-        $(byXpath("//a[contains(text(), 'Visit Landlord HQ')]")).waitUntil(visible, 4000).click();
+        $(byXpath("//a[contains(text(), 'Landlord HQ')]")).waitUntil(visible, 4000).click();
     }
 
-    public void verificationFMBlog() {
-        $(byXpath("//title[contains(text(), 'Flatmate HQ')]")).waitUntil(exist, 6000).should(exist);
-    }
+
 
     public void clickLogo() {
-        $(byXpath("//div[@class='col-md-6 hidden-xs hidden-sm text-right']//img[@alt='NLA Recognised Supplier logo']")).waitUntil(visible, 4000).click();
+        $(byXpath("//a/img[@alt='ideal flatmate']")).waitUntil(visible, 4000).click();
     }
 
     public void verificationLogo() {
@@ -94,7 +97,7 @@ public class HomePageHelper {
 
     public void amountOfBlogBlocks(int size) {
 
-        $$("div.col-xs-6.u_p5-right-xs.u_ed-flex").shouldHaveSize(size);
+        $$(byXpath("//section[starts-with(@class, 'homepage-quiz-list')]/div")).shouldHaveSize(size);
 
     }
 
@@ -104,11 +107,11 @@ public class HomePageHelper {
     }
     public void amountOfFeedbackBlocks(int size) {
 
-        $$("#testimonials div.card").shouldHaveSize(size);
+        $$(byXpath("//ul[@class='testimonials-list child-4-per-row grid-row-mobile__child']/li")).shouldHaveSize(size);
     }
 
     public void amountOfFeaturedRoom(int size) {
-        $$(byXpath("//div[@class='hp-featured-properties-container cards-container']/div")).shouldHaveSize(size);
+        $$(byXpath("//div[@class='card-img']")).shouldHaveSize(size);
     }
     public void amountOfAreasBlocks(int size) {
 
@@ -123,18 +126,43 @@ public class HomePageHelper {
         $$("#hp-areas div.owl-stage-outer").shouldHave(texts("Clapham\n" +
                 "South London\n" +
                 "ZONE 2\n" +
-                "Stratford\n" +
+                "Barnet Gate\n" +
                 "East London\n" +
-                "ZONE 3\n" +
                 "Ealing\n" +
                 "West London\n" +
                 "ZONE 3\n" +
                 "Walthamstow\n" +
                 "East London\n" +
+                "ZONE 3\n" +
+                "Stratford\n" +
+                "East London\n" +
                 "ZONE 3"));
     }
 
+    public void clickFindRooms() {
+        $(byXpath("(//a[contains(., 'or learn more ')])[1]")).click();
 
+    }
+
+    public void clickFindFM() {
+        $(byXpath("(//a[contains(., 'or learn more ')])[2]")).click();
+    }
+
+    public void verificationPageLinkHowItWorksRooms() {
+        $(byXpath("//h1")).shouldHave(text("Find A Flatmate"));
+    }
+
+    public void verificationPageLinkHowItWorksFM() {
+        $(byXpath("//h1")).shouldHave(text("Find Rooms to Rent"));
+    }
+
+    public void scrollToBlockProperty() {
+        $(byXpath("//h2[starts-with(@class, 'u_m0 u_m10-bottom')]")).waitUntil(visible, 10000).click();
+    }
+
+    public void scrollToBlockSelect() {
+        $(byXpath("//h3[@class='text-64 u_m0 u_m5-bottom']/../p")).waitUntil(visible, 10000).click();
+    }
 
     //private void $$(boolean equals) {
 

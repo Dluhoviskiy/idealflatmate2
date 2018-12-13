@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class HelperBase {
 
@@ -41,10 +42,11 @@ public class HelperBase {
         $(locator3).setValue(text);
     }
 
-    public void FieldEnter(String locator1, String locator2, String locator3, String text) {
-        $(locator1).click();
-        $(locator2).clear();
-        $(locator3).setValue(text).pressEnter();
+    public void FieldEnter(String text, String area) {
+        $("input#location").click();
+        $("input#location").clear();
+        $("input#location").setValue(text);
+        $(byXpath("//li//div[contains(text(), '" + area + "')]")).click();
     }
 
     public void dateMonthYear(String day, String month, String year) {
@@ -60,5 +62,19 @@ public class HelperBase {
         $(byXpath("//select[@id='budgetpreferredsignupform-move_in_month']")).selectOptionByValue(month);
         $(byXpath("//select[@id='budgetpreferredsignupform-move_in_year']")).click();
         $(byXpath("//select[@id='budgetpreferredsignupform-move_in_year']")).selectOptionByValue(year);
+    }
+
+    public void dateMonthYearMessage(String day, String month, String year) {
+        $(byXpath("//select[@id='yourinfoadditionalsignupform-day']")).selectOptionByValue(day);
+        $(byXpath("//select[@id='yourinfoadditionalsignupform-month']")).click();
+        $(byXpath("//select[@id='yourinfoadditionalsignupform-month']")).selectOptionByValue(month);
+        $(byXpath("//select[@id='yourinfoadditionalsignupform-year']")).click();
+        $(byXpath("//select[@id='yourinfoadditionalsignupform-year']")).selectOptionByValue(year);
+    }
+
+    public static void pageUrlVerification(){
+        // проверить, что вы находитесь на верной странице
+        if (url().contains("http://front.idealflatmate4test.demo.devplatform2.com")) {
+            open("https://www.idealflatmate.co.uk/");}
     }
 }

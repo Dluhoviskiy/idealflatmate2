@@ -1,33 +1,33 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.commands.Find;
+import org.testng.Assert;
 
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 
-public class VerificationHelper  {
+public class VerificationHelper extends HelperBase {
+
+
 
 
     public void verificationUserNameOnHomePage(String nameUser) {
-        $(".nav.navbar-right.nav-ihm-profile").shouldHave(text(nameUser));
+        $("span.user-welcome--name").waitUntil(visible, 15000).shouldHave(text(nameUser));
     }
 
-    public void verificationUserNoNameOnHomePage(String nameUser) {
-        $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']")).shouldNotHave(text(nameUser));
+    public void verificationUserIsUnlogged(String SignUp) {
+        $(byXpath("//nav/a[@class]")).shouldHave(text(SignUp));
     }
 
     public void VerificationPasswordError() {
-        $(byXpath("//div[input[@id='loginform-username']]/p")).waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[input[@id='loginform-username']]/div")).waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
     }
 
     public void VerificationLoginError() {
-        $(byXpath("//div[input[@id='loginform-password']]/p")).waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
+        $(byXpath("//div[input[@id='loginform-password']]/div")).waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
     }
 
     public void VerificationMessagesTabIsAbsent() {
@@ -46,61 +46,222 @@ public class VerificationHelper  {
     }
 
     public void verifyAddedProperty() {
-        $(".dropdown.nav-ihm-profile-bars").click();
-        $(byXpath("//span[@class='pull-left' and contains(text(), 'Listings')]")).hover().shouldBe(enabled).click();
-        $(byXpath("(//h2[@class='h3 u_m0-top text-info'])[1]")).waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
+        //$(".dropdown.nav-ihm-profile-bars").click();
+        //$(byXpath("//span[@class='pull-left' and contains(text(), 'My Listings')]")).hover().shouldBe(enabled).click();
+            $(byXpath("(//h2[@class='h3 u_m0-top text-info'])[1]")).waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
 
     }
 
-    public void verifyAddedPropertyWithAllFields() {
-        $(byXpath("//h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']")).shouldHave(text("3 rooms for rent in Bankside, South, London from\n" + "£500"));
-        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[2]")).shouldHave(text("\n" + "+44 2 XXXX"));
+    public void verifyAddedPropertyWithAllFields() {//section[@id]//h1/small
+        String ref = $(byXpath("//section[@id]//h1/small")).getText();
+        $(byXpath("//section[@id]//h1")).shouldHave(text("3 bedrooms for rent in Bankside, South London from £500/month per room\n"
+                 + ref));
+        $(byXpath("(//span[@class='property-phone_hide js-phone-box'])[2]")).shouldHave(text("\n" + "+44 2 XXXX"));
 
         //$(byXpath("//div[@class='panel-heading']")).scrollTo();
 
         $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]")).shouldHave(text("£500\n" +
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£500\n" +
                 "month\n" +
                 "Deposit\n" +
                 "£1,000\n" +
                 "Bills pcm\n" +
-                "£400\n" +
-                "Lease length\n" +
-                "1 month+"));
+                "£400\n"));
+
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
+                "minimum 1 month maximum 12 months"));
+
         $(byXpath("//div[@class='tab-pane fade active in']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
 
         $(byXpath("//a[contains(text(), 'Room 2')]")).click();
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[2]")).shouldHave(text("£500\n" +
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£500\n" +
                 "month\n" +
                 "Deposit\n" +
                 "£1,000\n" +
                 "Bills pcm\n" +
-                "£400\n" +
-                "Lease length\n" +
-                "1 month+"));
+                "£400\n"));
+
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
+                "minimum 1 month maximum 12 months"));
+
+
+
         $(byXpath("//div[@class='tab-pane fade in active']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
 
         $(byXpath("//a[contains(text(), 'Room 3')]")).click();
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th September 2025"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th January 2025"));
        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
-        $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text("About the property\n" +
-                "3 bedrooms\n" +
-                "Garden\n" +
-                "Parking space\n" +
-                "Smokers accepted\n" +
-                "Pet friendly\n" +
+        $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text(" 3 of 2 bedrooms available  Garden  Parking space  Smokers accepted  Pets accepted  Family friendly\n" +
                 "Very good flat"));
         //$(byXpath("//div[@class='u_p10-bottom u_b-bottom u_m30-bottom']")).shouldHave(text("Looking for pets accepted."));
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("London SE1, UK"));
     }
+
+    public void verificationDataProfileFMmin() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Property Preferences\n" +
+                " Budget & Availability\n" +
+                " Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
+                "                                        50%\n" +
+                "                                        "));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Ronald, 59 is a female looking for a room.\n" +
+                "Maximum budget: £2500/month\n" +
+                "Ready to move in: Immediately"));
+    }
+
+    public void verificationDataProfile() {
+        $(byXpath("//div[@class='col-sm-5 h5 heading-spaced text-normal u_m20-top u_m30-top-md text-normal-weight']")).shouldHave(text("Preferred location: London\n" +
+                "Preferred location2: South London\n" +
+                "Preferred location3: Hackney Marshes\n" +
+                "Budget: £2500 pm\n" +
+                "Ready to move in: now"));
+    }
+
+    public void verificationDataTenant() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Property Preferences\n" +
+                " Budget & Availability\n" +
+                " Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
+                "                                        80%\n" +
+                "                                        "));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Tell us about yourself\n" +
+                "Maximum budget: £1250/month\n" +
+                "Ready to move in: 08-08-2019\n" +
+                "Looking for a room in\n" +
+                "South London\n" +
+                "Hackney Marshes"));
+    }
+
+    public void verificationDataLike() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Property Preferences\n" +
+                " Budget & Availability\n" +
+                " Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("50%\n" +
+                "complete"));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Ronald is a female looking for a room.\n" +
+                "Maximum budget: £2500/month\n" +
+                "Ready to move in: Immediately"));
+    }
+
+    public void verificationDataAgent() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
+                "Personal Details\n" +
+                "Your ideal tenant"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("50%\n" +
+                "complete"));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About us\n" +
+                "Tell us about yourself"));
+
+    }
+
+    public void verificationDataLive_in() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Your ideal flatmate\n"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("60%\n" +
+                "complete"));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Ronald, 59 is a male professional looking for a room."));
+    }
+
+    public void verificationDataLive_in1() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Your ideal flatmate\n"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("80%\n" +
+                "complete"));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("Tell us about yourself"));
+    }
+
+    public void verificationDataProfileLiveOut() {
+
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Your ideal tenant\n"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("50%\n" +
+                "complete"));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Ronald is a live-out landlord looking for a room."));
+    }
+
+    public void verificationDataProfileFB() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
+                "Personal Details\n" +
+                "Property Preferences\n" +
+                "Budget & Availability\n" +
+                "Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
+                "                                        60%\n" +
+                "                                        "));
+        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text("Ronald, 59 is a female looking " +
+                "for a room in Watford or North London or Zone 1."));
+        /*$(byXpath("(//h4/../div[@class='text-body-copy'])[2]")).shouldHave(text("Watford\n" +
+                " North London\n" +
+                " Zone 1"));*/
+        //ul[@class='js-selected-area u_m0 u_p0']
+
+    }
+
+    public void verificationDataProfileFM() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
+                "Personal Details\n" +
+                "Property Preferences\n" +
+                "Budget & Availability\n" +
+                "Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
+                "                                        60%\n" +
+                "                                        "));
+        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text("Ronaldina, 59 is a female looking " +
+                "for a room in Watford or North London or Zone 1."));
+        //String locations2 = $(byXpath("//ul[@class='geo-list u_m0 u_p0']")).getText();
+        //Assert.assertEquals(locations2, location1);
+        $(byXpath("//ul[@class='geo-list u_m0 u_p0']")).shouldHave(text("Watford\n" +
+                "North London\n" +
+                "Zone 1"));
+        $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[2]")).shouldHave(text("Maximum budget: £1250/month"));
+        $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[3]")).shouldHave(text("Ready to move in: Immediately"));
+
+        /*$(byXpath("(//h4/../div[@class='text-body-copy'])[2]")).shouldHave(text("Watford\n" +
+                " North London\n" +
+                " Zone 1"));*/
+
+    }
+
+    public void verificationDataProfileMatching() {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
+                "Personal Details\n" +
+                "Property Preferences\n" +
+                "Budget & Availability\n" +
+                "Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
+                "                                        80%\n" +
+                "                                        "));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Tell us about yourself\n" +
+                "Maximum budget: £1250/month\n" +
+                "Ready to move in: 08-08-2019\n" +
+                "Looking for a room in\n" +
+                "Watford"));
+    }
+
     public void verifyNoProperty() {
-        $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom hidden-xs u_ef-left-sm']")).shouldHave(text("Your Listings"));
+        $(byXpath("(//ul[starts-with(@class, 'nav navbar-nav')]/li)[1]")).shouldHave(text("Add a Listing"));
+        $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
         sleep(2000);
         if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))){
-            $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
+            $(byXpath("//button[starts-with(@class,'btn btn-primary-o')]")).waitUntil(appear, 4000).click();
             $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
             $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
             sleep(4000);
@@ -119,25 +280,67 @@ public class VerificationHelper  {
         $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).shouldHave(text("This email address already has an Ideal Flatmate account"));
     }
 
-    public void emailWrongAlertHome() {
+    public void emailAlreadyExistedAlertMessage() {
+        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-email required has-error']/div[@class='help-block']")).shouldHave(text("This email address already has an Ideal Flatmate account"));
+    }
+
+    public void passwWrongAlertHome() {
         //sleep(2000);
-        $(byXpath("//label[contains(text(), 'Password')]/../p[1]/span")).waitUntil(exist, 4000).shouldHave(text("Incorrect username or password."));
+        $(byXpath("//label[contains(text(), 'Your password')]/../div")).waitUntil(exist, 4000).shouldHave(text("Incorrect email or password."));
     }
 
     public void nameFirstBlankAlert() {
         $(byXpath("//div[@class='form-group required u_m15-bottom field-yourinfosignupform-username required has-error']/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
     }
 
+    public void nameFirstBlankAlertMessage() {
+        $(byXpath("//div[@class='form-group required u_m15-bottom field-yourinfoadditionalsignupform-username required has-error']/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
+    }
+    public void nameFirstBlankAlertPhone() {
+        $(byXpath("//div[@class='form-group required u_m15-bottom field-yourinfofullsignupform-username required has-error']/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
+    }
+
     public void emailBlankAlert() {
         $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
     }
+
+    public void emailBlankAlertMessage() {
+        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+    }
+
+    public void emailBlankAlertPhone() {
+        $(byXpath("//div[@class='form-group field-yourinfofullsignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+    }
+    public void emailBlankAlertMessageLike() {
+        $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+    }
+
+
 
     public void genderBlankAlert() {
         $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
     }
 
+    public void genderBlankAlertMessage() {
+        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-gender required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
+    }
+
+    public void genderBlankAlertPhone() {
+        $(byXpath("//div[@class='form-group field-yourinfofullsignupform-gender required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
+    }
+
     public void passwordBlankAlert() {
         $(byXpath("//div[@class='form-group field-yourinfosignupform-password required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
+
+    }
+
+    public void passwordBlankAlertMessage() {
+        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-password required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
+
+    }
+
+    public void passwordBlankAlertPhone () {
+        $(byXpath("//div[@class='form-group field-yourinfofullsignupform-password required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
 
     }
 
@@ -149,12 +352,27 @@ public class VerificationHelper  {
         $(byXpath("//div[select[@id='moreinfosignupform-occupation_id']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Occupation Id cannot be blank."));
     }
 
+    public void dateMonthYearPhoneOccupationBlankErrorMessage() {
+        $(byXpath("//div[select[@id='yourinfoadditionalsignupform-day']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Day cannot be blank."));
+        $(byXpath("//div[select[@id='yourinfoadditionalsignupform-month']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Month cannot be blank."));
+        $(byXpath("//div[select[@id='yourinfoadditionalsignupform-year']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Year cannot be blank."));
+        //$(byXpath("//div[div/input[@id='moreinfosignupform-phone']]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+        //$(byXpath("//div[select[@id='moreinfosignupform-occupation_id']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Occupation Id cannot be blank."));
+    }
+
+    public void dateMonthYearPhoneOccupationBlankErrorPhone() {
+        $(byXpath("//div[select[@id='yourinfofullsignupform-day']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Day cannot be blank."));
+        $(byXpath("//div[select[@id='yourinfofullsignupform-month']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Month cannot be blank."));
+        $(byXpath("//div[select[@id='yourinfofullsignupform-year']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Year cannot be blank."));
+        $(byXpath("//div[input[@id='yourinfofullsignupform-phone']]/../div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+    }
+
     public void checkLocationBlank() {
         $("div.error-summary ul li").shouldHave(text("Please choose location"));
     }
 
     public void budgetError() {
-        $(byXpath("//div[input[@id='js-signup-budget-max']]/div[@class='help-block']")).shouldHave(text("Please choose budget"));
+        $(byXpath("//div[input[@id='js-signup-budget-max']]/div[@class='help-block']")).shouldHave(text("Please choose minimum and maximum budget"));
     }
 
     public void ageConfirmCheckMatching() {
@@ -233,13 +451,24 @@ public class VerificationHelper  {
 
     }
 
-    public void checkMatchingConcurrence(String text) {
-        $("span.hidden-xs").click();
-        $(byXpath("(//a[@data-target='#matchModal'])[1]")).waitUntil(exist, 4000).shouldHave(text(text));
+    public void checkMatchingConcurrence(String matchScore) {
+
+        if($(byXpath("//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']/span[2]")).isDisplayed()) {
+            $(byXpath("//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']/span[2]")).waitUntil(exist, 4000).shouldHave(text(matchScore));
+        } else {
+            $("span.hidden-xs").click();
+            $(byXpath("//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']/span[2]")).waitUntil(exist, 4000).shouldHave(text(matchScore));
+        }
+
     }
 
     public void checkPhoneAlert() {
         $(byXpath("(//div[input[@id='signup-need-phone']]/p)[1]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+    }
+
+    public void checkPhoneAlertMessage(String text) {
+        $(byXpath("//div[@class='form-group required u_m30-bottom field-messagewritesignupform-phone " +
+                "has-error']//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
     }
 
     public void closeAdvPopUp() {
@@ -281,11 +510,6 @@ public class VerificationHelper  {
 
     }
 
-    public void ContinueMatching1() {
-        $(byXpath("//button[@id='2']")).waitUntil(exist, 4000).shouldHave(text("Continue"));
-
-    }
-
     public void closeMatchingPopup() {
         if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).is(exist)) {
             $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).waitUntil(appears, 8000).click();
@@ -306,12 +530,157 @@ public class VerificationHelper  {
     }
 
     public void verifySearchListingPage() {
-        $("#property-sort").should(exist);
+
+        $(byXpath("//div[@class='price-range-filter selected']")).shouldHave(text("£" + "200" + " - £" + "1250"));
+        $(byXpath("//input[1]")).shouldHave(value("Watford"));
+        $("#property-sort").waitUntil(exist, 20000).should(exist);
+
+    }
+
+    public void verifySearchListingPageMatching() {
+
+        $(byXpath("//div[@class='price-range-filter selected']")).shouldHave(text("£" + "1200" + " - £" + "1250"));
+        $(byXpath("//input[1]")).shouldHave(value("Watford"));
+        $("#property-sort").waitUntil(exist, 20000).should(exist);
+
     }
 
     public void verifySearchFMPage() {
-        $(byXpath("//div[@class='col-xs-12 col-sm-4 u_m20-bottom u_b-top-xs u_p30-top-xs']")).shouldHave(text("Flatmate type:"));
+        $(byXpath("//h2[contains(.,'flatmates')]")).shouldNotHave(text("rooms"));
 
     }
-}
 
+    public void verificationFieldLenth(int widthOfField) {
+       int p = $(byXpath("//input[@id='yourinfosignupform-email']")).getSize().getWidth();
+
+        Assert.assertEquals(p, widthOfField);
+    }
+
+
+    public void phoneVerification(String phone, String text) {
+        Field2("#moreinfosignupform-phone", "#moreinfosignupform-phone", "#moreinfosignupform-phone", phone);
+        $(byXpath("//div[starts-with(@class,'form-group required u_m15-bottom')]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
+
+    }
+
+    public void profilePhoto10Mb() {
+        $(byXpath("//div[starts-with(@class, 'upload-profile-photo u_ed-flex')]//div[@class='help-block']")).shouldHave(text("Sorry! " +
+                "That image can’t be uploaded, please try a smaller image size (up to 8Mb)."));
+
+    }
+    public void profilePhotoPdf() {
+        $(byXpath("//div[starts-with(@class, 'upload-profile-photo u_ed-flex')]//div[@class='help-block']")).shouldHave(text("Wrong" +
+                " Extension"));
+
+    }
+
+    public void isHomePage() {
+        title().contains("Flatshare and Houseshare Across the UK: ideal flatmate");
+
+    }
+
+    public void isHomePage1() {
+        $(byXpath("//h1")).shouldHave(text("Flatsharing\n" +
+                "reimagined"));
+
+    }
+    public void ListingStart() {
+            $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 text-20-xs']")).waitUntil(visible, 4000).shouldHave(text("Start your listing here"));
+    }
+
+
+
+    public void isFMPage() {
+        $(byXpath("//title")).shouldHave(text("Search for flatshares and houseshares in the UK" +
+                " | Ideal Flatmate"));
+    }
+
+    public void isPropertyPage(String searchLocation) {
+
+        String currentLocation = $(byXpath("//h1")).getText();
+        Assert.assertEquals(currentLocation, searchLocation);
+
+
+    }
+
+    public void PropertyPageNumber(String page) {
+
+        String currentPage = $(byXpath("//a[@class='undefined']")).getText();
+        Assert.assertEquals(page, currentPage);
+    }
+
+    public void verifyProfComplMenu(String profilePercent) {
+        $(byXpath("(//a[@class='clearfix']/span)[2]")).shouldHave(text(profilePercent));
+
+    }
+
+    public void savedProperties(String referNumber) {
+        String currentPage = $(byXpath("//div[@class='u_p0-left text-13']")).getText();
+        Assert.assertEquals(referNumber, currentPage);
+
+    }
+
+    public void cardIsUnliked() {
+        $(byXpath("(//div[@class='container'])[1]")).shouldNotHave(cssClass("div.u_p0-left.text-13"));
+
+
+
+    }
+
+    public void removeUnfinishedListing() {
+        $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
+        $(byXpath("//section/div[@class='container']")).shouldHave((text("Complete your listing now!")));
+        sleep(2000);
+        if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))) {
+            $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
+            $(byXpath("(//input[1][@type='radio'])[1]")).selectRadio("0");
+            $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).click();
+            sleep(4000);
+            }
+        }
+
+    public void finishUnfinished() {
+        $(byXpath("//a[contains(., 'Finish')]")).click();
+        $(byXpath("//h1")).shouldHave(text("About your property"));
+    }
+
+    public void finishViewUnfinished() {
+        $(byXpath("//a[contains(., 'View listing')]")).click();
+        $(byXpath("//h1")).shouldHave(text("bedroom property for rent in Bankside, South London, £0/month"));
+    }
+
+    public void areaBlank() {
+        $(byXpath("//div[select[@id='property-area_link_id']]/p")).shouldHave(text("Area cannot be blank."));
+
+    }
+
+
+    public void verifyPendingProperty() {
+        $(byXpath("//div[@class='text-body-copy text-info pull-left']")).shouldHave(text("Your listing is pending."));
+    }
+
+    public void finishPendingProperty() {
+        $(byXpath("//div//h1/../span")).shouldHave(text("Your listing is pending."));
+    }
+
+    public void areasNumberForSignUp() {
+        sleep(3000);
+        $(byXpath("//li[starts-with(@class,'js-area-limit')]")).shouldHave(text("Sorry, you can`t add more than 3 areas"));
+
+    }
+
+    public void FMBlog() {
+        switchTo().window(1);
+        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("You are a landlord? Head to our landlord HQ here »"));
+        close();
+    }
+
+    public void LandlordBlog() {
+
+        switchTo().window(1);
+        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("Are you a flatmate? Head to Flatmate HQ here »"));
+        close();
+    }
+
+
+}

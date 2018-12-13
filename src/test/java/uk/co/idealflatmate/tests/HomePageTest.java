@@ -4,105 +4,83 @@ import org.testng.annotations.Test;
 
 public class HomePageTest extends TestBase {
 
-    @Test
-    public void latestFlatmatesNonLogged() {
-        verificationHelper.closeAdvPopUp();
-        homePageHelper.clickFM();
-        homePageHelper.verificationFM();
-    }
 
-    @Test
-    public void findOutMore() {
-        verificationHelper.closeAdvPopUp();
-        homePageHelper.clickFind();
-        homePageHelper.verificationPageLinkHowItWorks();
-    }
 
-    @Test
-    public void findStartMatching() {
-
-        homePageHelper.clickFindYourNewFM();
-        homePageHelper.verificationMatchingStart();
-    }
-
-    @Test
-    public void findStartMatchingLink() {
-
-        homePageHelper.clickTakeMatching();
-        homePageHelper.verificationMatchingStart();
-    }
-
-    @Test
-    public void findStartListing() {
-
-        homePageHelper.clickAddListing();
-        homePageHelper.verificationListingStart();
-    }
-
-    @Test
-    public void blogFM() {
-
-        homePageHelper.clickFMBlog();
-        homePageHelper.verificationFMBlog();
-    }
-
-    @Test
-    public void blogLandlord() {
-
-        homePageHelper.clickLandlordBlog();
-        homePageHelper.verificationLandlordBlog();
-    }
-
-    @Test
-    public void pressLogo() {
-        //newDriverPage();
-        homePageHelper.clickLogo();
-        homePageHelper.verificationLogo();
-    }
-
-    @Test
-    public void blogImgLink() {
-
-        homePageHelper.clickBlogFMImgLink();
-        homePageHelper.verificationFMBlog();
-    }
-
-    @Test
-    public void blogLordImgLink() {
-
-        homePageHelper.clickBlogLandlordImgLink();
-        homePageHelper.verificationLandlordBlog();
-    }
-    @Test
-    public void blogTextFMLink() {
-
-        homePageHelper.clickBlogFMTextLink();
-        homePageHelper.verificationFMBlog();
-    }
-
-    @Test
-    public void blogTextLordLink() {
-
-        homePageHelper.clickBlogLandlordTextLink();
-        homePageHelper.verificationLandlordBlog();
-    }
-
-    @Test
+    @Test (priority = 1)
     public void amountOfBlocsAndTextOfAreas() {
 
         homePageHelper.amountOfFeedbackBlocks(4);
         homePageHelper.amountOfBlogBlocks(2);
-        homePageHelper.amountOfLatestFMblocks(4);
+        //homePageHelper.amountOfLatestFMblocks(4);
         homePageHelper.amountOfFeaturedRoom(6);
-        homePageHelper.amountOfAreasBlocks(4);
+        homePageHelper.amountOfAreasBlocks(7);
         homePageHelper.TextInAreas();
         homePageHelper.amountOfMatchListRoom(2);
     }
 
-    //@Test
-    public void amountBlocs1() {
-
-
+    @Test (priority = 2)
+    public void findOutMore() {
+        verificationHelper.closeAdvPopUp();
+        homePageHelper.scrollToBlockProperty();
+        homePageHelper.clickFindRooms();
+        homePageHelper.verificationPageLinkHowItWorksRooms();
+        helperBase.toHomePage();
+        homePageHelper.scrollToBlockProperty();
+        homePageHelper.clickFindFM();
+        homePageHelper.verificationPageLinkHowItWorksFM();
+        helperBase.toHomePage();
     }
+
+    @Test (priority = 4)
+    public void findStartMatchingLink() {
+
+        matchingHelper.clickHomePageMatching();
+        homePageHelper.verificationMatchingStart();
+        matchingHelper.quitQuiz();
+    }
+
+    @Test (priority = 5)
+    public void findStartListing() {
+        homePageHelper.scrollToBlockSelect();
+        homePageHelper.clickAddListingFromHow();
+        verificationHelper.ListingStart();
+        homePageHelper.clickLogo();
+    }
+
+    @Test (priority = 6)
+    public void blogFM() {
+        homePageHelper.hoverCommunity();
+        homePageHelper.clickFMBlog();
+        verificationHelper.FMBlog();
+        helperBase.toHomePage();
+    }
+
+    @Test (priority = 7)
+    public void blogLandlord() {
+
+        homePageHelper.hoverCommunity();
+        homePageHelper.clickLandlordBlog();
+        verificationHelper.LandlordBlog();
+        helperBase.toHomePage();
+    }
+
+    @Test (priority = 8)
+    public void pressLogo() {
+
+        homePageHelper.clickLogo();
+        verificationHelper.isHomePage1();
+    }
+
+
+
+
+
+    /*@Test (priority = 1)
+    public void latestFlatmatesNonLogged() {
+        verificationHelper.closeAdvPopUp();
+        signUpHelper.scrollToBlockProperty();
+        homePageHelper.clickFM();
+        homePageHelper.verificationFM();
+    }*/
 
 }

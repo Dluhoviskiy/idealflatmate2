@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>4.10.01</version>
+            <version>4.11.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -68,6 +68,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>
 
+            </plugin>
+
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.9</version>
             </plugin>
 
         </plugins>

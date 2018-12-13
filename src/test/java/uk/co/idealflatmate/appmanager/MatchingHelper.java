@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class MatchingHelper extends HelperBase {
@@ -126,12 +127,12 @@ public class MatchingHelper extends HelperBase {
         $(byXpath("//div[@class='quiz-question-inner' and contains(text(), " +
                 "'I spend most of my time in my room')]/../../..//" +
                 "label[@data-questionid='15'][3]")).waitUntil(visible, 4000).click();
-        sleep(1000);
+        sleep(2000);
     }
 
     public void clickContinueMatching16() {
         $(byXpath("//div[@class='quiz-question-inner' and contains(text(), " +
-                "'I don’t mind if my flatmates invite friends to our house, as long as they give me notice')]/../../..//" +
+                "'mind if my flatmates invite friends to our house, as long as they give me notice')]/../../..//" +
                 "label[@data-questionid='16'][4]")).waitUntil(visible, 4000).click();
         sleep(1000);
     }
@@ -163,11 +164,11 @@ public class MatchingHelper extends HelperBase {
     }
 
     public void clickSkip7step() {
-        $(byXpath("(//div[@class='col-sm-3 col-sm-push-6'])[7]/a")).waitUntil(visible, 4000).click();
+        $(byXpath("//label[@data-questionid='7']/../../../div//a")).waitUntil(visible, 8000).click();
     }
     public void chooseMatchingFromDropDownMenu() {
-        $(byXpath("//span[@class='pull-left' and contains(text(), ' Matching')]")).click();
-
+        $(byXpath("//ul[@class='dropdown-menu']//a[@class='box-hide-overflow u_ed-block']" +
+                "//span[@class='pull-left' and contains(text(), 'Matching')]")).click();
     }
 
     public void clickSkip7stepFromHome() {
@@ -175,7 +176,7 @@ public class MatchingHelper extends HelperBase {
     }
 
     public void clickTakeTheMatchTestFMscreen() {
-        $(byXpath("//a[@data-target='#matchModal']")).waitUntil(visible, 4000).click();
+        $(byXpath("//a[contains(.,'Take the match test ')]")).waitUntil(visible, 8000).click();
     }
 
     public void closePopup() {
@@ -191,14 +192,56 @@ public class MatchingHelper extends HelperBase {
         $(byXpath("//div[@class='col-sm-6']/a")).click();
 
     }
-    public void verifBlankName() {
+    public void verifyBlankNameMatchSign() {
         $("input#addnamematchform-username").click();
-        $(byXpath("//div[@class='text-center text-16 u_m20-bottom']/strong")).click();
-        $(byXpath("//div[input[@id='addnamematchform-username']]/div[@class='help-block']")).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[@class='text-center text-16 u_m10-bottom']/strong")).click();
+        $(byXpath("//a[contains(.,'A room')]")).doubleClick();
+        $(byXpath("//div[input[@id='addnamematchform-username']]/div[@class='help-block']")).shouldHave(text("Whoops, please enter your name to continue!"));
 
     }
 
-    public void veryfyScoresInDropDownMenu() {
-        $(byXpath("//span[@class='label label-primary']")).shouldHave(text("100% complete"));
+    public void verificationResultOfMatching() {
+        $(byXpath("//div[@id='slider-snap-value-lower1']")).shouldHave(text("Strongly agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower2']")).shouldHave(text("Agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower3']")).shouldHave(text("Agree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower4']")).shouldHave(text("Disagree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower5']")).shouldHave(text("Disagree"));
+        $(byXpath("//div[@id='slider-snap-value-lower6']")).shouldHave(text("Strongly disagree"));
+        $(byXpath("//div[@id='slider-snap-value-lower7']")).shouldHave(text("Strongly disagree"));
+        $(byXpath("//div[@id='slider-snap-value-lower8']")).shouldHave(text("Strongly agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower9']")).shouldHave(text("Agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower10']")).shouldHave(text("Agree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower11']")).shouldHave(text("Disagree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower12']")).shouldHave(text("Disagree"));
+        $(byXpath("//div[@id='slider-snap-value-lower13']")).shouldHave(text("Strongly disagree"));
+        $(byXpath("//div[@id='slider-snap-value-lower14']")).shouldHave(text("Strongly agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower15']")).shouldHave(text("Agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower16']")).shouldHave(text("Agree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower17']")).shouldHave(text("Agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower18']")).shouldHave(text("Strongly agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower19']")).shouldHave(text("Disagree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower20']")).shouldHave(text("Disagree"));
+    }
+
+    public void verificationResultOfSixMatching() {
+        $(byXpath("//div[@id='slider-snap-value-lower1']")).shouldHave(text("Strongly agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower2']")).shouldHave(text("Agree"));
+        $(byXpath("//div[@id='slider-snap-value-lower3']")).shouldHave(text("Agree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower4']")).shouldHave(text("Disagree slightly"));
+        $(byXpath("//div[@id='slider-snap-value-lower5']")).shouldHave(text("Disagree"));
+        $(byXpath("//div[@id='slider-snap-value-lower6']")).shouldHave(text("Strongly disagree"));
+    }
+
+    public void quitQuiz() {
+        $(byXpath("//a[contains(.,'Quit')]")).click();
+    }
+
+    public void endQuizGo() {
+        $(byXpath("//button[contains(.,'Go')]")).click();
+        $(byXpath("//div[@class='alert alert-success']")).waitUntil(visible, 15000).shouldHave(text("\n" +
+                "                    Well done! Thanks for answering these questions. " +
+                "We can now match you with compatible flatmates. " +
+                "Remember, you can change your answers at any time in the “Ideal Matching” " +
+                "section on your dashboard.                "));
     }
 }

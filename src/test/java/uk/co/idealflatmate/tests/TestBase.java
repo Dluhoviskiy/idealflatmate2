@@ -10,10 +10,8 @@ import uk.co.idealflatmate.appmanager.*;
 import com.codeborne.selenide.testng.ScreenShooter;
 
 
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.screenshot;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
@@ -33,6 +31,27 @@ public class TestBase {
     public final HelperBase helperBase = new HelperBase();
     public final SignUpHelper signUpHelper = new SignUpHelper();
 
+
+    @BeforeGroups
+    public void setupGroup() {
+        ChromeDriverManager.getInstance().setup();
+        // FirefoxDriverManager.getInstance().setup();
+        // EdgeDriverManager.getInstance().setup();
+        //Configuration.browser = "webdriver";
+        Configuration.browser = "chrome";
+        // Configuration.browser = "firefox";
+        //  Configuration.browser = "edge";
+
+        // Configuration.assertionMode = Configuration.AssertionMode.SOFT;
+
+        Configuration.timeout = 10000;
+        //open("https://www.idealflatmate.co.uk/");
+        verificationHelper.closeAdvPopUp();
+        //open("http://front.idealflatmate.demo.devplatform2.com");
+
+        open("http://front.idealflatmate4test.demo.devplatform2.com");
+
+    }
 
 
     @BeforeClass
@@ -56,16 +75,18 @@ public class TestBase {
 
     }
 
-    @AfterMethod
-    public void goHomePage(){
-        helperBase.toHomePage();
-    }
+
+
+
 
     @AfterClass
     public void tearDown() {
         //screenshot("screenshotFail1");
         closeWebDriver();
+
     }
+
+
 
 
     public VerificationHelper getVerificationHelper() { return verificationHelper; }
@@ -90,5 +111,11 @@ public class TestBase {
         closeWebDriver();
         ChromeDriverManager.getInstance().setup();
         open("http://front.idealflatmate4test.demo.devplatform2.com");
+    }
+
+    public void clearCache() {
+
+        clearBrowserCache();
+        refresh();
     }
 }

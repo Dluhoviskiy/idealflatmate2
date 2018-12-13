@@ -1,14 +1,13 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import org.testng.Assert;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.confirm;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class AddPropertyHelper extends HelperBase {
@@ -18,23 +17,25 @@ public class AddPropertyHelper extends HelperBase {
     public final MessageHelper messageHelper = new MessageHelper();
 
     public void openDropDownMenu() {
-        $("span.hidden-xs").click();
+        $(byXpath("(//li[@class='dropdown nav-ihm-profile-bars'])[1]")).waitUntil(visible, 5000).click();
     }
 
     public void pressAddListingFromBody() {
         //$(byXpath("/html/body/section/section/div/div/a")).click();
         if($(byXpath("//div[@class=\"container\"]/div[@id='property1']")).exists()) {
             RemoveUnfinishedListing();
-            messageHelper.click(byXpath("/html/body/header/div/a"));
+            messageHelper.click(byXpath("(/html/body/header/div/nav/ul/li/a)[5]"));
         }else {
             //pressAddListingFromBody();
-            messageHelper.click(byXpath("/html/body/header/div/a"));
+            messageHelper.click(byXpath("(/html/body/header/div/nav/ul/li/a)[5]"));
         }
 
     }
 
     public void chooseListingsFromDropDownMenu() {
-        $(byXpath("//span[@class='pull-left' and contains(text(), ' Listings')]")).click();
+        sleep(2000);
+        $(byXpath("//li//a//span[@class='hidden-xs']")).click();
+        $(byXpath("(//a[contains(text(), 'My listings')])[1]")).click();
 
     }
 
@@ -45,7 +46,7 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void pressContinueButton() {
-        $("#wizard-next").waitUntil(visible, 6000).click();
+        $(byXpath("//button")).waitUntil(visible, 6000).click();
         sleep(4000);
     }
 
@@ -59,7 +60,7 @@ public class AddPropertyHelper extends HelperBase {
     public void chooseAreaforLondon(final String AreaInDropDown) {
         messageHelper.click(byName("Property[area_link_id]"));
         messageHelper.click(byXpath("//*[@id=\"property-area_link_id\"]/option[" + AreaInDropDown + "]"));
-        sleep(2000);
+        sleep(5000);
     }
 
     public void pressAddListingFromHeaderWithVerificationUnfinishedlisting() {
@@ -70,20 +71,15 @@ public class AddPropertyHelper extends HelperBase {
                 messageHelper.click(byXpath("/html/body/header/div/a"));
             }else {
                 //pressAddListingFromBody();
-                messageHelper.click(byXpath("/html/body/header/div/a"));
+                messageHelper.click(byXpath("(/html/body/header/div/nav/ul/li/a)[5]"));
             }
 
          }
 
     public void pressAddListingFromHeaderNotLoggedUser() {
-        openDropDownMenu();
-        chooseListingsFromDropDownMenu();
-        sleep(2000);
+        $(byXpath("(//li//a[contains(., 'List a room')])[1]")).click();;
     }
 
-    public void pressAddYourListingNotLoggedUser() {
-        $(byXpath("//a[@href=\"/create\"  and contains(text(), 'your listing')]")).click();;
-    }
 
     public void setPhoneNumber(String phoneNumber, String text) {
        $(byXpath("//label[contains(text(), 'Phone Number')]")).scrollIntoView(text);
@@ -113,10 +109,13 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//div[@id='property-property_amenities']/div[2]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
         $(byXpath("//div[@id='property-property_amenities']/div[3]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
         $(byXpath("//div[@id='property-property_amenities']/div[4]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
+        $(byXpath("//div[@id='property-property_amenities']/div[4]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
         $(byXpath("//label[@for='property-pets_accepted']")).click();
         $(byXpath("//label[@for='property-smokers_accepted']")).click();
         $("#property-smokers_accepted").shouldBe(selected);
         $("#property-pets_accepted").shouldBe(selected);
+        $(byXpath("//label[@for='property-family_friendly']")).click();
+        $("#property-family_friendly").shouldBe(selected);
     }
 
 
@@ -127,11 +126,11 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setMonthlyRent(String rent) {
-        fillInField(rent, $("#room-1-price"), $(byXpath("#room-1-price")));
+        fillInField(rent, $("#room-1-price"), $("#room-1-price"));
      }
 
     public void setDeposit(String deposit) {
-        fillInField(deposit, $("input#room-1-deposit"),  $(byXpath("input#room-1-deposit")));
+        fillInField(deposit, $("input#room-1-deposit"),  $("input#room-1-deposit"));
     }
 
     public void setTotalBills(String bills) {
@@ -208,7 +207,7 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing2.jpeg"));
         sleep(2000);
         $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[2]")).shouldBe(Condition.visible);
-        $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/listing3.jpg"));
+        $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/Profile.png"));
         sleep(2000);
         $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[3]")).shouldBe(Condition.visible);
         sleep(1000);
@@ -225,7 +224,7 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
         //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
         $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
-        $(byXpath("//p[@class='u_m20-top']")).shouldHave(text("In order to list your property you need to"));
+        $(byXpath("//p[@class='u_m20-top list-property-title']")).shouldHave(text("In order to list your property you need to"));
     }
 
     public void finishPropertyCreatingWithoutPhoto() {
@@ -239,30 +238,84 @@ public class AddPropertyHelper extends HelperBase {
 
     public void RemoveListing() {
         $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).waitUntil(appear, 4000).click();
-        $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
+        $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 8000).selectRadio("0");
         $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
     }
     private void RemoveUnfinishedListing() {
-        $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
+        $(byXpath("//button[starts-with(@class,'btn btn-primary-o')]")).waitUntil(appear, 4000).click();
         $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
         $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
         sleep(4000);
     }
 
-    public void selectTypeUser(final String checkBoxId) {
-        $("#type_id_" + checkBoxId).waitUntil(appear, 4000).click();
+    public void selectTypeUser(final String userType) {
+        $(byXpath("//label[starts-with(@for,'type_id_') and contains(.,'" + userType + "')]")).waitUntil(appear, 4000).click();
     }
 
     public void pressContinue() {
-        $("#wizard-next").waitUntil(appear, 8000).click();
-
+        $("#wizard-form #wizard-next").waitUntil(appear, 4000).click();
     }
 
     public void pressContinue1() {
-        sleep(4000);
-        $("#wizard-next").waitUntil(appear, 4000).click();
-        sleep(2000);
+
+        $(byXpath("//h1")).click();
+        sleep(5000);
+        $("#wizard-form #wizard-next").waitUntil(appear, 4000).click();
+
+        //byText("Continue ");
+
     }
 
 
+    public void finishPropertyAgency() {
+        $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).click();
+        $(byXpath("//span[contains(., 'In order to list your property you need to')]/../a")).shouldHave(text("Upgrade to professional"));
+
+    }
+
+    public void pressAddListingNotLogged() {
+        $(byXpath("(//a[contains(., 'List a room')])[1]")).click();
+    }
+
+    public void pressAddListingNotLoggedBlock() {
+        $(byXpath("//div[starts-with(@class, 'col-md-7 u_p15 u_p0-right')]//a[contains(., 'Add')]")).click();
+    }
+    public void pressAddListingNotLoggedBlock1() {
+        $(byXpath("//h3[contains(.,'Select')]")).click();
+        $(byXpath("//a[contains(., 'List your room')]")).click();
+    }
+
+
+    public void addListingFromPage() {
+        $(byXpath("//a[@class='btn btn-info btn-sm u_ef-right-sm u_ed-block-xs']")).click();
+    }
+
+
+    public void uploadPropertyLargePhoto() {
+        int before = $$(byXpath("//div[@class='kv-file-content']/img")).size();
+        $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/8mb-artwork.jpg"));
+        sleep(2000);
+        $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[1]")).shouldBe(Condition.visible);
+        sleep(6000);
+        int after = $$(byXpath("//div[@class='kv-file-content']/img")).size();
+        Assert.assertEquals(before, after);
+
+
+    }
+
+    public void uploadPropertyNotPhoto() {
+        int before = $$(byXpath("//div[@class='kv-file-content']/img")).size();
+        $(byXpath("//input[@id='uploadimageform-imagefiles']")).uploadFile(new File("src/test/resources/IF-pdf.pdf"));
+        sleep(2000);
+        $(byXpath("(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[1]")).shouldBe(Condition.visible);
+        sleep(6000);
+        int after = $$(byXpath("//div[@class='kv-file-content']/img")).size();
+        Assert.assertEquals(before, after);
+
+
+    }
+
+    public void bottomAddListing() {
+        $(byXpath("//div[@class='col-xs-12 col-sm-6']/a")).click();
+    }
 }

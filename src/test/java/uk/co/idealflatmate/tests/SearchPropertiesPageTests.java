@@ -19,10 +19,11 @@ public class SearchPropertiesPageTests extends TestBase{
     public void propertySearchByDropDown() {
 
         authorizationHelper.selectAllPropertyInMenu();
-        authorizationHelper.clickCloseSignUpFMPage();
-        searchHelper.amountPropertyCards(12);
+        searchHelper.closePopupSignup();
+        searchHelper.amountPropertyCards(11);
         searchHelper.colivingButtonOnFirstPage();
         searchHelper.firstCardIsColivingAdv();
+        helperBase.toHomePage();
 
     }
 
@@ -30,77 +31,81 @@ public class SearchPropertiesPageTests extends TestBase{
     public void searchPagination() {
 
         authorizationHelper.goToPropertyPage();
-        //authorizationHelper.clickCloseSignUpFMPage();
+        //searchHelper.closePopupSignup();
         searchHelper.moveToPage(2, "2");
-        searchHelper.amountPropertyCards(12);
+        searchHelper.amountPropertyCards(11);
+        searchHelper.colivingButtonOnFirstPage();
         searchHelper.moveToPage(3, "3");
-        searchHelper.amountPropertyCards(12);
-        searchHelper.moveToNext(3);
-        searchHelper.amountPropertyCards(12);
+        searchHelper.amountPropertyCards(11);
+        searchHelper.colivingButtonOnFirstPage();
+        searchHelper.moveToNext(4);
+        searchHelper.amountPropertyCards(11);
+        searchHelper.colivingButtonOnFirstPage();
         searchHelper.moveToPrevious(3);
-        searchHelper.amountPropertyCards(12);
+        searchHelper.amountPropertyCards(11);
+        searchHelper.colivingButtonOnFirstPage();
         searchHelper.colivingButton();
-
+        helperBase.toHomePage();
     }
 
     @Test(priority = 3)
     public void searchZone1Pagination() {
 
         authorizationHelper.goToPropertyPage();
-        //authorizationHelper.clickCloseSignUpFMPage();
+        //helperBase.toHomePage();
         searchHelper.zone1();
         searchHelper.colivingButton();
-
+        helperBase.toHomePage();
     }
 
     @Test(priority = 4)
     public void searchEastLDNPagination() {
 
         authorizationHelper.goToPropertyPage();
-        //authorizationHelper.clickCloseSignUpFMPage();
+        //helperBase.toHomePage();
         searchHelper.EastLDN1();
         searchHelper.firstCardIsColivingAdv();
-
+        helperBase.toHomePage();
     }
 
     @Test(priority = 4)
     public void applyFilters() {
 
         authorizationHelper.goToPropertyPage();
-        //authorizationHelper.clickCloseSignUpFMPage();
+        //helperBase.toHomePage();
         searchHelper.clickApplyFilters();
         searchHelper.active3Fiters(3,"Budget Max: 2500 £ ", "Search Radius: 1 miles ", "Available From:");
-
+        helperBase.toHomePage();
     }
     @Test(priority = 4)
     public void applyAdvancedFiltersDefault() {
 
         authorizationHelper.goToPropertyPage();
-        //authorizationHelper.clickCloseSignUpFMPage();
+        //helperBase.toHomePage();
         searchHelper.clickAdvancedFilter();
         searchHelper.clickAdvancedFilterApply();
         searchHelper.active7Fiters(7, "Budget Max: 2500 £ ", "Age Min: 18 ", "Age Max: 100 ",
                 "Rooms number: 1 ", "Search Radius: 1 miles ", "Available From: ", "Total rooms: 10 ");
-
+        helperBase.toHomePage();
     }
 
     @Test(priority = 4)
     public void sortListingWith2Rooms() {
 
         authorizationHelper.goToPropertyPage();
-       // authorizationHelper.clickCloseSignUpFMPage();
+       //helperBase.toHomePage();
         searchHelper.clickAdvancedFilter();
         searchHelper.clickAvailablePlus("Rooms number: 2 ");
         // No "1 rooms available" after sorting
         searchHelper.cardsWith2roomsAvailable(11, "\n" + "1 rooms available\n" + " ");
-
+        helperBase.toHomePage();
     }
 
-    @Test(priority = 4)
+    /*@Test(priority = 4)
     public void sortListingByBudget() {
 
         authorizationHelper.goToPropertyPage();
-        authorizationHelper.clickCloseSignUpFMPage();
+        helperBase.toHomePage();
         //Lowest budget
         searchHelper.clickHighestPrice(3);
         sleep(5000);
@@ -115,8 +120,8 @@ public class SearchPropertiesPageTests extends TestBase{
         $$(String.format("div.card-infos-left", cardsBudgetText)).shouldHave(CollectionCondition.texts(texts));
 
        // searchHelper.verifySortingByBudget();
-
-    }
+        helperBase.toHomePage();
+    }*/
     /*@Test
     public void userCanSortProductsByNameinList()   {
 

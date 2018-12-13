@@ -2,6 +2,7 @@ package uk.co.idealflatmate.appmanager;
 
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -9,41 +10,51 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void logoutFromApp() {
-        $(".nav.navbar-right.nav-ihm-profile").waitUntil(visible, 4000).click();
+        $("span.user-welcome--name").waitUntil(visible, 4000).click();
         $(byXpath("//li/a[contains(text(), ' Log out')]")).waitUntil(visible, 4000).click();
     }
 
     public void goToPropertyPage() {
-        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 4000).click();
+        $(byXpath("//a[contains(text(), 'Find a home')]")).waitUntil(appears, 10000).hover();
+        $(byXpath("//a[@href='/search' and contains(text(), 'All properties')]")).waitUntil(appears, 4000).click();
     }
 
     public void goToFMpage() {
-         $(byXpath("(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[2]")).waitUntil(appears, 4000).click();
+         $(byXpath("(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[1]")).waitUntil(appears, 4000).click();
      }
 
     public void setLoginAsUserWithoutPackage(String email) {
-        fillInField(email, $("#loginform-username"), $(byXpath("#loginform-username")));
+            fillInField(email, $("input#loginform-username"), $("input#loginform-username"));
     }
     public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
         fillInField(email, $("#loginform-username"), $(byXpath("#loginform-username")));
     }
 
     public void setPassword(String password) {
-        $("#loginform-password").waitUntil(visible, 4000).setValue(password);
-        $(byXpath("//button[@name='login-button']")).waitUntil(visible, 4000).click();
-        sleep(2000);
+        $("input#loginform-password").waitUntil(visible, 4000).setValue(password);
+
+    }
+
+    public void submitLogin() {
+        $(byXpath("//button[contains(., 'Log in with email ')]")).click();
+
     }
 
     public void LoginFacebookWithActiveAccount(String email, String password) {
-        $("#email").waitUntil(visible, 4000).setValue(email);
-        $("#pass").waitUntil(visible, 4000).setValue(password).pressEnter();
-       // $(byXpath("//button[@type='submit' and (contains(text(), 'Продолжить как Александр'))]")).waitUntil(visible, 4000).click();
+        sleep(5000);
+        $("#email").setValue(email);
+        sleep(5000);
+        $("#pass").setValue(password);
+        $(byXpath("//input[@value='Log In']")).click();
+
+       // $(byXpath("//button[@type='submitLogin' and (contains(text(), 'Продолжить как Александр'))]")).waitUntil(visible, 4000).click();
     }
 
     public void LoginFacebookWithNewAccount(String email, String password) {
-        $("#email").waitUntil(visible, 4000).setValue(email);
-        $("#pass").waitUntil(visible, 4000).setValue(password).pressEnter();
-       // $(byXpath("//button[@type='submit' and (contains(text(), 'Продолжить как Ronald'))]")).waitUntil(visible, 4000).click();
+        sleep(3000);
+        $("#email").setValue(email);
+        $("#pass").setValue(password).pressEnter();
+       // $(byXpath("//button[@type='submitLogin' and (contains(text(), 'Продолжить как Ronald'))]")).waitUntil(visible, 4000).click();
     }
 
     public void clickSignInWithFacebook() {
@@ -67,7 +78,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickJoinFreeButton() {
-        $("#login-main-menu-button").click();
+        $(".btn.btn-primary.u_m10-top.hidden-xs.hidden-sm.u_m20-right-md.u_m20-right-lg.u_ef-right").click();
     }
 
     public void clickLoginSubmitButton() {
@@ -87,12 +98,8 @@ public class AuthorizationHelper extends HelperBase {
        confirm("ok");
     }
 
-    public void clickFormSignInPropertyContact() {
-        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[2]")).waitUntil(visible, 4000).click();
-    }
-
     public void clickFormSignInContact() {
-        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[2]")).waitUntil(visible, 4000).click();
+        $(byXpath("//a[@class='text-bold']")).waitUntil(visible, 4000).click();
     }
     public void clickFormSignInFMmessage() {
         $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[3]")).waitUntil(visible, 4000).click();
@@ -104,10 +111,23 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickSignInButtonInForm() {
-        $(byXpath("(//a[@class='btn btn-default u_m10-bottom-xs' and contains(text(), 'sign in')])[1]")).click();
-        sleep(2000);
+        $(byXpath("//a[contains(., 'Sign in')]")).hover();
+        $(byXpath("//a[contains(., 'Sign in')]")).click();
+
     }
 
+
+    public void clickSignInButtonInPopup() {
+        $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[1]")).hover();
+        $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[1]")).click();
+
+    }
+
+    public void clickSignInButtonInPopupPhone() {
+        $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[2]")).hover();
+        $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[2]")).click();
+
+    }
 
 
     public void setNewLoginNameF(String nameF) {
@@ -148,12 +168,18 @@ public class AuthorizationHelper extends HelperBase {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 10000).click();
     }
 
-    public void chooseAccountFromDropDownMenu() {
-        $(byXpath("//span[@class='pull-left' and contains(text(), ' Account')]")).click();
+    public void chooseProfileFromDropDownMenu() {
+        $(byXpath("(//li/a[contains(., 'My profile')])[1]")).waitUntil(visible, 5000).click();
+    }
+    public void chooseProfileFromHeader() {
+        sleep(5000);
+        $(byXpath("//body//section[@class='page-heading container-max-940']//ul")).hover();
+        $(byXpath("//body//section[@class='page-heading container-max-940']//ul")).click();
+        $(byXpath("//body//section[@class='page-heading container-max-940']//li/a[contains(., 'My profile')]")).waitUntil(visible,8000).click();
     }
 
     public void chooseSettingsFromDashboard() {
-        $(byXpath("//a[@class='btn btn-tabs ' and contains(text(), 'Settings')]")).click();
+        $(byXpath("//ul[starts-with(@class,'inner-menu')]//a[contains(text(), 'Settings')]")).click();
     }
 
     public void setPhoneNumber(String PhoneNumber) {
@@ -165,11 +191,16 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void clickCloseSignUp() {
-        $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(appears, 10000).click();
+        sleep(5000);
+        if ($(byXpath("//button[@class='btn btn-sm close u_m15']")).exists()){
+            $(byXpath("//button[@class='btn btn-sm close u_m15']")).click();
+        }
     }
 
+    //button[@class='btn btn-sm close u_m15']
+
     public void clickCloseSignUpFMPage() {
-        $(byXpath("//button[@class='btn btn-sm close text-normal u_m15']")).waitUntil(visible, 10000).click();
+        $(byXpath("//button[@class='btn btn-sm close u_m15']")).waitUntil(visible, 10000).click();
     }
 
     public void rejectMissedPreferredLocation() {
@@ -208,9 +239,28 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void selectAllPropertyInMenu() {
-        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 10000).hover();
-        $(byXpath("//a[contains(text(), 'All properties')]")).waitUntil(appears, 10000).click();
+        $(byXpath("(//a[@href='/search' and contains(text(), 'Find a property')])[2]")).waitUntil(appears, 5000).hover();
+        $(byXpath("//a[contains(text(), 'All properties')]")).waitUntil(appears, 5000).click();
     }
 
+    public void FindHomeInMenu() {
+        $(byXpath("//a[contains(text(), 'Find a home')]")).waitUntil(appears, 5000).click();
+    }
 
+    public void savedPropertiesMenuGo() {
+        $(byXpath("(//a[contains(text(), 'My saved')])[1]")).waitUntil(appears, 5000).click();
+    }
+
+    public void clickLoginWithFacebook() {
+
+        $(byXpath("//a[contains(., 'Login')]")).click();
+        $(byXpath("//span[contains(., 'Log in with Facebook')]")).click();
+
+
+    }
+
+    public void clickLoginWithFacebook1() {
+        $(byXpath("(//a[contains(., 'Log in')])[2]")).click();
+        $(byXpath("//span[contains(., 'Log in with Facebook')]")).click();
+    }
 }

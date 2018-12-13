@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -95,6 +96,7 @@ public class PaymentsHelper extends HelperBase {
 
     }
 
+
     public void verificationPrice(String text) {
         $(byXpath("(//select[@id='paymentform-type_id'])[1]")).waitUntil(visible, 10000).shouldHave(text(text));
 
@@ -107,6 +109,6 @@ public class PaymentsHelper extends HelperBase {
     public void removePackage() {
         $(byXpath("(//a[contains(text(), 'Cancel')])[2]")).waitUntil(appears, 4000).click();
         $(byXpath("(//input[@type='radio'])[2]")).waitUntil(appear, 4000).selectRadio("1");
-        $(byXpath("//button[@type='submit' and contains(text(), 'Cancel')]")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//button[@type='submitLogin' and contains(text(), 'Cancel')]")).waitUntil(Condition.appears, 4000).click();
     }
 }

@@ -21,7 +21,7 @@ public class SearchHelper extends HelperBase {
         $("input#property-location").waitUntil(visible, 4000).click();
         $("input#property-location").waitUntil(empty, 4000).setValue(location);
         sleep(2000);
-        $(byXpath("//button[@class='btn btn-primary u_p60-left-sm u_p60-right-sm js-search-submit']")).waitUntil(visible, 10000).click();
+        $(byXpath("//button[@class='js-search-submitLogin text-20']")).waitUntil(visible, 10000).click();
     }
 
     public void searchPropertyByEnter(String location) {
@@ -29,7 +29,7 @@ public class SearchHelper extends HelperBase {
         $("input#property-location").waitUntil(visible, 4000).click();
         $("input#property-location").waitUntil(empty, 10000).setValue(location);
         $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham, London')]")).waitUntil(exist, 4000).pressEnter();
-        //$(byXpath("//button[@class='btn btn-primary u_p60-left-sm u_p60-right-sm js-search-submit']")).waitUntil(visible, 10000).click();
+        //$(byXpath("//button[@class='btn btn-primary u_p60-left-sm u_p60-right-sm js-search-submitLogin']")).waitUntil(visible, 10000).click();
         //$(byText("COMPOSE")).click();
     }
 
@@ -38,7 +38,7 @@ public class SearchHelper extends HelperBase {
         $("input#property-location").waitUntil(visible, 4000).click();
         $("input#property-location").waitUntil(empty, 10000).setValue(location);
         sleep(1000);
-        $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham, London')]")).waitUntil(visible, 4000).click();
+        $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham Junction')]")).waitUntil(visible, 4000).click();
 
     }
 
@@ -53,7 +53,7 @@ public class SearchHelper extends HelperBase {
         $(byXpath("//div[@class='row cards-container']")).waitUntil(visible, 4000).shouldHave(text(location));
     }
     public void verificationSearchFromHomeLocation(String location) {
-        $(byXpath("//h1[@class='h3 u_m0-top u_m0-bottom']")).waitUntil(visible, 10000).shouldHave(text(location));
+        $(byXpath("//h2[@class='h4']")).waitUntil(visible, 10000).shouldHave(text(location));
     }
 
     public void verificationSearchHomePage(String alert) {
@@ -72,14 +72,14 @@ public class SearchHelper extends HelperBase {
     }
     public void amountPropertyCards(int size) {
 
-        $$(byXpath("//div[@class='row  cards-container']/div")).shouldHaveSize(size);
+        $$(byXpath("//div[@class='card-body clearfix']")).shouldHaveSize(size);
     }
 
     public void firstCardIsColivingAdv() {
 
-        $$(byXpath("//div[@class='row  cards-container']/div")).first().shouldHave(text("Co-living,"));
-        $(By.xpath("//a[contains(text(), 'View all co-living providers')]")).click();
-        $(By.xpath("//h1[contains(text(), 'Co-living, the new renting')]")).exists();
+        $$(byXpath("//div[@class='cards-container']/div")).first().shouldHave(text("Select,"));
+        $(By.xpath("//a[contains(text(), 'View all Select providers ')]")).click();
+        $(By.xpath("//h2[contains(text(), 'Stunning homes, ')]")).exists();
 
     }
     public void colivingButton() {
@@ -93,8 +93,8 @@ public class SearchHelper extends HelperBase {
 
     public void moveToPage(int pageNumberInd, String pageNumber) {
         $$("div ul li a").findBy(text(pageNumber)).click();
-        sleep(2000);
-        $$("ul.pagination li").get(pageNumberInd-1).shouldHave(cssClass("active"));
+        //sleep(10000);
+            $$("ul.pagination li").get(pageNumberInd).shouldHave(cssClass("active"));
 
 
     }
@@ -107,16 +107,16 @@ public class SearchHelper extends HelperBase {
     }
 
     public void moveToNext(int pageActiveInd) {
-        $(By.xpath("//span[contains(text(), 'Next')]")).click();
+        $(By.xpath("//a[contains(text(), 'Next')]")).click();
         $$("ul.pagination li").get(pageActiveInd-1).shouldHave(cssClass("active"));
     }
 
     public void moveToPrevious(int pageActiveInd) {
-        $(By.xpath("//span[contains(text(), 'Previous')]")).click();
+        $(By.xpath("//a[contains(text(), 'Previous')]")).click();
         $$("ul.pagination li").get(pageActiveInd-1).shouldHave(cssClass("active"));
     }
     public void shouldHaveResultText (int pageActiveInd, String text) {
-        $(By.xpath("//span[contains(text(), 'Previous')]")).click();
+        $(By.xpath("//a[contains(text(), 'Previous')]")).click();
         $$("ul.pagination li").get(pageActiveInd-1).shouldHave(text(text));
     }
 
@@ -143,7 +143,7 @@ public class SearchHelper extends HelperBase {
 
 
     public void clickApplyFilters() {
-        $(By.xpath("//button[@class='btn btn-sm btn-primary js-submit']")).click();
+        $(By.xpath("//button[@class='btn btn-sm btn-primary js-submitLogin']")).click();
     }
 
     public void active3Fiters(int numberFilters, String text1, String text2, String text3) {
@@ -165,7 +165,7 @@ public class SearchHelper extends HelperBase {
     }
 
     public void clickAdvancedFilterApply() {
-        $(By.xpath("//button[@class='btn btn-primary js-submit']")).click();
+        $(By.xpath("//button[@class='btn btn-primary js-submitLogin']")).click();
     }
 
     public void clickHighestPrice(int number) {
@@ -174,5 +174,9 @@ public class SearchHelper extends HelperBase {
 
         ElementsCollection expectedNames = $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']"));
       //  Collections.sort(expectedNames);
+    }
+
+    public void closePopupSignup() {
+        $(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']")).click();
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="suite" verbose="1">
+    <!--
+    <test name="RozetkaTest">
+
+    <parameter name="browser" value="chrome" />
+    <classes>
+        <class name="Tests.SmokeTest" />
+        <class name="Tests.MenuTests" />
+        <class name="Tests.AuthorizationTests" />
+        <class name="Tests.OnlineOrderTests" />
+    </classes>
+</test>*/
+-->
+
+<test name="test1">
+    <groups>
+                <run>
+
+
+                    <include name="cron"/>
+
+
+                </run>
+    </groups>
+
+
+    <classes>
+        <class name="uk.co.idealflatmate.tests.AuthorizationTests"/>
+    </classes>
+</test>
+</suite>

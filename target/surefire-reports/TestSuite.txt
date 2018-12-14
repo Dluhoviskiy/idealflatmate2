@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 61, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 4,744.818 s <<< FAILURE! - in TestSuite
+TestSuccessfulPropertyAddingWithAllFields(uk.co.idealflatmate.tests.AddListingTests)  Time elapsed: 86.958 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text '3 rooms for rent in Bankside, South, London from
+£500' {By.xpath: //h1[@class='h2 u_m0-top u_p20-bottom text-normal u_b-bottom']}
+Element: '<h1 class="h2 u_m0-top u_p20-bottom text-normal u_b-bottom">3 rooms for rent in Bankside, South, London from ?500
+Property ref# 0023407</h1>'
+	at uk.co.idealflatmate.tests.AddListingTests.TestSuccessfulPropertyAddingWithAllFields(AddListingTests.java:99)
+
+SuccessLogInContactProperty(uk.co.idealflatmate.tests.AuthorizationTests)  Time elapsed: 22.813 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {#loginform-username}
+Element: '<input class="form-control" id="loginform-username" name="LoginForm[username]" type="text" displayed:false></input>'
+	at uk.co.idealflatmate.tests.AuthorizationTests.SuccessLogInContactProperty(AuthorizationTests.java:136)
+
+SuccessfulSignUpWithMatchingWithRequiredFields(uk.co.idealflatmate.tests.SignUpTest)  Time elapsed: 274.532 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {By.xpath: //button[@id='3' and contains(text(), 'Continue')]}
+Element: '<button class="btn btn-block btn-info btn-next btn-survey" id="3" onclick="dataLayer.push({'event':'Rebelhack','eventCategory': 'pre user activation','eventAction': 'match sociability question 2 of 20 continue click','eventLabel': 'flathunter'});" type="button">Continue</button>'
+	at uk.co.idealflatmate.tests.SignUpTest.SuccessfulSignUpWithMatchingWithRequiredFields(SignUpTest.java:107)
+

@@ -124,7 +124,8 @@ public class MessagesTest extends TestBase {
         verificationHelper.upgradeToFasterReply();
         verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
         //verificationHelper.sentRequestDetails();
-        messageHelper.sendDecline();
+        messageHelper.sendDecline("Unfortunately I have found a place elsewhere and no longer" +
+                " interested in the room. Good luck finding a flatmate!");
         messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();

@@ -39,7 +39,8 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void verifyTextMessage(String text) {
-        $$(".msg-body").last().waitUntil(visible, 8000).shouldHave(Condition.text(text));
+        sleep(5000);
+        $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(Condition.text(text));
     }
     public void verifyPageMessage() {
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));

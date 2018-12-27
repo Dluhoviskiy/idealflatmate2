@@ -178,11 +178,10 @@ public class MessageHelper {
     }
 
 
-    public void sendDecline() {
+    public void sendDecline(String text) {
         $(byXpath("//button[@class='btn-cancel']")).click();
         $(byXpath("//button[@class='btn btn-success']")).click();
-        $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(text("Unfortunately I have found a place elsewhere and no longer" +
-                " interested in the room. Good luck finding a flatmate!")).click();
-        sleep(4000);
+        $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(text(text)).click();
+        sleep(6000);
     }
 }

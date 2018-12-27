@@ -1,7 +1,7 @@
 package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.HelperBase;
 
-import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -377,7 +377,7 @@ public class SignUpTest extends TestBase {
 
     //@Test
     public void SuccessfulSignUpWithListingWithAllFields() {
-        verificationHelper.closeAdvPopUp();
+        HelperBase.closeAdvPopUp();
         verificationHelper.ageConfirmCheckMatching();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();

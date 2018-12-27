@@ -70,7 +70,7 @@ public class MatchingTests extends TestBase {
         authorizationHelper.clickCloseSignUpFMPage();
         matchingHelper.clickTakeTheMatchTestFMscreen();
         matchingHelper.quitQuiz();
-        verificationHelper.isHomePage1();
+        verificationHelper.isFMPage();
     }
 
     //@Test

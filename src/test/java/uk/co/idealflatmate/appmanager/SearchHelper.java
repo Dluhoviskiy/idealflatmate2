@@ -21,7 +21,7 @@ public class SearchHelper extends HelperBase {
         $("input#property-location").waitUntil(visible, 4000).click();
         $("input#property-location").waitUntil(empty, 4000).setValue(location);
         sleep(2000);
-        $(byXpath("//button[@class='js-search-submitLogin text-20']")).waitUntil(visible, 10000).click();
+        $(byXpath("//button[@class='js-search-submit text-20']")).waitUntil(visible, 10000).click();
     }
 
     public void searchPropertyByEnter(String location) {
@@ -178,5 +178,25 @@ public class SearchHelper extends HelperBase {
 
     public void closePopupSignup() {
         $(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']")).click();
+    }
+
+    public void priceFilter() {
+        $(byXpath("//div[@class='price-range-filter ']")).click();
+    }
+    public void priceFilterActive() {
+        $(byXpath("//div[@class='container']//span[@class='active-filters-count']")).click();
+    }
+    public void clearFilter() {
+        sleep(2000);
+        $(byXpath("//span[contains(.,'Clear')]")).click();
+
+    }
+
+    public void clickSearchPropPage() {
+        $(byXpath("//div[@class='search-location-form']//input")).click();
+        $(byXpath("//div[@class='search-location-form']//input")).clear();
+        $(byXpath("//div[@class='search-location-form']//input")).setValue("PO30");
+        $(byXpath("//div[@class='search-location-form']//input")).pressEnter();
+        sleep(2000);
     }
 }

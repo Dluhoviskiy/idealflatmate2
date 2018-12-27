@@ -24,9 +24,9 @@ public class MessageHelper {
         if ($(byXpath("//img[@id='imgSrc']")).is(exist)){
             $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).shouldBe(appear).hover();
             $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
-            $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).shouldBe(visible).click();
+            $(byXpath("//button[@type='submit' and@class='btn btn-success btn-msg-send']")).shouldBe(visible).click();
         } else {
-            $(byXpath("//button[@class='btn btn-primary btn-msg-send']")).shouldBe(visible).click();
+            $(byXpath("//button[@type='submit' and@class='btn btn-success btn-msg-send']")).shouldBe(visible).click();
         }
 
 
@@ -45,9 +45,14 @@ public class MessageHelper {
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
         if($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()){
             $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
-            $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 4000).click();
+            if($(byXpath("//li/a[@page='2']")).exists()){
+                $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
+
+            }
+            $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 8000).click();
         }else {
-        $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 4000).click();
+            $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
+            $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 8000).click();
         }
     }
 
@@ -70,7 +75,8 @@ public class MessageHelper {
 
     public  void clickPropertyPageMessage(){
         sleep(2000);
-        $(byXpath("(//a[@class='btn btn-primary u_ed-block u_m20-top'  and contains(text(), ' Message ')])[2]")).waitUntil(visible, 4000).click();
+        $(byXpath("//section[@id='property-infos']//" +
+                "a[@class='btn btn-success u_ed-block u_m10-top text-18' and contains(., 'Request details')]")).waitUntil(visible, 4000).click();
     }
 
     public void clickFMCardMessageUnlogged() {
@@ -92,13 +98,12 @@ public class MessageHelper {
 
 
     public void clickCardMessageLogged() {
-        $(byXpath("(//div[contains(text(), 'Newport PO30 2DN, UK')]//ancestor::div[starts-with(@id, 'property_card')]//a/img)[2]")).waitUntil(visible, 6000).click();
+        $(byXpath("//div[contains(text(), 'Newport PO30 2DN, UK')]/../../../../a[@class='card-start-chat btn btn-circle']")).waitUntil(visible, 6000).click();
 
     }
 
-    public void clickPropertyCardPagelogged() {
-        $(byXpath("(//div[contains(text(), 'Newport PO30 2DN, UK')]//ancestor::div[starts-with(@id, 'property_card')]//a/img)[1]")).waitUntil(visible, 6000).click();
-
+    public void clickCardImgProperty() {
+        $(byXpath("//div[contains(text(), 'Newport PO30 2DN, UK')]/../../../../../..//picture/img")).click();
     }
 
     public void clickPropertyCardFMnamePagelogged() {
@@ -107,7 +112,7 @@ public class MessageHelper {
     }
 
     public void clickFMPageMessage() {
-        $(byXpath("//a[contains(., 'Message')]")).waitUntil(visible, 6000).click();
+        $(byXpath("//div[@class='col-sm-4 u_m20-bottom-xs']//a[contains(., 'Message')]")).waitUntil(visible, 6000).click();
 
     }
 
@@ -170,5 +175,14 @@ public class MessageHelper {
 
     public void verifyNoProperties(String text) {
         $(byXpath("//select[@id='property-select']/option")).shouldHave(text(text));
+    }
+
+
+    public void sendDecline() {
+        $(byXpath("//button[@class='btn-cancel']")).click();
+        $(byXpath("//button[@class='btn btn-success']")).click();
+        $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(text("Unfortunately I have found a place elsewhere and no longer" +
+                " interested in the room. Good luck finding a flatmate!")).click();
+        sleep(4000);
     }
 }

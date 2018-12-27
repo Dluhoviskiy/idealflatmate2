@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.HelperBase;
 
 public class HomePageTest extends TestBase {
 
@@ -20,7 +21,7 @@ public class HomePageTest extends TestBase {
 
     @Test (priority = 2)
     public void findOutMore() {
-        verificationHelper.closeAdvPopUp();
+        HelperBase.closeAdvPopUp();
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFindRooms();
         homePageHelper.verificationPageLinkHowItWorksRooms();

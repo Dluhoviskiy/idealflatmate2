@@ -2,12 +2,8 @@ package uk.co.idealflatmate.tests;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.EdgeDriverManager;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 import uk.co.idealflatmate.appmanager.*;
-import com.codeborne.selenide.testng.ScreenShooter;
 
 
 import static com.codeborne.selenide.Selenide.*;
@@ -46,7 +42,7 @@ public class TestBase {
 
         Configuration.timeout = 10000;
         //open("https://www.idealflatmate.co.uk/");
-        verificationHelper.closeAdvPopUp();
+        HelperBase.closeAdvPopUp();
         //open("http://front.idealflatmate.demo.devplatform2.com");
 
         open("http://front.idealflatmate4test.demo.devplatform2.com");
@@ -68,7 +64,7 @@ public class TestBase {
 
         Configuration.timeout = 10000;
         //open("https://www.idealflatmate.co.uk/");
-        verificationHelper.closeAdvPopUp();
+        HelperBase.closeAdvPopUp();
         //open("http://front.idealflatmate.demo.devplatform2.com");
 
         open("http://front.idealflatmate4test.demo.devplatform2.com");

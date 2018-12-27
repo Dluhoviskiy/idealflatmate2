@@ -3,6 +3,7 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.appears;
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -10,6 +11,31 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class HelperBase {
+
+    public static void closeAdvPopUp() {
+        if ($(byXpath("(//button[@class='btn btn-sm close u_m15'])[1]")).is(visible)) {
+            $(byXpath("(//button[@class='btn btn-sm close u_m15'])[1]")).click();
+            sleep(2000);
+        }
+    }
+
+    public static void closeListPopUp() {
+        $(byXpath("//div[@id='renewAdvertModal']//button[@aria-label='Close']")).click();
+        sleep(2000);
+
+
+    }
+
+    public static void closeMatchPopUp() {
+        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).is(exist)) {
+            $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).click();
+            sleep(2000);
+        }
+    }
+
+    public static void closeButtonRenew() {
+        $(byXpath("(//button[@aria-label='Close'])[2]")).click();
+    }
 
     public void fillInField(String text, SelenideElement $, SelenideElement selenideElement) {
         sleep(1000);
@@ -76,5 +102,11 @@ public class HelperBase {
         // проверить, что вы находитесь на верной странице
         if (url().contains("http://front.idealflatmate4test.demo.devplatform2.com")) {
             open("https://www.idealflatmate.co.uk/");}
+    }
+
+    public static void pageUrlHomeNew(){
+        // вернуться на homepage не закрывая драйвер
+        close();
+        open("http://front.idealflatmate4test.demo.devplatform2.com");
     }
 }

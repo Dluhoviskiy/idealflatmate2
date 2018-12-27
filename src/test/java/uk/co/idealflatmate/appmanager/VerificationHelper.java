@@ -35,7 +35,7 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void verifyUpgradeButton() {
-        $(".fa-credit-card").waitUntil(visible, 4000).shouldBe(Condition.visible);
+        $("div.text-center.a.fa-credit-card").waitUntil(visible, 4000).shouldBe(Condition.visible);
     }
 
     public void verifyTextMessage(String text) {
@@ -471,13 +471,6 @@ public class VerificationHelper extends HelperBase {
                 "has-error']//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
     }
 
-    public void closeAdvPopUp() {
-        if ($(byXpath("(//button[@class='ub-emb-close'])[1]")).is(exist)) {
-            $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(appears, 8000).click();
-            sleep(2000);
-        }
-    }
-
     public void verificationEmailErrorListing() {
         $(byXpath("//label[@for='signupnewform-email']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Email cannot be blank."));
     }
@@ -591,8 +584,7 @@ public class VerificationHelper extends HelperBase {
 
 
     public void isFMPage() {
-        $(byXpath("//title")).shouldHave(text("Search for flatshares and houseshares in the UK" +
-                " | Ideal Flatmate"));
+        $(byXpath("//h2[@class='h4' and contains(.,' flatmate')]")).shouldBe(visible);
     }
 
     public void isPropertyPage(String searchLocation) {
@@ -683,4 +675,9 @@ public class VerificationHelper extends HelperBase {
     }
 
 
+    public void sentRequestDetails() {
+        $(byXpath("//div[@class='msg-body']/span")).shouldHave(text("Hi my name is LivOutListNewTrialI am Other and I would" +
+                " like to know if the room is still available. Thank you!"));
+
+    }
 }

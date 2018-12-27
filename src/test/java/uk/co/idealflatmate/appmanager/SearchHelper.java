@@ -46,9 +46,19 @@ public class SearchHelper extends HelperBase {
     public void verificationSearchFromHome(String location) {
         $(byXpath("//div[@class='row cards-container']")).waitUntil(visible, 4000).shouldHave(text(location));
     }
-    public void verificationSearchFromHomeLocation(String location) {
+    public void verificationSearchOnFMPage(String location) {
         $(byXpath("//h2[@class='h4']")).waitUntil(visible, 10000).shouldHave(text(location));
     }
+
+    public void verificationSearchProperty(String location) {
+        $(byXpath("//h1[@class='h4']")).waitUntil(visible, 15000).shouldHave(text(location));
+    }
+
+    public void verificationSearchPropertyMap(String location) {
+        $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']/p")).waitUntil(visible, 10000).shouldHave(text(location));
+    }
+
+
 
     public void verificationSearchHomePage(String alert) {
         $(byXpath("//div[@class='js-no-location no-location u_p10-top text-center text-white']")).waitUntil(visible, 10000).shouldHave(text(alert));
@@ -62,7 +72,7 @@ public class SearchHelper extends HelperBase {
         $(By.xpath("//a[contains(text(), 'Zone 1')]")).click();
     }
     public void EastLDN1() {
-        $(By.xpath("//a[contains(text(), 'East LDN')]")).click();
+        $(By.xpath("//a[contains(text(), 'East London')]")).click();
     }
     public void amountPropertyCards(int size) {
 
@@ -71,24 +81,25 @@ public class SearchHelper extends HelperBase {
 
     public void firstCardIsColivingAdv() {
 
-        $$(byXpath("//div[@class='cards-container']/div")).first().shouldHave(text("Select,"));
+        $$(byXpath("//div[@class='cards-container']/div")).first().waitUntil(visible, 15000).shouldHave(text("Select,"));
         $(By.xpath("//a[contains(text(), 'View all Select providers ')]")).click();
         $(By.xpath("//h2[contains(text(), 'Stunning homes, ')]")).exists();
 
     }
     public void colivingButton() {
 
-        $(By.xpath("//a[contains(text(), 'NEW! View')]")).click();
-        $(By.xpath("//h1[contains(text(), 'Co-living, the new renting')]")).exists();
+        $(By.xpath("//a[contains(., 'View all Select providers ')]")).click();
+        $(By.xpath("//h1[contains(text(), 'Select')]")).exists();
     }
     public void colivingButtonOnFirstPage() {
-        $(By.xpath("//a[contains(text(), 'NEW! View')]")).exists();
+        $(By.xpath("//a[contains(., 'View all Select providers ')]")).exists();
     }
 
     public void moveToPage(int pageNumberInd, String pageNumber) {
-        $$("div ul li a").findBy(text(pageNumber)).click();
-        //sleep(10000);
-            $$("ul.pagination li").get(pageNumberInd).shouldHave(cssClass("active"));
+        $$("div ul.pagination li a").findBy(text(pageNumber)).click();
+        sleep(5000);
+
+        $$("ul.pagination li").get(pageNumberInd).shouldHave(cssClass("active"));
 
 
     }
@@ -101,13 +112,17 @@ public class SearchHelper extends HelperBase {
     }
 
     public void moveToNext(int pageActiveInd) {
+        sleep(2000);
         $(By.xpath("//a[contains(text(), 'Next')]")).click();
-        $$("ul.pagination li").get(pageActiveInd-1).shouldHave(cssClass("active"));
+        sleep(2000);
+        $$("ul.pagination li").get(pageActiveInd).shouldHave(cssClass("active"));
     }
 
     public void moveToPrevious(int pageActiveInd) {
+        sleep(2000);
         $(By.xpath("//a[contains(text(), 'Previous')]")).click();
-        $$("ul.pagination li").get(pageActiveInd-1).shouldHave(cssClass("active"));
+        sleep(2000);
+        $$("ul.pagination li").get(pageActiveInd).shouldHave(cssClass("active"));
     }
     public void shouldHaveResultText (int pageActiveInd, String text) {
         $(By.xpath("//a[contains(text(), 'Previous')]")).click();
@@ -122,7 +137,7 @@ public class SearchHelper extends HelperBase {
 
     public void clickAvailablePlus(String text) {
         $(By.xpath("//div[contains(text(), 'Available bedrooms')]/..//button[@data-type='plus']")).click();
-        clickAdvancedFilterApply();
+        clickApply();
         //$(By.xpath("//button[contains(text(), 'Rooms number: 2 ')]")).click();
         $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[4]")).shouldHave(text(text));
 
@@ -158,8 +173,14 @@ public class SearchHelper extends HelperBase {
         $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[7]")).shouldHave(text(text7));
     }
 
-    public void clickAdvancedFilterApply() {
-        $(By.xpath("//button[@class='btn btn-primary js-submitLogin']")).click();
+    public void clickMoreFilterApply() {
+        $(By.xpath("//div[@class='more-filters ']")).click();
+        $(By.xpath("//span[contains(.,'Garden')]")).click();
+        $$(By.xpath("//label[@class='circle-button-with-text  ']/span")).shouldHaveSize(12);
+        $(By.xpath("//div[@class='lease-length-filter form-group in-use']//select[@class='form-control']")).click();
+        $(By.xpath("//div[@class='lease-length-filter form-group in-use']//select[@class='form-control']")).selectOptionContainingText("1 months");
+        $(By.xpath("//div[@class='property-added-filter form-group in-use']//select[@class='form-control']")).click();
+        $(By.xpath("//div[@class='lease-length-filter form-group in-use']//select[@class='form-control']")).selectOptionContainingText("1 month ago");
     }
 
     public void clickHighestPrice(int number) {
@@ -171,7 +192,9 @@ public class SearchHelper extends HelperBase {
     }
 
     public void closePopupSignup() {
-        $(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']")).click();
+
+        if($(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']")).isDisplayed()){
+            $(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']")).click();}
     }
 
     public void priceFilter() {
@@ -186,10 +209,10 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void clickSearchPropPage() {
+    public void clickSearchPropPage(String location) {
         $(byXpath("//div[@class='search-location-form']//input")).click();
         $(byXpath("//div[@class='search-location-form']//input")).clear();
-        $(byXpath("//div[@class='search-location-form']//input")).setValue("PO30");
+        $(byXpath("//div[@class='search-location-form']//input")).setValue(location);
         $(byXpath("//div[@class='search-location-form']//input")).pressEnter();
         sleep(2000);
     }
@@ -205,5 +228,23 @@ public class SearchHelper extends HelperBase {
 
     }
 
+    public void clickApply() {
+        $(byXpath("//span[contains(.,'Apply')]")).click();
 
+    }
+
+    public void VerifyMoreFilters() {
+        $(By.xpath("//div[@class='more-filters ']")).click();
+        $(By.xpath("//span[contains(.,'Garden')]/../../label")).shouldHave(cssClass("circle-button-with-text  active"));
+        clearFilter();
+        $(By.xpath("//div[@class='more-filters ']")).click();
+        $(By.xpath("//span[contains(.,'Garden')]/../../label")).shouldHave(cssClass("circle-button-with-text"));
+
+
+
+    }
+
+    public void noActiveFilters() {
+        $(By.xpath("//div[@class='search-panel hidden-xs']//span[@class='active-filters-count']")).shouldNot(exist);
+    }
 }

@@ -1,14 +1,8 @@
 package uk.co.idealflatmate.tests;
 
-import com.codeborne.selenide.CollectionCondition;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.sleep;
 import static org.seleniumhq.jetty7.util.LazyList.getList;
 import static org.testng.Assert.assertEquals;
 
@@ -31,7 +25,7 @@ public class SearchPropertiesPageTests extends TestBase{
     public void searchPagination() {
 
         authorizationHelper.goToPropertyPage();
-        //searchHelper.closePopupSignup();
+        searchHelper.closePopupSignup();
         searchHelper.moveToPage(2, "2");
         searchHelper.amountPropertyCards(11);
         searchHelper.colivingButtonOnFirstPage();
@@ -52,7 +46,7 @@ public class SearchPropertiesPageTests extends TestBase{
     public void searchZone1Pagination() {
 
         authorizationHelper.goToPropertyPage();
-        //helperBase.toHomePage();
+        searchHelper.closePopupSignup();
         searchHelper.zone1();
         searchHelper.colivingButton();
         helperBase.toHomePage();
@@ -62,38 +56,43 @@ public class SearchPropertiesPageTests extends TestBase{
     public void searchEastLDNPagination() {
 
         authorizationHelper.goToPropertyPage();
-        //helperBase.toHomePage();
+        searchHelper.closePopupSignup();
         searchHelper.EastLDN1();
         searchHelper.firstCardIsColivingAdv();
         helperBase.toHomePage();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 5)
     public void applyFilters() {
 
         authorizationHelper.goToPropertyPage();
-        //helperBase.toHomePage();
+        searchHelper.closePopupSignup();
         searchHelper.clickApplyFilters();
-        searchHelper.active3Fiters(3,"Budget Max: 2500 £ ", "Search Radius: 1 miles ", "Available From:");
+        searchHelper.noActiveFilters();
+        //searchHelper.active3Fiters(3,"Budget Max: 2500 £ ", "Search Radius: 1 miles ", "Available From:");
+        searchHelper.clickMoreFilterApply();
+        searchHelper.clickApply();
+        searchHelper.VerifyMoreFilters();
         helperBase.toHomePage();
     }
-    @Test(priority = 4)
+    @Test(priority = 6)
     public void applyAdvancedFiltersDefault() {
 
         authorizationHelper.goToPropertyPage();
-        //helperBase.toHomePage();
-        searchHelper.clickAdvancedFilter();
-        searchHelper.clickAdvancedFilterApply();
+        searchHelper.closePopupSignup();
+        searchHelper.clickSearchPropPage("London");
+        searchHelper.noActiveFilters();
+       // searchHelper.clickAdvancedFilter();
         searchHelper.active7Fiters(7, "Budget Max: 2500 £ ", "Age Min: 18 ", "Age Max: 100 ",
                 "Rooms number: 1 ", "Search Radius: 1 miles ", "Available From: ", "Total rooms: 10 ");
         helperBase.toHomePage();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 7)
     public void sortListingWith2Rooms() {
 
         authorizationHelper.goToPropertyPage();
-       //helperBase.toHomePage();
+        searchHelper.closePopupSignup();
         searchHelper.clickAdvancedFilter();
         searchHelper.clickAvailablePlus("Rooms number: 2 ");
         // No "1 rooms available" after sorting

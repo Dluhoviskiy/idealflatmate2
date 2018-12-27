@@ -122,7 +122,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.goToPropertyPage();
         searchHelper.priceFilterActive();
         searchHelper.clearFilter();
-        searchHelper.clickSearchPropPage();
+        searchHelper.clickSearchPropPage("PO30");
         messageHelper.clickCardImgProperty();
         messageHelper.clickPropertyPageMessage();
         verificationHelper.upgradeToFasterReply();

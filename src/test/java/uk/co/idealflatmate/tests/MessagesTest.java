@@ -69,6 +69,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
         messageHelper.chooseMessageTab("FM can answer to FM");
+        verificationHelper.noSendDecline();
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
         paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("FM can answer to FM");
         verificationHelper.verifyTextMessage("FM can answer to FM");
@@ -80,12 +81,15 @@ public class MessagesTest extends TestBase {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.Landlord101@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("newLiveOut1@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
+        closeListPopUp();
+        closeMatchPopUp();
         messageHelper.chooseMessageTab("Landlord Answer to Prem FM");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
+        messageHelper.sendDecline("Unfortunately this listing is no longer available. Good luck with your search!");//Lord to FH
+        messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
         verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
@@ -123,8 +127,7 @@ public class MessagesTest extends TestBase {
         messageHelper.clickPropertyPageMessage();
         verificationHelper.upgradeToFasterReply();
         verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
-        //verificationHelper.sentRequestDetails();
-        messageHelper.sendDecline("Unfortunately I have found a place elsewhere and no longer" +
+        messageHelper.sendDecline("Unfortunately I have found a place elsewhere and no longer" + //FH to Lord
                 " interested in the room. Good luck finding a flatmate!");
         messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
@@ -136,20 +139,22 @@ public class MessagesTest extends TestBase {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithPremiumFlathunterPackage("cro.gen.FH@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        searchHelper.searchProperty("PO30");
+        searchHelper.searchProperty("Clapham");
+        verificationHelper.searchResultText("6 rooms matched to rent in and around Clapham");
+        //searchHelper.clearSearch();
+        searchHelper.lastCardClick();//6 cards
         //messageHelper.clickCardMessageLogged();
-        messageHelper.clickPropertyCardFMnamePagelogged();
+        //messageHelper.clickPropertyCardFMnamePagelogged();
         messageHelper.clickFMPageMessage();
-        verificationHelper.upgradeToFasterReply();
+        verificationHelper.noUpgradeToFasterReply();
+        verificationHelper.noSendDecline();
         verificationHelper.messageGroup("No property");
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
+        messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
     }
-
-
 
 }

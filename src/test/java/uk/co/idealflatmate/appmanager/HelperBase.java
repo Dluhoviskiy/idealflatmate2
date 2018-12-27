@@ -20,17 +20,21 @@ public class HelperBase {
     }
 
     public static void closeListPopUp() {
-        $(byXpath("//div[@id='renewAdvertModal']//button[@aria-label='Close']")).click();
+        sleep(2000);
+        if($(byXpath("//div[@id='renewAdvertModal']//button[@aria-label='Close']")).isDisplayed()){
+            $(byXpath("//div[@id='renewAdvertModal']//button[@aria-label='Close']")).click();
+        }
         sleep(2000);
 
 
     }
 
     public static void closeMatchPopUp() {
-        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).is(exist)) {
+
+        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).isEnabled()) {
             $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).click();
             sleep(2000);
-        }
+        } else {}
     }
 
     public static void closeButtonRenew() {

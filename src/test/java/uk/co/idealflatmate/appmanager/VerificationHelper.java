@@ -35,7 +35,7 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void verifyUpgradeButton() {
-        $("div.text-center.a.fa-credit-card").waitUntil(visible, 4000).shouldBe(Condition.visible);
+        $("a.btn.btn-white.box-shadow").waitUntil(visible, 4000).shouldBe(Condition.visible);
     }
 
     public void verifyTextMessage(String text) {
@@ -436,6 +436,11 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//div[@class='alert alert-warning text-center u_m0']")).waitUntil(exist, 4000).shouldHave(text("Upgrade to get a faster reply"));
 
     }
+
+    public void noUpgradeToFasterReply() {
+        $(byXpath("//div[@class='alert alert-warning text-center u_m0']")).shouldNot(exist);
+
+    }
     public void noTextUpgradeToFasterReply() {
         $(byXpath("//div[@class='alert alert-warning text-center u_m0']")).shouldNot(exist);
 
@@ -680,5 +685,13 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//div[@class='msg-body']/span")).shouldHave(text("Hi my name is LivOutListNewTrialI am Other and I would" +
                 " like to know if the room is still available. Thank you!"));
 
+    }
+
+    public void searchResultText(String text) {
+        $(byXpath("//h1[@class='h4']")).shouldHave(text(text));
+    }
+
+    public void noSendDecline() {
+        $(byXpath("//button[@class='btn-cancel']")).shouldNot(exist);
     }
 }

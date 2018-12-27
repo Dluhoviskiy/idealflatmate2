@@ -1,15 +1,9 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
@@ -199,4 +193,17 @@ public class SearchHelper extends HelperBase {
         $(byXpath("//div[@class='search-location-form']//input")).pressEnter();
         sleep(2000);
     }
+
+    public void clearSearch() {
+        $(byXpath("//form//span[@class='clear-location ']")).click();
+        sleep(3000);
+
+    }
+
+    public void lastCardClick() {
+        $(byXpath("(//div[@class='card-profile-text']/span[@class='card-top-username'])[6]")).click();
+
+    }
+
+
 }

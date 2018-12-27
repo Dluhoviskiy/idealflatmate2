@@ -21,7 +21,7 @@ public class MessageHelper {
     public void typeAndSendMessage(String message) {
         $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
 
-        if ($(byXpath("//img[@id='imgSrc']")).is(exist)){
+        if ($(byXpath("//img[@id='imgSrc']")).is(exist)) {
             $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).shouldBe(appear).hover();
             $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
             $(byXpath("//button[@type='submit' and@class='btn btn-success btn-msg-send']")).shouldBe(visible).click();
@@ -43,18 +43,16 @@ public class MessageHelper {
     public void chooseMessageTab(final String massage) {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
-        if($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()){
-            $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
-            if($(byXpath("//li/a[@page='2']")).exists()){
-                $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
-
-            }
-            $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 8000).click();
-        }else {
-            $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
-            $(byXpath("//p[contains(text(), '"+massage+"')]")).waitUntil(Condition.appears, 8000).click();
-        }
-    }
+            if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
+                $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
+                $(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
+                    if ($(byXpath("//li/a[@page='2']")).isDisplayed()) {
+                        $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
+                        sleep(5000);
+                        $(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
+                }
+        }else{$(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 8000).click();}
+   }
 
     public void clickPropertyCardMessageUnlogged() {
         $(byXpath("(//h2)[4]")).hover();
@@ -103,6 +101,7 @@ public class MessageHelper {
     }
 
     public void clickCardImgProperty() {
+        sleep(3000);
         $(byXpath("//div[contains(text(), 'Newport PO30 2DN, UK')]/../../../../../..//picture/img")).click();
     }
 
@@ -181,6 +180,7 @@ public class MessageHelper {
     public void sendDecline(String text) {
         $(byXpath("//button[@class='btn-cancel']")).click();
         $(byXpath("//button[@class='btn btn-success']")).click();
+        sleep(5000);
         $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(text(text)).click();
         sleep(6000);
     }

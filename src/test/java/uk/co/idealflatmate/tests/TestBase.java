@@ -26,6 +26,7 @@ public class TestBase {
     public final SearchHelper searchHelper = new SearchHelper();
     public final HelperBase helperBase = new HelperBase();
     public final SignUpHelper signUpHelper = new SignUpHelper();
+    public final SearchHelperFM searchHelperFM = new SearchHelperFM();
 
 
     @BeforeGroups

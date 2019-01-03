@@ -205,7 +205,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         searchHelper.moveToPage(2, "2");
         searchHelper.amountPropertyCards(11);
-        searchHelper.colivingButtonOnFirstPage();
+        searchHelper.colivingButtonOnFirstPage("View all Select providers ");
         searchHelper.moveToPage(3, "3");
 
         String page = $(byXpath("//a[@class='undefined']")).getText();

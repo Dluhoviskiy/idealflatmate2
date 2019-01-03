@@ -166,13 +166,13 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void budgetMin() {
+    public static void budgetMin() {
         //$(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div[@class='noUi-handle noUi-handle-upper']")));
         $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
         $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div/span[@class='text-14']")));
     }
 
-    public void budgetMax() {
+    public static void budgetMax() {
         //$(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div[@class='noUi-handle noUi-handle-upper']")));
         $(byXpath("//div[@class='noUi-handle noUi-handle-upper']")).dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
         //$(byXpath("//div[@class='noUi-handle noUi-handle-upper']")).dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));

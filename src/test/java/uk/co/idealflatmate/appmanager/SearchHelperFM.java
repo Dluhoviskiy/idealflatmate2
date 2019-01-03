@@ -2,20 +2,17 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import org.codehaus.groovy.antlr.treewalker.SourcePrinter;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$$;
 
-public class SearchHelper extends HelperBase {
+public class SearchHelperFM extends HelperBase {
 
     public void searchProperty(String location) {
 
@@ -98,8 +95,8 @@ public class SearchHelper extends HelperBase {
         $(By.xpath("//a[contains(., 'View all Select providers ')]")).click();
         $(By.xpath("//h1[contains(text(), 'Select')]")).exists();
     }
-    public void colivingButtonOnFirstPage(final String text) {
-        $(By.xpath("//a[contains(., '" + text + "')]")).exists();
+    public void colivingButtonOnFirstPage() {
+        $(By.xpath("//a[contains(., 'View all Select providers ')]")).exists();
     }
 
     public void moveToPage(int pageNumberInd, String pageNumber) {
@@ -197,17 +194,47 @@ public class SearchHelper extends HelperBase {
         clickApply();
     }
 
-    public void clickMoreFilterVerify(String About, int numberAbout, String leaseLength, String addedTime) {
-        SelenideElement lengthOfStay = $(By.xpath("//div[starts-with(@class, 'search-panel__more-cell')]//div[starts-with(@class, 'lease-length-filter')]//select[@class='form-control']"));
-        SelenideElement propertyAdded = $(By.xpath("//div[starts-with(@class, 'search-panel__more-cell')]//div[starts-with(@class, 'property-added-filter')]//select[@class='form-control']"));
-        $(By.xpath("//div[@class='more-filters ']")).click();
-        $(By.xpath("//span[contains(.,'"+ About +"')]")).click();
-        $$(By.xpath("//label[@class='circle-button-with-text  ']/span")).shouldHaveSize(numberAbout);
-        lengthOfStay.click();
-        lengthOfStay.selectOptionContainingText(leaseLength);
-        propertyAdded.click();
-        propertyAdded.selectOptionContainingText(addedTime);
+    public void clickMoreFilterVerify(String About, String AboutProp) {
+
+        SelenideElement checkBox = $(byXpath("//label[@for='no-photo']/../input"));
+        SelenideElement checkBoxClick = $(byXpath("//div[input[@id='no-photo']]"));
+        SelenideElement moreFilter = $(By.xpath("//div[@class='flatmate-type-filter selected']"));
+        List<String> hasList = $$(byXpath("//div[@class='card-profile-text']")).texts();
+
+        moreFilter.click();
+        $(By.xpath("//label[@class='circle-button-with-text active']/span[contains(., '"+About+"')]")).exists();
+        $(By.xpath("//span[contains(.,'"+ AboutProp +"')]")).click();
         clickApply();
+
+        sleep(2000);
+        List<String> noList = $$(byXpath("//div[@class='card-profile-text']")).texts();
+        Assert.assertNotEquals(hasList, noList);
+
+        List<String> hasListWithoutPhoto = $$(byXpath("//div[@class='card-profile-text']")).texts();
+        moreFilter.click();
+        $(By.xpath("//label[@class='circle-button-with-text active']/span[contains(., '"+AboutProp+"')]")).exists();
+
+        sleep(1000);
+        checkBox.shouldNotBe(checked);
+        sleep(1000);
+        checkBoxClick.click();
+        clickApply();
+        sleep(1000);
+
+        sleep(2000);
+        List<String> noPhotoList = $$(byXpath("//div[@class='card-profile-text']")).texts();
+        Assert.assertNotEquals(hasListWithoutPhoto, noPhotoList);
+
+        moreFilter.click();
+        sleep(1000);
+        checkBox.shouldBe(checked);
+        clearFilter();
+
+        moreFilter.click();
+        sleep(2000);
+        checkBox.shouldNotBe(checked);
+        $(By.xpath("//label[@class='circle-button-with-text active']/span[contains(., '"+About+"')]")).exists();
+
     }
 
     public void clickHighestPrice(int number) {
@@ -263,8 +290,9 @@ public class SearchHelper extends HelperBase {
     }
 
     public void verifyClearMoreFilter(String About) {
+
+        $(By.xpath("//div[@class='flatmate-type-filter selected']//span[@class='active-filters-count']")).shouldBe(exist);
         $(By.xpath("//div[@class='more-filters selected']")).click();
-        $(By.xpath("//label[@class='circle-button-with-text  active']/span")).shouldHave(text("Garden"));
         clearFilter();
         $(By.xpath("//div[@class='more-filters ']")).click();
         $(By.xpath("//label[@class='circle-button-with-text  ']/span[contains(.,'"+About+"')]")).should(exist);
@@ -303,17 +331,13 @@ public class SearchHelper extends HelperBase {
         clearFilter();
     }
 
-    public void checkDefaultTopMatch() {
+    public void checkFMSearch() {
         sleep(3000);
 
         List<String> sortDef = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        System.out.println(sortDef);
-        $("#property-sort").selectOptionContainingText("Top matched");
         sleep(3000);
 
         List<String> sortNew = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        System.out.println(sortNew);
-        //Arrays.sort(pota);
         Assert.assertNotEquals(sortDef, sortNew);
     }
 
@@ -348,5 +372,9 @@ public class SearchHelper extends HelperBase {
         List<String> sortNew2 = $$(byXpath("//div[@class='card-profile-text']")).texts();
         Assert.assertNotEquals(sortNew2, sortDef2);
 
+    }
+
+    public void verifyMoreFilterActive() {
+        $(By.xpath("//div[@class='flatmate-type-filter selected']//span[@class='active-filters-count']")).shouldBe(exist);
     }
 }

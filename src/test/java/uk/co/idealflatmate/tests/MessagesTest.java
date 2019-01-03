@@ -3,6 +3,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
 
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;

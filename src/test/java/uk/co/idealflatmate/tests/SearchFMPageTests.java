@@ -2,22 +2,18 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static org.seleniumhq.jetty7.util.LazyList.getList;
-import static org.testng.Assert.assertEquals;
-
-public class SearchPropertiesPageTests extends TestBase{
+public class SearchFMPageTests extends TestBase{
 
 
     @Test(priority = 1)
-    public void propertySearchByDropDown() {
+    public void fmSearchBy() {
 
-        authorizationHelper.selectAllPropertyInMenu();
+        authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
-        searchHelper.amountPropertyCards(11);
-        searchHelper.colivingButtonOnFirstPage("View all Select providers ");
-        searchHelper.firstCardIsColivingAdv();
+        searchHelper.amountPropertyCards(12);
+        matchingHelper.closeTakeMatch();
+        searchHelperFM.verifyMoreFilterActive();
+        //searchHelperFM.verifyClearMoreFilter("");
         helperBase.toHomePage();
 
     }
@@ -25,79 +21,59 @@ public class SearchPropertiesPageTests extends TestBase{
     @Test(priority = 2)
     public void searchPagination() {
 
-        authorizationHelper.goToPropertyPage();
+        authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
+
         searchHelper.moveToPage(2, "2");
-        searchHelper.amountPropertyCards(11);
+        searchHelper.amountPropertyCards(12);
         searchHelper.colivingButtonOnFirstPage("View all Select providers ");
         searchHelper.moveToPage(3, "3");
-        searchHelper.amountPropertyCards(11);
+        searchHelper.amountPropertyCards(12);
         searchHelper.colivingButtonOnFirstPage("View all Select providers ");
         searchHelper.moveToNext(4);
-        searchHelper.amountPropertyCards(11);
+        searchHelper.amountPropertyCards(12);
         searchHelper.colivingButtonOnFirstPage("View all Select providers ");
         searchHelper.moveToPrevious(3);
-        searchHelper.amountPropertyCards(11);
-        searchHelper.colivingButtonOnFirstPage("View all Select providers ");
-        searchHelper.colivingButton();
+        searchHelper.amountPropertyCards(12);
+
         helperBase.toHomePage();
     }
 
-    @Test(priority = 3)
-    public void searchZone1Pagination() {
 
-        authorizationHelper.goToPropertyPage();
+    @Test(priority = 3)
+    public void applyMoreFilters() {
+
+        authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
-        searchHelper.zone1();
-        searchHelper.colivingButton();
+
+        searchHelper.numberOfActiveFilters(1);
+
+        searchHelperFM.clickMoreFilterVerify("Looking for a room", "Has a room");
+
+        searchHelper.numberOfActiveFilters(1);
+
         helperBase.toHomePage();
     }
 
     @Test(priority = 4)
-    public void searchEastLDNPagination() {
-
-        authorizationHelper.goToPropertyPage();
-        searchHelper.closePopupSignup();
-        searchHelper.EastLDN1();
-        searchHelper.firstCardIsColivingAdv();
-        helperBase.toHomePage();
-    }
-
-    @Test(priority = 5)
-    public void applyMoreFilters() {
-
-        authorizationHelper.goToPropertyPage();
-        searchHelper.closePopupSignup();
-        searchHelper.noActiveFilters();
-
-        searchHelper.clickMoreFilterVerify("Garden", 12, "1 month", "1 week ago");
-
-        searchHelper.numberOfActiveFilters(1);
-        searchHelper.verifyClearMoreFilter("Garden");
-        searchHelper.noActiveFilters();
-        helperBase.toHomePage();
-    }
-    @Test(priority = 6)
     public void applyAdvancedFiltersDefault() {
 
-        authorizationHelper.goToPropertyPage();
+        authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.checkHighPriceSort();
         searchHelper.verifSearchHasNoLocation("London");
         searchHelper.clickSearchPropPage("London");
         searchHelper.verifSearchHasLocation("London");
-        searchHelper.selectRadius("+20 km");
-
-        searchHelper.noActiveFilters();
+        searchHelper.selectRadius("+10 km");
 
         searchHelper.activeBudget();
         searchHelper.checkDefaultTopMatch();
 
         searchHelper.activeAvailable();
-        searchHelper.checkMostRecentSort();
 
-        searchHelper.activeRooms("Studio","1 room");
-        searchHelper.activeIdealFM();
+        //searchHelperFM.activeGender("Studio","1 room");
+        //searchHelper.activeAgeFM();
+        //searchHelper.activeOccupationFM();
         searchHelper.numberOfActiveFilters(4);
 
         searchHelper.clearActiveFiters();

@@ -246,4 +246,8 @@ public class MatchingHelper extends HelperBase {
                 "Remember, you can change your answers at any time in the “Ideal Matching” " +
                 "section on your dashboard.                "));
     }
+
+    public void closeTakeMatch() {
+        $(byXpath("//button[@data-dismiss='alert']")).click();
+    }
 }

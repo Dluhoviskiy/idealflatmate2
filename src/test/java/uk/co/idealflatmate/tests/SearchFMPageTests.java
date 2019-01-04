@@ -56,97 +56,73 @@ public class SearchFMPageTests extends TestBase{
     }
 
     @Test(priority = 4)
+    public void applyMoreFiltersPhotoNoList() {
+
+        authorizationHelper.goToFMpage();
+        searchHelper.closePopupSignup();
+
+        searchHelper.numberOfActiveFilters(1);
+
+        searchHelperFM.clickMoreFilterVerifyPhotoListing("Looking for a room", "Has a room");
+
+        searchHelper.numberOfActiveFilters(1);
+
+        helperBase.toHomePage();
+    }
+
+    @Test(priority = 5)
+    public void applyMoreFiltersPhotoWithList() {
+
+        authorizationHelper.goToFMpage();
+        searchHelper.closePopupSignup();
+
+        searchHelper.numberOfActiveFilters(1);
+
+        searchHelperFM.clickMoreFilterVerifyPhotoNoListing("Looking for a room");
+
+        searchHelper.numberOfActiveFilters(1);
+
+        helperBase.toHomePage();
+    }
+
+    @Test(priority = 6)
     public void applyAdvancedFiltersDefault() {
 
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
-        searchHelper.checkHighPriceSort();
-        searchHelper.verifSearchHasNoLocation("London");
+        searchHelper.checkHighPriceSort("7");
+        searchHelperFM.verifSearchHasNoLocationFM("London");
         searchHelper.clickSearchPropPage("London");
-        searchHelper.verifSearchHasLocation("London");
+        searchHelperFM.verifSearchHasLocationFM("London");
         searchHelper.selectRadius("+10 km");
 
+        searchHelperFM.activeOccupationFM("Student");
+
         searchHelper.activeBudget();
-        searchHelper.checkDefaultTopMatch();
+
+        searchHelperFM.activeGender("Male");
+
+        searchHelperFM.activeAgeFM();
 
         searchHelper.activeAvailable();
 
-        //searchHelperFM.activeGender("Studio","1 room");
-        //searchHelper.activeAgeFM();
-        //searchHelper.activeOccupationFM();
-        searchHelper.numberOfActiveFilters(4);
-
-        searchHelper.clearActiveFiters();
-        searchHelper.noActiveFilters();
+        searchHelper.numberOfActiveFilters(6);
 
         helperBase.toHomePage();
     }
 
     @Test(priority = 7)
-    public void sortListing() {
+    public void sortListingLoggedIn() {
 
-        authorizationHelper.goToPropertyPage();
+        authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
-        searchHelper.checkDefaultTopMatch();
-        searchHelper.checkMostRecentSort();
-        searchHelper.checkLowPriceSort();
-        searchHelper.checkHighPriceSort();
-        //searchHelper.clickAvailablePlus("Rooms number: 2 ");
-        // No "1 rooms available" after sorting
-        //searchHelper.cardsWith2roomsAvailable(11, "\n" + "1 rooms available\n" + " ");
+        authorizationHelper.login("FMMatchingSort@gmail.com","qqqqqq");
+        searchHelper.checkSort("Price high to low");
+        searchHelper.checkSort("Most recent");
+        searchHelper.checkSort("Price low to high");
+        searchHelper.checkSort("Top Matched");
+
         helperBase.toHomePage();
     }
-
-    //@Test(priority = 7)
-    public void sortListingWith2Rooms() {
-
-        authorizationHelper.goToPropertyPage();
-        searchHelper.closePopupSignup();
-        searchHelper.clickAvailablePlus("Rooms number: 2 ");
-        // No "1 rooms available" after sorting
-        searchHelper.cardsWith2roomsAvailable(11, "\n" + "1 rooms available\n" + " ");
-        helperBase.toHomePage();
-    }
-
-    /*@Test(priority = 4)
-    public void sortListingByBudget() {
-
-        authorizationHelper.goToPropertyPage();
-        helperBase.toHomePage();
-        //Lowest budget
-        searchHelper.clickHighestPrice(3);
-        sleep(5000);
-
-        int cardsBudgetText = 0;
-        String[] texts = $$(String.format("div.card-infos-left", cardsBudgetText)).getTexts();
-
-
-
-        Arrays.sort(texts);
-
-        $$(String.format("div.card-infos-left", cardsBudgetText)).shouldHave(CollectionCondition.texts(texts));
-
-       // searchHelper.verifySortingByBudget();
-        helperBase.toHomePage();
-    }*/
-    /*@Test
-    public void userCanSortProductsByNameinList()   {
-
-
-        // get list with product names
-        ArrayList expectedBudget = getList(java.util.Optional.of(".//*[@class='product-name']/a"));
-
-        // sort() will return this list sorted in ascending order
-        Collections.sort(expectedBudget);
-
-
-        // get another list with product names
-        ArrayList actualBudget = getList(".//*[@class='product-name']/a");
-
-        // compare lists
-        assertEquals(actualNames, expectedBudget, "Not sorted by name.");
-
-    }*/
-
 
 }

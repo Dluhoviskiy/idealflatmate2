@@ -2,6 +2,8 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.SelenideElement;
 
+import java.util.List;
+
 import static com.codeborne.selenide.Condition.appears;
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
@@ -39,6 +41,10 @@ public class HelperBase {
 
     public static void closeButtonRenew() {
         $(byXpath("(//button[@aria-label='Close'])[2]")).click();
+    }
+
+    public static List<String> getFMcardSearchText() {
+        return $$(byXpath("//div[@class='card-profile-text']")).texts();
     }
 
     public void fillInField(String text, SelenideElement $, SelenideElement selenideElement) {

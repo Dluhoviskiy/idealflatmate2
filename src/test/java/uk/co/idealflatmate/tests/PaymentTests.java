@@ -12,6 +12,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Premium@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
+        authorizationHelper.submitLogin();
         verificationHelper.verificationUserNameOnHomePage("Zlatan");
         searchHelper.searchProperty("#0012906");
         paymentsHelper.verificationPhone("XXXX");
@@ -26,6 +27,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
+        authorizationHelper.submitLogin();
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchProperty("#0012906");
         paymentsHelper.verificationPhone("XXXX");
@@ -42,6 +44,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
+        authorizationHelper.submitLogin();
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchProperty("#0012906");
         getMessageHelper().clickPropertyContact();

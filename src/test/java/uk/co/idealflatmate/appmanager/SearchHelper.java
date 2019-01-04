@@ -2,11 +2,9 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import org.codehaus.groovy.antlr.treewalker.SourcePrinter;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
@@ -163,7 +161,7 @@ public class SearchHelper extends HelperBase {
         sleep(5000);
     }
 
-    public void activeBudget() {
+    public static void activeBudget() {
 
         $(byXpath("//div[@class='price-range-filter ']")).click();
         $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//span[contains(.,'Clear')]")));
@@ -179,11 +177,14 @@ public class SearchHelper extends HelperBase {
     }
 
     public void activeRooms(String roomsAvailable, String roomsTotal) {
+        SelenideElement selectAvailRoom = $(byXpath("//label[contains(.,'Rooms available in property')]/..//select[@class='form-control']"));
+        SelenideElement selectTotalRoom = $(byXpath("//label[contains(.,'Total rooms in property')]/..//select[@class='form-control']"));
+
         $(byXpath("//div[@class='bedrooms-filter ']")).click();
-        $(byXpath("//label[contains(.,'Rooms available in property')]/..//select[@class='form-control']")).click();
-        $(By.xpath("//label[contains(.,'Rooms available in property')]/..//select[@class='form-control']")).selectOptionContainingText(roomsAvailable);
-        $(By.xpath("//label[contains(.,'Total rooms in property')]/..//select[@class='form-control']")).click();
-        $(By.xpath("//label[contains(.,'Total rooms in property')]/..//select[@class='form-control']")).selectOptionContainingText(roomsTotal);
+        selectAvailRoom.click();
+        selectAvailRoom.selectOptionContainingText(roomsAvailable);
+        selectTotalRoom.click();
+        selectTotalRoom.selectOptionContainingText(roomsTotal);
         clickApply();
     }
 
@@ -237,11 +238,11 @@ public class SearchHelper extends HelperBase {
     }
 
     public void clickSearchPropPage(String location) {
-        SelenideElement element = $(byXpath("//div[@class='search-location-form']//input"));
-        element.click();
-        element.clear();
-        element.setValue(location);
-        element.pressEnter();
+        SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
+        searchField.click();
+        searchField.clear();
+        searchField.setValue(location);
+        searchField.pressEnter();
         sleep(2000);
 
     }
@@ -282,7 +283,7 @@ public class SearchHelper extends HelperBase {
     }
 
     public void verifSearchHasNoLocation(String location) {
-
+        sleep(3000);
         $(byXpath("//h1[@class='h4' and contains(.,'"+location+"')]")).shouldNotBe(visible);
     }
 
@@ -303,50 +304,40 @@ public class SearchHelper extends HelperBase {
         clearFilter();
     }
 
-    public void checkDefaultTopMatch() {
+    public void checkSort(String sort) {
         sleep(3000);
 
-        List<String> sortDef = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        System.out.println(sortDef);
-        $("#property-sort").selectOptionContainingText("Top matched");
+        List<String> sortDef1 = getFMcardSearchText();
+        $("#property-sort").selectOptionContainingText(sort);
         sleep(3000);
-
-        List<String> sortNew = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        System.out.println(sortNew);
-        //Arrays.sort(pota);
-        Assert.assertNotEquals(sortDef, sortNew);
-    }
-
-    public void checkMostRecentSort() {
-        sleep(3000);
-
-        List<String> sortDef1 = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        $("#property-sort").selectOptionContainingText("Most recent");
-        sleep(3000);
-        List<String> sortNew1 = $$(byXpath("//div[@class='card-profile-text']")).texts();
+        List<String> sortNew1 = getFMcardSearchText();
         Assert.assertNotEquals(sortNew1, sortDef1);
     }
 
-    public void checkLowPriceSort() {
+    public void checkSortHighPrice(String option) {
         sleep(3000);
 
-        List<String> sortDef2 = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        $("#property-sort").selectOptionContainingText("Price low to high");
+        List<String> sortDef1 = getFMcardSearchText();
+        $(byXpath("//select[@class='form-control']")).selectOptionByValue(option);
         sleep(3000);
-        List<String> sortNew2 = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        Assert.assertNotEquals(sortNew2, sortDef2);
-
+        List<String> sortNew1 = getFMcardSearchText();
+        Assert.assertNotEquals(sortNew1, sortDef1);
     }
 
-    public void checkHighPriceSort() {
+
+
+
+    public void checkHighPriceSort(String option) {
         sleep(5000);
 
-        List<String> sortDef2 = $$(byXpath("//div[@class='card-profile-text']")).texts();
+        List<String> sortDef2 = getFMcardSearchText();
         $("#property-sort").click();
-        $(byId("property-sort")).selectOptionByValue("3");
+        $(byId("property-sort")).selectOptionByValue(option);
         sleep(3000);
-        List<String> sortNew2 = $$(byXpath("//div[@class='card-profile-text']")).texts();
+        List<String> sortNew2 = getFMcardSearchText();
         Assert.assertNotEquals(sortNew2, sortDef2);
-
+        sleep(3000);
     }
+
+
 }

@@ -82,7 +82,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
-        searchHelper.checkHighPriceSort();
+        searchHelper.checkHighPriceSort("3");
         searchHelper.verifSearchHasNoLocation("London");
         searchHelper.clickSearchPropPage("London");
         searchHelper.verifSearchHasLocation("London");
@@ -91,10 +91,10 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.noActiveFilters();
 
         searchHelper.activeBudget();
-        searchHelper.checkDefaultTopMatch();
+        searchHelper.checkSort("Top matched");
 
         searchHelper.activeAvailable();
-        searchHelper.checkMostRecentSort();
+        searchHelper.checkSort("Most recent");
 
         searchHelper.activeRooms("Studio","1 room");
         searchHelper.activeIdealFM();
@@ -111,10 +111,11 @@ public class SearchPropertiesPageTests extends TestBase{
 
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
-        searchHelper.checkDefaultTopMatch();
-        searchHelper.checkMostRecentSort();
-        searchHelper.checkLowPriceSort();
-        searchHelper.checkHighPriceSort();
+        searchHelper.checkSort("Price low to high");
+        searchHelper.checkSort("Default");
+        searchHelper.checkSort("Most recent");
+        searchHelper.checkSortHighPrice("3");//Price high to low
+        searchHelper.checkSort("Top matched");
         //searchHelper.clickAvailablePlus("Rooms number: 2 ");
         // No "1 rooms available" after sorting
         //searchHelper.cardsWith2roomsAvailable(11, "\n" + "1 rooms available\n" + " ");

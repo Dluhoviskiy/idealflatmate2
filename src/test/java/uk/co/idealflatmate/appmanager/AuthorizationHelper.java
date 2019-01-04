@@ -110,7 +110,7 @@ public class AuthorizationHelper extends HelperBase {
         sleep(2000);
     }
 
-    public void clickSignInButtonInForm() {
+    public static void clickSignInButtonInForm() {
         $(byXpath("//a[contains(., 'Sign in')]")).hover();
         $(byXpath("//a[contains(., 'Sign in')]")).click();
 
@@ -262,5 +262,13 @@ public class AuthorizationHelper extends HelperBase {
     public void clickLoginWithFacebook1() {
         $(byXpath("(//a[contains(., 'Log in')])[2]")).click();
         $(byXpath("//span[contains(., 'Log in with Facebook')]")).click();
+    }
+
+    public void login(String email, String password){
+        clickJoinFreeButton();
+        clickSignInButtonInForm();
+        setLoginAsUserWithoutPackage(email);
+        setPassword(password);
+        submitLogin();
     }
 }

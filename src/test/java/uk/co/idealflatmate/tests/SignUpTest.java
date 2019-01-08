@@ -387,7 +387,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1312)
     public void ListingSignUpHeader() {
         //newDriverPage();
         clearCache();
@@ -420,7 +420,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1313)
     public void ListingSignUpFromHomepage() {
         //newDriverPage();
         clearCache();

@@ -136,11 +136,17 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void profilePhone(String phone) {
-        Field2("#moreinfosignupform-phone", "#moreinfosignupform-phone", "#moreinfosignupform-phone", phone);
+        Field2("#moreinfosignupform-phone",
+                "#moreinfosignupform-phone",
+                "#moreinfosignupform-phone",
+                 phone);
     }
 
     public void profilePhoneMessage(String phone) {
-        Field2("#messagewritesignupform-phone", "#messagewritesignupform-phone", "#messagewritesignupform-phone", phone);
+        Field2("#messagewritesignupform-phone",
+                "#messagewritesignupform-phone",
+                "#messagewritesignupform-phone",
+                phone);
     }
 
     public void occupation(String prof) {

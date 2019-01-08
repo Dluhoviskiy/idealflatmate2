@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class SignUpLikeOrMessage extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 1101)
     public void messagePropertySignUpHomePage() {
         //newDriverPage();
         clearCache();
@@ -93,7 +93,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test (priority = 2)
+    @Test (priority = 1102)
 
 
 
@@ -195,7 +195,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test (priority = 3)
+    @Test (priority = 1103)
     public void signUpLike3rdPageQuit() {
         //newDriverPage();
         clearCache();
@@ -222,7 +222,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 4)
+    @Test (priority = 1104)
     public void signUpLikeHomePage() {
         //newDriverPage();
         clearCache();
@@ -274,7 +274,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.isHomePage1();
 
     }
-    @Test (priority = 5)
+    @Test (priority = 1105)
     public void popupSignUpPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -329,7 +329,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 6)
+    @Test (priority = 1106)
     public void popupSignUpWithExistingEmail() {
         //newDriverPage();
         clearCache();
@@ -349,7 +349,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test (priority = 7)
+    @Test (priority = 1107)
     public void popupSignUpExistingEmailPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -376,7 +376,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
 
-    @Test (priority = 8)
+    @Test (priority = 1108)
     public void popupSignUpWithBlankRequiredFields() {
         //newDriverPage();
         clearCache();
@@ -437,7 +437,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
 
-    @Test (priority = 7)
+    @Test (priority = 1109)
     public void popupSignUpExistingEmailPropertyPhone() {
         //newDriverPage();
         clearCache();

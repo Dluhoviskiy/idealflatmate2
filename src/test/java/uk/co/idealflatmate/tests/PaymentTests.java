@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PaymentTests extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 701)
     public void AbilityToSeePhone() {
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -21,7 +21,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 2)
+    @Test (priority = 702)
     public void GoPremiumFHPaymentOnPhone() {
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -38,7 +38,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 3)
+    @Test (priority = 703)
     public void GoPremiumFHPaymentOnMessage() {
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -55,7 +55,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 4)
+    @Test (priority = 704)
     public void PremiumFHPaymentWorldPay() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
@@ -88,7 +88,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Ronald");
     }
-   // @Test (priority = 8)
+   // @Test (priority = 705)
     public void LandlordPaymentPayPal() {
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();

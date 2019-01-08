@@ -7,7 +7,7 @@ public class HomePageTest extends TestBase {
 
 
 
-    @Test (priority = 1)
+    @Test (priority = 401)
     public void amountOfBlocsAndTextOfAreas() {
 
         homePageHelper.amountOfFeedbackBlocks(4);
@@ -19,7 +19,7 @@ public class HomePageTest extends TestBase {
         homePageHelper.amountOfMatchListRoom(2);
     }
 
-    @Test (priority = 2)
+    @Test (priority = 402)
     public void findOutMore() {
         HelperBase.closeAdvPopUp();
         homePageHelper.scrollToBlockProperty();
@@ -32,7 +32,7 @@ public class HomePageTest extends TestBase {
         helperBase.toHomePage();
     }
 
-    @Test (priority = 4)
+    @Test (priority = 403)
     public void findStartMatchingLink() {
 
         matchingHelper.clickHomePageMatching();
@@ -40,7 +40,7 @@ public class HomePageTest extends TestBase {
         matchingHelper.quitQuiz();
     }
 
-    @Test (priority = 5)
+    @Test (priority = 404)
     public void findStartListing() {
         homePageHelper.scrollToBlockSelect();
         homePageHelper.clickAddListingFromHow();
@@ -48,7 +48,7 @@ public class HomePageTest extends TestBase {
         homePageHelper.clickLogo();
     }
 
-    @Test (priority = 6)
+    @Test (priority = 405)
     public void blogFM() {
         homePageHelper.hoverCommunity();
         homePageHelper.clickFMBlog();
@@ -56,7 +56,7 @@ public class HomePageTest extends TestBase {
         helperBase.toHomePage();
     }
 
-    @Test (priority = 7)
+    @Test (priority = 406)
     public void blogLandlord() {
 
         homePageHelper.hoverCommunity();
@@ -65,7 +65,7 @@ public class HomePageTest extends TestBase {
         helperBase.toHomePage();
     }
 
-    @Test (priority = 8)
+    @Test (priority = 407)
     public void pressLogo() {
 
         homePageHelper.clickLogo();

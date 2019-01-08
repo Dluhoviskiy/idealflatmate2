@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class SignUpMatching extends TestBase {
 
 
-    @Test (priority = 1)
+    @Test (priority = 1201)
 
     public void signUpMatchingWithBlankFirstName() {
         clearCache();
@@ -14,7 +14,7 @@ public class SignUpMatching extends TestBase {
         matchingHelper.quitQuiz();
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1202)
     public void SignUpMatchingWithRequiredFieldsRoom() {
         //newDriverPage();
         clearCache();
@@ -102,7 +102,7 @@ public class SignUpMatching extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 3)
+    @Test (priority = 1203)
     public void SignUpMatchingWithRequiredFieldsFMRoom() {
         //newDriverPage();
         clearCache();
@@ -166,7 +166,7 @@ public class SignUpMatching extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 4)
+    @Test (priority = 1204)
     public void SignUpMatchingWithRequiredFieldsFMRoomSearchFM() {
         //newDriverPage();
         clearCache();
@@ -232,7 +232,7 @@ public class SignUpMatching extends TestBase {
     }
 
 
-    @Test (priority = 5)
+    @Test (priority = 1205)
     public void SignUpWithMatchingWithBlankRequiredFields() {
         //newDriverPage();
         clearCache();

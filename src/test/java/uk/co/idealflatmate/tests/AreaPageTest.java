@@ -7,7 +7,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlHomeNew;
 
 public class AreaPageTest extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 101)
     public void testAreaFirstFeaturedHomePageHeader() {
 
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
@@ -17,7 +17,7 @@ public class AreaPageTest extends TestBase {
         pageUrlHomeNew();
     }
 
-    @Test (priority = 2)
+    @Test (priority = 102)
     public void testAreaFirstFeaturedLinkArea() {
         //newDriverPage();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(2).text();
@@ -29,7 +29,7 @@ public class AreaPageTest extends TestBase {
         pageUrlHomeNew();
     }
 
-    @Test (priority = 3)
+    @Test (priority = 103)
     public void testAreaFirstFeaturedLinkMap() {
 
         areaPageHelper.clickArea(2);
@@ -38,7 +38,7 @@ public class AreaPageTest extends TestBase {
 
     }
 
-    @Test (priority = 4)
+    @Test (priority = 104)
     public void testAreaSeeMoreRooms() {
 
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(4).text();
@@ -51,7 +51,7 @@ public class AreaPageTest extends TestBase {
         pageUrlHomeNew();
     }
 
-    @Test (priority = 5)
+    @Test (priority = 105)
     public void testAreaLinkFH() {
 
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
@@ -61,7 +61,7 @@ public class AreaPageTest extends TestBase {
         areaPageHelper.pagination();
         pageUrlHomeNew();
     }
-    @Test (priority = 6)
+    @Test (priority = 106)
     public void testExploreMoreArea() {
 
         areaPageHelper.clickArea(1);

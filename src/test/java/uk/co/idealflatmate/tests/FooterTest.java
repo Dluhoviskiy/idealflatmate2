@@ -10,63 +10,63 @@ public class FooterTest extends TestBase {
         navigator.back();
     }*/
 
-    @Test(priority = 1)
+    @Test(priority = 301)
     public void footerHomeLink() {
 
         footerHelper.footerHome();
         footerHelper.verificationFooterHome();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 302)
     public void footerAboutUsLink() {
         //helperBase.toHomePage();
         footerHelper.footerAboutUs();
         footerHelper.verificationFooterAboutUs();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 303)
     public void footerContactLink() {
         //helperBase.toHomePage();
         footerHelper.footerContact();
         footerHelper.verificationFooterContact();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 304)
     public void footerPressLink() {
         //helperBase.toHomePage();
         footerHelper.footerPress();
         footerHelper.verificationFooterPress();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 305)
     public void footerPricingLink() {
         //helperBase.toHomePage();
         footerHelper.footerPricing();
         footerHelper.verificationFooterPricing();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 306)
     public void footerMediaLink() {
         //helperBase.toHomePage();
         footerHelper.footerMedia();
         footerHelper.verificationFooterMedia();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 307)
     public void footerStaySafeLink() {
 
         footerHelper.footerStaySafe();
         footerHelper.verificationFooterStaySafe();
     }
 
-    @Test(priority = 9)
+    @Test(priority = 308)
     public void footerBlogLink() {
         newDriverPage();
         footerHelper.footerBlog();
         verificationHelper.FMBlog();
     }
 
-    @Test(priority = 8)
+    @Test(priority = 309)
     public void footerBrowseFlatsharesLink() {
         helperBase.toHomePage();
         footerHelper.footerBrowseFlatshares();
@@ -74,14 +74,14 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 8)
+    @Test(priority = 310)
     public void footerAskLandlord() {
         helperBase.toHomePage();
         footerHelper.footerAskLandlord();
         footerHelper.verificationAskLandlord();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 311)
     public void footerModern() {
         helperBase.toHomePage();
         footerHelper.footerModern();
@@ -89,14 +89,14 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 312)
     public void footerBrowseHowItWorksLink() {
         //helperBase.toHomePage();
         footerHelper.footerHowItWorks();
         footerHelper.verificationHowItWorks();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 313)
     public void footerBrowseTipsLink() {
         //helperBase.toHomePage();
         footerHelper.footerTipsWorks();
@@ -104,7 +104,7 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 1)
+    @Test(priority = 314)
     public void footerNLALink() {
         newDriverPage();
         footerHelper.footerNLAWorks();
@@ -121,14 +121,14 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 5)
+    @Test(priority = 315)
     public void footerTwitterLink() {
         helperBase.toHomePage();
         footerHelper.footerTwitter();
         footerHelper.verificationTwitter();
     }
 
-    @Test(priority = 6)
+    @Test(priority = 316)
     public void footerInstagramLink() {
         helperBase.toHomePage();
         footerHelper.footerInstagram();
@@ -136,7 +136,7 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 7)
+    @Test(priority = 317)
     public void footerYoutubeLink() {
         helperBase.toHomePage();
         footerHelper.footerYoutube();

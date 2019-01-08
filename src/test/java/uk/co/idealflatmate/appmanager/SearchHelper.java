@@ -247,6 +247,8 @@ public class SearchHelper extends HelperBase {
 
     }
 
+
+
     public void clearSearch() {
         $(byXpath("//form//span[@class='clear-location ']")).click();
         sleep(3000);

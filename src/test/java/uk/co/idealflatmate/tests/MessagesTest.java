@@ -12,7 +12,7 @@ public class MessagesTest extends TestBase {
 
    public final MessageHelper messageHelper = new MessageHelper();
 
-    @Test (priority = 1)
+    @Test (priority = 601)
     public void readMessageByLandlordWithoutSubscription() {
 
         authorizationHelper.clickJoinFreeButton();
@@ -26,7 +26,7 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
-    @Test (priority = 2)
+    @Test (priority = 602)
     public void sendMessageByLandlordWithoutSubscriptionToFM() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -44,7 +44,7 @@ public class MessagesTest extends TestBase {
         sleep(5000);
     }
 
-    @Test (priority = 3)
+    @Test (priority = 603)
     public void sendMessageByLandlordWithSubscriptionToFM() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -60,7 +60,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 4)
+    @Test (priority = 604)
     public void answerMessageFmWithoutSubscriptionToFM() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -76,7 +76,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 5)
+    @Test (priority = 605)
     public void answerMessageLandlordToPremiumFHWithoutSubscription() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -94,7 +94,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 6)
+    @Test (priority = 606)
     public void sendMessagePremiumFmToLandlordWithoutSubscriptionWithListingFromSearch() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -111,7 +111,7 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
-    @Test (priority = 7)
+    @Test (priority = 607)
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -134,7 +134,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 8)
+    @Test (priority = 608)
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();

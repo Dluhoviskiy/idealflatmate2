@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 public class SearchPropertiesPageTests extends TestBase{
 
 
-    @Test(priority = 1)
+    @Test(priority = 1001)
     public void propertySearchByDropDown() {
 
         authorizationHelper.selectAllPropertyInMenu();
@@ -22,7 +22,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     }
 
-    @Test(priority = 2)
+    @Test(priority = 1002)
     public void searchPagination() {
 
         authorizationHelper.goToPropertyPage();
@@ -43,7 +43,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1003)
     public void searchZone1Pagination() {
 
         authorizationHelper.goToPropertyPage();
@@ -53,7 +53,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 1004)
     public void searchEastLDNPagination() {
 
         authorizationHelper.goToPropertyPage();
@@ -63,7 +63,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 1005)
     public void applyMoreFilters() {
 
         authorizationHelper.goToPropertyPage();
@@ -77,7 +77,7 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.noActiveFilters();
         helperBase.toHomePage();
     }
-    @Test(priority = 6)
+    @Test(priority = 1006)
     public void applyAdvancedFiltersDefault() {
 
         authorizationHelper.goToPropertyPage();
@@ -106,7 +106,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 7)
+    @Test(priority = 1007)
     public void sortListing() {
 
         authorizationHelper.goToPropertyPage();

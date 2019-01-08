@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MatchingTests extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 501)
     public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom1();
@@ -64,7 +64,7 @@ public class MatchingTests extends TestBase {
     }
 
 
-    @Test (priority = 2)
+    @Test (priority = 502)
     public void StartMatchingOnFMSearchPage() {
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUpFMPage();

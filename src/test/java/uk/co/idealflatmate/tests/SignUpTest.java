@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SignUpTest extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 1301)
     public void SignUpBlankFieldsPropAddRentBlock() {
 
         paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock();
@@ -28,7 +28,7 @@ public class SignUpTest extends TestBase {
 
     }
 
-    @Test (priority = 1)
+    @Test (priority = 1302)
     public void SignUpBlankFieldsPropAddWorkBlock() {
 
         paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock1();
@@ -49,7 +49,7 @@ public class SignUpTest extends TestBase {
 
     }
 
-    @Test (priority = 1)
+    @Test (priority = 1303)
     public void headerRoomSignUpHomePageTenant() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -118,7 +118,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1304)
     public void headerSignUpHomePageFMSearchLiv_inWithoutAbout() {
         //newDriverPage();
         clearCache();
@@ -163,7 +163,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 3)
+    @Test (priority = 1305)
     public void headerSignUpWithExistingEmail() {
         //newDriverPage();
         clearCache();
@@ -189,7 +189,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
      }
 
-    @Test (priority = 4)
+    @Test (priority = 1306)
     public void headerSignUpWithBlankRequiredFieldsYourInf() {
         //newDriverPage();
         clearCache();
@@ -210,7 +210,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
-    @Test (priority = 5)
+    @Test (priority = 1307)
     public void headerSignUpWithBlankRequiredFieldsMoreAboutYou() {
         //newDriverPage();
         clearCache();
@@ -235,7 +235,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1308)
     public void headerSignUpWithBlankRequiredFieldsLocation() {
         //newDriverPage();
         clearCache();
@@ -271,7 +271,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1309)
     public void headerSignUpWithBlankRequiredFieldsBudget() {
         //newDriverPage();
         clearCache();
@@ -310,7 +310,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1310)
     //Facebook authorization doen`t work on staging
 
     public void headerSignUpViaFacebook() {
@@ -354,7 +354,7 @@ public class SignUpTest extends TestBase {
         newDriverPage();
     }
 
-    @Test (priority = 2)
+    @Test (priority = 1311)
     //Facebook authorization doen`t work on staging
 
     public void SignUpViaFacebookAgeUnder18() {

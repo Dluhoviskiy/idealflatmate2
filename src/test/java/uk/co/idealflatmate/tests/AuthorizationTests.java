@@ -11,7 +11,7 @@ public class AuthorizationTests extends TestBase {
 
 
 
-    @Test(priority = 1)
+    @Test(priority = 201)
     public void SuccessClassicLogInLogout() {
 
         authorizationHelper.clickJoinFreeButton();
@@ -24,7 +24,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 202)
     public void SuccessClassiclogInOnPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
@@ -37,7 +37,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 203)
     public void SuccessClassiclogInOnFMPage() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -50,7 +50,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test(priority = 4)
+    @Test(priority = 204)
     public void EmailWronglogInHomePage() {
 
         authorizationHelper.clickJoinFreeButton();
@@ -62,7 +62,7 @@ public class AuthorizationTests extends TestBase {
         signUpHelper.quit();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 205)
     public void PasswordWronglogInHomePage() {
 
         authorizationHelper.clickJoinFreeButton();
@@ -74,7 +74,7 @@ public class AuthorizationTests extends TestBase {
         signUpHelper.quit();
     }
 
-    @Test (priority = 10)
+    @Test (priority = 206)
     //Facebook authorization doen`t work on staging
     public void SuccessLogInViaFacebook() {
         clearCache();
@@ -89,7 +89,7 @@ public class AuthorizationTests extends TestBase {
         //newDriverPage();
     }
 
-    @Test (priority = 10)
+    @Test (priority = 207)
     public void SuccessLogInWithMatchingFB() {
         newDriverPage();
         open("https://www.idealflatmate.co.uk/");
@@ -126,7 +126,7 @@ public class AuthorizationTests extends TestBase {
         //newDriverPage();
     }
 
-    @Test (priority = 7)
+    @Test (priority = 208)
     public void InvalidAuthorizationWithEmptyFields() {
         //newDriverPage();
         clearCache();
@@ -139,7 +139,7 @@ public class AuthorizationTests extends TestBase {
        //verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-    @Test (priority = 8)
+    @Test (priority = 209)
     public void SuccessLogInMessageProperty() {
         clearCache();
         getMessageHelper().clickPropertyCardMessageUnlogged();
@@ -153,7 +153,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 9)
+    @Test (priority = 210)
     public void SuccessLogInContactProperty() {
         clearCache();
         getMessageHelper().clickPropertyCardFirstOnPage();
@@ -169,7 +169,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 9)
+    @Test (priority = 211)
     public void SuccessLogInMessageFM() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -185,7 +185,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 9)
+    @Test (priority = 212)
     public void SuccessLogInContactFM() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -201,7 +201,7 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-    @Test (priority = 1)
+    @Test (priority = 213)
     public void SuccessLogInPhoneReveal() {
         clearCache();
         getMessageHelper().clickPropertyCardFirstOnPage();

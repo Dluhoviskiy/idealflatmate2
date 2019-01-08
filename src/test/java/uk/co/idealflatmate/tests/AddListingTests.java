@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AddListingTests extends TestBase {
 
-    @Test (priority = 1)
+    @Test
     public void SuccessfulLoginStartListing() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -44,7 +44,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 2)
+    @Test
     public void SuccessfulLoginPendingListing() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -84,7 +84,7 @@ public class AddListingTests extends TestBase {
 
     }
 
-    @Test (priority = 3)
+    @Test
     public void TestSignUpSuccessfulPropertyAdding() {
         clearCache();
 
@@ -136,7 +136,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 4)
+    @Test
     public void TestSuccessfulPropertyAddingWithAllFields() {
         clearCache();
         authorizationHelper.clickJoinFreeButton();

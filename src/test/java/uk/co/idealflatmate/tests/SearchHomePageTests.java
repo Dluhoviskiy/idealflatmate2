@@ -6,8 +6,9 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class SearchHomePageTests extends TestBase {
 
-    @Test(priority = 901)
+    @Test
     public void searchHomeByButton() {
+        clearCache();
         searchHelper.searchProperty("PO30");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchProperty("1 room matched to rent in and around PO30");
@@ -16,13 +17,15 @@ public class SearchHomePageTests extends TestBase {
 
     //@Test(priority = 2)
     public void TestSearchHomeByEnter() {
+        clearCache();
         searchHelper.searchPropertyByEnter("Clapham");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchOnFMPage("Clapham, London");
 
     }
-    @Test(priority = 902)
+    @Test
     public void searchHomeLocationFromList() {
+        clearCache();
         searchHelper.searchPropertyBySelectfromList("Clapham");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchProperty("8 rooms matched to rent in and around Clapham Junction");
@@ -32,26 +35,29 @@ public class SearchHomePageTests extends TestBase {
 
     @Test(priority = 903)
     public void searchHomeIncorrectData() {
+        clearCache();
         searchHelper.searchProperty("tttt");
         searchHelper.verificationSearchHomePage("Location\n" +  "not found. Please try again.\n" +  "");
         helperBase.toHomePage();
     }
-    @Test(priority = 904)
+    @Test
     public void searchHomePartOfLocationName() {
         searchHelper.searchProperty("wes");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchProperty("0 room matched to rent in and around Appleby in Westmorland");
         helperBase.toHomePage();
     }
-    @Test(priority = 905)
+    @Test
     public void searchHomeIDProperty() {
+        clearCache();
         searchHelper.searchProperty("#0013119");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMap(" London SE6 4RU, UK");
         helperBase.toHomePage();
     }
-    @Test(priority = 906)
+    @Test
     public void searchHomeNorthLND() {
+        clearCache();
         searchHelper.searchProperty("North London");
         sleep(10000);
         searchHelper.closePopupSignup();

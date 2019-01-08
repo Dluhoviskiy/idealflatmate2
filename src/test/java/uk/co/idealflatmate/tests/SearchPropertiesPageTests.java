@@ -10,9 +10,9 @@ import static org.testng.Assert.assertEquals;
 public class SearchPropertiesPageTests extends TestBase{
 
 
-    @Test(priority = 1001)
+    @Test
     public void propertySearchByDropDown() {
-
+        clearCache();
         authorizationHelper.selectAllPropertyInMenu();
         searchHelper.closePopupSignup();
         searchHelper.amountPropertyCards(11);
@@ -22,9 +22,9 @@ public class SearchPropertiesPageTests extends TestBase{
 
     }
 
-    @Test(priority = 1002)
+    @Test
     public void searchPagination() {
-
+        clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.moveToPage(2, "2");
@@ -43,9 +43,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 1003)
+    @Test
     public void searchZone1Pagination() {
-
+        clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.zone1();
@@ -53,9 +53,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 1004)
+    @Test
     public void searchEastLDNPagination() {
-
+        clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.EastLDN1();
@@ -63,9 +63,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 1005)
+    @Test
     public void applyMoreFilters() {
-
+        clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.noActiveFilters();
@@ -77,9 +77,9 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.noActiveFilters();
         helperBase.toHomePage();
     }
-    @Test(priority = 1006)
+    @Test
     public void applyAdvancedFiltersDefault() {
-
+        clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.checkHighPriceSort("3");
@@ -106,9 +106,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 1007)
-    public void sortListing() {
-
+    @Test
+    void sortListing() {
+        clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.checkSort("Price low to high");

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class EmailTests extends TestBase {
 
 
-    @Test (priority = 2000)
+    @Test
     public void TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub() {
         emailHelper.openGmailPage();
         emailHelper.setLoginAsUserEmail("cro.gen.idealflatmate@gmail.com");

@@ -10,63 +10,63 @@ public class FooterTest extends TestBase {
         navigator.back();
     }*/
 
-    @Test(priority = 301)
+    @Test
     public void footerHomeLink() {
 
         footerHelper.footerHome();
         footerHelper.verificationFooterHome();
     }
 
-    @Test(priority = 302)
+    @Test
     public void footerAboutUsLink() {
         //helperBase.toHomePage();
         footerHelper.footerAboutUs();
         footerHelper.verificationFooterAboutUs();
     }
 
-    @Test(priority = 303)
+    @Test
     public void footerContactLink() {
         //helperBase.toHomePage();
         footerHelper.footerContact();
         footerHelper.verificationFooterContact();
     }
 
-    @Test(priority = 304)
+    @Test
     public void footerPressLink() {
         //helperBase.toHomePage();
         footerHelper.footerPress();
         footerHelper.verificationFooterPress();
     }
 
-    @Test(priority = 305)
+    @Test
     public void footerPricingLink() {
         //helperBase.toHomePage();
         footerHelper.footerPricing();
         footerHelper.verificationFooterPricing();
     }
 
-    @Test(priority = 306)
+    @Test
     public void footerMediaLink() {
         //helperBase.toHomePage();
         footerHelper.footerMedia();
         footerHelper.verificationFooterMedia();
     }
 
-    @Test(priority = 307)
+    @Test
     public void footerStaySafeLink() {
 
         footerHelper.footerStaySafe();
         footerHelper.verificationFooterStaySafe();
     }
 
-    @Test(priority = 308)
+    @Test
     public void footerBlogLink() {
         newDriverPage();
         footerHelper.footerBlog();
         verificationHelper.FMBlog();
     }
 
-    @Test(priority = 309)
+    @Test
     public void footerBrowseFlatsharesLink() {
         helperBase.toHomePage();
         footerHelper.footerBrowseFlatshares();
@@ -74,14 +74,14 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 310)
+    @Test
     public void footerAskLandlord() {
         helperBase.toHomePage();
         footerHelper.footerAskLandlord();
         footerHelper.verificationAskLandlord();
     }
 
-    @Test(priority = 311)
+    @Test
     public void footerModern() {
         helperBase.toHomePage();
         footerHelper.footerModern();
@@ -89,14 +89,14 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-    @Test(priority = 312)
+    @Test
     public void footerBrowseHowItWorksLink() {
         //helperBase.toHomePage();
         footerHelper.footerHowItWorks();
         footerHelper.verificationHowItWorks();
     }
 
-    @Test(priority = 313)
+    @Test
     public void footerBrowseTipsLink() {
         //helperBase.toHomePage();
         footerHelper.footerTipsWorks();
@@ -104,7 +104,7 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 314)
+    @Test
     public void footerNLALink() {
         newDriverPage();
         footerHelper.footerNLAWorks();
@@ -121,14 +121,14 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 315)
+    @Test
     public void footerTwitterLink() {
         helperBase.toHomePage();
         footerHelper.footerTwitter();
         footerHelper.verificationTwitter();
     }
 
-    @Test(priority = 316)
+    @Test
     public void footerInstagramLink() {
         helperBase.toHomePage();
         footerHelper.footerInstagram();
@@ -136,7 +136,7 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test(priority = 317)
+    @Test
     public void footerYoutubeLink() {
         helperBase.toHomePage();
         footerHelper.footerYoutube();

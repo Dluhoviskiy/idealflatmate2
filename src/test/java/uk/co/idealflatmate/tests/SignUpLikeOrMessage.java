@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class SignUpLikeOrMessage extends TestBase {
 
-    @Test (priority = 1101)
+    @Test
     public void messagePropertySignUpHomePage() {
         //newDriverPage();
         clearCache();
@@ -93,7 +93,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test (priority = 1102)
+    @Test
 
 
 
@@ -195,7 +195,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test (priority = 1103)
+    @Test
     public void signUpLike3rdPageQuit() {
         //newDriverPage();
         clearCache();
@@ -222,7 +222,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 1104)
+    @Test
     public void signUpLikeHomePage() {
         //newDriverPage();
         clearCache();
@@ -274,7 +274,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.isHomePage1();
 
     }
-    @Test (priority = 1105)
+    @Test
     public void popupSignUpPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -329,7 +329,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test (priority = 1106)
+    @Test
     public void popupSignUpWithExistingEmail() {
         //newDriverPage();
         clearCache();
@@ -349,7 +349,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test (priority = 1107)
+    @Test
     public void popupSignUpExistingEmailPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -376,7 +376,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
 
-    @Test (priority = 1108)
+    @Test
     public void popupSignUpWithBlankRequiredFields() {
         //newDriverPage();
         clearCache();
@@ -437,8 +437,9 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
 
-    @Test (priority = 1109)
+    @Test
     public void popupSignUpExistingEmailPropertyPhone() {
+
         //newDriverPage();
         clearCache();
         authorizationHelper.FindHomeInMenu();

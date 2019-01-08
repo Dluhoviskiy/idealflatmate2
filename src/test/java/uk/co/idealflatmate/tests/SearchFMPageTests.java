@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 public class SearchFMPageTests extends TestBase{
 
 
-    @Test(priority = 801)
+    @Test
     public void fmSearchBy() {
-
+        clearCache();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.amountPropertyCards(12);
@@ -18,9 +18,9 @@ public class SearchFMPageTests extends TestBase{
 
     }
 
-    @Test(priority = 802)
+    @Test
     public void searchPagination() {
-
+        clearCache();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -40,9 +40,9 @@ public class SearchFMPageTests extends TestBase{
     }
 
 
-    @Test(priority = 803)
+    @Test
     public void applyMoreFilters() {
-
+        clearCache();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -55,9 +55,9 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 804)
+    @Test
     public void applyMoreFiltersPhotoNoList() {
-
+        clearCache();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -70,9 +70,9 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 805)
+    @Test
     public void applyMoreFiltersPhotoWithList() {
-
+        clearCache();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -85,9 +85,9 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 806)
+    @Test
     public void applyAdvancedFiltersDefault() {
-
+        clearCache();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.checkHighPriceSort("7");
@@ -111,9 +111,9 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test(priority = 807)
+    @Test
     public void sortListingLoggedIn() {
-
+        clearCache();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         authorizationHelper.login("FMMatchingSort@gmail.com","qqqqqq");

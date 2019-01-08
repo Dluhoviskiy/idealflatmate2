@@ -29,7 +29,7 @@ public class TestBase {
     public final SearchHelperFM searchHelperFM = new SearchHelperFM();
 
 
-    @BeforeGroups
+    /*@BeforeGroups
     public void setupGroup() {
         ChromeDriverManager.getInstance().setup();
         // FirefoxDriverManager.getInstance().setup();
@@ -48,7 +48,7 @@ public class TestBase {
 
         open("http://front.idealflatmate4test.demo.devplatform2.com");
 
-    }
+    }*/
 
 
     @BeforeClass
@@ -65,7 +65,7 @@ public class TestBase {
 
         Configuration.timeout = 10000;
         //open("https://www.idealflatmate.co.uk/");
-        HelperBase.closeAdvPopUp();
+        //HelperBase.closeAdvPopUp();
         //open("http://front.idealflatmate.demo.devplatform2.com");
 
         open("http://front.idealflatmate4test.demo.devplatform2.com");

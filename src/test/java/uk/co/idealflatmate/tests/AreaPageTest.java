@@ -8,39 +8,38 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlHomeNew;
 public class AreaPageTest extends TestBase {
 
     @Test
-    public void testAreaFirstFeaturedHomePageHeader() {
-
+    public void firstFeaturedHomePageHeader() {
+        pageUrlHomeNew();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
         areaPageHelper.clickArea(0);
         areaPageHelper.checkAreaName(area1);
         areaPageHelper.clickHeaderItem();
-        pageUrlHomeNew();
+
     }
 
     @Test
-    public void testAreaFirstFeaturedLinkArea() {
-        //newDriverPage();
+    public void firstFeaturedLinkArea() {
+        pageUrlHomeNew();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(2).text();
         areaPageHelper.clickArea(1);
         areaPageHelper.clicklinkNearbyAreas();
         areaPageHelper.checklinkNearbyAreas(area1);
         areaPageHelper.checkSortDropDownRoom();
         areaPageHelper.pagination();
-        pageUrlHomeNew();
+
     }
 
     @Test
-    public void testAreaFirstFeaturedLinkMap() {
-
+    public void firstFeaturedLinkMap() {
+        pageUrlHomeNew();
         areaPageHelper.clickArea(2);
         areaPageHelper.checklinkMap();
-        pageUrlHomeNew();
 
     }
 
     @Test
-    public void testAreaSeeMoreRooms() {
-
+    public void seeMoreRooms() {
+        pageUrlHomeNew();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(4).text();
         areaPageHelper.clickArea(2);
         areaPageHelper.clickMoreRooms();
@@ -48,25 +47,25 @@ public class AreaPageTest extends TestBase {
         areaPageHelper.checkNumberOfProperties();
         areaPageHelper.checkSortDropDownRoom();
         areaPageHelper.pagination();
-        pageUrlHomeNew();
+
     }
 
     @Test
-    public void testAreaLinkFH() {
-
+    public void linkFH() {
+        pageUrlHomeNew();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
         areaPageHelper.clickArea(0);
         areaPageHelper.checklinkFH(area1);
         areaPageHelper.checkSortDropDownFM();
         areaPageHelper.pagination();
-        pageUrlHomeNew();
+
     }
     @Test
-    public void testExploreMoreArea() {
-
+    public void exploreMoreArea() {
+        pageUrlHomeNew();
         areaPageHelper.clickArea(1);
         areaPageHelper.checkArrowsBrowsAll();
         areaPageHelper.checkAllAreas("Liverpool");
-        //pageUrlHomeNew();
+
     }
 }

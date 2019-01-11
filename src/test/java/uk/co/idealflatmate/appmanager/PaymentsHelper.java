@@ -48,11 +48,11 @@ public class PaymentsHelper extends HelperBase {
     }
 
     public void verificationPhone(String text) {
-        $(byXpath("(//span[@class='text-bold property-phone_hide js-phone-box'])[2]")).waitUntil(visible, 10000).shouldHave(text(text));
+        $(byXpath("//section[@id='property-infos']//span[@class='property-phone_hide js-phone-box']")).waitUntil(visible, 10000).shouldHave(text(text));
     }
 
     public void verificationPremiumPopup(String text) {
-        $(byXpath("(//h4[@class='modal-title'])[2]")).waitUntil(visible, 10000).shouldHave(text(text));
+        $(byXpath("//h4[@class='modal-title']")).waitUntil(visible, 10000).shouldHave(text(text));
     }
     public void closePremiumPopup() {
 

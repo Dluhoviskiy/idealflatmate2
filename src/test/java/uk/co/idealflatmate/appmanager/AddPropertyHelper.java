@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
 import java.io.File;
@@ -15,6 +16,7 @@ public class AddPropertyHelper extends HelperBase {
 
 
     public final MessageHelper messageHelper = new MessageHelper();
+    private String string;
 
     public void openDropDownMenu() {
         $(byXpath("(//li[@class='dropdown nav-ihm-profile-bars'])[1]")).waitUntil(visible, 5000).click();
@@ -34,7 +36,7 @@ public class AddPropertyHelper extends HelperBase {
 
     public void chooseListingsFromDropDownMenu() {
         sleep(2000);
-        $(byXpath("//li//a//span[@class='hidden-xs']")).click();
+        $(byXpath("//nav//li//a//span[@class='hidden-xs']")).click();
         $(byXpath("(//a[contains(text(), 'My listings')])[1]")).click();
 
     }
@@ -88,9 +90,9 @@ public class AddPropertyHelper extends HelperBase {
 
     public void setPhoneNumber1(String Number) {
         sleep(2000);
-        //$(byXpath("//label[contains(text(), 'Phone Number')]")).scrollTo();
-        $(byXpath("//div//h2[contains(text(), 'Phone number')]/..//input[@id='property-phone_number']")).click();
-        $(byXpath("//input[@id='property-phone_number']")).clear();
+        fillInField(Number, $(byXpath("//div//h2[contains(text(), 'Phone number')]/..//input[@id='property-phone_number']")),
+                            $(byXpath("//input[@id='property-phone_number']")));
+
         $(byXpath("//input[@id='property-phone_number']")).setValue(Number);
         sleep(2000);
     }
@@ -100,22 +102,35 @@ public class AddPropertyHelper extends HelperBase {
         messageHelper.click(byXpath("//*[@id=\"property-bedrooms_no\"]/option[" + amount + "]"));
     }
 
-    public void setAllAmanities() {
-        $(byXpath("//div[@id='property-property_amenities']/div/label[contains(text(), 'Garden')]")).click();
-        $(byXpath("//div[@id='property-property_amenities']/div[2]")).click();
-        $(byXpath("//div[@id='property-property_amenities']/div[3]")).click();
-        $(byXpath("//div[@id='property-property_amenities']/div/label[contains(text(), 'Parking')]")).click();
-        $(byXpath("//div[@id='property-property_amenities']/div[1]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
-        $(byXpath("//div[@id='property-property_amenities']/div[2]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
-        $(byXpath("//div[@id='property-property_amenities']/div[3]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
-        $(byXpath("//div[@id='property-property_amenities']/div[4]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
-        $(byXpath("//div[@id='property-property_amenities']/div[4]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
-        $(byXpath("//label[@for='property-pets_accepted']")).click();
-        $(byXpath("//label[@for='property-smokers_accepted']")).click();
-        $("#property-smokers_accepted").shouldBe(selected);
-        $("#property-pets_accepted").shouldBe(selected);
-        $(byXpath("//label[@for='property-family_friendly']")).click();
-        $("#property-family_friendly").shouldBe(selected);
+    public void setAllAmanities(String text1, String text2, String text3, String text4, String text5, String text6, String text7) {
+        String string = "//div/label[contains(.,'";
+        String string2 = "')]";
+        String string3 = "')]/..";
+        String string4 = "//label[@for='";
+        Condition attribute = attribute("class", "checkbox checked");
+
+        $(byXpath(string + text1 + string2)).click();
+        $(byXpath(string + text1 + string3)).shouldHave(attribute);
+        sleep(1000);
+        $(byXpath(string + text2 + string2)).click();
+        $(byXpath(string + text2 + string3)).shouldHave(attribute);
+        sleep(1000);
+        $(byXpath(string + text3 + string2)).click();
+        $(byXpath(string + text3 + string3)).shouldHave(attribute);
+        sleep(1000);
+        $(byXpath(string + text4 + string2)).click();
+        $(byXpath(string + text4 + string3)).shouldHave(attribute);
+        sleep(1000);
+        $(byXpath(string4 + text5 + "']")).click();
+        $("#"+text5+"").shouldBe(selected);
+        sleep(1000);
+        $(byXpath(string4 + text6 + "']")).click();
+        $("#"+text6+"").shouldBe(selected);
+        sleep(1000);
+        $(byXpath(string4 + text7 + "']")).click();
+        $("#"+text7+"").shouldBe(selected);
+        sleep(1000);
+
     }
 
 
@@ -171,10 +186,9 @@ public class AddPropertyHelper extends HelperBase {
 
 
     public void setAnotherMonthlyRent(String rent) {
-        $(byXpath("//div/input[@id='room-3-price']")).click();
-        $(byXpath("//div/input[@id='room-3-price']")).setValue(rent);
+        fillInField(rent, $("#room-3-price"), $("#room-3-price"));
         $(byXpath("//div/input[@id='room-3-price']")).shouldHave(Condition.value("800"));
-        //$("#wizard-next").click();
+
     }
 
     public void setLeasePeriodSecondRoom() {

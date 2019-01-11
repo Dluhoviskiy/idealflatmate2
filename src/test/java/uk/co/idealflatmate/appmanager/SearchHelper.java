@@ -2,13 +2,16 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.google.common.collect.Ordering;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byId;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
@@ -340,6 +343,20 @@ public class SearchHelper extends HelperBase {
         Assert.assertNotEquals(sortNew2, sortDef2);
         sleep(3000);
     }
+    public void checkHighPriceSort1(String option) {
+        sleep(5000);
 
+        List<String> sortDef2 = $$(byXpath("//div[@class='card-profile-text']")).texts();
+        System.out.println(sortDef2);
+        Arrays.sort(new List[]{sortDef2});
+        //Arrays.sort $$(byXpath("//div[@class='card-profile-text']")).texts();
+        System.out.println(new List[]{sortDef2});
+        //System.out.println(sortDef2);
+        sleep(3000);
+        //Assert.assertEquals(sortDef2, new List[]{sortDef2});
+        //Arrays.sort(String {sortDef2});
+        boolean isSorted = Ordering.natural().isOrdered(sortDef2);
+        System.out.println(isSorted);
+    }
 
 }

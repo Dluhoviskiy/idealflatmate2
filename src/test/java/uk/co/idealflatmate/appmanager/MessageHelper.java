@@ -61,7 +61,9 @@ public class MessageHelper {
     }
 
     public  void clickPropertyCardFirstOnPage(){
+        sleep(5000);
         $(byXpath("(//h2)[4]")).hover();
+        sleep(1000);
         $(byXpath("(//a[@class='card-main-link'])[1]")).click();
 
     }
@@ -120,7 +122,7 @@ public class MessageHelper {
     }
 
     public void clickPhoneReveal() {
-        $(byXpath("(//span[contains(text(), 'Reveal')])[2]")).waitUntil(visible, 6000).click();
+        $(byXpath("//section[@id='property-infos']//span[contains(text(), 'Reveal')]")).waitUntil(visible, 6000).click();
 
     }
 

@@ -181,8 +181,11 @@ public class MatchingHelper extends HelperBase {
         $(byXpath("//a[contains(.,'Take the match test ')]")).waitUntil(visible, 8000).click();
     }
 
-    public void closePopup() {
-        $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).waitUntil(visible, 4000).click();
+    public void closePopupMatching() {
+        sleep(3000);
+        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).exists()) {
+            $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).waitUntil(visible, 10000).click();
+        }
     }
 
     public void clickARoom() {

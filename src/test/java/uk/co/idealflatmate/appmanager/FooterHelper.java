@@ -81,15 +81,15 @@ public class FooterHelper {
         $(byXpath("//div[@class='col-sm-4 col-md-2 u_m20-bottom-xs']/ul/li/a[contains(text(), 'Browse Flatshares')]")).waitUntil(visible, 4000).click();
     }
 
-    public void verificationBrowseFlatshares() {
-        $(byXpath("//button[contains(., 'North London')]")).waitUntil(visible, 10000).click();
+    public void verificationBrowseFlatshares(String location) {
+        $(byXpath("//button[contains(., '" + location + "')]")).waitUntil(visible, 10000).click();
         $(byXpath("(//li/a[contains(text(), 'Brent Park')])[1]")).waitUntil(visible, 4000).click();
         switchTo().window(1);
         if($(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')])[1]")).is(visible)){
             $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
-            $(byXpath("//h2[@class='h4']")).waitUntil(exist, 6000).shouldHave(text("0 room matched to rent in and around Brent Park"));
+            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text("0 room matched to rent in and around Brent Park"));
         }else {
-            $(byXpath("//h2[@class='h4']")).waitUntil(exist, 6000).shouldHave(text("0 room matched to rent in and around Brent Park"));
+            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text("0 room matched to rent in and around Brent Park"));
         }
     }
 

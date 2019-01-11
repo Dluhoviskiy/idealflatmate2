@@ -91,6 +91,7 @@ public class SearchFMPageTests extends TestBase{
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.checkHighPriceSort("7");
+        //searchHelper.checkHighPriceSort1("7");
         searchHelperFM.verifSearchHasNoLocationFM("London");
         searchHelper.clickSearchPropPage("London");
         searchHelperFM.verifSearchHasLocationFM("London");

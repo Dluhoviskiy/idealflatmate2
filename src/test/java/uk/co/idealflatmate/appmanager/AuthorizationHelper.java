@@ -15,7 +15,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void goToPropertyPage() {
-        $(byXpath("//a[contains(text(), 'Find a home')]")).waitUntil(appears, 10000).hover();
+        $(byXpath("//header//nav//ul//li//a[contains(text(), 'Find a home')]")).waitUntil(appears, 10000).hover();
         $(byXpath("//a[@href='/search' and contains(text(), 'All properties')]")).waitUntil(appears, 4000).click();
     }
 
@@ -131,19 +131,19 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void setNewLoginNameF(String nameF) {
-        fillInField(nameF, $("#signup-need-firstname"), $(byXpath("#signup-need-firstname")));
+        fillInField(nameF, $("#signup-need-firstname"), $("#signup-need-firstname"));
     }
 
     public void setNewLoginNameL(String nameL) {
-        fillInField(nameL, $("#signup-need-lastname"),  $(byXpath("#signup-need-firstname")));
+        fillInField(nameL, $("#signup-need-lastname"),  $("#signup-need-firstname"));
     }
 
     public void setNewLoginMailMatching(String email) {
-        fillInField(email, $("#signup-survey-email"),  $(byXpath("#signup-need-firstname")));
+        fillInField(email, $("#signup-survey-email"),  $("#signup-need-firstname"));
     }
 
     public void setNewLoginPasswordMatching(String password) {
-        fillInField(password, $("#signup-survey-password"),  $(byXpath("#signup-need-firstname")));
+        fillInField(password, $("#signup-survey-password"),  $("#signup-need-firstname"));
     }
 
     public void setNewLoginNameFMatching(String nameF) {
@@ -192,10 +192,12 @@ public class AuthorizationHelper extends HelperBase {
 
     public void clickCloseSignUp() {
         sleep(5000);
-        if ($(byXpath("//button[@class='btn btn-sm close u_m15']")).exists()){
-            $(byXpath("//button[@class='btn btn-sm close u_m15']")).click();
+        if ($(byXpath("//div[@id='signupNeedspaceModal']//button[@class='btn btn-sm close u_m15']")).isDisplayed()){
+            $(byXpath("//div[@id='signupNeedspaceModal']//button[@class='btn btn-sm close u_m15']")).click();
         }
     }
+
+
 
     //button[@class='btn btn-sm close u_m15']
 

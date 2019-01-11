@@ -8,26 +8,21 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void AbilityToSeePhone() {
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Premium@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+
+        authorizationHelper.login("cro.gen.Premium@gmail.com", "qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Zlatan");
         searchHelper.searchProperty("#0012906");
         paymentsHelper.verificationPhone("XXXX");
         getMessageHelper().clickPhoneReveal();
-        paymentsHelper.verificationPhoneVisible("778877777");
+
+        paymentsHelper.verificationPhoneVisible("777777777");
         authorizationHelper.logoutFromApp();
     }
 
     @Test
     public void GoPremiumFHPaymentOnPhone() {
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+        authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
+
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchProperty("#0012906");
         paymentsHelper.verificationPhone("XXXX");
@@ -40,11 +35,8 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void GoPremiumFHPaymentOnMessage() {
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+        authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
+
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchProperty("#0012906");
         getMessageHelper().clickPropertyContact();
@@ -59,18 +51,22 @@ public class PaymentTests extends TestBase {
     public void PremiumFHPaymentWorldPay() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
+
         authorizationHelper.clickJoinFreeButton();
-        //authorizationHelper.setNewLoginMail("cro.PremFHPayment6@gmail.com");
-        //authorizationHelper.setNewLoginPassword("qqqqqq");
-        authorizationHelper.setNewLoginNameF("Ronald");
-        authorizationHelper.setNewLoginNameL("NewOne");
-        authorizationHelper.setPhoneNumberHomePage("777777777");
-        verificationHelper.ageConfirmCheckClassicSignUp();
-       // authorizationHelper.clickFormSignUpSave();
-        //emailHelper.emailVerification();
-        authorizationHelper.clickCloseMoreAboutYou();
+        signUpHelper.clickRoom();
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "LiveInNewo141a2@gmail.com");
+
+        signUpHelper.MoreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter");
+
+        signUpHelper.whereWouldLikeLive("watf", "Watford");
+
+        signUpHelper.priceMove("15", "12", "2019");
+
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         paymentsHelper.goToPaymentsTab();
+
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
         //paymentsHelper.selectPremiumFlathunterPlan();
         paymentsHelper.upgradePremiumFH();
@@ -88,7 +84,10 @@ public class PaymentTests extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Ronald");
     }
-   // @Test (priority = 705)
+
+
+
+    // @Test (priority = 705)
     public void LandlordPaymentPayPal() {
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();

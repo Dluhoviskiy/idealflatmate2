@@ -3,8 +3,9 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.*;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerification;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 
 public class AuthorizationTests extends TestBase {
@@ -12,73 +13,96 @@ public class AuthorizationTests extends TestBase {
 
 
     @Test
-    public void SuccessClassicLogInLogout() {
+    public void classicLogInOut() {
+
+        open("http://front.idealflatmate4test.demo.devplatform2.com/");
 
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
+
         verificationHelper.verificationUserNameOnHomePage("Borris");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
     @Test
-    public void SuccessClassiclogInOnPropertyPage() {
+    public void logInOutOnPropertyPage() {
 
+        helperBase.pageUrlVerifLiveGoStage();
+        clearCache();
         authorizationHelper.goToPropertyPage();
+
         authorizationHelper.clickSignInButtonInPopup();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
+
         verificationHelper.verificationUserNameOnHomePage("Borris");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
 
     @Test
-    public void SuccessClassiclogInOnFMPage() {
+    public void logInOutOnFMPage() {
+
+        helperBase.pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickSignInButtonInPopup();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
+
         verificationHelper.verificationUserNameOnHomePage("Borris");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
     @Test
-    public void EmailWronglogInHomePage() {
+    public void emailWrongHomePage() {
 
+        helperBase.pageUrlVerifLiveGoStage();
+
+        //helperBase.pageUrlHomeNew();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHq@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
+
         verificationHelper.passwWrongAlertHome();
+
         signUpHelper.quit();
     }
 
     @Test
-    public void PasswordWronglogInHomePage() {
+    public void loginPassWronglogInHomePage() {
 
+        helperBase.pageUrlVerifLiveGoStage();
+
+        clearCache();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq1");
         authorizationHelper.submitLogin();
+
         verificationHelper.passwWrongAlertHome();
+
         signUpHelper.quit();
     }
 
     @Test
     //Facebook authorization doen`t work on staging
-    public void SuccessLogInViaFacebook() {
+    public void ablogInViaFacebook() {
+
         clearCache();
-        pageUrlVerification();
+        close();
+        open("https://www.idealflatmate.co.uk/");
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickLoginWithFacebook1();
@@ -86,12 +110,13 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        //newDriverPage();
+        helperBase.toHomePage();
     }
 
     @Test
-    public void SuccessLogInWithMatchingFB() {
-        newDriverPage();
+    public void alogInWithMatchingFB() {
+        clearCache();
+        close();
         open("https://www.idealflatmate.co.uk/");
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
@@ -123,12 +148,13 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        //newDriverPage();
+
     }
 
     @Test
-    public void InvalidAuthorizationWithEmptyFields() {
-        //newDriverPage();
+    public void invalidLoginWithEmptyFields() {
+
+        helperBase.pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -140,79 +166,92 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    public void SuccessLogInMessageProperty() {
+    public void logInMessageProperty() {
+
+        helperBase.pageUrlVerifLiveGoStage();
         clearCache();
         getMessageHelper().clickPropertyCardMessageUnlogged();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("FM_Manch_2@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        verificationHelper.verificationUserNameOnHomePage("Borris");
+
+        verificationHelper.verificationUserNameOnHomePage("FM_Manch_2");
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
 
     @Test
-    public void SuccessLogInContactProperty() {
-        clearCache();
+    public void logInContactProperty() {
+
+        helperBase.pageUrlVerifLiveGoStage();
         getMessageHelper().clickPropertyCardFirstOnPage();
         //authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickPropertyContact();
         authorizationHelper.clickFormSignInContact();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("FM_Manch_2@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        verificationHelper.verificationUserNameOnHomePage("Borris");
+        verificationHelper.verificationUserNameOnHomePage("FM_Manch_2");
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
 
     @Test
-    public void SuccessLogInMessageFM() {
-        clearCache();
+    public void logInMessageFM() {
+
+        helperBase.pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickFMCardMessageUnlogged();
         authorizationHelper.clickFormSignInContact();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("FMnew314@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        verificationHelper.verificationUserNameOnHomePage("Borris");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
 
     @Test
-    public void SuccessLogInContactFM() {
-        clearCache();
+    public void logInContactFM() {
+
+        helperBase.pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickFMCardFirstOnPage();
         getMessageHelper().clickFMContact();
         authorizationHelper.clickFormSignInContact();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("FMnew314@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        verificationHelper.verificationUserNameOnHomePage("Borris");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
     @Test
-    public void SuccessLogInPhoneReveal() {
+    public void logInPhoneReveal() {
+
+        helperBase.pageUrlVerifLiveGoStage();
         clearCache();
         getMessageHelper().clickPropertyCardFirstOnPage();
         getMessageHelper().clickPhoneReveal();
         authorizationHelper.clickSignInButtonInPopupPhone();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
+        authorizationHelper.setLoginAsUserWithoutPackage("FMnew314@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        verificationHelper.verificationUserNameOnHomePage("Borris");
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
 
 }

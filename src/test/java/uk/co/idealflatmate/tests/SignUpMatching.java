@@ -46,11 +46,7 @@ public class SignUpMatching extends TestBase {
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("Matching992o@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "Matching992o@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -89,7 +85,7 @@ public class SignUpMatching extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataProfileMatching();
+        verificationHelper.verificationDataProfileMatching("80%");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
@@ -153,7 +149,7 @@ public class SignUpMatching extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-       // matchingHelper.closePopup();
+       // matchingHelper.closePopupMatching();
         //signUpHelper.verificationDataProfileNameUser("flatmate");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
@@ -216,7 +212,7 @@ public class SignUpMatching extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-       // matchingHelper.closePopup();
+       // matchingHelper.closePopupMatching();
         signUpHelper.verificationDataProfileNameUser("Ronald", "40");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 

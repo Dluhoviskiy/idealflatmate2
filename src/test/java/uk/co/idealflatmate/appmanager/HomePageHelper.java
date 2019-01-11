@@ -111,7 +111,7 @@ public class HomePageHelper {
     }
 
     public void amountOfFeaturedRoom(int size) {
-        $$(byXpath("//div[@class='card-img']")).shouldHaveSize(size);
+        $$(byXpath("//div[@class='card-img with-overlay']")).shouldHaveSize(size);
     }
     public void amountOfAreasBlocks(int size) {
 

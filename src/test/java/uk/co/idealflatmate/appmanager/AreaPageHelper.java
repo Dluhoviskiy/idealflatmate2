@@ -170,7 +170,7 @@ public class AreaPageHelper extends HelperBase {
         $$(byXpath("//h2")).shouldHaveSize(6);
         $(byXpath("//div/p[contains(.,'Payment methods we accept:')]")).click();
         //$$(byXpath("//div[@class='page-heading u_nob']//button[@class='area-card--button text-bold']")).shouldHaveSize(6);
-        $(byXpath("(//div[@class='page-heading u_nob']//button[@class='area-card--button text-bold'])[6]")).click();
+        $(byXpath("//div[@class='area-region u_m50-bottom']//button[@class='area-card--button text-bold']")).click();
         $(byXpath("//a[contains(.,'"+City+"')]")).click();
         switchTo().window(2);
         closeAdvPopUp();

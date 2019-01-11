@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.SelenideElement;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class HelperBase {
@@ -108,15 +110,31 @@ public class HelperBase {
         $(byXpath("//select[@id='yourinfoadditionalsignupform-year']")).selectOptionByValue(year);
     }
 
-    public static void pageUrlVerification(){
+    public static void pageUrlVerifStageGoLive(){
         // проверить, что вы находитесь на верной странице
         if (url().contains("http://front.idealflatmate4test.demo.devplatform2.com")) {
+            clearBrowserCache();
+            refresh();
             open("https://www.idealflatmate.co.uk/");}
     }
 
-    public static void pageUrlHomeNew(){
+    public static void pageUrlVerifLiveGoStage(){
+        // проверить, что вы находитесь на верной странице
+
+        if (url().contains("https://www.idealflatmate.co.uk/")) {
+            close();
+            clearBrowserCache();
+            refresh();
+            open("http://front.idealflatmate4test.demo.devplatform2.com");}
+    }
+
+    public static void pageUrlHomeNew() {
         // вернуться на homepage не закрывая драйвер
-        close();
-        open("http://front.idealflatmate4test.demo.devplatform2.com");
+        if (url().contentEquals("http://front.idealflatmate4test.demo.devplatform2.com")) {
+        refresh();
+        }else{
+            close();
+            open("http://front.idealflatmate4test.demo.devplatform2.com");}
+
     }
 }

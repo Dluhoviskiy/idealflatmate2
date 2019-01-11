@@ -25,11 +25,10 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//h3[@class='u_m0' and contains (text(), 'A room')]")).click();
     }
 
-    public void clickEmailHeader() {
-        $(byXpath("(//span[contains (text(), 'Sign up with email')])[2]")).click();
+    public void clickEmailPopup() {
+        $(byXpath("//div[@id='signupRevealModal']//a[span[contains (text(), 'Sign up with email')]]")).click();
     }
-    public void clickEmail() {
-        $(byXpath("//span[contains (text(), 'Sign up with email')]")).click();
+    public void clickEmail() { $(byXpath("//span[contains (text(), 'Sign up with email')]")).click();
 
     }
     public void clickEmailMatching1() {
@@ -329,9 +328,8 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void clickMessageProperty() {
-        $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar'" +
-                        " and @class='col-sm-4 hidden-xs']//a[contains(text(), 'Request details')]")).click();
+    public void clickMessageProperty(String buttonText) {
+        $(byXpath("//section//a[contains(.,'" + buttonText + "')]")).click();
 
     }
 
@@ -365,6 +363,42 @@ public class SignUpHelper extends HelperBase {
 
     }
 
+    public void yourInformation(String password, String firstName, String email) {
+        setSignUpNameF(firstName);
+        genderFemaleSelect();
+        setSignEmail(email);
+        setSignPassword(password);
+        clickYourInformationContinue();
+    }
 
+    public void yourInformationWithPhone (String password, String firstName, String email) {
+        setSignUpNameF(firstName);
+        genderFemaleSelect();
+        setSignEmail(email);
+        setSignPassword(password);
+        clickYourInformationContinue();
+    }
+
+    public void priceMove(String day, String month, String year) {
+        verifyToMoveCheckboxDisabled();
+        toMoveCheckboxEnabled();
+        selectMoveDate(day, month, year);
+        selectHappyReceiveNews();
+        clickYourInformationContinue();
+    }
+
+    public void whereWouldLikeLive(String location, String area1) {
+        preferredLocation(location, area1);
+        clickYourInformationContinue();
+    }
+
+    public void MoreAboutYou(String day, String month, String year, String phone, String prof, String text) {
+        profilePhotoAddJpeg();
+        profileDateBirthAdd(day, month, year);
+        profilePhone(phone);
+        occupation(prof);
+        aboutYourself(text);
+        clickYourInformationContinue();
+    }
 
 }

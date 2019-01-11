@@ -12,65 +12,65 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerHomeLink() {
-
+        helperBase.pageUrlHomeNew();
         footerHelper.footerHome();
         footerHelper.verificationFooterHome();
     }
 
     @Test
     public void footerAboutUsLink() {
-        //helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerAboutUs();
         footerHelper.verificationFooterAboutUs();
     }
 
     @Test
     public void footerContactLink() {
-        //helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerContact();
         footerHelper.verificationFooterContact();
     }
 
     @Test
     public void footerPressLink() {
-        //helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerPress();
         footerHelper.verificationFooterPress();
     }
 
     @Test
     public void footerPricingLink() {
-        //helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerPricing();
         footerHelper.verificationFooterPricing();
     }
 
     @Test
     public void footerMediaLink() {
-        //helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerMedia();
         footerHelper.verificationFooterMedia();
     }
 
     @Test
     public void footerStaySafeLink() {
-
+        helperBase.pageUrlHomeNew();
         footerHelper.footerStaySafe();
         footerHelper.verificationFooterStaySafe();
     }
 
     @Test
     public void footerBlogLink() {
-        newDriverPage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerBlog();
-        verificationHelper.FMBlog();
+        verificationHelper.FMBlogPage();
     }
 
     @Test
     public void footerBrowseFlatsharesLink() {
-        helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerBrowseFlatshares();
-        footerHelper.verificationBrowseFlatshares();
+        footerHelper.verificationBrowseFlatshares("North London");
 
     }
 
@@ -91,14 +91,14 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerBrowseHowItWorksLink() {
-        //helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerHowItWorks();
         footerHelper.verificationHowItWorks();
     }
 
     @Test
     public void footerBrowseTipsLink() {
-        //helperBase.toHomePage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerTipsWorks();
         footerHelper.verificationTipsWorks();
 
@@ -106,7 +106,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerNLALink() {
-        newDriverPage();
+        helperBase.pageUrlHomeNew();
         footerHelper.footerNLAWorks();
         footerHelper.verificationNLAWorks();
         helperBase.toHomePage();
@@ -114,7 +114,7 @@ public class FooterTest extends TestBase {
 
     @Test(enabled = false)
     public void footerFBLink() {
-        newDriverPage();
+        helperBase.pageUrlHomeNew();;
         helperBase.toHomePage();
         footerHelper.footerFB();
         footerHelper.verificationFB();
@@ -142,7 +142,7 @@ public class FooterTest extends TestBase {
         footerHelper.footerYoutube();
         clearCache();
         footerHelper.verificationYoutube();
-
+        helperBase.pageUrlHomeNew();
     }
 
 

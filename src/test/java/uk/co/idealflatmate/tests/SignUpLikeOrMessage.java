@@ -24,7 +24,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
 
         signUpHelper.click1PropertyCardMessage();
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlertMessage();
@@ -50,7 +50,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.setSignUpNameFMessage("Ronald");
         //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.genderFemaleSelectMessage();
-        signUpHelper.setSignEmailMessage("FM5n6RegBestU@gmail.com");
+        signUpHelper.setSignEmailMessage("FM51stU@gmail.com");
         signUpHelper.setSignPasswordMessage("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -79,7 +79,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataProfileFMmin();
+        verificationHelper.verificationDataProfileFMListing("50%");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         getAddPropertyHelper().openDropDownMenu();
@@ -108,7 +108,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         messageHelper.clickFMPageMessage();
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
         signUpHelper.clickYourInformationContinue();
 
         verificationHelper.emailBlankAlertMessage();
@@ -183,7 +183,7 @@ public class SignUpLikeOrMessage extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("60% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataProfileFM();
+        verificationHelper.verificationDataProfileFM("60%");
         verificationHelper.verificationUserNameOnHomePage("Ronaldina");
 
         getAddPropertyHelper().openDropDownMenu();
@@ -211,7 +211,7 @@ public class SignUpLikeOrMessage extends TestBase {
         String page = $(byXpath("//a[@class='undefined']")).getText();
 
         signUpHelper.clickLikePropertyCard();
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlertMessageLike();
@@ -234,11 +234,11 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickLikePropertyCardHomePage(2);
 
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("Like198a@gmail.com");
+        signUpHelper.setSignEmail("Like1901a@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -265,7 +265,7 @@ public class SignUpLikeOrMessage extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataLike();
+        verificationHelper.verificationDataLike("50%");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         sleep(5000);
@@ -280,13 +280,9 @@ public class SignUpLikeOrMessage extends TestBase {
         clearCache();
         authorizationHelper.goToPropertyPage();
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew314011@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew314011@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -316,7 +312,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verifySearchListingPage();
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataProfileMatching();
+        verificationHelper.verificationDataProfileMatching("80%");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         getAddPropertyHelper().openDropDownMenu();
@@ -334,12 +330,11 @@ public class SignUpLikeOrMessage extends TestBase {
         //newDriverPage();
         clearCache();
         authorizationHelper.goToFMpage();
-        signUpHelper.clickEmailHeader();
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew777@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew777@gmail.com");
+
         verificationHelper.emailAlreadyExistedAlert();
 
         signUpHelper.quit();
@@ -360,8 +355,8 @@ public class SignUpLikeOrMessage extends TestBase {
         String title = $(byXpath("//h1")).getText();
         //System.out.println(title);
 
-        signUpHelper.clickMessageProperty();
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickMessageProperty("Request details");
+        signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlertMessage();
@@ -381,13 +376,11 @@ public class SignUpLikeOrMessage extends TestBase {
         //newDriverPage();
         clearCache();
         authorizationHelper.goToFMpage();
-        signUpHelper.clickEmailHeader();
 
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew777@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew777@gmail.com");
+
         verificationHelper.emailAlreadyExistedAlert();
 
         signUpHelper.clearEmail();
@@ -444,13 +437,13 @@ public class SignUpLikeOrMessage extends TestBase {
         clearCache();
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickCloseSignUp();
-
+        searchHelper.moveToPage(3, "3");
         signUpHelper.clickPropertyCard1();
         String searchLocation = $(byXpath("//h1")).getText();
         //System.out.println(title);
 
         messageHelper.clickPhoneReveal();
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmailPopup();
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlertPhone();

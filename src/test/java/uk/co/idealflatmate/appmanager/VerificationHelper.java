@@ -53,7 +53,7 @@ public class VerificationHelper extends HelperBase {
 
     }
 
-    public void verifyAddedPropertyWithAllFields() {//section[@id]//h1/small
+    public void verifyAddedPropertyWithAllFields(final String month) {//section[@id]//h1/small
         String ref = $(byXpath("//section[@id]//h1/small")).getText();
         $(byXpath("//section[@id]//h1")).shouldHave(text("3 bedrooms for rent in Bankside, South London from £500/month per room\n"
                  + ref));
@@ -92,7 +92,7 @@ public class VerificationHelper extends HelperBase {
 
         $(byXpath("//a[contains(text(), 'Room 3')]")).click();
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th January 2025"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th " + month + " 2025"));
        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
         $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text(" 3 of 2 bedrooms available  Garden  Parking space  Smokers accepted  Pets accepted  Family friendly\n" +
                 "Very good flat"));
@@ -100,15 +100,28 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("London SE1, UK"));
     }
 
-    public void verificationDataProfileFMmin() {
+    public void verificationDataProfileFMmin(String PercentCompleted) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
                 " Property Preferences\n" +
                 " Budget & Availability\n" +
                 " Your ideal flatmate"));
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        50%\n" +
+                "                                        " + PercentCompleted + "\n" +
                 "                                        "));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Ronald, 59 is a female looking for a room.\n" +
+                "Maximum budget: £2500/month\n" +
+                "Ready to move in: Immediately"));
+    }
+
+    public void verificationDataProfileFMListing(String PercentCompleted) {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Property Preferences\n" +
+                " Budget & Availability\n" +
+                " Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(PercentCompleted + "\n" + "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Ronald, 59 is a female looking for a room.\n" +
                 "Maximum budget: £2500/month\n" +
@@ -123,14 +136,14 @@ public class VerificationHelper extends HelperBase {
                 "Ready to move in: now"));
     }
 
-    public void verificationDataTenant() {
+    public void verificationDataTenant(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
                 " Property Preferences\n" +
                 " Budget & Availability\n" +
                 " Your ideal flatmate"));
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        80%\n" +
+                "                                        " + percent + "\n" +
                 "                                        "));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Tell us about yourself\n" +
@@ -141,13 +154,13 @@ public class VerificationHelper extends HelperBase {
                 "Hackney Marshes"));
     }
 
-    public void verificationDataLike() {
+    public void verificationDataLike(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
                 " Property Preferences\n" +
                 " Budget & Availability\n" +
                 " Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("50%\n" +
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
                 "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Ronald is a female looking for a room.\n" +
@@ -155,55 +168,55 @@ public class VerificationHelper extends HelperBase {
                 "Ready to move in: Immediately"));
     }
 
-    public void verificationDataAgent() {
+    public void verificationDataAgent(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
                 "Personal Details\n" +
                 "Your ideal tenant"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("50%\n" +
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
                 "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About us\n" +
                 "Tell us about yourself"));
 
     }
 
-    public void verificationDataLive_in() {
+    public void verificationDataLive_in(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
                 " Your ideal flatmate\n"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("60%\n" +
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
                 "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Ronald, 59 is a male professional looking for a room."));
     }
 
-    public void verificationDataLive_in1() {
+    public void verificationDataLive_in1(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
                 " Your ideal flatmate\n"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("80%\n" +
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
                 "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("Tell us about yourself"));
     }
 
-    public void verificationDataProfileLiveOut() {
+    public void verificationDataProfileLiveOut(String percent) {
 
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
                 " Your ideal tenant\n"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("50%\n" +
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
                 "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Ronald is a live-out landlord looking for a room."));
     }
 
-    public void verificationDataProfileFB() {
+    public void verificationDataProfileFB(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
                 "Personal Details\n" +
                 "Property Preferences\n" +
                 "Budget & Availability\n" +
                 "Your ideal flatmate"));
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        60%\n" +
+                "                                        " + percent + "\n" +
                 "                                        "));
         $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text("Ronald, 59 is a female looking " +
                 "for a room in Watford or North London or Zone 1."));
@@ -214,14 +227,14 @@ public class VerificationHelper extends HelperBase {
 
     }
 
-    public void verificationDataProfileFM() {
+    public void verificationDataProfileFM(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
                 "Personal Details\n" +
                 "Property Preferences\n" +
                 "Budget & Availability\n" +
                 "Your ideal flatmate"));
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        60%\n" +
+                "                                        " + percent + "\n" +
                 "                                        "));
         $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text("Ronaldina, 59 is a female looking " +
                 "for a room in Watford or North London or Zone 1."));
@@ -239,14 +252,14 @@ public class VerificationHelper extends HelperBase {
 
     }
 
-    public void verificationDataProfileMatching() {
+    public void verificationDataProfileMatching(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
                 "Personal Details\n" +
                 "Property Preferences\n" +
                 "Budget & Availability\n" +
                 "Your ideal flatmate"));
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        80%\n" +
+                "                                        " + percent + "\n" +
                 "                                        "));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Tell us about yourself\n" +
@@ -579,8 +592,8 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void isHomePage1() {
-        $(byXpath("//h1")).shouldHave(text("Flatsharing\n" +
-                "reimagined"));
+        $(byXpath("//h1")).shouldHave(text("Clever matches.\n" +
+                "Better flatshares."));
 
     }
     public void ListingStart() {
@@ -633,7 +646,7 @@ public class VerificationHelper extends HelperBase {
             $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
             $(byXpath("(//input[1][@type='radio'])[1]")).selectRadio("0");
             $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).click();
-            sleep(4000);
+            sleep(5000);
             }
         }
 
@@ -667,13 +680,13 @@ public class VerificationHelper extends HelperBase {
 
     }
 
-    public void FMBlog() {
+    public void FMBlogPage() {
         switchTo().window(1);
         $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("You are a landlord? Head to our landlord HQ here »"));
         close();
     }
 
-    public void LandlordBlog() {
+    public void landlordBlogPage() {
 
         switchTo().window(1);
         $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("Are you a flatmate? Head to Flatmate HQ here »"));

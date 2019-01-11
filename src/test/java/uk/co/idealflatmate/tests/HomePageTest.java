@@ -52,7 +52,7 @@ public class HomePageTest extends TestBase {
     public void blogFM() {
         homePageHelper.hoverCommunity();
         homePageHelper.clickFMBlog();
-        verificationHelper.FMBlog();
+        verificationHelper.FMBlogPage();
         helperBase.toHomePage();
     }
 
@@ -61,7 +61,7 @@ public class HomePageTest extends TestBase {
 
         homePageHelper.hoverCommunity();
         homePageHelper.clickLandlordBlog();
-        verificationHelper.LandlordBlog();
+        verificationHelper.landlordBlogPage();
         helperBase.toHomePage();
     }
 

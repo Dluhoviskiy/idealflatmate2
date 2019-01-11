@@ -2,6 +2,7 @@ package uk.co.idealflatmate.tests;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 import uk.co.idealflatmate.appmanager.*;
 
@@ -53,11 +54,14 @@ public class TestBase {
 
     @BeforeClass
     public void setupClass() {
-        ChromeDriverManager.getInstance().setup();
+        //ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.firefoxdriver().setup();
        // FirefoxDriverManager.getInstance().setup();
        // EdgeDriverManager.getInstance().setup();
         //Configuration.browser = "webdriver";
         Configuration.browser = "chrome";
+        //Configuration.browser = "firefox";
        // Configuration.browser = "firefox";
       //  Configuration.browser = "edge";
 
@@ -65,7 +69,7 @@ public class TestBase {
 
         Configuration.timeout = 10000;
         //open("https://www.idealflatmate.co.uk/");
-        //HelperBase.closeAdvPopUp();
+        HelperBase.closeAdvPopUp();
         //open("http://front.idealflatmate.demo.devplatform2.com");
 
         open("http://front.idealflatmate4test.demo.devplatform2.com");
@@ -106,7 +110,8 @@ public class TestBase {
 
     public void newDriverPage() {
         closeWebDriver();
-        ChromeDriverManager.getInstance().setup();
+        //ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
         open("http://front.idealflatmate4test.demo.devplatform2.com");
     }
 

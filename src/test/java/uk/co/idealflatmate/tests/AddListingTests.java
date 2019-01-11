@@ -2,19 +2,19 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 public class AddListingTests extends TestBase {
 
     @Test
-    public void SuccessfulLoginStartListing() {
-        clearCache();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHListingPaid@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+    public void loginStartListing() {
+        pageUrlVerifLiveGoStage();
+
+        authorizationHelper.login("cro.gen.FHListingNotPaid@gmail.com", "qqqqqq");
 
         verificationHelper.closeMatchingPopup();
 
@@ -45,8 +45,8 @@ public class AddListingTests extends TestBase {
     }
 
     @Test
-    public void SuccessfulLoginPendingListing() {
-        clearCache();
+    public void loginPendingListing() {
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHListingPaid@gmail.com");
@@ -85,13 +85,13 @@ public class AddListingTests extends TestBase {
     }
 
     @Test
-    public void TestSignUpSuccessfulPropertyAdding() {
-        clearCache();
+    public void signUpPropertyAdding() {
+        pageUrlVerifLiveGoStage();
 
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("An agency");
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
         signUpHelper.setSignUpNameF("Ronald");
         //signUpHelper.genderFemaleSelect();
         signUpHelper.setSignEmail("AgentNew11681@gmail.com");
@@ -129,7 +129,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.RemoveListing();
 
         authorizationHelper.chooseProfileFromHeader();
-        verificationHelper.verificationDataAgent();
+        verificationHelper.verificationDataAgent("75%");
 
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
@@ -137,15 +137,12 @@ public class AddListingTests extends TestBase {
     }
 
     @Test
-    public void TestSuccessfulPropertyAddingWithAllFields() {
-        clearCache();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Agency@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+    public void propertyAddWithAllFields() {
+        pageUrlVerifLiveGoStage();
 
-        authorizationHelper.clickCloseSignUp();
+        authorizationHelper.login("cro.gen.AgencyNotPaid@gmail.com", "qqqqqq");
+
+        matchingHelper.closePopupMatching();
 
         //getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
@@ -162,7 +159,7 @@ public class AddListingTests extends TestBase {
         //getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456", "\n" + "Don't display on my listing");
         getAddPropertyHelper().setPhoneNumber1("+44 20 7234 3456");
         getAddPropertyHelper().setTotalBedrooms("4");
-        getAddPropertyHelper().setAllAmanities();
+        getAddPropertyHelper().setAllAmanities("Garden", "Parking", " Communal living room", " Balcony/patio ", "property-pets_accepted", "property-smokers_accepted", "property-family_friendly");
         getAddPropertyHelper().setPropertyDescription();
         getAddPropertyHelper().setMonthlyRent("500");
         getAddPropertyHelper().setDeposit("1000");
@@ -186,13 +183,15 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().viewListing();
         verificationHelper.photoListingExist();
-        verificationHelper.verifyAddedPropertyWithAllFields();
+        verificationHelper.verifyAddedPropertyWithAllFields("February");
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().RemoveListing();
         verificationHelper.verifyNoProperty();
         authorizationHelper.logoutFromApp();
     }
+
+
 
 
 }

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static org.seleniumhq.jetty7.util.LazyList.getList;
+//import static org.seleniumhq.jetty7.util.LazyList.getList;
 import static org.testng.Assert.assertEquals;
 
 public class SearchPropertiesPageTests extends TestBase{

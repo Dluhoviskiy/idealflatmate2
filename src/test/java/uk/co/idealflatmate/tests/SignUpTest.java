@@ -13,7 +13,7 @@ public class SignUpTest extends TestBase {
         paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlertMessageLike();
@@ -34,7 +34,7 @@ public class SignUpTest extends TestBase {
         paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock1();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlertMessageLike();
@@ -58,13 +58,9 @@ public class SignUpTest extends TestBase {
 
         signUpHelper.backFromEmailToRoom();
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
-        signUpHelper.setSignUpNameF("Ronaldina");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("Tenant53@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.yourInformation("qqqqqq", "Ronaldina", "Tenant53@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -109,7 +105,7 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
        // verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataTenant();
+        verificationHelper.verificationDataTenant("80%");
 
 
         getAddPropertyHelper().openDropDownMenu();
@@ -128,7 +124,7 @@ public class SignUpTest extends TestBase {
 
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderMaleSelect();
@@ -149,9 +145,9 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataLive_in();
+        verificationHelper.verificationDataLive_in("60%");
 
-        matchingHelper.closePopup();
+        matchingHelper.closePopupMatching();
 
         //signUpHelper.verificationDataProfileNameUser("live-in landlord");
 
@@ -173,7 +169,7 @@ public class SignUpTest extends TestBase {
 
         addPropertyHelper.selectTypeUser("Live-out landlord");
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
         signUpHelper.setSignUpNameF("Ronald");
 
         verificationHelper.verificationFieldLenth(460);
@@ -197,7 +193,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("A current tenant");
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
         signUpHelper.clickYourInformationContinue();
 
         verificationHelper.emailBlankAlert();
@@ -220,12 +216,9 @@ public class SignUpTest extends TestBase {
 
         addPropertyHelper.selectTypeUser("A current tenant");
 
-        signUpHelper.clickEmailHeader();
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew233@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew233@gmail.com");
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.dateMonthYearPhoneOccupationBlankError();
@@ -244,13 +237,9 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickRoom();
 
         signUpHelper.backFromEmailToRoom();
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew33674@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew33674@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -280,13 +269,9 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickRoom();
 
         signUpHelper.backFromEmailToRoom();
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
 
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew3399@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew3399@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -310,6 +295,8 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
+
+
     @Test
     //Facebook authorization doen`t work on staging
 
@@ -320,7 +307,6 @@ public class SignUpTest extends TestBase {
         authorizationHelper.clickSignUpWithFacebook();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
         authorizationHelper.LoginFacebookWithNewAccount("proideal@ukr.net", "qqqqqq666D");
-
 
         signUpHelper.genderMaleSelect();
         signUpHelper.clickYourInformationContinue();
@@ -340,8 +326,8 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("RonaldRetreive");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
-        //matchingHelper.closePopup();
-        verificationHelper.verificationDataProfileFB();
+        //matchingHelper.closePopupMatching();
+        verificationHelper.verificationDataProfileFB("60%");
         signUpHelper.verificationDataProfileFotoDashboard();
 
 
@@ -358,7 +344,7 @@ public class SignUpTest extends TestBase {
     //Facebook authorization doen`t work on staging
 
     public void SignUpViaFacebookAgeUnder18() {
-        open("https://www.idealflatmate.co.uk/");open("https://www.idealflatmate.co.uk/");
+        open("https://www.idealflatmate.co.uk/");
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
         authorizationHelper.clickSignUpWithFacebook();
@@ -394,7 +380,7 @@ public class SignUpTest extends TestBase {
         addPropertyHelper.bottomAddListing();
         addPropertyHelper.selectTypeUser("Live-out landlord");
 
-        signUpHelper.clickEmailHeader();
+        signUpHelper.clickEmail();
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.setSignEmail("LiveOut111r21@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
@@ -409,7 +395,7 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataProfileLiveOut();
+        verificationHelper.verificationDataProfileLiveOut("50%");
 
 
         getAddPropertyHelper().openDropDownMenu();
@@ -427,12 +413,9 @@ public class SignUpTest extends TestBase {
         addPropertyHelper.pressAddListingNotLogged();
         addPropertyHelper.selectTypeUser("Live-in landlord"); //LiveInLord
 
-        signUpHelper.clickEmailHeader();
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("LiveInNewo141a2@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "LiveInNewo141a2@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -448,8 +431,8 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-        matchingHelper.closePopup();
-        verificationHelper.verificationDataLive_in1();
+        matchingHelper.closePopupMatching();
+        verificationHelper.verificationDataLive_in1("80%");
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSettingsFromDashboard();

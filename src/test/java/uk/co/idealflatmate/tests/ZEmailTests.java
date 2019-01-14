@@ -2,7 +2,7 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
-public class EmailTests extends TestBase {
+public class ZEmailTests extends TestBase {
 
 
     @Test
@@ -18,6 +18,7 @@ public class EmailTests extends TestBase {
         emailHelper.tipCheckboxWelcome();
         emailHelper.tipCheckboxListingisLive();
         emailHelper.tipCheckboxMessage();
+        emailHelper.tipCheckboxEnquiry();
         emailHelper.tipCheckboxPremiumFHSubscription();
         emailHelper.tipCheckboxPremiumFHSubscriptionCanceled();
         emailHelper.removeAllEmails();

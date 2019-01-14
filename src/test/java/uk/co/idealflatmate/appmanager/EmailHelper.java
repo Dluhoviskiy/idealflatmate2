@@ -20,7 +20,7 @@ public class EmailHelper extends HelperBase {
         }
     }
     public void setLoginAsUserEmail(String email) {
-        gmailLogin(email, "//input[@type='email']", "(//span[@class='RveJvd snByac'])[2]");
+        gmailLogin(email, "//input[@type='email']", "//span[@class='RveJvd snByac' and contains(.,'Далі')]");
     }
 
     public void setLoginAsUserPassword(String password) {
@@ -56,25 +56,36 @@ public class EmailHelper extends HelperBase {
     }
 
     public void tipCheckboxWelcome() {
-        $(byXpath("//b[contains(text(), ':')]//ancestor::tr//div[span[contains(text(), 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div[span[contains(text(), 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
     }
     public void tipCheckboxListingisLive() {
-        $(byXpath("//b[contains(text(), ':')]//ancestor::tr//td//div//span[contains(text(), 'Congratulations')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//td//div//span[contains(text(), 'Congratulations')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
     }
 
     public void tipCheckboxMessage() {
-        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'You have')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//div//span[contains(text(), 'You have a new message!')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
+    }
+
+    public void tipCheckboxEnquiry() {
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//div//span[contains(text(), 'You have a new enquiry!')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
     }
 
     public void tipCheckboxPremiumFHSubscription() {
-        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
     }
     public void tipCheckboxPremiumFHSubscriptionCanceled() {
-        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'Subscription canceled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
     }
 
     public void removeAllEmails() {
-        $(byXpath("//div[@class='ar9 T-I-J3 J-J5-Ji']")).waitUntil(visible, 6000).click();
+        $(byXpath("//div[@class='AO']/..//div[@class='ar9 T-I-J3 J-J5-Ji']")).waitUntil(visible, 15000).click();
+        sleep(2000);
     }
 
     public void verificationPageAfterSignUp() {

@@ -154,6 +154,23 @@ public class VerificationHelper extends HelperBase {
                 "Hackney Marshes"));
     }
 
+    public void verificationDataTenant1(String percent) {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
+                " Personal Details\n" +
+                " Property Preferences\n" +
+                " Budget & Availability\n" +
+                " Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
+                "                                        " + percent + "\n" +
+                "                                        "));
+        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
+                "Tell us about yourself\n" +
+                "Maximum budget: £1250/month\n" +
+                "Ready to move in: 08-08-2019\n" +
+                "Looking for a room in\n" +
+                "Watford"));
+    }
+
     public void verificationDataLike(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
@@ -209,16 +226,15 @@ public class VerificationHelper extends HelperBase {
                 "Ronald is a live-out landlord looking for a room."));
     }
 
-    public void verificationDataProfileFB(String percent) {
+    public void verificationDataProfileFB(String percent, String name) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
                 "Personal Details\n" +
                 "Property Preferences\n" +
                 "Budget & Availability\n" +
                 "Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        " + percent + "\n" +
-                "                                        "));
-        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text("Ronald, 59 is a female looking " +
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
+                "complete"));
+        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 59 is a female freelancer/self employed looking " +
                 "for a room in Watford or North London or Zone 1."));
         /*$(byXpath("(//h4/../div[@class='text-body-copy'])[2]")).shouldHave(text("Watford\n" +
                 " North London\n" +

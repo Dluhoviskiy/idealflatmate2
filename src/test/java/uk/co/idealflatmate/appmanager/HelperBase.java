@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.url;
+import static java.util.ResourceBundle.clearCache;
 
 public class HelperBase {
 
@@ -71,7 +72,7 @@ public class HelperBase {
 
     public void toHomePage() {
         //$(By.xpath("//a[@class='navbar-brand']")).click();
-        open("http://front.idealflatmate4test.demo.devplatform2.com");
+        open("http://front.idealflatmate4test.demo.devplatform2.com/");
     }
 
     public void Field2(String locator, String locator2, String locator3, String text) {
@@ -80,61 +81,57 @@ public class HelperBase {
         $(locator3).setValue(text);
     }
 
-    public void FieldEnter(String text, String area) {
-        $("input#location").click();
-        $("input#location").clear();
-        $("input#location").setValue(text);
-        $(byXpath("//li//div[contains(text(), '" + area + "')]")).click();
+    public void FieldEnter(String text, SelenideElement string1, SelenideElement string2) {
+        string1.click();
+        string1.clear();
+        string1.setValue(text);
+        string2.click();
     }
 
-    public void dateMonthYear(String day, String month, String year) {
-        $(byXpath("//select[@id='moreinfosignupform-day']")).selectOptionByValue(day);
-        $(byXpath("//select[@id='moreinfosignupform-month']")).click();
-        $(byXpath("//select[@id='moreinfosignupform-month']")).selectOptionByValue(month);
-        $(byXpath("//select[@id='moreinfosignupform-year']")).click();
-        $(byXpath("//select[@id='moreinfosignupform-year']")).selectOptionByValue(year);
-    }
-    public void dateMonthYearMove(String day, String month, String year) {
-        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_day']")).selectOptionByValue(day);
-        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_month']")).click();
-        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_month']")).selectOptionByValue(month);
-        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_year']")).click();
-        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_year']")).selectOptionByValue(year);
+    public void dateMonthYear(String day, String month, String year, SelenideElement day1, SelenideElement month1, SelenideElement year1) {
+        day1.selectOptionByValue(day);
+        month1.click();
+        month1.selectOptionByValue(month);
+        year1.click();
+        year1.selectOptionByValue(year);
     }
 
-    public void dateMonthYearMessage(String day, String month, String year) {
-        $(byXpath("//select[@id='yourinfoadditionalsignupform-day']")).selectOptionByValue(day);
-        $(byXpath("//select[@id='yourinfoadditionalsignupform-month']")).click();
-        $(byXpath("//select[@id='yourinfoadditionalsignupform-month']")).selectOptionByValue(month);
-        $(byXpath("//select[@id='yourinfoadditionalsignupform-year']")).click();
-        $(byXpath("//select[@id='yourinfoadditionalsignupform-year']")).selectOptionByValue(year);
-    }
 
     public static void pageUrlVerifStageGoLive(){
         // проверить, что вы находитесь на верной странице
-        if (url().contains("http://front.idealflatmate4test.demo.devplatform2.com")) {
+        if (! url().equals("https://www.idealflatmate.co.uk/")) {
+
             clearBrowserCache();
             refresh();
+            close();
             open("https://www.idealflatmate.co.uk/");}
     }
 
     public static void pageUrlVerifLiveGoStage(){
         // проверить, что вы находитесь на верной странице
 
-        if (url().contains("https://www.idealflatmate.co.uk/")) {
-            close();
+        if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
+
             clearBrowserCache();
             refresh();
-            open("http://front.idealflatmate4test.demo.devplatform2.com");}
+            close();
+            open("http://front.idealflatmate4test.demo.devplatform2.com/");}
     }
 
-    public static void pageUrlHomeNew() {
-        // вернуться на homepage не закрывая драйвер
-        if (url().contentEquals("http://front.idealflatmate4test.demo.devplatform2.com")) {
-        refresh();
-        }else{
-            close();
-            open("http://front.idealflatmate4test.demo.devplatform2.com");}
 
+    public void closeOpen(String relOrAbsolUrl) {
+        clearCache();
+        close();
+        open(relOrAbsolUrl);
+    }
+
+    public static void pageUrlVerifStageGoLive1(){
+        // проверить, что вы находитесь на верной странице
+        if (! url().equals("https://www.idealflatmate.co.uk/")) {
+
+            clearBrowserCache();
+            refresh();
+            close();
+            open("https://www.idealflatmate.co.uk/");}
     }
 }

@@ -2,6 +2,8 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+
 public class FooterTest extends TestBase {
 
     /*@AfterTest
@@ -10,139 +12,155 @@ public class FooterTest extends TestBase {
         navigator.back();
     }*/
 
-    @Test
+  //  @Test
     public void footerHomeLink() {
-        helperBase.pageUrlHomeNew();
+
+        pageUrlVerifLiveGoStage();
         footerHelper.footerHome();
         footerHelper.verificationFooterHome();
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerAboutUsLink() {
-        helperBase.pageUrlHomeNew();
+
+        pageUrlVerifLiveGoStage();
         footerHelper.footerAboutUs();
         footerHelper.verificationFooterAboutUs();
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerContactLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerContact();
         footerHelper.verificationFooterContact();
+        helperBase.toHomePage();
     }
 
-    @Test
+   // @Test
     public void footerPressLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerPress();
         footerHelper.verificationFooterPress();
+        helperBase.toHomePage();
     }
 
-    @Test
+   // @Test
     public void footerPricingLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerPricing();
         footerHelper.verificationFooterPricing();
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerMediaLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerMedia();
         footerHelper.verificationFooterMedia();
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerStaySafeLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerStaySafe();
         footerHelper.verificationFooterStaySafe();
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerBlogLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerBlog();
         verificationHelper.FMBlogPage();
+        helperBase.toHomePage();
     }
 
-    @Test
+   // @Test
     public void footerBrowseFlatsharesLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerBrowseFlatshares();
         footerHelper.verificationBrowseFlatshares("North London");
-
+        helperBase.toHomePage();
     }
 
-    @Test
+   // @Test
     public void footerAskLandlord() {
+        pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
         footerHelper.footerAskLandlord();
         footerHelper.verificationAskLandlord();
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerModern() {
+        pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
         footerHelper.footerModern();
         footerHelper.verificationModern();
         helperBase.toHomePage();
+        helperBase.toHomePage();
     }
 
-    @Test
+ //   @Test
     public void footerBrowseHowItWorksLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerHowItWorks();
         footerHelper.verificationHowItWorks();
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerBrowseTipsLink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerTipsWorks();
         footerHelper.verificationTipsWorks();
-
+        helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void footerNLALink() {
-        helperBase.pageUrlHomeNew();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerNLAWorks();
         footerHelper.verificationNLAWorks();
         helperBase.toHomePage();
     }
 
-    @Test(enabled = false)
+  //  @Test(enabled = false)
     public void footerFBLink() {
-        helperBase.pageUrlHomeNew();;
+        pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
         footerHelper.footerFB();
         footerHelper.verificationFB();
 
     }
 
-    @Test
+   // @Test
     public void footerTwitterLink() {
-        helperBase.toHomePage();
+        pageUrlVerifLiveGoStage();
+
         footerHelper.footerTwitter();
         footerHelper.verificationTwitter();
     }
 
-    @Test
+  //  @Test
     public void footerInstagramLink() {
+        pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
         footerHelper.footerInstagram();
         footerHelper.verificationInstagram();
 
     }
 
-    @Test
+  //  @Test
     public void footerYoutubeLink() {
-        helperBase.toHomePage();
+        pageUrlVerifLiveGoStage();
         footerHelper.footerYoutube();
         clearCache();
         footerHelper.verificationYoutube();
-        helperBase.pageUrlHomeNew();
     }
 
 

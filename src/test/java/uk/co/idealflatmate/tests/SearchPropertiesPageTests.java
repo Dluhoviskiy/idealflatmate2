@@ -6,12 +6,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static org.seleniumhq.jetty7.util.LazyList.getList;
 import static org.testng.Assert.assertEquals;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class SearchPropertiesPageTests extends TestBase{
 
 
-    @Test
+   // @Test
     public void propertySearchByDropDown() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.selectAllPropertyInMenu();
         searchHelper.closePopupSignup();
@@ -22,8 +24,9 @@ public class SearchPropertiesPageTests extends TestBase{
 
     }
 
-    @Test
+  //  @Test
     public void searchPagination() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
@@ -43,8 +46,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void searchZone1Pagination() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
@@ -53,8 +57,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+   // @Test
     public void searchEastLDNPagination() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
@@ -63,8 +68,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+    //@Test
     public void applyMoreFilters() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
@@ -77,8 +83,9 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.noActiveFilters();
         helperBase.toHomePage();
     }
-    @Test
+   // @Test
     public void applyAdvancedFiltersDefault() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
@@ -106,8 +113,9 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+    //@Test
     void sortListing() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();

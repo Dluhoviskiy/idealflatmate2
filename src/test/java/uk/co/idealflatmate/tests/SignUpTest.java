@@ -2,14 +2,15 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 
-import static com.codeborne.selenide.Selenide.*;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 
 public class SignUpTest extends TestBase {
 
-    @Test
+    //@Test
     public void SignUpBlankFieldsPropAddRentBlock() {
-        clearCache();
+        pageUrlVerifLiveGoStage();
         paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
@@ -28,9 +29,10 @@ public class SignUpTest extends TestBase {
 
     }
 
-    @Test
+   // @Test
     public void SignUpBlankFieldsPropAddWorkBlock() {
-        clearCache();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
         paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock1();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
@@ -49,9 +51,11 @@ public class SignUpTest extends TestBase {
 
     }
 
-    @Test
+   // @Test
     public void headerRoomSignUpHomePageTenant() {
-        clearCache();
+
+        pageUrlVerifLiveGoStage();
+
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
@@ -105,7 +109,7 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
        // verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataTenant("80%");
+        verificationHelper.verificationDataTenant1("80%");
 
 
         getAddPropertyHelper().openDropDownMenu();
@@ -114,10 +118,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void headerSignUpHomePageFMSearchLiv_inWithoutAbout() {
-        //newDriverPage();
-        clearCache();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -159,11 +163,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void headerSignUpWithExistingEmail() {
-        //newDriverPage();
-        clearCache();
-
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
 
@@ -174,8 +177,8 @@ public class SignUpTest extends TestBase {
 
         verificationHelper.verificationFieldLenth(460);
 
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("Live_Out_new777@gmail.com");
+        //signUpHelper.genderFemaleSelect();
+        signUpHelper.setSignEmail("cro30456yyy@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailAlreadyExistedAlert();
@@ -185,10 +188,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
      }
 
-    @Test
+    //@Test
     public void headerSignUpWithBlankRequiredFieldsYourInf() {
-        //newDriverPage();
-        clearCache();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("A current tenant");
@@ -206,10 +209,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
-    @Test
+    //@Test
     public void headerSignUpWithBlankRequiredFieldsMoreAboutYou() {
-        //newDriverPage();
-        clearCache();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickFM();
@@ -228,10 +231,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+    //@Test
     public void headerSignUpWithBlankRequiredFieldsLocation() {
-        //newDriverPage();
-        clearCache();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
@@ -260,10 +263,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void headerSignUpWithBlankRequiredFieldsBudget() {
-        //newDriverPage();
-        clearCache();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
@@ -297,18 +300,18 @@ public class SignUpTest extends TestBase {
 
 
 
-    @Test
+   // @Test
     //Facebook authorization doen`t work on staging
 
     public void headerSignUpViaFacebook() {
-        open("https://www.idealflatmate.co.uk/");
+        pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
         authorizationHelper.clickSignUpWithFacebook();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
         authorizationHelper.LoginFacebookWithNewAccount("proideal@ukr.net", "qqqqqq666D");
 
-        signUpHelper.genderMaleSelect();
+        //signUpHelper.genderMaleSelect();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
         signUpHelper.profilePhone("5555555555");
@@ -317,34 +320,36 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.preferredLocation("Watf","Watford");
+        signUpHelper.preferredLocationButton("North London");
+        signUpHelper.preferredLocationButton("Zone 1");
         signUpHelper.clickYourInformationContinue();
         signUpHelper.budgetMin();
         signUpHelper.budgetMax();
         signUpHelper.verifyToMoveCheckboxDisabled();
         signUpHelper.clickYourInformationContinue();
 
-        verificationHelper.verificationUserNameOnHomePage("RonaldRetreive");
+        verificationHelper.verificationUserNameOnHomePage("Francine");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
         //matchingHelper.closePopupMatching();
-        verificationHelper.verificationDataProfileFB("60%");
+        verificationHelper.verificationDataProfileFB("70%", "Francine");
         signUpHelper.verificationDataProfileFotoDashboard();
 
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
         authorizationHelper.chooseSettingsFromDashboard();
-        //verificationHelper.verifyProfComplMenu("60% complete");
+
         authorizationHelper.removeAccount();
-        verificationHelper.verificationUserIsUnlogged("RonaldRetreive");
-        newDriverPage();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+
     }
 
-    @Test
+   // @Test
     //Facebook authorization doen`t work on staging
 
     public void SignUpViaFacebookAgeUnder18() {
-        open("https://www.idealflatmate.co.uk/");
+        pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
         authorizationHelper.clickSignUpWithFacebook();
@@ -352,7 +357,7 @@ public class SignUpTest extends TestBase {
         //verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.acceptFBageRestriction();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        newDriverPage();
+
     }
 
 
@@ -373,10 +378,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void ListingSignUpHeader() {
-        //newDriverPage();
-        clearCache();
+        pageUrlVerifLiveGoStage();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         addPropertyHelper.bottomAddListing();
         addPropertyHelper.selectTypeUser("Live-out landlord");
 
@@ -406,10 +411,10 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+  //  @Test
     public void ListingSignUpFromHomepage() {
-        //newDriverPage();
-        clearCache();
+        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
         addPropertyHelper.pressAddListingNotLogged();
         addPropertyHelper.selectTypeUser("Live-in landlord"); //LiveInLord
 

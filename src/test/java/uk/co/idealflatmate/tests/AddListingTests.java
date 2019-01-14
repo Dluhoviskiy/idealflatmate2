@@ -47,6 +47,7 @@ public class AddListingTests extends TestBase {
     @Test
     public void loginPendingListing() {
         pageUrlVerifLiveGoStage();
+
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHListingPaid@gmail.com");

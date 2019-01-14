@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class SearchHomePageTests extends TestBase {
 
-    @Test
+    //@Test
     public void searchHomeByButton() {
         clearCache();
         searchHelper.searchProperty("PO30");
@@ -23,7 +23,7 @@ public class SearchHomePageTests extends TestBase {
         searchHelper.verificationSearchOnFMPage("Clapham, London");
 
     }
-    @Test
+   // @Test
     public void searchHomeLocationFromList() {
         clearCache();
         searchHelper.searchPropertyBySelectfromList("Clapham");
@@ -33,21 +33,21 @@ public class SearchHomePageTests extends TestBase {
     }
 
 
-    @Test(priority = 903)
+  //  @Test(priority = 903)
     public void searchHomeIncorrectData() {
         clearCache();
         searchHelper.searchProperty("tttt");
         searchHelper.verificationSearchHomePage("Location\n" +  "not found. Please try again.\n" +  "");
         helperBase.toHomePage();
     }
-    @Test
+  //  @Test
     public void searchHomePartOfLocationName() {
         searchHelper.searchProperty("wes");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchProperty("0 room matched to rent in and around Appleby in Westmorland");
         helperBase.toHomePage();
     }
-    @Test
+  //  @Test
     public void searchHomeIDProperty() {
         clearCache();
         searchHelper.searchProperty("#0013119");
@@ -55,7 +55,7 @@ public class SearchHomePageTests extends TestBase {
         searchHelper.verificationSearchPropertyMap(" London SE6 4RU, UK");
         helperBase.toHomePage();
     }
-    @Test
+  //  @Test
     public void searchHomeNorthLND() {
         clearCache();
         searchHelper.searchProperty("North London");

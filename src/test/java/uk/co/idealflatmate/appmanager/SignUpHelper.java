@@ -127,11 +127,15 @@ public class SignUpHelper extends HelperBase {
 
     }
     public void profileDateBirthAdd(String day, String month, String year) {
-        dateMonthYear(day, month, year);
+        dateMonthYear(day, month, year, $(byXpath("//select[@id='moreinfosignupform-day']")),
+                                        $(byXpath("//select[@id='moreinfosignupform-month']")),
+                                        $(byXpath("//select[@id='moreinfosignupform-year']")));
     }
 
     public void profileDateBirthAddMessage(String day, String month, String year) {
-        dateMonthYearMessage(day, month, year);
+        dateMonthYear(day, month, year, $(byXpath("//select[@id='yourinfoadditionalsignupform-day']")),
+                                        $(byXpath("//select[@id='yourinfoadditionalsignupform-month']")),
+                                        $(byXpath("//select[@id='yourinfoadditionalsignupform-year']")));
     }
 
     public void profilePhone(String phone) {
@@ -157,8 +161,8 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void preferredLocation(String location, String area1) {
-        FieldEnter(location, area1);
+    public void preferredLocation(String location, String area) {
+        FieldEnter(location, $("input#location"), $(byXpath("//li//div[contains(text(), '" + area + "')]")));
 
     }
 
@@ -221,7 +225,9 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void selectMoveDate(String day, String month, String year) {
-        dateMonthYearMove(day, month, year);
+        dateMonthYear(day, month, year, $(byXpath("//select[@id='budgetpreferredsignupform-move_in_day']")),
+                                        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_month']")),
+                                        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_year']")));
     }
 
     public void selectHappyReceiveNews() {

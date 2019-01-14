@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class SignUpLikeOrMessage extends TestBase {
 
-    @Test
+   // @Test
     public void messagePropertySignUpHomePage() {
         //newDriverPage();
         clearCache();
@@ -93,7 +93,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test
+   // @Test
 
 
 
@@ -195,7 +195,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test
+  //  @Test
     public void signUpLike3rdPageQuit() {
         //newDriverPage();
         clearCache();
@@ -222,7 +222,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void signUpLikeHomePage() {
         //newDriverPage();
         clearCache();
@@ -274,7 +274,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.isHomePage1();
 
     }
-    @Test
+  //  @Test
     public void popupSignUpPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -325,7 +325,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void popupSignUpWithExistingEmail() {
         //newDriverPage();
         clearCache();
@@ -344,7 +344,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-    @Test
+  //  @Test
     public void popupSignUpExistingEmailPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -371,7 +371,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
 
-    @Test
+   // @Test
     public void popupSignUpWithBlankRequiredFields() {
         //newDriverPage();
         clearCache();
@@ -430,7 +430,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
 
-    @Test
+    //@Test
     public void popupSignUpExistingEmailPropertyPhone() {
 
         //newDriverPage();

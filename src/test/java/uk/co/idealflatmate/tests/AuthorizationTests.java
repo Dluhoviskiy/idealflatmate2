@@ -5,6 +5,7 @@ import org.testng.annotations.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 
@@ -12,10 +13,10 @@ public class AuthorizationTests extends TestBase {
 
 
 
-    @Test
+   // @Test
     public void classicLogInOut() {
 
-        open("http://front.idealflatmate4test.demo.devplatform2.com/");
+        pageUrlVerifLiveGoStage();
 
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -28,10 +29,10 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void logInOutOnPropertyPage() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
 
@@ -43,13 +44,13 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Borris");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        helperBase.toHomePage();
+
     }
 
-    @Test
+  //  @Test
     public void logInOutOnFMPage() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickSignInButtonInPopup();
@@ -62,10 +63,10 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+  //  @Test
     public void emailWrongHomePage() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
 
         //helperBase.pageUrlHomeNew();
         authorizationHelper.clickJoinFreeButton();
@@ -79,10 +80,10 @@ public class AuthorizationTests extends TestBase {
         signUpHelper.quit();
     }
 
-    @Test
+ //   @Test
     public void loginPassWronglogInHomePage() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
 
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -96,13 +97,11 @@ public class AuthorizationTests extends TestBase {
         signUpHelper.quit();
     }
 
-    @Test
+   // @Test
     //Facebook authorization doen`t work on staging
     public void ablogInViaFacebook() {
 
-        clearCache();
-        close();
-        open("https://www.idealflatmate.co.uk/");
+        pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.clickLoginWithFacebook1();
@@ -110,14 +109,13 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        helperBase.toHomePage();
+
     }
 
-    @Test
+   // @Test
     public void alogInWithMatchingFB() {
-        clearCache();
-        close();
-        open("https://www.idealflatmate.co.uk/");
+        pageUrlVerifStageGoLive();
+        //helperBase.closeOpen("https://www.idealflatmate.co.uk/");
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         matchingHelper.clickAFM();
@@ -151,10 +149,12 @@ public class AuthorizationTests extends TestBase {
 
     }
 
-    @Test
+
+
+  //  @Test
     public void invalidLoginWithEmptyFields() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -165,10 +165,10 @@ public class AuthorizationTests extends TestBase {
        //verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-    @Test
+   // @Test
     public void logInMessageProperty() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         getMessageHelper().clickPropertyCardMessageUnlogged();
         authorizationHelper.clickSignInButtonInForm();
@@ -180,13 +180,13 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        helperBase.toHomePage();
+
     }
 
-    @Test
+   // @Test
     public void logInContactProperty() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         getMessageHelper().clickPropertyCardFirstOnPage();
         //authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickPropertyContact();
@@ -198,13 +198,13 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        helperBase.toHomePage();
+
     }
 
-    @Test
+  //  @Test
     public void logInMessageFM() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickFMCardMessageUnlogged();
@@ -216,13 +216,13 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        helperBase.toHomePage();
+
     }
 
-    @Test
+  //  @Test
     public void logInContactFM() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickFMCardFirstOnPage();
@@ -235,12 +235,12 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verifyPageMessage();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        helperBase.toHomePage();
+
     }
-    @Test
+ //   @Test
     public void logInPhoneReveal() {
 
-        helperBase.pageUrlVerifLiveGoStage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         getMessageHelper().clickPropertyCardFirstOnPage();
         getMessageHelper().clickPhoneReveal();
@@ -251,7 +251,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        helperBase.toHomePage();
+
     }
 
 }

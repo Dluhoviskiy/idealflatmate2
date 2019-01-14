@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class SearchFMPageTests extends TestBase{
 
 
-    @Test
+  //  @Test
     public void fmSearchBy() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -18,7 +18,7 @@ public class SearchFMPageTests extends TestBase{
 
     }
 
-    @Test
+  //  @Test
     public void searchPagination() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -40,7 +40,7 @@ public class SearchFMPageTests extends TestBase{
     }
 
 
-    @Test
+  //  @Test
     public void applyMoreFilters() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -55,7 +55,7 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void applyMoreFiltersPhotoNoList() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -70,7 +70,7 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+   // @Test
     public void applyMoreFiltersPhotoWithList() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -85,7 +85,7 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+  //  @Test
     public void applyAdvancedFiltersDefault() {
         clearCache();
         authorizationHelper.goToFMpage();
@@ -112,7 +112,7 @@ public class SearchFMPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    @Test
+   // @Test
     public void sortListingLoggedIn() {
         clearCache();
         authorizationHelper.goToFMpage();

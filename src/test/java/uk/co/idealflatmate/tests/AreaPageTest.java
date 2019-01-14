@@ -8,7 +8,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class AreaPageTest extends TestBase {
 
-   // @Test
+    @Test
     public void firstFeaturedHomePageHeader() {
         pageUrlVerifLiveGoStage();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
@@ -18,7 +18,7 @@ public class AreaPageTest extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void firstFeaturedLinkArea() {
         pageUrlVerifLiveGoStage();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(2).text();
@@ -30,7 +30,7 @@ public class AreaPageTest extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void firstFeaturedLinkMap() {
         pageUrlVerifLiveGoStage();
         areaPageHelper.clickArea(2);
@@ -38,7 +38,7 @@ public class AreaPageTest extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void seeMoreRooms() {
         pageUrlVerifLiveGoStage();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(4).text();
@@ -51,7 +51,7 @@ public class AreaPageTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void linkFH() {
         pageUrlVerifLiveGoStage();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
@@ -62,7 +62,7 @@ public class AreaPageTest extends TestBase {
 
     }
     
-  //  @Test
+    @Test
     public void exploreMoreArea() {
         pageUrlVerifLiveGoStage();
         areaPageHelper.clickArea(1);

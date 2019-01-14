@@ -286,6 +286,7 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void verifyNoProperty() {
+        refresh();
         $(byXpath("(//ul[starts-with(@class, 'nav navbar-nav')]/li)[1]")).shouldHave(text("Add a Listing"));
         $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));

@@ -13,7 +13,7 @@ public class AuthorizationTests extends TestBase {
 
 
 
-   // @Test
+    @Test
     public void classicLogInOut() {
 
         pageUrlVerifLiveGoStage();
@@ -29,7 +29,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void logInOutOnPropertyPage() {
 
         pageUrlVerifLiveGoStage();
@@ -47,7 +47,7 @@ public class AuthorizationTests extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void logInOutOnFMPage() {
 
         pageUrlVerifLiveGoStage();
@@ -63,7 +63,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-  //  @Test
+    @Test
     public void emailWrongHomePage() {
 
         pageUrlVerifLiveGoStage();
@@ -80,7 +80,7 @@ public class AuthorizationTests extends TestBase {
         signUpHelper.quit();
     }
 
- //   @Test
+    @Test
     public void loginPassWronglogInHomePage() {
 
         pageUrlVerifLiveGoStage();
@@ -97,7 +97,7 @@ public class AuthorizationTests extends TestBase {
         signUpHelper.quit();
     }
 
-   // @Test
+    @Test
     //Facebook authorization doen`t work on staging
     public void ablogInViaFacebook() {
 
@@ -112,7 +112,7 @@ public class AuthorizationTests extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void alogInWithMatchingFB() {
         pageUrlVerifStageGoLive();
         //helperBase.closeOpen("https://www.idealflatmate.co.uk/");
@@ -151,7 +151,7 @@ public class AuthorizationTests extends TestBase {
 
 
 
-  //  @Test
+    @Test
     public void invalidLoginWithEmptyFields() {
 
         pageUrlVerifLiveGoStage();
@@ -165,7 +165,7 @@ public class AuthorizationTests extends TestBase {
        //verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-   // @Test
+    @Test
     public void logInMessageProperty() {
 
         pageUrlVerifLiveGoStage();
@@ -183,7 +183,7 @@ public class AuthorizationTests extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void logInContactProperty() {
 
         pageUrlVerifLiveGoStage();
@@ -201,7 +201,7 @@ public class AuthorizationTests extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void logInMessageFM() {
 
         pageUrlVerifLiveGoStage();
@@ -219,7 +219,7 @@ public class AuthorizationTests extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void logInContactFM() {
 
         pageUrlVerifLiveGoStage();
@@ -237,7 +237,7 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
- //   @Test
+    @Test
     public void logInPhoneReveal() {
 
         pageUrlVerifLiveGoStage();

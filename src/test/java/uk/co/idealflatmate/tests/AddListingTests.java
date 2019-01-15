@@ -37,7 +37,7 @@ public class AddListingTests extends TestBase {
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         verificationHelper.removeUnfinishedListing();
-        verificationHelper.verifyNoProperty();
+        verificationHelper.verifyNoPropertyPending();
         verificationHelper.verificationUserNameOnHomePage("John");
 
         authorizationHelper.logoutFromApp();
@@ -76,7 +76,7 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         verificationHelper.verifyPendingProperty();
         addPropertyHelper.RemoveListing();
-        verificationHelper.verifyNoProperty();
+        verificationHelper.verifyNoPropertyPending();
         verificationHelper.verificationUserNameOnHomePage("John");
 
         authorizationHelper.chooseSettingsFromDashboard();

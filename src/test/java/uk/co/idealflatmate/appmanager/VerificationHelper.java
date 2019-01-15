@@ -292,9 +292,23 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
         sleep(2000);
         if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))){
-            $(byXpath("//button[starts-with(@class,'btn btn-primary-o')]")).waitUntil(appear, 4000).click();
-            $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
+            $(byXpath("//button[starts-with(@class,'btn btn-primary-outline')]")).waitUntil(appear, 10000).click();
+            $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 5000).selectRadio("0");
             $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
+            sleep(4000);
+        }
+    }
+
+    public void verifyNoPropertyPending() {
+        refresh();
+        $(byXpath("(//ul[starts-with(@class, 'nav navbar-nav')]/li)[1]")).shouldHave(text("Add a Listing"));
+        $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
+        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
+        sleep(2000);
+        if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))){
+            $(byXpath("//button[starts-with(@class,'btn btn-default')]")).waitUntil(appear, 10000).click();
+            $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 4000).selectRadio("0");
+            $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 5000).click();
             sleep(4000);
         }
     }

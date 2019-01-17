@@ -725,7 +725,7 @@ public class VerificationHelper extends HelperBase {
 
         switchTo().window(1);
         $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("Are you a flatmate? Head to Flatmate HQ here »"));
-        toHomePage();
+
     }
 
 

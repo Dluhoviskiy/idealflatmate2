@@ -151,7 +151,6 @@ public class FooterTest extends TestBase {
    @Test
     public void footerInstagramLink() {
         pageUrlVerifLiveGoStage();
-        helperBase.toHomePage();
         footerHelper.footerInstagram();
         footerHelper.verificationInstagram();
 

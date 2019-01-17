@@ -78,6 +78,7 @@ public class HelperBase {
     public void toHomePage() {
         //$(By.xpath("//a[@class='navbar-brand']")).click();
         open("http://front.idealflatmate4test.demo.devplatform2.com/");
+
     }
 
     public void Field2(String locator, String phone) {

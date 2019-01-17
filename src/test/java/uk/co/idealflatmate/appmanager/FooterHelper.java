@@ -68,7 +68,7 @@ public class FooterHelper extends HelperBase{
         String urlCurrent = "https://www.facebook.com/idealflatmate/";
         Assert.assertEquals(urlCurrent, urlNla);
         //$(byXpath("//a[@class='_64-f' and @href='https://www.facebook.com/idealflatmate/']")).shouldBe(visible);
-        toHomePage();
+
 
 
     }
@@ -80,7 +80,7 @@ public class FooterHelper extends HelperBase{
     public void verificationTwitter() {
         switchTo().window(1);
         $(byXpath("//img[@class='ProfileAvatar-image ' and @alt='ideal flatmate']")).waitUntil(exist, 6000).should(exist);
-        toHomePage();
+
     }
 
     public void footerInstagram() {
@@ -100,14 +100,14 @@ public class FooterHelper extends HelperBase{
     public void verificationYoutube() {
         switchTo().window(1);
         $(byXpath("//span[@id='channel-title' and contains(text(), 'ideal flatmate')]")).waitUntil(exist, 6000).should(exist);
-        toHomePage();
+
     }
 
 
     public void verificationAskLandlord() {
         switchTo().window(1);
         $(byXpath("//h1[contains(., '#AsktheLandlord')]")).should(exist);
-        toHomePage();
+
 
     }
 

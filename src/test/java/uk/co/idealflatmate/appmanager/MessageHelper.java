@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -19,14 +20,16 @@ public class MessageHelper {
     }
 
     public void typeAndSendMessage(String message) {
+        SelenideElement submit = $(byXpath("//button[@type='submit' and@class='btn btn-success btn-msg-send']"));
+
         $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
 
         if ($(byXpath("//img[@id='imgSrc']")).is(exist)) {
             $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).shouldBe(appear).hover();
             $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
-            $(byXpath("//button[@type='submit' and@class='btn btn-success btn-msg-send']")).shouldBe(visible).click();
+            submit.shouldBe(visible).click();
         } else {
-            $(byXpath("//button[@type='submit' and@class='btn btn-success btn-msg-send']")).shouldBe(visible).click();
+            submit.shouldBe(visible).click();
         }
 
 
@@ -62,9 +65,9 @@ public class MessageHelper {
 
     public  void clickPropertyCardFirstOnPage(){
         sleep(5000);
-        $(byXpath("(//h2)[4]")).hover();
+        $(byXpath("(//h2)[5]")).hover();
         sleep(1000);
-        $(byXpath("(//a[@class='card-main-link'])[1]")).click();
+        $(byXpath("(//div[@class='card-infos-left'])[1]")).click();
 
     }
 

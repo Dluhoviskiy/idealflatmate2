@@ -1,7 +1,10 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
-
+import uk.co.idealflatmate.appmanager.FooterHelper;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.refresh;
+import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class FooterTest extends TestBase {
@@ -11,117 +14,116 @@ public class FooterTest extends TestBase {
         //helperBase.toHomePage();
         navigator.back();
     }*/
+   // FooterHelper test1 = new FooterHelper();
 
-  //  @Test
+    @Test
     public void footerHomeLink() {
-
+        //test1.verificationHowItWorks1("How Ideal Flatmate Works");
         pageUrlVerifLiveGoStage();
-        footerHelper.footerHome();
+        footerHelper.footerClick("Home");
         footerHelper.verificationFooterHome();
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerAboutUsLink() {
 
         pageUrlVerifLiveGoStage();
-        footerHelper.footerAboutUs();
-        footerHelper.verificationFooterAboutUs();
+        footerHelper.footerClick("About us");
+        footerHelper.verificationFooter("About us");
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerContactLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerContact();
-        footerHelper.verificationFooterContact();
+        footerHelper.footerClick("Contact");
+        footerHelper.verificationFooter("Contact");
         helperBase.toHomePage();
     }
 
-   // @Test
+    @Test
     public void footerPressLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerPress();
-        footerHelper.verificationFooterPress();
+        footerHelper.footerClick("Press");
+        footerHelper.verificationFooter("Press");
         helperBase.toHomePage();
     }
 
-   // @Test
+    @Test
     public void footerPricingLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerPricing();
-        footerHelper.verificationFooterPricing();
+        footerHelper.footerClick("Pricing");
+        footerHelper.verificationFooter("Pricing");
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerMediaLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerMedia();
-        footerHelper.verificationFooterMedia();
-        helperBase.toHomePage();
+        footerHelper.footerClick("Media");
+        footerHelper.verificationFooter("Media");
+
     }
 
-  //  @Test
+    @Test
     public void footerStaySafeLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerStaySafe();
-        footerHelper.verificationFooterStaySafe();
-        helperBase.toHomePage();
+        footerHelper.footerClick("Stay safe");
+        footerHelper.verificationFooter("Security warning");
+
     }
 
-  //  @Test
+    @Test
     public void footerBlogLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerBlog();
+        footerHelper.footerClick("Blog");
         verificationHelper.FMBlogPage();
-        helperBase.toHomePage();
+
     }
 
-   // @Test
+    @Test
     public void footerBrowseFlatsharesLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerBrowseFlatshares();
-        footerHelper.verificationBrowseFlatshares("North London");
-        helperBase.toHomePage();
-    }
+        footerHelper.footerClick("Browse Flatshares");
+        footerHelper.verificationBrowseFlatshares("North London", "Brent Park");
+            }
 
-   // @Test
+    @Test
     public void footerAskLandlord() {
         pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
-        footerHelper.footerAskLandlord();
+        footerHelper.footerClick("#AskTheLandlord");
         footerHelper.verificationAskLandlord();
         helperBase.toHomePage();
     }
 
-  //  @Test
+   @Test
     public void footerModern() {
         pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
-        footerHelper.footerModern();
+        footerHelper.footerClick("Modern Living Index");
         footerHelper.verificationModern();
-        helperBase.toHomePage();
-        helperBase.toHomePage();
+
     }
 
- //   @Test
+   @Test
     public void footerBrowseHowItWorksLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerHowItWorks();
+        footerHelper.footerClick("How it works");
         footerHelper.verificationHowItWorks();
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerBrowseTipsLink() {
         pageUrlVerifLiveGoStage();
-        footerHelper.footerTipsWorks();
-        footerHelper.verificationTipsWorks();
+        footerHelper.footerClick("Tips");
+        footerHelper.verificationFooter("Tips");
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerNLALink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerNLAWorks();
@@ -129,7 +131,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test(enabled = false)
+    @Test(enabled = false)
     public void footerFBLink() {
         pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
@@ -138,7 +140,7 @@ public class FooterTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void footerTwitterLink() {
         pageUrlVerifLiveGoStage();
 
@@ -146,7 +148,7 @@ public class FooterTest extends TestBase {
         footerHelper.verificationTwitter();
     }
 
-  //  @Test
+    @Test
     public void footerInstagramLink() {
         pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
@@ -155,11 +157,11 @@ public class FooterTest extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void footerYoutubeLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerYoutube();
-        clearCache();
+        refresh();
         footerHelper.verificationYoutube();
     }
 

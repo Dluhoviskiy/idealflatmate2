@@ -1,5 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
 import java.io.File;
@@ -9,20 +11,24 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SignUpHelper extends HelperBase {
+    static SelenideElement roomClick = $(byXpath("//h3[@class='u_m0' and contains (text(), 'A room')]"));
+    static SelenideElement photoClick = $(byXpath("//input[@id='moreinfosignupform-file']"));
+    static SelenideElement dragLow = $(byXpath("//div[@class='noUi-handle noUi-handle-lower']"));
+    static SelenideElement dragUpper = $(byXpath("//div[@class='noUi-handle noUi-handle-upper']"));
 
     public static void clickRoom1() {
-        $(byXpath("//h3[@class='u_m0' and contains (text(), 'A room')]")).click();
+        roomClick.click();
         navigator.forward();
     }
 
     public void clickRoom() {
-        $(byXpath("//h3[@class='u_m0' and contains (text(), 'A room')]")).click();
+        roomClick.click();
         backFromEmailToRoom();
     }
 
     public void backFromEmailToRoom() {
         $(byXpath("//a[contains (., 'back')]")).click();
-        $(byXpath("//h3[@class='u_m0' and contains (text(), 'A room')]")).click();
+        roomClick.click();
     }
 
     public void clickEmailPopup() {
@@ -36,11 +42,11 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void setSignUpNameF(String nameF) {
-        fillInField(nameF, $(byXpath("//input[@id='yourinfosignupform-username']")), $(byXpath("//input[@id='yourinfosignupform-username']")));
+        fillInField (nameF, $(byXpath("//input[@id='yourinfosignupform-username']")));
     }
 
     public void setSignUpNameFMessage(String nameF) {
-        fillInField(nameF, $(byXpath("//input[@id='yourinfoadditionalsignupform-username']")), $(byXpath("//input[@id='yourinfoadditionalsignupform-username']")));
+        fillInField(nameF, $(byXpath("//input[@id='yourinfoadditionalsignupform-username']")));
     }
 
     public void genderFemaleSelect() {
@@ -68,19 +74,19 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void setSignEmail(String email) {
-        fillInField(email, $(byXpath("//input[@id='yourinfosignupform-email']")), $(byXpath("//input[@id='yourinfosignupform-email']")));
+        fillInField(email, $(byXpath("//input[@id='yourinfosignupform-email']")));
     }
 
     public void setSignEmailMessage(String email) {
-        fillInField(email, $(byXpath("//input[@id='yourinfoadditionalsignupform-email']")), $(byXpath("//input[@id='yourinfoadditionalsignupform-email']")));
+        fillInField(email, $(byXpath("//input[@id='yourinfoadditionalsignupform-email']")));
     }
 
     public void setSignPassword(String password) {
-        fillInField(password, $("input#yourinfosignupform-password"), $("input#yourinfosignupform-password"));
+        fillInField(password, $("input#yourinfosignupform-password"));
     }
 
     public void setSignPasswordMessage(String password) {
-        fillInField(password, $("input#yourinfoadditionalsignupform-password"), $("input#yourinfoadditionalsignupform-password"));
+        fillInField(password, $("input#yourinfoadditionalsignupform-password"));
     }
 
     public void clickFormSignUpContinue() {
@@ -99,25 +105,25 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void profilePhotoAddJpeg() {
-        $(byXpath("//input[@id='moreinfosignupform-file']")).uploadFile(new File("src/test/resources/profile1.jpeg"));
+        photoClick.uploadFile(new File("src/test/resources/profile1.jpeg"));
         sleep(2000);
     }
     public void profilePhotoAddPng() {
-        $(byXpath("//input[@id='moreinfosignupform-file']")).uploadFile(new File("src/test/resources/Profile.png"));
+        photoClick.uploadFile(new File("src/test/resources/Profile.png"));
         sleep(2000);
     }
     public void profilePhotoAddJpg() {
-        $(byXpath("//input[@id='moreinfosignupform-file']")).uploadFile(new File("src/test/resources/Property1.jpg"));
+        photoClick.uploadFile(new File("src/test/resources/Property1.jpg"));
         sleep(2000);
     }
 
     public void profilePhotoAddJpeg10Mb() {
-        $(byXpath("//input[@id='moreinfosignupform-file']")).uploadFile(new File("src/test/resources/8mb-artwork.jpg"));
+        photoClick.uploadFile(new File("src/test/resources/8mb-artwork.jpg"));
         sleep(2000);
     }
 
     public void profilePhotoAddPdf() {
-        $(byXpath("//input[@id='moreinfosignupform-file']")).uploadFile(new File("src/test/resources/IF-pdf.pdf"));
+        photoClick.uploadFile(new File("src/test/resources/IF-pdf.pdf"));
         sleep(2000);
     }
 
@@ -139,17 +145,11 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void profilePhone(String phone) {
-        Field2("#moreinfosignupform-phone",
-                "#moreinfosignupform-phone",
-                "#moreinfosignupform-phone",
-                 phone);
+        Field2("#moreinfosignupform-phone", phone);
     }
 
     public void profilePhoneMessage(String phone) {
-        Field2("#messagewritesignupform-phone",
-                "#messagewritesignupform-phone",
-                "#messagewritesignupform-phone",
-                phone);
+        Field2("#messagewritesignupform-phone",phone);
     }
 
     public void occupation(String prof) {
@@ -158,7 +158,11 @@ public class SignUpHelper extends HelperBase {
 
     public void aboutYourself(String text) {
         $(byXpath("//textarea[@id='moreinfosignupform-bio']")).setValue(text);
+    }
 
+    public void aboutAgency(String text, String text1) {
+        $(byXpath("//textarea[@id='moreinfosignupform-bio']")).setValue(text);
+        $(byXpath("//textarea[@id='moreinfosignupform-bio']/../../div/label")).shouldHave(text(text1));
     }
 
     public void preferredLocation(String location, String area) {
@@ -176,15 +180,15 @@ public class SignUpHelper extends HelperBase {
     }
 
     public static void budgetMin() {
-        //$(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div[@class='noUi-handle noUi-handle-upper']")));
-        $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
-        $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div/span[@class='text-14']")));
+
+        dragLow.dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
+        dragLow.dragAndDropTo($(byXpath("//div/span[@class='text-14']")));
     }
 
     public static void budgetMax() {
-        //$(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//div[@class='noUi-handle noUi-handle-upper']")));
-        $(byXpath("//div[@class='noUi-handle noUi-handle-upper']")).dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
-        //$(byXpath("//div[@class='noUi-handle noUi-handle-upper']")).dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
+
+        dragUpper.dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
+
     }
 
 

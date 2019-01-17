@@ -79,18 +79,18 @@ public class AddPropertyHelper extends HelperBase {
          }
 
     public void pressAddListingFromHeaderNotLoggedUser() {
-        $(byXpath("(//li//a[contains(., 'List a room')])[1]")).click();;
+        $(byXpath("//ul[starts-with(@class, 'nav navbar-nav')]//a[contains(.,'List a room')]")).click();
     }
 
 
-    public void setPhoneNumber(String phoneNumber, String text) {
+    public void setPhoneNumber(String Number, String text) {
        $(byXpath("//label[contains(text(), 'Phone Number')]")).scrollIntoView(text);
-       fillInField(phoneNumber, $("#property-phone_number"),  $(byXpath("#signup-need-firstname")));
+       fillInField1(Number, $("#property-phone_number"),  $(byXpath("#signup-need-firstname")));
     }
 
     public void setPhoneNumber1(String Number) {
         sleep(2000);
-        fillInField(Number, $(byXpath("//div//h2[contains(text(), 'Phone number')]/..//input[@id='property-phone_number']")),
+        fillInField1(Number, $(byXpath("//div//h2[contains(text(), 'Phone number')]/..//input[@id='property-phone_number']")),
                             $(byXpath("//input[@id='property-phone_number']")));
 
         $(byXpath("//input[@id='property-phone_number']")).setValue(Number);
@@ -141,11 +141,11 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setMonthlyRent(String rent) {
-        fillInField(rent, $("#room-1-price"), $("#room-1-price"));
+        fillInField(rent, $("#room-1-price"));
      }
 
     public void setDeposit(String deposit) {
-        fillInField(deposit, $("input#room-1-deposit"),  $("input#room-1-deposit"));
+        fillInField(deposit, $("input#room-1-deposit"));
     }
 
     public void setTotalBills(String bills) {
@@ -186,7 +186,7 @@ public class AddPropertyHelper extends HelperBase {
 
 
     public void setAnotherMonthlyRent(String rent) {
-        fillInField(rent, $("#room-3-price"), $("#room-3-price"));
+        fillInField(rent, $("#room-3-price"));
         $(byXpath("//div/input[@id='room-3-price']")).shouldHave(Condition.value("800"));
 
     }
@@ -265,6 +265,8 @@ public class AddPropertyHelper extends HelperBase {
     public void selectTypeUser(final String userType) {
         $(byXpath("//label[starts-with(@for,'type_id_') and contains(.,'" + userType + "')]")).waitUntil(appear, 4000).click();
     }
+
+
 
     public void pressContinue() {
         $("#wizard-form #wizard-next").waitUntil(appear, 4000).click();

@@ -345,19 +345,36 @@ public class SignUpTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     //Facebook authorization doen`t work on staging
 
-    public void SignUpViaFacebookAgeUnder18() {
+    public void signUpViaFBlistingAgent() {
         pageUrlVerifStageGoLive();
-        authorizationHelper.clickJoinFreeButton();
-        signUpHelper.clickRoom();
-        authorizationHelper.clickSignUpWithFacebook();
-        authorizationHelper.LoginFacebookWithNewAccount("ron666ddd@gmail.com", "qqqqqq666D");
-        //verificationHelper.verificationUserNameOnHomePage("Ronald");
-        authorizationHelper.acceptFBageRestriction();
-        verificationHelper.verificationUserIsUnlogged("Join Free");
+        addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
+        addPropertyHelper.selectTypeUser( "An agency");
 
+        authorizationHelper.clickSignUpWithFB_ListFlow();
+
+
+        authorizationHelper.LoginFacebookWithNewAccount("ron666ddd@gmail.com", "qqqqqq666D");
+        signUpHelper.profilePhone("5555555555");
+        signUpHelper.aboutAgency("I am an agent", "About your agency");
+        signUpHelper.clickYourInformationContinue();
+
+        verificationHelper.verificationUserNameOnHomePage("Kron");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseProfileFromDropDownMenu();
+        //matchingHelper.closePopupMatching();
+        verificationHelper.verifDataProfFBAgent("75%", "I am an agent");
+        signUpHelper.verificationDataProfileFotoDashboard();
+
+
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
 

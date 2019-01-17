@@ -114,8 +114,8 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void alogInWithMatchingFB() {
-        pageUrlVerifStageGoLive();
-        //helperBase.closeOpen("https://www.idealflatmate.co.uk/");
+        newDriverPage();
+        helperBase.closeOpen("https://www.idealflatmate.co.uk/");
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         matchingHelper.clickAFM();

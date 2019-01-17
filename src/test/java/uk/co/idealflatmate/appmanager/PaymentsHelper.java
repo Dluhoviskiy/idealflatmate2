@@ -17,9 +17,9 @@ public class PaymentsHelper extends HelperBase {
 
     public void fillinDebitCardData(String name, String cardNumber, String month, String year, String cvc) {
         switchTo().frame("_iframe_holder");
-        $(byXpath("//div[@id='_el_input_nameoncard']/input")).waitUntil(visible, 10000).click();
-        $(byXpath("//div[@id='_el_input_nameoncard']/input")).clear();
-        $(byXpath("//div[@id='_el_input_nameoncard']/input")).setValue(name);
+
+        fillInField(name, $(byXpath("//div[@id='_el_input_nameoncard']/input))")));
+
         $(byXpath("//div[@id='_el_input_cardnumber']/input")).setValue(cardNumber);
         $(byXpath("//div[@id='_el_input_expirationmonth']/input")).setValue(month);
         $(byXpath("//div[@id='_el_input_expirationyear']/input")).setValue(year);

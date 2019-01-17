@@ -236,11 +236,15 @@ public class VerificationHelper extends HelperBase {
                 "complete"));
         $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 59 is a female freelancer/self employed looking " +
                 "for a room in Watford or North London or Zone 1."));
-        /*$(byXpath("(//h4/../div[@class='text-body-copy'])[2]")).shouldHave(text("Watford\n" +
-                " North London\n" +
-                " Zone 1"));*/
-        //ul[@class='js-selected-area u_m0 u_p0']
+     }
 
+    public void verifDataProfFBAgent(String percent, String text1) {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
+                "Personal Details\n" +
+                "Your ideal tenant"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
+                "complete"));
+        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(text1));
     }
 
     public void verificationDataProfileFM(String percent) {
@@ -601,7 +605,7 @@ public class VerificationHelper extends HelperBase {
 
 
     public void phoneVerification(String phone, String text) {
-        Field2("#moreinfosignupform-phone", "#moreinfosignupform-phone", "#moreinfosignupform-phone", phone);
+        Field2("#moreinfosignupform-phone", phone);
         $(byXpath("//div[starts-with(@class,'form-group required u_m15-bottom')]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
 
     }
@@ -712,16 +716,16 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void FMBlogPage() {
-        switchTo().window(1);
+        //switchTo().window(1);
         $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("You are a landlord? Head to our landlord HQ here »"));
-        close();
+
     }
 
     public void landlordBlogPage() {
 
         switchTo().window(1);
         $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("Are you a flatmate? Head to Flatmate HQ here »"));
-        close();
+        toHomePage();
     }
 
 

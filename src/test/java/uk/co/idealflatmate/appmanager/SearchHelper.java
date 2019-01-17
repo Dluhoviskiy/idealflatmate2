@@ -11,7 +11,6 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byId;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
@@ -20,34 +19,29 @@ public class SearchHelper extends HelperBase {
 
     public void searchProperty(String location) {
 
-        $("input#property-location").waitUntil(visible, 4000).click();
-        $("input#property-location").waitUntil(empty, 4000).setValue(location);
+        searchPropertyBy(location, $("input#property-location"));
         sleep(2000);
         $(byXpath("//button[@class='js-search-submit text-20']")).waitUntil(visible, 10000).click();
     }
 
     public void searchPropertyByEnter(String location) {
-
-        $("input#property-location").waitUntil(visible, 4000).click();
-        $("input#property-location").waitUntil(empty, 10000).setValue(location);
+        searchPropertyBy(location, $("input#property-location"));
         $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham, London')]")).waitUntil(exist, 4000).pressEnter();
-        //$(byXpath("//button[@class='btn btn-primary u_p60-left-sm u_p60-right-sm js-search-submitLogin']")).waitUntil(visible, 10000).click();
-        //$(byText("COMPOSE")).click();
+
     }
 
-    public void searchPropertyBySelectfromList(String location) {
 
-        $("input#property-location").waitUntil(visible, 4000).click();
-        $("input#property-location").waitUntil(empty, 10000).setValue(location);
-        sleep(1000);
+    public void searchPropertyBySelectfromList(String location) {
+        searchPropertyBy(location, $("input#property-location"));
         $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham Junction')]")).waitUntil(visible, 4000).click();
 
     }
 
+
+
     public void searchPropertyIncorrectFirstfromList(String location) {
 
-        $("input#property-location").waitUntil(visible, 4000).click();
-        $("input#property-location").waitUntil(empty, 10000).setValue(location).pressEnter();
+        searchPropertyBy(location, $("input#property-location"));
 
     }
 
@@ -146,9 +140,11 @@ public class SearchHelper extends HelperBase {
     }
 
     public void cardsWith2roomsAvailable(int number, String text) {
+        ElementsCollection rooms1 = $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']"));
+
         //$$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).shouldHaveSize(number).shouldHave(CollectionCondition.texts(text));
-        $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).shouldHaveSize(number);
-        $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).filterBy(textCaseSensitive(text)).shouldHaveSize(0);
+        rooms1.shouldHaveSize(number);
+        rooms1.filterBy(textCaseSensitive(text)).shouldHaveSize(0);
 
     }
 
@@ -158,9 +154,10 @@ public class SearchHelper extends HelperBase {
     }
 
     public void selectRadius(String radius) {
-        $(byXpath("//div[@class='radius-select-holder']")).click();
-        $(byXpath("//div[@class='radius-select-holder']/select")).selectOptionContainingText(radius);
-        $(byXpath("//div[@class='radius-select-holder']")).click();
+        String radius1 = "//div[@class='radius-select-holder']";
+        $(byXpath(""+radius1+"")).click();
+        $(byXpath(""+radius1+"/select")).selectOptionContainingText(radius);
+        $(byXpath(""+radius1+"")).click();
         sleep(5000);
     }
 
@@ -223,9 +220,10 @@ public class SearchHelper extends HelperBase {
     }
 
     public void closePopupSignup() {
+        SelenideElement close1 = $(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']"));
 
-        if($(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']")).isDisplayed()){
-            $(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']")).click();}
+        if(close1.isDisplayed()){
+            close1.click();}
     }
 
     public void priceFilter() {

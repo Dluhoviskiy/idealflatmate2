@@ -5,9 +5,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Condition.appears;
-import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
@@ -50,12 +48,20 @@ public class HelperBase {
         return $$(byXpath("//div[@class='card-profile-text']")).texts();
     }
 
-    public void fillInField(String text, SelenideElement $, SelenideElement selenideElement) {
+    public void fillInField(String text, SelenideElement selElem) {
         sleep(1000);
-        selenideElement.waitUntil(visible, 20000).click();
-        selenideElement.waitUntil(visible, 20000).clear();
+
+        selElem.waitUntil(visible, 20000).click();
+        selElem.waitUntil(visible, 20000).clear();
         sleep(1000);
-        selenideElement.waitUntil(visible, 20000).setValue(text);
+        selElem.waitUntil(visible, 20000).setValue(text);
+    }
+    protected void fillInField1(String Number, SelenideElement selElem1, SelenideElement selElem2) {
+        selElem1.waitUntil(visible, 20000).click();
+        selElem2.waitUntil(visible, 20000).clear();
+        sleep(1000);
+        selElem2.waitUntil(visible, 20000).setValue(Number);
+
     }
 
     public void gmailLogin(String text, String field, String next) {
@@ -67,18 +73,17 @@ public class HelperBase {
         sleep(2000);
     }
 
-    protected void fillInField1(String nla, SelenideElement $, SelenideElement $1) {
-    }
+
 
     public void toHomePage() {
         //$(By.xpath("//a[@class='navbar-brand']")).click();
         open("http://front.idealflatmate4test.demo.devplatform2.com/");
     }
 
-    public void Field2(String locator, String locator2, String locator3, String text) {
+    public void Field2(String locator, String phone) {
         $(locator).click();
-        $(locator2).clear();
-        $(locator3).setValue(text);
+        $(locator).clear();
+        $(locator).setValue(phone);
     }
 
     public void FieldEnter(String text, SelenideElement string1, SelenideElement string2) {
@@ -133,5 +138,26 @@ public class HelperBase {
             refresh();
             close();
             open("https://www.idealflatmate.co.uk/");}
+    }
+
+    public void hoverClick(String xpath) {
+        SelenideElement elementHoverClick = $(byXpath(""+xpath+"")).waitUntil(visible, 10000);
+        elementHoverClick.hover();
+        elementHoverClick.click();
+    }
+
+    public void hoverCShouldExist(String xpath) {
+        SelenideElement elementHoverClick = $(byXpath(""+xpath+"")).waitUntil(visible, 10000);
+        elementHoverClick.hover();
+        elementHoverClick.should(exist);
+    }
+
+    public void searchPropertyBy(String location, SelenideElement location1) {
+
+        location1.waitUntil(visible, 10000).click();
+        location1.setValue(location).waitUntil(empty, 10000);
+        sleep(1000);
+
+
     }
 }

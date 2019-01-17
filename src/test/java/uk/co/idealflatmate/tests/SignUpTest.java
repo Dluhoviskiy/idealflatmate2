@@ -345,7 +345,7 @@ public class SignUpTest extends TestBase {
 
     }
 
-    @Test
+   // @Test
     //Facebook authorization doen`t work on staging
 
     public void signUpViaFBlistingAgent() {

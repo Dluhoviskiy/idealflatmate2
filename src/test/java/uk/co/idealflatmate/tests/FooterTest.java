@@ -148,7 +148,7 @@ public class FooterTest extends TestBase {
         footerHelper.verificationTwitter();
     }
 
-  // @Test
+   @Test
     public void footerInstagramLink() {
         pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
@@ -157,7 +157,7 @@ public class FooterTest extends TestBase {
 
     }
 
-    @Test
+   // @Test
     public void footerYoutubeLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerYoutube();

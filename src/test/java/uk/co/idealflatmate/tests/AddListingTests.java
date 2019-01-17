@@ -10,7 +10,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 public class AddListingTests extends TestBase {
 
-    @Test
+   // @Test
     public void loginStartListing() {
         pageUrlVerifLiveGoStage();
 
@@ -44,7 +44,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void loginPendingListing() {
         pageUrlVerifLiveGoStage();
 
@@ -85,7 +85,7 @@ public class AddListingTests extends TestBase {
 
     }
 
-    @Test
+  //  @Test
     public void signUpPropertyAdding() {
         pageUrlVerifLiveGoStage();
 
@@ -137,7 +137,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+   // @Test
     public void propertyAddWithAllFields() {
         pageUrlVerifLiveGoStage();
 

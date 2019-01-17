@@ -165,7 +165,7 @@ public class AuthorizationTests extends TestBase {
        //verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-  ///  @Test
+  //  @Test
     public void logInMessageProperty() {
 
         pageUrlVerifLiveGoStage();

@@ -8,7 +8,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class AreaPageTest extends TestBase {
 
-   // @Test
+  //  @Test
     public void firstFeaturedHomePageHeader() {
         pageUrlVerifLiveGoStage();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();

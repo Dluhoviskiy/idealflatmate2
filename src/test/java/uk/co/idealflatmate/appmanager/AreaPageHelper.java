@@ -9,13 +9,14 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AreaPageHelper extends HelperBase {
     SelenideElement sortOption = $(byXpath("//select[@id='property-sort']/option[1]"));
+    static SelenideElement container = $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow u_ep-relative']"));
 
     public void clickArea(int number_of_area) {
         $$("#hp-areas div.card-btr-amenities.text-white").get(number_of_area).click();
     }
 
     public void clickHeaderItem(String select1, String select2, String select3) {
-        SelenideElement container = $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow']"));
+
 
         switchTo().window(1);
 
@@ -35,7 +36,7 @@ public class AreaPageHelper extends HelperBase {
         $(byXpath("//h2[contains(text(), 'Flathunters')]")).shouldBe(visible);
         sleep(3000);
 
-        $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow']")).scrollIntoView(true).$(byXpath("//a[@href='#explore']")).click();
+        container.scrollIntoView(true).$(byXpath("//a[@href='#explore']")).click();
         $(byXpath("//div[@class='scrollspy clearfix scrollspy-horizontal']")).shouldBe(visible);
 
     }
@@ -97,7 +98,7 @@ public class AreaPageHelper extends HelperBase {
     public void checklinkFH(String area1) {
         switchTo().window(1);
 
-        $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow']")).scrollIntoView(true).$(byXpath("//a[@href='#flatmates']")).click();
+        container.scrollIntoView(true).$(byXpath("//a[@href='#flatmates']")).click();
         $(byXpath("//h2[contains(text(), 'Flathunters')]")).shouldBe(visible);
         sleep(2000);
 
@@ -140,7 +141,7 @@ public class AreaPageHelper extends HelperBase {
     public void clickMoreRooms() {
         switchTo().window(1);
 
-        $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow']")).scrollIntoView(true).$(byXpath("//a[@href='#rooms']")).click();
+        container.scrollIntoView(true).$(byXpath("//a[@href='#rooms']")).click();
         $(byXpath("//h2[contains(text(), 'Available rooms')]")).shouldBe(visible);
         sleep(3000);
 

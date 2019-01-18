@@ -117,17 +117,18 @@ public class HelperBase {
 
     }
 
-    public static void pageUrlVerifLiveGoStage(){
+   /* public static void pageUrlVerifLiveGoStage(){
         // проверить, что вы находитесь на верной странице
 
         if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
 
-            clearBrowserCache();
-            refresh();
-            close();
-            open ("http://front.idealflatmate4test.demo.devplatform2.com/");
+            //clearBrowserCache();
+            //refresh();
+            //close();
+            //open ("http://front.idealflatmate4test.demo.devplatform2.com/");
+
         }
-    }
+    }*/
 
 
     public void closeOpen(String relOrAbsolUrl) {

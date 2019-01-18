@@ -10,6 +10,7 @@ import uk.co.idealflatmate.appmanager.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.url;
 
 
 public class TestBase {
@@ -108,7 +109,7 @@ public class TestBase {
         return paymentsHelper;
     }
 
-    public void newDriverPage() {
+    public static void newDriverPage() {
         closeWebDriver();
         //ChromeDriverManager.getInstance().setup();
         WebDriverManager.chromedriver().setup();
@@ -119,5 +120,18 @@ public class TestBase {
 
         clearBrowserCache();
         refresh();
+    }
+
+    public static void pageUrlVerifLiveGoStage(){
+        // проверить, что вы находитесь на верной странице
+
+        if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
+            newDriverPage();
+            //clearBrowserCache();
+            //refresh();
+            //close();
+            //open ("http://front.idealflatmate4test.demo.devplatform2.com/");
+
+        }
     }
 }

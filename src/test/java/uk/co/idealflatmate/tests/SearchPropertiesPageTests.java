@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static org.seleniumhq.jetty7.util.LazyList.getList;
 import static org.testng.Assert.assertEquals;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+//import static uk.co.idealflatmate.appmanager.TespageUrlVerifLiveGoStage;
 
 public class SearchPropertiesPageTests extends TestBase{
 

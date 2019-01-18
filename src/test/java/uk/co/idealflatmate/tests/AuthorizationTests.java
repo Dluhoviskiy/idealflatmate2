@@ -5,7 +5,7 @@ import org.testng.annotations.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 

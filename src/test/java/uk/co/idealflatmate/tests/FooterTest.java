@@ -5,7 +5,7 @@ import uk.co.idealflatmate.appmanager.FooterHelper;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class FooterTest extends TestBase {
 

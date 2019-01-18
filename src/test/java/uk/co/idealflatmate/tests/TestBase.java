@@ -122,7 +122,7 @@ public class TestBase {
         refresh();
     }
 
-    public static void pageUrlVerifLiveGoStage(){
+    public void pageUrlVerifLiveGoStage(){
         // проверить, что вы находитесь на верной странице
 
         if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {

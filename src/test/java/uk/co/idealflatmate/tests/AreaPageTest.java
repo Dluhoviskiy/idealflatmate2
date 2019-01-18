@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class AreaPageTest extends TestBase {
 

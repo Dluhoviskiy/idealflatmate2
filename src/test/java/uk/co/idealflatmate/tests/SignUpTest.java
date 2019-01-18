@@ -2,7 +2,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 

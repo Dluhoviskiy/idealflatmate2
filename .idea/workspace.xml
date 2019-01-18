@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

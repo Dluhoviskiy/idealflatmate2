@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="" />
+    <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,8 +74,8 @@
       <file leaf-file-name="FooterTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="110">
+              <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -629,9 +631,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AreaPageTest_firstFeaturedHomePageHeader - 2019.01.17 at 19h 31m 29s.xml">
-      <configuration name="AreaPageTest.firstFeaturedHomePageHeader" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="AreaPageTest_firstFeaturedHomePageHeader - 2019.01.17 at 19h 32m 12s.xml">
       <configuration name="AreaPageTest.firstFeaturedHomePageHeader" configurationId="TestNG" />
     </history-entry>
@@ -659,6 +658,9 @@
     <history-entry file="FooterTest - 2019.01.17 at 20h 20m 53s.xml">
       <configuration name="FooterTest" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="FooterTest - 2019.01.18 at 11h 32m 32s.xml">
+      <configuration name="FooterTest" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -677,13 +679,13 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.35490832" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.5600425" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8989583" visible="true" weight="0.5600425" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.0671875" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1086,8 +1088,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="110">
+          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

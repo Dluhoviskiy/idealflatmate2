@@ -123,7 +123,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-    //@Test
+    @Test
     public void footerNLALink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerNLAWorks();

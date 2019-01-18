@@ -128,7 +128,7 @@ public class FooterTest extends TestBase {
         pageUrlVerifLiveGoStage();
         footerHelper.footerNLAWorks();
         footerHelper.verificationNLAWorks();
-        helperBase.toHomePage();
+        //helperBase.toHomePage();
     }
 
     //@Test

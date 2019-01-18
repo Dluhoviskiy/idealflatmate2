@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FooterTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FooterTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="119" column="11" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="31" />
+            <state relative-caret-position="396">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelperBase.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HelperBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2882">
-              <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
+            <state relative-caret-position="-2609">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -251,10 +250,10 @@
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" />
       </list>
     </option>
   </component>
@@ -1064,16 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="119" column="11" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchFMPageTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -1093,8 +1082,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2882">
-          <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
+        <state relative-caret-position="-2609">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

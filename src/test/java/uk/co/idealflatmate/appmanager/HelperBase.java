@@ -37,7 +37,9 @@ public class HelperBase {
         if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).isEnabled()) {
             $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).click();
             sleep(2000);
-        } else {}
+        } else {
+
+        }
     }
 
     public static void closeButtonRenew() {
@@ -110,7 +112,9 @@ public class HelperBase {
             clearBrowserCache();
             refresh();
             close();
-            open("https://www.idealflatmate.co.uk/");}
+            open("https://www.idealflatmate.co.uk/");
+        }
+
     }
 
     public static void pageUrlVerifLiveGoStage(){
@@ -121,7 +125,8 @@ public class HelperBase {
             clearBrowserCache();
             refresh();
             close();
-            open("http://front.idealflatmate4test.demo.devplatform2.com/");}
+            open ("http://front.idealflatmate4test.demo.devplatform2.com/");
+        }
     }
 
 
@@ -131,14 +136,15 @@ public class HelperBase {
         open(relOrAbsolUrl);
     }
 
-    public static void pageUrlVerifStageGoLive1(){
+    public  void pageUrlVerifStageGoLive1(){
         // проверить, что вы находитесь на верной странице
         if (! url().equals("https://www.idealflatmate.co.uk/")) {
 
             clearBrowserCache();
             refresh();
             close();
-            open("https://www.idealflatmate.co.uk/");}
+            open("https://www.idealflatmate.co.uk/");
+        }
     }
 
     public void hoverClick(String xpath) {

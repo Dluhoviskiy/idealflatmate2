@@ -53,21 +53,21 @@ public class VerificationHelper extends HelperBase {
 
     }
 
-    public void verifyAddedPropertyWithAllFields(final String month) {//section[@id]//h1/small
+    public void verifyAddedPropertyWithAllFields(String month) {//section[@id]//h1/small
         String ref = $(byXpath("//section[@id]//h1/small")).getText();
-        $(byXpath("//section[@id]//h1")).shouldHave(text("3 bedrooms for rent in Bankside, South London from £500/month per room\n"
+        $(byXpath("//section[@id]//h1")).shouldHave(text("3 bedrooms for rent in Bankside, South London from "+"£"+"500/month per room\n"
                  + ref));
         $(byXpath("(//span[@class='property-phone_hide js-phone-box'])[2]")).shouldHave(text("\n" + "+44 2 XXXX"));
 
         //$(byXpath("//div[@class='panel-heading']")).scrollTo();
 
         $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£500\n" +
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£"+"500\n" +
                 "month\n" +
                 "Deposit\n" +
                 "£1,000\n" +
                 "Bills pcm\n" +
-                "£400\n"));
+                "£"+"400\n"));
 
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
                 "minimum 1 month maximum 12 months"));
@@ -76,12 +76,12 @@ public class VerificationHelper extends HelperBase {
 
         $(byXpath("//a[contains(text(), 'Room 2')]")).click();
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£500\n" +
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£"+"500\n" +
                 "month\n" +
                 "Deposit\n" +
-                "£1,000\n" +
+                "£"+"1,000\n" +
                 "Bills pcm\n" +
-                "£400\n"));
+                "£"+"400\n"));
 
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
                 "minimum 1 month maximum 12 months"));
@@ -92,7 +92,7 @@ public class VerificationHelper extends HelperBase {
 
         $(byXpath("//a[contains(text(), 'Room 3')]")).click();
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£800\n" + "month\n" + "Available from\n" + "11th " + month + " 2025"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£"+"800\n" + "month\n" + "Available from\n" + "11th " + month + " 2025"));
        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
         $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text(" 3 of 2 bedrooms available  Garden  Parking space  Smokers accepted  Pets accepted  Family friendly\n" +
                 "Very good flat"));
@@ -111,7 +111,7 @@ public class VerificationHelper extends HelperBase {
                 "                                        "));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Ronald, 59 is a female looking for a room.\n" +
-                "Maximum budget: £2500/month\n" +
+                "Maximum budget: £"+"2500/month\n" +
                 "Ready to move in: Immediately"));
     }
 
@@ -124,7 +124,7 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(PercentCompleted + "\n" + "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Ronald, 59 is a female looking for a room.\n" +
-                "Maximum budget: £2500/month\n" +
+                "Maximum budget: £"+"2500/month\n" +
                 "Ready to move in: Immediately"));
     }
 
@@ -132,7 +132,7 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//div[@class='col-sm-5 h5 heading-spaced text-normal u_m20-top u_m30-top-md text-normal-weight']")).shouldHave(text("Preferred location: London\n" +
                 "Preferred location2: South London\n" +
                 "Preferred location3: Hackney Marshes\n" +
-                "Budget: £2500 pm\n" +
+                "Budget: £"+"2500 pm\n" +
                 "Ready to move in: now"));
     }
 
@@ -147,7 +147,7 @@ public class VerificationHelper extends HelperBase {
                 "                                        "));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Tell us about yourself\n" +
-                "Maximum budget: £1250/month\n" +
+                "Maximum budget: "+"1250/month\n" +
                 "Ready to move in: 08-08-2019\n" +
                 "Looking for a room in\n" +
                 "South London\n" +
@@ -165,7 +165,7 @@ public class VerificationHelper extends HelperBase {
                 "                                        "));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Tell us about yourself\n" +
-                "Maximum budget: £1250/month\n" +
+                "Maximum budget: £"+"1250/month\n" +
                 "Ready to move in: 08-08-2019\n" +
                 "Looking for a room in\n" +
                 "Watford"));
@@ -181,7 +181,7 @@ public class VerificationHelper extends HelperBase {
                 "complete"));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Ronald is a female looking for a room.\n" +
-                "Maximum budget: £2500/month\n" +
+                "Maximum budget: £"+"2500/month\n" +
                 "Ready to move in: Immediately"));
     }
 
@@ -263,7 +263,7 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//ul[@class='geo-list u_m0 u_p0']")).shouldHave(text("Watford\n" +
                 "North London\n" +
                 "Zone 1"));
-        $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[2]")).shouldHave(text("Maximum budget: £1250/month"));
+        $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[2]")).shouldHave(text("Maximum budget: £"+"1250/month"));
         $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[3]")).shouldHave(text("Ready to move in: Immediately"));
 
         /*$(byXpath("(//h4/../div[@class='text-body-copy'])[2]")).shouldHave(text("Watford\n" +
@@ -283,7 +283,7 @@ public class VerificationHelper extends HelperBase {
                 "                                        "));
         $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
                 "Tell us about yourself\n" +
-                "Maximum budget: £1250/month\n" +
+                "Maximum budget: £"+"1250/month\n" +
                 "Ready to move in: 08-08-2019\n" +
                 "Looking for a room in\n" +
                 "Watford"));
@@ -564,8 +564,11 @@ public class VerificationHelper extends HelperBase {
         }
     }
 
-    public void paymentPage() {
-        $(byXpath("//h1[@class='list-property-title u_m0-top ']")).waitUntil(exist, 4000).shouldHave(text("Upgrade"));
+    public void paymentPage(String text) {
+        $(byXpath("//h2[@class='text-20 u_m0-top']")).waitUntil(exist, 4000).shouldHave(text(text));
+    }
+    public void paymentPageWithoutListingLord(String text) {
+        $(byXpath("//h2[@class='text-20 u_m0-top']")).waitUntil(exist, 4000).shouldHave(text(text));
     }
 
     public void chatPage() {
@@ -641,12 +644,14 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//h2[@class='h4' and contains(.,' flatmate')]")).shouldBe(visible);
     }
 
-    public void isPropertyPage(String searchLocation) {
+    public void isPropertyPageLocation(String searchLocation) {
 
         String currentLocation = $(byXpath("//h1")).getText();
         Assert.assertEquals(currentLocation, searchLocation);
+    }
+    public void isPropertyPage() {
 
-
+        title().contains("Find A Room To Rent In The UK | Ideal Flatmate");
     }
 
     public void PropertyPageNumber(String page) {
@@ -692,7 +697,7 @@ public class VerificationHelper extends HelperBase {
 
     public void finishViewUnfinished() {
         $(byXpath("//a[contains(., 'View listing')]")).click();
-        $(byXpath("//h1")).shouldHave(text("bedroom property for rent in Bankside, South London, £0/month"));
+        $(byXpath("//div[@class='col-xs-6 col-sm-4 u_p10-bottom']")).shouldHave(text(" 0 bedroom available"));
     }
 
     public void areaBlank() {
@@ -716,15 +721,15 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void FMBlogPage() {
-        //switchTo().window(1);
-        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("You are a landlord? Head to our landlord HQ here »"));
+        switchTo().window(1);
+        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("You are a landlord? Head to our landlord HQ here "+"»"));
 
     }
 
     public void landlordBlogPage() {
 
         switchTo().window(1);
-        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("Are you a flatmate? Head to Flatmate HQ here »"));
+        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("Are you a flatmate? Head to Flatmate HQ here "+"»"));
 
     }
 

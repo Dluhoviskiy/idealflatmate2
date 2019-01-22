@@ -6,11 +6,12 @@ import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 public class AddListingTests extends TestBase {
 
-   // @Test
+    @Test
     public void loginStartListing() {
         pageUrlVerifLiveGoStage();
 
@@ -44,7 +45,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void loginPendingListing() {
         pageUrlVerifLiveGoStage();
 
@@ -85,7 +86,7 @@ public class AddListingTests extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void signUpPropertyAdding() {
         pageUrlVerifLiveGoStage();
 
@@ -137,13 +138,14 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+   @Test
     public void propertyAddWithAllFields() {
         pageUrlVerifLiveGoStage();
 
         authorizationHelper.login("cro.gen.AgencyNotPaid@gmail.com", "qqqqqq");
 
         matchingHelper.closePopupMatching();
+        addPropertyHelper.closeRenewPopup();
 
         //getAddPropertyHelper().openDropDownMenu();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();

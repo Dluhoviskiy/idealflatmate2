@@ -84,7 +84,9 @@ public class EmailHelper extends HelperBase {
     }
 
     public void removeAllEmails() {
-        $(byXpath("//div[@class='AO']/..//div[@class='ar9 T-I-J3 J-J5-Ji']")).waitUntil(visible, 15000).click();
+        sleep(2000);
+        $(byXpath("//div[@id=':5']")).waitUntil(visible, 5000).click();
+        $(byXpath("(//div[@class='asa'])[3]")).waitUntil(visible, 5000).click();
         sleep(2000);
     }
 

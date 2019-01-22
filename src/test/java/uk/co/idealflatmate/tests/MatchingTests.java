@@ -5,14 +5,14 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-
-
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class MatchingTests extends TestBase {
 
-   // @Test
-    public void CompleteMatchingFromMenuWithNewUserWithVerifyingPercent() {
+    @Test
+    public void completeMatchingFromMenuWithNewUserWithVerifyingPercent() {
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom1();
         signUpHelper.clickEmail();
@@ -61,23 +61,59 @@ public class MatchingTests extends TestBase {
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
 
 
-   // @Test
-    public void StartMatchingOnFMSearchPage() {
+    @Test
+    public void startMatchingOnFMSearchPage() {
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
-        authorizationHelper.clickCloseSignUpFMPage();
-        matchingHelper.clickTakeTheMatchTestFMscreen();
+        authorizationHelper.clickCloseSignUp();
+        matchingHelper.clickMatchBanner();
         matchingHelper.quitQuiz();
         verificationHelper.isFMPage();
-    }
-
-    //@Test
-    public void StartMatchingByStartQuizOnPropertyCard() {
+        helperBase.toHomePage();
         matchingHelper.clickHomePageMatching();
-        matchingHelper.clickContinueMatching1();
+        matchingHelper.quitQuiz();
+
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
     }
 
+    @Test
+    public void startMatchingQuizPropertyPage() {
+        pageUrlVerifLiveGoStage();
+        authorizationHelper.goToPropertyPage();
+        authorizationHelper.clickCloseSignUp();
+        matchingHelper.clickMatchBanner();
+        matchingHelper.enterFirstName("Reno");
+        matchingHelper.clickARoom();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.quitQuiz();
+        helperBase.toHomePage();
+    }
 
+    @Test
+    public void startMatchingOnPropertyCard() {
+        pageUrlVerifLiveGoStage();
+        authorizationHelper.login("TerezaHQ@gmail.com", "qqqqqq");
+        authorizationHelper.goToPropertyPage();
+
+        searchHelper.clearLocation();
+        searchHelper.clickSearchPropPage1("sw3", "SW3");
+
+
+        addPropertyHelper.clickCardWithMatch();
+        matchingHelper.clickContinueMatching1();
+        matchingHelper.quitQuiz();
+        verificationHelper.isPropertyPage();
+        helperBase.toHomePage();
+        matchingHelper.clickHomePageMatching();
+        matchingHelper.quitQuiz();
+
+        authorizationHelper.logoutFromApp();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
+    }
 }

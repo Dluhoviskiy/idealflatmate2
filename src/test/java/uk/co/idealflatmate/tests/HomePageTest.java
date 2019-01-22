@@ -3,13 +3,15 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+
 public class HomePageTest extends TestBase {
 
 
 
- //   @Test
+    @Test
     public void amountOfBlocsAndTextOfAreas() {
-
+        pageUrlVerifLiveGoStage();
         homePageHelper.amountOfFeedbackBlocks(4);
         homePageHelper.amountOfBlogBlocks(2);
         //homePageHelper.amountOfLatestFMblocks(4);
@@ -19,8 +21,9 @@ public class HomePageTest extends TestBase {
         homePageHelper.amountOfMatchListRoom(2);
     }
 
- //   @Test
+    @Test
     public void findOutMore() {
+        pageUrlVerifLiveGoStage();
         HelperBase.closeAdvPopUp();
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFindRooms();
@@ -32,42 +35,44 @@ public class HomePageTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void findStartMatchingLink() {
-
+        pageUrlVerifLiveGoStage();
         matchingHelper.clickHomePageMatching();
         homePageHelper.verificationMatchingStart();
         matchingHelper.quitQuiz();
     }
 
-  //  @Test
+    @Test
     public void findStartListing() {
+        pageUrlVerifLiveGoStage();
         homePageHelper.scrollToBlockSelect();
         homePageHelper.clickAddListingFromHow();
         verificationHelper.ListingStart();
         homePageHelper.clickLogo();
     }
 
-  //  @Test
+    @Test
     public void blogFM() {
+        pageUrlVerifLiveGoStage();
         homePageHelper.hoverCommunity();
         homePageHelper.clickFMBlog();
         verificationHelper.FMBlogPage();
-        helperBase.toHomePage();
+
     }
 
-  //  @Test
+    @Test
     public void blogLandlord() {
-
+        pageUrlVerifLiveGoStage();
         homePageHelper.hoverCommunity();
         homePageHelper.clickLandlordBlog();
         verificationHelper.landlordBlogPage();
-        helperBase.toHomePage();
+
     }
 
-  //  @Test
+    @Test
     public void pressLogo() {
-
+        pageUrlVerifLiveGoStage();
         homePageHelper.clickLogo();
         verificationHelper.isHomePage1();
     }

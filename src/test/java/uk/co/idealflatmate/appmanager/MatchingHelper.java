@@ -138,7 +138,7 @@ public class MatchingHelper extends HelperBase {
         $(byXpath("(//div[@class='col-sm-3 col-sm-push-6'])[1]/a")).waitUntil(visible, 4000).click();
     }
 
-    public void clickTakeTheMatchTestFMscreen() {
+    public void clickMatchBanner() {
         $(byXpath("//a[contains(.,'Take the match test ')]")).waitUntil(visible, 8000).click();
     }
 
@@ -217,4 +217,6 @@ public class MatchingHelper extends HelperBase {
     public void closeTakeMatch() {
         $(byXpath("//button[@data-dismiss='alert']")).click();
     }
+
+
 }

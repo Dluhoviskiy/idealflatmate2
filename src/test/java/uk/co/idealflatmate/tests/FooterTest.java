@@ -5,6 +5,7 @@ import uk.co.idealflatmate.appmanager.FooterHelper;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class FooterTest extends TestBase {
@@ -16,7 +17,7 @@ public class FooterTest extends TestBase {
     }*/
    // FooterHelper test1 = new FooterHelper();
 
-  //  @Test
+    @Test
     public void footerHomeLink() {
         //test1.verificationHowItWorks1("How Ideal Flatmate Works");
         pageUrlVerifLiveGoStage();
@@ -25,7 +26,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerAboutUsLink() {
 
         pageUrlVerifLiveGoStage();
@@ -34,7 +35,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerContactLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Contact");
@@ -42,7 +43,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerPressLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Press");
@@ -50,7 +51,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerPricingLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Pricing");
@@ -58,7 +59,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerMediaLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Media");
@@ -66,7 +67,7 @@ public class FooterTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void footerStaySafeLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Stay safe");
@@ -74,7 +75,7 @@ public class FooterTest extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void footerBlogLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Blog");
@@ -82,14 +83,14 @@ public class FooterTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void footerBrowseFlatsharesLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Browse Flatshares");
         footerHelper.verificationBrowseFlatshares("North London", "Brent Park");
             }
 
-  //  @Test
+    @Test
     public void footerAskLandlord() {
         pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
@@ -98,7 +99,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void footerModern() {
         pageUrlVerifLiveGoStage();
         helperBase.toHomePage();
@@ -107,7 +108,7 @@ public class FooterTest extends TestBase {
 
     }
 
-  //  @Test
+    @Test
     public void footerBrowseHowItWorksLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("How it works");
@@ -115,7 +116,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-   // @Test
+    @Test
     public void footerBrowseTipsLink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerClick("Tips");
@@ -123,7 +124,7 @@ public class FooterTest extends TestBase {
         helperBase.toHomePage();
     }
 
-   // @Test
+    @Test
     public void footerNLALink() {
         pageUrlVerifLiveGoStage();
         footerHelper.footerNLAWorks();

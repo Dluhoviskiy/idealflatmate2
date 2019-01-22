@@ -59,7 +59,7 @@ public class AddPropertyHelper extends HelperBase {
         sleep(2000);
     }
 
-    public void chooseAreaforLondon(final String AreaInDropDown) {
+    public void chooseAreaforLondon(String AreaInDropDown) {
         messageHelper.click(byName("Property[area_link_id]"));
         messageHelper.click(byXpath("//*[@id=\"property-area_link_id\"]/option[" + AreaInDropDown + "]"));
         sleep(5000);
@@ -334,4 +334,21 @@ public class AddPropertyHelper extends HelperBase {
     public void bottomAddListing() {
         $(byXpath("//div[@class='col-xs-12 col-sm-6']/a")).click();
     }
+
+
+    public void closeRenewPopup() {
+        String match1= "//button[@class='btn btn-sm close u_m15' and @aria-label='Close']";
+        sleep(3000);
+        if ($(byXpath(match1)).exists()) {
+            $(byXpath(match1)).waitUntil(visible, 10000).click();
+        }
+    }
+
+    public void clickCardWithMatch() {
+        $(byXpath("//span[@class='u_ed-inline-block']")).click();
+
+
+    }
+
+
 }

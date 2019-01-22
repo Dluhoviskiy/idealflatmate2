@@ -12,9 +12,9 @@ public class MessagesTest extends TestBase {
 
    public final MessageHelper messageHelper = new MessageHelper();
 
-  //  @Test
+    @Test
     public void readMessageByLandlordWithoutSubscription() {
-
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
@@ -26,9 +26,10 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
-  //  @Test
+    @Test
     public void sendMessageByLandlordWithoutSubscriptionToFM() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
@@ -39,14 +40,15 @@ public class MessagesTest extends TestBase {
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFM();
         getMessageHelper().clickUpgradeToMessage();
-        verificationHelper.paymentPage();
+        verificationHelper.paymentPage("Want more from your listing? Upgrade now!");
         authorizationHelper.logoutFromApp();
         sleep(5000);
     }
 
-   // @Test
+    @Test
     public void sendMessageByLandlordWithSubscriptionToFM() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.AgencyPaid@gmail.com");
@@ -60,9 +62,10 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void answerMessageFmWithoutSubscriptionToFM() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHMatching@gmail.com");
@@ -76,9 +79,10 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void answerMessageLandlordToPremiumFHWithoutSubscription() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("newLiveOut1@gmail.com");
@@ -94,9 +98,10 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void sendMessagePremiumFmToLandlordWithoutSubscriptionWithListingFromSearch() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Premium@gmail.com");
@@ -111,9 +116,10 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
-  //  @Test
+    @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
@@ -134,9 +140,10 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");

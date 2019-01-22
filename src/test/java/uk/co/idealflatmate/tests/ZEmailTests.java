@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class ZEmailTests extends TestBase {
 
 
-    //@Test
+    @Test
     public void TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub() {
         emailHelper.openGmailPage();
         emailHelper.setLoginAsUserEmail("cro.gen.idealflatmate@gmail.com");
@@ -16,11 +16,11 @@ public class ZEmailTests extends TestBase {
        // emailHelper.verificationListingisLive();
       //  emailHelper.verificationMessage();
         emailHelper.tipCheckboxWelcome();
-        emailHelper.tipCheckboxListingisLive();
-        emailHelper.tipCheckboxMessage();
-        emailHelper.tipCheckboxEnquiry();
-        emailHelper.tipCheckboxPremiumFHSubscription();
-        emailHelper.tipCheckboxPremiumFHSubscriptionCanceled();
+      //  emailHelper.tipCheckboxListingisLive();
+       // emailHelper.tipCheckboxMessage();
+      //  emailHelper.tipCheckboxEnquiry();
+     //   emailHelper.tipCheckboxPremiumFHSubscription();
+     //   emailHelper.tipCheckboxPremiumFHSubscriptionCanceled();
         emailHelper.removeAllEmails();
        // emailHelper.verificationNoWelcome();
        // emailHelper.verificationNoListingisLive();

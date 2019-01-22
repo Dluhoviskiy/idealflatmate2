@@ -1,7 +1,6 @@
 package uk.co.idealflatmate.tests;
 
 import com.codeborne.selenide.Configuration;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 import uk.co.idealflatmate.appmanager.*;
@@ -10,7 +9,7 @@ import uk.co.idealflatmate.appmanager.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.url;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class TestBase {
@@ -81,6 +80,7 @@ public class TestBase {
 
 
 
+
     @AfterClass
     public void tearDown() {
         //screenshot("screenshotFail1");
@@ -109,11 +109,11 @@ public class TestBase {
         return paymentsHelper;
     }
 
-    public static void newDriverPage() {
+    public static void newDriverPage(String relativeOrAbsoluteUrl) {
         closeWebDriver();
         //ChromeDriverManager.getInstance().setup();
         WebDriverManager.chromedriver().setup();
-        open("http://front.idealflatmate4test.demo.devplatform2.com");
+        open(relativeOrAbsoluteUrl);
     }
 
     public void clearCache() {
@@ -122,16 +122,5 @@ public class TestBase {
         refresh();
     }
 
-    public void pageUrlVerifLiveGoStage(){
-        // проверить, что вы находитесь на верной странице
 
-        if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
-            newDriverPage();
-            //clearBrowserCache();
-            //refresh();
-            //close();
-            //open ("http://front.idealflatmate4test.demo.devplatform2.com/");
-
-        }
-    }
 }

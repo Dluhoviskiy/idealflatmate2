@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PaymentTests extends TestBase {
 
- //   @Test
+    @Test
     public void AbilityToSeePhone() {
 
         authorizationHelper.login("cro.gen.Premium@gmail.com", "qqqqqq");
@@ -19,7 +19,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
- //   @Test
+    @Test
     public void GoPremiumFHPaymentOnPhone() {
         authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
 
@@ -33,7 +33,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-  //  @Test
+    @Test
     public void GoPremiumFHPaymentOnMessage() {
         authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
 
@@ -47,7 +47,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-   // @Test
+    @Test
     public void PremiumFHPaymentWorldPay() {
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
@@ -87,7 +87,7 @@ public class PaymentTests extends TestBase {
 
 
 
-    // @Test (priority = 705)
+     @Test
     public void LandlordPaymentPayPal() {
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();

@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
-public class MessageHelper {
+public class MessageHelper extends HelperBase {
 
 
     public void chooseAnyMessageFromList() {
@@ -72,7 +72,12 @@ public class MessageHelper {
     }
 
     public  void clickPropertyContact(){
-        $(byXpath("(//a[@class='btn btn-success u_ed-block u_m10-top text-18'])[2]")).click();
+        sleep(2000);
+        click(By.xpath("//li[@class='active']//a"));
+        //$(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']")).click();
+
+        hoverClick("//section[@id='property-infos']//div[@id='fixed-sidebar']//a[contains(.,'Request details')]");
+
     }
 
 
@@ -121,12 +126,15 @@ public class MessageHelper {
     }
 
     public void clickUpgradeToMessage() {
-        $(byXpath("(//a[contains(text(), 'Upgrade to message')])[1]")).waitUntil(visible, 6000).click();
+        $(byXpath("//a[contains(text(), 'Upgrade to message')]")).waitUntil(visible, 6000).click();
     }
 
     public void clickPhoneReveal() {
-        $(byXpath("//section[@id='property-infos']//span[contains(text(), 'Reveal')]")).waitUntil(visible, 6000).click();
-
+        sleep(2000);
+        click(By.xpath("//li[@class='active']//a"));
+        //$(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']")).click();
+        $(byXpath("//section[@id='property-infos']//span[contains(text(), 'Reveal')]")).click();
+        sleep(2000);
     }
 
     public void clickMessage(String text) {

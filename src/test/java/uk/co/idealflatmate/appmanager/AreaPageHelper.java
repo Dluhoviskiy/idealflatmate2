@@ -79,7 +79,7 @@ public class AreaPageHelper extends HelperBase {
         Assert.assertEquals(areaNameOnPageH1, area2);
 
         String areaNameOnPageH2 = $(byXpath("//h1[@class='h4']")).text();
-        String area3 = (areaNameOnPageH2.substring(0, 36) + " " + area1);
+        String area3 = (areaNameOnPageH2.substring(0, 37) + " " + area1);
         Assert.assertEquals(areaNameOnPageH2, area3);
 
 
@@ -89,9 +89,13 @@ public class AreaPageHelper extends HelperBase {
         sleep(2000);
         SelenideElement openMap = $(byXpath("//span[@class='map-toggle-button open-map-button']"));
         SelenideElement hideMap = $(byXpath("//span[@class='map-toggle-button close-map-button']"));
+
         openMap.click();
+        sleep(2000);
         hideMap.shouldHave(text("Hide map"));
+        sleep(2000);
         hideMap.click();
+        sleep(2000);
         openMap.shouldHave(text("Display map"));
     }
 

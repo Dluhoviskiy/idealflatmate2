@@ -157,7 +157,8 @@ public class HomePageHelper {
     }
 
     public void scrollToBlockProperty() {
-        $(byXpath("//h2[starts-with(@class, 'u_m0 u_m10-bottom')]")).waitUntil(visible, 10000).click();
+        HelperBase.hoverClick("//h2[starts-with(@class, 'u_m0 u_m10-bottom')]");
+        //$(byXpath("//h2[starts-with(@class, 'u_m0 u_m10-bottom')]")).waitUntil(visible, 10000).click();
     }
 
     public void scrollToBlockSelect() {

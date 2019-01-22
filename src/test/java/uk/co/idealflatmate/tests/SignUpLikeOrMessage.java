@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class SignUpLikeOrMessage extends TestBase {
 
-   // @Test
+    @Test
     public void messagePropertySignUpHomePage() {
         //newDriverPage();
         clearCache();
@@ -93,9 +93,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-   // @Test
-
-
+    @Test
 
     public void messageSignUpFMPage() {
         clearCache();
@@ -195,7 +193,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-  //  @Test
+    @Test
     public void signUpLike3rdPageQuit() {
         //newDriverPage();
         clearCache();
@@ -222,7 +220,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void signUpLikeHomePage() {
         //newDriverPage();
         clearCache();
@@ -274,7 +272,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.isHomePage1();
 
     }
-  //  @Test
+    @Test
     public void popupSignUpPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -325,7 +323,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void popupSignUpWithExistingEmail() {
         //newDriverPage();
         clearCache();
@@ -344,7 +342,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-  //  @Test
+    @Test
     public void popupSignUpExistingEmailPropertyPage() {
         //newDriverPage();
         clearCache();
@@ -366,12 +364,12 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.dateMonthYearPhoneOccupationBlankErrorMessage();
 
         signUpHelper.quit();
-        verificationHelper.isPropertyPage(title);
+        verificationHelper.isPropertyPageLocation(title);
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
 
-   // @Test
+    @Test
     public void popupSignUpWithBlankRequiredFields() {
         //newDriverPage();
         clearCache();
@@ -430,7 +428,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
 
-    //@Test
+    @Test
     public void popupSignUpExistingEmailPropertyPhone() {
 
         //newDriverPage();
@@ -453,7 +451,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.dateMonthYearPhoneOccupationBlankErrorPhone();
 
         signUpHelper.quit();
-        verificationHelper.isPropertyPage(searchLocation);
+        verificationHelper.isPropertyPageLocation(searchLocation);
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }

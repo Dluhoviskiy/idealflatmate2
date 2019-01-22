@@ -19,20 +19,21 @@ public class SearchHelper extends HelperBase {
 
     public void searchProperty(String location) {
 
-        searchPropertyBy(location, $("input#property-location"));
+        searchPropertyBy(location, $("input.react-autosuggest__input"));
         sleep(2000);
-        $(byXpath("//button[@class='js-search-submit text-20']")).waitUntil(visible, 10000).click();
+        $(byXpath("//button[@class='text-20']")).waitUntil(visible, 10000).click();
     }
 
     public void searchPropertyByEnter(String location) {
-        searchPropertyBy(location, $("input#property-location"));
+
+        searchPropertyBy(location, $("input.react-autosuggest__input"));
         $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham, London')]")).waitUntil(exist, 4000).pressEnter();
 
     }
 
 
     public void searchPropertyBySelectfromList(String location) {
-        searchPropertyBy(location, $("input#property-location"));
+        searchPropertyBy(location, $("input.react-autosuggest__input"));
         $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham Junction')]")).waitUntil(visible, 4000).click();
 
     }
@@ -41,7 +42,7 @@ public class SearchHelper extends HelperBase {
 
     public void searchPropertyIncorrectFirstfromList(String location) {
 
-        searchPropertyBy(location, $("input#property-location"));
+        searchPropertyBy(location, $("input.react-autosuggest__input"));
 
     }
 
@@ -240,10 +241,28 @@ public class SearchHelper extends HelperBase {
 
     public void clickSearchPropPage(String location) {
         SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
+        //SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
+
         searchField.click();
         searchField.clear();
+        sleep(3000);
         searchField.setValue(location);
-        searchField.pressEnter();
+        //searchElastic.click();
+        sleep(3000);
+        //searchElastic.click();
+        sleep(2000);
+
+    }
+
+    public void clickSearchPropPage1(String location, String location1) {
+        SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
+        SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
+
+        searchField.click();
+        searchField.clear();
+        sleep(3000);
+        searchField.setValue(location);
+        searchElastic.click();
         sleep(2000);
 
     }
@@ -355,6 +374,12 @@ public class SearchHelper extends HelperBase {
         //Arrays.sort(String {sortDef2});
         boolean isSorted = Ordering.natural().isOrdered(sortDef2);
         System.out.println(isSorted);
+    }
+
+    public void clearLocation() {
+        $(byXpath("//form[@id='search-location']//span")).click();
+
+
     }
 
 }

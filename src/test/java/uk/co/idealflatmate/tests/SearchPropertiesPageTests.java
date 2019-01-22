@@ -6,12 +6,13 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static org.seleniumhq.jetty7.util.LazyList.getList;
 import static org.testng.Assert.assertEquals;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.TespageUrlVerifLiveGoStage;
 
 public class SearchPropertiesPageTests extends TestBase{
 
 
-   // @Test
+    @Test
     public void propertySearchByDropDown() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -24,7 +25,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     }
 
-  //  @Test
+    @Test
     public void searchPagination() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -46,7 +47,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-  //  @Test
+    @Test
     public void searchZone1Pagination() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -57,7 +58,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-   // @Test
+    @Test
     public void searchEastLDNPagination() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -68,7 +69,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    //@Test
+    @Test
     public void applyMoreFilters() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -83,7 +84,7 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.noActiveFilters();
         helperBase.toHomePage();
     }
-   // @Test
+    @Test
     public void applyAdvancedFiltersDefault() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -113,7 +114,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    //@Test
+    @Test
     void sortListing() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -130,7 +131,7 @@ public class SearchPropertiesPageTests extends TestBase{
         helperBase.toHomePage();
     }
 
-    //@Test(priority = 7)
+    @Test
     public void sortListingWith2Rooms() {
 
         authorizationHelper.goToPropertyPage();

@@ -20,7 +20,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void goToFMpage() {
-         $(byXpath("(//a[@href='/search/flatmate' and contains(text(), 'Find a flatmate')])[1]")).waitUntil(appears, 4000).click();
+         $(byXpath("//ul[starts-with(@class, 'nav navbar-nav')]//a[contains(.,'Find a flatmate')]")).waitUntil(appears, 4000).click();
      }
 
     public void setLoginAsUserWithoutPackage(String email) {
@@ -198,12 +198,9 @@ public class AuthorizationHelper extends HelperBase {
         sleep(5000);
         if ($(byXpath("//div[@id='signupNeedspaceModal']//button[@class='btn btn-sm close u_m15']")).isDisplayed()){
             $(byXpath("//div[@id='signupNeedspaceModal']//button[@class='btn btn-sm close u_m15']")).click();
-        }
+        }else {}
     }
 
-
-
-    //button[@class='btn btn-sm close u_m15']
 
     public void clickCloseSignUpFMPage() {
         $(byXpath("//button[@class='btn btn-sm close u_m15']")).waitUntil(visible, 10000).click();

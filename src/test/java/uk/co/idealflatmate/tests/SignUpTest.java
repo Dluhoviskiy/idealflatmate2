@@ -3,12 +3,13 @@ import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 
 public class SignUpTest extends TestBase {
 
-    //@Test
+    @Test
     public void SignUpBlankFieldsPropAddRentBlock() {
         pageUrlVerifLiveGoStage();
         paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock();
@@ -29,7 +30,7 @@ public class SignUpTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void SignUpBlankFieldsPropAddWorkBlock() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
@@ -51,7 +52,7 @@ public class SignUpTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     public void headerRoomSignUpHomePageTenant() {
 
         pageUrlVerifLiveGoStage();
@@ -118,7 +119,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void headerSignUpHomePageFMSearchLiv_inWithoutAbout() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
@@ -163,7 +164,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void headerSignUpWithExistingEmail() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
@@ -188,7 +189,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
      }
 
-    //@Test
+    @Test
     public void headerSignUpWithBlankRequiredFieldsYourInf() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
@@ -209,7 +210,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
-    //@Test
+    @Test
     public void headerSignUpWithBlankRequiredFieldsMoreAboutYou() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
@@ -231,7 +232,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    //@Test
+    @Test
     public void headerSignUpWithBlankRequiredFieldsLocation() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
@@ -263,7 +264,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void headerSignUpWithBlankRequiredFieldsBudget() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
@@ -300,7 +301,7 @@ public class SignUpTest extends TestBase {
 
 
 
-   // @Test
+    @Test
     //Facebook authorization doen`t work on staging
 
     public void headerSignUpViaFacebook() {
@@ -345,7 +346,7 @@ public class SignUpTest extends TestBase {
 
     }
 
-   // @Test
+    @Test
     //Facebook authorization doen`t work on staging
 
     public void signUpViaFBlistingAgent() {

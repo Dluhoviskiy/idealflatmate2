@@ -1,7 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.SelenideElement;
-import org.testng.Assert;
 
 import java.util.List;
 
@@ -12,20 +11,25 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static java.util.ResourceBundle.clearCache;
+import static uk.co.idealflatmate.tests.TestBase.newDriverPage;
 
-public class HelperBase {
+
+public class HelperBase  {
 
     public static void closeAdvPopUp() {
-        if ($(byXpath("(//button[@class='btn btn-sm close u_m15'])[1]")).is(visible)) {
-            $(byXpath("(//button[@class='btn btn-sm close u_m15'])[1]")).click();
+        String needSpace = "//div[@id='renewAdvertModal']//button[@aria-label='Close']";
+
+        if ($(byXpath(needSpace)).is(visible)) {
+            hoverClick(needSpace);
             sleep(2000);
         }
     }
 
     public static void closeListPopUp() {
         sleep(2000);
-        if($(byXpath("//div[@id='renewAdvertModal']//button[@aria-label='Close']")).isDisplayed()){
-            $(byXpath("//div[@id='renewAdvertModal']//button[@aria-label='Close']")).click();
+        SelenideElement buttonRenew = $(byXpath("//section[@class='modal-content u_bg-gray-lighter']//button[@aria-label='Close']"));
+        if(buttonRenew.isDisplayed()){
+            buttonRenew.click();
         }
         sleep(2000);
 
@@ -130,6 +134,19 @@ public class HelperBase {
         }
     }*/
 
+    public static void pageUrlVerifLiveGoStage(){
+        // проверить, что вы находитесь на верной странице
+
+        if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
+            newDriverPage("http://front.idealflatmate4test.demo.devplatform2.com");
+            //clearBrowserCache();
+            //refresh();
+            //close();
+            //open ("http://front.idealflatmate4test.demo.devplatform2.com/");
+
+        } else{}
+    }
+
 
     public void closeOpen(String relOrAbsolUrl) {
         clearCache();
@@ -140,15 +157,15 @@ public class HelperBase {
     public  void pageUrlVerifStageGoLive1(){
         // проверить, что вы находитесь на верной странице
         if (! url().equals("https://www.idealflatmate.co.uk/")) {
-
-            clearBrowserCache();
-            refresh();
-            close();
-            open("https://www.idealflatmate.co.uk/");
+            newDriverPage("https://www.idealflatmate.co.uk/");
+           // clearBrowserCache();
+           // refresh();
+           // close();
+           // open("https://www.idealflatmate.co.uk/");
         }
     }
 
-    public void hoverClick(String xpath) {
+    public static void hoverClick(String xpath) {
         SelenideElement elementHoverClick = $(byXpath(""+xpath+"")).waitUntil(visible, 10000);
         elementHoverClick.hover();
         elementHoverClick.click();
@@ -163,7 +180,7 @@ public class HelperBase {
     public void searchPropertyBy(String location, SelenideElement location1) {
 
         location1.waitUntil(visible, 10000).click();
-        location1.setValue(location).waitUntil(empty, 10000);
+        location1.setValue(location);
         sleep(1000);
 
 

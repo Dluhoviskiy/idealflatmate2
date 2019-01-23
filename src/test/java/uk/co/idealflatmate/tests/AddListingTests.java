@@ -7,7 +7,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 public class AddListingTests extends TestBase {
 
@@ -93,37 +92,15 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("An agency");
 
-        signUpHelper.clickEmail();
-        signUpHelper.setSignUpNameF("Ronald");
-        //signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("AgentNew11681@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhotoRemove();
-        //signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
-        //signUpHelper.occupation("19");
-        signUpHelper.aboutYourself("Tell us about yourself");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.agentSignListing("Ronald", "agentTest456@gmail.com", "qqqqqq",
+                                      "66666666", "Tell us about yourself");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
+
         verificationHelper.verifyAddListingPage();
 
-        paymentsHelper.addPropertyHelper.setPostalCode("SE1");
-        getAddPropertyHelper().pressContinue();
+        addPropertyHelper.addListingWithoutPhoto("SE1", "2", "4", "900");
 
-        getAddPropertyHelper().pressContinue1();
-        verificationHelper.areaBlank();
-
-        paymentsHelper.addPropertyHelper.chooseAreaforLondon("2");
-        getAddPropertyHelper().pressContinue();
-        paymentsHelper.addPropertyHelper.setTotalBedrooms("4");
-        paymentsHelper.addPropertyHelper.setMonthlyRent("900");
-        getAddPropertyHelper().pressContinue();
-
-        paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
         paymentsHelper.addPropertyHelper.finishPropertyAgency();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
@@ -138,7 +115,9 @@ public class AddListingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   @Test
+
+
+    @Test
     public void propertyAddWithAllFields() {
         pageUrlVerifLiveGoStage();
 
@@ -193,6 +172,8 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyNoProperty();
         authorizationHelper.logoutFromApp();
     }
+
+
 
 
 

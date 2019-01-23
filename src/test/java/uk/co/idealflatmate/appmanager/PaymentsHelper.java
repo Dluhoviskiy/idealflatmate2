@@ -1,15 +1,13 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.Selenide.switchTo;
-import static groovy.xml.dom.DOMCategory.setValue;
 
 public class PaymentsHelper extends HelperBase {
 
@@ -18,13 +16,16 @@ public class PaymentsHelper extends HelperBase {
     public void fillinDebitCardData(String name, String cardNumber, String month, String year, String cvc) {
         switchTo().frame("_iframe_holder");
 
-        fillInField(name, $(byXpath("//div[@id='_el_input_nameoncard']/input))")));
-
+        //fillInField(name, $(byXpath("//div[@id='_el_input_nameoncard']/input))")));
+        $(byXpath("//div[@id='_el_input_nameoncard']/input")).setValue(name);
+        sleep(1000);
         $(byXpath("//div[@id='_el_input_cardnumber']/input")).setValue(cardNumber);
         $(byXpath("//div[@id='_el_input_expirationmonth']/input")).setValue(month);
         $(byXpath("//div[@id='_el_input_expirationyear']/input")).setValue(year);
         $(byXpath("//div[@id='_el_input_cvc']/input")).setValue(cvc);
+        sleep(1000);
         addPropertyHelper.messageHelper.click(byXpath("//div[@id='_el_button_save']/button"));
+        sleep(1000);
     }
 
     public void chooseWorldPay(String text) {
@@ -34,6 +35,7 @@ public class PaymentsHelper extends HelperBase {
     public void upgradePremiumFH() {
         addPropertyHelper.messageHelper.click(byXpath("//button[contains(text(), 'Upgrade to Premium Flathunter')]"));
     }
+
     public void checkout() {
         addPropertyHelper.messageHelper.click(byXpath("//button[contains(text(), 'Check out')]"));
     }
@@ -43,7 +45,7 @@ public class PaymentsHelper extends HelperBase {
     }
 
     public void goToPaymentsTab() {
-        addPropertyHelper.messageHelper.click(byXpath("/html/body/header/div/ul[1]/li/a/img"));
+
         addPropertyHelper.messageHelper.click(byXpath("//span[contains(text(), ' Payments')]"));
     }
 
@@ -54,6 +56,7 @@ public class PaymentsHelper extends HelperBase {
     public void verificationPremiumPopup(String text) {
         $(byXpath("//h4[@class='modal-title']")).waitUntil(visible, 10000).shouldHave(text(text));
     }
+
     public void closePremiumPopup() {
 
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
@@ -70,10 +73,11 @@ public class PaymentsHelper extends HelperBase {
     }
 
     public void verificationPaymentPage(String text) {
-        $(byXpath("//h2[@class='h3 u_m0-top-xs u_m20-top-sm u_m5-bottom']")).waitUntil(visible, 10000).shouldHave(text(text));
+        $(byXpath("//h3[@class='text-18 u_m0 ']")).waitUntil(visible, 10000).shouldHave(text(text));
     }
+
     public void verificationPaymentPageFeatureListing(String text) {
-        $(byXpath(" //h2[@class='h3 u_m0-top-xs u_m60-top-sm u_m5-bottom']")).waitUntil(visible, 10000).shouldHave(text(text));
+        $(byXpath("//h2[@class='text-20 u_m0-top']")).waitUntil(visible, 10000).shouldHave(text(text));
     }
 
 
@@ -85,20 +89,28 @@ public class PaymentsHelper extends HelperBase {
         $(byXpath("//span[@id='total-price']")).waitUntil(visible, 10000).shouldHave(text(text));
     }
 
-    public void selectNLADiscount(String NLA) {
+    public void selectNLADiscount(String NLA, String payment) {
 
-        fillInField1(NLA, $(byXpath("(//input[@id='paymentform-discount'])[1]")), $(byXpath("(//input[@id='paymentform-discount'])[1]")));
-
-    }
-
-    public void upgradePremiumListing(String text) {
-        $(byXpath("//button[@class='btn btn-block btn-primary'])[1]")).waitUntil(visible, 10000).shouldHave(text(text));
+        fillInField(NLA, $(byXpath("//form[@id='" + payment + "']//input[@id='paymentform-discount']")));
 
     }
 
+    public void upgradeListing(String text, String upgradeTo) {
+        $(byXpath("//button[contains(.,'" + upgradeTo + "')]")).waitUntil(visible, 10000).shouldHave(text(text)).click();
 
-    public void verificationPrice(String text) {
-        $(byXpath("(//select[@id='paymentform-type_id'])[1]")).waitUntil(visible, 10000).shouldHave(text(text));
+    }
+
+    public void upgradeListingProf(String option) {
+        $(byXpath("//select[@class='form-control pro-property-no']")).selectOptionContainingText(option);
+
+    }
+
+    public void promoteCardClick(String text) {
+        $(byXpath("//a[contains(.,'" + text + "')]")).click();
+    }
+
+    public void verificationPrice(String text, String formPayment) {
+        $(byXpath("//form[@id='" + formPayment + "']//select[@id='paymentform-type_id']")).waitUntil(visible, 10000).selectOptionContainingText(text);
 
     }
 
@@ -108,7 +120,11 @@ public class PaymentsHelper extends HelperBase {
 
     public void removePackage() {
         $(byXpath("(//a[contains(text(), 'Cancel')])[2]")).waitUntil(appears, 4000).click();
+        sleep(1000);
         $(byXpath("(//input[@type='radio'])[2]")).waitUntil(appear, 4000).selectRadio("1");
-        $(byXpath("//button[@type='submitLogin' and contains(text(), 'Cancel')]")).waitUntil(Condition.appears, 4000).click();
+        sleep(1000);
+        $(byXpath("//button[@id='btn-cancel-subscription']")).waitUntil(Condition.appears, 10000).click();
+        sleep(1000);
     }
+
 }

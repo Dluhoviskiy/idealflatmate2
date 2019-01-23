@@ -1,6 +1,5 @@
 package uk.co.idealflatmate.appmanager;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
@@ -409,6 +408,63 @@ public class SignUpHelper extends HelperBase {
         occupation(prof);
         aboutYourself(text);
         clickYourInformationContinue();
+    }
+
+    public void signListingLiveIn(String email, String password, String day, String month, String year, String phone, String prof, String firstName) {
+
+
+        clickEmail();
+
+        setSignUpNameF(firstName);
+        genderMaleSelect();
+        setSignEmail(email);
+        setSignPassword(password);
+        clickYourInformationContinue();
+
+        profilePhotoAddJpeg();
+        profilePhotoRemove();
+        profileDateBirthAdd(day, month, year);
+        profilePhone(phone);
+        occupation(prof);
+        //signUpHelper.aboutYourself("Tell us about yourself");
+        clickYourInformationContinue();
+    }
+
+    public void signListingLiveOut(String email, String password, String firstName, String phone) {
+
+
+        clickEmail();
+
+        setSignUpNameF(firstName);
+        setSignEmail(email);
+        setSignPassword(password);
+        clickYourInformationContinue();
+
+        profilePhotoAddJpeg();
+        profilePhone(phone);
+
+        clickYourInformationContinue();
+
+    }
+
+    public void agentSignListing(String name, String email, String password, String phone, String text) {
+
+
+        clickEmail();
+        setSignUpNameF(name);
+        //signUpHelper.genderFemaleSelect();
+        setSignEmail(email);
+        setSignPassword(password);
+        clickYourInformationContinue();
+
+        profilePhotoAddJpeg();
+        profilePhotoRemove();
+        //signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        profilePhone(phone);
+        //signUpHelper.occupation("19");
+        aboutYourself(text);
+        clickYourInformationContinue();
+
     }
 
 }

@@ -13,21 +13,21 @@ public class MessagesTest extends TestBase {
    public final MessageHelper messageHelper = new MessageHelper();
 
     @Test
-    public void readMessageByLandlordWithoutSubscription() {
+    public void readMessageByLandlWithoutSubsn() {
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        closeListPopUp();
+        closeListRenewPopUp();
         closeMatchPopUp();
         getMessageHelper().chooseMessageTab("Test Message to Landlord without subscription");
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
     @Test
-    public void sendMessageByLandlordWithoutSubscriptionToFM() {
+    public void landlordWithoutSubsToFM() {
         clearCache();
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
@@ -35,7 +35,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        closeListPopUp();
+        closeListRenewPopUp();
         closeMatchPopUp();
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFM();
@@ -46,7 +46,7 @@ public class MessagesTest extends TestBase {
     }
 
     @Test
-    public void sendMessageByLandlordWithSubscriptionToFM() {
+    public void landlWithSubsToFM() {
         clearCache();
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
@@ -54,7 +54,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.AgencyPaid@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        closeListPopUp();
+        closeListRenewPopUp();
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFM();
         getMessageHelper().clickFMPageMessage();
@@ -63,7 +63,7 @@ public class MessagesTest extends TestBase {
     }
 
     @Test
-    public void answerMessageFmWithoutSubscriptionToFM() {
+    public void answMesFmWithoutSubsToFM() {
         clearCache();
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
@@ -80,7 +80,7 @@ public class MessagesTest extends TestBase {
     }
 
     @Test
-    public void answerMessageLandlordToPremiumFHWithoutSubscription() {
+    public void answMesLandlToPremFHWithoutSubs() {
         clearCache();
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
@@ -88,7 +88,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.setLoginAsUserWithoutPackage("newLiveOut1@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        closeListPopUp();
+        closeListRenewPopUp();
         closeMatchPopUp();
         messageHelper.chooseMessageTab("Landlord Answer to Prem FM");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
@@ -99,7 +99,7 @@ public class MessagesTest extends TestBase {
     }
 
     @Test
-    public void sendMessagePremiumFmToLandlordWithoutSubscriptionWithListingFromSearch() {
+    public void premFmToLandlWithoutSubsWithListFromSearch() {
         clearCache();
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
@@ -107,7 +107,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Premium@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        searchHelper.searchProperty("PO30");
+        searchHelper.searchPropertyHome("PO30");
         messageHelper.clickCardMessageLogged();
         //messageHelper.clickPropertyPageMessage();
         verificationHelper.noTextUpgradeToFasterReply();
@@ -117,7 +117,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.logoutFromApp();
     }
     @Test
-    public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing() {
+    public void FmWithoutSubsToLandlordWithoutSubsWithListFromList() {
         clearCache();
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
@@ -141,7 +141,7 @@ public class MessagesTest extends TestBase {
     }
 
     @Test
-    public void sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage() {
+    public void fmWithoutSubsTolordWithoutSubsWithListFromFMpage() {
         clearCache();
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
@@ -149,7 +149,7 @@ public class MessagesTest extends TestBase {
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
-        searchHelper.searchProperty("Clapham");
+        searchHelper.searchPropertyHome("Clapham");
         verificationHelper.searchResultText("6 rooms matched to rent in and around Clapham");
         //searchHelper.clearSearch();
         searchHelper.lastCardClick();//6 cards

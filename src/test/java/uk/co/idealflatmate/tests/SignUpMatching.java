@@ -1,6 +1,8 @@
 package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
 
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+
 
 public class SignUpMatching extends TestBase {
 
@@ -8,7 +10,7 @@ public class SignUpMatching extends TestBase {
     @Test
 
     public void signUpMatchingWithBlankFirstName() {
-
+        pageUrlVerifLiveGoStage();
         clearCache();
         matchingHelper.clickHomePageMatching();
         matchingHelper.verifyBlankNameMatchSign();
@@ -17,7 +19,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpMatchingWithRequiredFieldsRoom() {
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
@@ -47,7 +49,7 @@ public class SignUpMatching extends TestBase {
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "Matching992o@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "Matchr992o@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -101,7 +103,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpMatchingWithRequiredFieldsFMRoom() {
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
@@ -165,7 +167,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpMatchingWithRequiredFieldsFMRoomSearchFM() {
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
@@ -231,7 +233,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpWithMatchingWithBlankRequiredFields() {
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         matchingHelper.clickHomePageMatching();
 

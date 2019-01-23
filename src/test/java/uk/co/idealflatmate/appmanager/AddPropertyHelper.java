@@ -1,7 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
 import java.io.File;
@@ -40,6 +39,14 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("(//a[contains(text(), 'My listings')])[1]")).click();
 
     }
+
+    public void chooseListLoggedFromHeaderProfile() {
+        sleep(2000);
+        $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[contains(.,'Add a Listing')]")).click();
+
+    }
+
+
 
 
     public void setPostalCode(String postCode) {
@@ -289,6 +296,12 @@ public class AddPropertyHelper extends HelperBase {
 
     }
 
+    public void finishPropertyAgencyWithSubs(String text) {
+
+        $(byXpath("//div[@class='u_p20-bottom u_b-bottom']/span")).shouldHave(text(text));
+
+    }
+
     public void pressAddListingNotLogged() {
         $(byXpath("(//a[contains(., 'List a room')])[1]")).click();
     }
@@ -347,7 +360,22 @@ public class AddPropertyHelper extends HelperBase {
     public void clickCardWithMatch() {
         $(byXpath("//span[@class='u_ed-inline-block']")).click();
 
+    }
 
+    public void addListingWithoutPhoto(String postCode, String areaInDropDown, String amount, String rent) {
+        setPostalCode(postCode);
+        pressContinue();
+
+        pressContinue1();
+        //verificationHelper.areaBlank();
+
+        chooseAreaforLondon(areaInDropDown);
+        pressContinue();
+        setTotalBedrooms(amount);
+        setMonthlyRent(rent);
+        pressContinue();
+
+        ContinueListingWithoutPhoto();
     }
 
 

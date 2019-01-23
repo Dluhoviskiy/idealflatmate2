@@ -318,10 +318,14 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void verifyPackagePurchase(String text) {
-        $(byXpath("//div[@class='text-body-copy u_m20-top-md']")).shouldHave(text(text));
+            $(byXpath("//div[@class='text-body-copy u_m20-top-md']/p[1]")).shouldHave(text(text));
+    }
+
+    public void verifyPackagePurchaseList(String text) {
+        $(byXpath("//h2[@class='h3 u_m0-top text-normal-weight']")).shouldHave(text(text));
     }
     public void verifyPackageCanceled(String text) {
-        $(byXpath("//div[@class='text-body-copy u_m20-top-md']")).shouldHave(text(text));
+        $(byXpath("//div[@class='text-body-copy u_m20-top-md']/p[2]")).shouldHave(text(text));
     }
 
     //span[contains(text(), 'This email address has already been taken.')]
@@ -722,14 +726,17 @@ public class VerificationHelper extends HelperBase {
 
     public void FMBlogPage() {
         switchTo().window(1);
-        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("You are a landlord? Head to our landlord HQ here "+"»"));
+        $(byXpath("//section[@class='page-heading blog-splash']//div[@class=" +
+                "'blog-hq-switch container']/a")).getText().contentEquals("You are a landlord? Head to our landlord HQ here");
+
 
     }
 
     public void landlordBlogPage() {
 
         switchTo().window(1);
-        $(byXpath("//section[@class='page-heading blog-splash']//div[@class='blog-hq-switch container']/a")).shouldHave(text("Are you a flatmate? Head to Flatmate HQ here "+"»"));
+        $(byXpath("//section[@class='page-heading blog-splash']//div[@class=" +
+                "'blog-hq-switch container']/a")).getText().contentEquals("Are you a flatmate? Head to Flatmate HQ here");
 
     }
 
@@ -738,13 +745,22 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//div[@class='msg-body']/span")).shouldHave(text("Hi my name is LivOutListNewTrialI am Other and I would" +
                 " like to know if the room is still available. Thank you!"));
 
-    }
+    }//div[starts-with(@class,'label label-primary')]
 
     public void searchResultText(String text) {
         $(byXpath("//h1[@class='h4']")).shouldHave(text(text));
+
     }
 
     public void noSendDecline() {
         $(byXpath("//button[@class='btn-cancel']")).shouldNot(exist);
+    }
+
+    public void packageOnCard(String text, final String label) {
+        $(byXpath("//div[@class='container']//div[@class='cover-panel u_bg-white u_m30-bottom u_b']//div[@class='label label-" + label + " listing-panel-label u_p5']")).shouldHave(text(text));
+    }
+
+    public void promoteCard() {
+        $(byXpath("//a[contains(.,'Promote')]")).shouldHave(exist);
     }
 }

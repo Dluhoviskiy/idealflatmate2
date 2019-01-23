@@ -5,13 +5,14 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void messagePropertySignUpHomePage() {
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         homePageHelper.scrollToBlockProperty();
 
@@ -50,7 +51,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.setSignUpNameFMessage("Ronald");
         //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.genderFemaleSelectMessage();
-        signUpHelper.setSignEmailMessage("FM51stU@gmail.com");
+        signUpHelper.setSignEmailMessage("FM51st1mU@gmail.com");
         signUpHelper.setSignPasswordMessage("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -96,6 +97,7 @@ public class SignUpLikeOrMessage extends TestBase {
     @Test
 
     public void messageSignUpFMPage() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         homePageHelper.scrollToBlockProperty();
         String photo1 = $(byXpath("(//div[@class='card-top-profile-img u_p5-right']/img)[1]")).getAttribute("src");
@@ -131,7 +133,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.setSignUpNameFMessage("Ronaldina");
         //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.genderFemaleSelectMessage();
-        signUpHelper.setSignEmailMessage("FMkn154n71a7@gmail.com");
+        signUpHelper.setSignEmailMessage("FMkn1yu54n71a7@gmail.com");
         signUpHelper.setSignPasswordMessage("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -195,7 +197,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void signUpLike3rdPageQuit() {
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
 
         authorizationHelper.goToPropertyPage();
@@ -222,7 +224,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void signUpLikeHomePage() {
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
 
 
@@ -236,7 +238,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("Like1901a@gmail.com");
+        signUpHelper.setSignEmail("Like190uy1a@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -273,14 +275,14 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
     @Test
-    public void popupSignUpPropertyPage() {
-        //newDriverPage();
+    public void popupPropertyPage() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToPropertyPage();
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew314011@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew3uy14011@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -324,8 +326,8 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
     @Test
-    public void popupSignUpWithExistingEmail() {
-        //newDriverPage();
+    public void popupWithExistingEmail() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToFMpage();
 
@@ -343,8 +345,8 @@ public class SignUpLikeOrMessage extends TestBase {
 
 
     @Test
-    public void popupSignUpExistingEmailPropertyPage() {
-        //newDriverPage();
+    public void popupExistingEmailPropertyPage() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickCloseSignUp();
@@ -370,8 +372,8 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
     @Test
-    public void popupSignUpWithBlankRequiredFields() {
-        //newDriverPage();
+    public void popupWithBlankRequiredFields() {
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.goToFMpage();
 
@@ -395,7 +397,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderMaleSelectAfterBlank();
-        signUpHelper.setSignEmail("FMnew330696@gmail.com");
+        signUpHelper.setSignEmail("FMnew330uy696@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -429,9 +431,9 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
     @Test
-    public void popupSignUpExistingEmailPropertyPhone() {
+    public void popupExistingEmailPropertyPhone() {
 
-        //newDriverPage();
+        pageUrlVerifLiveGoStage();
         clearCache();
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickCloseSignUp();

@@ -16,8 +16,10 @@ public class AuthorizationHelper extends HelperBase {
 
     public void goToPropertyPage() {
         $(byXpath("//header//nav//ul//li//a[contains(text(), 'Find a home')]")).waitUntil(appears, 10000).hover();
+        sleep(1000);
         $(byXpath("//a[@href='/search' and contains(text(), 'All properties')]")).waitUntil(appears, 4000).click();
     }
+
 
     public void goToFMpage() {
          $(byXpath("//ul[starts-with(@class, 'nav navbar-nav')]//a[contains(.,'Find a flatmate')]")).waitUntil(appears, 4000).click();

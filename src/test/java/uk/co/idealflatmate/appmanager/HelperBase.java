@@ -17,7 +17,7 @@ import static uk.co.idealflatmate.tests.TestBase.newDriverPage;
 public class HelperBase  {
 
     public static void closeAdvPopUp() {
-        String needSpace = "//div[@id='renewAdvertModal']//button[@aria-label='Close']";
+        String needSpace = "//div[@id='signupNeedspaceModal']//button[@aria-label='Close']";
 
         if ($(byXpath(needSpace)).is(visible)) {
             hoverClick(needSpace);
@@ -25,7 +25,7 @@ public class HelperBase  {
         }
     }
 
-    public static void closeListPopUp() {
+    public static void closeListRenewPopUp() {
         sleep(2000);
         SelenideElement buttonRenew = $(byXpath("//section[@class='modal-content u_bg-gray-lighter']//button[@aria-label='Close']"));
         if(buttonRenew.isDisplayed()){
@@ -38,7 +38,7 @@ public class HelperBase  {
 
     public static void closeMatchPopUp() {
 
-        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).isEnabled()) {
+        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).exists()) {
             $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).click();
             sleep(2000);
         } else {

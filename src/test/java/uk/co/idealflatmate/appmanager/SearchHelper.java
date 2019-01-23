@@ -16,25 +16,27 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchHelper extends HelperBase {
+    SelenideElement clearSearchBar = $(byXpath("//form[@id='search-location']//span"));
 
-    public void searchProperty(String location) {
+    public void searchPropertyHome(String location) {
 
         searchPropertyBy(location, $("input.react-autosuggest__input"));
         sleep(2000);
-        $(byXpath("//button[@class='text-20']")).waitUntil(visible, 10000).click();
+        //$(byXpath("//button[@class='text-20']")).waitUntil(visible, 10000).pressEnter();
+        $("input.react-autosuggest__input").pressEnter();
     }
 
     public void searchPropertyByEnter(String location) {
 
         searchPropertyBy(location, $("input.react-autosuggest__input"));
-        $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham, London')]")).waitUntil(exist, 4000).pressEnter();
+        $(byXpath("//input")).waitUntil(exist, 4000).pressEnter();
 
     }
 
 
     public void searchPropertyBySelectfromList(String location) {
         searchPropertyBy(location, $("input.react-autosuggest__input"));
-        $(byXpath("//div[@class='ui-menu-item-wrapper' and contains(text(), 'Clapham Junction')]")).waitUntil(visible, 4000).click();
+        $(byXpath("//span[contains(.,'Clapham Junction')]")).waitUntil(visible, 4000).click();
 
     }
 
@@ -50,7 +52,7 @@ public class SearchHelper extends HelperBase {
         $(byXpath("//div[@class='row cards-container']")).waitUntil(visible, 4000).shouldHave(text(location));
     }
     public void verificationSearchOnFMPage(String location) {
-        $(byXpath("//h2[@class='h4']")).waitUntil(visible, 10000).shouldHave(text(location));
+        $(byXpath("//h1[@class='h4']")).waitUntil(visible, 10000).shouldHave(text(location));
     }
 
     public void verificationSearchProperty(String location) {
@@ -59,6 +61,7 @@ public class SearchHelper extends HelperBase {
 
     public void verificationSearchPropertyMap(String location) {
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']/p")).waitUntil(visible, 10000).shouldHave(text(location));
+
     }
 
 
@@ -76,6 +79,7 @@ public class SearchHelper extends HelperBase {
     }
     public void EastLDN1() {
         $(By.xpath("//a[contains(text(), 'East London')]")).click();
+        sleep(5000);
     }
     public void amountPropertyCards(int size) {
 
@@ -132,16 +136,20 @@ public class SearchHelper extends HelperBase {
         $$("ul.pagination li").get(pageActiveInd-1).shouldHave(text(text));
     }
 
-    public void clickAvailablePlus(String text) {
-        $(By.xpath("//div[contains(text(), 'Available bedrooms')]/..//button[@data-type='plus']")).click();
+    public void clickAvailablePlus(String rooms) {
+        //$(By.xpath("//div[contains(text(), 'Available bedrooms')]/..//button[@data-type='plus']")).click();
+
+        $(By.xpath("//div[@class='bedrooms-filter ']")).click();
+        $(By.xpath("//div[@class='form-group']/label[contains(.,'Rooms available in property')]/../select")).selectOptionContainingText(rooms);
+
         clickApply();
         //$(By.xpath("//button[contains(text(), 'Rooms number: 2 ')]")).click();
-        $(By.xpath("(//button[@class='btn btn-xs btn-gray'])[4]")).shouldHave(text(text));
+        //$(By.xpath("(//button[@class='btn btn-xs btn-gray'])[4]")).shouldHave(text(text));
 
     }
 
     public void cardsWith2roomsAvailable(int number, String text) {
-        ElementsCollection rooms1 = $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']"));
+        ElementsCollection rooms1 = $$(byXpath("//div[@class='text-13 u_p10']"));
 
         //$$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).shouldHaveSize(number).shouldHave(CollectionCondition.texts(text));
         rooms1.shouldHaveSize(number);
@@ -221,7 +229,9 @@ public class SearchHelper extends HelperBase {
     }
 
     public void closePopupSignup() {
-        SelenideElement close1 = $(byXpath("//button[@class='btn btn-sm close u_m15' and @aria-label='Close']"));
+
+        sleep(4000);
+        SelenideElement close1 = $(byXpath("//div[@id='signupNeedspaceModal']//button[@class='btn btn-sm close u_m15' and @aria-label='Close']"));
 
         if(close1.isDisplayed()){
             close1.click();}
@@ -243,14 +253,14 @@ public class SearchHelper extends HelperBase {
         SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
         //SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
 
+        if(clearSearchBar.exists()){
+            clearSearchBar.click();
+
+        }
+        sleep(3000);
         searchField.click();
-        searchField.clear();
-        sleep(3000);
         searchField.setValue(location);
-        //searchElastic.click();
-        sleep(3000);
-        //searchElastic.click();
-        sleep(2000);
+        searchField.pressEnter();
 
     }
 
@@ -377,7 +387,7 @@ public class SearchHelper extends HelperBase {
     }
 
     public void clearLocation() {
-        $(byXpath("//form[@id='search-location']//span")).click();
+        clearSearchBar.click();
 
 
     }

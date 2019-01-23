@@ -136,9 +136,9 @@ public class SearchPropertiesPageTests extends TestBase{
 
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
-        searchHelper.clickAvailablePlus("Rooms number: 2 ");
+        searchHelper.clickAvailablePlus("2 rooms to rent");
         // No "1 rooms available" after sorting
-        searchHelper.cardsWith2roomsAvailable(11, "\n" + "1 rooms available\n" + " ");
+        searchHelper.cardsWith2roomsAvailable(11, "\n" + "1 room available\n" + " ");
         helperBase.toHomePage();
     }
 

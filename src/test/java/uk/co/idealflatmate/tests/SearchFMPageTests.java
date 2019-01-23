@@ -2,12 +2,17 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
+import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
+import static uk.co.idealflatmate.appmanager.HelperBase.closeListRenewPopUp;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+
 public class SearchFMPageTests extends TestBase{
 
 
     @Test
     public void fmSearchBy() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.amountPropertyCards(12);
@@ -21,6 +26,7 @@ public class SearchFMPageTests extends TestBase{
     @Test
     public void searchPagination() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -43,6 +49,7 @@ public class SearchFMPageTests extends TestBase{
     @Test
     public void applyMoreFilters() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -58,6 +65,7 @@ public class SearchFMPageTests extends TestBase{
     @Test
     public void applyMoreFiltersPhotoNoList() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -73,6 +81,7 @@ public class SearchFMPageTests extends TestBase{
     @Test
     public void applyMoreFiltersPhotoWithList() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -88,6 +97,7 @@ public class SearchFMPageTests extends TestBase{
     @Test
     public void applyAdvancedFiltersDefault() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.checkHighPriceSort("7");
@@ -115,9 +125,13 @@ public class SearchFMPageTests extends TestBase{
     @Test
     public void sortListingLoggedIn() {
         clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
+
         authorizationHelper.login("FMMatchingSort@gmail.com","qqqqqq");
+        closeListRenewPopUp();
+
         searchHelper.checkSort("Price high to low");
         searchHelper.checkSort("Most recent");
         searchHelper.checkSort("Price low to high");

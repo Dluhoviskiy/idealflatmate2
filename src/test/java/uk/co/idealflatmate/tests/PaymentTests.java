@@ -3,15 +3,19 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
+import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class PaymentTests extends TestBase {
 
+
     @Test
     public void AbilityToSeePhone() {
-
+        clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.login("cro.gen.Premium@gmail.com", "qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Zlatan");
-        searchHelper.searchProperty("#0012906");
+        searchHelper.searchPropertyHome("#0012906");
         paymentsHelper.verificationPhone("XXXX");
         getMessageHelper().clickPhoneReveal();
 
@@ -21,10 +25,12 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void GoPremiumFHPaymentOnPhone() {
+        clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
-        searchHelper.searchProperty("#0012906");
+        searchHelper.searchPropertyHome("#0012906");
         paymentsHelper.verificationPhone("XXXX");
         getMessageHelper().clickPhoneReveal();
         paymentsHelper.verificationPremiumPopup("Get access to all properties");
@@ -35,10 +41,12 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void GoPremiumFHPaymentOnMessage() {
+        clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
-        searchHelper.searchProperty("#0012906");
+        searchHelper.searchPropertyHome("#0012906");
         getMessageHelper().clickPropertyContact();
         paymentsHelper.clickUpgradePremiumFH("Upgrade to get a faster reply");
         paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
@@ -48,7 +56,9 @@ public class PaymentTests extends TestBase {
     }
 
     @Test
-    public void PremiumFHPaymentWorldPay() {
+    public void premiumFHPaymentWorldPay() {
+        clearCache();
+        pageUrlVerifLiveGoStage();
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
 
@@ -56,62 +66,259 @@ public class PaymentTests extends TestBase {
         signUpHelper.clickRoom();
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "LiveInNewo141a2@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "Litrw11@gmail.com");
 
         signUpHelper.MoreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter");
 
         signUpHelper.whereWouldLikeLive("watf", "Watford");
 
-        signUpHelper.priceMove("15", "12", "2019");
+        signUpHelper.budgetMin();
+        signUpHelper.budgetMax();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.clickYourInformationContinue();
+
+        //signUpHelper.priceMove("15", "12", "2019");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
+        addPropertyHelper.openDropDownMenu();
         paymentsHelper.goToPaymentsTab();
 
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
         //paymentsHelper.selectPremiumFlathunterPlan();
         paymentsHelper.upgradePremiumFH();
-        paymentsHelper.verificationCheckout("£3.99 (week)");
+        paymentsHelper.verificationCheckout("£"+"3.99 (week)");
         paymentsHelper.verificationCheckoutTotal("3.99");
         paymentsHelper.checkout();
         paymentsHelper.chooseWorldPay("or Credit / Debit Card");
         paymentsHelper.fillinDebitCardData("Alex", "5454545454545454", "11", "2020", "123");
-        verificationHelper.verifyPackagePurchase("Congratulations on choosing our Premium Flathunter plan for the property .\n");
+
+        verificationHelper.verifyPackagePurchase("Congratulations on choosing our Premium Flathunter plan for the property .");
         paymentsHelper.removePackage();
-        verificationHelper.verifyPackageCanceled("You are using our Premium Flathunter plan for property .\n" +
-                "Your subscription will not renew automatically.");
+        verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
-        verificationHelper.verificationUserIsUnlogged("Ronald");
+        verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
+    @Test
+    public void lordInWorldPaylistingEssen() {
 
+        clearCache();
+        pageUrlVerifLiveGoStage();
 
-     @Test
-    public void LandlordPaymentPayPal() {
         authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.LandLordPayment@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("Live-in landlord");
+
+        signUpHelper.signListingLiveIn("Live_inNew22@gmail.com", "qqqqqq",
+                "5", "5", "1959", "55555555", "39", "Ronald");
+
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        paymentsHelper.goToPaymentsTab();
-        paymentsHelper.verificationPaymentPageFeatureListing("Premium");
+
+        addPropertyHelper.addListingWithoutPhoto("SE1", "2", "4", "900");
+
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+
+        paymentsHelper.verificationPaymentPageFeatureListing("Want more from your listing? Upgrade now!");
         //paymentsHelper.selectPremiumFlathunterPlan();
-        paymentsHelper.selectNLADiscount("NLA15");
-        paymentsHelper.verificationPrice("1 week Premium - £12.99");
-        paymentsHelper.upgradePremiumListing("Upgrade to Premium");
-        paymentsHelper.verificationCheckout("£12.99 (week)");
-        paymentsHelper.verificationCheckoutTotal("11.04");
+        paymentsHelper.selectNLADiscount("NLA15", "EssentialPaymentForm");
+        paymentsHelper.verificationPrice("1 month Essentials - "+"£"+"16.99", "EssentialPaymentForm");
+        paymentsHelper.upgradeListing("Upgrade to Essentials", "Upgrade to Essentials");
+        paymentsHelper.verificationCheckout("£"+"16.99 (monthly)");
+        paymentsHelper.verificationCheckoutTotal("14.44");
         paymentsHelper.checkout();
-        paymentsHelper.choosePayPal();
+        //paymentsHelper.choosePayPal();
+        paymentsHelper.chooseWorldPay("or Credit / Debit Card");
         paymentsHelper.fillinDebitCardData("Alex", "5454545454545454", "11", "2020", "123");
-        verificationHelper.verifyPackagePurchase("Congratulations on choosing our Premium Flathunter plan for the property .\n");
+
+        verificationHelper.verifyPackagePurchaseList("ideal flatmate Essentials");
+        closeMatchPopUp();
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.promoteCard();
+        verificationHelper.packageOnCard("Essentials listing", "default");
+
+        addPropertyHelper.openDropDownMenu();
+        paymentsHelper.goToPaymentsTab();
+        paymentsHelper.removePackage();
+        verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
+
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
-        verificationHelper.verificationUserIsUnlogged("Ronald");
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+    @Test
+    public void lordOutWorldPaylistingPrem() {
+
+        clearCache();
+        pageUrlVerifLiveGoStage();
+
+        authorizationHelper.goToFMpage();
+
+        authorizationHelper.clickCloseSignUp();
+
+        addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
+        addPropertyHelper.selectTypeUser("Live-out landlord");
+
+        signUpHelper.signListingLiveOut("Lord_out_New16@gmail.com", "qqqqqq",
+                "2Ronald", "897876567");
+
+
+        verificationHelper.verificationUserNameOnHomePage("2Ronald");
+
+        verificationHelper.verifyAddListingPage();
+
+        addPropertyHelper.addListingWithoutPhoto("SE1", "2", "3", "900");
+
+        verificationHelper.verificationUserNameOnHomePage("2Ronald");
+
+        addPropertyHelper.openDropDownMenu();
+        paymentsHelper.goToPaymentsTab();
+
+        paymentsHelper.verificationPaymentPageFeatureListing("Want more from your listing? Upgrade now!");
+        //paymentsHelper.selectPremiumFlathunterPlan();
+        paymentsHelper.selectNLADiscount("NLA15", "PremiumPaymentForm");
+        paymentsHelper.verificationPrice("1 week Premium - "+"£"+"12.99", "PremiumPaymentForm");
+        paymentsHelper.upgradeListing("Upgrade to Premium", "Upgrade to Premium");
+        paymentsHelper.verificationCheckout("£"+"12.99 (week)");
+        paymentsHelper.verificationCheckoutTotal("11.04");
+        paymentsHelper.checkout();
+        //paymentsHelper.choosePayPal();
+        paymentsHelper.chooseWorldPay("or Credit / Debit Card");
+        paymentsHelper.fillinDebitCardData("Alex", "5454545454545454", "11", "2020", "123");
+        closeMatchPopUp();
+        verificationHelper.verifyPackagePurchaseList("ideal flatmate Premium");
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.packageOnCard("Premium listing", "primary");
+
+        addPropertyHelper.openDropDownMenu();
+        paymentsHelper.goToPaymentsTab();
+        paymentsHelper.removePackage();
+        verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
+
+        verificationHelper.verificationUserNameOnHomePage("2Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+
+
+
+
+    @Test
+    public void lordInWorldPaidListingProf() {
+
+        clearCache();
+        pageUrlVerifLiveGoStage();
+
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+
+        addPropertyHelper.selectTypeUser("Live-in landlord");
+
+        signUpHelper.signListingLiveIn("Live_inNew34@gmail.com", "qqqqqq",
+                "5", "5", "1959", "55555555", "39", "Ronald");
+
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+
+        addPropertyHelper.addListingWithoutPhoto("m12", "2", "4", "900");
+
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+
+        paymentsHelper.verificationPaymentPageFeatureListing("Want more from your listing? Upgrade now!");
+        //paymentsHelper.selectPremiumFlathunterPlan();
+        paymentsHelper.upgradeListingProf("up to 5");
+        paymentsHelper.verificationPrice("1 month - "+"£"+"44.99", "ProfessionalPaymentForm");
+        paymentsHelper.upgradeListing("Upgrade to Professional", "Upgrade to Professional");
+        paymentsHelper.verificationCheckout("£"+"44.99 (monthly)");
+        paymentsHelper.verificationCheckoutTotal("44.99");
+        paymentsHelper.checkout();
+        //paymentsHelper.choosePayPal();
+        paymentsHelper.chooseWorldPay("or Credit / Debit Card");
+        paymentsHelper.fillinDebitCardData("Alex", "5454545454545454", "11", "2020", "123");
+        closeMatchPopUp();
+
+        verificationHelper.verifyPackagePurchaseList("ideal flatmate Professional");
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.packageOnCard("Free listing", "default");
+        paymentsHelper.promoteCardClick("Promote");
+        verificationHelper.packageOnCard("Premium listing", "primary");
+
+        addPropertyHelper.openDropDownMenu();
+        paymentsHelper.goToPaymentsTab();
+        paymentsHelper.removePackage();
+        verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
+
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+
+
+
+    @Test
+    public void agentProfWorldPay() {
+        clearCache();
+        pageUrlVerifLiveGoStage();
+
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+
+        addPropertyHelper.selectTypeUser("An agency");
+
+        signUpHelper.agentSignListing("Ronald", "agentTest06@gmail.com", "qqqqqq",
+                "66666666", "Tell us about yourself");
+
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+
+        addPropertyHelper.openDropDownMenu();
+        paymentsHelper.goToPaymentsTab();
+
+        paymentsHelper.upgradeListingProf("1-2");
+        paymentsHelper.verificationPrice("1 month - "+"£"+"34.99", "ProfessionalPaymentForm");
+        paymentsHelper.selectNLADiscount("NLA15", "ProfessionalPaymentForm");
+        paymentsHelper.upgradeListing("Upgrade to", "Professional");
+        paymentsHelper.verificationCheckout("£"+"34.99 (monthly)");
+        paymentsHelper.verificationCheckoutTotal("29.74");
+        paymentsHelper.checkout();
+        paymentsHelper.chooseWorldPay("or Credit / Debit Card");
+        paymentsHelper.fillinDebitCardData("Alex", "5454545454545454", "11", "2020", "123");
+        verificationHelper.verifyPackagePurchaseList("ideal flatmate Professional");
+        //paymentsHelper.choosePayPal();
+
+        addPropertyHelper.chooseListLoggedFromHeaderProfile();
+        addPropertyHelper.addListingWithoutPhoto("m12", "2", "4", "900");
+
+        addPropertyHelper.finishPropertyAgencyWithSubs("Your listing is now live!");
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.packageOnCard("Premium listing", "primary");
+        paymentsHelper.promoteCardClick("Switch to Essentials");
+        verificationHelper.packageOnCard("Essentials listing", "default");
+
+        addPropertyHelper.openDropDownMenu();
+        paymentsHelper.goToPaymentsTab();
+        paymentsHelper.removePackage();
+        verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
+
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.removeAccount();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+
+
     }
 
 }

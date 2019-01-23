@@ -12,7 +12,8 @@ public class SignUpTest extends TestBase {
     @Test
     public void SignUpBlankFieldsPropAddRentBlock() {
         pageUrlVerifLiveGoStage();
-        paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock();
+        clearCache();
+        addPropertyHelper.pressAddListingNotLoggedBlock();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
         signUpHelper.clickEmail();
@@ -32,9 +33,9 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void SignUpBlankFieldsPropAddWorkBlock() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
-        paymentsHelper.addPropertyHelper.pressAddListingNotLoggedBlock1();
+        clearCache();
+        addPropertyHelper.pressAddListingNotLoggedBlock1();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
         signUpHelper.clickEmail();
@@ -54,8 +55,8 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void headerRoomSignUpHomePageTenant() {
-
         pageUrlVerifLiveGoStage();
+        clearCache();
 
         authorizationHelper.clickJoinFreeButton();
 
@@ -126,24 +127,10 @@ public class SignUpTest extends TestBase {
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
-
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.clickEmail();
-
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderMaleSelect();
-        signUpHelper.setSignEmail("Live_inNew33430@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhotoRemove();
-        signUpHelper.profileDateBirthAdd("5", "2", "1959");
-        signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("39");
-        //signUpHelper.aboutYourself("Tell us about yourself");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.signListingLiveIn("Live_inNew33430@gmail.com", "qqqqqq",
+                                        "5", "5", "1959", "55555555", "39", "Ronald");
 
         verificationHelper.verifyAddListingPage();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -163,6 +150,8 @@ public class SignUpTest extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
+
+
 
     @Test
     public void headerSignUpWithExistingEmail() {
@@ -384,7 +373,7 @@ public class SignUpTest extends TestBase {
 
 
 
-    //@Test
+    @Test
     public void SuccessfulSignUpWithListingWithAllFields() {
         HelperBase.closeAdvPopUp();
         verificationHelper.ageConfirmCheckMatching();
@@ -396,7 +385,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-   // @Test
+    @Test
     public void ListingSignUpHeader() {
         pageUrlVerifLiveGoStage();
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
@@ -429,7 +418,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-  //  @Test
+    @Test
     public void ListingSignUpFromHomepage() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();

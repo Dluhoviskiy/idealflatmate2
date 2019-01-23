@@ -3,6 +3,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
+import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
@@ -45,6 +46,7 @@ public class AreaPageTest extends TestBase {
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(4).text();
         areaPageHelper.clickArea(2);
         areaPageHelper.clickMoreRooms();
+
         areaPageHelper.checkLinkSeeMoreRooms(area1);
         areaPageHelper.checkNumberOfProperties();
         areaPageHelper.checkSortDropDownRoom();

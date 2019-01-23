@@ -7,10 +7,8 @@
         <methods>
           <include name="applyMoreFilters"/>
           <include name="searchEastLDNPagination"/>
-          <include name="searchZone1Pagination"/>
           <include name="sortListingWith2Rooms"/>
           <include name="tearDown"/>
-          <include name="propertySearchByDropDown"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.SearchPropertiesPageTests -->
@@ -23,10 +21,7 @@
       </class> <!-- uk.co.idealflatmate.tests.AreaPageTest -->
       <class name="uk.co.idealflatmate.tests.HomePageTest">
         <methods>
-          <include name="findStartListing"/>
-          <include name="findStartMatchingLink"/>
           <include name="tearDown"/>
-          <include name="findOutMore"/>
           <include name="blogFM"/>
           <include name="setupClass"/>
           <include name="blogLandlord"/>
@@ -37,9 +32,9 @@
           <include name="signUpLikeHomePage"/>
           <include name="popupSignUpWithBlankRequiredFields"/>
           <include name="signUpLike3rdPageQuit"/>
+          <include name="popupSignUpExistingEmailPropertyPage"/>
           <include name="tearDown"/>
           <include name="messageSignUpFMPage"/>
-          <include name="popupSignUpExistingEmailPropertyPhone"/>
           <include name="popupSignUpPropertyPage"/>
           <include name="messagePropertySignUpHomePage"/>
           <include name="popupSignUpWithExistingEmail"/>
@@ -51,6 +46,7 @@
           <include name="propertyAddWithAllFields"/>
           <include name="tearDown"/>
           <include name="setupClass"/>
+          <include name="loginStartListing"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
       <class name="uk.co.idealflatmate.tests.FooterTest">
@@ -62,16 +58,13 @@
       </class> <!-- uk.co.idealflatmate.tests.FooterTest -->
       <class name="uk.co.idealflatmate.tests.MatchingTests">
         <methods>
-          <include name="StartMatchingByStartQuizOnPropertyCard"/>
-          <include name="StartMatchingOnFMSearchPage"/>
           <include name="tearDown"/>
-          <include name="CompleteMatchingFromMenuWithNewUserWithVerifyingPercent"/>
+          <include name="completeMatchingFromMenuWithNewUserWithVerifyingPercent"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.MatchingTests -->
       <class name="uk.co.idealflatmate.tests.SearchHomePageTests">
         <methods>
-          <include name="searchHomeByButton"/>
           <include name="searchHomeNorthLND"/>
           <include name="searchHomeIncorrectData"/>
           <include name="searchHomePartOfLocationName"/>
@@ -79,7 +72,6 @@
           <include name="searchHomeLocationFromList"/>
           <include name="setupClass"/>
           <include name="TestSearchHomeByEnter"/>
-          <include name="searchHomeIDProperty"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.SearchHomePageTests -->
       <class name="uk.co.idealflatmate.tests.ZEmailTests">
@@ -91,20 +83,19 @@
       </class> <!-- uk.co.idealflatmate.tests.ZEmailTests -->
       <class name="uk.co.idealflatmate.tests.MessagesTest">
         <methods>
-          <include name="sendMessageByLandlordWithSubscriptionToFM"/>
-          <include name="sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromListing"/>
-          <include name="sendMessageFmWithoutSubscriptionToLandlordWithoutSubscriptionWithListingFromFMpage"/>
-          <include name="sendMessageByLandlordWithoutSubscriptionToFM"/>
+          <include name="readMessageByLandlWithoutSubsn"/>
+          <include name="landlordWithoutSubsToFM"/>
           <include name="tearDown"/>
-          <include name="sendMessagePremiumFmToLandlordWithoutSubscriptionWithListingFromSearch"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.MessagesTest -->
       <class name="uk.co.idealflatmate.tests.SignUpTest">
         <methods>
+          <include name="ListingSignUpFromHomepage"/>
           <include name="headerSignUpWithBlankRequiredFieldsBudget"/>
           <include name="headerSignUpWithBlankRequiredFieldsMoreAboutYou"/>
           <include name="headerRoomSignUpHomePageTenant"/>
+          <include name="SuccessfulSignUpWithListingWithAllFields"/>
           <include name="tearDown"/>
           <include name="setupClass"/>
         </methods>
@@ -133,12 +124,12 @@
       </class> <!-- uk.co.idealflatmate.tests.SignUpMatching -->
       <class name="uk.co.idealflatmate.tests.PaymentTests">
         <methods>
-          <include name="GoPremiumFHPaymentOnPhone"/>
-          <include name="LandlordPaymentPayPal"/>
-          <include name="AbilityToSeePhone"/>
+          <include name="lordOutWorldPaylistingPrem"/>
+          <include name="lordWorldPaylistingEssen"/>
+          <include name="premiumFHPaymentWorldPay"/>
+          <include name="lordOutPremWorldPaylistingFMProf"/>
           <include name="tearDown"/>
-          <include name="PremiumFHPaymentWorldPay"/>
-          <include name="GoPremiumFHPaymentOnMessage"/>
+          <include name="agentProfWorldPay"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.PaymentTests -->

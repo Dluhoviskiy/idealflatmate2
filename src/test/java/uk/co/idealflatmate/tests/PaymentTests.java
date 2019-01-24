@@ -66,7 +66,7 @@ public class PaymentTests extends TestBase {
         signUpHelper.clickRoom();
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "Litrw11@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "Litrw11ul1@gmail.com");
 
         signUpHelper.MoreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter");
 
@@ -111,7 +111,7 @@ public class PaymentTests extends TestBase {
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.signListingLiveIn("Live_inNew22@gmail.com", "qqqqqq",
+        signUpHelper.signListingLiveIn("Live_inNew021r@gmail.com", "qqqqqq",
                 "5", "5", "1959", "55555555", "39", "Ronald");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -163,7 +163,7 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("Live-out landlord");
 
-        signUpHelper.signListingLiveOut("Lord_out_New16@gmail.com", "qqqqqq",
+        signUpHelper.signListingLiveOut("Lord_out_New033@gmail.com", "qqqqqq",
                 "2Ronald", "897876567");
 
 
@@ -222,7 +222,7 @@ public class PaymentTests extends TestBase {
 
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.signListingLiveIn("Live_inNew34@gmail.com", "qqqqqq",
+        signUpHelper.signListingLiveIn("Live_inNewL011@gmail.com", "qqqqqq",
                 "5", "5", "1959", "55555555", "39", "Ronald");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -276,7 +276,7 @@ public class PaymentTests extends TestBase {
 
         addPropertyHelper.selectTypeUser("An agency");
 
-        signUpHelper.agentSignListing("Ronald", "agentTest06@gmail.com", "qqqqqq",
+        signUpHelper.agentSignListing("Ronald", "agentTest07@gmail.com", "qqqqqq",
                 "66666666", "Tell us about yourself");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");

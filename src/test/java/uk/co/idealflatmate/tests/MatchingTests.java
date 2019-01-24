@@ -19,7 +19,7 @@ public class MatchingTests extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronaldina");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnewl199@gmail.com");
+        signUpHelper.setSignEmail("FMnewlq10@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 

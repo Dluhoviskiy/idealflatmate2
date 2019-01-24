@@ -23,6 +23,12 @@ public class HelperBase  {
             hoverClick(needSpace);
             sleep(2000);
         }
+
+        if ($(byXpath(needSpace)).isDisplayed()) {
+            hoverClick(needSpace);
+            sleep(2000);
+        }
+
     }
 
     public static void closeListRenewPopUp() {

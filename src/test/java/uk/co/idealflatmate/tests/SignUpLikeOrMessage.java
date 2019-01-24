@@ -51,7 +51,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.setSignUpNameFMessage("Ronald");
         //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.genderFemaleSelectMessage();
-        signUpHelper.setSignEmailMessage("FM51st1mU@gmail.com");
+        signUpHelper.setSignEmailMessage("FM51rrr1@gmail.com");
         signUpHelper.setSignPasswordMessage("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -133,7 +133,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.setSignUpNameFMessage("Ronaldina");
         //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.genderFemaleSelectMessage();
-        signUpHelper.setSignEmailMessage("FMkn1yu54n71a7@gmail.com");
+        signUpHelper.setSignEmailMessage("FMrrr2@gmail.com");
         signUpHelper.setSignPasswordMessage("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -238,7 +238,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("Like190uy1a@gmail.com");
+        signUpHelper.setSignEmail("Likerrr3@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -282,7 +282,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew3uy14011@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnewrrr4@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -397,7 +397,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderMaleSelectAfterBlank();
-        signUpHelper.setSignEmail("FMnew330uy696@gmail.com");
+        signUpHelper.setSignEmail("FMnewrrr5@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 

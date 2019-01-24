@@ -20,11 +20,11 @@ public class EmailHelper extends HelperBase {
         }
     }
     public void setLoginAsUserEmail(String email) {
-        gmailLogin(email, "//input[@type='email']", "//span[@class='RveJvd snByac' and contains(.,'Далі')]");
+        gmailLogin(email, "//input[@type='email']", "//div[@id='identifierNext']//span[@class='RveJvd snByac']");
     }
 
     public void setLoginAsUserPassword(String password) {
-        gmailLogin(password, "//input[@type='password']", "(//content[@class='CwaK9'])[1]/span");
+        gmailLogin(password, "//input[@type='password']", "//div[@id='passwordNext']//span[@class='RveJvd snByac']");
     }
 
     public void enterEmail() {
@@ -35,24 +35,24 @@ public class EmailHelper extends HelperBase {
     }
 
     public void verificationWelcome() {
-        $(byXpath("(//tbody)[5]/tr[td/span[contains (text(), ':')]]")).shouldHave((text("Welcome to Ideal Flatmate!")));
+        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(text(), 'AM') or contains(text(), 'PM')]]")).shouldHave((text("Welcome to Ideal Flatmate!")));
 
     }
     public void verificationListingisLive() {
-        $(byXpath("(//tbody)[5]/tr[td/span/b[contains (text(), ':')]]")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(text(), 'AM') or contains(text(), 'PM')]]")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
     }
     public void verificationMessage() {
-        $(byXpath("(//tbody)[5]/tr[td/span/b[contains (text(), ':')]]")).shouldHave((text("You have a new message!")));
+        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(text(), 'AM') or contains(text(), 'PM')]]")).shouldHave((text("You have a new message!")));
     }
 
     public void verificationNoListingisLive() {
-        $(byXpath("(//tbody)[5]")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+        $(byXpath("//div[@class='nH bkL']//tbody")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
     }
     public void verificationNoWelcome() {
-        $(byXpath("(//tbody)[5]")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
+        $(byXpath("//div[@class='nH bkL']//tbody")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
     }
     public void verificationNoMessageEmail() {
-        $(byXpath("(//tbody)[5]")).shouldNotHave((text("You have a new message!")));
+        $(byXpath("//div[@class='nH bkL']//tbody")).shouldNotHave((text("You have a new message!")));
     }
 
     public void tipCheckboxWelcome() {

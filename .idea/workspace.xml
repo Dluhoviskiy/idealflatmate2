@@ -3,23 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d4b003df-8113-4890-ab55-3ebc7f844eac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SearchHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SearchHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchFMPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchFMPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/ZEmailTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/ZEmailTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
@@ -48,21 +41,17 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/suite/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AddPropertyHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AuthorizationHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/AuthorizationHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/EmailHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/EmailHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HelperBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/HelperBase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MatchingHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/MatchingHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/PaymentsHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/PaymentsHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/SearchHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/SearchHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/SignUpHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/SignUpHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/VerificationHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/appmanager/VerificationHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AddListingTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AreaPageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/AreaPageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MessagesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MessagesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/PaymentTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SearchHomePageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SearchHomePageTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MatchingTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/MatchingTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/PaymentTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/PaymentTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpLikeOrMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpLikeOrMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpMatching.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpMatching.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/SignUpTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/ZEmailTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/uk/co/idealflatmate/tests/ZEmailTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -92,68 +81,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PaymentTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java">
+      <file leaf-file-name="EmailHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-236">
-              <caret line="278" column="60" selection-start-line="278" selection-start-column="60" selection-end-line="278" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="528">
+              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignUpLikeOrMessage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java">
+      <file leaf-file-name="ZEmailTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/ZEmailTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="99" selection-start-line="99" selection-end-line="100" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpMatching.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="21" selection-start-line="12" selection-end-line="13" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="57" column="10" lean-forward="true" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="279" column="17" selection-start-line="279" selection-start-column="16" selection-end-line="279" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VerificationHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="56" column="52" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="137">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -169,36 +110,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>searchPropertyBySelectfromList</find>
-      <find>mapAreaPageCheck</find>
-      <find>verificationSearchPropertyMap</find>
-      <find>//h2[@class='h4']</find>
-      <find>verificationSearchOnFMPage</find>
-      <find>searchPropertyHome</find>
-      <find>selectNLADiscount</find>
-      <find>form-control pro-property-no</find>
-      <find>promoteCard()</find>
-      <find>closePopupSignup</find>
-      <find>close</find>
-      <find>Upgrade to Professiona</find>
-      <find>Property[area_link_id]</find>
-      <find>//button[contains(.,'Upgrade to Professional')]</find>
-      <find>upgradeListing</find>
-      <find>add</find>
-      <find>//h1/s</find>
-      <find>£</find>
-      <find>checkout</find>
-      <find>//div[@class='flatmate-type-filter selected']</find>
-      <find>promoteCard</find>
-      <find>searchPropertyByEnter</find>
-      <find>//h1/span</find>
-      <find>EastLDN1</find>
-      <find>cardsWith2roomsAvailable</find>
       <find>clickAvailablePlus</find>
       <find>promote</find>
       <find>div.col-xs-12 img</find>
       <find>photoOfOwner</find>
       <find>FM51stU</find>
+      <find>//span[@class='RveJvd snByac' and contains</find>
+      <find>3 bedrooms for rent in Bankside, South London from</find>
+      <find>Maximum budget:</find>
+      <find>cro.gen.FHListingNotPaid@gmail.com</find>
+      <find>0 bedroom available</find>
+      <find>finishViewUnfinished</find>
+      <find>conta</find>
+      <find>unf</find>
+      <find>Maximum budget</find>
+      <find>Unfinished</find>
+      <find>div[@class='price-range-filter selected'</find>
+      <find>closeAdvPopUp</find>
+      <find>//span[@class='map-toggle-button open-map-button']</find>
+      <find>Well done</find>
+      <find>Well done! Thanks for answering these questions. We can now match you with compatible flatmates. Remember, you can change your answers at any time in the “Ideal Matching” section on your dashboard.</find>
+      <find>lordInWorldPaylistingEssen</find>
+      <find>//span[@class='RveJvd snByac'</find>
+      <find>(//input[@name='SignupForm[is_age_confirm]'])[1]</find>
+      <find>//h3[@class='u_m0' and contains (text(), 'A flatmate for my vacant room')]</find>
+      <find>all</find>
+      <find>//div[@id='signupNeedspaceModal']//button[@aria-label='Close']</find>
+      <find>Well done! Thanks for answering these questions.</find>
+      <find>Well done! Thanks for answering these questions</find>
+      <find>pm</find>
+      <find>welcome</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests</dir>
@@ -250,36 +191,36 @@
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/EmailTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SearchHelperFM.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/ZEmailTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/FooterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AuthorizationTests.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/testNG.xml" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AreaPageHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/HomePageTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MessageHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/TestBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MessagesTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HomePageHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchHomePageTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchFMPageTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AddPropertyHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/PaymentsHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SearchHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SearchPropertiesPageTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/ZEmailTests.java" />
       </list>
     </option>
   </component>
@@ -437,7 +378,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.SignUpMatching.SignUpWithMatchingWithBlankRequiredFields">
+  <component name="RunManager" selected="TestNG.ZEmailTests">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -460,7 +401,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="SignUpLikeOrMessage" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SignUpTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
         <pattern>
@@ -472,7 +413,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpLikeOrMessage" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpTest" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -489,7 +430,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="SignUpLikeOrMessage.signUpLike3rdPageQuit" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SignUpTest.SuccessfulSignUpWithListingWithAllFields" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
         <pattern>
@@ -501,8 +442,37 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpLikeOrMessage" />
-      <option name="METHOD_NAME" value="signUpLike3rdPageQuit" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpTest" />
+      <option name="METHOD_NAME" value="SuccessfulSignUpWithListingWithAllFields" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="SignUpTest.headerSignUpWithBlankRequiredFieldsLocation" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="idealflatmatetest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpTest" />
+      <option name="METHOD_NAME" value="headerSignUpWithBlankRequiredFieldsLocation" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -518,7 +488,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="SignUpLikeOrMessage.signUpLikeHomePage" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SignUpTest.headerSignUpWithBlankRequiredFieldsMoreAboutYou" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
         <pattern>
@@ -530,12 +500,12 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpLikeOrMessage" />
-      <option name="METHOD_NAME" value="signUpLikeHomePage" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpTest" />
+      <option name="METHOD_NAME" value="headerSignUpWithBlankRequiredFieldsMoreAboutYou" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
+      <option name="PARAMETERS" value="0" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -547,7 +517,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="SignUpMatching" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ZEmailTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="idealflatmatetest" />
       <extension name="coverage">
         <pattern>
@@ -559,39 +529,10 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpMatching" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.ZEmailTests" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="SignUpMatching.SignUpWithMatchingWithBlankRequiredFields" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="idealflatmatetest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.idealflatmate.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="uk.co.idealflatmate.tests" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.idealflatmate.tests.SignUpMatching" />
-      <option name="METHOD_NAME" value="SignUpWithMatchingWithBlankRequiredFields" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -628,19 +569,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="TestNG.SignUpLikeOrMessage" />
-      <item itemvalue="TestNG.SignUpLikeOrMessage.signUpLike3rdPageQuit" />
-      <item itemvalue="TestNG.SignUpLikeOrMessage.signUpLikeHomePage" />
-      <item itemvalue="TestNG.SignUpMatching" />
-      <item itemvalue="TestNG.SignUpMatching.SignUpWithMatchingWithBlankRequiredFields" />
+      <item itemvalue="TestNG.SignUpTest" />
+      <item itemvalue="TestNG.SignUpTest.SuccessfulSignUpWithListingWithAllFields" />
+      <item itemvalue="TestNG.SignUpTest.headerSignUpWithBlankRequiredFieldsLocation" />
+      <item itemvalue="TestNG.SignUpTest.headerSignUpWithBlankRequiredFieldsMoreAboutYou" />
+      <item itemvalue="TestNG.ZEmailTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SignUpMatching.SignUpWithMatchingWithBlankRequiredFields" />
-        <item itemvalue="TestNG.SignUpMatching" />
-        <item itemvalue="TestNG.SignUpLikeOrMessage.signUpLikeHomePage" />
-        <item itemvalue="TestNG.SignUpLikeOrMessage.signUpLike3rdPageQuit" />
-        <item itemvalue="TestNG.SignUpLikeOrMessage" />
+        <item itemvalue="TestNG.ZEmailTests" />
+        <item itemvalue="TestNG.SignUpTest.headerSignUpWithBlankRequiredFieldsMoreAboutYou" />
+        <item itemvalue="TestNG.SignUpTest" />
+        <item itemvalue="TestNG.SignUpTest.headerSignUpWithBlankRequiredFieldsLocation" />
+        <item itemvalue="TestNG.SignUpTest.SuccessfulSignUpWithListingWithAllFields" />
       </list>
     </recent_temporary>
   </component>
@@ -658,35 +599,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchPropertiesPageTests_sortListingWith2Rooms - 2019.01.23 at 19h 47m 31s.xml">
-      <configuration name="SearchPropertiesPageTests.sortListingWith2Rooms" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchPropertiesPageTests_sortListingWith2Rooms - 2019.01.23 at 19h 48m 19s.xml">
-      <configuration name="SearchPropertiesPageTests.sortListingWith2Rooms" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SignUpLikeOrMessage - 2019.01.23 at 19h 50m 27s.xml">
+    <history-entry file="SignUpLikeOrMessage - 2019.01.24 at 12h 51m 32s.xml">
       <configuration name="SignUpLikeOrMessage" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SignUpLikeOrMessage_messagePropertySignUpHomePage - 2019.01.23 at 19h 51m 30s.xml">
-      <configuration name="SignUpLikeOrMessage.messagePropertySignUpHomePage" configurationId="TestNG" />
+    <history-entry file="SignUpTest - 2019.01.24 at 12h 59m 13s.xml">
+      <configuration name="SignUpTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SignUpLikeOrMessage_messagePropertySignUpHomePage - 2019.01.23 at 19h 56m 46s.xml">
-      <configuration name="SignUpLikeOrMessage.messagePropertySignUpHomePage" configurationId="TestNG" />
+    <history-entry file="SignUpTest_SuccessfulSignUpWithListingWithAllFields - 2019.01.24 at 13h 00m 22s.xml">
+      <configuration name="SignUpTest.SuccessfulSignUpWithListingWithAllFields" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SignUpLikeOrMessage - 2019.01.23 at 20h 03m 41s.xml">
-      <configuration name="SignUpLikeOrMessage" configurationId="TestNG" />
+    <history-entry file="SignUpTest - 2019.01.24 at 13h 13m 51s.xml">
+      <configuration name="SignUpTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SignUpLikeOrMessage_signUpLike3rdPageQuit - 2019.01.23 at 20h 05m 16s.xml">
-      <configuration name="SignUpLikeOrMessage.signUpLike3rdPageQuit" configurationId="TestNG" />
+    <history-entry file="SignUpTest_headerSignUpWithBlankRequiredFieldsLocation - 2019.01.24 at 13h 15m 54s.xml">
+      <configuration name="SignUpTest.headerSignUpWithBlankRequiredFieldsLocation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SignUpLikeOrMessage_signUpLikeHomePage - 2019.01.23 at 20h 09m 49s.xml">
-      <configuration name="SignUpLikeOrMessage.signUpLikeHomePage" configurationId="TestNG" />
+    <history-entry file="SignUpTest - 2019.01.24 at 13h 24m 22s.xml">
+      <configuration name="SignUpTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SignUpMatching - 2019.01.23 at 20h 14m 11s.xml">
-      <configuration name="SignUpMatching" configurationId="TestNG" />
+    <history-entry file="SignUpTest_headerSignUpWithBlankRequiredFieldsMoreAboutYou - 2019.01.24 at 13h 28m 18s.xml">
+      <configuration name="SignUpTest.headerSignUpWithBlankRequiredFieldsMoreAboutYou" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SignUpMatching_SignUpWithMatchingWithBlankRequiredFields - 2019.01.23 at 20h 16m 21s.xml">
-      <configuration name="SignUpMatching.SignUpWithMatchingWithBlankRequiredFields" configurationId="TestNG" />
+    <history-entry file="ZEmailTests - 2019.01.24 at 13h 53m 57s.xml">
+      <configuration name="ZEmailTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ZEmailTests - 2019.01.24 at 14h 06m 17s.xml">
+      <configuration name="ZEmailTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ZEmailTests - 2019.01.24 at 14h 11m 09s.xml">
+      <configuration name="ZEmailTests" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -735,7 +676,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="752" />
+      <option name="time" value="755" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -815,24 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/ZEmailTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testNG.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1892">
-          <caret line="86" column="28" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -843,13 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -904,34 +824,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AuthorizationHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,16 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AreaPageHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/FooterHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -989,16 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SearchHelperFM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -1013,16 +889,6 @@
           <folding>
             <element signature="e#4103#4104#0" expanded="true" />
             <element signature="e#4177#4178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="162" column="10" selection-start-line="162" selection-start-column="8" selection-end-line="162" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1068,37 +934,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4664">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AddListingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-257">
+          <caret line="94" column="52" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/AreaPageHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="59" column="11" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/AreaPageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/HelperBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-565">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/MatchingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-748">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/PaymentTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-236">
-          <caret line="278" column="60" selection-start-line="278" selection-start-column="60" selection-end-line="278" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="56" column="52" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="279" column="17" selection-start-line="279" selection-start-column="16" selection-end-line="279" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="57" column="10" lean-forward="true" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="34" />
+        <state relative-caret-position="183">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1107,18 +1003,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpLikeOrMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="99" selection-start-line="99" selection-end-line="100" selection-end-column="21" />
+        <state relative-caret-position="-1029">
+          <caret line="399" column="44" selection-start-line="399" selection-start-column="44" selection-end-line="399" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpMatching.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/SignUpHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="21" selection-start-line="12" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="117">
+          <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="107" selection-start-line="14" selection-start-column="4" selection-end-line="109" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/SignUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="423" column="21" selection-start-line="423" selection-start-column="21" selection-end-line="423" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/MatchingHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="210" column="17" selection-start-line="210" selection-start-column="17" selection-end-line="210" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/VerificationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="56" column="52" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/appmanager/EmailHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/idealflatmate/tests/ZEmailTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>

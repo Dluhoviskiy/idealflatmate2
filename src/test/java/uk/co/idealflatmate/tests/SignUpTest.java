@@ -66,7 +66,7 @@ public class SignUpTest extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronaldina", "Tenant53@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronaldina", "Tenanttyrrr1r@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -122,14 +122,14 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void headerSignUpHomePageFMSearchLiv_inWithoutAbout() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
+        clearCache();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.signListingLiveIn("Live_inNew33430@gmail.com", "qqqqqq",
+        signUpHelper.signListingLiveIn("Live_inNewy733430@gmail.com", "qqqqqq",
                                         "5", "5", "1959", "55555555", "39", "Ronald");
 
         verificationHelper.verifyAddListingPage();
@@ -155,8 +155,9 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void headerSignUpWithExistingEmail() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
+        clearCache();
+
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
 
@@ -180,8 +181,8 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void headerSignUpWithBlankRequiredFieldsYourInf() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
+        clearCache();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("A current tenant");
@@ -201,8 +202,9 @@ public class SignUpTest extends TestBase {
     }
     @Test
     public void headerSignUpWithBlankRequiredFieldsMoreAboutYou() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
+
         pageUrlVerifLiveGoStage();
+        clearCache();
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickFM();
@@ -211,7 +213,7 @@ public class SignUpTest extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew233@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnewuy7233@gmail.com");
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.dateMonthYearPhoneOccupationBlankError();
@@ -225,6 +227,7 @@ public class SignUpTest extends TestBase {
     public void headerSignUpWithBlankRequiredFieldsLocation() {
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
+        clearCache();
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
@@ -232,7 +235,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.backFromEmailToRoom();
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew33674@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew33riiq@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -255,8 +258,9 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void headerSignUpWithBlankRequiredFieldsBudget() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
+        clearCache();
+
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
@@ -264,7 +268,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.backFromEmailToRoom();
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew3399@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew3u399@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -367,13 +371,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-
-
-
-
-
-
-    @Test
+    //@Test
     public void SuccessfulSignUpWithListingWithAllFields() {
         HelperBase.closeAdvPopUp();
         verificationHelper.ageConfirmCheckMatching();
@@ -388,13 +386,15 @@ public class SignUpTest extends TestBase {
     @Test
     public void ListingSignUpHeader() {
         pageUrlVerifLiveGoStage();
+        clearCache();
+
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         addPropertyHelper.bottomAddListing();
         addPropertyHelper.selectTypeUser("Live-out landlord");
 
         signUpHelper.clickEmail();
         signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.setSignEmail("LiveOut111r21@gmail.com");
+        signUpHelper.setSignEmail("LiveOut7t111r21@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -420,14 +420,14 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void ListingSignUpFromHomepage() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         pageUrlVerifLiveGoStage();
+        clearCache();
         addPropertyHelper.pressAddListingNotLogged();
         addPropertyHelper.selectTypeUser("Live-in landlord"); //LiveInLord
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "LiveInNewo141a2@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "LiveInNt77a2@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();

@@ -20,12 +20,15 @@ public class PaymentsHelper extends HelperBase {
         $(byXpath("//div[@id='_el_input_nameoncard']/input")).setValue(name);
         sleep(1000);
         $(byXpath("//div[@id='_el_input_cardnumber']/input")).setValue(cardNumber);
+        sleep(1000);
         $(byXpath("//div[@id='_el_input_expirationmonth']/input")).setValue(month);
+        sleep(1000);
         $(byXpath("//div[@id='_el_input_expirationyear']/input")).setValue(year);
+        sleep(1000);
         $(byXpath("//div[@id='_el_input_cvc']/input")).setValue(cvc);
         sleep(1000);
         addPropertyHelper.messageHelper.click(byXpath("//div[@id='_el_button_save']/button"));
-        sleep(1000);
+        sleep(3000);
     }
 
     public void chooseWorldPay(String text) {
@@ -97,12 +100,12 @@ public class PaymentsHelper extends HelperBase {
 
     public void upgradeListing(String text, String upgradeTo) {
         $(byXpath("//button[contains(.,'" + upgradeTo + "')]")).waitUntil(visible, 10000).shouldHave(text(text)).click();
-
+        sleep(3000);
     }
 
     public void upgradeListingProf(String option) {
         $(byXpath("//select[@class='form-control pro-property-no']")).selectOptionContainingText(option);
-
+        sleep(3000);
     }
 
     public void promoteCardClick(String text) {

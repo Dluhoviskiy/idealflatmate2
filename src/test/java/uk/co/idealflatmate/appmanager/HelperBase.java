@@ -45,11 +45,10 @@ public class HelperBase  {
     public static void closeMatchPopUp() {
 
         if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).exists()) {
-            $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).click();
-            sleep(2000);
-        } else {
+            $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).waitUntil(visible, 2000).click();
 
-        }
+        } else {}
+        sleep(2000);
     }
 
     public static void closeButtonRenew() {
@@ -103,6 +102,7 @@ public class HelperBase  {
         string1.click();
         string1.clear();
         string1.setValue(text);
+        sleep(1000);
         string2.click();
     }
 

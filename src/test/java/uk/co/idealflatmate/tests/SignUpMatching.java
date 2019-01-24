@@ -49,7 +49,7 @@ public class SignUpMatching extends TestBase {
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "Matchr992o@gmail.com");
+        signUpHelper.yourInformation("qqqqqq", "Ronald", "Matchyt78upz1@gmail.com");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();

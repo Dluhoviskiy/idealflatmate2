@@ -43,6 +43,7 @@ public class AreaPageTest extends TestBase {
     @Test
     public void seeMoreRooms() {
         pageUrlVerifLiveGoStage();
+        clearCache();
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(4).text();
         areaPageHelper.clickArea(2);
         areaPageHelper.clickMoreRooms();

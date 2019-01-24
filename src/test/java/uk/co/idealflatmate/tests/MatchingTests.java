@@ -11,7 +11,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 public class MatchingTests extends TestBase {
 
     @Test
-    public void completeMatchingFromMenuWithNewUserWithVerifyingPercent() {
+    public void fullMenuNewUserWithVerifPerc() {
         pageUrlVerifLiveGoStage();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom1();
@@ -19,7 +19,7 @@ public class MatchingTests extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronaldina");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnewlq10@gmail.com");
+        signUpHelper.setSignEmail("FMnewlq16@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 

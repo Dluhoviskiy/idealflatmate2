@@ -16,15 +16,18 @@ public class ZEmailTests extends TestBase {
         //emailHelper.verificationListingisLive();
        // emailHelper.verificationMessage();
         emailHelper.tipCheckboxWelcome();
-        //emailHelper.tipCheckboxListingisLive();
-        //emailHelper.tipCheckboxMessage();
-       // emailHelper.tipCheckboxEnquiry();
-       // emailHelper.tipCheckboxPremiumFHSubscription();
-       // emailHelper.tipCheckboxPremiumFHSubscriptionCanceled();
+        emailHelper.tipCheckboxListingisLive();
+        emailHelper.tipCheckboxMessage();
+        emailHelper.tipCheckboxEnquiry();
+        emailHelper.tipCheckboxPremiumFHSubscription();
+        emailHelper.tipCheckboxPremiumFHSubscriptionCanceled();
+        emailHelper.tipCheckboxSubs();
+        emailHelper.tipCheckboxCancelSubs();
+        emailHelper.tipCheckboxPending();
         emailHelper.removeAllEmails();
-        //emailHelper.verificationNoWelcome();
-        //emailHelper.verificationNoListingisLive();
-        //emailHelper.verificationNoMessageEmail();
+        emailHelper.verificationNoWelcome();
+        emailHelper.verificationNoListingisLive();
+        emailHelper.verificationNoMessageEmail();
 
     }
 }

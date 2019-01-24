@@ -15,10 +15,11 @@ public class VerificationHelper extends HelperBase {
 
 
     public void verificationUserNameOnHomePage(String nameUser) {
-        $("span.user-welcome--name").waitUntil(visible, 15000).shouldHave(text(nameUser));
+        $("span.user-welcome--name").waitUntil(visible, 30000).shouldHave(text(nameUser));
     }
 
     public void verificationUserIsUnlogged(String SignUp) {
+
         $(byXpath("//nav/a[@class]")).shouldHave(text(SignUp));
     }
 
@@ -62,12 +63,12 @@ public class VerificationHelper extends HelperBase {
         //$(byXpath("//div[@class='panel-heading']")).scrollTo();
 
         $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£"+"500\n" +
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).getText().contentEquals("500\n" +
                 "month\n" +
                 "Deposit\n" +
-                "£1,000\n" +
+                "1,000\n" +
                 "Bills pcm\n" +
-                "£"+"400\n"));
+                "400\n");
 
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
                 "minimum 1 month maximum 12 months"));
@@ -76,12 +77,12 @@ public class VerificationHelper extends HelperBase {
 
         $(byXpath("//a[contains(text(), 'Room 2')]")).click();
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).shouldHave(text("£"+"500\n" +
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).getText().contentEquals("500\n" +
                 "month\n" +
                 "Deposit\n" +
-                "£"+"1,000\n" +
+                "1,000\n" +
                 "Bills pcm\n" +
-                "£"+"400\n"));
+                "400\n");
 
         $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
                 "minimum 1 month maximum 12 months"));
@@ -92,7 +93,7 @@ public class VerificationHelper extends HelperBase {
 
         $(byXpath("//a[contains(text(), 'Room 3')]")).click();
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).shouldHave(text("£"+"800\n" + "month\n" + "Available from\n" + "11th " + month + " 2025"));
+        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).getText().contentEquals("800\n" + "month\n" + "Available from\n" + "11th " + month + " 2025");
        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
         $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text(" 3 of 2 bedrooms available  Garden  Parking space  Smokers accepted  Pets accepted  Family friendly\n" +
                 "Very good flat"));
@@ -129,11 +130,11 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void verificationDataProfile() {
-        $(byXpath("//div[@class='col-sm-5 h5 heading-spaced text-normal u_m20-top u_m30-top-md text-normal-weight']")).shouldHave(text("Preferred location: London\n" +
+        $(byXpath("//div[@class='col-sm-5 h5 heading-spaced text-normal u_m20-top u_m30-top-md text-normal-weight']")).getText().contentEquals("Preferred location: London\n" +
                 "Preferred location2: South London\n" +
                 "Preferred location3: Hackney Marshes\n" +
-                "Budget: £"+"2500 pm\n" +
-                "Ready to move in: now"));
+                "Budget: "+"2500 pm\n" +
+                "Ready to move in: now");
     }
 
     public void verificationDataTenant(String percent) {

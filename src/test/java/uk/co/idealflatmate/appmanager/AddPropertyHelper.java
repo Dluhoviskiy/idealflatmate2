@@ -105,7 +105,9 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setTotalBedrooms(final String amount) {
+        sleep(2000);
         $("#property-bedrooms_no").click();
+
         messageHelper.click(byXpath("//*[@id=\"property-bedrooms_no\"]/option[" + amount + "]"));
     }
 

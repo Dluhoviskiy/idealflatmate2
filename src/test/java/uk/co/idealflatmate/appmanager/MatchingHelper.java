@@ -210,8 +210,7 @@ public class MatchingHelper extends HelperBase {
         $(byXpath("//div[@class='alert alert-success']")).waitUntil(visible, 15000).shouldHave(text("Well done! " +
                 "Thanks for answering these questions. " +
                 "We can now match you with compatible flatmates. " +
-                "Remember, you can change your answers at any time in the " +
-                "“Ideal Matching” section on your dashboard."));
+                "Remember, you can change your answers at any time in the “Ideal Matching” section on your dashboard."));
     }
 
     public void closeTakeMatch() {

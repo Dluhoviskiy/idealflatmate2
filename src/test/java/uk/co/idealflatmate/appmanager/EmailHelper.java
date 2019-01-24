@@ -49,10 +49,10 @@ public class EmailHelper extends HelperBase {
         $(byXpath("//div[@class='nH bkL']//tbody")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
     }
     public void verificationNoWelcome() {
-        $(byXpath("//div[@class='nH bkL']//tbody")).shouldNotHave((text("Welcome to Ideal Flatmate!")));
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div[span[contains(text(), 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).shouldNot(exist);
     }
     public void verificationNoMessageEmail() {
-        $(byXpath("//div[@class='nH bkL']//tbody")).shouldNotHave((text("You have a new message!")));
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//div//span[contains(text(), 'You have a new message!')]//ancestor::tr//td/div[@role='checkbox']")).shouldNot(exist);
     }
 
     public void tipCheckboxWelcome() {
@@ -82,6 +82,21 @@ public class EmailHelper extends HelperBase {
         $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
+
+    public void tipCheckboxSubs() {
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'ideal flatmate - Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
+    }
+
+    public void tipCheckboxCancelSubs() {
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'ideal flatmate - Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
+    }
+    public void tipCheckboxPending() {
+        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Your listing on ideal flatmate is pending.')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        sleep(2000);
+    }
+
 
     public void removeAllEmails() {
         sleep(2000);
@@ -148,6 +163,7 @@ public class EmailHelper extends HelperBase {
         verificationHelper.verificationUserNameOnHomePage(Name);
         clickContinue();
     }
+
 
 
 }

@@ -92,7 +92,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("An agency");
 
-        signUpHelper.agentSignListing("Ronald", "agentTest456@gmail.com", "qqqqqq",
+        signUpHelper.agentSignListing("Ronald", "agentTest11rrr2@gmail.com", "qqqqqq",
                                       "66666666", "Tell us about yourself");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");

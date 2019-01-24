@@ -10,50 +10,21 @@
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.AreaPageTest -->
-      <class name="uk.co.idealflatmate.tests.MessagesTest">
-        <methods>
-          <include name="answMesLandlToPremFHWithoutSubs"/>
-          <include name="tearDown"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- uk.co.idealflatmate.tests.MessagesTest -->
       <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessage">
         <methods>
           <include name="signUpLikeHomePage"/>
           <include name="popupExistingEmailPropertyPage"/>
-          <include name="popupWithBlankRequiredFields"/>
-          <include name="popupPropertyPage"/>
           <include name="tearDown"/>
-          <include name="messageSignUpFMPage"/>
-          <include name="messagePropertySignUpHomePage"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.SignUpLikeOrMessage -->
-      <class name="uk.co.idealflatmate.tests.SignUpTest">
-        <methods>
-          <include name="headerRoomSignUpHomePageTenant"/>
-          <include name="headerSignUpWithBlankRequiredFieldsLocation"/>
-          <include name="SuccessfulSignUpWithListingWithAllFields"/>
-          <include name="tearDown"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- uk.co.idealflatmate.tests.SignUpTest -->
       <class name="uk.co.idealflatmate.tests.AddListingTests">
         <methods>
           <include name="signUpPropertyAdding"/>
-          <include name="propertyAddWithAllFields"/>
           <include name="tearDown"/>
           <include name="setupClass"/>
-          <include name="loginStartListing"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
-      <class name="uk.co.idealflatmate.tests.SearchFMPageTests">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setupClass"/>
-          <include name="applyAdvancedFiltersDefault"/>
-        </methods>
-      </class> <!-- uk.co.idealflatmate.tests.SearchFMPageTests -->
       <class name="uk.co.idealflatmate.tests.SignUpMatching">
         <methods>
           <include name="SignUpMatchingWithRequiredFieldsRoom"/>

@@ -338,6 +338,7 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void clickMessageProperty(String buttonText) {
+        sleep(3000);
         $(byXpath("//section//a[contains(.,'" + buttonText + "')]")).click();
 
     }
@@ -355,13 +356,13 @@ public class SignUpHelper extends HelperBase {
     public void clickLikePropertyCardHomePage(int propertyPage) {
 
         $(byXpath("(//button[starts-with(@class,'owl-next')])[2]")).hover();
-
+        sleep(1000);
         $(byXpath("(//button[starts-with(@class,'owl-next')])[2]")).click();
-
-        $(byXpath("(//button[starts-with(@class,'owl-prev')])[2]")).hover().click();
+        sleep(1000);
+        //$(byXpath("(//button[starts-with(@class,'owl-prev')])[2]")).hover().click();
 
         $$(byXpath("//a[starts-with(@class,'buddy-star')]")).get(propertyPage).click();
-        sleep(4000);
+        sleep(1000);
     }
 
     public void removeLike() {

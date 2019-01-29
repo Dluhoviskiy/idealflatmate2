@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="1,069.067" tests="102" errors="0" skipped="0" failures="26">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="1,516.146" tests="102" errors="0" skipped="0" failures="35">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\lukhovytskyi\AppData\Local\Temp\surefire5803750744061209863\surefirebooter6294280155876115924.jar C:\Users\lukhovytskyi\AppData\Local\Temp\surefire5803750744061209863 2019-01-25T19-05-23_240-jvmRun1 surefire1791502559470280631tmp surefire_04576017658937798425tmp"/>
+    <property name="sun.java.command" value="C:\Users\lukhovytskyi\AppData\Local\Temp\surefire4529104897962052665\surefirebooter9016433282245989448.jar C:\Users\lukhovytskyi\AppData\Local\Temp\surefire4529104897962052665 2019-01-29T11-53-28_811-jvmRun1 surefire1967844797122945815tmp surefire_01718785843297855301tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\test-classes;C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\classes;C:\Users\lukhovytskyi\.m2\repository\com\codeborne\selenide\4.11.1\selenide-4.11.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-java\3.11.0\selenium-java-3.11.0.jar;C:\Users\lukhovytskyi\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\guava\guava\24.1-jre\guava-24.1-jre.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\lukhovytskyi\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\browsermob-core\2.1.5\browsermob-core-2.1.5.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\littleproxy\1.1.0-beta-bmp-17\littleproxy-1.1.0-beta-bmp-17.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.8.9\jackson-core-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.8.9\jackson-databind-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.9\jackson-annotations-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\dnsjava\dnsjava\2.1.8\dnsjava-2.1.8.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\com\jcraft\jzlib\1.1.3\jzlib-1.1.3.jar;C:\Users\lukhovytskyi\.m2\repository\io\netty\netty-all\4.0.51.Final\netty-all-4.0.51.Final.jar;C:\Users\lukhovytskyi\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.58\bcprov-jdk15on-1.58.jar;C:\Users\lukhovytskyi\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.58\bcpkix-jdk15on-1.58.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\mitm\2.1.5\mitm-2.1.5.jar;C:\Users\lukhovytskyi\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\lukhovytskyi\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\lukhovytskyi\.m2\repository\io\github\bonigarcia\webdrivermanager\3.1.1\webdrivermanager-3.1.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpclient\4.5.5\httpclient-4.5.5.jar;C:\Users\lukhovytskyi\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\lukhovytskyi\.m2\repository\org\rauschig\jarchivelib\0.8.0\jarchivelib-0.8.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-compress\1.14\commons-compress-1.14.jar;C:\Users\lukhovytskyi\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-server\3.141.59\selenium-server-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\net\jcip\jcip-annotations\1.0\jcip-annotations-1.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\jetty-repacked\9.4.12.v20180830\jetty-repacked-9.4.12.v20180830.jar;C:\Users\lukhovytskyi\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\lukhovytskyi\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;C:\Users\lukhovytskyi\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\rest-assured\2.9.0\rest-assured-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy\2.4.4\groovy-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy-xml\2.4.4\groovy-xml-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpmime\4.5.1\httpmime-4.5.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy-json\2.4.4\groovy-json-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\rest-assured-common\2.9.0\rest-assured-common-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\xml-path\2.9.0\xml-path-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.1\log4j-api-2.11.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\lukhovytskyi"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\lukhovytskyi\AppData\Local\Temp\surefire5803750744061209863\surefirebooter6294280155876115924.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\lukhovytskyi\AppData\Local\Temp\surefire4529104897962052665\surefirebooter9016433282245989448.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_152\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -60,14 +60,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="exploreMoreArea" classname="uk.co.idealflatmate.tests.AreaPageTest" time="93.469"/>
-  <testcase name="signUpPropertyAdding" classname="uk.co.idealflatmate.tests.AddListingTests" time="40.6">
-    <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
-Expected: exist
-	at uk.co.idealflatmate.tests.AddListingTests.signUpPropertyAdding(AddListingTests.java:96)
+  <testcase name="linkFH" classname="uk.co.idealflatmate.tests.AreaPageTest" time="7.26"/>
+  <testcase name="loginStartListing" classname="uk.co.idealflatmate.tests.AddListingTests" time="16.121">
+    <failure message="Element not found {By.name: Property[area_link_id]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.name: Property[area_link_id]}
+Expected: visible
+	at uk.co.idealflatmate.tests.AddListingTests.loginStartListing(AddListingTests.java:28)
 Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
+no such element: Unable to locate element: {"method":"name","selector":"Property[area_link_id]"}
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -75,265 +75,129 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63650}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 1761ffa945aacb821621657687675d86
-*** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
-	at uk.co.idealflatmate.tests.AddListingTests.signUpPropertyAdding(AddListingTests.java:96)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55945}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: a6b65305f8ac375822fb5a05c98dd2e6
+*** Element info: {Using=name, value=Property[area_link_id]}
+	at uk.co.idealflatmate.tests.AddListingTests.loginStartListing(AddListingTests.java:28)
 </failure>
-    <system-err><![CDATA[Jan 25, 2019 7:07:17 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 18 -> ChromeDriver: chrome on XP (cb26cc8d817dd997e62ee3b200225754)
-Jan 25, 2019 7:07:17 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+    <system-err><![CDATA[Jan 29, 2019 11:55:47 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 38 -> ChromeDriver: chrome on XP (f4fe4cd0e497260acc446c00f599e789)
+Jan 29, 2019 11:55:47 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
 INFO: Trying to close the browser ChromeDriver ...
-Jan 25, 2019 7:07:22 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+Jan 29, 2019 11:55:52 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
 SEVERE: Failed to close webdriver in 5000 milliseconds
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 47079
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 48710
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:07:39 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:07:41 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:07:41 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:07:41 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:07:41 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 18: ChromeDriver -> ChromeDriver: chrome on XP (c1960ad0e2ac1e1c2b9aaefd4b42bb17)
-Jan 25, 2019 7:07:44 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@8d6cbd5
 ]]></system-err>
   </testcase>
-  <testcase name="firstFeaturedLinkArea" classname="uk.co.idealflatmate.tests.AreaPageTest" time="18.6"/>
-  <testcase name="linkFH" classname="uk.co.idealflatmate.tests.AreaPageTest" time="0.021"/>
-  <testcase name="loginPendingListing" classname="uk.co.idealflatmate.tests.AddListingTests" time="21.705"/>
-  <testcase name="firstFeaturedHomePageHeader" classname="uk.co.idealflatmate.tests.AreaPageTest" time="4.979"/>
-  <testcase name="firstFeaturedLinkMap" classname="uk.co.idealflatmate.tests.AreaPageTest" time="0.222"/>
-  <testcase name="emailWrongHomePage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="4.602"/>
-  <testcase name="logInContactProperty" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="42.604"/>
-  <testcase name="titleListing" classname="uk.co.idealflatmate.tests.AddListingTests" time="8.021"/>
-  <testcase name="logInContactFM" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="16.217">
-    <failure message="Element not found {By.xpath: ((//div[@class=&apos;card-img&apos;])[1])//img}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound"><![CDATA[com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: ((//div[@class='card-img'])[1])//img}
+  <testcase name="firstFeaturedHomePageHeader" classname="uk.co.idealflatmate.tests.AreaPageTest" time="16.155">
+    <failure message="Element not found {By.xpath: //a[@href=&apos;#rooms&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound"><![CDATA[com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //a[@href='#rooms']}
 Expected: exist
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInContactFM(AuthorizationTests.java:228)
+	at uk.co.idealflatmate.tests.AreaPageTest.firstFeaturedHomePageHeader(AreaPageTest.java:19)
 Caused by: org.openqa.selenium.WebDriverException: 
-unknown error: Element <img src="https://zerocoolifmstage.s3.eu-west-2.amazonaws.com/user/33323/user_33323_380_340.jpeg?r=602" srcset="https://zerocoolifmstage.s3.eu-west-2.amazonaws.com/user/33323/user_33323_380_340.jpeg?r=602 1x, https://zerocoolifmstage.s3.eu-west-2.amazonaws.com/user/33323/user_33323_800_716.jpeg?r=737 2x" alt="flatmate image"> is not clickable at point (249, 561). Other element would receive the click: <div role="dialog" tabindex="-1" id="signupNeedspaceModal" class="modal fade in" style="overflow-y: scroll; display: block;">...</div>
+unknown error: Element <a href="#rooms" class="scrollink js-area-page">...</a> is not clickable at point (949, 34). Other element would receive the click: <div class="container-fluid">...</div>
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49982}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 9fb11f54f7d29b38a26ea14426459292
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInContactFM(AuthorizationTests.java:228)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55946}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: af1065ad41f2514d6cbe2a545080a876
+	at uk.co.idealflatmate.tests.AreaPageTest.firstFeaturedHomePageHeader(AreaPageTest.java:19)
 ]]></failure>
+    <system-err><![CDATA[Jan 29, 2019 11:55:59 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 30 -> ChromeDriver: chrome on XP (a6b65305f8ac375822fb5a05c98dd2e6)
+Jan 29, 2019 11:55:59 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+]]></system-err>
   </testcase>
-  <testcase name="logInMessageFM" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="2.061"/>
-  <testcase name="invalidLoginWithEmptyFields" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="1.928"/>
-  <testcase name="ablogInViaFacebook" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="16.023">
-    <failure message="Element not found {By.xpath: //span[contains(., &apos;Log in with Facebook&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //span[contains(., 'Log in with Facebook')]}
-Expected: visible
-	at uk.co.idealflatmate.tests.AuthorizationTests.ablogInViaFacebook(AuthorizationTests.java:107)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(., 'Log in with Facebook')]"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:50385}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 678c5d908adce7fc1ca4bc27e58b6497
-*** Element info: {Using=xpath, value=//span[contains(., 'Log in with Facebook')]}
-	at uk.co.idealflatmate.tests.AuthorizationTests.ablogInViaFacebook(AuthorizationTests.java:107)
+  <testcase name="firstFeaturedLinkArea" classname="uk.co.idealflatmate.tests.AreaPageTest" time="27.756">
+    <failure message=": expected: = 6, actual: 0, collection: By.xpath: //div[@class=&apos;u_p15-top u_p15-bottom u_p0-left-xs u_p0-right-xs quick-flex-line&apos;]/a&#10;Elements: []" type="com.codeborne.selenide.ex.ListSizeMismatch">com.codeborne.selenide.ex.ListSizeMismatch: 
+: expected: = 6, actual: 0, collection: By.xpath: //div[@class='u_p15-top u_p15-bottom u_p0-left-xs u_p0-right-xs quick-flex-line']/a
+Elements: []
+	at uk.co.idealflatmate.tests.AreaPageTest.firstFeaturedLinkArea(AreaPageTest.java:29)
 </failure>
-    <system-err><![CDATA[Jan 25, 2019 7:10:02 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-SEVERE: Failed to close webdriver in 5000 milliseconds
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 40939
+    <system-err><![CDATA[Jan 29, 2019 11:55:59 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 35 -> ChromeDriver: chrome on XP (af1065ad41f2514d6cbe2a545080a876)
+Jan 29, 2019 11:55:59 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jan 29, 2019 11:56:02 AM org.openqa.selenium.os.OsProcess destroy
+SEVERE: Unable to kill process java.lang.ProcessImpl@5b1e456e
+Jan 29, 2019 11:56:02 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 3522 ms
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 11108
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:10:06 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:10:07 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:10:07 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:10:07 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:10:07 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 21: ChromeDriver -> ChromeDriver: chrome on XP (96fc369cd2f209d95a7c8f0b67175e83)
-Jan 25, 2019 7:10:15 PM org.openqa.selenium.os.OsProcess destroy
-INFO: Unable to drain process streams. Ignoring but the exception being swallowed follows.
-org.apache.commons.exec.ExecuteException: The stop timeout of 2000 ms was exceeded (Exit value: -559038737)
-	at org.apache.commons.exec.PumpStreamHandler.stopThread(PumpStreamHandler.java:295)
-	at org.apache.commons.exec.PumpStreamHandler.stop(PumpStreamHandler.java:180)
-	at org.openqa.selenium.os.OsProcess.destroy(OsProcess.java:136)
-	at org.openqa.selenium.os.CommandLine.destroy(CommandLine.java:153)
-	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:232)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:95)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:452)
-	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser.run(WebDriverThreadLocalContainer.java:174)
-	at java.lang.Thread.run(Thread.java:748)
-
-Jan 25, 2019 7:10:15 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@3820653a
-]]></system-err>
-  </testcase>
-  <testcase name="seeMoreRooms" classname="uk.co.idealflatmate.tests.AreaPageTest" time="10.815"/>
-  <testcase name="classicLogInOut" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="17.831"/>
-  <testcase name="loginStartListing" classname="uk.co.idealflatmate.tests.AddListingTests" time="23.897"/>
-  <testcase name="propertyAddWithAllFields" classname="uk.co.idealflatmate.tests.AddListingTests" time="27.926">
-    <failure message="Element not found {By.xpath: (//div[@class=&apos;file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb &apos;])[2]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: (//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[2]}
-Expected: visible
-	at uk.co.idealflatmate.tests.AddListingTests.propertyAddWithAllFields(AddListingTests.java:160)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[2]"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63651}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: e1486baa699b57b12251acc0c0ac0348
-*** Element info: {Using=xpath, value=(//div[@class='file-preview-frame krajee-default file-preview-initial file-sortable kv-preview-thumb '])[2]}
-	at uk.co.idealflatmate.tests.AddListingTests.propertyAddWithAllFields(AddListingTests.java:160)
-</failure>
-  </testcase>
-  <testcase name="loginPassWronglogInHomePage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="9.09"/>
-  <testcase name="footerAskLandlord" classname="uk.co.idealflatmate.tests.FooterTest" time="5.67"/>
-  <testcase name="logInOutOnFMPage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="2.93">
-    <failure message="Element not found {input#loginform-username}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {input#loginform-username}
-Expected: visible
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInOutOnFMPage(AuthorizationTests.java:57)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"css selector","selector":"input#loginform-username"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51022}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 96fc369cd2f209d95a7c8f0b67175e83
-*** Element info: {Using=css selector, value=input#loginform-username}
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInOutOnFMPage(AuthorizationTests.java:57)
-</failure>
-    <system-err><![CDATA[Jan 25, 2019 7:11:11 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:11:11 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:11:11 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:11:11 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 15: ChromeDriver -> ChromeDriver: chrome on XP (b1d233574f3e5763835ca7300c73ee8f)
-]]></system-err>
-  </testcase>
-  <testcase name="footerBlogLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.547">
-    <failure message="TimeoutException: Expected condition failed: waiting for window to be available by index: 1 (tried for 10 second(s) with 100 milliseconds interval)&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;&#10;Driver info: driver.version: unknown" type="com.codeborne.selenide.ex.UIAssertionError">com.codeborne.selenide.ex.UIAssertionError: 
-TimeoutException: Expected condition failed: waiting for window to be available by index: 1 (tried for 10 second(s) with 100 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: driver.version: unknown
-	at uk.co.idealflatmate.tests.FooterTest.footerBlogLink(FooterTest.java:82)
-Caused by: org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for window to be available by index: 1 (tried for 10 second(s) with 100 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: driver.version: unknown
-	at uk.co.idealflatmate.tests.FooterTest.footerBlogLink(FooterTest.java:82)
-</failure>
-    <system-err><![CDATA[Jan 25, 2019 7:11:12 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 21 -> ChromeDriver: chrome on XP (96fc369cd2f209d95a7c8f0b67175e83)
-Jan 25, 2019 7:11:12 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
-]]></system-err>
-  </testcase>
-  <testcase name="footerBrowseTipsLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.867"/>
-  <testcase name="logInMessageProperty" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="5.307"/>
-  <testcase name="footerMediaLink" classname="uk.co.idealflatmate.tests.FooterTest" time="6.834"/>
-  <testcase name="footerInstagramLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.33">
-    <failure message="Element should have text &apos;idealflatmate&apos; {By.xpath: (//h1)[1]}&#10;Element: &apos;&lt;h1 class=&quot;splash-title text-white text-center u_m20-top u_m60-md&quot;&gt;Clever matches.&#10;Better flatshares.&lt;/h1&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
-Element should have text 'idealflatmate' {By.xpath: (//h1)[1]}
-Element: '<h1 class="splash-title text-white text-center u_m20-top u_m60-md">Clever matches.
-Better flatshares.</h1>'
-	at uk.co.idealflatmate.tests.FooterTest.footerInstagramLink(FooterTest.java:157)
-]]></failure>
-    <system-err><![CDATA[Jan 25, 2019 7:11:31 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 17 -> ChromeDriver: chrome on XP (dbe556695430e52bf215785edf9b199d)
-Jan 25, 2019 7:11:31 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
-]]></system-err>
-  </testcase>
-  <testcase name="logInPhoneReveal" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="22.576">
-    <failure message="Element not found {By.xpath: //section[@id=&apos;property-infos&apos;]//span[contains(text(), &apos;Reveal&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //section[@id='property-infos']//span[contains(text(), 'Reveal')]}
-Expected: visible
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInPhoneReveal(AuthorizationTests.java:246)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//section[@id='property-infos']//span[contains(text(), 'Reveal')]"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49966}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: e4d52b16322b96476ea92522695d8f93
-*** Element info: {Using=xpath, value=//section[@id='property-infos']//span[contains(text(), 'Reveal')]}
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInPhoneReveal(AuthorizationTests.java:246)
-</failure>
-    <system-err><![CDATA[Jan 25, 2019 7:11:36 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+Jan 29, 2019 11:56:04 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
 SEVERE: Failed to close webdriver in 5000 milliseconds
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 42615
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 25595
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:11:42 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:11:44 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:11:44 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:11:44 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:11:44 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 17: ChromeDriver -> ChromeDriver: chrome on XP (39e5bc2367b276798a436d8e1a95331d)
 ]]></system-err>
   </testcase>
-  <testcase name="footerNLALink" classname="uk.co.idealflatmate.tests.FooterTest" time="1.632">
-    <failure message="Element not found {By.xpath: (//ul/li/a[contains(text(), &apos;Join the NLA&apos;)])[1]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: (//ul/li/a[contains(text(), 'Join the NLA')])[1]}
-Expected: visible
-	at uk.co.idealflatmate.tests.FooterTest.footerNLALink(FooterTest.java:131)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"(//ul/li/a[contains(text(), 'Join the NLA')])[1]"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49659}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 4170d57c9fd65daee635977f3c4f3ca2
-*** Element info: {Using=xpath, value=(//ul/li/a[contains(text(), 'Join the NLA')])[1]}
-	at uk.co.idealflatmate.tests.FooterTest.footerNLALink(FooterTest.java:131)
-</failure>
-    <system-err><![CDATA[Jan 25, 2019 7:11:56 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 19 -> ChromeDriver: chrome on XP (e4d52b16322b96476ea92522695d8f93)
-Jan 25, 2019 7:11:56 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+  <testcase name="firstFeaturedLinkMap" classname="uk.co.idealflatmate.tests.AreaPageTest" time="25.361"/>
+  <testcase name="exploreMoreArea" classname="uk.co.idealflatmate.tests.AreaPageTest" time="4.435">
+    <failure message="Element should have value &apos;Liverpool&apos; {By.xpath: //div[@class=&apos;search-panel hidden-xs&apos;]//input}&#10;Element: &apos;&lt;input aria-autocomplete=&quot;list&quot; aria-controls=&quot;react-autowhatever-1&quot; autocomplete=&quot;off&quot; class=&quot;react-autosuggest__input&quot; placeholder=&quot;Search city, area, postcode&quot; type=&quot;text&quot;&gt;&lt;/input&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
+Element should have value 'Liverpool' {By.xpath: //div[@class='search-panel hidden-xs']//input}
+Element: '<input aria-autocomplete="list" aria-controls="react-autowhatever-1" autocomplete="off" class="react-autosuggest__input" placeholder="Search city, area, postcode" type="text"></input>'
+	at uk.co.idealflatmate.tests.AreaPageTest.exploreMoreArea(AreaPageTest.java:73)
+]]></failure>
+    <system-err><![CDATA[Jan 29, 2019 11:57:12 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 37 -> ChromeDriver: chrome on XP (7ce52661db495b74e3e15670102833c5)
+Jan 29, 2019 11:57:12 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
 INFO: Trying to close the browser ChromeDriver ...
-Jan 25, 2019 7:11:56 PM org.openqa.selenium.os.OsProcess destroy
+Jan 29, 2019 11:57:17 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 17731
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Jan 29, 2019 11:57:25 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 11:57:26 AM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 11:57:26 AM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 11:57:26 AM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 11:57:26 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 37: ChromeDriver -> ChromeDriver: chrome on XP (5b6fcef03ab9c2946367376bc8d7b4dc)
+]]></system-err>
+  </testcase>
+  <testcase name="titleListing" classname="uk.co.idealflatmate.tests.AddListingTests" time="0.411"/>
+  <testcase name="seeMoreRooms" classname="uk.co.idealflatmate.tests.AreaPageTest" time="30.384">
+    <failure message="String index out of range: 37" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: String index out of range: 37
+	at uk.co.idealflatmate.tests.AreaPageTest.seeMoreRooms(AreaPageTest.java:50)
+</failure>
+    <system-err><![CDATA[[1548755871.483][WARNING]: Timed out connecting to Chrome, retrying...
+Jan 29, 2019 11:57:54 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 23848
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Jan 29, 2019 11:57:56 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 11:57:57 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 34: ChromeDriver -> ChromeDriver: chrome on XP (13c7e8a5bc039c2640e69e0b4f16eed9)
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 11:57:58 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 35: ChromeDriver -> ChromeDriver: chrome on XP (bb24e8bd66fa17e1b988abb9a89db9da)
+Jan 29, 2019 11:58:02 AM org.openqa.selenium.os.OsProcess destroy
 INFO: Unable to drain process streams. Ignoring but the exception being swallowed follows.
 org.apache.commons.exec.ExecuteException: The stop timeout of 2000 ms was exceeded (Exit value: -559038737)
 	at org.apache.commons.exec.PumpStreamHandler.stopThread(PumpStreamHandler.java:295)
@@ -348,18 +212,31 @@ org.apache.commons.exec.ExecuteException: The stop timeout of 2000 ms was exceed
 	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser.run(WebDriverThreadLocalContainer.java:174)
 	at java.lang.Thread.run(Thread.java:748)
 
-Jan 25, 2019 7:11:56 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@dd3314
+Jan 29, 2019 11:58:02 AM org.openqa.selenium.os.OsProcess destroy
+SEVERE: Unable to kill process java.lang.ProcessImpl@50714f6d
+Jan 29, 2019 11:58:02 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 30 -> ChromeDriver: chrome on XP (b7cb50a6e8a94449afa03929f2772d2b)
+Jan 29, 2019 11:58:02 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jan 29, 2019 11:58:07 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 1376
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
 ]]></system-err>
   </testcase>
-  <testcase name="footerContactLink" classname="uk.co.idealflatmate.tests.FooterTest" time="0"/>
-  <testcase name="logInOutOnPropertyPage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="5.21">
-    <failure message="Element not found {input#loginform-username}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {input#loginform-username}
+  <testcase name="classicLogInOut" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="45.646"/>
+  <testcase name="signUpPropertyAdding" classname="uk.co.idealflatmate.tests.AddListingTests" time="75.24"/>
+  <testcase name="loginPendingListing" classname="uk.co.idealflatmate.tests.AddListingTests" time="7.051"/>
+  <testcase name="emailWrongHomePage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="17.326"/>
+  <testcase name="ablogInViaFacebook" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="36.976"/>
+  <testcase name="propertyAddWithAllFields" classname="uk.co.idealflatmate.tests.AddListingTests" time="3.187">
+    <failure message="Element not found {By.xpath: //div[@class=&apos;panel-heading&apos;]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //div[@class='panel-heading']}
 Expected: visible
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInOutOnPropertyPage(AuthorizationTests.java:40)
+	at uk.co.idealflatmate.tests.AddListingTests.propertyAddWithAllFields(AddListingTests.java:165)
 Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"css selector","selector":"input#loginform-username"}
+no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='panel-heading']"}
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -367,73 +244,152 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63319}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: fa324eefee5f6ce9a6e14851357a3bba
-*** Element info: {Using=css selector, value=input#loginform-username}
-	at uk.co.idealflatmate.tests.AuthorizationTests.logInOutOnPropertyPage(AuthorizationTests.java:40)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56035}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 5df238d3d4cccb56da58de52ccc670e5
+*** Element info: {Using=xpath, value=//div[@class='panel-heading']}
+	at uk.co.idealflatmate.tests.AddListingTests.propertyAddWithAllFields(AddListingTests.java:165)
 </failure>
-    <system-err><![CDATA[Jan 25, 2019 7:12:01 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+    <system-err><![CDATA[Jan 29, 2019 11:59:44 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 30 -> ChromeDriver: chrome on XP (12a7d65738e201b2b5259d2e0075709a)
+Jan 29, 2019 11:59:45 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jan 29, 2019 11:59:50 AM org.openqa.selenium.os.OsProcess destroy
+SEVERE: Unable to kill process java.lang.ProcessImpl@76ae95dd
+Jan 29, 2019 11:59:50 AM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
 SEVERE: Failed to close webdriver in 5000 milliseconds
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 28172
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
 ]]></system-err>
   </testcase>
-  <testcase name="footerStaySafeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.841"/>
-  <testcase name="footerPricingLink" classname="uk.co.idealflatmate.tests.FooterTest" time="5.996"/>
-  <testcase name="footerBrowseHowItWorksLink" classname="uk.co.idealflatmate.tests.FooterTest" time="0.038"/>
-  <testcase name="footerAboutUsLink" classname="uk.co.idealflatmate.tests.FooterTest" time="0.514"/>
-  <testcase name="amountOfBlocsAndTextOfAreas" classname="uk.co.idealflatmate.tests.HomePageTest" time="2.774"/>
-  <testcase name="blogFM" classname="uk.co.idealflatmate.tests.HomePageTest" time="3.815"/>
-  <testcase name="blogLandlord" classname="uk.co.idealflatmate.tests.HomePageTest" time="0.102"/>
-  <testcase name="footerHomeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.174"/>
-  <testcase name="footerBrowseFlatsharesLink" classname="uk.co.idealflatmate.tests.FooterTest" time="1.634"/>
-  <testcase name="pressLogo" classname="uk.co.idealflatmate.tests.HomePageTest" time="1.34"/>
-  <testcase name="findOutMore" classname="uk.co.idealflatmate.tests.HomePageTest" time="2.232"/>
-  <testcase name="alogInWithMatchingFB" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="18.18"/>
-  <testcase name="footerModern" classname="uk.co.idealflatmate.tests.FooterTest" time="1.133"/>
-  <testcase name="startMatchingOnFMSearchPage" classname="uk.co.idealflatmate.tests.MatchingTests" time="5.957"/>
-  <testcase name="footerPressLink" classname="uk.co.idealflatmate.tests.FooterTest" time="22.943"/>
-  <testcase name="footerTwitterLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.118"/>
-  <testcase name="startMatchingOnPropertyCard" classname="uk.co.idealflatmate.tests.MatchingTests" time="20.416"/>
-  <testcase name="findStartListing" classname="uk.co.idealflatmate.tests.HomePageTest" time="10.616"/>
-  <testcase name="fullMenuNewUserWithVerifPerc" classname="uk.co.idealflatmate.tests.MatchingTests" time="24.234">
-    <failure message="Element should have text &apos;Well done! Thanks for answering these questions. We can now match you with compatible flatmates. Remember, you can change your answers at any time in the вЂњIdeal MatchingвЂќ section on your dashboard.&apos; {By.xpath: //div[@class=&apos;alert alert-success&apos;]}&#10;Element: &apos;&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;Well done! Thanks for answering these questions. We can now match you with compatible flatmates. Remember, you can change your answers at any time in the “Ideal Matching” section on your dashboard.&lt;/div&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
-Element should have text 'Well done! Thanks for answering these questions. We can now match you with compatible flatmates. Remember, you can change your answers at any time in the вЂњIdeal MatchingвЂќ section on your dashboard.' {By.xpath: //div[@class='alert alert-success']}
-Element: '<div class="alert alert-success" role="alert">Well done! Thanks for answering these questions. We can now match you with compatible flatmates. Remember, you can change your answers at any time in the “Ideal Matching” section on your dashboard.</div>'
-	at uk.co.idealflatmate.tests.MatchingTests.fullMenuNewUserWithVerifPerc(MatchingTests.java:57)
-]]></failure>
-  </testcase>
-  <testcase name="startMatchingQuizPropertyPage" classname="uk.co.idealflatmate.tests.MatchingTests" time="26.021"/>
-  <testcase name="findStartMatchingLink" classname="uk.co.idealflatmate.tests.HomePageTest" time="28.981"/>
-  <testcase name="answMesLandlToPremFHWithoutSubs" classname="uk.co.idealflatmate.tests.MessagesTest" time="11.245"/>
-  <testcase name="FmWithoutSubsToLandlordWithoutSubsWithListFromList" classname="uk.co.idealflatmate.tests.MessagesTest" time="17.862"/>
-  <testcase name="landlWithSubsToFM" classname="uk.co.idealflatmate.tests.MessagesTest" time="4.831"/>
-  <testcase name="fmWithoutSubsTolordWithoutSubsWithListFromFMpage" classname="uk.co.idealflatmate.tests.MessagesTest" time="24.562"/>
-  <testcase name="readMessageByLandlWithoutSubsn" classname="uk.co.idealflatmate.tests.MessagesTest" time="10.685"/>
-  <testcase name="premFmToLandlWithoutSubsWithListFromSearch" classname="uk.co.idealflatmate.tests.MessagesTest" time="0.453"/>
-  <testcase name="landlordWithoutSubsToFM" classname="uk.co.idealflatmate.tests.MessagesTest" time="9.099"/>
-  <testcase name="GoPremiumFHPaymentOnPhone" classname="uk.co.idealflatmate.tests.PaymentTests" time="15.151"/>
-  <testcase name="GoPremiumFHPaymentOnMessage" classname="uk.co.idealflatmate.tests.PaymentTests" time="19.501"/>
-  <testcase name="agentProfWorldPay" classname="uk.co.idealflatmate.tests.PaymentTests" time="23.449">
-    <failure message="Element not found {By.xpath: //form[@id=&apos;ProfessionalPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //form[@id='ProfessionalPaymentForm']//select[@id='paymentform-type_id']}
-Expected: exist
-	at uk.co.idealflatmate.tests.PaymentTests.agentProfWorldPay(PaymentTests.java:288)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-Cannot locate option containing text: 1 month - ВЈ34.99
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+  <testcase name="invalidLoginWithEmptyFields" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="19.629"/>
+  <testcase name="logInContactFM" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="34.958"/>
+  <testcase name="logInMessageFM" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="11.128"/>
+  <testcase name="logInContactProperty" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="0.522"/>
+  <testcase name="logInOutOnPropertyPage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="3.346"/>
+  <testcase name="alogInWithMatchingFB" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="4.617"/>
+  <testcase name="logInOutOnFMPage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="6.551"/>
+  <testcase name="logInMessageProperty" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="8.613"/>
+  <testcase name="logInPhoneReveal" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="3.58"/>
+  <testcase name="footerAboutUsLink" classname="uk.co.idealflatmate.tests.FooterTest" time="3.674"/>
+  <testcase name="footerAskLandlord" classname="uk.co.idealflatmate.tests.FooterTest" time="2.102"/>
+  <testcase name="footerBlogLink" classname="uk.co.idealflatmate.tests.FooterTest" time="8.671">
+    <failure message="TimeoutException: Expected condition failed: waiting for window to be available by index: 1 (tried for 10 second(s) with 100 milliseconds interval)&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;&#10;Driver info: driver.version: unknown" type="com.codeborne.selenide.ex.UIAssertionError">com.codeborne.selenide.ex.UIAssertionError: 
+TimeoutException: Expected condition failed: waiting for window to be available by index: 1 (tried for 10 second(s) with 100 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: driver.version: unknown
-	at uk.co.idealflatmate.tests.PaymentTests.agentProfWorldPay(PaymentTests.java:288)
+	at uk.co.idealflatmate.tests.FooterTest.footerBlogLink(FooterTest.java:80)
+Caused by: org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for window to be available by index: 1 (tried for 10 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: driver.version: unknown
+	at uk.co.idealflatmate.tests.FooterTest.footerBlogLink(FooterTest.java:80)
 </failure>
+    <system-out><![CDATA[verif - North London, Brent Park
+]]></system-out>
   </testcase>
-  <testcase name="lordInWorldPaylistingEssen" classname="uk.co.idealflatmate.tests.PaymentTests" time="0.285">
+  <testcase name="footerMediaLink" classname="uk.co.idealflatmate.tests.FooterTest" time="9.17"/>
+  <testcase name="footerHomeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="9.767"/>
+  <testcase name="loginPassWronglogInHomePage" classname="uk.co.idealflatmate.tests.AuthorizationTests" time="11.657"/>
+  <testcase name="footerContactLink" classname="uk.co.idealflatmate.tests.FooterTest" time="14.649"/>
+  <testcase name="footerBrowseHowItWorksLink" classname="uk.co.idealflatmate.tests.FooterTest" time="16.685"/>
+  <testcase name="footerModern" classname="uk.co.idealflatmate.tests.FooterTest" time="3.4"/>
+  <testcase name="footerBrowseFlatsharesLink" classname="uk.co.idealflatmate.tests.FooterTest" time="8.137">
+    <failure message="Element should have text &apos;0 room matched to rent in and around Brent Park&apos; {By.xpath: //h1[@class=&apos;h4&apos;]}&#10;Element: &apos;&lt;h1 class=&quot;h4&quot;&gt;844 rooms matched to rent&lt;/h1&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
+Element should have text '0 room matched to rent in and around Brent Park' {By.xpath: //h1[@class='h4']}
+Element: '<h1 class="h4">844 rooms matched to rent</h1>'
+	at uk.co.idealflatmate.tests.FooterTest.footerBrowseFlatsharesLink(FooterTest.java:90)
+]]></failure>
+    <system-err><![CDATA[Jan 29, 2019 12:02:46 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 34: ChromeDriver -> ChromeDriver: chrome on XP (a7c0bf9347e83a509cde0f9c497c2144)
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 33 -> ChromeDriver: chrome on XP (d2d732cec7369cb9085a7f47a14e521d)
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:02:46 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 36: ChromeDriver -> ChromeDriver: chrome on XP (fb6606eddc04363242c8bcbef2bdb2b5)
+Jan 29, 2019 12:02:49 PM org.openqa.selenium.os.OsProcess destroy
+INFO: Unable to drain process streams. Ignoring but the exception being swallowed follows.
+org.apache.commons.exec.ExecuteException: The stop timeout of 2000 ms was exceeded (Exit value: -559038737)
+	at org.apache.commons.exec.PumpStreamHandler.stopThread(PumpStreamHandler.java:295)
+	at org.apache.commons.exec.PumpStreamHandler.stop(PumpStreamHandler.java:180)
+	at org.openqa.selenium.os.OsProcess.destroy(OsProcess.java:136)
+	at org.openqa.selenium.os.CommandLine.destroy(CommandLine.java:153)
+	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:232)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:95)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:452)
+	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser.run(WebDriverThreadLocalContainer.java:174)
+	at java.lang.Thread.run(Thread.java:748)
+
+Jan 29, 2019 12:02:49 PM org.openqa.selenium.os.OsProcess destroy
+SEVERE: Unable to kill process java.lang.ProcessImpl@de5f612
+]]></system-err>
+  </testcase>
+  <testcase name="footerInstagramLink" classname="uk.co.idealflatmate.tests.FooterTest" time="9.003"/>
+  <testcase name="footerTwitterLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.485"/>
+  <testcase name="footerPricingLink" classname="uk.co.idealflatmate.tests.FooterTest" time="1.848"/>
+  <testcase name="footerBrowseTipsLink" classname="uk.co.idealflatmate.tests.FooterTest" time="19.085">
+    <failure message="Element not found {By.xpath: //title[contains(text(), &apos;Tips&apos;)]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //title[contains(text(), 'Tips')]}
+Expected: exist
+	at uk.co.idealflatmate.tests.FooterTest.footerBrowseTipsLink(FooterTest.java:123)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//title[contains(text(), 'Tips')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61460}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 8364420752ccddf489e73235cc3c65bc
+*** Element info: {Using=xpath, value=//title[contains(text(), 'Tips')]}
+	at uk.co.idealflatmate.tests.FooterTest.footerBrowseTipsLink(FooterTest.java:123)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:03:14 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 48145
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Jan 29, 2019 12:03:18 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 12:03:20 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:03:20 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:03:20 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:03:20 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 29: ChromeDriver -> ChromeDriver: chrome on XP (c7c14bd2665a7fae7b07a9616f94fd3b)
+]]></system-err>
+  </testcase>
+  <testcase name="footerStaySafeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="2.461"/>
+  <testcase name="findStartListing" classname="uk.co.idealflatmate.tests.HomePageTest" time="6.476"/>
+  <testcase name="footerYoutubeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="0.932"/>
+  <testcase name="blogLandlord" classname="uk.co.idealflatmate.tests.HomePageTest" time="5.417"/>
+  <testcase name="footerNLALink" classname="uk.co.idealflatmate.tests.FooterTest" time="9.897"/>
+  <testcase name="footerPressLink" classname="uk.co.idealflatmate.tests.FooterTest" time="0.005"/>
+  <testcase name="blogFM" classname="uk.co.idealflatmate.tests.HomePageTest" time="6.134"/>
+  <testcase name="amountOfBlocsAndTextOfAreas" classname="uk.co.idealflatmate.tests.HomePageTest" time="2.316"/>
+  <testcase name="findStartMatchingLink" classname="uk.co.idealflatmate.tests.HomePageTest" time="6.216"/>
+  <testcase name="findOutMore" classname="uk.co.idealflatmate.tests.HomePageTest" time="10.66"/>
+  <testcase name="fullMenuNewUserWithVerifPerc" classname="uk.co.idealflatmate.tests.MatchingTests" time="14.724">
     <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
 Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
 Expected: exist
-	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaylistingEssen(PaymentTests.java:114)
+	at uk.co.idealflatmate.tests.MatchingTests.fullMenuNewUserWithVerifPerc(MatchingTests.java:26)
 Caused by: org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
   (Session info: chrome=71.0.3578.98)
@@ -443,147 +399,102 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55272}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 642f8b620becba1873ddb8ff67e0f43a
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56042}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 092f7f5c25730538c4bf2161abeec72c
 *** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
-	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaylistingEssen(PaymentTests.java:114)
+	at uk.co.idealflatmate.tests.MatchingTests.fullMenuNewUserWithVerifPerc(MatchingTests.java:26)
 </failure>
   </testcase>
-  <testcase name="answMesFmWithoutSubsToFM" classname="uk.co.idealflatmate.tests.MessagesTest" time="16.109"/>
-  <testcase name="fmSearchBy" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="4.519">
-    <failure message="unknown error: unhandled inspector error: {&quot;code&quot;:-32000,&quot;message&quot;:&quot;Cannot navigate to invalid URL&quot;}&#10;  (Session info: chrome=71.0.3578.98)&#10;  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;selenide.url: http://localhost:8080data:,&#10;Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57521}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}&#10;selenide.baseUrl: http://localhost:8080&#10;Session ID: cf827cb9c23375780bd88f72e979b378" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: 
-unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
+  <testcase name="pressLogo" classname="uk.co.idealflatmate.tests.HomePageTest" time="3.164"/>
+  <testcase name="startMatchingOnFMSearchPage" classname="uk.co.idealflatmate.tests.MatchingTests" time="7.951"/>
+  <testcase name="startMatchingQuizPropertyPage" classname="uk.co.idealflatmate.tests.MatchingTests" time="13.73"/>
+  <testcase name="FmWithoutSubsToLandlordWithoutSubsWithListFromList" classname="uk.co.idealflatmate.tests.MessagesTest" time="0.258">
+    <failure message="Element not found {By.xpath: //div[contains(text(), &apos;Newport PO30 2DN, UK&apos;)]/../../../../../..//picture/img}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //div[contains(text(), 'Newport PO30 2DN, UK')]/../../../../../..//picture/img}
+Expected: visible
+	at uk.co.idealflatmate.tests.MessagesTest.FmWithoutSubsToLandlordWithoutSubsWithListFromList(MessagesTest.java:132)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(text(), 'Newport PO30 2DN, UK')]/../../../../../..//picture/img"}
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-selenide.url: http://localhost:8080data:,
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57521}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-selenide.baseUrl: http://localhost:8080
-Session ID: cf827cb9c23375780bd88f72e979b378
-	at uk.co.idealflatmate.tests.SearchFMPageTests.fmSearchBy(SearchFMPageTests.java:14)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62531}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: a7c0bf9347e83a509cde0f9c497c2144
+*** Element info: {Using=xpath, value=//div[contains(text(), 'Newport PO30 2DN, UK')]/../../../../../..//picture/img}
+	at uk.co.idealflatmate.tests.MessagesTest.FmWithoutSubsToLandlordWithoutSubsWithListFromList(MessagesTest.java:132)
 </failure>
-    <system-err><![CDATA[Jan 25, 2019 7:17:36 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 14 -> ChromeDriver: chrome on XP (2a0bd51d1dd5dae76e485ef77cd7a101)
-Jan 25, 2019 7:17:36 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+  </testcase>
+  <testcase name="startMatchingOnPropertyCard" classname="uk.co.idealflatmate.tests.MatchingTests" time="4.849">
+    <failure message="Element not found {By.xpath: //form[@id=&apos;search-location&apos;]//span}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //form[@id='search-location']//span}
+Expected: visible
+	at uk.co.idealflatmate.tests.MatchingTests.startMatchingOnPropertyCard(MatchingTests.java:103)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//form[@id='search-location']//span"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63773}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 51115abeb708fed39c68f36d4da85b77
+*** Element info: {Using=xpath, value=//form[@id='search-location']//span}
+	at uk.co.idealflatmate.tests.MatchingTests.startMatchingOnPropertyCard(MatchingTests.java:103)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:06:38 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 34 -> ChromeDriver: chrome on XP (a7c0bf9347e83a509cde0f9c497c2144)
+Jan 29, 2019 12:06:38 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
 INFO: Trying to close the browser ChromeDriver ...
-Jan 25, 2019 7:17:40 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@f8147c1
-Jan 25, 2019 7:17:40 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Closed webdriver in 3318 ms
-Jan 25, 2019 7:17:40 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer getWebDriver
-INFO: No webdriver is bound to current thread: 14 - let's create new webdriver
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 31052
+Jan 29, 2019 12:06:43 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 42873
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:17:43 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Jan 29, 2019 12:06:51 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
-Jan 25, 2019 7:17:44 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+Jan 29, 2019 12:06:53 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
 INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:17:44 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+Jan 29, 2019 12:06:53 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
 INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:17:44 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+Jan 29, 2019 12:06:53 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
 INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:17:44 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 14: ChromeDriver -> ChromeDriver: chrome on XP (cf827cb9c23375780bd88f72e979b378)
+Jan 29, 2019 12:06:53 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 34: ChromeDriver -> ChromeDriver: chrome on XP (4eaf26591d245da5c3c92a3d9d5488f4)
 ]]></system-err>
   </testcase>
-  <testcase name="searchPagination" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="0.039">
-    <failure message="unknown error: unhandled inspector error: {&quot;code&quot;:-32000,&quot;message&quot;:&quot;Cannot navigate to invalid URL&quot;}&#10;  (Session info: chrome=71.0.3578.98)&#10;  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;selenide.url: http://localhost:8080data:,&#10;Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57521}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}&#10;selenide.baseUrl: http://localhost:8080&#10;Session ID: cf827cb9c23375780bd88f72e979b378" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: 
-unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
+  <testcase name="landlWithSubsToFM" classname="uk.co.idealflatmate.tests.MessagesTest" time="21.089"/>
+  <testcase name="answMesLandlToPremFHWithoutSubs" classname="uk.co.idealflatmate.tests.MessagesTest" time="46.051"/>
+  <testcase name="fmWithoutSubsTolordWithoutSubsWithListFromFMpage" classname="uk.co.idealflatmate.tests.MessagesTest" time="48.283">
+    <failure message="Element not found {By.xpath: //h1[@class=&apos;h4&apos;]}&#10;Expected: text &apos;6 rooms matched to rent in and around Clapham&apos;" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //h1[@class='h4']}
+Expected: text '6 rooms matched to rent in and around Clapham'
+	at uk.co.idealflatmate.tests.MessagesTest.fmWithoutSubsTolordWithoutSubsWithListFromFMpage(MessagesTest.java:163)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@class='h4']"}
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-selenide.url: http://localhost:8080data:,
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57521}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-selenide.baseUrl: http://localhost:8080
-Session ID: cf827cb9c23375780bd88f72e979b378
-	at uk.co.idealflatmate.tests.SearchFMPageTests.searchPagination(SearchFMPageTests.java:28)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63097}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 839dbd4324c7646457d2d57afb093bbf
+*** Element info: {Using=xpath, value=//h1[@class='h4']}
+	at uk.co.idealflatmate.tests.MessagesTest.fmWithoutSubsTolordWithoutSubsWithListFromFMpage(MessagesTest.java:163)
 </failure>
   </testcase>
-  <testcase name="sortListingLoggedIn" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="0.027">
-    <failure message="unknown error: unhandled inspector error: {&quot;code&quot;:-32000,&quot;message&quot;:&quot;Cannot navigate to invalid URL&quot;}&#10;  (Session info: chrome=71.0.3578.98)&#10;  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;selenide.url: http://localhost:8080data:,&#10;Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57521}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}&#10;selenide.baseUrl: http://localhost:8080&#10;Session ID: cf827cb9c23375780bd88f72e979b378" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: 
-unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-selenide.url: http://localhost:8080data:,
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57521}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-selenide.baseUrl: http://localhost:8080
-Session ID: cf827cb9c23375780bd88f72e979b378
-	at uk.co.idealflatmate.tests.SearchFMPageTests.sortListingLoggedIn(SearchFMPageTests.java:127)
-</failure>
-  </testcase>
-  <testcase name="footerYoutubeLink" classname="uk.co.idealflatmate.tests.FooterTest" time="1.115"/>
-  <testcase name="applyMoreFiltersPhotoNoList" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="4.86"/>
-  <testcase name="searchHomeByButton" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="11.501">
-    <failure message="unknown error: unhandled inspector error: {&quot;code&quot;:-32000,&quot;message&quot;:&quot;Cannot navigate to invalid URL&quot;}&#10;  (Session info: chrome=71.0.3578.98)&#10;  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;selenide.url: http://localhost:8080data:,&#10;Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57699}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}&#10;selenide.baseUrl: http://localhost:8080&#10;Session ID: e009ba482b17ab1f3b88c5db9cf8dbcc" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: 
-unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-selenide.url: http://localhost:8080data:,
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57699}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-selenide.baseUrl: http://localhost:8080
-Session ID: e009ba482b17ab1f3b88c5db9cf8dbcc
-	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomeByButton(SearchHomePageTests.java:11)
-</failure>
-    <system-err><![CDATA[Jan 25, 2019 7:18:07 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:18:07 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 20: ChromeDriver -> ChromeDriver: chrome on XP (b9f8a6229ebca1937a1c965eb33257f6)
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:18:08 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 21: ChromeDriver -> ChromeDriver: chrome on XP (e009ba482b17ab1f3b88c5db9cf8dbcc)
-]]></system-err>
-  </testcase>
-  <testcase name="searchHomeLocationFromList" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="0.927">
-    <failure message="unknown error: unhandled inspector error: {&quot;code&quot;:-32000,&quot;message&quot;:&quot;Cannot navigate to invalid URL&quot;}&#10;  (Session info: chrome=71.0.3578.98)&#10;  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;selenide.url: http://localhost:8080data:,&#10;Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57699}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}&#10;selenide.baseUrl: http://localhost:8080&#10;Session ID: e009ba482b17ab1f3b88c5db9cf8dbcc" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: 
-unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-selenide.url: http://localhost:8080data:,
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57699}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-selenide.baseUrl: http://localhost:8080
-Session ID: e009ba482b17ab1f3b88c5db9cf8dbcc
-	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomeLocationFromList(SearchHomePageTests.java:28)
-</failure>
-  </testcase>
-  <testcase name="searchHomeIDProperty" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="7.044"/>
-  <testcase name="TestSearchHomeByEnter" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="10.625"/>
-  <testcase name="searchHomePartOfLocationName" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="11.232">
+  <testcase name="premFmToLandlWithoutSubsWithListFromSearch" classname="uk.co.idealflatmate.tests.MessagesTest" time="73.942">
     <failure message="Element not found {input.react-autosuggest__input}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
 Element not found {input.react-autosuggest__input}
 Expected: visible
-	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomePartOfLocationName(SearchHomePageTests.java:45)
+	at uk.co.idealflatmate.tests.MessagesTest.premFmToLandlWithoutSubsWithListFromSearch(MessagesTest.java:110)
 Caused by: org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"input.react-autosuggest__input"}
   (Session info: chrome=71.0.3578.98)
@@ -593,39 +504,463 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57699}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: e009ba482b17ab1f3b88c5db9cf8dbcc
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63407}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 0a374d07fc8293021aa57d5d913d7b90
 *** Element info: {Using=css selector, value=input.react-autosuggest__input}
-	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomePartOfLocationName(SearchHomePageTests.java:45)
+	at uk.co.idealflatmate.tests.MessagesTest.premFmToLandlWithoutSubsWithListFromSearch(MessagesTest.java:110)
 </failure>
   </testcase>
-  <testcase name="lordOutWorldPaylistingPrem" classname="uk.co.idealflatmate.tests.PaymentTests" time="9.542">
-    <failure message="Element not found {By.xpath: //form[@id=&apos;PremiumPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //form[@id='PremiumPaymentForm']//select[@id='paymentform-type_id']}
+  <testcase name="answMesFmWithoutSubsToFM" classname="uk.co.idealflatmate.tests.MessagesTest" time="80.145"/>
+  <testcase name="landlordWithoutSubsToFM" classname="uk.co.idealflatmate.tests.MessagesTest" time="12.293"/>
+  <testcase name="readMessageByLandlWithoutSubsn" classname="uk.co.idealflatmate.tests.MessagesTest" time="12.17"/>
+  <testcase name="agentProfWorldPay" classname="uk.co.idealflatmate.tests.PaymentTests" time="5.672">
+    <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
 Expected: exist
-	at uk.co.idealflatmate.tests.PaymentTests.lordOutWorldPaylistingPrem(PaymentTests.java:184)
+	at uk.co.idealflatmate.tests.PaymentTests.agentProfWorldPay(PaymentTests.java:265)
 Caused by: org.openqa.selenium.NoSuchElementException: 
-Cannot locate option containing text: 1 week Premium - ВЈ12.99
+no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: driver.version: unknown
-	at uk.co.idealflatmate.tests.PaymentTests.lordOutWorldPaylistingPrem(PaymentTests.java:184)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62904}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: c7c14bd2665a7fae7b07a9616f94fd3b
+*** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
+	at uk.co.idealflatmate.tests.PaymentTests.agentProfWorldPay(PaymentTests.java:265)
 </failure>
-    <system-err><![CDATA[Jan 25, 2019 7:18:21 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 21 -> ChromeDriver: chrome on XP (e009ba482b17ab1f3b88c5db9cf8dbcc)
-Jan 25, 2019 7:18:21 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+  </testcase>
+  <testcase name="AbilityToSeePhone" classname="uk.co.idealflatmate.tests.PaymentTests" time="7.368"/>
+  <testcase name="GoPremiumFHPaymentOnPhone" classname="uk.co.idealflatmate.tests.PaymentTests" time="21.816"/>
+  <testcase name="GoPremiumFHPaymentOnMessage" classname="uk.co.idealflatmate.tests.PaymentTests" time="25.015"/>
+  <testcase name="lordInWorldPaidListingProf" classname="uk.co.idealflatmate.tests.PaymentTests" time="5.38">
+    <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaidListingProf(PaymentTests.java:213)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62655}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 12cc5073a5962203c806f9eee674992e
+*** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaidListingProf(PaymentTests.java:213)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:09:35 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 12:09:37 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:09:37 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:09:37 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:09:37 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 29: ChromeDriver -> ChromeDriver: chrome on XP (af3da68506c2f024608ef2becc27c359)
+]]></system-err>
+  </testcase>
+  <testcase name="lordInWorldPaylistingEssen" classname="uk.co.idealflatmate.tests.PaymentTests" time="4.13">
+    <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaylistingEssen(PaymentTests.java:108)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63097}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 839dbd4324c7646457d2d57afb093bbf
+*** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaylistingEssen(PaymentTests.java:108)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:09:56 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 33 -> ChromeDriver: chrome on XP (12cc5073a5962203c806f9eee674992e)
+Jan 29, 2019 12:09:56 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
 INFO: Trying to close the browser ChromeDriver ...
-Jan 25, 2019 7:18:26 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+Jan 29, 2019 12:10:01 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
 SEVERE: Failed to close webdriver in 5000 milliseconds
-Jan 25, 2019 7:18:26 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer getWebDriver
-INFO: No webdriver is bound to current thread: 21 - let's create new webdriver
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 6915
+]]></system-err>
+  </testcase>
+  <testcase name="applyMoreFiltersPhotoNoList" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="5.24"/>
+  <testcase name="premiumFHPaymentWorldPay" classname="uk.co.idealflatmate.tests.PaymentTests" time="8.514">
+    <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.premiumFHPaymentWorldPay(PaymentTests.java:68)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64037}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 8adb803ccacb3e142d5ea12767ea4360
+*** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
+	at uk.co.idealflatmate.tests.PaymentTests.premiumFHPaymentWorldPay(PaymentTests.java:68)
+</failure>
+  </testcase>
+  <testcase name="applyMoreFilters" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="20.299"/>
+  <testcase name="lordOutWorldPaylistingPrem" classname="uk.co.idealflatmate.tests.PaymentTests" time="21.183">
+    <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.lordOutWorldPaylistingPrem(PaymentTests.java:157)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63407}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 0a374d07fc8293021aa57d5d913d7b90
+*** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
+	at uk.co.idealflatmate.tests.PaymentTests.lordOutWorldPaylistingPrem(PaymentTests.java:157)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:10:48 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:10:48 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:10:48 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:10:48 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 38: ChromeDriver -> ChromeDriver: chrome on XP (b733f2d5af5366a5bac0e731c9cbb6df)
+]]></system-err>
+  </testcase>
+  <testcase name="fmSearchBy" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="24.993"/>
+  <testcase name="applyMoreFiltersPhotoWithList" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="39.092"/>
+  <testcase name="applyAdvancedFiltersDefault" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="39.092">
+    <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
+	at uk.co.idealflatmate.tests.SearchFMPageTests.applyAdvancedFiltersDefault(SearchFMPageTests.java:109)
+</failure>
+  </testcase>
+  <testcase name="searchPagination" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="40.272"/>
+  <testcase name="applyMoreFilters" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="4.531"/>
+  <testcase name="searchEastLDNPagination" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="1.086">
+    <failure message="Element not found {By.xpath: //a[contains(text(), &apos;East London&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //a[contains(text(), 'East London')]}
+Expected: visible
+	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.searchEastLDNPagination(SearchPropertiesPageTests.java:63)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(text(), 'East London')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:65436}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 4eaf26591d245da5c3c92a3d9d5488f4
+*** Element info: {Using=xpath, value=//a[contains(text(), 'East London')]}
+	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.searchEastLDNPagination(SearchPropertiesPageTests.java:63)
+</failure>
+  </testcase>
+  <testcase name="applyAdvancedFiltersDefault" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="1.652">
+    <failure message="Element not found {By.xpath: //h1[@class=&apos;h4&apos; and contains(.,&apos;London&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //h1[@class='h4' and contains(.,'London')]}
+Expected: visible
+	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.applyAdvancedFiltersDefault(SearchPropertiesPageTests.java:90)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@class='h4' and contains(.,'London')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49251}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: aea8deff3edb54a05e01868bb3a24a89
+*** Element info: {Using=xpath, value=//h1[@class='h4' and contains(.,'London')]}
+	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.applyAdvancedFiltersDefault(SearchPropertiesPageTests.java:90)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:12:14 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 34 -> ChromeDriver: chrome on XP (4eaf26591d245da5c3c92a3d9d5488f4)
+Jan 29, 2019 12:12:14 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+]]></system-err>
+  </testcase>
+  <testcase name="searchHomeLocationFromList" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="5.379">
+    <failure message="Element not found {By.xpath: //span[contains(.,&apos;Clapham Junction&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //span[contains(.,'Clapham Junction')]}
+Expected: visible
+	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomeLocationFromList(SearchHomePageTests.java:29)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(.,'Clapham Junction')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63726}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: f347661c375b2c2039d7cfd2a8abbc19
+*** Element info: {Using=xpath, value=//span[contains(.,'Clapham Junction')]}
+	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomeLocationFromList(SearchHomePageTests.java:29)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:12:14 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 30 -> ChromeDriver: chrome on XP (aea8deff3edb54a05e01868bb3a24a89)
+Jan 29, 2019 12:12:14 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+]]></system-err>
+  </testcase>
+  <testcase name="searchHomeIDProperty" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="7.89"/>
+  <testcase name="searchHomePartOfLocationName" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="24.018">
+    <failure message="Element not found {By.xpath: //h1[@class=&apos;h4&apos;]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //h1[@class='h4']}
+Expected: visible
+	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomePartOfLocationName(SearchHomePageTests.java:47)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@class='h4']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52092}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 693cce3b17c4ea534891961b8dac4738
+*** Element info: {Using=xpath, value=//h1[@class='h4']}
+	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomePartOfLocationName(SearchHomePageTests.java:47)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:12:39 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 12:12:41 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:12:41 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:12:41 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:12:41 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 34: ChromeDriver -> ChromeDriver: chrome on XP (d6d0feae3286ce1d56a3d3f2c0ccacd2)
+Jan 29, 2019 12:12:42 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 12:12:48 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:12:48 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:12:48 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:12:48 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 30: ChromeDriver -> ChromeDriver: chrome on XP (eb03a51ce56cc221ea04ec0d009288d9)
+]]></system-err>
+  </testcase>
+  <testcase name="TestSearchHomeByEnter" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="24.026">
+    <failure message="Element not found {By.xpath: //h1[@class=&apos;h4&apos;]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //h1[@class='h4']}
+Expected: visible
+	at uk.co.idealflatmate.tests.SearchHomePageTests.TestSearchHomeByEnter(SearchHomePageTests.java:23)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@class='h4']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51584}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 00506e15c4de4f39d8a34a5bba5c8f93
+*** Element info: {Using=xpath, value=//h1[@class='h4']}
+	at uk.co.idealflatmate.tests.SearchHomePageTests.TestSearchHomeByEnter(SearchHomePageTests.java:23)
+</failure>
+  </testcase>
+  <testcase name="searchHomeByButton" classname="uk.co.idealflatmate.tests.SearchHomePageTests" time="24.443">
+    <failure message="Element not found {By.xpath: //h1[@class=&apos;h4&apos;]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //h1[@class='h4']}
+Expected: visible
+	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomeByButton(SearchHomePageTests.java:14)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@class='h4']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51087}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: af3da68506c2f024608ef2becc27c359
+*** Element info: {Using=xpath, value=//h1[@class='h4']}
+	at uk.co.idealflatmate.tests.SearchHomePageTests.searchHomeByButton(SearchHomePageTests.java:14)
+</failure>
+  </testcase>
+  <testcase name="propertySearchByDropDown" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="25.705"/>
+  <testcase name="sortListingLoggedIn" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="33.202"/>
+  <testcase name="searchPagination" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="13.333"/>
+  <testcase name="sortListingWith2Rooms" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="18.544"/>
+  <testcase name="ListingSignUpFromHomepage" classname="uk.co.idealflatmate.tests.SignUpTest" time="9.992"/>
+  <testcase name="SignUpBlankFieldsPropAddRentBlock" classname="uk.co.idealflatmate.tests.SignUpTest" time="27.455">
+    <failure message="Element should be visible {By.xpath: //span[contains (text(), &apos;Sign up with email&apos;)]}&#10;Element: &apos;StaleElementReferenceException: stale element reference: element is not attached to the page document&apos;" type="com.codeborne.selenide.ex.ElementShould">com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {By.xpath: //span[contains (text(), 'Sign up with email')]}
+Element: 'StaleElementReferenceException: stale element reference: element is not attached to the page document'
+	at uk.co.idealflatmate.tests.SignUpTest.SignUpBlankFieldsPropAddRentBlock(SignUpTest.java:19)
+</failure>
+  </testcase>
+  <testcase name="searchZone1Pagination" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="29.763">
+    <failure message="Element not found {By.xpath: //a[contains(text(), &apos;Zone 1&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //a[contains(text(), 'Zone 1')]}
+Expected: visible
+	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.searchZone1Pagination(SearchPropertiesPageTests.java:53)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(text(), 'Zone 1')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:53010}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: d6d0feae3286ce1d56a3d3f2c0ccacd2
+*** Element info: {Using=xpath, value=//a[contains(text(), 'Zone 1')]}
+	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.searchZone1Pagination(SearchPropertiesPageTests.java:53)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:15:01 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 35 -> ChromeDriver: chrome on XP (00506e15c4de4f39d8a34a5bba5c8f93)
+Jan 29, 2019 12:15:01 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+]]></system-err>
+  </testcase>
+  <testcase name="headerSignUpViaFacebook" classname="uk.co.idealflatmate.tests.SignUpTest" time="34.585">
+    <failure message="Element not found {#email}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {#email}
+Expected: visible
+	at uk.co.idealflatmate.tests.SignUpTest.headerSignUpViaFacebook(SignUpTest.java:306)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#email"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63864}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 0699047ec84b78ea2a728993dee4dc3e
+*** Element info: {Using=css selector, value=#email}
+	at uk.co.idealflatmate.tests.SignUpTest.headerSignUpViaFacebook(SignUpTest.java:306)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:15:03 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 34 -> ChromeDriver: chrome on XP (d6d0feae3286ce1d56a3d3f2c0ccacd2)
+Jan 29, 2019 12:15:03 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jan 29, 2019 12:15:06 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+]]></system-err>
+  </testcase>
+  <testcase name="SignUpBlankFieldsPropAddWorkBlock" classname="uk.co.idealflatmate.tests.SignUpTest" time="35.086">
+    <failure message="Element should be visible {By.xpath: //span[contains (text(), &apos;Sign up with email&apos;)]}&#10;Element: &apos;StaleElementReferenceException: stale element reference: element is not attached to the page document&apos;" type="com.codeborne.selenide.ex.ElementShould">com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {By.xpath: //span[contains (text(), 'Sign up with email')]}
+Element: 'StaleElementReferenceException: stale element reference: element is not attached to the page document'
+	at uk.co.idealflatmate.tests.SignUpTest.SignUpBlankFieldsPropAddWorkBlock(SignUpTest.java:41)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:15:08 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 36 -> ChromeDriver: chrome on XP (0699047ec84b78ea2a728993dee4dc3e)
+Jan 29, 2019 12:15:08 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Jan 29, 2019 12:15:08 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+SEVERE: Failed to close webdriver in 5000 milliseconds
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 40533
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:18:32 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 17274
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+]]></system-err>
+  </testcase>
+  <testcase name="ListingSignUpHeader" classname="uk.co.idealflatmate.tests.SignUpTest" time="43.887"/>
+  <testcase name="sortListing" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="50.985"/>
+  <testcase name="headerSignUpHomePageFMSearchLiv_inWithoutAbout" classname="uk.co.idealflatmate.tests.SignUpTest" time="66.528">
+    <failure message="Element should be visible {By.xpath: //span[contains (text(), &apos;Sign up with email&apos;)]}&#10;Element: &apos;StaleElementReferenceException: stale element reference: element is not attached to the page document&apos;" type="com.codeborne.selenide.ex.ElementShould">com.codeborne.selenide.ex.ElementShould: 
+Element should be visible {By.xpath: //span[contains (text(), 'Sign up with email')]}
+Element: 'StaleElementReferenceException: stale element reference: element is not attached to the page document'
+	at uk.co.idealflatmate.tests.SignUpTest.headerSignUpHomePageFMSearchLiv_inWithoutAbout(SignUpTest.java:132)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:15:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
-Jan 25, 2019 7:18:33 PM org.openqa.selenium.os.OsProcess destroy
+Jan 29, 2019 12:15:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 12:15:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+[1548756930.552][WARNING]: Timed out connecting to Chrome, retrying...
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 34: ChromeDriver -> ChromeDriver: chrome on XP (38dad33772293b4b6fb46ff9d7e8d7c0)
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 36: ChromeDriver -> ChromeDriver: chrome on XP (f56a0a728e9d114235853df886c2d20d)
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:15:31 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 35: ChromeDriver -> ChromeDriver: chrome on XP (4199109df277b3035b8834354a24a238)
+Jan 29, 2019 12:15:32 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 29, 2019 12:15:33 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
+Jan 29, 2019 12:15:33 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Jan 29, 2019 12:15:33 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Jan 29, 2019 12:15:33 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 29: ChromeDriver -> ChromeDriver: chrome on XP (8f977260d25a9189a906ae78d93c471d)
+]]></system-err>
+  </testcase>
+  <testcase name="headerSignUpWithBlankRequiredFieldsBudget" classname="uk.co.idealflatmate.tests.SignUpTest" time="6.386">
+    <failure message="Element not found {By.xpath: //li//div[contains(text(), &apos;Watford&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //li//div[contains(text(), 'Watford')]}
+Expected: visible
+	at uk.co.idealflatmate.tests.SignUpTest.headerSignUpWithBlankRequiredFieldsBudget(SignUpTest.java:284)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//li//div[contains(text(), 'Watford')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63726}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: f347661c375b2c2039d7cfd2a8abbc19
+*** Element info: {Using=xpath, value=//li//div[contains(text(), 'Watford')]}
+	at uk.co.idealflatmate.tests.SignUpTest.headerSignUpWithBlankRequiredFieldsBudget(SignUpTest.java:284)
+</failure>
+    <system-err><![CDATA[Jan 29, 2019 12:15:45 PM org.openqa.selenium.os.OsProcess destroy
 INFO: Unable to drain process streams. Ignoring but the exception being swallowed follows.
 org.apache.commons.exec.ExecuteException: The stop timeout of 2000 ms was exceeded (Exit value: -559038737)
 	at org.apache.commons.exec.PumpStreamHandler.stopThread(PumpStreamHandler.java:295)
@@ -640,33 +975,19 @@ org.apache.commons.exec.ExecuteException: The stop timeout of 2000 ms was exceed
 	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser.run(WebDriverThreadLocalContainer.java:174)
 	at java.lang.Thread.run(Thread.java:748)
 
-Jan 25, 2019 7:18:33 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@189e4cb2
-Jan 25, 2019 7:18:34 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:18:34 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:18:34 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:18:34 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 21: ChromeDriver -> ChromeDriver: chrome on XP (89dacf054dfac4eb449dfed653354503)
-Jan 25, 2019 7:18:34 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 21 -> ChromeDriver: chrome on XP (89dacf054dfac4eb449dfed653354503)
-Jan 25, 2019 7:18:34 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
+Jan 29, 2019 12:15:45 PM org.openqa.selenium.os.OsProcess destroy
+SEVERE: Unable to kill process java.lang.ProcessImpl@7d29fa51
+Jan 29, 2019 12:15:53 PM org.openqa.selenium.os.OsProcess destroy
+SEVERE: Unable to kill process java.lang.ProcessImpl@4e7c8737
 ]]></system-err>
   </testcase>
-  <testcase name="applyMoreFilters" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="3.979"/>
-  <testcase name="applyAdvancedFiltersDefault" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="7.434"/>
-  <testcase name="applyMoreFilters" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="8.599"/>
-  <testcase name="applyMoreFiltersPhotoWithList" classname="uk.co.idealflatmate.tests.SearchFMPageTests" time="1.496"/>
-  <testcase name="sortListingWith2Rooms" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="11.12">
-    <failure message="Element not found {By.xpath: //header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //header//nav//ul//li//a[contains(text(), 'Find a home')]}
+  <testcase name="headerRoomSignUpHomePageTenant" classname="uk.co.idealflatmate.tests.SignUpTest" time="8.724">
+    <failure message="Element not found {By.xpath: //li//div[contains(text(), &apos;Watford&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //li//div[contains(text(), 'Watford')]}
 Expected: visible
-	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.sortListingWith2Rooms(SearchPropertiesPageTests.java:137)
+	at uk.co.idealflatmate.tests.SignUpTest.headerRoomSignUpHomePageTenant(SignUpTest.java:95)
 Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//header//nav//ul//li//a[contains(text(), 'Find a home')]"}
+no such element: Unable to locate element: {"method":"xpath","selector":"//li//div[contains(text(), 'Watford')]"}
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -674,230 +995,53 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58859}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 1f418ac81573a632ee497efd0dc27761
-*** Element info: {Using=xpath, value=//header//nav//ul//li//a[contains(text(), 'Find a home')]}
-	at uk.co.idealflatmate.tests.SearchPropertiesPageTests.sortListingWith2Rooms(SearchPropertiesPageTests.java:137)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52246}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: b7732a60bd7c62abec440b3fc629e0d3
+*** Element info: {Using=xpath, value=//li//div[contains(text(), 'Watford')]}
+	at uk.co.idealflatmate.tests.SignUpTest.headerRoomSignUpHomePageTenant(SignUpTest.java:95)
 </failure>
-    <system-err><![CDATA[Jan 25, 2019 7:18:57 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 20 -> ChromeDriver: chrome on XP (b9f8a6229ebca1937a1c965eb33257f6)
-Jan 25, 2019 7:18:57 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
-Jan 25, 2019 7:19:02 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-SEVERE: Failed to close webdriver in 5000 milliseconds
-Jan 25, 2019 7:19:02 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer getWebDriver
-INFO: No webdriver is bound to current thread: 20 - let's create new webdriver
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 29659
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:19:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:19:10 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:19:10 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:19:10 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:19:10 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 20: ChromeDriver -> ChromeDriver: chrome on XP (1f418ac81573a632ee497efd0dc27761)
-]]></system-err>
   </testcase>
-  <testcase name="AbilityToSeePhone" classname="uk.co.idealflatmate.tests.PaymentTests" time="19.182"/>
-  <testcase name="lordInWorldPaidListingProf" classname="uk.co.idealflatmate.tests.PaymentTests" time="21.377">
-    <failure message="Element not found {By.xpath: //form[@id=&apos;ProfessionalPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //form[@id='ProfessionalPaymentForm']//select[@id='paymentform-type_id']}
+  <testcase name="signUpViaFBlistingAgent" classname="uk.co.idealflatmate.tests.SignUpTest" time="17.128">
+    <failure message="Element not found {#email}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {#email}
+Expected: visible
+	at uk.co.idealflatmate.tests.SignUpTest.signUpViaFBlistingAgent(SignUpTest.java:354)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#email"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54913}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 8f977260d25a9189a906ae78d93c471d
+*** Element info: {Using=css selector, value=#email}
+	at uk.co.idealflatmate.tests.SignUpTest.signUpViaFBlistingAgent(SignUpTest.java:354)
+</failure>
+  </testcase>
+  <testcase name="headerSignUpWithExistingEmail" classname="uk.co.idealflatmate.tests.SignUpTest" time="35.366"/>
+  <testcase name="TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub" classname="uk.co.idealflatmate.tests.ZEmailTests" time="36.048">
+    <failure message="Element not found {By.xpath: //span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div[span[contains(text(), &apos;Welcome&apos;)]][1]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div[span[contains(text(), 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']}
 Expected: exist
-	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaidListingProf(PaymentTests.java:237)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-Cannot locate option containing text: 1 month - ВЈ44.99
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: driver.version: unknown
-	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaidListingProf(PaymentTests.java:237)
-</failure>
-  </testcase>
-  <testcase name="searchZone1Pagination" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="6.942"/>
-  <testcase name="premiumFHPaymentWorldPay" classname="uk.co.idealflatmate.tests.PaymentTests" time="0.637">
-    <failure message="Element should have text &apos;ВЈ3.99 (week)&apos; {By.xpath: (//td[@class=&apos;u_p20-top text-primary&apos;])[1]}&#10;Element: &apos;&lt;td class=&quot;u_p20-top text-primary&quot;&gt;£3.99 (week)&lt;/td&gt;&apos;" type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
-Element should have text 'ВЈ3.99 (week)' {By.xpath: (//td[@class='u_p20-top text-primary'])[1]}
-Element: '<td class="u_p20-top text-primary">£3.99 (week)</td>'
-	at uk.co.idealflatmate.tests.PaymentTests.premiumFHPaymentWorldPay(PaymentTests.java:89)
-]]></failure>
-  </testcase>
-  <testcase name="searchPagination" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="4.728"/>
-  <testcase name="propertySearchByDropDown" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="0.618"/>
-  <testcase name="applyAdvancedFiltersDefault" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="7.375"/>
-  <testcase name="searchEastLDNPagination" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="5.719"/>
-  <testcase name="SignUpBlankFieldsPropAddWorkBlock" classname="uk.co.idealflatmate.tests.SignUpTest" time="27.392"/>
-  <testcase name="SignUpBlankFieldsPropAddRentBlock" classname="uk.co.idealflatmate.tests.SignUpTest" time="6.897"/>
-  <testcase name="sortListing" classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" time="1.875"/>
-  <testcase name="headerRoomSignUpHomePageTenant" classname="uk.co.idealflatmate.tests.SignUpTest" time="5.6">
-    <failure message="Element not found {By.xpath: //input[@id=&apos;moreinfosignupform-file&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //input[@id='moreinfosignupform-file']}
-Expected: exist
-	at uk.co.idealflatmate.tests.SignUpTest.headerRoomSignUpHomePageTenant(SignUpTest.java:71)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='moreinfosignupform-file']"}
+	at uk.co.idealflatmate.tests.ZEmailTests.TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub(ZEmailTests.java:18)
+Caused by: org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52694}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 0472e70ce5e8881656a17d2d12afe39d
-*** Element info: {Using=xpath, value=//input[@id='moreinfosignupform-file']}
-	at uk.co.idealflatmate.tests.SignUpTest.headerRoomSignUpHomePageTenant(SignUpTest.java:71)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52092}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 693cce3b17c4ea534891961b8dac4738
+	at uk.co.idealflatmate.tests.ZEmailTests.TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub(ZEmailTests.java:18)
 </failure>
-    <system-err><![CDATA[Jan 25, 2019 7:20:30 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 14 -> ChromeDriver: chrome on XP (cf827cb9c23375780bd88f72e979b378)
-Jan 25, 2019 7:20:30 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
-Jan 25, 2019 7:20:30 PM org.openqa.selenium.os.OsProcess destroy
-INFO: Unable to drain process streams. Ignoring but the exception being swallowed follows.
-org.apache.commons.exec.ExecuteException: The stop timeout of 2000 ms was exceeded (Exit value: -559038737)
-	at org.apache.commons.exec.PumpStreamHandler.stopThread(PumpStreamHandler.java:295)
-	at org.apache.commons.exec.PumpStreamHandler.stop(PumpStreamHandler.java:180)
-	at org.openqa.selenium.os.OsProcess.destroy(OsProcess.java:136)
-	at org.openqa.selenium.os.CommandLine.destroy(CommandLine.java:153)
-	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:232)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:95)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:452)
-	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser.run(WebDriverThreadLocalContainer.java:174)
-	at java.lang.Thread.run(Thread.java:748)
-
-Jan 25, 2019 7:20:30 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@da3da1e
-Jan 25, 2019 7:20:30 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:20:30 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:20:30 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:20:30 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 17: ChromeDriver -> ChromeDriver: chrome on XP (aee7436812bcd39de2acffffce8a1419)
-Jan 25, 2019 7:20:33 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-SEVERE: Failed to close webdriver in 5000 milliseconds
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 15035
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:20:35 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-SEVERE: Failed to close webdriver in 5000 milliseconds
-Jan 25, 2019 7:20:35 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer getWebDriver
-INFO: No webdriver is bound to current thread: 14 - let's create new webdriver
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 40305
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:20:36 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:20:38 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:20:38 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:20:38 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:20:38 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 13: ChromeDriver -> ChromeDriver: chrome on XP (5dc22ba6f4e438a77fb22422f4da91a5)
-Jan 25, 2019 7:20:38 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:20:39 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:20:39 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:20:39 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:20:39 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 14: ChromeDriver -> ChromeDriver: chrome on XP (fca31d99ab32bf49be6d3b9a2eb23421)
-Jan 25, 2019 7:20:39 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 14 -> ChromeDriver: chrome on XP (fca31d99ab32bf49be6d3b9a2eb23421)
-Jan 25, 2019 7:20:39 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
-]]></system-err>
   </testcase>
-  <testcase name="headerSignUpViaFacebook" classname="uk.co.idealflatmate.tests.SignUpTest" time="49.677">
-    <failure message="Element not found {#js-signup-facebook}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {#js-signup-facebook}
-Expected: visible
-	at uk.co.idealflatmate.tests.SignUpTest.headerSignUpViaFacebook(SignUpTest.java:304)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"css selector","selector":"#js-signup-facebook"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59892}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 6a351254057a1c198879fc51723ebf3d
-*** Element info: {Using=css selector, value=#js-signup-facebook}
-	at uk.co.idealflatmate.tests.SignUpTest.headerSignUpViaFacebook(SignUpTest.java:304)
-</failure>
-    <system-err><![CDATA[Jan 25, 2019 7:20:44 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-SEVERE: Failed to close webdriver in 5000 milliseconds
-Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 13005
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Jan 25, 2019 7:20:44 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@5ab29084
-Jan 25, 2019 7:20:45 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@7973797a
-Jan 25, 2019 7:20:48 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Jan 25, 2019 7:20:50 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
-INFO: BrowserName=chrome Version=71.0.3578.98 Platform=XP
-Jan 25, 2019 7:20:50 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
-INFO: Selenide v. 4.11.1
-Jan 25, 2019 7:20:50 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
-INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-Jan 25, 2019 7:20:50 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
-INFO: Create webdriver in current thread 14: ChromeDriver -> ChromeDriver: chrome on XP (129d5d8adb83e50c8627f921a697579d)
-Jan 25, 2019 7:20:53 PM org.openqa.selenium.os.OsProcess destroy
-SEVERE: Unable to kill process java.lang.ProcessImpl@2255efe5
-Jan 25, 2019 7:21:28 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 19 -> ChromeDriver: chrome on XP (0472e70ce5e8881656a17d2d12afe39d)
-Jan 25, 2019 7:21:28 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
-]]></system-err>
-  </testcase>
-  <testcase name="headerSignUpWithBlankRequiredFieldsBudget" classname="uk.co.idealflatmate.tests.SignUpTest" time="66.482"/>
-  <testcase name="headerSignUpWithExistingEmail" classname="uk.co.idealflatmate.tests.SignUpTest" time="77.482"/>
-  <testcase name="ListingSignUpFromHomepage" classname="uk.co.idealflatmate.tests.SignUpTest" time="86.797"/>
-  <testcase name="headerSignUpHomePageFMSearchLiv_inWithoutAbout" classname="uk.co.idealflatmate.tests.SignUpTest" time="97.034"/>
-  <testcase name="headerSignUpWithBlankRequiredFieldsYourInf" classname="uk.co.idealflatmate.tests.SignUpTest" time="109.11"/>
-  <testcase name="headerSignUpWithBlankRequiredFieldsMoreAboutYou" classname="uk.co.idealflatmate.tests.SignUpTest" time="111.323"/>
-  <testcase name="headerSignUpWithBlankRequiredFieldsLocation" classname="uk.co.idealflatmate.tests.SignUpTest" time="1.785"/>
-  <testcase name="ListingSignUpHeader" classname="uk.co.idealflatmate.tests.SignUpTest" time="6.059"/>
-  <testcase name="signUpViaFBlistingAgent" classname="uk.co.idealflatmate.tests.SignUpTest" time="15.738"/>
-  <testcase name="TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub" classname="uk.co.idealflatmate.tests.ZEmailTests" time="38.052">
-    <failure message="Element not found {By.xpath: //span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription cancelled&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']}
-Expected: visible
-	at uk.co.idealflatmate.tests.ZEmailTests.TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub(ZEmailTests.java:23)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59892}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: 6a351254057a1c198879fc51723ebf3d
-*** Element info: {Using=xpath, value=//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']}
-	at uk.co.idealflatmate.tests.ZEmailTests.TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub(ZEmailTests.java:23)
-</failure>
-    <system-err><![CDATA[Jan 25, 2019 7:22:49 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Close webdriver: 19 -> ChromeDriver: chrome on XP (7eda709db6f9d8780c9e35d78f526ae5)
-Jan 25, 2019 7:22:49 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
-INFO: Trying to close the browser ChromeDriver ...
-Jan 25, 2019 7:22:50 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
-INFO: Closed webdriver in 1070 ms
-]]></system-err>
-  </testcase>
+  <testcase name="headerSignUpWithBlankRequiredFieldsMoreAboutYou" classname="uk.co.idealflatmate.tests.SignUpTest" time="45.48"/>
+  <testcase name="headerSignUpWithBlankRequiredFieldsYourInf" classname="uk.co.idealflatmate.tests.SignUpTest" time="46.085"/>
+  <testcase name="headerSignUpWithBlankRequiredFieldsLocation" classname="uk.co.idealflatmate.tests.SignUpTest" time="67.493"/>
 </testsuite>

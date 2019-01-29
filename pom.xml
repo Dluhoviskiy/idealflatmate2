@@ -76,7 +76,7 @@
                 <version>3.0.0-M2</version>
                 <configuration>
                     <parallel>methods</parallel>
-                    <threadCount>10</threadCount>
+                    <threadCount>3</threadCount>
                 </configuration>
 
             </plugin>

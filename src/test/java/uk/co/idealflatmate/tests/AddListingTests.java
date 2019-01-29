@@ -6,13 +6,13 @@ import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class AddListingTests extends TestBase {
 
     @Test
     public void loginStartListing() {
-        pageUrlVerifLiveGoStage();
 
         authorizationHelper.login("cro.gen.FHListingNotPaid@gmail.com", "qqqqqq");
 
@@ -46,7 +46,6 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void loginPendingListing() {
-        pageUrlVerifLiveGoStage();
 
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
@@ -87,12 +86,11 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void signUpPropertyAdding() {
-        pageUrlVerifLiveGoStage();
 
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("An agency");
 
-        signUpHelper.agentSignListing("Ronald", "agentTest11rrr2@gmail.com", "qqqqqq",
+        signUpHelper.agentSignListing("Ronald", "agentTestuyrw11@gmail.com", "qqqqqq",
                                       "66666666", "Tell us about yourself");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -119,7 +117,6 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void propertyAddWithAllFields() {
-        pageUrlVerifLiveGoStage();
 
         authorizationHelper.login("cro.gen.AgencyNotPaid@gmail.com", "qqqqqq");
 
@@ -174,6 +171,58 @@ public class AddListingTests extends TestBase {
     }
 
 
+    @Test
+    public void titleListing() {
+
+        authorizationHelper.clickJoinFreeButton();
+        authorizationHelper.clickSignInButtonInForm();
+        authorizationHelper.setLoginAsUserWithoutPackage("Titlelive_in1@gmail.com");
+        authorizationHelper.setPassword("qqqqqq");
+        authorizationHelper.submitLogin();
+
+        verificationHelper.verificationUserNameOnHomePage("Title");
+        verificationHelper.closeMatchingPopup();
+
+        paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
+        addPropertyHelper.addListingFromPage();
+        paymentsHelper.addPropertyHelper.setPostalCode("l11");
+        getAddPropertyHelper().pressContinue();
+
+        addPropertyHelper.chooseRoadFor("testRoad");
+        verificationHelper.addingListFlowCity("Liverpool");
+        getAddPropertyHelper().pressContinue();
+
+        addPropertyHelper.pressBack();
+
+        verificationHelper.addingListFlowCity("Liverpool");
+        verificationHelper.roadFor("testRoad");
+        getAddPropertyHelper().pressContinue();
+
+        addPropertyHelper.setTotalBedrooms("4");
+        addPropertyHelper.setMonthlyRent("500");
+
+        String text1 = "Test_Property_Title";
+        addPropertyHelper.propertytitle(text1);
+
+        getAddPropertyHelper().pressContinue();
+
+        addPropertyHelper.ContinueListingWithoutPhoto();
+        paymentsHelper.verificationPaymentPageFeatureListing("Want more from your listing? Upgrade now!");
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        closeMatchPopUp();
+        getAddPropertyHelper().viewListing();
+
+        verificationHelper.verifyTitleProperty(text1);
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        getAddPropertyHelper().RemoveListing();
+        verificationHelper.verifyNoProperty();
+        authorizationHelper.logoutFromApp();
+
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+
+    }
 
 
 

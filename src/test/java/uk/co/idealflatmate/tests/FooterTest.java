@@ -19,8 +19,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerHomeLink() {
-        //test1.verificationHowItWorks1("How Ideal Flatmate Works");
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Home");
         footerHelper.verificationFooterHome();
         helperBase.toHomePage();
@@ -29,7 +28,6 @@ public class FooterTest extends TestBase {
     @Test
     public void footerAboutUsLink() {
 
-        pageUrlVerifLiveGoStage();
         footerHelper.footerClick("About us");
         footerHelper.verificationFooter("About us");
         helperBase.toHomePage();
@@ -37,7 +35,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerContactLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Contact");
         footerHelper.verificationFooter("Contact");
         helperBase.toHomePage();
@@ -45,7 +43,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerPressLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Press");
         footerHelper.verificationFooter("Press");
         helperBase.toHomePage();
@@ -53,7 +51,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerPricingLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Pricing");
         footerHelper.verificationFooter("Pricing");
         helperBase.toHomePage();
@@ -61,7 +59,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerMediaLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Media");
         footerHelper.verificationFooter("Media");
 
@@ -69,7 +67,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerStaySafeLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Stay safe");
         footerHelper.verificationFooter("Security warning");
 
@@ -77,7 +75,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerBlogLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Blog");
         verificationHelper.FMBlogPage();
 
@@ -85,14 +83,16 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerBrowseFlatsharesLink() {
-        pageUrlVerifLiveGoStage();
+
+        System.out.println("Browse Flatshares - Click");
         footerHelper.footerClick("Browse Flatshares");
+        System.out.println("verif - North London, Brent Park");
         footerHelper.verificationBrowseFlatshares("North London", "Brent Park");
             }
 
     @Test
     public void footerAskLandlord() {
-        pageUrlVerifLiveGoStage();
+
         helperBase.toHomePage();
         footerHelper.footerClick("#AskTheLandlord");
         footerHelper.verificationAskLandlord();
@@ -101,7 +101,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerModern() {
-        pageUrlVerifLiveGoStage();
+
         helperBase.toHomePage();
         footerHelper.footerClick("Modern Living Index");
         footerHelper.verificationModern();
@@ -110,7 +110,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerBrowseHowItWorksLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("How it works");
         footerHelper.verificationHowItWorks();
         helperBase.toHomePage();
@@ -118,7 +118,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerBrowseTipsLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerClick("Tips");
         footerHelper.verificationFooter("Tips");
         helperBase.toHomePage();
@@ -126,7 +126,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerNLALink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerNLAWorks();
         footerHelper.verificationNLAWorks();
         //helperBase.toHomePage();
@@ -143,7 +143,6 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerTwitterLink() {
-        pageUrlVerifLiveGoStage();
 
         footerHelper.footerTwitter();
         footerHelper.verificationTwitter();
@@ -151,8 +150,7 @@ public class FooterTest extends TestBase {
 
    @Test
     public void footerInstagramLink() {
-        pageUrlVerifLiveGoStage();
-        //helperBase.toHomePage();
+
         footerHelper.footerInstagram();
         footerHelper.verificationInstagram();
 
@@ -160,7 +158,7 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerYoutubeLink() {
-        pageUrlVerifLiveGoStage();
+
         footerHelper.footerYoutube();
         refresh();
         footerHelper.verificationYoutube();

@@ -62,7 +62,7 @@ public class AddPropertyHelper extends HelperBase {
     public void chooseRoadFor(String road) {
 
         messageHelper.click(byXpath("//input[@id='property-route']"));
-        $(byXpath("//input[@id='property-route']")).setValue(road).pressEnter();
+        $(byXpath("//input[@id='property-route']")).setValue(road);
         sleep(2000);
     }
 
@@ -281,6 +281,11 @@ public class AddPropertyHelper extends HelperBase {
         $("#wizard-form #wizard-next").waitUntil(appear, 4000).click();
     }
 
+    public void pressBack() {
+        sleep(3000);
+        $("#wizard-back").waitUntil(appear, 4000).click();
+    }
+
     public void pressContinue1() {
 
         $(byXpath("//h1")).click();
@@ -380,5 +385,7 @@ public class AddPropertyHelper extends HelperBase {
         ContinueListingWithoutPhoto();
     }
 
-
+    public void propertytitle(String title) {
+        $("#property-title").setValue(title);
+    }
 }

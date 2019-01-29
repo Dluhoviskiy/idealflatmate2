@@ -298,7 +298,7 @@ public class SignUpTest extends TestBase {
     //Facebook authorization doen`t work on staging
 
     public void headerSignUpViaFacebook() {
-        pageUrlVerifStageGoLive();
+
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
         authorizationHelper.clickSignUpWithFacebook();
@@ -313,10 +313,11 @@ public class SignUpTest extends TestBase {
         //signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.preferredLocationButton("Zone 1");
         signUpHelper.preferredLocation("Watf","Watford");
         signUpHelper.preferredLocationButton("North London");
-        signUpHelper.preferredLocationButton("Zone 1");
         signUpHelper.clickYourInformationContinue();
+
         signUpHelper.budgetMin();
         signUpHelper.budgetMax();
         signUpHelper.verifyToMoveCheckboxDisabled();
@@ -343,7 +344,7 @@ public class SignUpTest extends TestBase {
     //Facebook authorization doen`t work on staging
 
     public void signUpViaFBlistingAgent() {
-        pageUrlVerifStageGoLive();
+
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser( "An agency");
 
@@ -385,8 +386,6 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void ListingSignUpHeader() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
 
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         addPropertyHelper.bottomAddListing();
@@ -420,8 +419,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void ListingSignUpFromHomepage() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         addPropertyHelper.pressAddListingNotLogged();
         addPropertyHelper.selectTypeUser("Live-in landlord"); //LiveInLord
 

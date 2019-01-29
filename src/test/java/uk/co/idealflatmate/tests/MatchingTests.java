@@ -12,7 +12,7 @@ public class MatchingTests extends TestBase {
 
     @Test
     public void fullMenuNewUserWithVerifPerc() {
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom1();
         signUpHelper.clickEmail();
@@ -67,7 +67,7 @@ public class MatchingTests extends TestBase {
 
     @Test
     public void startMatchingOnFMSearchPage() {
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUp();
         matchingHelper.clickMatchBanner();
@@ -83,7 +83,7 @@ public class MatchingTests extends TestBase {
 
     @Test
     public void startMatchingQuizPropertyPage() {
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUp();
         matchingHelper.clickMatchBanner();
@@ -96,7 +96,7 @@ public class MatchingTests extends TestBase {
 
     @Test
     public void startMatchingOnPropertyCard() {
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.login("TerezaHQ@gmail.com", "qqqqqq");
         authorizationHelper.goToPropertyPage();
 

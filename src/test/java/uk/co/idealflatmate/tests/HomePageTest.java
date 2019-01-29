@@ -11,7 +11,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void amountOfBlocsAndTextOfAreas() {
-        pageUrlVerifLiveGoStage();
+
         homePageHelper.amountOfFeedbackBlocks(4);
         homePageHelper.amountOfBlogBlocks(2);
         //homePageHelper.amountOfLatestFMblocks(4);
@@ -23,7 +23,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void findOutMore() {
-        pageUrlVerifLiveGoStage();
+
         HelperBase.closeAdvPopUp();
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFindRooms();
@@ -37,7 +37,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void findStartMatchingLink() {
-        pageUrlVerifLiveGoStage();
+
         matchingHelper.clickHomePageMatching();
         homePageHelper.verificationMatchingStart();
         matchingHelper.quitQuiz();
@@ -45,7 +45,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void findStartListing() {
-        pageUrlVerifLiveGoStage();
+
         homePageHelper.scrollToBlockSelect();
         homePageHelper.clickAddListingFromHow();
         verificationHelper.ListingStart();
@@ -54,7 +54,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void blogFM() {
-        pageUrlVerifLiveGoStage();
+
         homePageHelper.hoverCommunity();
         homePageHelper.clickFMBlog();
         verificationHelper.FMBlogPage();
@@ -63,7 +63,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void blogLandlord() {
-        pageUrlVerifLiveGoStage();
+
         homePageHelper.hoverCommunity();
         homePageHelper.clickLandlordBlog();
         verificationHelper.landlordBlogPage();
@@ -72,7 +72,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void pressLogo() {
-        pageUrlVerifLiveGoStage();
+
         homePageHelper.clickLogo();
         verificationHelper.isHomePage1();
     }

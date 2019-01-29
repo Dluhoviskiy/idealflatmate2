@@ -12,7 +12,7 @@ public class AreaPageTest extends TestBase {
 
     @Test
     public void firstFeaturedHomePageHeader() {
-        pageUrlVerifLiveGoStage();
+
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
         areaPageHelper.clickArea(0);
         areaPageHelper.checkAreaName(area1);
@@ -22,9 +22,9 @@ public class AreaPageTest extends TestBase {
 
     @Test
     public void firstFeaturedLinkArea() {
-        pageUrlVerifLiveGoStage();
-        String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(2).text();
-        areaPageHelper.clickArea(1);
+
+        String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
+        areaPageHelper.clickArea(0);
         areaPageHelper.clicklinkNearbyAreas();
         areaPageHelper.checklinkNearbyAreas(area1);
         areaPageHelper.checkSortDropDownRoom();
@@ -34,7 +34,7 @@ public class AreaPageTest extends TestBase {
 
     @Test
     public void firstFeaturedLinkMap() {
-        pageUrlVerifLiveGoStage();
+
         areaPageHelper.clickArea(2);
         areaPageHelper.checklinkMap();
 
@@ -42,8 +42,7 @@ public class AreaPageTest extends TestBase {
 
     @Test
     public void seeMoreRooms() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(4).text();
         areaPageHelper.clickArea(2);
         areaPageHelper.clickMoreRooms();
@@ -57,7 +56,7 @@ public class AreaPageTest extends TestBase {
 
     @Test
     public void linkFH() {
-        pageUrlVerifLiveGoStage();
+
         String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
         areaPageHelper.clickArea(0);
         areaPageHelper.checklinkFH(area1);
@@ -68,7 +67,7 @@ public class AreaPageTest extends TestBase {
     
    @Test
     public void exploreMoreArea() {
-        pageUrlVerifLiveGoStage();
+
         areaPageHelper.clickArea(1);
         areaPageHelper.checkArrowsBrowsAll();
         areaPageHelper.checkAllAreas("Liverpool");

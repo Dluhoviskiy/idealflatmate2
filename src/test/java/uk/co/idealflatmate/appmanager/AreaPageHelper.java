@@ -51,6 +51,7 @@ public class AreaPageHelper extends HelperBase {
 
     public void clicklinkNearbyAreas() {
         switchTo().window(1);
+        sleep(3000);
         $(byXpath("//a[contains(text(), 'Click to search nearby areas')]")).waitUntil(exist, 5000).click();
         sleep(3000);
 
@@ -62,7 +63,7 @@ public class AreaPageHelper extends HelperBase {
         $$(byXpath("//div[@class='u_p15-top u_p15-bottom u_p0-left-xs u_p0-right-xs quick-flex-line']/a")).shouldHaveSize(6);
         String areaNameOnPageH1 = $(byXpath("//h1[@class='h4']")).text();
         System.out.println(areaNameOnPageH1);
-        String area2 = (areaNameOnPageH1.substring(0, 36) + " " + area1);
+        String area2 = (areaNameOnPageH1.substring(0, 37) + " " + area1);
         Assert.assertEquals(areaNameOnPageH1, area2);
 
     }

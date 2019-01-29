@@ -10,8 +10,7 @@ public class SignUpMatching extends TestBase {
     @Test
 
     public void signUpMatchingWithBlankFirstName() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.verifyBlankNameMatchSign();
         matchingHelper.quitQuiz();
@@ -19,8 +18,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpMatchingWithRequiredFieldsRoom() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         matchingHelper.clickARoom();
@@ -103,8 +101,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpMatchingWithRequiredFieldsFMRoom() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         //matchingHelper.clickARoom();
@@ -167,8 +164,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpMatchingWithRequiredFieldsFMRoomSearchFM() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         //matchingHelper.clickARoom();

@@ -16,8 +16,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void classicLogInOut() {
 
-        pageUrlVerifLiveGoStage();
-
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
@@ -32,8 +30,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInOutOnPropertyPage() {
 
-        pageUrlVerifLiveGoStage();
-        clearCache();
         authorizationHelper.goToPropertyPage();
 
         authorizationHelper.clickSignInButtonInPopup();
@@ -50,8 +46,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInOutOnFMPage() {
 
-        pageUrlVerifLiveGoStage();
-        clearCache();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickSignInButtonInPopup();
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
@@ -65,8 +59,6 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void emailWrongHomePage() {
-
-        pageUrlVerifLiveGoStage();
 
         //helperBase.pageUrlHomeNew();
         authorizationHelper.clickJoinFreeButton();
@@ -82,8 +74,6 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void loginPassWronglogInHomePage() {
-
-        pageUrlVerifLiveGoStage();
 
         clearCache();
         authorizationHelper.clickJoinFreeButton();
@@ -114,8 +104,10 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void alogInWithMatchingFB() {
-        newDriverPage("http://front.idealflatmate4test.demo.devplatform2.com");
+
+        //newDriverPage("http://front.idealflatmate4test.demo.devplatform2.com");
         helperBase.closeOpen("https://www.idealflatmate.co.uk/");
+        pageUrlVerifStageGoLive();
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         matchingHelper.clickAFM();
@@ -154,8 +146,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void invalidLoginWithEmptyFields() {
 
-        pageUrlVerifLiveGoStage();
-        clearCache();
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.submitLogin();
@@ -168,8 +158,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInMessageProperty() {
 
-        pageUrlVerifLiveGoStage();
-        clearCache();
         getMessageHelper().clickPropertyCardMessageUnlogged();
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FM_Manch_2@gmail.com");
@@ -186,7 +174,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInContactProperty() {
 
-        pageUrlVerifLiveGoStage();
         getMessageHelper().clickPropertyCardFirstOnPage();
         //authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickPropertyContact();
@@ -204,7 +191,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInMessageFM() {
 
-        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickFMCardMessageUnlogged();
@@ -222,7 +208,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInContactFM() {
 
-        pageUrlVerifLiveGoStage();
         authorizationHelper.goToFMpage();
         authorizationHelper.clickCloseSignUp();
         getMessageHelper().clickFMCardFirstOnPage();
@@ -240,8 +225,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInPhoneReveal() {
 
-        pageUrlVerifLiveGoStage();
-        clearCache();
         getMessageHelper().clickPropertyCardFirstOnPage();
         getMessageHelper().clickPhoneReveal();
         authorizationHelper.clickSignInButtonInPopupPhone();

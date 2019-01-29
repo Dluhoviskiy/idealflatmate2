@@ -30,7 +30,7 @@ public class FooterHelper extends HelperBase{
     }
 
     public void verificationHowItWorks() {
-        $(byXpath("//h2")).waitUntil(visible, 8000).shouldHave(text("How Ideal Flatmate Works"));
+        $(byXpath("//h2")).waitUntil(visible, 10000).shouldHave(text("How Ideal Flatmate Works"));
     }
 
     public SelenideElement verificationHowItWorks1(String text) {
@@ -79,7 +79,7 @@ public class FooterHelper extends HelperBase{
 
     public void verificationTwitter() {
         switchTo().window(1);
-        $(byXpath("//img[@class='ProfileAvatar-image ' and @alt='ideal flatmate']")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("//img[@class='ProfileAvatar-image ' and @alt='ideal flatmate']")).waitUntil(exist, 30000).should(exist);
     }
 
     public void footerInstagram() {
@@ -88,7 +88,7 @@ public class FooterHelper extends HelperBase{
 
     public void verificationInstagram() {
         switchTo().window(1);
-        $(byXpath("(//h1)[1]")).waitUntil(exist, 6000).shouldHave(text("idealflatmate"));
+        $(byXpath("(//h1)[1]")).waitUntil(exist, 30000).shouldHave(text("idealflatmate"));
 
     }
 
@@ -98,7 +98,7 @@ public class FooterHelper extends HelperBase{
 
     public void verificationYoutube() {
         switchTo().window(1);
-        $(byXpath("//span[@id='channel-title' and contains(text(), 'ideal flatmate')]")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("//span[@id='channel-title' and contains(text(), 'ideal flatmate')]")).waitUntil(exist, 30000).should(exist);
 
     }
 
@@ -124,7 +124,7 @@ public class FooterHelper extends HelperBase{
     }
 
     public void verificationFooter(String titleItem) {
-        $(byXpath("//title[contains(text(), '" + titleItem + "')]")).waitUntil(exist, 6000).should(exist);
+        $(byXpath("//title[contains(text(), '" + titleItem + "')]")).waitUntil(exist, 10000).should(exist);
     }
 //pageobject
     /*

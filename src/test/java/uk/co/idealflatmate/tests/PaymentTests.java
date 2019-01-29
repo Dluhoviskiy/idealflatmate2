@@ -11,8 +11,8 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void AbilityToSeePhone() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
+
         authorizationHelper.login("cro.gen.Premium@gmail.com", "qqqqqq");
         verificationHelper.verificationUserNameOnHomePage("Zlatan");
         searchHelper.searchPropertyHome("#0012906");
@@ -25,8 +25,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void GoPremiumFHPaymentOnPhone() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
@@ -41,8 +40,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void GoPremiumFHPaymentOnMessage() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
@@ -57,8 +55,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void premiumFHPaymentWorldPay() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUpFMPage();
 
@@ -103,9 +100,6 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void lordInWorldPaylistingEssen() {
-
-        clearCache();
-        pageUrlVerifLiveGoStage();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -152,9 +146,6 @@ public class PaymentTests extends TestBase {
     }
     @Test
     public void lordOutWorldPaylistingPrem() {
-
-        clearCache();
-        pageUrlVerifLiveGoStage();
 
         authorizationHelper.goToFMpage();
 
@@ -214,9 +205,6 @@ public class PaymentTests extends TestBase {
     @Test
     public void lordInWorldPaidListingProf() {
 
-        clearCache();
-        pageUrlVerifLiveGoStage();
-
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
 
@@ -268,8 +256,6 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void agentProfWorldPay() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();

@@ -144,18 +144,34 @@ public class MessagesTest extends TestBase {
     public void fmWithoutSubsTolordWithoutSubsWithListFromFMpage() {
         clearCache();
         pageUrlVerifLiveGoStage();
+        System.out.println("JoinFreeButton");
         authorizationHelper.clickJoinFreeButton();
+
+        System.out.println("SignInButton");
         authorizationHelper.clickSignInButtonInForm();
+
+        System.out.println("LoginAsUserWithoutPackage");
         authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
+
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
+
+        System.out.println("searchPropertyHome");
         searchHelper.searchPropertyHome("Clapham");
+
+        System.out.println("Verif searchResultText");
         verificationHelper.searchResultText("6 rooms matched to rent in and around Clapham");
         //searchHelper.clearSearch();
+
+        System.out.println("lastCardClick");
         searchHelper.lastCardClick();//6 cards
         //messageHelper.clickCardMessageLogged();
         //messageHelper.clickPropertyCardFMnamePagelogged();
+
+        System.out.println("clickFMPageMessage");
         messageHelper.clickFMPageMessage();
+
+
         verificationHelper.noUpgradeToFasterReply();
         verificationHelper.noSendDecline();
         verificationHelper.messageGroup("No property");

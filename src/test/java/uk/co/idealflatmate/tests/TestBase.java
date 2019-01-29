@@ -52,8 +52,8 @@ public class TestBase {
     }*/
 
 
-    @BeforeClass
-    public void setupClass() {
+    @BeforeSuite
+    public void setupSiute() {
         //ChromeDriverManager.getInstance().setup();
         WebDriverManager.chromedriver().setup();
         //WebDriverManager.firefoxdriver().setup();
@@ -76,12 +76,19 @@ public class TestBase {
 
     }
 
+    @BeforeMethod
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+
+    }
 
 
 
 
 
-    @AfterClass
+
+    @AfterSuite
     public void tearDown() {
         //screenshot("screenshotFail1");
         closeWebDriver();

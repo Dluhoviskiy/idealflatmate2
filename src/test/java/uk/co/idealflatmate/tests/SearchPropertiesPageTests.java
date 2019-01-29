@@ -14,8 +14,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     @Test
     public void propertySearchByDropDown() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.selectAllPropertyInMenu();
         searchHelper.closePopupSignup();
         searchHelper.amountPropertyCards(11);
@@ -27,8 +26,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     @Test
     public void searchPagination() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.moveToPage(2, "2");
@@ -49,8 +47,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     @Test
     public void searchZone1Pagination() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+;
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.zone1();
@@ -60,8 +57,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     @Test
     public void searchEastLDNPagination() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.EastLDN1();
@@ -71,8 +67,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     @Test
     public void applyMoreFilters() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.noActiveFilters();
@@ -86,8 +81,7 @@ public class SearchPropertiesPageTests extends TestBase{
     }
     @Test
     public void applyAdvancedFiltersDefault() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.checkHighPriceSort("3");
@@ -116,8 +110,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
     @Test
     void sortListing() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToPropertyPage();
         searchHelper.closePopupSignup();
         searchHelper.checkSort("Price low to high");

@@ -12,8 +12,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void messagePropertySignUpHomePage() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         homePageHelper.scrollToBlockProperty();
 
         String photo1 = $(byXpath("(//div[@class='card-top-profile-img u_p5-right']/img)[3]")).getAttribute("src");
@@ -97,8 +96,7 @@ public class SignUpLikeOrMessage extends TestBase {
     @Test
 
     public void messageSignUpFMPage() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         homePageHelper.scrollToBlockProperty();
         String photo1 = $(byXpath("(//div[@class='card-top-profile-img u_p5-right']/img)[1]")).getAttribute("src");
 
@@ -197,8 +195,6 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void signUpLike3rdPageQuit() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
 
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUp();
@@ -224,9 +220,6 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void signUpLikeHomePage() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
-
 
         homePageHelper.scrollToBlockProperty();
         sleep(2000);
@@ -276,8 +269,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
     @Test
     public void popupPropertyPage() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToPropertyPage();
 
         signUpHelper.clickEmail();
@@ -327,8 +319,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void popupWithExistingEmail() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToFMpage();
 
         signUpHelper.clickEmail();
@@ -346,8 +337,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void popupExistingEmailPropertyPage() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickCloseSignUp();
 
@@ -373,8 +363,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void popupWithBlankRequiredFields() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.goToFMpage();
 
         signUpHelper.clickEmail();
@@ -433,8 +422,6 @@ public class SignUpLikeOrMessage extends TestBase {
     @Test
     public void popupExistingEmailPropertyPhone() {
 
-        pageUrlVerifLiveGoStage();
-        clearCache();
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickCloseSignUp();
         searchHelper.moveToPage(3, "3");

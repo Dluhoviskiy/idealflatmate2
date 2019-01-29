@@ -235,8 +235,8 @@ public class VerificationHelper extends HelperBase {
                 "Your ideal flatmate"));
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
                 "complete"));
-        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 59 is a female freelancer/self employed looking " +
-                "for a room in Watford or North London or Zone 1."));
+        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 59 is a female " +
+                "freelancer/self employed looking for a room in Zone 1 or Watford or North London."));
      }
 
     public void verifDataProfFBAgent(String percent, String text1) {
@@ -763,5 +763,17 @@ public class VerificationHelper extends HelperBase {
 
     public void promoteCard() {
         $(byXpath("//a[contains(.,'Promote')]")).shouldHave(exist);
+    }
+
+    public void addingListFlowCity(String value) {
+        $("input#property-city").shouldHave(value(value));
+    }
+
+    public void roadFor(String value) {
+        $("input#property-route").shouldHave(value(value));
+    }
+
+    public void verifyTitleProperty(String text1) {
+        $(byXpath("//h1[starts-with(@class,'h2 u_m0-top')]")).getText().contentEquals(text1);
     }
 }

@@ -44,7 +44,7 @@ public class HelperBase  {
 
     public static void closeMatchPopUp() {
 
-        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).exists()) {
+        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).isDisplayed()) {
             $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).waitUntil(visible, 2000).click();
 
         } else {}

@@ -11,8 +11,7 @@ public class SearchFMPageTests extends TestBase{
 
     @Test
     public void fmSearchBy() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.amountPropertyCards(12);
@@ -25,8 +24,7 @@ public class SearchFMPageTests extends TestBase{
 
     @Test
     public void searchPagination() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -48,9 +46,9 @@ public class SearchFMPageTests extends TestBase{
 
     @Test
     public void applyMoreFilters() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
+
         searchHelper.closePopupSignup();
 
         searchHelper.numberOfActiveFilters(1);
@@ -64,8 +62,7 @@ public class SearchFMPageTests extends TestBase{
 
     @Test
     public void applyMoreFiltersPhotoNoList() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -80,8 +77,7 @@ public class SearchFMPageTests extends TestBase{
 
     @Test
     public void applyMoreFiltersPhotoWithList() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
@@ -96,8 +92,7 @@ public class SearchFMPageTests extends TestBase{
 
     @Test
     public void applyAdvancedFiltersDefault() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         searchHelper.checkHighPriceSort("7");
@@ -124,8 +119,7 @@ public class SearchFMPageTests extends TestBase{
 
     @Test
     public void sortListingLoggedIn() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
+
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 

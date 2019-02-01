@@ -76,7 +76,7 @@ public class MessageHelper extends HelperBase {
         click(By.xpath("//li[@class='active']//a"));
         //$(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']")).click();
 
-        hoverClick("//section[@id='property-infos']//div[@id='fixed-sidebar']//a[contains(.,'Request details')]");
+        hoverClick("//section[@id='property-infos']//a[@class='btn btn-success u_ed-block u_m10-top text-18']");
 
     }
 

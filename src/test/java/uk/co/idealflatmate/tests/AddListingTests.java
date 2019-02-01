@@ -7,7 +7,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class AddListingTests extends TestBase {
 
@@ -127,48 +126,56 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoProperty();
 
-        getAddPropertyHelper().pressAddListingFromBody();
-        getAddPropertyHelper().setPostalCode("SE1");
-        getAddPropertyHelper().pressContinue();
-
-        getAddPropertyHelper().chooseRoadFor("Idealstreet");
-        getAddPropertyHelper().chooseAreaforLondon("2");
-        getAddPropertyHelper().pressContinue();
-
-        //getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456", "\n" + "Don't display on my listing");
-        getAddPropertyHelper().setPhoneNumber1("+44 20 7234 3456");
-        getAddPropertyHelper().setTotalBedrooms("4");
-        getAddPropertyHelper().setAllAmanities("Garden", "Parking", " Communal living room", " Balcony/patio ", "property-pets_accepted", "property-smokers_accepted", "property-family_friendly");
-        getAddPropertyHelper().setPropertyDescription();
-        getAddPropertyHelper().setMonthlyRent("500");
-        getAddPropertyHelper().setDeposit("1000");
-        getAddPropertyHelper().setTotalBills("400");
-        getAddPropertyHelper().setLeasePeriodFirstRoom();
-        getAddPropertyHelper().setRoomDescription("Very comfortable room");
-        getAddPropertyHelper().copySecondRoom();
-        getAddPropertyHelper().removeSecondRoom();
-        getAddPropertyHelper().copySecondRoom();
-        getAddPropertyHelper().addAnotherRoom();
-        getAddPropertyHelper().setAnotherMonthlyRent("800");
-        getAddPropertyHelper().setLeasePeriodSecondRoom();
-        getAddPropertyHelper().pressContinue();
-
-        addPropertyHelper.uploadProperty3Photos();
-        addPropertyHelper.uploadPropertyLargePhoto();
-        addPropertyHelper.uploadPropertyNotPhoto();
-
-        addPropertyHelper.finishPropertyCreatingAgency();
+        allFields();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().viewListing();
         verificationHelper.photoListingExist();
-        verificationHelper.verifyAddedPropertyWithAllFields("February");
+        verificationHelper.verifyAddedPropertyWithAllFields("February", "Room 1", "Room 2", "Room 3");
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().RemoveListing();
         verificationHelper.verifyNoProperty();
         authorizationHelper.logoutFromApp();
     }
+
+    @Test
+    public void propertyEditAllFieldsAbout() {
+
+        authorizationHelper.login("cro.gen.AgNotPaidEdit@gmail.com", "qqqqqq");
+
+        matchingHelper.closePopupMatching();
+        addPropertyHelper.closeRenewPopup();
+
+        //getAddPropertyHelper().openDropDownMenu();
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        getAddPropertyHelper().viewListing();
+
+        verificationHelper.photoListingExist();
+        verificationHelper.verifyAboutFields();
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        addPropertyHelper.clickEdit();
+        addPropertyHelper.clickAboutOptions();
+        helperBase.saveUpdateButton();
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        getAddPropertyHelper().viewListing();
+        verificationHelper.verifyAddedPropertyWithAllFieldsVeg();
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        addPropertyHelper.clickEdit();
+        addPropertyHelper.clickAboutOptions();
+        helperBase.saveUpdateButton();
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        getAddPropertyHelper().viewListing();
+        verificationHelper.verifyAboutFields();
+
+        authorizationHelper.logoutFromApp();
+    }
+
+
 
 
     @Test
@@ -224,7 +231,41 @@ public class AddListingTests extends TestBase {
 
     }
 
+    public void allFields() {
+        addPropertyHelper.pressAddListingFromBody();
+        addPropertyHelper.setPostalCode("SE1");
+        addPropertyHelper.pressContinue();
 
+        addPropertyHelper.chooseRoadFor("Idealstreet");
+        addPropertyHelper.chooseAreaforLondon("2");
+        addPropertyHelper.pressContinue();
+
+        //getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456", "\n" + "Don't display on my listing");
+        addPropertyHelper.setPhoneNumber1("+44 20 7234 3456");
+        addPropertyHelper.setTotalBedrooms("4");
+        addPropertyHelper.setAllAmanities("Garden", "Parking", " Communal living room",
+                " Balcony/patio", "property-pets_accepted", "property-smokers_accepted", "property-family_friendly",
+                "property-lgbt_friendly", "property-trans_friendly", "property-vegan_household", "property-vegetarian_household");
+        addPropertyHelper.setPropertyDescription();
+        addPropertyHelper.setMonthlyRent("500");
+        addPropertyHelper.setDeposit("1000");
+        addPropertyHelper.setTotalBills("400");
+        addPropertyHelper.setLeasePeriodFirstRoom();
+        addPropertyHelper.setRoomDescription("Very comfortable room");
+        addPropertyHelper.copySecondRoom();
+        addPropertyHelper.removeSecondRoom();
+        addPropertyHelper.copySecondRoom();
+        addPropertyHelper.addAnotherRoom();
+        addPropertyHelper.setAnotherMonthlyRent("800");
+        addPropertyHelper.setLeasePeriodSecondRoom();
+        addPropertyHelper.pressContinue();
+
+        addPropertyHelper.uploadProperty3Photos();
+        addPropertyHelper.uploadPropertyLargePhoto();
+        addPropertyHelper.uploadPropertyNotPhoto();
+
+        addPropertyHelper.finishPropertyCreatingAgency();
+    }
 
 
 }

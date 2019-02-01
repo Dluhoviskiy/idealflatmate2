@@ -19,7 +19,7 @@ public class MatchingTests extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronaldina");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnewlq16@gmail.com");
+        signUpHelper.setSignEmail("FMnewlq1t6@gmail.com");
         signUpHelper.setSignPassword("qqqqqq");
         signUpHelper.clickYourInformationContinue();
 
@@ -101,7 +101,7 @@ public class MatchingTests extends TestBase {
         authorizationHelper.goToPropertyPage();
 
         searchHelper.clearLocation();
-        searchHelper.clickSearchPropPage1("sw3", "SW3");
+        searchHelper.selectSearchPropPage("SW3");
 
 
         addPropertyHelper.clickCardWithMatch();

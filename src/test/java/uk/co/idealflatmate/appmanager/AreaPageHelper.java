@@ -60,7 +60,7 @@ public class AreaPageHelper extends HelperBase {
     public void checklinkNearbyAreas(String area1) {
         closeAdvPopUp();
         $(byXpath("//span[@class='map-toggle-button open-map-button']")).shouldHave(text("Display map"));
-        $$(byXpath("//div[@class='u_p15-top u_p15-bottom u_p0-left-xs u_p0-right-xs quick-flex-line']/a")).shouldHaveSize(6);
+        $$(byXpath("//div[@class='card-profile-text']")).shouldHaveSize(7);
         String areaNameOnPageH1 = $(byXpath("//h1[@class='h4']")).text();
         System.out.println(areaNameOnPageH1);
         String area2 = (areaNameOnPageH1.substring(0, 37) + " " + area1);
@@ -193,6 +193,6 @@ public class AreaPageHelper extends HelperBase {
         switchTo().window(2);
         closeAdvPopUp();
         $(byXpath("//div[@class='search-panel hidden-xs']//input")).shouldHave(value(City));
-        $$(byXpath("//div/a[@class='u_m0-left-xs u_m5-right u_m5-left']")).shouldHaveSize(6);
+        $$(byXpath("//a[@class='buddy-star u_ed-inline-block float-right u_m15-right u_m10-top text-26 ']")).shouldHaveSize(11);
     }
 }

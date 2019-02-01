@@ -54,7 +54,11 @@ public class VerificationHelper extends HelperBase {
 
     }
 
-    public void verifyAddedPropertyWithAllFields(String month) {//section[@id]//h1/small
+    public void verifyAddedPropertyWithAllFields(String month, final String room1, final String room2, final String room3) {//section[@id]//h1/small
+        String roomNumber1 = "//strong/span[contains(.,'" + room1 + "')]/../..";
+        String roomNumber2 = "//strong/span[contains(.,'" + room2 + "')]/../..";
+        String roomNumber3 = "//strong/span[contains(.,'" + room3 + "')]/../..";
+
         String ref = $(byXpath("//section[@id]//h1/small")).getText();
         $(byXpath("//section[@id]//h1")).getText().contentEquals("3 bedrooms for rent in Bankside, South London from "+"500/month per room\n"
                  + ref);
@@ -62,43 +66,62 @@ public class VerificationHelper extends HelperBase {
 
         //$(byXpath("//div[@class='panel-heading']")).scrollTo();
 
-        $(byXpath("//div[@class='panel-heading']")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).getText().contentEquals("500\n" +
-                "month\n" +
-                "Deposit\n" +
-                "1,000\n" +
-                "Bills pcm\n" +
-                "400\n");
 
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
-                "minimum 1 month maximum 12 months"));
-
-        $(byXpath("//div[@class='tab-pane fade active in']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
-
-        $(byXpath("//a[contains(text(), 'Room 2')]")).click();
-
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]/div")).getText().contentEquals("500\n" +
-                "month\n" +
-                "Deposit\n" +
-                "1,000\n" +
-                "Bills pcm\n" +
-                "400\n");
-
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[1]//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
-                "minimum 1 month maximum 12 months"));
+        $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available\n" +
+                "Garden\n" +
+                "Communal living room\n" +
+                "Balcony/patio\n" +
+                "Parking space\n" +
+                "Smokers accepted\n" +
+                "Pets accepted\n" +
+                "LGBT friendly\n" +
+                "Trans friendly\n" +
+                "Family friendly\n" +
+                "Vegan household\n" +
+                "Vegetarian household"));
 
 
 
-        $(byXpath("//div[@class='tab-pane fade in active']//div[@class='clearfix u_m15-top']")).shouldHave(text("Very comfortable room\n"));
 
-        $(byXpath("//a[contains(text(), 'Room 3')]")).click();
-
-        $(byXpath("(//div[@class='tab-content']//div[@class='row'])[3]")).getText().contentEquals("800\n" + "month\n" + "Available from\n" + "11th " + month + " 2025");
-       // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
-        $(byXpath("//div[@class='u_p30-bottom']")).shouldHave(text(" 3 of 2 bedrooms available  Garden  Parking space  Smokers accepted  Pets accepted  Family friendly\n" +
-                "Very good flat"));
-        //$(byXpath("//div[@class='u_p10-bottom u_b-bottom u_m30-bottom']")).shouldHave(text("Looking for pets accepted."));
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("London SE1, UK"));
+
+        $(byXpath("//a[contains(.,'Rooms')]")).click();
+
+        //$(byXpath("//strong/span[contains(.,'Room 1')]")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
+        $(byXpath(roomNumber1+"//div[@class='col-xs-12 col-md-7']")).getText().contentEquals("500\n" +
+                "month\n" +
+                "Deposit\n" +
+                "1,000\n" +
+                "Bills pcm\n" +
+                "400\n");
+        $(byXpath(roomNumber1+"//div[@class='col-xs-6 u_p0-left']/strong")).getText().contentEquals("Available from");
+
+        $(byXpath(roomNumber1+"//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
+                "minimum 1 month maximum 12 months"));
+
+        $(byXpath(roomNumber1+"//div[@class='clearfix u_m15-top']/p")).shouldHave(text("Very comfortable room\n"));
+
+        $(byXpath(roomNumber2+"/div")).click();
+
+        $(byXpath(roomNumber2+"//div[@class='col-xs-12 col-md-7']")).getText().contentEquals("500\n" +
+                "month\n" +
+                "Deposit\n" +
+                "1,000\n" +
+                "Bills pcm\n" +
+                "400\n");
+        $(byXpath(roomNumber2+"//div[@class='col-xs-6 u_p0-left']")).getText().contentEquals("Length of Stay \n" +
+                "minimum 1 month maximum 12 months");
+
+        $(byXpath(roomNumber2+"//div[@class='clearfix u_m15-top']/p")).shouldHave(text("Very comfortable room\n"));
+
+
+        $(byXpath(roomNumber3+"//div[@class='col-xs-12 col-md-7']")).getText().contentEquals("800\n" +
+                "month");
+        $(byXpath(roomNumber3+"//div[@class='col-xs-6 u_p0-left']")).shouldNotHave((text("Length of Stay\n" +
+                "minimum 1 month maximum 12 months")));
+
+        $(byXpath(roomNumber3+"//div[@class='col-xs-6 u_p0-left']")).getText().contentEquals("Available from\n" + "11th " + month + " 2025");
+        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
     }
 
     public void verificationDataProfileFMmin(String PercentCompleted) {
@@ -702,7 +725,7 @@ public class VerificationHelper extends HelperBase {
 
     public void finishViewUnfinished() {
         $(byXpath("//a[contains(., 'View listing')]")).click();
-        $(byXpath("//div[@class='col-xs-8 col-sm-8 u_p10-bottom']")).shouldHave(text(" 0 bedroom available"));
+        $(byXpath("//div[@class='col-xs-6 col-sm-4 u_p10-bottom']")).shouldHave(text(" 0 bedroom available"));
     }
 
     public void areaBlank() {
@@ -775,5 +798,25 @@ public class VerificationHelper extends HelperBase {
 
     public void verifyTitleProperty(String text1) {
         $(byXpath("//h1[starts-with(@class,'h2 u_m0-top')]")).getText().contentEquals(text1);
+    }
+
+    public void verifyAboutFields() {
+        $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available"));
+    }
+
+    public void verifyAddedPropertyWithAllFieldsVeg() {
+
+            $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available\n" +
+                    "Garden\n" +
+                    "Communal living room\n" +
+                    "Balcony/patio\n" +
+                    "Parking space\n" +
+                    "Smokers accepted\n" +
+                    "Pets accepted\n" +
+                    "LGBT friendly\n" +
+                    "Trans friendly\n" +
+                    "Family friendly\n" +
+                    "Vegan household\n"));
+
     }
 }

@@ -2,7 +2,7 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
 import org.testng.Assert;
-
+import com.codeborne.selenide.Configuration;
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.*;
@@ -108,10 +108,10 @@ public class AddPropertyHelper extends HelperBase {
         sleep(2000);
         $("#property-bedrooms_no").click();
 
-        messageHelper.click(byXpath("//*[@id=\"property-bedrooms_no\"]/option[" + amount + "]"));
+        $(byXpath("//*[@id=\"property-bedrooms_no\"]")).selectOptionByValue(amount);
     }
 
-    public void setAllAmanities(String text1, String text2, String text3, String text4, String text5, String text6, String text7) {
+    public void setAllAmanities(String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11) {
         String string = "//div/label[contains(.,'";
         String string2 = "')]";
         String string3 = "')]/..";
@@ -139,6 +139,19 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath(string4 + text7 + "']")).click();
         $("#"+text7+"").shouldBe(selected);
         sleep(1000);
+        $(byXpath(string4 + text8 + "']")).click();
+        $("#"+text7+"").shouldBe(selected);
+        sleep(1000);
+        $(byXpath(string4 + text9 + "']")).click();
+        $("#"+text7+"").shouldBe(selected);
+        sleep(1000);
+        $(byXpath(string4 + text10 + "']")).click();
+        $("#"+text7+"").shouldBe(selected);
+        sleep(1000);
+        $(byXpath(string4 + text11 + "']")).click();
+        $("#"+text7+"").shouldBe(selected);
+        sleep(1000);
+
 
     }
 
@@ -387,5 +400,30 @@ public class AddPropertyHelper extends HelperBase {
 
     public void propertytitle(String title) {
         $("#property-title").setValue(title);
+    }
+
+    public void clickEdit() {
+        $(byXpath("//div/a[contains(.,'Edit')]")).click();
+    }
+
+
+    public void clickAboutOptions() {
+
+        //Configuration.browserSize = "1024x1024";
+        $(byXpath("//label[contains(.,' Garden')]")).waitUntil(visible, 20000).click();
+        $(byXpath("//label[contains(.,' Communal living room')]")).click();
+        $(byXpath("//label[contains(.,' Balcony/patio')]")).click();
+        $(byXpath("//label[contains(.,' Parking')]")).click();
+
+        $(byXpath("//div[@class='container-max-940 u_bg-white']//a[contains(.,'ideal flatmate')]")).click();
+        sleep(3000);
+
+        $(byXpath("//label[contains(.,' Pets accepted')]")).click();
+        $(byXpath("//label[contains(.,' Smokers accepted')]")).click();
+        $(byXpath("//label[contains(.,' LGBT friendly')]")).click();
+        $(byXpath("//label[contains(.,' Family Friendly')]")).click();
+        $(byXpath("//label[contains(.,' Trans Friendly')]")).click();
+        $(byXpath("//label[contains(.,' Vegan household')]")).click();
+        //$(byXpath("//label[contains(.,' Vegetarian household')]")).click();
     }
 }

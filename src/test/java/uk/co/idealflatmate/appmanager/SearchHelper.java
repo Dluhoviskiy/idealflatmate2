@@ -277,6 +277,21 @@ public class SearchHelper extends HelperBase {
 
     }
 
+    public void selectSearchPropPage(String location) {
+        SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
+        //SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
+
+        if(clearSearchBar.exists()){
+            clearSearchBar.click();
+
+        }
+        sleep(3000);
+        searchField.click();
+        searchField.setValue(location);
+        $(byXpath("//body//div//form//div[starts-with(@class,'react')]//li[@class='react-autosuggest__suggestion']//span[contains(.,'3')]")).click();
+
+    }
+
 
 
     public void clearSearch() {

@@ -191,4 +191,8 @@ public class HelperBase  {
 
 
     }
+
+    public void saveUpdateButton() {
+        $(byXpath("//button[contains(.,'Save and update')]")).click();
+    }
 }

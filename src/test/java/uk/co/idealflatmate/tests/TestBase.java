@@ -61,6 +61,8 @@ public class TestBase {
        // EdgeDriverManager.getInstance().setup();
         //Configuration.browser = "webdriver";
         Configuration.browser = "chrome";
+
+        //Configurations.startmaximized=true;
         //Configuration.browser = "firefox";
        // Configuration.browser = "firefox";
       //  Configuration.browser = "edge";

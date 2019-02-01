@@ -89,7 +89,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     //Facebook authorization doen`t work on staging
-    public void ablogInViaFacebook() {
+    public void addLogInViaFacebook() {
 
         pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
@@ -171,7 +171,7 @@ public class AuthorizationTests extends TestBase {
 
     }
 
-    @Test
+    //@Test
     public void logInContactProperty() {
 
         getMessageHelper().clickPropertyCardFirstOnPage();

@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
+import utils.ConfigProperties;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.$;
@@ -183,7 +184,8 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("Titlelive_in1@gmail.com");
+        //String email = ConfigProperties.getTestProperty("userTitle");
+        authorizationHelper.setLoginAsUserWithoutPackage(ConfigProperties.getTestProperty("userTitle"));
         authorizationHelper.setPassword("qqqqqq");
         authorizationHelper.submitLogin();
 

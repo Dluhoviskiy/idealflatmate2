@@ -113,6 +113,7 @@ public class A_clear_DataTests extends TestBase {
         verificationHelper.verifyNoPropertyPending();
         verificationHelper.verifyNoProperty();
         authorizationHelper.logoutFromApp();
+        sleep(2000);
         clearCache();
     }
 

@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigProperties {
+public class ConfData {
 
     protected static FileInputStream fileInputStream;
     protected static Properties PROPERTIES;
@@ -26,7 +26,7 @@ public class ConfigProperties {
         }
     }
 
-    public static String getTestProperty(String key) {
+    public static String getData(String key) {
         return PROPERTIES.getProperty(key);
     }
 }

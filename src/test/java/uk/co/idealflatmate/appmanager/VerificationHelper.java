@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
 
@@ -11,7 +12,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class VerificationHelper extends HelperBase {
 
-
+SelenideElement phoneAlert = $(byXpath("//div[contains(@class,'password')]/div[@class='help-block']"));
+SelenideElement genderAlert = $(byXpath("//div[contains(@class,'gender')]/div[@class='help-block']"));
+SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div[@class='help-block']"));
 
 
     public void verificationUserNameOnHomePage(String nameUser) {
@@ -48,9 +51,8 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void verifyAddedProperty() {
-        //$(".dropdown.nav-ihm-profile-bars").click();
-        //$(byXpath("//span[@class='pull-left' and contains(text(), 'My Listings')]")).hover().shouldBe(enabled).click();
-            $(byXpath("(//h2[@class='h3 u_m0-top text-info'])[1]")).waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
+
+        $(byXpath("(//h2[@class='h3 u_m0-top text-info'])[1]")).waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
 
     }
 
@@ -124,21 +126,6 @@ public class VerificationHelper extends HelperBase {
         // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
     }
 
-    public void verificationDataProfileFMmin(String PercentCompleted) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Property Preferences\n" +
-                " Budget & Availability\n" +
-                " Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        " + PercentCompleted + "\n" +
-                "                                        "));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).getText().contentEquals("About me\n" +
-                "Ronald, 59 is a female looking for a room.\n" +
-                "Maximum budget: "+"2500/month\n" +
-                "Ready to move in: Immediately");
-    }
-
     public void verificationDataProfileFMListing(String PercentCompleted) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
                 " Personal Details\n" +
@@ -150,32 +137,6 @@ public class VerificationHelper extends HelperBase {
                 "Ronald, 59 is a female looking for a room.\n" +
                 "Maximum budget: "+"2500/month\n" +
                 "Ready to move in: Immediately");
-    }
-
-    public void verificationDataProfile() {
-        $(byXpath("//div[@class='col-sm-5 h5 heading-spaced text-normal u_m20-top u_m30-top-md text-normal-weight']")).getText().contentEquals("Preferred location: London\n" +
-                "Preferred location2: South London\n" +
-                "Preferred location3: Hackney Marshes\n" +
-                "Budget: "+"2500 pm\n" +
-                "Ready to move in: now");
-    }
-
-    public void verificationDataTenant(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Property Preferences\n" +
-                " Budget & Availability\n" +
-                " Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        " + percent + "\n" +
-                "                                        "));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).getText().contentEquals("About me\n" +
-                "Tell us about yourself\n" +
-                "Maximum budget: "+"1250/month\n" +
-                "Ready to move in: 08-08-2019\n" +
-                "Looking for a room in\n" +
-                "South London\n" +
-                "Hackney Marshes");
     }
 
     public void verificationDataTenant1(String percent) {
@@ -258,7 +219,7 @@ public class VerificationHelper extends HelperBase {
                 "Your ideal flatmate"));
         $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
                 "complete"));
-        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 59 is a female " +
+        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 60 is a female " +
                 "freelancer/self employed looking for a room in Zone 1 or Watford or North London."));
      }
 
@@ -271,32 +232,7 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(text1));
     }
 
-    public void verificationDataProfileFM(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
-                "Personal Details\n" +
-                "Property Preferences\n" +
-                "Budget & Availability\n" +
-                "Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        " + percent + "\n" +
-                "                                        "));
-        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text("Ronaldina, 59 is a female looking " +
-                "for a room in Watford or North London or Zone 1."));
-        //String locations2 = $(byXpath("//ul[@class='geo-list u_m0 u_p0']")).getText();
-        //Assert.assertEquals(locations2, location1);
-        $(byXpath("//ul[@class='geo-list u_m0 u_p0']")).shouldHave(text("Watford\n" +
-                "North London\n" +
-                "Zone 1"));
-        $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[2]")).getText().contentEquals("Maximum budget: "+"1250/month");
-        $(byXpath("(//h4[@class='u_m0-top u_m20-bottom text-16'])[3]")).shouldHave(text("Ready to move in: Immediately"));
-
-        /*$(byXpath("(//h4/../div[@class='text-body-copy'])[2]")).shouldHave(text("Watford\n" +
-                " North London\n" +
-                " Zone 1"));*/
-
-    }
-
-    public void verificationDataProfileMatching(String percent) {
+     public void verificationDataProfileMatching(String percent) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
                 "Personal Details\n" +
                 "Property Preferences\n" +
@@ -319,8 +255,20 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
         $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
         sleep(2000);
-        if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))){
+        if ($(byXpath("//section//div[@class='label label-default listing-panel-label u_p5']")).has((text("Free listing")))){
             $(byXpath("//button[starts-with(@class,'btn btn-primary-outline')]")).waitUntil(appear, 10000).click();
+            $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 5000).selectRadio("0");
+            $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
+            sleep(4000);
+        }
+    }
+
+    public void verifyNoUnfinishedProperty() {
+        refresh();
+        $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
+        sleep(2000);
+        if ($(byXpath("//section//div[@class='col-sm-7 col-lg-8']/div")).has((text("Complete your listing now!")))){
+            $(byXpath("//button[starts-with(@class,'btn btn-default ')]")).waitUntil(appear, 10000).click();
             $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 5000).selectRadio("0");
             $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
             sleep(4000);
@@ -354,11 +302,7 @@ public class VerificationHelper extends HelperBase {
 
     //span[contains(text(), 'This email address has already been taken.')]
     public void emailAlreadyExistedAlert() {
-        $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).shouldHave(text("This email address already has an Ideal Flatmate account"));
-    }
-
-    public void emailAlreadyExistedAlertMessage() {
-        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-email required has-error']/div[@class='help-block']")).shouldHave(text("This email address already has an Ideal Flatmate account"));
+        emailExistAlert.shouldHave(text("This email address already has an Ideal Flatmate account"));
     }
 
     public void passwWrongAlertHome() {
@@ -367,81 +311,53 @@ public class VerificationHelper extends HelperBase {
     }
 
     public void nameFirstBlankAlert() {
-        $(byXpath("//div[@class='form-group required u_m15-bottom field-yourinfosignupform-username required has-error']/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[contains(@class,'username')]/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
     }
 
     public void nameFirstBlankAlertMessage() {
-        $(byXpath("//div[@class='form-group required u_m15-bottom field-yourinfoadditionalsignupform-username required has-error']/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[contains(@class,'username')]/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
     }
     public void nameFirstBlankAlertPhone() {
-        $(byXpath("//div[@class='form-group required u_m15-bottom field-yourinfofullsignupform-username required has-error']/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[contains(@class,'username')]/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
     }
 
     public void emailBlankAlert() {
-        $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
+        emailExistAlert.waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
     }
-
-    public void emailBlankAlertMessage() {
-        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
-    }
-
-    public void emailBlankAlertPhone() {
-        $(byXpath("//div[@class='form-group field-yourinfofullsignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
-    }
-    public void emailBlankAlertMessageLike() {
-        $(byXpath("//div[@class='form-group field-yourinfosignupform-email required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
-    }
-
-
 
     public void genderBlankAlert() {
-        $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
-    }
-
-    public void genderBlankAlertMessage() {
-        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-gender required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
-    }
-
-    public void genderBlankAlertPhone() {
-        $(byXpath("//div[@class='form-group field-yourinfofullsignupform-gender required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
+        genderAlert.waitUntil(exist, 4000).shouldHave(text("Gender cannot be blank."));
     }
 
     public void passwordBlankAlert() {
-        $(byXpath("//div[@class='form-group field-yourinfosignupform-password required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
-
-    }
-
-    public void passwordBlankAlertMessage() {
-        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-password required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
-
-    }
-
-    public void passwordBlankAlertPhone () {
-        $(byXpath("//div[@class='form-group field-yourinfofullsignupform-password required has-error']/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
+        phoneAlert.waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
 
     }
 
     public void dateMonthYearPhoneOccupationBlankError() {
-        $(byXpath("//div[select[@id='moreinfosignupform-day']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Day cannot be blank."));
-        $(byXpath("//div[select[@id='moreinfosignupform-month']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Month cannot be blank."));
-        $(byXpath("//div[select[@id='moreinfosignupform-year']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Year cannot be blank."));
-        $(byXpath("//div[div/input[@id='moreinfosignupform-phone']]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+        dayMonthYearAlert();
+        $(byXpath("//div[contains(@class,'phone')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
         $(byXpath("//div[select[@id='moreinfosignupform-occupation_id']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Occupation Id cannot be blank."));
     }
 
     public void dateMonthYearPhoneOccupationBlankErrorMessage() {
-        $(byXpath("//div[select[@id='yourinfoadditionalsignupform-day']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Day cannot be blank."));
-        $(byXpath("//div[select[@id='yourinfoadditionalsignupform-month']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Month cannot be blank."));
-        $(byXpath("//div[select[@id='yourinfoadditionalsignupform-year']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Year cannot be blank."));
+        dayMonthYearAlert();
         //$(byXpath("//div[div/input[@id='moreinfosignupform-phone']]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
         //$(byXpath("//div[select[@id='moreinfosignupform-occupation_id']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Occupation Id cannot be blank."));
     }
 
+
+
     public void dateMonthYearPhoneOccupationBlankErrorPhone() {
-        $(byXpath("//div[select[@id='yourinfofullsignupform-day']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Day cannot be blank."));
-        $(byXpath("//div[select[@id='yourinfofullsignupform-month']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Month cannot be blank."));
-        $(byXpath("//div[select[@id='yourinfofullsignupform-year']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Year cannot be blank."));
-        $(byXpath("//div[input[@id='yourinfofullsignupform-phone']]/../div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+        dayMonthYearAlert();
+        $(byXpath("//div[contains(@class,'phone')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+    }
+
+
+    public void dayMonthYearAlert() {
+        $(byXpath("//div[contains(@class,'day')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Day cannot be blank."));
+        $(byXpath("//div[contains(@class,'month')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Month cannot be blank."));
+        $(byXpath("//div[contains(@class,'year')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Year cannot be blank."));
     }
 
     public void checkLocationBlank() {
@@ -455,57 +371,6 @@ public class VerificationHelper extends HelperBase {
     public void ageConfirmCheckMatching() {
        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[1]")).waitUntil(appears, 4000).click();
 
-    }
-    public void ageConfirmCheckClassicSignUpIf() {
-        if (!$(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).is(selected)) {
-              $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
-        }
-        if (!$(byId("signup-need-is_subscribed")).is(selected)) {
-            $(byId("signup-need-is_subscribed")).waitUntil(appears, 4000).click();
-        }
-    }
-
-    public void ageConfirmCheckClassicSignUp() {
-        $(byXpath("(//input[@name='SignupForm[is_age_confirm]'])[2]")).waitUntil(appears, 4000).click();
-    }
-    public void ageConfirmCheckClassicSignUpListing() {
-        $(byCssSelector("#signupnewform-is_age_confirm")).waitUntil(appears, 4000).click();
-    }
-    public void is_subscribedClassicSignUpListing() {
-        $(byCssSelector("#signupnewform-is_subscribed")).waitUntil(appears, 4000).click();
-    }
-
-
-
-    //span[contains(text(), 'This email address has already been taken.')]
-    public void emailAlreadyExistedAlertMatching() {
-        $(byXpath("//div[@class='form-group floating-label-group  required has-error hasvalue']")).waitUntil(exist, 4000).shouldHave(text("This email address has already been taken."));
-    }
-
-    public void NameFirstBlankAlertMatching() {
-        $(byXpath("(//label[contains(text(), 'First Name')])[1]/../p")).waitUntil(exist, 4000).shouldHave(text("Firstname cannot be blank."));
-    }
-
-    public void emailBlankAlertMatching() {
-        sleep(2000);
-        $(byXpath("(//label[contains(text(), 'Email address')])[1]/../p")).waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
-    }
-
-    public void NameLastBlankAlertMatching() {
-        $(byXpath("(//label[contains(text(), 'Last Name')])[1]/../p")).waitUntil(exist, 4000).shouldHave(text("Lastname cannot be blank."));
-    }
-
-    public void passwordBlankAlertMatching() {
-        $(byXpath("(//label[contains(text(), 'Password')])[1]/../p[1]")).waitUntil(exist, 4000).shouldHave(text("Password cannot be blank."));
-
-    }
-
-    public void checkAgeBlankAlert() {
-        $(byXpath("//div[@class='required checkbox has-error']")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
-    }
-
-    public void checkAgeBlankAlertMatching() {
-        $(byXpath("(//div[@class='required checkbox has-error'])[1]")).waitUntil(exist, 4000).shouldHave(text("Please confirm your age to continue"));
     }
 
     public void upgradeToFasterReply() {
@@ -544,46 +409,10 @@ public class VerificationHelper extends HelperBase {
 
     }
 
-    public void checkPhoneAlert() {
-        $(byXpath("(//div[input[@id='signup-need-phone']]/p)[1]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
-    }
-
     public void checkPhoneAlertMessage(String text) {
-        $(byXpath("//div[@class='form-group required u_m30-bottom field-messagewritesignupform-phone " +
-                "has-error']//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
+        $(byXpath("//div[contains(@class,'phone has-error')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
     }
 
-    public void verificationEmailErrorListing() {
-        $(byXpath("//label[@for='signupnewform-email']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Email cannot be blank."));
-    }
-
-    public void verificationNameFErrorListing() {
-        $(byXpath("//label[@for='signupnewform-firstname']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("First Name cannot be blank."));
-    }
-
-    public void verificationNameLErrorListing() {
-        $(byXpath("//label[@for='signupnewform-lastname']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Last Name cannot be blank."));
-    }
-
-    public void verificationPasswordErrorListing() {
-        $(byXpath("//label[@for='signupnewform-password']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
-    }
-
-    public void verificationPasswordConfirmErrorListing() {
-        $(byXpath("//label[@for='signupnewform-password_confirm']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Confirm Password cannot be blank."));
-    }
-    public void verificationPhoneConfirmErrorListing() {
-        $(byXpath("//label[@for='signupnewform-phone']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Phone cannot be blank."));
-    }
-
-    public void verificationCheckAgeError() {
-        $(byXpath("//label[@for='signupnewform-is_age_confirm']/following-sibling::p")).waitUntil(visible, 4000).shouldHave(text("Please confirm your age to continue"));
-    }
-
-    public void checkPhoneAlertMatching() {
-        $(byXpath("(//div[input[@id='signup-survey-phone']]/p)[1]")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
-
-    }
 
     public void closeMatchingPopup() {
         if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).is(exist)) {
@@ -688,11 +517,6 @@ public class VerificationHelper extends HelperBase {
         Assert.assertEquals(page, currentPage);
     }
 
-    public void verifyProfComplMenu(String profilePercent) {
-        $(byXpath("(//a[@class='clearfix']/span)[2]")).shouldHave(text(profilePercent));
-
-    }
-
     public void savedProperties(String referNumber) {
         String currentPage = $(byXpath("//div[@class='u_p0-left text-13']")).getText();
         Assert.assertEquals(referNumber, currentPage);
@@ -701,8 +525,6 @@ public class VerificationHelper extends HelperBase {
 
     public void cardIsUnliked() {
         $(byXpath("(//div[@class='container'])[1]")).shouldNotHave(cssClass("div.u_p0-left.text-13"));
-
-
 
     }
 
@@ -804,7 +626,7 @@ public class VerificationHelper extends HelperBase {
         $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available"));
     }
 
-    public void verifyAddedPropertyWithAllFieldsVeg() {
+    public void verifyAddedPropertyWithAllFieldsCouple() {
 
             $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available\n" +
                     "Garden\n" +
@@ -812,11 +634,21 @@ public class VerificationHelper extends HelperBase {
                     "Balcony/patio\n" +
                     "Parking space\n" +
                     "Smokers accepted\n" +
+                    "Suitable for couples\n" +
                     "Pets accepted\n" +
                     "LGBT friendly\n" +
                     "Trans friendly\n" +
-                    "Family friendly\n" +
-                    "Vegan household\n"));
+                    "Family friendly"));
 
     }
+
+    public void signUpPopupName(String text) {
+        $(byXpath("//h1")).shouldHave(text(text));
+
+    }
+    public void noConverInbox(String text) {
+        $(byXpath("//h1")).shouldHave(text(text));
+
+    }
+
 }

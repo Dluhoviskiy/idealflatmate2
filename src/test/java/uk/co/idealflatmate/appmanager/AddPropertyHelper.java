@@ -15,7 +15,7 @@ public class AddPropertyHelper extends HelperBase {
 
 
     public final MessageHelper messageHelper = new MessageHelper();
-    private String string;
+    private String room = "//div[@class='field-room-3-availability']/div";
 
     public void openDropDownMenu() {
         $(byXpath("(//li[@class='dropdown nav-ihm-profile-bars'])[1]")).waitUntil(visible, 5000).click();
@@ -45,9 +45,6 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[contains(.,'Add a Listing')]")).click();
 
     }
-
-
-
 
     public void setPostalCode(String postCode) {
         $(".form-control.u_ed-block").setValue(postCode).pressEnter();
@@ -214,9 +211,9 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setLeasePeriodSecondRoom() {
-        $(byXpath("//div[@class='field-room-3-availability']/div[1]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
-        $(byXpath("//div[@class='field-room-3-availability']/div/label")).waitUntil(appear, 4000).click();
-        $(byXpath("//div[@class='field-room-3-availability']/div[1]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox"));
+        $(byXpath(""+room+"[1]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
+        $(byXpath(""+room+"/label")).waitUntil(appear, 4000).click();
+        $(byXpath(""+room+"[1]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox"));
         $(byXpath("//input[@id='room-3-available_from']")).waitUntil(appear, 4000).click();
         $(".ui-icon.ui-icon-circle-triangle-e").waitUntil(appear, 4000).click();
         $(".ui-datepicker-year").waitUntil(appear, 4000).click();
@@ -258,7 +255,6 @@ public class AddPropertyHelper extends HelperBase {
     }
     public void finishPropertyCreatingAgency() {
         $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
-        //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
         $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
         $(byXpath("//p[@class='u_m20-top list-property-title']")).shouldHave(text("In order to list your property you need to"));
     }
@@ -273,9 +269,12 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void RemoveListing() {
-        $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).waitUntil(appear, 4000).click();
-        $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 8000).selectRadio("0");
-        $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//button[contains(@class, \"listing-panel-delete\")]")).waitUntil(appear, 10000).click();
+        sleep(2000);
+        $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 10000).selectRadio("0");
+        sleep(2000);
+        $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).waitUntil(Condition.appears, 10000).click();
+        sleep(2000);
     }
     private void RemoveUnfinishedListing() {
         $(byXpath("//button[starts-with(@class,'btn btn-primary-o')]")).waitUntil(appear, 4000).click();
@@ -420,10 +419,12 @@ public class AddPropertyHelper extends HelperBase {
 
         $(byXpath("//label[contains(.,' Pets accepted')]")).click();
         $(byXpath("//label[contains(.,' Smokers accepted')]")).click();
+        $(byXpath("//input[@id='property-suitable_for_couples']")).click();
+
         $(byXpath("//label[contains(.,' LGBT friendly')]")).click();
         $(byXpath("//label[contains(.,' Family Friendly')]")).click();
         $(byXpath("//label[contains(.,' Trans Friendly')]")).click();
-        $(byXpath("//label[contains(.,' Vegan household')]")).click();
-        //$(byXpath("//label[contains(.,' Vegetarian household')]")).click();
+        //$(byXpath("//input[@id='property-vegan_household']")).click();
+        //$(byXpath("//input[@id='property-vegetarian_household']")).click();
     }
 }

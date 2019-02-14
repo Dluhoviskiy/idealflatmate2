@@ -2,9 +2,7 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
 
-import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeListRenewPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class SearchFMPageTests extends TestBase{
 
@@ -123,7 +121,7 @@ public class SearchFMPageTests extends TestBase{
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
 
-        authorizationHelper.login("FMMatchingSort@gmail.com","qqqqqq");
+        authorizationHelper.login("passwUniv", "MatchingSort");
         closeListRenewPopUp();
 
         searchHelper.checkSort("Price high to low");

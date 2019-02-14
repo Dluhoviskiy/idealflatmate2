@@ -158,6 +158,19 @@ public class MessageHelper extends HelperBase {
         }
     }
 
+    public void photoOfOwnerInMesBuddy_up(String photo1) {
+        if (photo1.endsWith("no-image-initial.jpg")) {
+            String photo2 = photo1.substring(0, 64);
+            String messagePhoto = $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']//a/ img")).getAttribute("src").substring(0, 64);
+            Assert.assertEquals(photo2, messagePhoto);
+        } else {
+            String photo2 = photo1.substring(0, 73);
+            String messagePhoto = $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']//a/ img")).getAttribute("src").substring(0, 73);
+            Assert.assertEquals(photo2, messagePhoto);
+
+        }
+    }
+
         public void nameOfOwnerInMessage (String name1){
             String name2 = (name1.split(","))[0].replaceAll("/,",  "");
 
@@ -181,7 +194,13 @@ public class MessageHelper extends HelperBase {
     }
 
     public void propertyPostcodeVerifying(String postCode) {
-        String messageInbox = $(byXpath("//optgroup/option[1]")).getValue();
+        String messageInbox = $(byXpath("//section//div[h2[contains(.,'Location')]]//p")).text();
+        messageInbox.endsWith(postCode);
+    }
+
+    public void propertyPostcodeVerifMes(String postCode) {
+        String messageInbox = $(byXpath("//select[@id='property-select']//optgroup/option")).text();
+        //Assert.assertEquals(messageInbox, postCode);
         messageInbox.endsWith(postCode);
     }
 
@@ -196,5 +215,9 @@ public class MessageHelper extends HelperBase {
         sleep(5000);
         $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(text(text)).click();
         sleep(6000);
+    }
+
+    public void closeIntrodGroupsPopup() {
+        $(byXpath("//div[@id='introducingBuddyUpGroupModal']//div[@class='btn btn-sm close']")).click();
     }
 }

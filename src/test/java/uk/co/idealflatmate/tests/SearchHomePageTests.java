@@ -20,13 +20,13 @@ public class SearchHomePageTests extends TestBase {
         clearCache();
         searchHelper.searchPropertyByEnter("Clapham");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchOnFMPage("6 rooms matched to rent in and around Clapham");
+        searchHelper.verificationSearchOnFMPage("7 rooms matched to rent in and around Clapham");
         helperBase.toHomePage();
     }
     @Test
     public void searchHomeLocationFromList() {
         clearCache();
-        searchHelper.searchPropertyBySelectfromList("Clapham");
+        searchHelper.searchPropertyBySelectfromList("Clapham", "Clapham Junction");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchProperty("1 room matched to rent in and around Clapham Junction");
         helperBase.toHomePage();

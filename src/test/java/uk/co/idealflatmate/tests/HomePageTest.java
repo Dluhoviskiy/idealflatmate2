@@ -11,7 +11,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void amountOfBlocsAndTextOfAreas() {
-
+        areaPageHelper.areaScroll();
         homePageHelper.amountOfFeedbackBlocks(4);
         homePageHelper.amountOfBlogBlocks(2);
         //homePageHelper.amountOfLatestFMblocks(4);

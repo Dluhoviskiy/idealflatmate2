@@ -14,47 +14,30 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void readMessageByLandlWithoutSubsn() {
-        pageUrlVerifLiveGoStage();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
-        closeListRenewPopUp();
-        closeMatchPopUp();
+
+        authorizationHelper.loginMessage("Live_in_Mes", "passwUniv");
         getMessageHelper().chooseMessageTab("Test Message to Landlord without subscription");
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
     @Test
     public void landlordWithoutSubsToFM() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Landlord101@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
-        closeListRenewPopUp();
-        closeMatchPopUp();
+
+        authorizationHelper.loginMessage("Live_in_Mes", "passwUniv");
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFM();
         getMessageHelper().clickUpgradeToMessage();
         verificationHelper.paymentPage("Want more from your listing? Upgrade now!");
         authorizationHelper.logoutFromApp();
-        sleep(5000);
+
     }
 
+
+
     @Test
-    public void landlWithSubsToFM() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.AgencyPaid@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
-        closeListRenewPopUp();
+    public void lordWithSubsToFM() {
+
+        authorizationHelper.loginMessage("AgencyPaid", "passwUniv");
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFM();
         getMessageHelper().clickFMPageMessage();
@@ -64,13 +47,8 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void answMesFmWithoutSubsToFM() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHMatching@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+
+        authorizationHelper.loginMessage("FMwithMatch", "passwUniv");
         messageHelper.chooseMessageTab("FM can answer to FM");
         verificationHelper.noSendDecline();
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
@@ -81,15 +59,8 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void answMesLandlToPremFHWithoutSubs() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("newLiveOut1@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
-        closeListRenewPopUp();
-        closeMatchPopUp();
+
+        authorizationHelper.loginMessage("Liv_out_paid", "passwUniv");
         messageHelper.chooseMessageTab("Landlord Answer to Prem FM");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
         messageHelper.sendDecline("Unfortunately this listing is no longer available. Good luck with your search!");//Lord to FH
@@ -100,13 +71,8 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void premFmToLandlWithoutSubsWithListFromSearch() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.Premium@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+
+        authorizationHelper.loginMessage("Prem_FH_paid", "passwUniv");
         searchHelper.searchPropertyHome("PO30");
         messageHelper.clickCardMessageLogged();
         //messageHelper.clickPropertyPageMessage();
@@ -116,18 +82,17 @@ public class MessagesTest extends TestBase {
         verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
+
     @Test
-    public void FmWithoutSubsToLandlordWithoutSubsWithListFromList() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+    public void fmWithoutSubsToLandlordWithoutSubsWithListFromList() {
+
+        authorizationHelper.loginMessage("FMNotPaid", "passwUniv");
+
         authorizationHelper.goToPropertyPage();
+
         searchHelper.priceFilterActive();
         searchHelper.clearFilter();
+        searchHelper.clearSearch();
         searchHelper.clickSearchPropPage("PO30");
         messageHelper.clickCardImgProperty();
         messageHelper.clickPropertyPageMessage();
@@ -142,19 +107,9 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void fmWithoutSubsTolordWithoutSubsWithListFromFMpage() {
-        clearCache();
-        pageUrlVerifLiveGoStage();
-        System.out.println("JoinFreeButton");
-        authorizationHelper.clickJoinFreeButton();
 
-        System.out.println("SignInButton");
-        authorizationHelper.clickSignInButtonInForm();
-
-        System.out.println("LoginAsUserWithoutPackage");
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FH@gmail.com");
-
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+        //System.out.println("JoinFreeButton");
+        authorizationHelper.loginMessage("FMNotPaid", "passwUniv");
 
         System.out.println("searchPropertyHome");
         searchHelper.searchPropertyHome("Clapham");

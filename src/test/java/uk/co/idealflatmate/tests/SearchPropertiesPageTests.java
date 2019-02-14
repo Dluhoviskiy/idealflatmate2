@@ -72,7 +72,7 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.closePopupSignup();
         searchHelper.noActiveFilters();
 
-        searchHelper.clickMoreFilterVerify("Garden", 12, "1 month", "1 week ago");
+        searchHelper.clickMoreFilterVerify("Garden", 13, "1 month", "1 week ago");
 
         searchHelper.numberOfActiveFilters(1);
         searchHelper.verifyClearMoreFilter("Garden");

@@ -1,7 +1,7 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
-import utils.ConfigProperties;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.$;
@@ -14,7 +14,7 @@ public class AddListingTests extends TestBase {
     @Test
     public void loginStartListing() {
 
-        authorizationHelper.login("cro.gen.FHListingNotPaid@gmail.com", "qqqqqq");
+        authorizationHelper.login("passwUniv","userNotpaid");
 
         verificationHelper.closeMatchingPopup();
 
@@ -49,8 +49,8 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.clickJoinFreeButton();
         authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("cro.gen.FHListingPaid@gmail.com");
-        authorizationHelper.setPassword("qqqqqq");
+        authorizationHelper.setLoginAsUserWithoutPackage("userNotpaid");
+        authorizationHelper.setPassword("passwUniv");
         authorizationHelper.submitLogin();
 
         verificationHelper.closeMatchingPopup();
@@ -90,7 +90,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("An agency");
 
-        signUpHelper.agentSignListing("Ronald", "agentTestuyrw11@gmail.com", "qqqqqq",
+        signUpHelper.agentSignListing("Ronald", "agent", "passwUniv",
                                       "66666666", "Tell us about yourself");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -118,7 +118,7 @@ public class AddListingTests extends TestBase {
     @Test
     public void propertyAddWithAllFields() {
 
-        authorizationHelper.login("cro.gen.AgencyNotPaid@gmail.com", "qqqqqq");
+        authorizationHelper.login("passwUniv", "agentNotPaid");
 
         matchingHelper.closePopupMatching();
         addPropertyHelper.closeRenewPopup();
@@ -143,7 +143,7 @@ public class AddListingTests extends TestBase {
     @Test
     public void propertyEditAllFieldsAbout() {
 
-        authorizationHelper.login("cro.gen.AgNotPaidEdit@gmail.com", "qqqqqq");
+        authorizationHelper.login("passwUniv", "agentEdit");
 
         matchingHelper.closePopupMatching();
         addPropertyHelper.closeRenewPopup();
@@ -162,7 +162,7 @@ public class AddListingTests extends TestBase {
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().viewListing();
-        verificationHelper.verifyAddedPropertyWithAllFieldsVeg();
+        verificationHelper.verifyAddedPropertyWithAllFieldsCouple();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         addPropertyHelper.clickEdit();
@@ -182,12 +182,7 @@ public class AddListingTests extends TestBase {
     @Test
     public void titleListing() {
 
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        //String email = ConfigProperties.getTestProperty("userTitle");
-        authorizationHelper.setLoginAsUserWithoutPackage(ConfigProperties.getTestProperty("userTitle"));
-        authorizationHelper.setPassword("qqqqqq");
-        authorizationHelper.submitLogin();
+        authorizationHelper.login("passwUniv", "userTitle");
 
         verificationHelper.verificationUserNameOnHomePage("Title");
         verificationHelper.closeMatchingPopup();

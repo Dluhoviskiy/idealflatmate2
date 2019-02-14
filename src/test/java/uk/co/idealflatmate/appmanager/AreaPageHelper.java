@@ -12,6 +12,7 @@ public class AreaPageHelper extends HelperBase {
     static SelenideElement container = $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow u_ep-relative']"));
 
     public void clickArea(int number_of_area) {
+
         $$("#hp-areas div.card-btr-amenities.text-white").get(number_of_area).click();
     }
 
@@ -190,9 +191,18 @@ public class AreaPageHelper extends HelperBase {
         //$$(byXpath("//div[@class='page-heading u_nob']//button[@class='area-card--button text-bold']")).shouldHaveSize(6);
         $(byXpath("//div[@class='area-region u_m50-bottom']//button[@class='area-card--button text-bold']")).click();
         $(byXpath("//a[contains(.,'"+City+"')]")).click();
-        switchTo().window(2);
+        //switchTo().window(2);
+
         closeAdvPopUp();
+
         $(byXpath("//div[@class='search-panel hidden-xs']//input")).shouldHave(value(City));
         $$(byXpath("//a[@class='buddy-star u_ed-inline-block float-right u_m15-right u_m10-top text-26 ']")).shouldHaveSize(11);
+    }
+
+    public void areaScroll() {
+
+        $(byXpath("//h2[contains(.,'Explore areas across London')]")).click();
+        $(byXpath("//section[@id='press-logos']")).click();
+        sleep(2000);
     }
 }

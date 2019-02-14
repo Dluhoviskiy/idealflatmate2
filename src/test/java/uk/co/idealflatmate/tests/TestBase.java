@@ -6,6 +6,8 @@ import org.testng.annotations.*;
 import uk.co.idealflatmate.appmanager.*;
 
 
+
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
@@ -28,6 +30,7 @@ public class TestBase {
     public final HelperBase helperBase = new HelperBase();
     public final SignUpHelper signUpHelper = new SignUpHelper();
     public final SearchHelperFM searchHelperFM = new SearchHelperFM();
+    public final BuddyUpHelper buddyUpHelper = new BuddyUpHelper();
 
 
     /*@BeforeGroups

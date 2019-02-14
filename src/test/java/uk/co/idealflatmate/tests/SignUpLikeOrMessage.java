@@ -1,46 +1,65 @@
 package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class SignUpLikeOrMessage extends TestBase {
 
+
     @Test
-    public void messagePropertySignUpHomePage() {
+    public void mesPropSignUpHomeStart() {
 
         homePageHelper.scrollToBlockProperty();
 
-        String photo1 = $(byXpath("(//div[@class='card-top-profile-img u_p5-right']/img)[3]")).getAttribute("src");
-        String name1 = $(byXpath("(//span[@class='card-top-username u_ed-block'])[3]")).text();
+        signUpHelper.click1PropertyCardMessage();
+        signUpHelper.clickEmail();
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.quit();
+        verificationHelper.isHomePage();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+
+
+        @Test
+    public void mesPropSignUpNotBuddy_Up() {
+
+        searchHelper.searchPropertyBySelectfromList("Leeds", "Leeds");
+        searchHelper.closePopupSignup();
+        searchHelper.verificationSearchPropertyMes("New York Street (stop K11), Leeds LS2 7DT, UK");
+
+        String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
+        String name1 = $(byXpath("//span[@class='card-top-username']")).text();
         String title1 = $(byXpath("//head/title")).text();
         sleep(2000);
-        String postCode = $(byXpath("(//div[@class='owl-item active']//div[@class='card-infos u_ep-relative'])[3]" +
-                "//div[@class='card-infos-left']/div")).text();
+        String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropertyCardMessage();
+        signUpHelper.click1PropCardMes();
+        signUpHelper.nameOfOwnerOnPopup(name1);
         signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
-        verificationHelper.emailBlankAlertMessage();
+        verificationHelper.emailBlankAlert();
         verificationHelper.nameFirstBlankAlertMessage();
-        verificationHelper.genderBlankAlertMessage();
-        verificationHelper.passwordBlankAlertMessage();
+        verificationHelper.genderBlankAlert();
+        verificationHelper.passwordBlankAlert();
+        //verificationHelper.passwordBlankAlertMessage();
         verificationHelper.dateMonthYearPhoneOccupationBlankErrorMessage();
 
 
         signUpHelper.setSignUpNameFMessage("Ronald");
         signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
-        signUpHelper.setSignEmailMessage("FMnew777@gmail.com");
-        signUpHelper.genderFemaleSelectMessageError();
-        signUpHelper.setSignPasswordMessage("qqqqqq");
+        signUpHelper.setSignEmailMessage("existingEmail");
+        signUpHelper.genderFemSelectAfterMesError();
+        signUpHelper.setSignPasswordMessage("passwUniv");
         signUpHelper.clickYourInformationContinue();
-        verificationHelper.emailAlreadyExistedAlertMessage();
+        verificationHelper.emailAlreadyExistedAlert();
 
         signUpHelper.clearEmailMessage();
         signUpHelper.clearFirstnameMessage();
@@ -50,8 +69,8 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.setSignUpNameFMessage("Ronald");
         //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.genderFemaleSelectMessage();
-        signUpHelper.setSignEmailMessage("FM51r2wr1@gmail.com");
-        signUpHelper.setSignPasswordMessage("qqqqqq");
+        signUpHelper.setSignEmailMessage("mes1Email");
+        signUpHelper.setSignPasswordMessage("passwUniv");
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.photoOfOwner(photo1);
@@ -74,8 +93,8 @@ public class SignUpLikeOrMessage extends TestBase {
         messageHelper.nameOfOwnerInMessage(name1);
 
         messageHelper.clickMessage1Inbox();
-        //messageHelper.messageVerifying(message1);
-        messageHelper.propertyPostcodeVerifying(postCode);
+        messageHelper.messageVerifying(message1);
+        messageHelper.propertyPostcodeVerifMes(postCode);
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseProfileFromDropDownMenu();
@@ -90,106 +109,6 @@ public class SignUpLikeOrMessage extends TestBase {
 
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
-    }
-
-
-    @Test
-
-    public void messageSignUpFMPage() {
-
-        homePageHelper.scrollToBlockProperty();
-        String photo1 = $(byXpath("(//div[@class='card-top-profile-img u_p5-right']/img)[1]")).getAttribute("src");
-
-        homePageHelper.clickFM();
-        String name1 = $(byXpath("//h2/strong")).text();
-        String title1 = $(byXpath("//head/title")).text();
-
-        messageHelper.clickFMPageMessage();
-
-        signUpHelper.clickEmail();
-        signUpHelper.clickYourInformationContinue();
-
-        verificationHelper.emailBlankAlertMessage();
-        verificationHelper.nameFirstBlankAlertMessage();
-        verificationHelper.genderBlankAlertMessage();
-        verificationHelper.passwordBlankAlertMessage();
-        verificationHelper.dateMonthYearPhoneOccupationBlankErrorMessage();
-
-        signUpHelper.setSignUpNameFMessage("Ronald");
-        signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
-        signUpHelper.setSignEmailMessage("FMnew777@gmail.com");
-        signUpHelper.genderFemaleSelectMessageError();
-        signUpHelper.setSignPasswordMessage("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
-        verificationHelper.emailAlreadyExistedAlertMessage();
-
-        signUpHelper.clearEmailMessage();
-        signUpHelper.clearFirstnameMessage();
-        //signUpHelper.clearGender();
-        signUpHelper.clearPasswordMessage();
-
-        signUpHelper.setSignUpNameFMessage("Ronaldina");
-        //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
-        signUpHelper.genderFemaleSelectMessage();
-        signUpHelper.setSignEmailMessage("FMrr56y2@gmail.com");
-        signUpHelper.setSignPasswordMessage("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.photoOfOwner(photo1);
-        signUpHelper.nameOfOwner(name1);
-        //String message1 = $("textarea#messagewritesignupform-message").text();
-        signUpHelper.verificationAutoMessageFM(name1);
-
-
-        signUpHelper.clickYourInformationContinue();
-        verificationHelper.checkPhoneAlertMessage("Phone cannot be blank.");
-
-        signUpHelper.profilePhoneMessage("5555555555");
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.clickCompleteSearchPref();
-
-        signUpHelper.clickYourInformationContinue();
-        verificationHelper.checkLocationBlank();
-
-        signUpHelper.preferredLocation("Watf",  "Watford");
-        signUpHelper.preferredLocationButton("North London");
-        signUpHelper.preferredLocationButton("Zone 1");
-        //String locations = $(byXpath("//ul[@class='js-selected-area u_m0 u_p0']")).getText();
-        signUpHelper.preferredLocationButton("Zone 3");
-        verificationHelper.areasNumberForSignUp();
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.clickYourInformationContinue();
-        verificationHelper.budgetError();
-
-        signUpHelper.budgetMin();
-        signUpHelper.budgetMax();
-
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.titleOfSearchPage(title1);
-
-        messageHelper.clickMenuMessages();
-        messageHelper.photoOfOwnerInMessage(photo1);
-        messageHelper.nameOfOwnerInMessage(name1);
-
-        messageHelper.clickMessage1Inbox();
-        // messageHelper.messageVerifying(message1);
-        messageHelper.verifyNoProperties("No property");
-
-        getAddPropertyHelper().openDropDownMenu();
-        //verificationHelper.verifyProfComplMenu("60% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataProfileFM("60%");
-        verificationHelper.verificationUserNameOnHomePage("Ronaldina");
-
-        getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
-
-        verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
 
@@ -210,7 +129,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
-        verificationHelper.emailBlankAlertMessageLike();
+        verificationHelper.emailBlankAlert();
 
 
         signUpHelper.quit();
@@ -231,8 +150,8 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("Likerr8uy43@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.setSignEmail(ConfData.getData("mes2Email"));
+        signUpHelper.setSignPassword(ConfData.getData("passwUniv"));
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.profilePhotoAddJpeg();
@@ -258,7 +177,7 @@ public class SignUpLikeOrMessage extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
-        verificationHelper.verificationDataLike("50%");
+        verificationHelper.verificationDataLike("70%");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         sleep(5000);
@@ -274,7 +193,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnewrrr45@gmail.com");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "mes3Email");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -307,14 +226,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationDataProfileMatching("80%");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
-        getAddPropertyHelper().openDropDownMenu();
-        //verificationHelper.verifyProfComplMenu("60% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
-
-        verificationHelper.isHomePage();
-        verificationHelper.verificationUserIsUnlogged("Join Free");
+        authorizationHelper.removeAnyAccount();
     }
 
     @Test
@@ -324,7 +236,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew777@gmail.com");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail");
 
         verificationHelper.emailAlreadyExistedAlert();
 
@@ -349,10 +261,11 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
-        verificationHelper.emailBlankAlertMessage();
+        verificationHelper.emailBlankAlert();
         verificationHelper.nameFirstBlankAlertMessage();
-        verificationHelper.genderBlankAlertMessage();
-        verificationHelper.passwordBlankAlertMessage();
+        verificationHelper.genderBlankAlert();
+        verificationHelper.passwordBlankAlert();
+        //verificationHelper.passwordBlankAlertMessage();
         verificationHelper.dateMonthYearPhoneOccupationBlankErrorMessage();
 
         signUpHelper.quit();
@@ -368,7 +281,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "FMnew777@gmail.com");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail");
 
         verificationHelper.emailAlreadyExistedAlert();
 
@@ -386,8 +299,8 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderMaleSelectAfterBlank();
-        signUpHelper.setSignEmail("FMnewrrr6@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
+        signUpHelper.setSignEmail(ConfData.getData("mes4Email"));
+        signUpHelper.setSignPassword(ConfData.getData("passwUniv"));
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.clickYourInformationContinue();
@@ -433,10 +346,10 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickEmailPopup();
 
         signUpHelper.clickYourInformationContinue();
-        verificationHelper.emailBlankAlertPhone();
+        verificationHelper.emailBlankAlert();
         verificationHelper.nameFirstBlankAlertPhone();
-        verificationHelper.genderBlankAlertPhone();
-        verificationHelper.passwordBlankAlertPhone();
+        verificationHelper.genderBlankAlert();
+        verificationHelper.passwordBlankAlert();
         verificationHelper.dateMonthYearPhoneOccupationBlankErrorPhone();
 
         signUpHelper.quit();

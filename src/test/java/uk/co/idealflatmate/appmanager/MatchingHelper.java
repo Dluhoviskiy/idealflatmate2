@@ -217,5 +217,29 @@ public class MatchingHelper extends HelperBase {
         $(byXpath("//button[@data-dismiss='alert']")).click();
     }
 
+    public void matchingTests() {
+
+        clickContinueMatching1();
+        clickContinueMatching2();
+        clickContinueMatching3();
+        clickContinueMatching4();
+        clickContinueMatching5();
+        clickContinueMatching6();
+        clickContinueMatching7();
+        clickContinueMatching8();
+        clickContinueMatching9();
+        clickContinueMatching10();
+        clickContinueMatching11();
+        clickContinueMatching12();
+        clickContinueMatching13();
+        clickContinueMatching14();
+        clickContinueMatching15();
+        clickContinueMatching16();
+        clickContinueMatching17();
+        clickContinueMatching18();
+        clickContinueMatching19();
+        clickContinueMatching20();
+    }
+
 
 }

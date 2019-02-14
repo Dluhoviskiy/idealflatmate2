@@ -2,6 +2,7 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
+import utils.ConfData;
 
 import java.io.File;
 
@@ -41,21 +42,21 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void setSignUpNameF(String nameF) {
-        fillInField (nameF, $(byXpath("//input[@id='yourinfosignupform-username']")));
+        fillInField (nameF, $(byXpath("//input[contains(@id,'-username')]")));
     }
 
     public void setSignUpNameFMessage(String nameF) {
-        fillInField(nameF, $(byXpath("//input[@id='yourinfoadditionalsignupform-username']")));
+        fillInField(nameF, $(byXpath("//input[contains(@id,'-username')]")));
     }
 
     public void genderFemaleSelect() {
 
-      $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Female')]")).click();
-      //$(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Female')]")).selectRadio("Female");
+      $(byXpath("//div[contains(@class,'gender required')]//label[contains(text(), 'Female')]")).click();
+
     }
 
-    public void genderFemaleSelectMessageError() {
-        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-gender required has-error']/div[1]/label[contains(text(), 'Female')]")).click();
+    public void genderFemSelectAfterMesError() {
+        $(byXpath("//div[contains(@class,'gender required')]//label[contains(text(), 'Male')]")).click();
     }
 
     public void genderFemaleSelectMessage() {
@@ -72,20 +73,20 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Male')]")).click();
     }
 
-    public void setSignEmail(String email) {
-        fillInField(email, $(byXpath("//input[@id='yourinfosignupform-email']")));
+    public void setSignEmail(String confEmail) {
+        fillInField(ConfData.getData(confEmail), $(byXpath("//input[contains(@id,'-email')]")));
     }
 
-    public void setSignEmailMessage(String email) {
-        fillInField(email, $(byXpath("//input[@id='yourinfoadditionalsignupform-email']")));
+    public void setSignEmailMessage(String confEmail) {
+        fillInField(ConfData.getData(confEmail), $(byXpath("//input[contains(@id,'-email')]")));
     }
 
-    public void setSignPassword(String password) {
-        fillInField(password, $("input#yourinfosignupform-password"));
+    public void setSignPassword(String confPassword) {
+        fillInField(ConfData.getData(confPassword), $(byXpath("//input[contains(@id,'-password')]")));
     }
 
-    public void setSignPasswordMessage(String password) {
-        fillInField(password, $("input#yourinfoadditionalsignupform-password"));
+    public void setSignPasswordMessage(String confPassword) {
+        fillInField(ConfData.getData(confPassword), $(byXpath("//input[contains(@id,'-password')]")));
     }
 
     public void clickFormSignUpContinue() {
@@ -132,15 +133,15 @@ public class SignUpHelper extends HelperBase {
 
     }
     public void profileDateBirthAdd(String day, String month, String year) {
-        dateMonthYear(day, month, year, $(byXpath("//select[@id='moreinfosignupform-day']")),
-                                        $(byXpath("//select[@id='moreinfosignupform-month']")),
-                                        $(byXpath("//select[@id='moreinfosignupform-year']")));
+        dateMonthYear(day, month, year, $(byXpath("//select[contains(@id,'-day')]")),
+                                        $(byXpath("//select[contains(@id,'-month')]")),
+                                        $(byXpath("//select[contains(@id,'-year')]")));
     }
 
     public void profileDateBirthAddMessage(String day, String month, String year) {
-        dateMonthYear(day, month, year, $(byXpath("//select[@id='yourinfoadditionalsignupform-day']")),
-                                        $(byXpath("//select[@id='yourinfoadditionalsignupform-month']")),
-                                        $(byXpath("//select[@id='yourinfoadditionalsignupform-year']")));
+        dateMonthYear(day, month, year, $(byXpath("//select[contains(@id,'-day')]")),
+                                        $(byXpath("//select[contains(@id,'-month')]")),
+                                        $(byXpath("//select[contains(@id,'-year')]")));
     }
 
     public void profilePhone(String phone) {
@@ -194,6 +195,7 @@ public class SignUpHelper extends HelperBase {
     public void verifyToMoveCheckboxDisabled() {
         //$(byXpath("//div[@class='form-group field-budgetpreferredsignupform-move_in_now has-success']//input[@type='checkbox']")).shouldBe(checked);
         $("select#budgetpreferredsignupform-move_in_day").shouldHave(disabled);
+        sleep(2000);
     }
     public void toMoveCheckboxEnabled() {
         //$(byXpath("//div[@class='form-group field-budgetpreferredsignupform-move_in_now has-success']//input[@type='checkbox']")).shouldBe(checked);
@@ -226,11 +228,15 @@ public class SignUpHelper extends HelperBase {
     public void quit() {
         $(byXpath("//a[starts-with(@class,'btn btn--type-2')]")).click();
     }
+    public void quitLogin() {
+        $(byXpath("//a[contains(.,'Quit Log in')]")).click();
+        sleep(2000);
+    }
 
     public void selectMoveDate(String day, String month, String year) {
-        dateMonthYear(day, month, year, $(byXpath("//select[@id='budgetpreferredsignupform-move_in_day']")),
-                                        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_month']")),
-                                        $(byXpath("//select[@id='budgetpreferredsignupform-move_in_year']")));
+        dateMonthYear(day, month, year, $(byXpath("//select[contains(@id,'move_in_day')]")),
+                                        $(byXpath("//select[contains(@id,'move_in_month')]")),
+                                        $(byXpath("//select[contains(@id,'move_in_year')]")));
     }
 
     public void selectHappyReceiveNews() {
@@ -249,31 +255,37 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void clearEmail() {
-        $(byXpath("//input[@id='yourinfosignupform-email']")).clear();
+        $(byXpath("//input[contains(@id,'-email')]")).clear();
+        
     }
 
     public void clearEmailMessage() {
-        $(byXpath("//input[@id='yourinfoadditionalsignupform-email']")).clear();
+        $(byXpath("//input[contains(@id,'-email')]")).clear();
     }
 
     public void clearFirstname() {
-        $(byXpath("//input[@id='yourinfosignupform-username']")).clear();
+        $(byXpath("//input[contains(@id,'-username')]")).clear();
     }
 
     public void clearFirstnameMessage() {
-        $(byXpath("//input[@id='yourinfoadditionalsignupform-username']")).clear();
+        $(byXpath("//input[contains(@id,'-username')]")).clear();
     }
 
     public void clearPassword() {
-        $("input#yourinfosignupform-password").clear();
+        $(byXpath("//input[contains(@id,'-password')]")).clear();
     }
 
     public void clearPasswordMessage() {
-        $("input#yourinfoadditionalsignupform-password").clear();
+        $(byXpath("//input[contains(@id,'-password')]")).clear();
     }
 
     public void click1PropertyCardMessage() {
         $(byXpath("(//div[@class='card-infos-flex-row']/a[2][@href])[3]")).click();
+
+    }
+
+    public void click1PropCardMes() {
+        $(byXpath("//div[@class='card-infos-flex-row']/a[2][@href]")).click();
 
     }
 
@@ -317,6 +329,14 @@ public class SignUpHelper extends HelperBase {
         Assert.assertEquals(name3, nameInMessage);
     }
 
+    public void nameOfOwnerOnPopup(String name1) {
+        //String name2 = "Message " + (name1.substring(0, 1).toUpperCase() + name1.substring(1)).replaceAll("[^a-zA-z]",  "");
+        String name2 = "Sign up to send a message to " + (name1.substring(0, 1).toUpperCase() + name1.substring(1));
+        String name3 =(name2.split(","))[0].replaceAll("/,",  "");
+        String nameInMessage = $("h1").getText();
+        Assert.assertEquals(name3, nameInMessage);
+    }
+
 
     public void clickBackToSearch() {
         $(byXpath("//button[@value='back_to_search']")).waitUntil(visible, 10000).click();
@@ -353,16 +373,11 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void clickLikePropertyCardHomePage(int propertyPage) {
+    public void clickLikePropertyCardHomePage(int propertyCard) {
 
-        $(byXpath("(//button[starts-with(@class,'owl-next')])[2]")).hover();
-        sleep(1000);
-        $(byXpath("(//button[starts-with(@class,'owl-next')])[2]")).click();
-        sleep(1000);
-        //$(byXpath("(//button[starts-with(@class,'owl-prev')])[2]")).hover().click();
 
-        $$(byXpath("//a[starts-with(@class,'buddy-star')]")).get(propertyPage).click();
-        sleep(1000);
+        $$(byXpath("//a[starts-with(@class,'buddy-star')]")).get(propertyCard).click();
+
     }
 
     public void removeLike() {
@@ -373,11 +388,13 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void yourInformation(String password, String firstName, String email) {
+
+
+
+    public void yourInformation(String confPassword, String firstName, String confEmail) {
         setSignUpNameF(firstName);
         genderFemaleSelect();
-        setSignEmail(email);
-        setSignPassword(password);
+        login1(confEmail, confPassword);
         clickYourInformationContinue();
     }
 
@@ -402,7 +419,7 @@ public class SignUpHelper extends HelperBase {
         clickYourInformationContinue();
     }
 
-    public void MoreAboutYou(String day, String month, String year, String phone, String prof, String text) {
+    public void moreAboutYou(String day, String month, String year, String phone, String prof, String text) {
         profilePhotoAddJpeg();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
@@ -411,15 +428,14 @@ public class SignUpHelper extends HelperBase {
         clickYourInformationContinue();
     }
 
-    public void signListingLiveIn(String email, String password, String day, String month, String year, String phone, String prof, String firstName) {
+    public void signListingFM_LiveIn(String confEmail, String confPassword, String day, String month, String year, String phone, String prof, String firstName) {
 
 
         clickEmail();
 
         setSignUpNameF(firstName);
         genderMaleSelect();
-        setSignEmail(email);
-        setSignPassword(password);
+        login1(confEmail, confPassword);
         clickYourInformationContinue();
 
         profilePhotoAddJpeg();
@@ -431,14 +447,13 @@ public class SignUpHelper extends HelperBase {
         clickYourInformationContinue();
     }
 
-    public void signListingLiveOut(String email, String password, String firstName, String phone) {
+    public void signListingLiveOut(String confEmail, String confPassword, String firstName, String phone) {
 
 
         clickEmail();
 
         setSignUpNameF(firstName);
-        setSignEmail(email);
-        setSignPassword(password);
+        login1(confEmail, confPassword);
         clickYourInformationContinue();
 
         profilePhotoAddJpeg();
@@ -448,14 +463,14 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void agentSignListing(String name, String email, String password, String phone, String text) {
+
+    public void agentSignListing(String name, String confEmail, String confPassword, String phone, String text) {
 
 
         clickEmail();
         setSignUpNameF(name);
         //signUpHelper.genderFemaleSelect();
-        setSignEmail(email);
-        setSignPassword(password);
+        login1(confEmail, confPassword);
         clickYourInformationContinue();
 
         profilePhotoAddJpeg();
@@ -467,5 +482,11 @@ public class SignUpHelper extends HelperBase {
         clickYourInformationContinue();
 
     }
+
+    public void login1(String confEmail, String confPassword) {
+        setSignEmail(confEmail);
+        setSignPassword(confPassword);
+    }
+
 
 }

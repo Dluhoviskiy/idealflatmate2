@@ -1,8 +1,10 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.ConfData;
 
 import java.util.List;
+
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -15,6 +17,8 @@ import static uk.co.idealflatmate.tests.TestBase.newDriverPage;
 
 
 public class HelperBase  {
+
+
 
     public static void closeAdvPopUp() {
         String needSpace = "//div[@id='signupNeedspaceModal']//button[@aria-label='Close']";
@@ -32,23 +36,19 @@ public class HelperBase  {
     }
 
     public static void closeListRenewPopUp() {
-        sleep(2000);
         SelenideElement buttonRenew = $(byXpath("//section[@class='modal-content u_bg-gray-lighter']//button[@aria-label='Close']"));
+        sleep(5000);
         if(buttonRenew.isDisplayed()){
-            buttonRenew.click();
+            buttonRenew.waitUntil(visible, 7000).click();
         }
-        sleep(2000);
-
-
     }
 
     public static void closeMatchPopUp() {
-
-        if ($(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).isDisplayed()) {
-            $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']")).waitUntil(visible, 2000).click();
-
-        } else {}
+        SelenideElement buttonMatch = $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']"));
         sleep(2000);
+        if (buttonMatch.isDisplayed()) {
+            buttonMatch.waitUntil(visible, 7000).click();
+        }
     }
 
     public static void closeButtonRenew() {
@@ -124,6 +124,8 @@ public class HelperBase  {
             close();
             open("https://www.idealflatmate.co.uk/");
         }
+
+
 
     }
 

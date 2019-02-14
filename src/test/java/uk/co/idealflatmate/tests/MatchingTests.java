@@ -2,10 +2,10 @@ package uk.co.idealflatmate.tests;
 
 
 import org.testng.annotations.Test;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class MatchingTests extends TestBase {
@@ -15,20 +15,9 @@ public class MatchingTests extends TestBase {
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom1();
-        signUpHelper.clickEmail();
 
-        signUpHelper.setSignUpNameF("Ronaldina");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnewlq1t6@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
-        signUpHelper.aboutYourself("Tell us about yourself");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.signListingFM_LiveIn("fmMatch", "passwUniv", "2",
+                                          "6", "2000", "85296200", "19", "Ronaldina");
 
         signUpHelper.preferredLocation("Watf", "Watford");
         signUpHelper.clickYourInformationContinue();
@@ -39,6 +28,7 @@ public class MatchingTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         verificationHelper.verificationUserNameOnHomePage("Ronaldina");
+
         getAddPropertyHelper().openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("NOT taken!");
 
@@ -97,7 +87,7 @@ public class MatchingTests extends TestBase {
     @Test
     public void startMatchingOnPropertyCard() {
 
-        authorizationHelper.login("TerezaHQ@gmail.com", "qqqqqq");
+        authorizationHelper.login("passwUniv",  "FMMatch3");
         authorizationHelper.goToPropertyPage();
 
         searchHelper.clearLocation();

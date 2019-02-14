@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class PaymentTests extends TestBase {
 
@@ -13,7 +12,7 @@ public class PaymentTests extends TestBase {
     public void AbilityToSeePhone() {
 
 
-        authorizationHelper.login("cro.gen.Premium@gmail.com", "qqqqqq");
+        authorizationHelper.login("passwUniv", "Prem_FH_paid");
         verificationHelper.verificationUserNameOnHomePage("Zlatan");
         searchHelper.searchPropertyHome("#0012906");
         paymentsHelper.verificationPhone("XXXX");
@@ -26,7 +25,7 @@ public class PaymentTests extends TestBase {
     @Test
     public void GoPremiumFHPaymentOnPhone() {
 
-        authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
+        authorizationHelper.login("passwUniv", "FMNotPaid");
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchPropertyHome("#0012906");
@@ -41,7 +40,7 @@ public class PaymentTests extends TestBase {
     @Test
     public void GoPremiumFHPaymentOnMessage() {
 
-        authorizationHelper.login("cro.gen.FH@gmail.com", "qqqqqq");
+        authorizationHelper.login("passwUniv", "FMNotPaid");
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchPropertyHome("#0012906");
@@ -63,9 +62,9 @@ public class PaymentTests extends TestBase {
         signUpHelper.clickRoom();
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "Li1q3e11@gmail.com");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "fmNotPaid3");
 
-        signUpHelper.MoreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter");
+        signUpHelper.moreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter");
 
         signUpHelper.whereWouldLikeLive("watf", "Watford");
 
@@ -105,7 +104,7 @@ public class PaymentTests extends TestBase {
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.signListingLiveIn("Live_inNew021r@gmail.com", "qqqqqq",
+        signUpHelper.signListingFM_LiveIn("live-In1", "passwUniv",
                 "5", "5", "1959", "55555555", "39", "Ronald");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -154,7 +153,7 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("Live-out landlord");
 
-        signUpHelper.signListingLiveOut("Lord_out_New034@gmail.com", "qqqqqq",
+        signUpHelper.signListingLiveOut("liv-Out1", "passwUniv",
                 "2Ronald", "897876567");
 
 
@@ -210,7 +209,7 @@ public class PaymentTests extends TestBase {
 
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.signListingLiveIn("Live_inNewL012@gmail.com", "qqqqqq",
+        signUpHelper.signListingFM_LiveIn("fmNotPaid4", "passwUniv",
                 "5", "5", "1959", "55555555", "39", "Ronald");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -262,7 +261,7 @@ public class PaymentTests extends TestBase {
 
         addPropertyHelper.selectTypeUser("An agency");
 
-        signUpHelper.agentSignListing("Ronald", "agentTest08@gmail.com", "qqqqqq",
+        signUpHelper.agentSignListing("Ronald", "agent2", "passwUniv",
                 "66666666", "Tell us about yourself");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");

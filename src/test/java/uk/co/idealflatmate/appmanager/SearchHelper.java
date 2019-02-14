@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchHelper extends HelperBase {
-    SelenideElement clearSearchBar = $(byXpath("//form[@id='search-location']//span"));
+    SelenideElement clearSearchBar = $(byXpath("//form[@id='search-location']//input"));
 
     public void searchPropertyHome(String location) {
 
@@ -34,9 +34,9 @@ public class SearchHelper extends HelperBase {
     }
 
 
-    public void searchPropertyBySelectfromList(String location) {
+    public void searchPropertyBySelectfromList(String location, final String nameDrop) {
         searchPropertyBy(location, $("input.react-autosuggest__input"));
-        $(byXpath("//span[contains(.,'Clapham Junction')]")).waitUntil(visible, 4000).click();
+        $(byXpath("//span[contains(.,'" + nameDrop + "')]")).waitUntil(visible, 4000).click();
 
     }
 
@@ -61,6 +61,11 @@ public class SearchHelper extends HelperBase {
 
     public void verificationSearchPropertyMap(String location) {
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']/p")).waitUntil(visible, 10000).shouldHave(text(location));
+
+    }
+
+    public void verificationSearchPropertyMes(String location) {
+        $(byXpath("//div[@class='flex-search-columns']//div[@class='row u_m0 u_m5-top']")).waitUntil(visible, 10000).shouldHave(text(location));
 
     }
 
@@ -250,6 +255,7 @@ public class SearchHelper extends HelperBase {
     }
 
     public void clickSearchPropPage(String location) {
+
         SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
         //SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
 

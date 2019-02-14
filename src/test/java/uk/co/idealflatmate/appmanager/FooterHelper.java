@@ -18,7 +18,7 @@ public class FooterHelper extends HelperBase{
     public void verificationBrowseFlatshares(String location, String area) {
         $(byXpath("//button[contains(., '" + location + "')]")).waitUntil(visible, 10000).click();
         $(byXpath("(//li/a[contains(text(), 'Brent Park')])[1]")).waitUntil(visible, 4000).click();
-        switchTo().window(1);
+        //switchTo().window(1);
         closeAdvPopUp();
         if($(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')])[1]")).is(visible)){
             $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();

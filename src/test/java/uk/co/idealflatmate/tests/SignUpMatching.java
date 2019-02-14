@@ -24,38 +24,12 @@ public class SignUpMatching extends TestBase {
         matchingHelper.clickARoom();
 
         //matchingHelper.clickAFM();
-        matchingHelper.clickContinueMatching1();
-        matchingHelper.clickContinueMatching2();
-        matchingHelper.clickContinueMatching3();
-        matchingHelper.clickContinueMatching4();
-        matchingHelper.clickContinueMatching5();
-        matchingHelper.clickContinueMatching6();
-        matchingHelper.clickContinueMatching7();
-        matchingHelper.clickContinueMatching8();
-        matchingHelper.clickContinueMatching9();
-        matchingHelper.clickContinueMatching10();
-        matchingHelper.clickContinueMatching11();
-        matchingHelper.clickContinueMatching12();
-        matchingHelper.clickContinueMatching13();
-        matchingHelper.clickContinueMatching14();
-        matchingHelper.clickContinueMatching15();
-        matchingHelper.clickContinueMatching16();
-        matchingHelper.clickContinueMatching17();
-        matchingHelper.clickContinueMatching18();
-        matchingHelper.clickContinueMatching19();
-        matchingHelper.clickContinueMatching20();
+        matchingHelper.matchingTests();
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.yourInformation("qqqqqq", "Ronald", "Matchyt78upz1@gmail.com");
-
-        signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhotoRemove();
-        signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
-        signUpHelper.aboutYourself("Tell us about yourself");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch5");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself");
 
         signUpHelper.backLocation();
         signUpHelper.profilePhotoAddJpeg();
@@ -89,15 +63,10 @@ public class SignUpMatching extends TestBase {
         verificationHelper.verificationDataProfileMatching("80%");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        getAddPropertyHelper().openDropDownMenu();
-        //verificationHelper.verifyProfComplMenu("70% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
 
-        verificationHelper.isHomePage();
-        verificationHelper.verificationUserIsUnlogged("Join Free");
+        authorizationHelper.removeAnyAccount();
     }
+
 
     @Test
     public void SignUpMatchingWithRequiredFieldsFMRoom() {
@@ -105,61 +74,26 @@ public class SignUpMatching extends TestBase {
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         //matchingHelper.clickARoom();
+
         matchingHelper.clickAFM();
-        matchingHelper.clickContinueMatching1();
-        matchingHelper.clickContinueMatching2();
-        matchingHelper.clickContinueMatching3();
-        matchingHelper.clickContinueMatching4();
-        matchingHelper.clickContinueMatching5();
-        matchingHelper.clickContinueMatching6();
-        matchingHelper.clickContinueMatching7();
-        matchingHelper.clickContinueMatching8();
-        matchingHelper.clickContinueMatching9();
-        matchingHelper.clickContinueMatching10();
-        matchingHelper.clickContinueMatching11();
-        matchingHelper.clickContinueMatching12();
-        matchingHelper.clickContinueMatching13();
-        matchingHelper.clickContinueMatching14();
-        matchingHelper.clickContinueMatching15();
-        matchingHelper.clickContinueMatching16();
-        matchingHelper.clickContinueMatching17();
-        matchingHelper.clickContinueMatching18();
-        matchingHelper.clickContinueMatching19();
-        matchingHelper.clickContinueMatching20();
+        matchingHelper.matchingTests();
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew111o@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
-
-        signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhotoRemove();
-        signUpHelper.profileDateBirthAdd("2", "5", "1978");
-        signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
-        signUpHelper.aboutYourself("Tell us about yourself");
-        signUpHelper.clickYourInformationContinue();
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch4");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself");
 
         signUpHelper.clickListYourRoomMatching();
 
         verificationHelper.verifyAddListingPage();
-        getAddPropertyHelper().openDropDownMenu();
+        addPropertyHelper.openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
        // matchingHelper.closePopupMatching();
         //signUpHelper.verificationDataProfileNameUser("flatmate");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        getAddPropertyHelper().openDropDownMenu();
-        //verificationHelper.verifyProfComplMenu("70% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-        authorizationHelper.removeAccount();
 
-        verificationHelper.isHomePage();
-        verificationHelper.verificationUserIsUnlogged("Join Free");
+        authorizationHelper.removeAnyAccount();
     }
 
     @Test
@@ -168,41 +102,14 @@ public class SignUpMatching extends TestBase {
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         //matchingHelper.clickARoom();
+
         matchingHelper.clickAFM();
-        matchingHelper.clickContinueMatching1();
-        matchingHelper.clickContinueMatching2();
-        matchingHelper.clickContinueMatching3();
-        matchingHelper.clickContinueMatching4();
-        matchingHelper.clickContinueMatching5();
-        matchingHelper.clickContinueMatching6();
-        matchingHelper.clickContinueMatching7();
-        matchingHelper.clickContinueMatching8();
-        matchingHelper.clickContinueMatching9();
-        matchingHelper.clickContinueMatching10();
-        matchingHelper.clickContinueMatching11();
-        matchingHelper.clickContinueMatching12();
-        matchingHelper.clickContinueMatching13();
-        matchingHelper.clickContinueMatching14();
-        matchingHelper.clickContinueMatching15();
-        matchingHelper.clickContinueMatching16();
-        matchingHelper.clickContinueMatching17();
-        matchingHelper.clickContinueMatching18();
-        matchingHelper.clickContinueMatching19();
-        matchingHelper.clickContinueMatching20();
+        matchingHelper.matchingTests();
 
         signUpHelper.clickEmailMatching1();
-        signUpHelper.setSignUpNameF("Ronald");
-        signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail("FMnew124o@gmail.com");
-        signUpHelper.setSignPassword("qqqqqq");
-        signUpHelper.clickYourInformationContinue();
-        signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhotoRemove();
-        signUpHelper.profileDateBirthAdd("2", "5", "1978");
-        signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
-        signUpHelper.aboutYourself("Tell us about yourself");
-        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch6");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself");
 
         signUpHelper.clickSearchFMMatching();
         verificationHelper.verifySearchFMPage();
@@ -212,18 +119,10 @@ public class SignUpMatching extends TestBase {
         verificationHelper.checkMatchingConcurrence("100% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
        // matchingHelper.closePopupMatching();
-        signUpHelper.verificationDataProfileNameUser("Ronald", "40");
+        signUpHelper.verificationDataProfileNameUser("Ronald", "41");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
-        getAddPropertyHelper().openDropDownMenu();
-        //verificationHelper.verifyProfComplMenu("70% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
-        authorizationHelper.chooseSettingsFromDashboard();
-
-        authorizationHelper.removeAccount();
-
-        verificationHelper.isHomePage();
-        verificationHelper.verificationUserIsUnlogged("Join Free");
+        authorizationHelper.removeAnyAccount();
     }
 
 
@@ -237,27 +136,7 @@ public class SignUpMatching extends TestBase {
         //matchingHelper.clickARoom();
 
         matchingHelper.clickAFM();
-
-        matchingHelper.clickContinueMatching1();
-        matchingHelper.clickContinueMatching2();
-        matchingHelper.clickContinueMatching3();
-        matchingHelper.clickContinueMatching4();
-        matchingHelper.clickContinueMatching5();
-        matchingHelper.clickContinueMatching6();
-        matchingHelper.clickContinueMatching7();
-        matchingHelper.clickContinueMatching8();
-        matchingHelper.clickContinueMatching9();
-        matchingHelper.clickContinueMatching10();
-        matchingHelper.clickContinueMatching11();
-        matchingHelper.clickContinueMatching12();
-        matchingHelper.clickContinueMatching13();
-        matchingHelper.clickContinueMatching14();
-        matchingHelper.clickContinueMatching15();
-        matchingHelper.clickContinueMatching16();
-        matchingHelper.clickContinueMatching17();
-        matchingHelper.clickContinueMatching18();
-        matchingHelper.clickContinueMatching19();
-        matchingHelper.clickContinueMatching20();
+        matchingHelper.matchingTests();
 
         signUpHelper.clickEmailMatching1();
 
@@ -273,6 +152,5 @@ public class SignUpMatching extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
-
 
 }

@@ -1,41 +1,37 @@
 package uk.co.idealflatmate.appmanager;
 
 
+import utils.ConfData;
+
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorizationHelper extends HelperBase {
 
+    public final VerificationHelper verificationHelper = new VerificationHelper();
+    public final AddPropertyHelper addPropertyHelper = new AddPropertyHelper();
+    public final SignUpHelper signUpHelper = new SignUpHelper();
+
 
     public void logoutFromApp() {
         $("span.user-welcome--name").waitUntil(visible, 4000).click();
         $(byXpath("//li/a[contains(text(), ' Log out')]")).waitUntil(visible, 4000).click();
+
     }
 
     public void goToPropertyPage() {
         $(byXpath("//header//nav//ul//li//a[contains(text(), 'Find a home')]")).waitUntil(appears, 10000).hover();
         sleep(1000);
         $(byXpath("//a[@href='/search' and contains(text(), 'All properties')]")).waitUntil(appears, 4000).click();
+
     }
 
 
     public void goToFMpage() {
          $(byXpath("//ul[starts-with(@class, 'nav navbar-nav')]//a[contains(.,'Find a flatmate')]")).waitUntil(appears, 4000).click();
+
      }
-
-    public void setLoginAsUserWithoutPackage(String email) {
-            fillInField(email, $("input#loginform-username"));
-    }
-    public void setLoginAsUserWithPremiumFlathunterPackage(String email) {
-        fillInField(email, $("#loginform-username"));
-    }
-
-    public void setPassword(String password) {
-        $("input#loginform-password").waitUntil(visible, 4000).setValue(password);
-
-    }
 
     public void submitLogin() {
         $(byXpath("//button[contains(., 'Log in with email ')]")).click();
@@ -52,10 +48,10 @@ public class AuthorizationHelper extends HelperBase {
        // $(byXpath("//button[@type='submitLogin' and (contains(text(), 'Продолжить как Александр'))]")).waitUntil(visible, 4000).click();
     }
 
-    public void LoginFacebookWithNewAccount(String email, String password) {
+    public void LoginFacebookWithNewAccount(String confEmail, String confPassword) {
         sleep(3000);
-        $("#email").setValue(email);
-        $("#pass").setValue(password).pressEnter();
+        $("#email").setValue(ConfData.getData(confEmail));
+        $("#pass").setValue(ConfData.getData(confPassword)).pressEnter();
        // $(byXpath("//button[@type='submitLogin' and (contains(text(), 'Продолжить как Ronald'))]")).waitUntil(visible, 4000).click();
     }
 
@@ -98,6 +94,17 @@ public class AuthorizationHelper extends HelperBase {
         sleep(2000);
     }
 
+    public void removeAccountBeforeTest() {
+        sleep(2000);
+        if($(byXpath("//body//div[contains(@class,' required has-error')]/div[contains(text(),'Incorrect email or password.')]")).exists()){
+            signUpHelper.quitLogin();
+        }else{
+            removeAnyAccount();
+        }
+    }
+
+
+
     public void alertAccept() {
        //Assert.assertTrue($(By.tagName("p")).isDisplayed());
 
@@ -124,8 +131,8 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void clickSignInButtonInPopup() {
-        $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[1]")).hover();
-        $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[1]")).click();
+        $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).hover();
+        $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).click();
 
     }
 
@@ -255,6 +262,9 @@ public class AuthorizationHelper extends HelperBase {
     public void savedPropertiesMenuGo() {
         $(byXpath("(//a[contains(text(), 'My saved')])[1]")).waitUntil(appears, 5000).click();
     }
+    public void headerLogin() {
+        $(byXpath("//nav//ul[contains(@class, 'nav navbar-nav navbar-right ')]/li[contains(., 'Login')]")).waitUntil(appears, 5000).click();
+    }
 
     public void clickLoginWithFacebook() {
 
@@ -269,11 +279,52 @@ public class AuthorizationHelper extends HelperBase {
         $(byXpath("//span[contains(., 'Log in with Facebook')]")).click();
     }
 
-    public void login(String email, String password){
+    public void setLoginAsUserWithoutPackage(String confEmail) {
+        fillInField(ConfData.getData(confEmail), $("input#loginform-username"));
+    }
+    public void setLoginAsUserWithPremiumFlathunterPackage(String confEmail) {
+        fillInField(ConfData.getData(confEmail), $("#loginform-username"));
+    }
+
+    public void setPassword(String confPassword) {
+        $("input#loginform-password").waitUntil(visible, 4000).setValue(ConfData.getData(confPassword));
+
+    }
+
+    public void login(String confPassword, String confEmail){
         clickJoinFreeButton();
         clickSignInButtonInForm();
-        setLoginAsUserWithoutPackage(email);
-        setPassword(password);
+        login2(confEmail,confPassword);
+        submitLogin();
+    }
+
+
+
+    public void loginMessage(String confEmail, String confPassword) {
+        login(confPassword, confEmail);
+        closeListRenewPopUp();
+        closeMatchPopUp();
+    }
+
+    public void login2(String confEmail, String confPassword) {
+        setLoginAsUserWithoutPackage(confEmail);
+        setPassword(confPassword);
+    }
+
+    public void removeAnyAccount() {
+        addPropertyHelper.openDropDownMenu();
+        //verificationHelper.verifyProfComplMenu("70% complete");
+        chooseProfileFromDropDownMenu();
+        chooseSettingsFromDashboard();
+        removeAccount();
+
+        verificationHelper.isHomePage();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+
+    public void loginHeader(String confPassword, String confEmail){
+        headerLogin();
+        login2(confEmail,confPassword);
         submitLogin();
     }
 }

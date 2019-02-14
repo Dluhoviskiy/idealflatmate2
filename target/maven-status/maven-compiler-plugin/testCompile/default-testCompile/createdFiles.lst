@@ -6,12 +6,16 @@ uk\co\idealflatmate\appmanager\VerificationHelper.class
 uk\co\idealflatmate\tests\SearchHomePageTests.class
 uk\co\idealflatmate\tests\ZEmailTests.class
 uk\co\idealflatmate\tests\HomePageTest.class
+uk\co\idealflatmate\tests\SignUpBuddy_up.class
+uk\co\idealflatmate\tests\A_clear_DataTests.class
 uk\co\idealflatmate\tests\AreaPageTest.class
 uk\co\idealflatmate\tests\SearchPropertiesPageTests.class
 uk\co\idealflatmate\tests\SearchFMPageTests.class
+utils\ConfData.class
 uk\co\idealflatmate\tests\TestBase.class
 uk\co\idealflatmate\tests\SignUpMatching.class
 uk\co\idealflatmate\appmanager\EmailHelper.class
+uk\co\idealflatmate\appmanager\BuddyUpHelper.class
 uk\co\idealflatmate\tests\AuthorizationTests.class
 uk\co\idealflatmate\appmanager\FooterHelper.class
 uk\co\idealflatmate\appmanager\SearchHelper.class

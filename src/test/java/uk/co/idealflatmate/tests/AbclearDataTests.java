@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
-public class A_clear_DataTests extends TestBase {
+public class AbclearDataTests extends TestBase {
 
 
 

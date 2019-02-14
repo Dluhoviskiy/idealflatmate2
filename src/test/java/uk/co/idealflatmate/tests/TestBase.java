@@ -55,8 +55,8 @@ public class TestBase {
     }*/
 
 
-    @BeforeSuite
-    public void setupSiute() {
+    @BeforeClass
+    public void setupClass() {
         //ChromeDriverManager.getInstance().setup();
         WebDriverManager.chromedriver().setup();
         //WebDriverManager.firefoxdriver().setup();
@@ -93,7 +93,7 @@ public class TestBase {
 
 
 
-    @AfterSuite
+    @AfterClass
     public void tearDown() {
         //screenshot("screenshotFail1");
         closeWebDriver();

@@ -3,28 +3,19 @@
 <suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
   <test thread-count="1" verbose="0" name="Surefire test(failed)">
     <classes>
-      <class name="uk.co.idealflatmate.tests.AddListingTests">
+      <class name="uk.co.idealflatmate.tests.AreaPageTest">
         <methods>
-          <include name="signUpPropertyAdding"/>
+          <include name="firstFeaturedLinkMap"/>
           <include name="tearDown"/>
           <include name="setupMethod"/>
           <include name="setupClass"/>
         </methods>
-      </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
-      <class name="uk.co.idealflatmate.tests.AuthorizationTests">
-        <methods>
-          <include name="logInOutOnPropertyPage"/>
-          <include name="tearDown"/>
-          <include name="setupMethod"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- uk.co.idealflatmate.tests.AuthorizationTests -->
+      </class> <!-- uk.co.idealflatmate.tests.AreaPageTest -->
       <class name="uk.co.idealflatmate.tests.SignUpTest">
         <methods>
-          <include name="testListingSignUpHeader"/>
           <include name="tearDown"/>
-          <include name="testSignUpBlankFieldsPropAddRentBlock"/>
           <include name="setupMethod"/>
+          <include name="testHeaderRoomSignUpHomePageTenant"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.SignUpTest -->
@@ -36,22 +27,6 @@
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.ZEmailTests -->
-      <class name="uk.co.idealflatmate.tests.FooterTest">
-        <methods>
-          <include name="footerPricingLink"/>
-          <include name="footerInstagramLink"/>
-          <include name="footerMediaLink"/>
-          <include name="footerNLALink"/>
-          <include name="footerModern"/>
-          <include name="tearDown"/>
-          <include name="footerTwitterLink"/>
-          <include name="footerYoutubeLink"/>
-          <include name="setupMethod"/>
-          <include name="footerStaySafeLink"/>
-          <include name="footerPressLink"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- uk.co.idealflatmate.tests.FooterTest -->
       <class name="uk.co.idealflatmate.tests.PaymentTests">
         <methods>
           <include name="lordOutWorldPaylistingPrem"/>
@@ -64,10 +39,19 @@
           <include name="setupClass"/>
         </methods>
       </class> <!-- uk.co.idealflatmate.tests.PaymentTests -->
+      <class name="uk.co.idealflatmate.tests.AddListingTests">
+        <methods>
+          <include name="titleListing"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
       <class name="uk.co.idealflatmate.tests.MatchingTests">
         <methods>
           <include name="startMatchingOnPropertyCard"/>
           <include name="tearDown"/>
+          <include name="startMatchingQuizPropertyPage"/>
           <include name="setupMethod"/>
           <include name="fullMenuNewUserWithVerifPerc"/>
           <include name="setupClass"/>

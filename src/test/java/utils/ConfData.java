@@ -11,7 +11,7 @@ public class ConfData {
 
     static {
         try {
-            fileInputStream = new FileInputStream("src/test/resources/config_properties");
+            fileInputStream = new FileInputStream("src/test/resources/conf_prop");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {

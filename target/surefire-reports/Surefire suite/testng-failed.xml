@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test thread-count="1" verbose="0" name="Surefire test(failed)">
+    <classes>
+      <class name="uk.co.idealflatmate.tests.AddListingTests">
+        <methods>
+          <include name="signUpPropertyAdding"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
+      <class name="uk.co.idealflatmate.tests.AuthorizationTests">
+        <methods>
+          <include name="logInOutOnPropertyPage"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AuthorizationTests -->
+      <class name="uk.co.idealflatmate.tests.SignUpTest">
+        <methods>
+          <include name="testListingSignUpHeader"/>
+          <include name="tearDown"/>
+          <include name="testSignUpBlankFieldsPropAddRentBlock"/>
+          <include name="setupMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.SignUpTest -->
+      <class name="uk.co.idealflatmate.tests.ZEmailTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.ZEmailTests -->
+      <class name="uk.co.idealflatmate.tests.FooterTest">
+        <methods>
+          <include name="footerPricingLink"/>
+          <include name="footerInstagramLink"/>
+          <include name="footerMediaLink"/>
+          <include name="footerNLALink"/>
+          <include name="footerModern"/>
+          <include name="tearDown"/>
+          <include name="footerTwitterLink"/>
+          <include name="footerYoutubeLink"/>
+          <include name="setupMethod"/>
+          <include name="footerStaySafeLink"/>
+          <include name="footerPressLink"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.FooterTest -->
+      <class name="uk.co.idealflatmate.tests.PaymentTests">
+        <methods>
+          <include name="lordOutWorldPaylistingPrem"/>
+          <include name="lordInWorldPaidListingProf"/>
+          <include name="lordInWorldPaylistingEssen"/>
+          <include name="premiumFHPaymentWorldPay"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="agentProfWorldPay"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.PaymentTests -->
+      <class name="uk.co.idealflatmate.tests.MatchingTests">
+        <methods>
+          <include name="startMatchingOnPropertyCard"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="fullMenuNewUserWithVerifPerc"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.MatchingTests -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

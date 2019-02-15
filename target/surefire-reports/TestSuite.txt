@@ -1,0 +1,193 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 112, Failures: 14, Errors: 0, Skipped: 16, Time elapsed: 3,128.021 s <<< FAILURE! - in TestSuite
+signUpPropertyAdding(uk.co.idealflatmate.tests.AddListingTests)  Time elapsed: 98.155 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text 'London SE1, UK' {By.xpath: (//h2[@class='h3 u_m0-top text-info'])[1]}
+Element: '<h2 class="h3 u_m0-top text-info">London SE1 7PB, UK Available</h2>'
+	at uk.co.idealflatmate.tests.AddListingTests.signUpPropertyAdding(AddListingTests.java:105)
+
+TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub(uk.co.idealflatmate.tests.ZEmailTests)  Time elapsed: 38.771 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']}
+Expected: visible
+	at uk.co.idealflatmate.tests.ZEmailTests.TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub(ZEmailTests.java:22)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59728}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 5438c215acfb98ccdb7bd5034903075e
+*** Element info: {Using=xpath, value=//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']}
+	at uk.co.idealflatmate.tests.ZEmailTests.TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub(ZEmailTests.java:22)
+
+logInOutOnPropertyPage(uk.co.idealflatmate.tests.AuthorizationTests)  Time elapsed: 24.838 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {input#loginform-username}
+Expected: visible
+	at uk.co.idealflatmate.tests.AuthorizationTests.logInOutOnPropertyPage(AuthorizationTests.java:38)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"input#loginform-username"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61886}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: a5f5a6c1c90d3ed7559ad02024bfac23
+*** Element info: {Using=css selector, value=input#loginform-username}
+	at uk.co.idealflatmate.tests.AuthorizationTests.logInOutOnPropertyPage(AuthorizationTests.java:38)
+
+footerInstagramLink(uk.co.idealflatmate.tests.FooterTest)  Time elapsed: 73.473 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: (//h1)[1]}
+Expected: exist
+	at uk.co.idealflatmate.tests.FooterTest.footerInstagramLink(FooterTest.java:155)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using xpath=(//h1)[1]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: driver.version: RemoteWebDriver
+	at uk.co.idealflatmate.tests.FooterTest.footerInstagramLink(FooterTest.java:155)
+
+setupMethod(uk.co.idealflatmate.tests.FooterTest)  Time elapsed: 73.473 s  <<< FAILURE!
+org.openqa.selenium.NoSuchWindowException: 
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64534}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: d534b444774d718e0b098b83e5dc6fa7
+
+fullMenuNewUserWithVerifPerc(uk.co.idealflatmate.tests.MatchingTests)  Time elapsed: 77.961 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text 'Well done! Thanks for answering these questions. We can now match you with compatible flatmates. Remember, you can change your answers at any time in the “Ideal Matching” section on your dashboard.' {By.xpath: //div[@class='alert alert-success']}
+Element: '<div class="alert alert-success" role="alert">Well done! Thanks for answering these questions. We can now match you with compatible flatmates. Remember, you can change your answers at any time in the �Ideal Matching� section on your dashboard.</div>'
+	at uk.co.idealflatmate.tests.MatchingTests.fullMenuNewUserWithVerifPerc(MatchingTests.java:47)
+
+startMatchingOnPropertyCard(uk.co.idealflatmate.tests.MatchingTests)  Time elapsed: 15.275 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //header//nav//ul//li//a[contains(text(), 'Find a home')]}
+Expected: visible
+	at uk.co.idealflatmate.tests.MatchingTests.startMatchingOnPropertyCard(MatchingTests.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//header//nav//ul//li//a[contains(text(), 'Find a home')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49484}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 89d67a3afa95ffa65595921493deea87
+*** Element info: {Using=xpath, value=//header//nav//ul//li//a[contains(text(), 'Find a home')]}
+	at uk.co.idealflatmate.tests.MatchingTests.startMatchingOnPropertyCard(MatchingTests.java:91)
+
+agentProfWorldPay(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 35.514 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //form[@id='ProfessionalPaymentForm']//select[@id='paymentform-type_id']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.agentProfWorldPay(PaymentTests.java:273)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate option containing text: 1 month - £34.99
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: driver.version: unknown
+	at uk.co.idealflatmate.tests.PaymentTests.agentProfWorldPay(PaymentTests.java:273)
+
+lordInWorldPaidListingProf(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 63.567 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //form[@id='ProfessionalPaymentForm']//select[@id='paymentform-type_id']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaidListingProf(PaymentTests.java:224)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate option containing text: 1 month - £44.99
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: driver.version: unknown
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaidListingProf(PaymentTests.java:224)
+
+lordInWorldPaylistingEssen(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 69.892 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //form[@id='EssentialPaymentForm']//select[@id='paymentform-type_id']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaylistingEssen(PaymentTests.java:119)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate option containing text: 1 month Essentials - £16.99
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: driver.version: unknown
+	at uk.co.idealflatmate.tests.PaymentTests.lordInWorldPaylistingEssen(PaymentTests.java:119)
+
+lordOutWorldPaylistingPrem(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 74.993 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //form[@id='PremiumPaymentForm']//select[@id='paymentform-type_id']}
+Expected: exist
+	at uk.co.idealflatmate.tests.PaymentTests.lordOutWorldPaylistingPrem(PaymentTests.java:174)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate option containing text: 1 week Premium - £12.99
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: driver.version: unknown
+	at uk.co.idealflatmate.tests.PaymentTests.lordOutWorldPaylistingPrem(PaymentTests.java:174)
+
+premiumFHPaymentWorldPay(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 51.74 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text '£3.99 (week)' {By.xpath: (//td[@class='u_p20-top text-primary'])[1]}
+Element: '<td class="u_p20-top text-primary">?3.99 (week)</td>'
+	at uk.co.idealflatmate.tests.PaymentTests.premiumFHPaymentWorldPay(PaymentTests.java:85)
+
+testListingSignUpHeader(uk.co.idealflatmate.tests.SignUpTest)  Time elapsed: 5.163 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]}
+Expected: visible
+	at uk.co.idealflatmate.tests.SignUpTest.testListingSignUpHeader(SignUpTest.java:375)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56554}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 759d4d18a4305a5724ca008c18586233
+*** Element info: {Using=xpath, value=//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]}
+	at uk.co.idealflatmate.tests.SignUpTest.testListingSignUpHeader(SignUpTest.java:375)
+
+testSignUpBlankFieldsPropAddRentBlock(uk.co.idealflatmate.tests.SignUpTest)  Time elapsed: 12.449 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //div[starts-with(@class, 'col-md-7 u_p15 u_p0-right')]//a[contains(., 'Add')]}
+Expected: exist
+	at uk.co.idealflatmate.tests.SignUpTest.testSignUpBlankFieldsPropAddRentBlock(SignUpTest.java:16)
+Caused by: org.openqa.selenium.WebDriverException: 
+unknown error: Element <a href="/create" class="btn btn-primary u_m10-top">...</a> is not clickable at point (1124, 22). Other element would receive the click: <a href="/create" onclick="">...</a>
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56554}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 759d4d18a4305a5724ca008c18586233
+	at uk.co.idealflatmate.tests.SignUpTest.testSignUpBlankFieldsPropAddRentBlock(SignUpTest.java:16)
+

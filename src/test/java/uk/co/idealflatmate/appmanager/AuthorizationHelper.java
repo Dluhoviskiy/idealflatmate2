@@ -312,6 +312,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void removeAnyAccount() {
+        closeMatchPopUp();
         addPropertyHelper.openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
         chooseProfileFromDropDownMenu();

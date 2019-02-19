@@ -48,7 +48,6 @@ public class PaymentTests extends TestBase {
         paymentsHelper.clickUpgradePremiumFH("Upgrade to get a faster reply");
         paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
-        paymentsHelper.verificationPaymentPage("Premium Flathunter");
         authorizationHelper.logoutFromApp();
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="suite" verbose="5">
-
+<suite name="idealflatmatetest" verbose="5">
+<!--
         <test name="Test1">
 
 
@@ -25,26 +25,44 @@
             <class name="uk.co.idealflatmate.tests.SignUpBuddy_up" />
              <class name="uk.co.idealflatmate.tests.ZEmailTests" />
         </classes>
+        </test>
+        <test name="Test2">
 
-        <!--<test name="Test2">
+
+            <parameter name="confEmail" value="proideal@ukr.net"/>
+            <parameter name="confPassword" value="qqqqqq666D"/>
             <classes>
-                <class name="uk.co.idealflatmate.tests.FooterTest">
-                    <methods>
-                        <include name="footerInstagramLink" />
-                        <include name="footerTwitterLink" />
-                    </methods>
-                </class>
+            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
             </classes>
         </test>
-    <test name="ToolsQA">
+    <test name="Test3">
+
+
+        <parameter name="confEmail" value="ron666ddd@gmail.com"/>
+        <parameter name="confPassword" value="qqqqqq666D"/>
         <classes>
-        <class name="uk.co.idealflatmate.tests.SignUpTest"/>
-            <parameter name="firstName1" value="Ronaldina"/>
-
-            <parameter name="sPassword" value="Test@123"/>
-        </classes>-->
-
-
+            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+        </classes>
+    </test>-->
+    <!--<test name="Test2">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.FooterTest">
+                <methods>
+                    <include name="footerInstagramLink" />
+                    <include name="footerTwitterLink" />
+                </methods>
+            </class>
+        </classes>
     </test>
+<test name="ToolsQA">
+    <classes>
+    <class name="uk.co.idealflatmate.tests.SignUpTest"/>
+        <parameter name="firstName1" value="Ronaldina"/>
+
+        <parameter name="sPassword" value="Test@123"/>
+    </classes>-->
+
+
+
 
     </suite>

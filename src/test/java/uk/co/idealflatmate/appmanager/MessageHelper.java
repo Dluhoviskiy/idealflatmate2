@@ -217,7 +217,5 @@ public class MessageHelper extends HelperBase {
         sleep(6000);
     }
 
-    public void closeIntrodGroupsPopup() {
-        $(byXpath("//div[@id='introducingBuddyUpGroupModal']//div[@class='btn btn-sm close']")).click();
-    }
+
 }

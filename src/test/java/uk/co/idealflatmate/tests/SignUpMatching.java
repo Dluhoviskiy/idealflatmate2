@@ -119,7 +119,7 @@ public class SignUpMatching extends TestBase {
         verificationHelper.checkMatchingConcurrence("100% complete");
         authorizationHelper.chooseProfileFromDropDownMenu();
        // matchingHelper.closePopupMatching();
-        signUpHelper.verificationDataProfileNameUser("Ronald", "41");
+        signUpHelper.verificationDataProfileNameUser("Ronald", "42");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();

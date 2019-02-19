@@ -289,6 +289,11 @@ public class SignUpHelper extends HelperBase {
 
     }
 
+    public void click1PropCardIDMes(final String id_property) {
+        $(byXpath("//div[@id='property_card_" + id_property + "']//a[@class='card-start-chat btn btn-circle']")).click();
+
+    }
+
     public void photoOfOwner(String photo1) {
         if (photo1.endsWith("no-image-initial.jpg")) {
             String photo2 = photo1.substring(0, 77);

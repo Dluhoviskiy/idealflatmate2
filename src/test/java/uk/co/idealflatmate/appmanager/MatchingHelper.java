@@ -207,10 +207,9 @@ public class MatchingHelper extends HelperBase {
 
     public void endQuizGo() {
         $(byXpath("//button[contains(.,'Go')]")).click();
-        $(byXpath("//div[@class='alert alert-success']")).waitUntil(visible, 15000).shouldHave(text("Well done! " +
-                "Thanks for answering these questions. " +
-                "We can now match you with compatible flatmates. " +
-                "Remember, you can change your answers at any time in the “Ideal Matching” section on your dashboard."));
+        $(byXpath("//div[@class='alert alert-success']")).waitUntil(visible, 15000).getText().contains("Well done! Thanks for " +
+                "answering these questions. We can now match you with compatible flatmates." +
+                " Remember, you can change your answers at any time in the ");
     }
 
     public void closeTakeMatch() {

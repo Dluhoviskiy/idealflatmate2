@@ -62,6 +62,10 @@ public class AuthorizationHelper extends HelperBase {
         $("#js-signup-facebook").waitUntil(visible, 4000).click();
     }
 
+    public void clickSignUpWithFBBuddy_up() {
+        $("#js-signup-facebook-buddy-up").waitUntil(visible, 4000).click();
+    }
+
     public void clickSignUpWithFB_ListFlow() {
         $("#js-signup-facebook-add-listing").waitUntil(visible, 4000).click();
     }
@@ -286,6 +290,15 @@ public class AuthorizationHelper extends HelperBase {
         fillInField(ConfData.getData(confEmail), $("#loginform-username"));
     }
 
+    public void setLoginAsUserWithoutPackage1(String confEmail) {
+        fillInField(confEmail, $("input#loginform-username"));
+    }
+    public void setPassword1(String confPassword) {
+        $("input#loginform-password").waitUntil(visible, 4000).setValue(confPassword);
+
+    }
+
+
     public void setPassword(String confPassword) {
         $("input#loginform-password").waitUntil(visible, 4000).setValue(ConfData.getData(confPassword));
 
@@ -299,7 +312,6 @@ public class AuthorizationHelper extends HelperBase {
     }
 
 
-
     public void loginMessage(String confEmail, String confPassword) {
         login(confPassword, confEmail);
         closeListRenewPopUp();
@@ -311,7 +323,13 @@ public class AuthorizationHelper extends HelperBase {
         setPassword(confPassword);
     }
 
+    public void loginTest1(String confEmail, String confPassword) {
+        setLoginAsUserWithoutPackage1(confEmail);
+        setPassword1(confPassword);
+    }
+
     public void removeAnyAccount() {
+        closeListRenewPopUp();
         closeMatchPopUp();
         addPropertyHelper.openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
@@ -326,6 +344,19 @@ public class AuthorizationHelper extends HelperBase {
     public void loginHeader(String confPassword, String confEmail){
         headerLogin();
         login2(confEmail,confPassword);
+        submitLogin();
+    }
+
+    public void loginHeader1(String confPassword, String confEmail){
+        headerLogin();
+        loginTest1(confEmail,confPassword);
+        submitLogin();
+    }
+
+    public void loginHeader2(String confPassword, String confEmail){
+        pageUrlVerifStageGoLive();
+        headerLogin();
+        loginTest1(confEmail,confPassword);
         submitLogin();
     }
 }

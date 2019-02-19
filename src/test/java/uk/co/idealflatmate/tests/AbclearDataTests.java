@@ -1,5 +1,8 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.ConfData;
 
@@ -7,87 +10,48 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
+
+
 public class AbclearDataTests extends TestBase {
 
 
+    @DataProvider(name = "Authentication")
 
-    @Test
-    public void removeAccountBeforeTest() {
+    public static Object[][] credentials() {
 
-        authorizationHelper.loginHeader("passwUniv", "agent");
+        return new Object[][] { {ConfData.getData("passwUniv"), ConfData.getData("agent" )},
+                { "qqqqqq", "FMnewlq1t6@gmail.com" }, {"qqqqqq", "TerezaHQ1@gmail.com"},
+                { "qqqqqq", "FMnew999@gmail.com"}, { "qqqqqq", "agentTest08@gmail.com" }, { "qqqqqq", "Li1q3e11@gmail.com" },
+                { "qqqqqq", "Live_inNew021r@gmail.com" },{ "qqqqqq", "Lord_out_New034@gmail.com" },{ "qqqqqq", "Live_inNewL012@gmail.com" },
+                { "qqqqqq", "Live_inNewL012yyy@gmail.com" },{ "qqqqqq", "Mes1email@gmail.com" },{ "qqqqqq", "Mes2email@gmail.com" },
+                {"qqqqqq", "TerezaHQ1a@gmail.com"},{"qqqqqq", "Mes4email@gmail.com" }, {"qqqqqq", "FMupsBuddy5@gmail.com" }, {"qqqqqq", "TerezaHQ5@gmail.com"},
+                {"qqqqqq", "TerezaHQ2@gmail.com"}, {"qqqqqq", "FMnew124o@gmail.com"}, {"qqqqqq", "Tenanttyrrr1r@gmail.com"}, {"qqqqqq", "Live_inNewy733430@gmail.com"},
+                {"qqqqqq", "FMnewuy7233@gmail.com"}, {"qqqqqq", "FMnew33riiq@gmail.com"},
+                {"qqqqqq", "LiveOut7t111r21@gmail.com"}, {"qqqqqq", "FMupsBuddy6@gmail.com"}, {"qqqqqq", "FMupsBuddy7@gmail.com"}};
+
+        }
+
+
+    @Test(dataProvider = "Authentication")
+
+
+    public void removeAccountBeforeTest(String confEmail, String confPassword) {
+
+        authorizationHelper.loginHeader1(confEmail, confPassword);
         authorizationHelper.removeAccountBeforeTest();
 
-        authorizationHelper.loginHeader("passwUniv", "fmMatch");
+
+
+    }
+
+    //@Test
+    @Parameters ({ "confEmail", "confPassword" })
+    public void removeAccountBeforeTestLive(@Optional("qqqqqq") String confPassword,@Optional("proideal@ukr.net") String confEmail) {
+
+        authorizationHelper.loginHeader2(confEmail, confPassword);
         authorizationHelper.removeAccountBeforeTest();
 
-        authorizationHelper.loginHeader("passwUniv", "FMMatch3");
-        authorizationHelper.removeAccountBeforeTest();
 
-        authorizationHelper.loginHeader("passwUniv", "agent2");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "fmNotPaid3");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "live-In1");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "liv-Out1");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "fmNotPaid4");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "fmNotPaid5");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "mes1Email");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "mes2Email");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "mes3Email");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "mes4Email");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FMupsBuddy1");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FMMatch5");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FMMatch4");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FMMatch6");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "Tenant1");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FMnew1");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FMnew2");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FMnew3");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FB2");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "FB3");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "LiveIn2");
-        authorizationHelper.removeAccountBeforeTest();
-
-        authorizationHelper.loginHeader("passwUniv", "LiveOut2");
-        authorizationHelper.removeAccountBeforeTest();
 
     }
 

@@ -56,6 +56,7 @@ public class TestBase {
 
 
     @BeforeClass
+
     public void setupClass() {
         //ChromeDriverManager.getInstance().setup();
         WebDriverManager.chromedriver().setup();
@@ -81,7 +82,11 @@ public class TestBase {
 
     }
 
+
+
+
     @BeforeMethod
+
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();

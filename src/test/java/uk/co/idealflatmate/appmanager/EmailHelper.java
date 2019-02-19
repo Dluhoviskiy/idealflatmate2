@@ -100,7 +100,7 @@ public class EmailHelper extends HelperBase {
 
     public void removeAllEmails() {
         sleep(2000);
-        $(byXpath("//div[@id=':5']")).waitUntil(visible, 5000).click();
+        $(byXpath("//div[@class='aeH']")).waitUntil(visible, 5000).click();
         $(byXpath("(//div[@class='asa'])[3]")).waitUntil(visible, 5000).click();
         sleep(2000);
     }

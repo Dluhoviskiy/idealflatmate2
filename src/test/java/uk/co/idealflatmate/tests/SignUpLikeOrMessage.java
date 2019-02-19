@@ -150,8 +150,8 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderFemaleSelect();
-        signUpHelper.setSignEmail(ConfData.getData("mes2Email"));
-        signUpHelper.setSignPassword(ConfData.getData("passwUniv"));
+        signUpHelper.setSignEmail("mes2Email");
+        signUpHelper.setSignPassword("passwUniv");
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.profilePhotoAddJpeg();
@@ -299,8 +299,8 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.setSignUpNameF("Ronald");
         signUpHelper.genderMaleSelectAfterBlank();
-        signUpHelper.setSignEmail(ConfData.getData("mes4Email"));
-        signUpHelper.setSignPassword(ConfData.getData("passwUniv"));
+        signUpHelper.setSignEmail("mes4Email");
+        signUpHelper.setSignPassword("passwUniv");
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.clickYourInformationContinue();

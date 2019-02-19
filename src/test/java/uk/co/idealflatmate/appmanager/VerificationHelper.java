@@ -223,6 +223,18 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
                 "freelancer/self employed looking for a room in Zone 1 or Watford or North London."));
      }
 
+    public void verificationDataProfileFBBuddy_UP(String percent, String name) {
+        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
+                "Personal Details\n" +
+                "Property Preferences\n" +
+                "Budget & Availability\n" +
+                "Your ideal flatmate"));
+        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
+                "complete"));
+        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 60 is a female " +
+                "freelancer/self employed looking for a room."));
+    }
+
     public void verifDataProfFBAgent(String percent, String text1) {
         $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
                 "Personal Details\n" +
@@ -651,4 +663,11 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     }
 
+    public void textNoGroup(String text) {
+        $(byXpath("//h2[contains(@class,'box-info')]")).shouldHave(text(text));
+    }
+
+    public void nameUserInGroup(String name) {
+        $(byXpath("(//div[@id='js-groups-list']//div//div[@class='text-12 hunters-list--username'])[2]")).shouldHave(text(name));
+    }
 }

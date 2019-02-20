@@ -6,11 +6,14 @@ import org.testng.annotations.*;
 import uk.co.idealflatmate.appmanager.*;
 
 
-
+import java.util.ArrayList;
+import java.util.Set;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
@@ -55,7 +58,7 @@ public class TestBase {
     }*/
 
 
-    @BeforeClass
+    @BeforeSuite
 
     public void setupClass() {
         //ChromeDriverManager.getInstance().setup();
@@ -89,7 +92,7 @@ public class TestBase {
 
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
-        clearCache();
+        //clearCache();
 
     }
 
@@ -98,7 +101,7 @@ public class TestBase {
 
 
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
         //screenshot("screenshotFail1");
         closeWebDriver();
@@ -130,6 +133,16 @@ public class TestBase {
         closeWebDriver();
         //ChromeDriverManager.getInstance().setup();
         WebDriverManager.chromedriver().setup();
+        open(relativeOrAbsoluteUrl);
+    }
+
+    public static void newPage(String relativeOrAbsoluteUrl) {
+
+        //ArrayList tabs2 = (ArrayList) getWebDriver().getWindowHandles();//Получение списка табов
+        //switchTo().window(String.valueOf(tabs2.get(1)));//Переключение на второй
+        close();
+        //clearBrowserCache();
+        //refresh();
         open(relativeOrAbsoluteUrl);
     }
 

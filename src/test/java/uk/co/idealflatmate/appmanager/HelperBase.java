@@ -14,6 +14,7 @@ import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static java.util.ResourceBundle.clearCache;
 import static uk.co.idealflatmate.tests.TestBase.newDriverPage;
+import static uk.co.idealflatmate.tests.TestBase.newPage;
 
 
 public class HelperBase  {
@@ -119,38 +120,19 @@ public class HelperBase  {
         // проверить, что вы находитесь на верной странице
         if (! url().equals("https://www.idealflatmate.co.uk/")) {
 
-            clearBrowserCache();
-            refresh();
-            close();
-            open("https://www.idealflatmate.co.uk/");
+            newPage("https://www.idealflatmate.co.uk/");
         }
-
-
 
     }
 
-   /* public static void pageUrlVerifLiveGoStage(){
-        // проверить, что вы находитесь на верной странице
-
-        if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
-
-            //clearBrowserCache();
-            //refresh();
-            //close();
-            //open ("http://front.idealflatmate4test.demo.devplatform2.com/");
-
-        }
-    }*/
 
     public static void pageUrlVerifLiveGoStage(){
         // проверить, что вы находитесь на верной странице
 
         if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
-            newDriverPage("http://front.idealflatmate4test.demo.devplatform2.com");
-            //clearBrowserCache();
-            //refresh();
-            //close();
-            //open ("http://front.idealflatmate4test.demo.devplatform2.com/");
+
+            newPage("http://front.idealflatmate4test.demo.devplatform2.com");
+
 
         } else{}
     }
@@ -160,17 +142,6 @@ public class HelperBase  {
         clearCache();
         close();
         open(relOrAbsolUrl);
-    }
-
-    public  void pageUrlVerifStageGoLive1(){
-        // проверить, что вы находитесь на верной странице
-        if (! url().equals("https://www.idealflatmate.co.uk/")) {
-            newDriverPage("https://www.idealflatmate.co.uk/");
-           // clearBrowserCache();
-           // refresh();
-           // close();
-           // open("https://www.idealflatmate.co.uk/");
-        }
     }
 
     public static void hoverClick(String xpath) {

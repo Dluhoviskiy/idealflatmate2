@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="idealflatmatetest" verbose="5">
-<!--
+
         <test name="Test1">
 
 
@@ -10,7 +10,7 @@
             <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
             <class name="uk.co.idealflatmate.tests.AddListingTests" />
              <class name="uk.co.idealflatmate.tests.AreaPageTest" />
-
+            <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
              <class name="uk.co.idealflatmate.tests.FooterTest" />
              <class name="uk.co.idealflatmate.tests.HomePageTest" />
              <class name="uk.co.idealflatmate.tests.MatchingTests" />
@@ -26,6 +26,7 @@
              <class name="uk.co.idealflatmate.tests.ZEmailTests" />
         </classes>
         </test>
+    <!--
         <test name="Test2">
 
 

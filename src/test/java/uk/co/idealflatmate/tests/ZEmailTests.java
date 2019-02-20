@@ -6,7 +6,7 @@ public class ZEmailTests extends TestBase {
 
 
     @Test
-    public void TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub() {
+    public void zSuccesEmailReceivingWelcomeListingMessageSubscriptionCancSub() {
         emailHelper.openGmailPage();
         emailHelper.setLoginAsUserEmail("cro.gen.idealflatmate@gmail.com");
         emailHelper.setLoginAsUserPassword("qqqqqq666D");

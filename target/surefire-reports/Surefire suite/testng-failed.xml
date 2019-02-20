@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test thread-count="1" verbose="0" name="Surefire test(failed)">
+    <classes>
+      <class name="uk.co.idealflatmate.tests.ZEmailTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="TestSuccessfulEmailReceivingWelcomeListingMessageSubscriptionCancSub"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.ZEmailTests -->
+      <class name="uk.co.idealflatmate.tests.FooterTest">
+        <methods>
+          <include name="footerBlogLink"/>
+          <include name="footerPricingLink"/>
+          <include name="footerBrowseFlatsharesLink"/>
+          <include name="footerNLALink"/>
+          <include name="footerModern"/>
+          <include name="tearDown"/>
+          <include name="footerContactLink"/>
+          <include name="footerTwitterLink"/>
+          <include name="footerBrowseTipsLink"/>
+          <include name="footerYoutubeLink"/>
+          <include name="footerStaySafeLink"/>
+          <include name="footerPressLink"/>
+          <include name="footerBrowseHowItWorksLink"/>
+          <include name="footerHomeLink"/>
+          <include name="footerInstagramLink"/>
+          <include name="footerMediaLink"/>
+          <include name="footerAboutUsLink"/>
+          <include name="setupMethod"/>
+          <include name="setupClass"/>
+          <include name="footerAskLandlord"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.FooterTest -->
+      <class name="uk.co.idealflatmate.tests.SearchFMPageTests">
+        <methods>
+          <include name="searchPagination"/>
+          <include name="sortListingLoggedIn"/>
+          <include name="applyMoreFiltersPhotoNoList"/>
+          <include name="fmSearchBy"/>
+          <include name="applyMoreFilters"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="applyMoreFiltersPhotoWithList"/>
+          <include name="setupClass"/>
+          <include name="applyAdvancedFiltersDefault"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.SearchFMPageTests -->
+      <class name="uk.co.idealflatmate.tests.HomePageTest">
+        <methods>
+          <include name="findStartListing"/>
+          <include name="amountOfBlocsAndTextOfAreas"/>
+          <include name="findStartMatchingLink"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="findOutMore"/>
+          <include name="pressLogo"/>
+          <include name="blogFM"/>
+          <include name="setupClass"/>
+          <include name="blogLandlord"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.HomePageTest -->
+      <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests">
+        <methods>
+          <include name="applyMoreFilters"/>
+          <include name="searchPagination"/>
+          <include name="searchEastLDNPagination"/>
+          <include name="searchZone1Pagination"/>
+          <include name="sortListingWith2Rooms"/>
+          <include name="sortListing"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="propertySearchByDropDown"/>
+          <include name="setupClass"/>
+          <include name="applyAdvancedFiltersDefault"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.SearchPropertiesPageTests -->
+      <class name="uk.co.idealflatmate.tests.AreaPageTest">
+        <methods>
+          <include name="seeMoreRooms"/>
+          <include name="firstFeaturedHomePageHeader"/>
+          <include name="firstFeaturedLinkMap"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="linkFH"/>
+          <include name="firstFeaturedLinkArea"/>
+          <include name="setupClass"/>
+          <include name="exploreMoreArea"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AreaPageTest -->
+      <class name="uk.co.idealflatmate.tests.SignUpTest">
+        <methods>
+          <include name="testListingSignUpHeader"/>
+          <include name="testHeaderSignUpViaFacebook"/>
+          <include name="testHeaderSignUpWithBlankRequiredFieldsYourInf"/>
+          <include name="testListingSignUpFromHomepage"/>
+          <include name="tearDown"/>
+          <include name="testSignUpBlankFieldsPropAddRentBlock"/>
+          <include name="testHeaderSignUpWithBlankRequiredFieldsBudget"/>
+          <include name="testSignUpBlankFieldsPropAddWorkBlock"/>
+          <include name="testHeaderSignUpWithBlankRequiredFieldsLocation"/>
+          <include name="testSignUpViaFBlistingAgent"/>
+          <include name="testHeaderSignUpWithBlankRequiredFieldsMoreAboutYou"/>
+          <include name="testHeaderSignUpHomePageFMSearchLiv_inWithoutAbout"/>
+          <include name="testHeaderSignUpWithExistingEmail"/>
+          <include name="setupMethod"/>
+          <include name="testHeaderRoomSignUpHomePageTenant"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.SignUpTest -->
+      <class name="uk.co.idealflatmate.tests.SearchHomePageTests">
+        <methods>
+          <include name="searchHomeByButton"/>
+          <include name="searchHomePartOfLocationName"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="searchHomeLocationFromList"/>
+          <include name="setupClass"/>
+          <include name="TestSearchHomeByEnter"/>
+          <include name="searchHomeIDProperty"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.SearchHomePageTests -->
+      <class name="uk.co.idealflatmate.tests.PaymentTests">
+        <methods>
+          <include name="GoPremiumFHPaymentOnPhone"/>
+          <include name="lordOutWorldPaylistingPrem"/>
+          <include name="lordInWorldPaidListingProf"/>
+          <include name="lordInWorldPaylistingEssen"/>
+          <include name="premiumFHPaymentWorldPay"/>
+          <include name="AbilityToSeePhone"/>
+          <include name="tearDown"/>
+          <include name="GoPremiumFHPaymentOnMessage"/>
+          <include name="setupMethod"/>
+          <include name="agentProfWorldPay"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.PaymentTests -->
+      <class name="uk.co.idealflatmate.tests.MessagesTest">
+        <methods>
+          <include name="readMessageByLandlWithoutSubsn"/>
+          <include name="fmWithoutSubsTolordWithoutSubsWithListFromFMpage"/>
+          <include name="answMesLandlToPremFHWithoutSubs"/>
+          <include name="premFmToLandlWithoutSubsWithListFromSearch"/>
+          <include name="landlordWithoutSubsToFM"/>
+          <include name="lordWithSubsToFM"/>
+          <include name="answMesFmWithoutSubsToFM"/>
+          <include name="tearDown"/>
+          <include name="setupMethod"/>
+          <include name="fmWithoutSubsToLandlordWithoutSubsWithListFromList"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.MessagesTest -->
+      <class name="uk.co.idealflatmate.tests.AddListingTests">
+        <methods>
+          <include name="propertyEditAllFieldsAbout"/>
+          <include name="signUpPropertyAdding"/>
+          <include name="propertyAddWithAllFields"/>
+          <include name="titleListing"/>
+          <include name="tearDown"/>
+          <include name="loginPendingListing"/>
+          <include name="setupMethod"/>
+          <include name="setupClass"/>
+          <include name="loginStartListing"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AddListingTests -->
+      <class name="uk.co.idealflatmate.tests.AuthorizationTests">
+        <methods>
+          <include name="logInOutOnFMPage"/>
+          <include name="alogInWithMatchingFB"/>
+          <include name="tearDown"/>
+          <include name="loginPassWronglogInHomePage"/>
+          <include name="emailWrongHomePage"/>
+          <include name="logInOutOnPropertyPage"/>
+          <include name="addLogInViaFacebook"/>
+          <include name="logInContactFM"/>
+          <include name="classicLogInOut"/>
+          <include name="logInPhoneReveal"/>
+          <include name="setupMethod"/>
+          <include name="logInMessageFM"/>
+          <include name="invalidLoginWithEmptyFields"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.AuthorizationTests -->
+      <class name="uk.co.idealflatmate.tests.MatchingTests">
+        <methods>
+          <include name="startMatchingOnPropertyCard"/>
+          <include name="fullMenuNewUserWithVerifPercent"/>
+          <include name="startMatchingOnFMSearchPage"/>
+          <include name="tearDown"/>
+          <include name="startMatchingQuizPropertyPage"/>
+          <include name="setupMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- uk.co.idealflatmate.tests.MatchingTests -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

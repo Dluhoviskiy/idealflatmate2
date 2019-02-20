@@ -1,6 +1,0 @@
-#surefire
-#Wed Feb 20 14:23:17 EET 2019
-user.dir=C\:\\Users\\lukhovytskyi\\Documents\\GitHub\\idealflatmatetest
-suiteXmlFile=C\:\\Users\\lukhovytskyi\\Documents\\GitHub\\factory_tests\\testNG.xml
-localRepository=C\:\\Users\\lukhovytskyi\\.m2\\repository
-basedir=C\:\\Users\\lukhovytskyi\\Documents\\GitHub\\idealflatmatetest

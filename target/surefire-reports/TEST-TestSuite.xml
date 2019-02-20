@@ -1,14 +1,105 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 148, Failures: 16, Errors: 0, Skipped: 1, Time elapsed: 3,899.681 sec <<< FAILURE!
-propertyAddWithAllFields(uk.co.idealflatmate.tests.AddListingTests)  Time elapsed: 36.18 sec  <<< FAILURE!
-Element not found {By.xpath: //input[@id='property-route']}
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="148" failures="16" name="TestSuite" time="3,899.69" errors="0" skipped="1">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\bin"/>
+    <property name="java.vm.version" value="25.152-b16"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest"/>
+    <property name="java.runtime.version" value="1.8.0_152-b16"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\surefire\surefirebooter2992455281342421990.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\LUKHOV~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="suiteXmlFile" value="C:\Users\lukhovytskyi\Documents\GitHub\factory_tests\testNG.xml"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\ImageMagick-7.0.8-Q16;C:\USR\Apache24;C:\USR\Apache24\bin;C:\php;C:\Program Files\Java\jdk1.8.0_152\bin;C:\Program Files (x86)\Python36-32\Scripts\;C:\Program Files (x86)\Python36-32\;C:\Program Files\Kerio\Outlook Connector (Offline Edition)\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\lukhovytskyi\Downloads\jmeter\apache-jmeter-3.3\bin;C:\Program Files\Git\cmd;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Maven\apache-maven-3.5.3\bin;C:\Program Files\Maven\apache-maven-3.5.3\bin;C:\Users\lukhovytskyi\Scripts\;C:\Users\lukhovytskyi\;C:\Users\lukhovytskyi\AppData\Local\Microsoft\WindowsApps;C:\Users\lukhovytskyi\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="surefire.test.class.path" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\test-classes;C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\classes;C:\Users\lukhovytskyi\.m2\repository\com\codeborne\selenide\4.11.1\selenide-4.11.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-java\3.11.0\selenium-java-3.11.0.jar;C:\Users\lukhovytskyi\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\guava\guava\24.1-jre\guava-24.1-jre.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\lukhovytskyi\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\browsermob-core\2.1.5\browsermob-core-2.1.5.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\littleproxy\1.1.0-beta-bmp-17\littleproxy-1.1.0-beta-bmp-17.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.8.9\jackson-core-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.8.9\jackson-databind-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.9\jackson-annotations-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\dnsjava\dnsjava\2.1.8\dnsjava-2.1.8.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\com\jcraft\jzlib\1.1.3\jzlib-1.1.3.jar;C:\Users\lukhovytskyi\.m2\repository\io\netty\netty-all\4.0.51.Final\netty-all-4.0.51.Final.jar;C:\Users\lukhovytskyi\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.58\bcprov-jdk15on-1.58.jar;C:\Users\lukhovytskyi\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.58\bcpkix-jdk15on-1.58.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\mitm\2.1.5\mitm-2.1.5.jar;C:\Users\lukhovytskyi\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\lukhovytskyi\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\lukhovytskyi\.m2\repository\io\github\bonigarcia\webdrivermanager\3.3.0\webdrivermanager-3.3.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpclient\4.5.6\httpclient-4.5.6.jar;C:\Users\lukhovytskyi\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\lukhovytskyi\.m2\repository\org\rauschig\jarchivelib\1.0.0\jarchivelib-1.0.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar;C:\Users\lukhovytskyi\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-server\3.141.59\selenium-server-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\net\jcip\jcip-annotations\1.0\jcip-annotations-1.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\jetty-repacked\9.4.12.v20180830\jetty-repacked-9.4.12.v20180830.jar;C:\Users\lukhovytskyi\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\lukhovytskyi\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\slf4j-log4j12\1.7.25\slf4j-log4j12-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\rest-assured\2.9.0\rest-assured-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy\2.4.4\groovy-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy-xml\2.4.4\groovy-xml-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpmime\4.5.1\httpmime-4.5.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy-json\2.4.4\groovy-json-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\rest-assured-common\2.9.0\rest-assured-common-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\xml-path\2.9.0\xml-path-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\logging\log4j\log4j-api\2.0-beta9\log4j-api-2.0-beta9.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\2.8\surefire-testng-utils-2.8.jar;"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\lukhovytskyi"/>
+    <property name="user.timezone" value="Europe/Helsinki"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="user.name" value="lukhovytskyi"/>
+    <property name="java.class.path" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\test-classes;C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\classes;C:\Users\lukhovytskyi\.m2\repository\com\codeborne\selenide\4.11.1\selenide-4.11.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-java\3.11.0\selenium-java-3.11.0.jar;C:\Users\lukhovytskyi\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\guava\guava\24.1-jre\guava-24.1-jre.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\lukhovytskyi\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\lukhovytskyi\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\browsermob-core\2.1.5\browsermob-core-2.1.5.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\littleproxy\1.1.0-beta-bmp-17\littleproxy-1.1.0-beta-bmp-17.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.8.9\jackson-core-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.8.9\jackson-databind-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.9\jackson-annotations-2.8.9.jar;C:\Users\lukhovytskyi\.m2\repository\dnsjava\dnsjava\2.1.8\dnsjava-2.1.8.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\com\jcraft\jzlib\1.1.3\jzlib-1.1.3.jar;C:\Users\lukhovytskyi\.m2\repository\io\netty\netty-all\4.0.51.Final\netty-all-4.0.51.Final.jar;C:\Users\lukhovytskyi\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.58\bcprov-jdk15on-1.58.jar;C:\Users\lukhovytskyi\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.58\bcpkix-jdk15on-1.58.jar;C:\Users\lukhovytskyi\.m2\repository\net\lightbody\bmp\mitm\2.1.5\mitm-2.1.5.jar;C:\Users\lukhovytskyi\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\lukhovytskyi\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\lukhovytskyi\.m2\repository\io\github\bonigarcia\webdrivermanager\3.3.0\webdrivermanager-3.3.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpclient\4.5.6\httpclient-4.5.6.jar;C:\Users\lukhovytskyi\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\lukhovytskyi\.m2\repository\org\rauschig\jarchivelib\1.0.0\jarchivelib-1.0.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar;C:\Users\lukhovytskyi\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-server\3.141.59\selenium-server-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\lukhovytskyi\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\net\jcip\jcip-annotations\1.0\jcip-annotations-1.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\seleniumhq\selenium\jetty-repacked\9.4.12.v20180830\jetty-repacked-9.4.12.v20180830.jar;C:\Users\lukhovytskyi\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\lukhovytskyi\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\lukhovytskyi\.m2\repository\org\slf4j\slf4j-log4j12\1.7.25\slf4j-log4j12-1.7.25.jar;C:\Users\lukhovytskyi\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\rest-assured\2.9.0\rest-assured-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy\2.4.4\groovy-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy-xml\2.4.4\groovy-xml-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\httpcomponents\httpmime\4.5.1\httpmime-4.5.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\lukhovytskyi\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\codehaus\groovy\groovy-json\2.4.4\groovy-json-2.4.4.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\rest-assured-common\2.9.0\rest-assured-common-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\com\jayway\restassured\xml-path\2.9.0\xml-path-2.9.0.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\logging\log4j\log4j-api\2.0-beta9\log4j-api-2.0-beta9.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\lukhovytskyi\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\2.8\surefire-testng-utils-2.8.jar;"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_152\jre"/>
+    <property name="sun.java.command" value="C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\surefire\surefirebooter2992455281342421990.jar C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\surefire\surefire3615965204727848281tmp C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\target\surefire\surefire2256172287316307675tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_152"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_152\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_152\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_152\jre\classes"/>
+    <property name="webdriver.chrome.driver" value="C:\Users\lukhovytskyi\.m2\repository\webdriver\chromedriver\win32\2.46\chromedriver.exe"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="C:\Users\lukhovytskyi\.m2\repository"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.556"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.388"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="9.218"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="12.428"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="10.856"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="9.68"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="10.328"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.627"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.764"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.332"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.757"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.285"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.344"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.457"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.134"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.995"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.307"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.249"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.305"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.252"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.342"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="9.031"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="8.328"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="9.015"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removeAccountBeforeTest" time="11.407"/>
+  <testcase classname="uk.co.idealflatmate.tests.AbclearDataTests" name="removelistingBeforeTest" time="73.458"/>
+  <testcase classname="uk.co.idealflatmate.tests.AddListingTests" name="loginPendingListing" time="46.726"/>
+  <testcase classname="uk.co.idealflatmate.tests.AddListingTests" name="loginStartListing" time="40.374"/>
+  <testcase classname="uk.co.idealflatmate.tests.AddListingTests" name="propertyAddWithAllFields" time="36.182">
+    <failure message="Element not found {By.xpath: //input[@id=&apos;property-route&apos;]}
+Expected: visible" type="Element not found {By.xpath">Element not found {By.xpath: //input[@id=&apos;property-route&apos;]}
 Expected: visible
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550665829929.1.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550665829929.1.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='property-route']"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;property-route&apos;]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -57,17 +148,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='property-route']"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;property-route&apos;]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59882}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: d49a587dbc1bebb30ca1ba9e5b418960
-*** Element info: {Using=xpath, value=//input[@id='property-route']}
+*** Element info: {Using=xpath, value=//input[@id=&apos;property-route&apos;]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -87,7 +178,7 @@ Session ID: d49a587dbc1bebb30ca1ba9e5b418960
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 45 more
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='property-route']"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;property-route&apos;]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -136,17 +227,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='property-route']"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;property-route&apos;]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59882}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: d49a587dbc1bebb30ca1ba9e5b418960
-*** Element info: {Using=xpath, value=//input[@id='property-route']}
+*** Element info: {Using=xpath, value=//input[@id=&apos;property-route&apos;]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -166,10 +257,28 @@ Session ID: d49a587dbc1bebb30ca1ba9e5b418960
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 45 more
-
-logInOutOnFMPage(uk.co.idealflatmate.tests.AuthorizationTests)  Time elapsed: 18.335 sec  <<< FAILURE!
-Element should be visible {By.xpath: //div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]}
-Element: '<a class="text-bold" href="/auth/login" displayed:false></a>'
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.AddListingTests" name="propertyEditAllFieldsAbout" time="65.731"/>
+  <testcase classname="uk.co.idealflatmate.tests.AddListingTests" name="signUpPropertyAdding" time="68.351"/>
+  <testcase classname="uk.co.idealflatmate.tests.AddListingTests" name="titleListing" time="59.382"/>
+  <testcase classname="uk.co.idealflatmate.tests.AreaPageTest" name="exploreMoreArea" time="15.589"/>
+  <testcase classname="uk.co.idealflatmate.tests.AreaPageTest" name="firstFeaturedHomePageHeader" time="14.769"/>
+  <testcase classname="uk.co.idealflatmate.tests.AreaPageTest" name="firstFeaturedLinkArea" time="17.88"/>
+  <testcase classname="uk.co.idealflatmate.tests.AreaPageTest" name="firstFeaturedLinkMap" time="7.307"/>
+  <testcase classname="uk.co.idealflatmate.tests.AreaPageTest" name="linkFH" time="9.899"/>
+  <testcase classname="uk.co.idealflatmate.tests.AreaPageTest" name="seeMoreRooms" time="26.487"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="addLogInViaFacebook" time="42.585"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="alogInWithMatchingFB" time="58.966"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="classicLogInOut" time="7.734"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="emailWrongHomePage" time="5.397"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="invalidLoginWithEmptyFields" time="3.046"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="logInContactFM" time="14.183"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="logInMessageFM" time="14.048"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="logInOutOnFMPage" time="18.335">
+    <failure message="Element should be visible {By.xpath: //div[@id=&apos;signupNeedspaceModal&apos;]//div//a[@class=&apos;text-bold&apos; and contains(., &apos;Sign&apos;)]}
+Element: &apos;&lt;a class=&quot;text-bold&quot; href=&quot;/auth/login&quot; displayed:false&gt;&lt;/a&gt;&apos;" type="Element should be visible {By.xpath">Element should be visible {By.xpath: //div[@id=&apos;signupNeedspaceModal&apos;]//div//a[@class=&apos;text-bold&apos; and contains(., &apos;Sign&apos;)]}
+Element: &apos;&lt;a class=&quot;text-bold&quot; href=&quot;/auth/login&quot; displayed:false&gt;&lt;/a&gt;&apos;
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550666340287.3.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550666340287.3.html
 Timeout: 10 s.
@@ -183,14 +292,45 @@ Timeout: 10 s.
 	at com.sun.proxy.$Proxy8.click(Unknown Source)
 	at uk.co.idealflatmate.appmanager.AuthorizationHelper.clickSignInButtonInPopup(AuthorizationHelper.java:139)
 	at uk.co.idealflatmate.tests.AuthorizationTests.logInOutOnFMPage(AuthorizationTests.java:53)
-
-startMatchingOnPropertyCard(uk.co.idealflatmate.tests.MatchingTests)  Time elapsed: 14.787 sec  <<< FAILURE!
-Element not found {By.xpath: //header//nav//ul//li//a[contains(text(), 'Find a home')]}
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="logInOutOnPropertyPage" time="10.855"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="logInPhoneReveal" time="20.385"/>
+  <testcase classname="uk.co.idealflatmate.tests.AuthorizationTests" name="loginPassWronglogInHomePage" time="11.409"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerAboutUsLink" time="4.655"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerAskLandlord" time="7.686"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerBlogLink" time="5.429"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerBrowseFlatsharesLink" time="10.289"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerBrowseHowItWorksLink" time="4.326"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerBrowseTipsLink" time="4.038"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerContactLink" time="4.229"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerHomeLink" time="4.614"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerInstagramLink" time="1.984"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerMediaLink" time="4.626"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerModern" time="4.819"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerNLALink" time="7.208"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerPressLink" time="4.142"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerPricingLink" time="4.404"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerStaySafeLink" time="3.894"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerTwitterLink" time="2.42"/>
+  <testcase classname="uk.co.idealflatmate.tests.FooterTest" name="footerYoutubeLink" time="3.47"/>
+  <testcase classname="uk.co.idealflatmate.tests.HomePageTest" name="amountOfBlocsAndTextOfAreas" time="2.46"/>
+  <testcase classname="uk.co.idealflatmate.tests.HomePageTest" name="blogFM" time="2.935"/>
+  <testcase classname="uk.co.idealflatmate.tests.HomePageTest" name="blogLandlord" time="2.489"/>
+  <testcase classname="uk.co.idealflatmate.tests.HomePageTest" name="findOutMore" time="4.093"/>
+  <testcase classname="uk.co.idealflatmate.tests.HomePageTest" name="findStartListing" time="2.313"/>
+  <testcase classname="uk.co.idealflatmate.tests.HomePageTest" name="findStartMatchingLink" time="1.756"/>
+  <testcase classname="uk.co.idealflatmate.tests.HomePageTest" name="pressLogo" time="0.998"/>
+  <testcase classname="uk.co.idealflatmate.tests.MatchingTests" name="fullMenuNewUserWithVerifPercent" time="99.82"/>
+  <testcase classname="uk.co.idealflatmate.tests.MatchingTests" name="startMatchingOnFMSearchPage" time="14.352"/>
+  <testcase classname="uk.co.idealflatmate.tests.MatchingTests" name="startMatchingOnPropertyCard" time="14.788">
+    <failure message="Element not found {By.xpath: //header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]}
+Expected: visible" type="Element not found {By.xpath">Element not found {By.xpath: //header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]}
 Expected: visible
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550666698567.5.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550666698567.5.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//header//nav//ul//li//a[contains(text(), 'Find a home')]"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -237,17 +377,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//header//nav//ul//li//a[contains(text(), 'Find a home')]"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64617}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 428a9fc275aa6754c1c574ab88a71e27
-*** Element info: {Using=xpath, value=//header//nav//ul//li//a[contains(text(), 'Find a home')]}
+*** Element info: {Using=xpath, value=//header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -267,7 +407,7 @@ Session ID: 428a9fc275aa6754c1c574ab88a71e27
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//header//nav//ul//li//a[contains(text(), 'Find a home')]"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -314,17 +454,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//header//nav//ul//li//a[contains(text(), 'Find a home')]"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64617}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 428a9fc275aa6754c1c574ab88a71e27
-*** Element info: {Using=xpath, value=//header//nav//ul//li//a[contains(text(), 'Find a home')]}
+*** Element info: {Using=xpath, value=//header//nav//ul//li//a[contains(text(), &apos;Find a home&apos;)]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -344,14 +484,28 @@ Session ID: 428a9fc275aa6754c1c574ab88a71e27
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-
-agentProfWorldPay(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 35.59 sec  <<< FAILURE!
-Element not found {By.xpath: //form[@id='ProfessionalPaymentForm']//select[@id='paymentform-type_id']}
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.MatchingTests" name="startMatchingQuizPropertyPage" time="14.508"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="answMesFmWithoutSubsToFM" time="20.789"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="answMesLandlToPremFHWithoutSubs" time="32.286"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="fmWithoutSubsToLandlordWithoutSubsWithListFromList" time="48.427"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="fmWithoutSubsTolordWithoutSubsWithListFromFMpage" time="24.875"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="landlordWithoutSubsToFM" time="14.636"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="lordWithSubsToFM" time="14.117"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="premFmToLandlWithoutSubsWithListFromSearch" time="23.43"/>
+  <testcase classname="uk.co.idealflatmate.tests.MessagesTest" name="readMessageByLandlWithoutSubsn" time="16.006"/>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="AbilityToSeePhone" time="15.934"/>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="GoPremiumFHPaymentOnMessage" time="17.436"/>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="GoPremiumFHPaymentOnPhone" time="17.58"/>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="agentProfWorldPay" time="35.59">
+    <failure message="Element not found {By.xpath: //form[@id=&apos;ProfessionalPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
+Expected: exist" type="Element not found {By.xpath">Element not found {By.xpath: //form[@id=&apos;ProfessionalPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
 Expected: exist
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667002615.7.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667002615.7.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - £34.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ34.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -393,17 +547,17 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 month
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - £34.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ34.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - £34.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ34.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -445,24 +599,26 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 month
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - £34.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ34.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-
-lordInWorldPaidListingProf(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 122.428 sec  <<< FAILURE!
-Element not found {By.xpath: //form[@id='ProfessionalPaymentForm']//select[@id='paymentform-type_id']}
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="lordInWorldPaidListingProf" time="122.428">
+    <failure message="Element not found {By.xpath: //form[@id=&apos;ProfessionalPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
+Expected: exist" type="Element not found {By.xpath">Element not found {By.xpath: //form[@id=&apos;ProfessionalPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
 Expected: exist
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667132787.9.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667132787.9.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - £44.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ44.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -504,17 +660,17 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 month
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - £44.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ44.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - £44.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ44.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -556,24 +712,43 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 month
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - £44.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month - ВЈ44.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-
-lordInWorldPaylistingEssen(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 74.035 sec  <<< FAILURE!
-Element not found {By.xpath: //form[@id='EssentialPaymentForm']//select[@id='paymentform-type_id']}
+</failure>
+    <system-err>Feb 20, 2019 2:50:03 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 1 -&gt; ChromeDriver: chrome on XP (4ba4e323c53f38fe10ad2f8fd4b38918)
+Feb 20, 2019 2:50:03 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Feb 20, 2019 2:50:04 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 1169 ms
+Feb 20, 2019 2:50:06 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Feb 20, 2019 2:50:07 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=72.0.3626.109 Platform=XP
+Feb 20, 2019 2:50:07 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Feb 20, 2019 2:50:07 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Feb 20, 2019 2:50:07 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 1: ChromeDriver -&gt; ChromeDriver: chrome on XP (7a00ea8607209c74d690424f759b1f63)
+</system-err>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="lordInWorldPaylistingEssen" time="74.036">
+    <failure message="Element not found {By.xpath: //form[@id=&apos;EssentialPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
+Expected: exist" type="Element not found {By.xpath">Element not found {By.xpath: //form[@id=&apos;EssentialPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
 Expected: exist
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667217739.11.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667217739.11.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 month Essentials - £16.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 month Essentials - ВЈ16.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -615,17 +790,17 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 month
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month Essentials - £16.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month Essentials - ВЈ16.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 month Essentials - £16.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 month Essentials - ВЈ16.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -667,24 +842,43 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 month
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month Essentials - £16.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 month Essentials - ВЈ16.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-
-lordOutWorldPaylistingPrem(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 77.242 sec  <<< FAILURE!
-Element not found {By.xpath: //form[@id='PremiumPaymentForm']//select[@id='paymentform-type_id']}
+</failure>
+    <system-err>Feb 20, 2019 2:52:13 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 1 -&gt; ChromeDriver: chrome on XP (7a00ea8607209c74d690424f759b1f63)
+Feb 20, 2019 2:52:13 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Feb 20, 2019 2:52:14 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 866 ms
+Feb 20, 2019 2:52:16 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Feb 20, 2019 2:52:17 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=72.0.3626.109 Platform=XP
+Feb 20, 2019 2:52:17 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Feb 20, 2019 2:52:17 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Feb 20, 2019 2:52:17 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 1: ChromeDriver -&gt; ChromeDriver: chrome on XP (6f4bb30058254cc99f62368207fb0459)
+</system-err>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="lordOutWorldPaylistingPrem" time="77.242">
+    <failure message="Element not found {By.xpath: //form[@id=&apos;PremiumPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
+Expected: exist" type="Element not found {By.xpath">Element not found {By.xpath: //form[@id=&apos;PremiumPaymentForm&apos;]//select[@id=&apos;paymentform-type_id&apos;]}
 Expected: exist
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667302981.13.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667302981.13.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 week Premium - £12.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 week Premium - ВЈ12.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -726,17 +920,17 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 week 
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 week Premium - £12.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 week Premium - ВЈ12.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-Caused by: NoSuchElementException: Cannot locate option containing text: 1 week Premium - £12.99
+Caused by: NoSuchElementException: Cannot locate option containing text: 1 week Premium - ВЈ12.99
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -778,20 +972,39 @@ Caused by: NoSuchElementException: Cannot locate option containing text: 1 week 
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 week Premium - £12.99
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option containing text: 1 week Premium - ВЈ12.99
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: driver.version: unknown
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:25)
 	at com.codeborne.selenide.commands.SelectOptionContainingText.execute(SelectOptionContainingText.java:14)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-
-premiumFHPaymentWorldPay(uk.co.idealflatmate.tests.PaymentTests)  Time elapsed: 49.734 sec  <<< FAILURE!
-Element should have text '£3.99 (week)' {By.xpath: (//td[@class='u_p20-top text-primary'])[1]}
-Element: '<td class="u_p20-top text-primary">?3.99 (week)</td>'
+</failure>
+    <system-err>Feb 20, 2019 2:53:38 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 1 -&gt; ChromeDriver: chrome on XP (6f4bb30058254cc99f62368207fb0459)
+Feb 20, 2019 2:53:38 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Feb 20, 2019 2:53:39 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 853 ms
+Feb 20, 2019 2:53:41 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Feb 20, 2019 2:53:42 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=72.0.3626.109 Platform=XP
+Feb 20, 2019 2:53:42 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Feb 20, 2019 2:53:42 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Feb 20, 2019 2:53:42 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 1: ChromeDriver -&gt; ChromeDriver: chrome on XP (9cc8a3aae925d01f31700a8cba781f15)
+</system-err>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.PaymentTests" name="premiumFHPaymentWorldPay" time="49.734">
+    <failure message="Element should have text &apos;ВЈ3.99 (week)&apos; {By.xpath: (//td[@class=&apos;u_p20-top text-primary&apos;])[1]}
+Element: &apos;&lt;td class=&quot;u_p20-top text-primary&quot;&gt;£3.99 (week)&lt;/td&gt;&apos;" type="Element should have text &apos;ВЈ3.99 (week)&apos; {By.xpath">Element should have text &apos;ВЈ3.99 (week)&apos; {By.xpath: (//td[@class=&apos;u_p20-top text-primary&apos;])[1]}
+Element: &apos;&lt;td class=&quot;u_p20-top text-primary&quot;&gt;£3.99 (week)&lt;/td&gt;&apos;
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667360108.15.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667360108.15.html
 Timeout: 10 s.
@@ -805,22 +1018,65 @@ Timeout: 10 s.
 	at com.sun.proxy.$Proxy8.shouldHave(Unknown Source)
 	at uk.co.idealflatmate.appmanager.PaymentsHelper.verificationCheckout(PaymentsHelper.java:88)
 	at uk.co.idealflatmate.tests.PaymentTests.premiumFHPaymentWorldPay(PaymentTests.java:84)
-
-applyAdvancedFiltersDefault(uk.co.idealflatmate.tests.SearchFMPageTests)  Time elapsed: 41.699 sec  <<< FAILURE!
-java.lang.AssertionError: null
+</failure>
+    <system-err>Feb 20, 2019 2:55:03 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 1 -&gt; ChromeDriver: chrome on XP (9cc8a3aae925d01f31700a8cba781f15)
+Feb 20, 2019 2:55:03 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Feb 20, 2019 2:55:04 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 806 ms
+Feb 20, 2019 2:55:06 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Feb 20, 2019 2:55:07 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=72.0.3626.109 Platform=XP
+Feb 20, 2019 2:55:07 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Feb 20, 2019 2:55:07 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Feb 20, 2019 2:55:07 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 1: ChromeDriver -&gt; ChromeDriver: chrome on XP (eb36b35589f429d5520191852a367619)
+</system-err>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SearchFMPageTests" name="applyAdvancedFiltersDefault" time="41.699">
+    <failure message="null" type="java.lang.AssertionError">java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.assertNotEquals(Assert.java:1157)
 	at org.testng.Assert.assertNotEquals(Assert.java:1162)
 	at uk.co.idealflatmate.appmanager.SearchHelperFM.activeGender(SearchHelperFM.java:130)
 	at uk.co.idealflatmate.tests.SearchFMPageTests.applyAdvancedFiltersDefault(SearchFMPageTests.java:107)
-
-sortListingLoggedIn(uk.co.idealflatmate.tests.SearchFMPageTests)  Time elapsed: 28.654 sec  <<< FAILURE!
-Element not found {#property-sort}
+</failure>
+    <system-err>Feb 20, 2019 2:56:00 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 1 -&gt; ChromeDriver: chrome on XP (eb36b35589f429d5520191852a367619)
+Feb 20, 2019 2:56:00 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Feb 20, 2019 2:56:01 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 825 ms
+Feb 20, 2019 2:56:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Feb 20, 2019 2:56:04 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=72.0.3626.109 Platform=XP
+Feb 20, 2019 2:56:04 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Feb 20, 2019 2:56:04 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Feb 20, 2019 2:56:04 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 1: ChromeDriver -&gt; ChromeDriver: chrome on XP (15aefe416e47c439a8fb601375530eaa)
+</system-err>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SearchFMPageTests" name="applyMoreFilters" time="20.584"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchFMPageTests" name="applyMoreFiltersPhotoNoList" time="28.309"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchFMPageTests" name="applyMoreFiltersPhotoWithList" time="17.502"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchFMPageTests" name="fmSearchBy" time="6.578"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchFMPageTests" name="searchPagination" time="25.646"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchFMPageTests" name="sortListingLoggedIn" time="28.655">
+    <failure message="Element not found {#property-sort}
+Expected: exist" type="Element not found {#property-sort}
+Expected">Element not found {#property-sort}
 Expected: exist
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667546426.17.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550667546426.17.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#property-sort"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#property-sort&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -862,13 +1118,13 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#property-sort"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#property-sort&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:50572}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 087d0b75a515215ce7d34becccf78a4b
@@ -895,7 +1151,7 @@ Session ID: 087d0b75a515215ce7d34becccf78a4b
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#property-sort"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#property-sort&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -937,13 +1193,13 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#property-sort"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#property-sort&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:50572}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 087d0b75a515215ce7d34becccf78a4b
@@ -970,10 +1226,30 @@ Session ID: 087d0b75a515215ce7d34becccf78a4b
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-
-popupWithBlankRequiredFields(uk.co.idealflatmate.tests.SignUpLikeOrMessage)  Time elapsed: 16.562 sec  <<< FAILURE!
-Element should be visible {By.xpath: //span[contains (text(), 'Sign up with email')]}
-Element: '<span displayed:false></span>'
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SearchHomePageTests" name="TestSearchHomeByEnter" time="11.206"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchHomePageTests" name="searchHomeByButton" time="10.354"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchHomePageTests" name="searchHomeIDProperty" time="11.32"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchHomePageTests" name="searchHomeLocationFromList" time="8.464"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchHomePageTests" name="searchHomePartOfLocationName" time="11.009"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="applyAdvancedFiltersDefault" time="60.067"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="applyMoreFilters" time="14.951"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="propertySearchByDropDown" time="20.976"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="searchEastLDNPagination" time="40.188"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="searchPagination" time="38.145"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="searchZone1Pagination" time="18.14"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="sortListing" time="40.767"/>
+  <testcase classname="uk.co.idealflatmate.tests.SearchPropertiesPageTests" name="sortListingWith2Rooms" time="8.482"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="mesPropSignUpHomeStart" time="7.599"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="mesPropSignUpNotBuddy_Up" time="56.749"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="popupExistingEmailPropertyPage" time="17.096"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="popupExistingEmailPropertyPhone" time="25.313"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="popupPropertyPage" time="61.683"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="popupWithBlankRequiredFields" time="16.562">
+    <failure message="Element should be visible {By.xpath: //span[contains (text(), &apos;Sign up with email&apos;)]}
+Element: &apos;&lt;span displayed:false&gt;&lt;/span&gt;&apos;" type="Element should be visible {By.xpath">Element should be visible {By.xpath: //span[contains (text(), &apos;Sign up with email&apos;)]}
+Element: &apos;&lt;span displayed:false&gt;&lt;/span&gt;&apos;
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668048236.19.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668048236.19.html
 Timeout: 10 s.
@@ -987,14 +1263,24 @@ Timeout: 10 s.
 	at com.sun.proxy.$Proxy8.click(Unknown Source)
 	at uk.co.idealflatmate.appmanager.SignUpHelper.clickEmail(SignUpHelper.java:37)
 	at uk.co.idealflatmate.tests.SignUpLikeOrMessage.popupWithBlankRequiredFields(SignUpLikeOrMessage.java:282)
-
-signUpMatchingWithBlankFirstName(uk.co.idealflatmate.tests.SignUpMatching)  Time elapsed: 12.556 sec  <<< FAILURE!
-Element not found {input#addnamematchform-username}
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="popupWithExistingEmail" time="19.58"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="signUpLike3rdPageQuit" time="31.449"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpLikeOrMessage" name="signUpLikeHomePage" time="44.843"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpMatching" name="SignUpMatchingWithRequiredFieldsFMRoom" time="69.941"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpMatching" name="SignUpMatchingWithRequiredFieldsFMRoomSearchFM" time="75.646"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpMatching" name="SignUpMatchingWithRequiredFieldsRoom" time="100.37"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpMatching" name="SignUpWithMatchingWithBlankRequiredFields" time="40.477"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpMatching" name="signUpMatchingWithBlankFirstName" time="12.556">
+    <failure message="Element not found {input#addnamematchform-username}
+Expected: visible" type="Element not found {input#addnamematchform-username}
+Expected">Element not found {input#addnamematchform-username}
 Expected: visible
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668469811.21.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668469811.21.html
 Timeout: 10 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input#addnamematchform-username"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input#addnamematchform-username&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -1041,13 +1327,13 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input#addnamematchform-username"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input#addnamematchform-username&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52624}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 58aebf32562a25cb01ae4cd700a56a0a
@@ -1071,7 +1357,7 @@ Session ID: 58aebf32562a25cb01ae4cd700a56a0a
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input#addnamematchform-username"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input#addnamematchform-username&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -1118,13 +1404,13 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input#addnamematchform-username"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input#addnamematchform-username&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52624}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 58aebf32562a25cb01ae4cd700a56a0a
@@ -1148,14 +1434,25 @@ Session ID: 58aebf32562a25cb01ae4cd700a56a0a
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-
-testListingSignUpHeader(uk.co.idealflatmate.tests.SignUpTest)  Time elapsed: 6.169 sec  <<< FAILURE!
-Element not found {By.xpath: //label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]}
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderRoomSignUpHomePageTenant" time="73.575"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderSignUpHomePageFMSearchLiv_inWithoutAbout" time="43.768"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderSignUpViaFacebook" time="78.434"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderSignUpWithBlankRequiredFieldsBudget" time="49.018"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderSignUpWithBlankRequiredFieldsLocation" time="36.299"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderSignUpWithBlankRequiredFieldsMoreAboutYou" time="17.902"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderSignUpWithBlankRequiredFieldsYourInf" time="9.074"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testHeaderSignUpWithExistingEmail" time="15.906"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testListingSignUpFromHomepage" time="37.923"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testListingSignUpHeader" time="6.17">
+    <failure message="Element not found {By.xpath: //label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]}
+Expected: visible" type="Element not found {By.xpath">Element not found {By.xpath: //label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]}
 Expected: visible
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668875779.23.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668875779.23.html
 Timeout: 4 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -1202,17 +1499,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55335}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 081131719b8a00cd8c215138be3d1d5a
-*** Element info: {Using=xpath, value=//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]}
+*** Element info: {Using=xpath, value=//label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -1232,7 +1529,7 @@ Session ID: 081131719b8a00cd8c215138be3d1d5a
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -1279,17 +1576,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55335}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 081131719b8a00cd8c215138be3d1d5a
-*** Element info: {Using=xpath, value=//label[starts-with(@for,'type_id_') and contains(.,'Live-out landlord')]}
+*** Element info: {Using=xpath, value=//label[starts-with(@for,&apos;type_id_&apos;) and contains(.,&apos;Live-out landlord&apos;)]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -1309,14 +1606,16 @@ Session ID: 081131719b8a00cd8c215138be3d1d5a
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-
-testSignUpBlankFieldsPropAddRentBlock(uk.co.idealflatmate.tests.SignUpTest)  Time elapsed: 14.671 sec  <<< FAILURE!
-Element not found {By.xpath: //div[starts-with(@class, 'col-md-7 u_p15 u_p0-right')]//a[contains(., 'Add')]}
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testSignUpBlankFieldsPropAddRentBlock" time="14.672">
+    <failure message="Element not found {By.xpath: //div[starts-with(@class, &apos;col-md-7 u_p15 u_p0-right&apos;)]//a[contains(., &apos;Add&apos;)]}
+Expected: exist" type="Element not found {By.xpath">Element not found {By.xpath: //div[starts-with(@class, &apos;col-md-7 u_p15 u_p0-right&apos;)]//a[contains(., &apos;Add&apos;)]}
 Expected: exist
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668890575.25.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550668890575.25.html
 Timeout: 10 s.
-Caused by: WebDriverException: unknown error: Element <a href="/create" class="btn btn-primary u_m10-top">...</a> is not clickable at point (1124, 22). Other element would receive the click: <a href="/create" onclick="">...</a>
+Caused by: WebDriverException: unknown error: Element &lt;a href=&quot;/create&quot; class=&quot;btn btn-primary u_m10-top&quot;&gt;...&lt;/a&gt; is not clickable at point (1124, 22). Other element would receive the click: &lt;a href=&quot;/create&quot; onclick=&quot;&quot;&gt;...&lt;/a&gt;
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -1358,12 +1657,12 @@ Caused by: WebDriverException: unknown error: Element <a href="/create" class="b
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.WebDriverException: unknown error: Element <a href="/create" class="btn btn-primary u_m10-top">...</a> is not clickable at point (1124, 22). Other element would receive the click: <a href="/create" onclick="">...</a>
+Caused by: org.openqa.selenium.WebDriverException: unknown error: Element &lt;a href=&quot;/create&quot; class=&quot;btn btn-primary u_m10-top&quot;&gt;...&lt;/a&gt; is not clickable at point (1124, 22). Other element would receive the click: &lt;a href=&quot;/create&quot; onclick=&quot;&quot;&gt;...&lt;/a&gt;
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55335}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 081131719b8a00cd8c215138be3d1d5a
@@ -1386,7 +1685,7 @@ Session ID: 081131719b8a00cd8c215138be3d1d5a
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-Caused by: WebDriverException: unknown error: Element <a href="/create" class="btn btn-primary u_m10-top">...</a> is not clickable at point (1124, 22). Other element would receive the click: <a href="/create" onclick="">...</a>
+Caused by: WebDriverException: unknown error: Element &lt;a href=&quot;/create&quot; class=&quot;btn btn-primary u_m10-top&quot;&gt;...&lt;/a&gt; is not clickable at point (1124, 22). Other element would receive the click: &lt;a href=&quot;/create&quot; onclick=&quot;&quot;&gt;...&lt;/a&gt;
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:116)
@@ -1428,12 +1727,12 @@ Caused by: WebDriverException: unknown error: Element <a href="/create" class="b
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.WebDriverException: unknown error: Element <a href="/create" class="btn btn-primary u_m10-top">...</a> is not clickable at point (1124, 22). Other element would receive the click: <a href="/create" onclick="">...</a>
+Caused by: org.openqa.selenium.WebDriverException: unknown error: Element &lt;a href=&quot;/create&quot; class=&quot;btn btn-primary u_m10-top&quot;&gt;...&lt;/a&gt; is not clickable at point (1124, 22). Other element would receive the click: &lt;a href=&quot;/create&quot; onclick=&quot;&quot;&gt;...&lt;/a&gt;
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55335}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: 081131719b8a00cd8c215138be3d1d5a
@@ -1456,10 +1755,18 @@ Session ID: 081131719b8a00cd8c215138be3d1d5a
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
 	... 38 more
-
-testMessageSignUpGroupCreate(uk.co.idealflatmate.tests.SignUpBuddy_up)  Time elapsed: 22.016 sec  <<< FAILURE!
-Element should have text 'Sign up to continue' {By.xpath: //h1}
-Element: '<h1 class="h2 u_p20-top-sm u_p40-top-xs u_p20-bottom u_p60-left-sm u_p30-left-xs u_p60-right-sm u_p30-right-xs u_m0 text-center heading-8vw">Your information</h1>'
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testSignUpBlankFieldsPropAddWorkBlock" time="8.387"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpTest" name="testSignUpViaFBlistingAgent" time="48.276"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpBuddy_up" name="testButtonPropPage" time="17.253"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpBuddy_up" name="testCardChatSignUpViaFB" time="53.386"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpBuddy_up" name="testGroupPropPage" time="20.101"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpBuddy_up" name="testMessageSignUpFMPageBuddy_Up" time="116.114"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpBuddy_up" name="testMessageSignUpGroupCreate" time="22.016">
+    <failure message="Element should have text &apos;Sign up to continue&apos; {By.xpath: //h1}
+Element: &apos;&lt;h1 class=&quot;h2 u_p20-top-sm u_p40-top-xs u_p20-bottom u_p60-left-sm u_p30-left-xs u_p60-right-sm u_p30-right-xs u_m0 text-center heading-8vw&quot;&gt;Your information&lt;/h1&gt;&apos;" type="Element should have text &apos;Sign up to continue&apos; {By.xpath">Element should have text &apos;Sign up to continue&apos; {By.xpath: //h1}
+Element: &apos;&lt;h1 class=&quot;h2 u_p20-top-sm u_p40-top-xs u_p20-bottom u_p60-left-sm u_p30-left-xs u_p60-right-sm u_p30-right-xs u_m0 text-center heading-8vw&quot;&gt;Your information&lt;/h1&gt;&apos;
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550669213815.27.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550669213815.27.html
 Timeout: 10 s.
@@ -1473,14 +1780,20 @@ Timeout: 10 s.
 	at com.sun.proxy.$Proxy8.shouldHave(Unknown Source)
 	at uk.co.idealflatmate.appmanager.VerificationHelper.signUpPopupName(VerificationHelper.java:658)
 	at uk.co.idealflatmate.tests.SignUpBuddy_up.testMessageSignUpGroupCreate(SignUpBuddy_up.java:229)
-
-zSuccesEmailReceivingWelcomeListingMessageSubscriptionCancSub(uk.co.idealflatmate.tests.ZEmailTests)  Time elapsed: 29.598 sec  <<< FAILURE!
-Element not found {By.xpath: //span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']}
+</failure>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpBuddy_up" name="addLogInViaFBBuddy_up" time="37.602"/>
+  <testcase classname="uk.co.idealflatmate.tests.SignUpBuddy_up" name="testSignUpGroupJoin" time="37.614">
+    <skipped/>
+  </testcase>
+  <testcase classname="uk.co.idealflatmate.tests.ZEmailTests" name="zSuccesEmailReceivingWelcomeListingMessageSubscriptionCancSub" time="29.6">
+    <failure message="Element not found {By.xpath: //span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]}
+Expected: visible" type="Element not found {By.xpath">Element not found {By.xpath: //span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]}
 Expected: visible
 Screenshot: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550669294524.29.png
 Page source: file:/C:/Users/lukhovytskyi/Documents/GitHub/idealflatmatetest/build/reports/tests/1550669294524.29.html
 Timeout: 6 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -1527,17 +1840,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57437}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: f1f03f7a482344cc4190db24266d5eec
-*** Element info: {Using=xpath, value=//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']}
+*** Element info: {Using=xpath, value=//span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -1557,7 +1870,7 @@ Session ID: f1f03f7a482344cc4190db24266d5eec
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
@@ -1604,17 +1917,17 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']"}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]&quot;}
   (Session info: chrome=72.0.3626.109)
   (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PRIVATE-1074', ip: '10.8.1.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_152'
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PRIVATE-1074&apos;, ip: &apos;10.8.1.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LUKHOV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57437}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
 Session ID: f1f03f7a482344cc4190db24266d5eec
-*** Element info: {Using=xpath, value=//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']}
+*** Element info: {Using=xpath, value=//span[contains(text(), &apos;AM&apos;) or contains(text(), &apos;PM&apos;)]//ancestor::tr//div//span[contains(text(), &apos;Premium Flathunter Subscription created&apos;)]//ancestor::tr//td/div[@role=&apos;checkbox&apos;]}
 	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
@@ -1634,4 +1947,23 @@ Session ID: f1f03f7a482344cc4190db24266d5eec
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 43 more
-
+</failure>
+    <system-err>Feb 20, 2019 3:27:39 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Close webdriver: 1 -&gt; ChromeDriver: chrome on XP (6a612a801d3548e18bddbc25ce6921d1)
+Feb 20, 2019 3:27:39 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer$CloseBrowser run
+INFO: Trying to close the browser ChromeDriver ...
+Feb 20, 2019 3:27:39 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer closeWebDriver
+INFO: Closed webdriver in 825 ms
+Feb 20, 2019 3:27:42 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Feb 20, 2019 3:27:43 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=72.0.3626.109 Platform=XP
+Feb 20, 2019 3:27:43 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 4.11.1
+Feb 20, 2019 3:27:43 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+Feb 20, 2019 3:27:43 PM com.codeborne.selenide.impl.WebDriverThreadLocalContainer createDriver
+INFO: Create webdriver in current thread 1: ChromeDriver -&gt; ChromeDriver: chrome on XP (f1f03f7a482344cc4190db24266d5eec)
+</system-err>
+  </testcase>
+</testsuite>

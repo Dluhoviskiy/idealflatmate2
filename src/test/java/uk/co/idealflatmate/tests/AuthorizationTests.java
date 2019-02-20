@@ -49,7 +49,6 @@ public class AuthorizationTests extends TestBase {
     public void logInOutOnFMPage() {
 
         authorizationHelper.goToFMpage();
-        sleep(5000);
         authorizationHelper.clickSignInButtonInPopup();
         authorizationHelper.setLoginAsUserWithoutPackage("FMNotPaid");
         authorizationHelper.setPassword("passwUniv");
@@ -108,8 +107,6 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void alogInWithMatchingFB() {
 
-        //newDriverPage("http://front.idealflatmate4test.demo.devplatform2.com");
-        helperBase.closeOpen("https://www.idealflatmate.co.uk/");
         pageUrlVerifStageGoLive();
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");

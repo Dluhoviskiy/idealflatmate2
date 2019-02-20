@@ -135,8 +135,8 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void clickSignInButtonInPopup() {
-        $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).hover();
-        $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).click();
+        $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).waitUntil(exist,15000).hover();
+        $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).waitUntil(exist,15000).click();
 
     }
 

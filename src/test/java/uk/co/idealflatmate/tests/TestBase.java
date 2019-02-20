@@ -92,7 +92,7 @@ public class TestBase {
 
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
-        //clearCache();
+        clearCache();
 
     }
 

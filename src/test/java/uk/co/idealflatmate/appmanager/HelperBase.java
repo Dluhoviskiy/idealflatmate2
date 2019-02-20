@@ -130,7 +130,7 @@ public class HelperBase  {
         // проверить, что вы находитесь на верной странице
 
         if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
-
+            sleep(1000);
             newPage("http://front.idealflatmate4test.demo.devplatform2.com");
 
 

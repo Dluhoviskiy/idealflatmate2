@@ -98,7 +98,7 @@
 
                 <!--<include>C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\.class</include>-->
                  <suiteXmlFiles>
-                    <suiteXmlFile>C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\testNG.xml</suiteXmlFile>
+                    <suiteXmlFile>testNG.xml</suiteXmlFile>
 
                 </suiteXmlFiles>
                 <testFailureIgnore>true</testFailureIgnore>

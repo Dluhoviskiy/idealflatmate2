@@ -73,7 +73,7 @@ public class MessagesTest extends TestBase {
     public void premFmToLandlWithoutSubsWithListFromSearch() {
 
         authorizationHelper.loginMessage("Prem_FH_paid", "passwUniv");
-        searchHelper.searchPropertyHome("PO30");
+        searchHelper.searchPropertyHomePostCode("PO30 2DN");
         messageHelper.clickCardMessageLogged();
         //messageHelper.clickPropertyPageMessage();
         verificationHelper.noTextUpgradeToFasterReply();
@@ -93,7 +93,7 @@ public class MessagesTest extends TestBase {
         searchHelper.priceFilterActive();
         searchHelper.clearFilter();
         searchHelper.clearSearch();
-        searchHelper.clickSearchPropPage("PO30");
+        searchHelper.clickSearchPropPage("PO30 2DN");
         messageHelper.clickCardImgProperty();
         messageHelper.clickPropertyPageMessage();
         verificationHelper.upgradeToFasterReply();
@@ -111,19 +111,19 @@ public class MessagesTest extends TestBase {
         //System.out.println("JoinFreeButton");
         authorizationHelper.loginMessage("FMNotPaid", "passwUniv");
 
-        System.out.println("searchPropertyHome");
+
         searchHelper.searchPropertyHome("Clapham");
 
-        System.out.println("Verif searchResultText");
+
         verificationHelper.searchResultText("6 rooms matched to rent in and around Clapham");
         //searchHelper.clearSearch();
 
-        System.out.println("lastCardClick");
+
         searchHelper.lastCardClick();//6 cards
         //messageHelper.clickCardMessageLogged();
         //messageHelper.clickPropertyCardFMnamePagelogged();
 
-        System.out.println("clickFMPageMessage");
+
         messageHelper.clickFMPageMessage();
 
 

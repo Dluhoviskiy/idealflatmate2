@@ -85,7 +85,7 @@ public class PaymentsHelper extends HelperBase {
 
 
     public void verificationCheckout(String text) {
-        $(byXpath("(//td[@class='u_p20-top text-primary'])[1]")).waitUntil(visible, 10000).shouldHave(text(text));
+        $(byXpath("(//td[@class='u_p20-top text-primary'])[1]")).getText().contentEquals(text);
     }
 
     public void verificationCheckoutTotal(String text) {
@@ -112,8 +112,9 @@ public class PaymentsHelper extends HelperBase {
         $(byXpath("//a[contains(.,'" + text + "')]")).click();
     }
 
-    public void verificationPrice(String text, String formPayment) {
-        $(byXpath("//form[@id='" + formPayment + "']//select[@id='paymentform-type_id']")).waitUntil(visible, 10000).selectOptionContainingText(text);
+    public void choosePrice(String value, String formPayment) {
+        $(byXpath("//form[@id='" + formPayment + "']//select[@id='paymentform-type_id']")).waitUntil(visible, 10000).selectOptionByValue(value);
+
 
     }
 

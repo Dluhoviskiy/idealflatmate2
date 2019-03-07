@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import com.codeborne.selenide.Configuration;
 import java.io.File;
@@ -9,13 +10,15 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-
+import org.openqa.selenium.support.FindBy;
 public class AddPropertyHelper extends HelperBase {
 
 
 
     public final MessageHelper messageHelper = new MessageHelper();
     private String room = "//div[@class='field-room-3-availability']/div";
+    SelenideElement continueUpgradeListAgent =  $(byXpath("//div[@class='container u_p20-top-xs u_p30-top-sm']/a[contains(., 'Continue without upgrading')]"));
+
 
     public void openDropDownMenu() {
         $(byXpath("(//li[@class='dropdown nav-ihm-profile-bars'])[1]")).waitUntil(visible, 5000).click();
@@ -42,7 +45,7 @@ public class AddPropertyHelper extends HelperBase {
 
     public void chooseListLoggedFromHeaderProfile() {
         sleep(2000);
-        $(byXpath("//ul[@class='nav navbar-nav navbar-right nav-aux hidden-xs hidden-sm']//a[contains(.,'Add a Listing')]")).click();
+        $(byXpath("//ul[contains(@class,'nav-aux hidden-xs hidden-sm')]//a[contains(.,'Add a Listing')]")).click();
 
     }
 
@@ -104,8 +107,9 @@ public class AddPropertyHelper extends HelperBase {
     public void setTotalBedrooms(final String amount) {
         sleep(2000);
         $("#property-bedrooms_no").click();
-
         $(byXpath("//*[@id=\"property-bedrooms_no\"]")).selectOptionByValue(amount);
+        sleep(1000);
+        $(byXpath("//h2[contains(.,'The property')]")).click();
     }
 
     public void setAllAmanities(String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11) {
@@ -173,11 +177,35 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setLeasePeriodFirstRoom() {
-        $(byXpath("//div[@class='field-room-1-availability']/div[1]")).waitUntil(appear, 4000).shouldHave(attribute("class", "checkbox checked"));
+        periodDate();
+    }
+
+    public void setPeriodBuddy_up() {
+        periodDateBuddy_up();
+    }
+
+    public void periodDate() {
+        $(byXpath("//div[@class='field-room-1-availability']/div[1]")).shouldHave(attribute("class", "checkbox checked"));
         $("#room-1-min_stay").click();
         $(byXpath("//*[@id=\"room-1-min_stay\"]/option[2]")).click();
         $("#room-1-max_stay").click();
         $("#room-1-max_stay > option:nth-child(13)").click();
+    }
+
+    public void periodDateBuddy_up() {
+        sleep(3000);
+        $(byXpath("//div[@id='js-groups-list']//label//input[@id='buddyupgroup-available_now']")).shouldBe(checked);
+        sleep(1000);
+        $(byXpath("//div[@id='js-groups-list']//label[contains(.,'Or choose date')]")).click();
+        sleep(1000);
+        $(byXpath("//div[@id='js-groups-list']//input[contains(@class,'form-control u_m5-top')]")).click();
+        sleep(1000);
+        $(byXpath("//div//a[@class='ui-datepicker-next ui-corner-all']")).click();
+        sleep(1000);
+        $("select.ui-datepicker-year > option:nth-child(13)").click();
+        sleep(1000);
+        $(byXpath("//tr//a[@class='ui-state-default' and contains(.,'13')]")).click();
+        sleep(1000);
     }
 
 
@@ -250,17 +278,17 @@ public class AddPropertyHelper extends HelperBase {
     public void finishPropertyCreating() {
         $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
         //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
-        $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
+        continueUpgradeListAgent.waitUntil(appear, 4000).click();
         $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
     }
     public void finishPropertyCreatingAgency() {
         $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
-        $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
+        continueUpgradeListAgent.waitUntil(appear, 4000).click();
         $(byXpath("//p[@class='u_m20-top list-property-title']")).shouldHave(text("In order to list your property you need to"));
     }
 
     public void finishPropertyCreatingWithoutPhoto() {
-        $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).waitUntil(appear, 4000).click();
+        continueUpgradeListAgent.waitUntil(appear, 4000).click();
         $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
     }
 
@@ -310,7 +338,7 @@ public class AddPropertyHelper extends HelperBase {
 
 
     public void finishPropertyAgency() {
-        $(byXpath("//div[@class='u_p20-bottom u_b-bottom u_b-2']/a[contains(text(), 'Continue without upgrading')]")).click();
+        continueUpgradeListAgent.click();
         $(byXpath("//span[contains(., 'In order to list your property you need to')]/../a")).shouldHave(text("Upgrade to professional"));
 
     }
@@ -426,5 +454,45 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//label[contains(.,' Trans Friendly')]")).click();
         //$(byXpath("//input[@id='property-vegan_household']")).click();
         //$(byXpath("//input[@id='property-vegetarian_household']")).click();
+    }
+
+    public void addListingWithoutPhotoBuddyUp(String postCode, String amount, String rent) {
+            setPostalCode(postCode);
+            pressContinue();
+
+            pressContinue1();
+            //verificationHelper.areaBlank();
+
+            pressContinue();
+            setTotalBedrooms(amount);
+            verifyRoomOnly();
+            checkWholeProperty();
+            setMonthlyRent(rent);
+            pressContinue();
+
+            ContinueListingWithoutPhoto();
+    }
+
+    private void checkWholeProperty() {
+        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'Yes')]")).click();
+        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'No, by the room only')]/input")).shouldNotBe(checked);
+        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'Yes')]/input")).shouldBe(checked);
+    }
+
+    private void verifyRoomOnly() {
+        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'Yes')]/input")).shouldNotBe(checked);
+        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'No, by the room only')]/input")).shouldBe(checked);
+
+    }
+
+    public void verifyBreadCrumbs(final String roomsSearch, final String citySearch, final String areaSearch, final String listingOverview) {
+        $(byXpath("//ul[@class='custom-breadcrumbs']//li/a[contains(.,'" + roomsSearch + "')]")).should(exist);
+        $(byXpath("//ul[@class='custom-breadcrumbs']//li/a[contains(.,'" + citySearch + "')]")).should(exist);
+        $(byXpath("//ul[@class='custom-breadcrumbs']//li/a[contains(.,'" + areaSearch + "')]")).should(exist);
+        $(byXpath("//ul[@class='custom-breadcrumbs']//li[contains(.,'" + listingOverview + "')]")).should(exist);
+    }
+
+    public void goByLink(final String areaSearch) {
+        $(byXpath("//ul[@class='custom-breadcrumbs']//li/a[contains(.,'" + areaSearch + "')]")).click();
     }
 }

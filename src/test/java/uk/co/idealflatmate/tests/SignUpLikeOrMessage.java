@@ -1,6 +1,5 @@
 package uk.co.idealflatmate.tests;
 import org.testng.annotations.Test;
-import utils.ConfData;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -31,16 +30,16 @@ public class SignUpLikeOrMessage extends TestBase {
 
         searchHelper.searchPropertyBySelectfromList("Leeds", "Leeds");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("New York Street (stop K11), Leeds LS2 7DT, UK");
+        searchHelper.verificationSearchPropertyMes("New York Street (stop K11), Leeds LS2 7DT, UK", 1);
 
-        String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
-        String name1 = $(byXpath("//span[@class='card-top-username']")).text();
+        String photo1 = $$(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).get(1).getAttribute("src");
+        String name1 = $$(byXpath("//span[@class='card-top-username']")).get(1).text();
         String title1 = $(byXpath("//head/title")).text();
         sleep(2000);
-        String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
+        String postCode = $$(byXpath("//div[@class='card-infos-left']/div")).get(1).text();
 
 
-        signUpHelper.click1PropCardMes();
+        signUpHelper.click1PropCardMes(1);
         signUpHelper.nameOfOwnerOnPopup(name1);
         signUpHelper.clickEmail();
 
@@ -97,13 +96,13 @@ public class SignUpLikeOrMessage extends TestBase {
         messageHelper.propertyPostcodeVerifMes(postCode);
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataProfileFMListing("50%");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("50% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
 
@@ -176,7 +175,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataLike("70%");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
@@ -222,7 +221,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         verificationHelper.verifySearchListingPage();
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataProfileMatching("80%");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 

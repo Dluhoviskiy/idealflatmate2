@@ -9,7 +9,7 @@ public class SearchHomePageTests extends TestBase {
     @Test
     public void searchHomeByButton() {
         clearCache();
-        searchHelper.searchPropertyHome("PO30");
+        searchHelper.searchPropertyHome("PO30 2DN");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchProperty("1 room matched to rent in and around PO30");
         helperBase.toHomePage();
@@ -42,7 +42,7 @@ public class SearchHomePageTests extends TestBase {
     }
     @Test
     public void searchHomePartOfLocationName() {
-        searchHelper.searchPropertyHome("wes");
+        searchHelper.searchPropertyHome("wellessbour we");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchProperty("0 room matched to rent in and around Wellesbourne West");
         helperBase.toHomePage();

@@ -57,6 +57,15 @@ public class MessageHelper extends HelperBase {
         }else{$(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 8000).click();}
    }
 
+    public void chooseMesTabView() {
+        //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).click();
+        sleep(3000);
+        if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
+            $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 15000).click();
+        }
+    }
+
     public void clickPropertyCardMessageUnlogged() {
         $(byXpath("(//h2)[4]")).hover();
         $$("a.card-start-chat.btn.btn-circle").get(3).click();
@@ -64,7 +73,7 @@ public class MessageHelper extends HelperBase {
     }
 
     public  void clickPropertyCardFirstOnPage(){
-        sleep(5000);
+        sleep(3000);
         $(byXpath("(//h2)[5]")).hover();
         sleep(1000);
         $(byXpath("(//div[@class='card-infos-left'])[1]")).click();
@@ -121,7 +130,8 @@ public class MessageHelper extends HelperBase {
     }
 
     public void clickFMPageMessage() {
-        $(byXpath("//div[@class='col-sm-4 u_m20-bottom-xs']//a[contains(., 'Message')]")).waitUntil(visible, 6000).click();
+        sleep(2000);
+        $(byXpath("//div[@class='col-sm-4 u_m20-bottom-xs']//a[contains(., 'Message')]")).waitUntil(visible, 10000).click();
 
     }
 
@@ -159,17 +169,19 @@ public class MessageHelper extends HelperBase {
     }
 
     public void photoOfOwnerInMesBuddy_up(String photo1) {
-        if (photo1.endsWith("no-image-initial.jpg")) {
-            String photo2 = photo1.substring(0, 64);
-            String messagePhoto = $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']//a/ img")).getAttribute("src").substring(0, 64);
-            Assert.assertEquals(photo2, messagePhoto);
-        } else {
-            String photo2 = photo1.substring(0, 73);
-            String messagePhoto = $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']//a/ img")).getAttribute("src").substring(0, 73);
-            Assert.assertEquals(photo2, messagePhoto);
+            if (photo1.endsWith("no-picture-circle.jpg")) {
+                String photo2 = photo1.substring(55, 65);
+                String messagePhoto = $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']//a/ img")).getAttribute("src").substring(54, 64);
+                Assert.assertEquals(photo2, messagePhoto);
+            } else {
+                String photo2 = photo1.substring(0, 73);
+                String messagePhoto = $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']//a/ img")).getAttribute("src").substring(0, 73);
+                Assert.assertEquals(photo2, messagePhoto);
 
-        }
+            }
     }
+
+
 
         public void nameOfOwnerInMessage (String name1){
             String name2 = (name1.split(","))[0].replaceAll("/,",  "");
@@ -190,7 +202,7 @@ public class MessageHelper extends HelperBase {
     }
 
     public void clickMessage1Inbox() {
-        $(byXpath("//div[@class='text-14 u_m15-left u_m5-top-sm u_m10-top-lg'][1]")).click();
+        $$(byXpath("//div[@class='text-14 u_m15-left u_m5-top-sm u_m10-top-lg']")).get(0).click();
     }
 
     public void propertyPostcodeVerifying(String postCode) {
@@ -212,10 +224,26 @@ public class MessageHelper extends HelperBase {
     public void sendDecline(String text) {
         $(byXpath("//button[@class='btn-cancel']")).click();
         $(byXpath("//button[@class='btn btn-success']")).click();
-        sleep(5000);
+        sleep(2000);
         $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(text(text)).click();
-        sleep(6000);
+        sleep(2000);
     }
 
 
+    public void verifyMemberImgInboxNumber(int numberOfUsers) {
+        sleep(3000);
+        int memberNumber = $$(byXpath("(//div[contains(@class,'col-xs-9 col-md-10')]//strong[contains(.,'Ronald')]/../../../..//div[@class='circle-card-img'])[1]/img")).size();
+        Assert.assertTrue(memberNumber==numberOfUsers);
+    }
+
+
+    public void numberConverInbox(int numberOfConv) {
+        sleep(3000);
+        int converNumber = $$(byXpath("//div[@class='text-14 u_m15-left u_m5-top-sm u_m10-top-lg']")).size();
+        Assert.assertTrue(converNumber==numberOfConv);
+    }
+
+    public void backToInbox() {
+        $(byXpath("//a[contains(text(), ' Back to inbox')]")).click();
+    }
 }

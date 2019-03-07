@@ -26,6 +26,14 @@ public class SearchHelper extends HelperBase {
         $("input.react-autosuggest__input").pressEnter();
     }
 
+    public void searchPropertyHomePostCode(String location) {
+
+        searchPropertyBy(location, $("input.react-autosuggest__input"));
+        sleep(2000);
+        //$(byXpath("//button[@class='text-20']")).waitUntil(visible, 10000).pressEnter();
+        $$(byXpath("//form[@id='search-location']//li")).get(0).click();
+    }
+
     public void searchPropertyByEnter(String location) {
 
         searchPropertyBy(location, $("input.react-autosuggest__input"));
@@ -64,8 +72,8 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void verificationSearchPropertyMes(String location) {
-        $(byXpath("//div[@class='flex-search-columns']//div[@class='row u_m0 u_m5-top']")).waitUntil(visible, 10000).shouldHave(text(location));
+    public void verificationSearchPropertyMes(String location, int IndexOfListing) {
+        $$(byXpath("//div[@class='flex-search-columns']//div[@class='row u_m0 u_m5-top']")).get(IndexOfListing).waitUntil(visible, 30000).shouldHave(text(location));
 
     }
 
@@ -208,7 +216,7 @@ public class SearchHelper extends HelperBase {
         $(By.xpath("//span[contains(.,'Male')]")).click();
         $(By.xpath("//span[contains(.,'Student')]")).click();
         $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//span[contains(.,'Student')]/../../../../div/label")));
-        $(byXpath("//div[@class='noUi-handle noUi-handle-upper']")).dragAndDropTo($(byXpath("//span[contains(.,'Freelancer/self employed')]")));
+        $(byXpath("//div[@class='noUi-handle noUi-handle-upper']")).dragAndDropTo($(byXpath("//span[contains(.,'Professionals and/or Students')]")));
         clickApply();
     }
 
@@ -357,11 +365,11 @@ public class SearchHelper extends HelperBase {
         clearFilter();
     }
 
-    public void checkSort(String sort) {
+    public void checkSort(String value) {
         sleep(3000);
 
         List<String> sortDef1 = getFMcardSearchText();
-        $("#property-sort").selectOptionContainingText(sort);
+        $("#property-sort").selectOptionContainingText(value);
         sleep(3000);
         List<String> sortNew1 = getFMcardSearchText();
         Assert.assertNotEquals(sortNew1, sortDef1);

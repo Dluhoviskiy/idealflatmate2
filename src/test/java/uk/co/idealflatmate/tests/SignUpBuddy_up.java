@@ -10,28 +10,47 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 public class SignUpBuddy_up extends TestBase {
 
 
-    //@Test
-    public void mesPropSignUpHomeStart() {
+    @Test (priority = 1)
+    public void testAddWholeProperty() {
 
-        homePageHelper.scrollToBlockProperty();
+        authorizationHelper.login("passwUniv", "agentBuddyUp");
 
-        signUpHelper.click1PropertyCardMessage();
-        signUpHelper.clickEmail();
-        signUpHelper.clickYourInformationContinue();
+        //addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
+        //addPropertyHelper.selectTypeUser("An agency");
+        //signUpHelper.agentSignListing("Ronald", "agentBuddyUp", "passwUniv", "66666666", "Tell us about yourself");
 
-        signUpHelper.quit();
-        verificationHelper.isHomePage();
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        matchingHelper.closePopupMatching();
+        addPropertyHelper.closeRenewPopup();
+
+        //getAddPropertyHelper().openDropDownMenu();
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.verifyNoProperty();
+        addPropertyHelper.pressAddListingFromBody();
+
+        addPropertyHelper.addListingWithoutPhotoBuddyUp("LL55 4TT", "3", "900");
+
+        //addPropertyHelper.finishPropertyAgency();
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.verifyAddedProperty("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK Available");
+
+        authorizationHelper.chooseProfileFromHeader();
+        verificationHelper.verificationDataAgent("75%");
+
+        authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        clearCache();
     }
 
 
-    @Test
+    @Test (priority = 2)
 
     public void testMessageSignUpFMPageBuddy_Up() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("V12 Outdoor, The Old Baptist Chapel, High Street, Llanberis LL55 4EN, United Kingdom");
+        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -40,7 +59,7 @@ public class SignUpBuddy_up extends TestBase {
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropCardMes();
+        signUpHelper.click1PropCardMes(0);
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
@@ -78,26 +97,24 @@ public class SignUpBuddy_up extends TestBase {
         verificationHelper.noConverInbox("0 conversations");
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataProfileFMListing("70%");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
     }
 
-
-
-    @Test
+    @Test (priority = 3)
     public void testButtonPropPage() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("V12 Outdoor, The Old Baptist Chapel, High Street, Llanberis LL55 4EN, United Kingdom");
+        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
         buddyUpHelper.clickCardProperty();
-        buddyUpHelper.clickListingPageButton("m interested");
+        buddyUpHelper.clickBuddy_upButton("m interested");
         verificationHelper.signUpPopupName("Sign up to continue");
 
         signUpHelper.clickEmail();
@@ -109,15 +126,17 @@ public class SignUpBuddy_up extends TestBase {
 
         messageHelper.propertyPostcodeVerifying(postCode);
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        clearCache();
+        refresh();
     }
 
 
-    @Test
+    @Test (priority = 4)
     public void testGroupPropPage() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("V12 Outdoor, The Old Baptist Chapel, High Street, Llanberis LL55 4EN, United Kingdom");
+        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
@@ -139,18 +158,20 @@ public class SignUpBuddy_up extends TestBase {
 
         messageHelper.propertyPostcodeVerifying(postCode);
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        clearCache();
+        refresh();
     }
 
-    @Test
+    @Test (priority = 5)
     public void testCardChatSignUpViaFB() {
 
         pageUrlVerifStageGoLive();
         searchHelper.searchPropertyBySelectfromList("Crew", "Crewe");
         searchHelper.closePopupSignup();
+        searchHelper.selectRadius("+2 km");
+        String postCode = $(byXpath("//div[@id='property_card_40893']//div[@class='card-infos-left']/div")).text();
 
-        String postCode = $(byXpath("//div[@id='property_card_39120']//div[@class='card-infos-left']/div")).text();
-
-        signUpHelper.click1PropCardIDMes("39120");
+        signUpHelper.click1PropCardIDMes("40893");
 
         authorizationHelper.clickSignUpWithFBBuddy_up();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -173,7 +194,7 @@ public class SignUpBuddy_up extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Francine");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
         verificationHelper.verificationDataProfileFBBuddy_UP("60%", "Francine");
         signUpHelper.verificationDataProfileFotoDashboard();
@@ -183,17 +204,17 @@ public class SignUpBuddy_up extends TestBase {
 
     }
 
-    @Test
+    @Test (priority = 6)
     //Facebook authorization doen`t work on staging
     public void addLogInViaFBBuddy_up() {
 
         pageUrlVerifStageGoLive();
         searchHelper.searchPropertyBySelectfromList("Crew", "Crewe");
         searchHelper.closePopupSignup();
+        searchHelper.selectRadius("+2 km");
+        String postCode = $(byXpath("//div[@id='property_card_40893']//div[@class='card-infos-left']/div")).text();
 
-        String postCode = $(byXpath("//div[@id='property_card_39120']//div[@class='card-infos-left']/div")).text();
-
-        signUpHelper.click1PropCardIDMes("39120");
+        signUpHelper.click1PropCardIDMes("40893");
 
         authorizationHelper.clickSignUpWithFBBuddy_up();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -210,13 +231,14 @@ public class SignUpBuddy_up extends TestBase {
 
     }
 
-    @Test
+    @Test (priority = 7)
 
-    public void testMessageSignUpGroupCreate() {
-
+    public void testaMessageSignUpGroupCreate() {
+        clearCache();
+        refresh();
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("V12 Outdoor, The Old Baptist Chapel, High Street, Llanberis LL55 4EN, United Kingdom");
+        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -225,7 +247,7 @@ public class SignUpBuddy_up extends TestBase {
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropCardMes();
+        signUpHelper.click1PropCardMes(0);
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
@@ -235,33 +257,85 @@ public class SignUpBuddy_up extends TestBase {
         messageHelper.photoOfOwnerInMesBuddy_up(photo1);
         messageHelper.propertyPostcodeVerifying(postCode);
 
-        //signUpHelper.clickBackToSearch();
-        buddyUpHelper.goGroupsPopup();
-        buddyUpHelper.goPostAGroupPopup();
-        //buddyUpHelper.postAGroupPopup();
-        buddyUpHelper.postGroup();
+        buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
+        buddyUpHelper.createPopupGroup();
+        //buddyUpHelper.postGroup();
+        buddyUpHelper.postGroupButton();
 
-        buddyUpHelper.learnMore();
-        buddyUpHelper.removeGroup();
-        buddyUpHelper.yesRemoveGroup();
+        buddyUpHelper.assertNumberOfGroupsPropPage(2);
+
+        messageHelper.clickMenuMessages();
+        buddyUpHelper.assertNumberOfMessInbox(2);
+
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        buddyUpHelper.assertNumberOfMyGroups(2);
+        buddyUpHelper.clickListingImgGroupCard();
+        buddyUpHelper.clickGroupSection();
+
+        buddyUpHelper.learnMore(1);
+        buddyUpHelper.removeGroup(1);
+        buddyUpHelper.yesRemoveGroup(1);
+
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.removeGroup(0);
+        buddyUpHelper.yesRemoveGroup(0);
+
         verificationHelper.textNoGroup("This property is available to rent as a whole. Click \"I'm interested\" to start a group and choose your flatmates");
 
-        buddyUpHelper.clickListingPageButton("m interested");
-        buddyUpHelper.goGroupsPopup();
-        buddyUpHelper.goPostAGroupPopup();
-        //buddyUpHelper.postAGroupPopup();
-        buddyUpHelper.postGroup();
+        messageHelper.clickMenuMessages();
+        buddyUpHelper.assertNumberOfMessInbox(0);
+
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        buddyUpHelper.assertNumberOfMyGroups(0);
+        homePageHelper.clickLogo();
+        searchHelper.searchPropertyBySelectfromList("LL55 4TT", "LL55 4TT");
+        signUpHelper.click1PropCardMes(0);
+
+        buddyUpHelper.closeIntrodGroupsPopup();
+        buddyUpHelper.clickGroupSection();
+
+        buddyUpHelper.clickBuddy_upButton("m interested");
+        buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
+        buddyUpHelper.createPopupGroup();
+        buddyUpHelper.postGroupButton();
+
+        buddyUpHelper.assertNumberOfGroupsPropPage(2);
+
+        buddyUpHelper.learnMore(1);
+        buddyUpHelper.removeGroup(1);
+        buddyUpHelper.yesRemoveGroup(1);
+
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.removeGroup(0);
+        buddyUpHelper.yesRemoveGroup(0);
+
+        verificationHelper.textNoGroup("This property is available to rent as a whole. Click \"I'm interested\" to start a group and choose your flatmates");
+
+        buddyUpHelper.createPageGroupButton();
+        //buddyUpHelper.postGroup();
+        buddyUpHelper.postGroupButton();
+
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.closePopupGroup(0);
+
+        buddyUpHelper.createPageGroupButton();
+        buddyUpHelper.closeCreateGroup();
+
+        authorizationHelper.logoutFromApp();
+
 
         //authorizationHelper.removeAnyAccount();
     }
 
-    @Test (dependsOnMethods = { "testMessageSignUpGroupCreate" })
+    @Test (priority = 8)//(dependsOnMethods = { "testMessageSignUpGroupCreate" })
 
-    public void testSignUpGroupJoin() {
+    public void testbSignUpGroupJoin() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("V12 Outdoor, The Old Baptist Chapel, High Street, Llanberis LL55 4EN, United Kingdom");
+        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -270,36 +344,209 @@ public class SignUpBuddy_up extends TestBase {
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropCardMes();
+        signUpHelper.click1PropCardMes(0);
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy3");
+        signUpHelper.yourInformation("passwUniv", "Trump", "FMupsBuddy3");
         sleep(2000);
-        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "227", "I want to Buddy_up");
+        signUpHelper.moreAboutYou2("25", "12", "1985", "777777777", "227", "I an interested in Buddy_up");
+
         messageHelper.photoOfOwnerInMesBuddy_up(photo1);
         messageHelper.propertyPostcodeVerifying(postCode);
 
-        //signUpHelper.clickBackToSearch();
-        buddyUpHelper.goGroupsPopup();
-        buddyUpHelper.requestToGroup();
-        buddyUpHelper.seeMoreGroups();
+        buddyUpHelper.closeIntrodGroupsPopup();
+
+        buddyUpHelper.clickGroupSection();
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.requestPageToGroup();
+        //buddyUpHelper.clickBuddy_upButton("View more groups");
+        buddyUpHelper.chat_MemberClick();
+        buddyUpHelper.veryfNumberMember(2);
+        buddyUpHelper.closeMemberPopup();
+
+        buddyUpHelper.clickPropImgChat();
         buddyUpHelper.clickGroupSection();
 
-        buddyUpHelper.learnMore();
-        buddyUpHelper.exitGroup();
-        buddyUpHelper.confirmLeave();
+        buddyUpHelper.verifyNumberUser(2);
+        verificationHelper.nameUserInGroup("Ronald", 0);
+        verificationHelper.nameUserInGroup("Trump", 1);
 
-        buddyUpHelper.clickListingPageButton("m interested");
-        buddyUpHelper.goGroupsPopup();
-        buddyUpHelper.requestToGroup();
-        buddyUpHelper.seeMoreGroups();
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.clickBuddy_upButton("Exit group");
+        buddyUpHelper.clickBuddy_upButton("Confirm leave");
+        buddyUpHelper.verifyNumberUser(1);
+        verificationHelper.nameUserInGroup("Ronald", 0);
+
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.clickBuddy_upButton("Report group");
+        buddyUpHelper.clickBuddy_upButton("Report now");
+
+        buddyUpHelper.clickBuddy_upButton("m interested");
+        buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
+        buddyUpHelper.arrowPopupNext();
+
+        buddyUpHelper.requestPopupToGroup();
+        buddyUpHelper.chat_MemberClick();
+        buddyUpHelper.veryfNumberMember(2);
+        buddyUpHelper.closeMemberPopup();
+        buddyUpHelper.clickPropImgChat();
         buddyUpHelper.clickGroupSection();
 
-        verificationHelper.nameUserInGroup("Ronald");
+        buddyUpHelper.clickBuddy_upButton("m interested");
+        buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
+        buddyUpHelper.createPopupGroup();
+        buddyUpHelper.postGroupButton();
+        buddyUpHelper.assertNumberOfGroupsPropPage(3);
 
-        authorizationHelper.removeAnyAccount();
+        buddyUpHelper.clickBuddy_upButton("m interested");
+        buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
+        buddyUpHelper.arrowPopupNext();
+        buddyUpHelper.arrowPopupPrevious();
+        buddyUpHelper.closePopupLookingGroup();
+
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        buddyUpHelper.assertNumberOfMyGroups(3);
+        buddyUpHelper.clickListingImgGroupCard();
+        buddyUpHelper.clickGroupSection();
+
+        buddyUpHelper.learnMore(1);
+        buddyUpHelper.removeGroup(1);
+        buddyUpHelper.yesRemoveGroup(1);
+
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.removeGroup(0);
+        buddyUpHelper.yesRemoveGroup(0);
+
+        //buddyUpHelper.learnMore(1);
+        //buddyUpHelper.removeGroup(0);
+        //buddyUpHelper.yesRemoveGroup(1);
+
+        authorizationHelper.logoutFromApp();
+
+        //authorizationHelper.removeAnyAccount();
+    }
+    @Test (priority = 9)
+
+    public void testyYMessageLoginGroupFull() {
+
+        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.closePopupSignup();
+        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+
+        String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
+        //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
+        //String title1 = $(byXpath("//head/title")).text();
+        sleep(2000);
+        String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
+
+
+        signUpHelper.click1PropCardMes(0);
+        authorizationHelper.clickFormSignInContact();
+        authorizationHelper.loginBuddy_up("passwUniv", "FMwithoutSub3");
+
+        buddyUpHelper.closeIntrodGroupsPopup();
+
+        messageHelper.photoOfOwnerInMesBuddy_up(photo1);
+        messageHelper.propertyPostcodeVerifying(postCode);
+
+        buddyUpHelper.clickGroupSection();
+
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.requestPageToGroup();
+        //buddyUpHelper.clickBuddy_upButton("View more groups");
+        buddyUpHelper.chat_MemberClick();
+        buddyUpHelper.veryfNumberMember(3);
+        buddyUpHelper.closeMemberPopup();
+
+        //messageHelper.clickMenuMessages();
+        messageHelper.backToInbox();
+        messageHelper.verifyMemberImgInboxNumber(3);
+        messageHelper.clickMessage1Inbox();
+
+        //buddyUpHelper.chat_MemberClick();
+        //buddyUpHelper.veryfNumberMember(3);
+        //buddyUpHelper.closeMemberPopup();
+
+        buddyUpHelper.messageGroupVerif("Hi, thank you for your interest in this property.",
+                "Hi my name is Trump", "Hi my name is Ronald", "Hi my name is Rene");
+
+        buddyUpHelper.clickPropImgChat();
+
+        authorizationHelper.logoutFromApp();
     }
 
+    @Test (priority = 10)
+
+    public void testzZMessageLoginGroupEditRemove() {
+
+        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.closePopupSignup();
+        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+
+        signUpHelper.click1PropCardMes(0);
+        authorizationHelper.clickFormSignInContact();
+        authorizationHelper.loginBuddy_up("passwUniv", "FMupsBuddy2");
+
+        buddyUpHelper.closeIntrodGroupsPopup();
+
+        buddyUpHelper.clickGroupSection();
+
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.clickBuddy_upButton("Edit group");
+
+        buddyUpHelper.minBudgetInput("1000");
+        addPropertyHelper.periodDateBuddy_up();
+        buddyUpHelper.genderBuddy_up("Male");
+        buddyUpHelper.ageMin();
+        buddyUpHelper.ageMax();
+        buddyUpHelper.addTextDescribe("test description");
+        buddyUpHelper.postGroupButtonEdit();
+
+
+
+        //authorizationHelper.logoutFromApp();
+
+    }
+
+
+    @Test (priority = 11)
+
+    public void testzzzZMessageLoginPropertyRemove() {
+
+
+        authorizationHelper.login("passwUniv", "agentBuddyUp");
+        //closeListRenewPopUp();
+
+        addPropertyHelper.closeRenewPopup();
+
+        messageHelper.chooseMesTabView();
+        messageHelper.clickMenuMessages();
+        messageHelper.numberConverInbox(3);
+        messageHelper.verifyMemberImgInboxNumber(3);
+        messageHelper.clickMessage1Inbox();
+
+        buddyUpHelper.chat_MemberClick();
+        buddyUpHelper.veryfNumberMember(3);
+        buddyUpHelper.closeMemberPopup();
+
+        buddyUpHelper.messageGroupVerif("Hi, thank you for your interest in this property.",
+                "Hi my name is Trump", "Hi my name is Ronald", "Hi my name is Rene");
+
+        buddyUpHelper.clickPropImgChat();
+        buddyUpHelper.clickGroupSection();
+
+        buddyUpHelper.veryfyGroupEditData("1000", "13th April 2021");
+
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        getAddPropertyHelper().RemoveListing();
+
+        messageHelper.clickMenuMessages();
+        messageHelper.numberConverInbox(0);
+
+        authorizationHelper.logoutFromApp();
+
+    }
 
 }

@@ -7,6 +7,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class EmailHelper extends HelperBase {
 
+    String tip = "//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//div//span[contains(., \'";
+    String tip2 = "\')]//ancestor::tr//td/div[@role='checkbox']";
     public final VerificationHelper verificationHelper = new VerificationHelper();
 
     public void openGmailPage() {
@@ -27,73 +29,52 @@ public class EmailHelper extends HelperBase {
         gmailLogin(password, "//input[@type='password']", "//div[@id='passwordNext']//span[@class='RveJvd snByac']");
     }
 
-    public void enterEmail() {
-        $(byXpath("(//content[@class='CwaK9'])[2]/span")).waitUntil(visible, 6000).click();
-    }
+
     public void enterInbox() {
         $(byXpath("(//span[starts-with(@class, 'nU ')])[1]")).waitUntil(visible, 6000).click();
     }
 
-    public void verificationWelcome() {
-        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(text(), 'AM') or contains(text(), 'PM')]]")).shouldHave((text("Welcome to Ideal Flatmate!")));
 
-    }
-    public void verificationListingisLive() {
-        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(text(), 'AM') or contains(text(), 'PM')]]")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
-    }
-    public void verificationMessage() {
-        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(text(), 'AM') or contains(text(), 'PM')]]")).shouldHave((text("You have a new message!")));
-    }
 
     public void verificationNoListingisLive() {
         $(byXpath("//div[@class='nH bkL']//tbody")).shouldNotHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
     }
     public void verificationNoWelcome() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div[span[contains(text(), 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).shouldNot(exist);
-    }
-    public void verificationNoMessageEmail() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//div//span[contains(text(), 'You have a new message!')]//ancestor::tr//td/div[@role='checkbox']")).shouldNot(exist);
+        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div[span[contains(., 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).shouldNot(exist);
     }
 
+
     public void tipCheckboxWelcome() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div[span[contains(text(), 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div[span[contains(., 'Welcome')]][1]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
     public void tipCheckboxListingisLive() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//td//div//span[contains(text(), 'Congratulations')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//td//div//span[contains(., 'Congratulations')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
 
-    public void tipCheckboxMessage() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//div//span[contains(text(), 'You have a new message!')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+    public void tipCheckboxMessage(final String message) {
+            $(byXpath(tip+ message + tip2)).waitUntil(visible, 6000).click();
         sleep(2000);
     }
 
-    public void tipCheckboxEnquiry() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//div//span[contains(text(), 'You have a new enquiry!')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
-        sleep(2000);
-    }
 
-    public void tipCheckboxPremiumFHSubscription() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
-        sleep(2000);
-    }
     public void tipCheckboxPremiumFHSubscriptionCanceled() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
 
     public void tipCheckboxSubs() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'ideal flatmate - Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'ideal flatmate - Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
 
     public void tipCheckboxCancelSubs() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'ideal flatmate - Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'ideal flatmate - Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
     public void tipCheckboxPending() {
-        $(byXpath("//span[contains(text(), 'AM') or contains(text(), 'PM')]//ancestor::tr//div//span[contains(text(), 'Your listing on ideal flatmate is pending.')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'Your listing on ideal flatmate is pending.')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
 
@@ -106,12 +87,10 @@ public class EmailHelper extends HelperBase {
     }
 
     public void verificationPageAfterSignUp() {
-        $(byXpath("//h4[contains(text(), 'Please Verify Your Email to Continue')]")).shouldBe(visible);
+        $(byXpath("//h4[contains(., 'Please Verify Your Email to Continue')]")).shouldBe(visible);
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[4]")).waitUntil(visible, 6000).click();
     }
-    public void verificationPageAfterSignUpListing() {
-        $(byXpath("//div[contains(text(), 'Please check your inbox and follow the instructions.')]")).shouldBe(visible);
-    }
+
 
     public void accountConfirm() {
 
@@ -125,12 +104,10 @@ public class EmailHelper extends HelperBase {
        // removeAllEmails();
     }
 
-    private void tipCheckboxConfirm() {
-        $(byXpath("//span/b[contains(text(), ':')]//ancestor::tr//div//span/b[contains(text(), 'Account')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
-    }
+
 
     public void openEmail() {
-        $(byXpath("//b[contains(text(), ':')]//ancestor::tr//td//span//b[contains(text(), 'Ideal Flatmate - Account confirmation')]")).waitUntil(visible, 6000).click();
+        $(byXpath("//b[contains(., ':')]//ancestor::tr//td//span//b[contains(., 'Ideal Flatmate - Account confirmation')]")).waitUntil(visible, 6000).click();
         sleep(2000);
     }
 
@@ -138,10 +115,10 @@ public class EmailHelper extends HelperBase {
         if($(byXpath(("//div[@data-tooltip='Show trimmed content']"))).is(visible)) {
             $(byXpath(("//div[@data-tooltip='Show trimmed content']"))).waitUntil(visible, 6000).click();
             sleep(2000);
-            $(byXpath(("//a[contains(text(), 'Confirm registration')]"))).waitUntil(visible, 6000).click();
+            $(byXpath(("//a[contains(., 'Confirm registration')]"))).waitUntil(visible, 6000).click();
             sleep(2000);
         }else {
-            $(byXpath(("//a[contains(text(), 'Confirm registration')]"))).waitUntil(visible, 6000).click();
+            $(byXpath(("//a[contains(., 'Confirm registration')]"))).waitUntil(visible, 6000).click();
             sleep(2000);
         }
 
@@ -153,8 +130,12 @@ public class EmailHelper extends HelperBase {
         }
 
     public void clickContinue() {
-        $(byXpath("//a[contains(text(), 'Continue')]")).waitUntil(visible, 6000).click();
+        $(byXpath("//a[contains(., 'Continue')]")).waitUntil(visible, 6000).click();
         sleep(2000);
+    }
+
+    public void enterEmail() {
+        $(byXpath("(//content[@class='CwaK9'])[2]/span")).waitUntil(visible, 6000).click();
     }
     public void emailVerification(String Name) {
         verificationPageAfterSignUp();
@@ -164,6 +145,22 @@ public class EmailHelper extends HelperBase {
         clickContinue();
     }
 
+    public void verificationListingisLive() {
+        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(., 'AM') or contains(., 'PM')]]")).shouldHave((text("Congratulations! Your listing on Ideal Flatmate is live!")));
+    }
+    public void verificationMessage() {
+        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(., 'AM') or contains(., 'PM')]]")).shouldHave((text("You have a new message!")));
+    }
+    public void verificationPageAfterSignUpListing() {
+        $(byXpath("//div[contains(., 'Please check your inbox and follow the instructions.')]")).shouldBe(visible);
+    }
 
+    private void tipCheckboxConfirm() {
+        $(byXpath("//span/b[contains(., ':')]//ancestor::tr//div//span/b[contains(., 'Account')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
+    }
 
+    public void verificationWelcome() {
+        $(byXpath("//div[@class='nH bkL']//tbody//tr[td//span[contains(., 'AM') or contains(., 'PM')]]")).shouldHave((text("Welcome to Ideal Flatmate!")));
+
+    }
 }

@@ -1,5 +1,4 @@
 package uk.co.idealflatmate.tests;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 
@@ -111,7 +110,7 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
        // verificationHelper.verifyProfComplMenu("80% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataTenant1("80%");
 
         authorizationHelper.removeAnyAccount();
@@ -133,7 +132,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataLive_in("60%");
 
         matchingHelper.closePopupMatching();
@@ -318,7 +317,7 @@ public class SignUpTest extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Francine");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
         verificationHelper.verificationDataProfileFB("70%", "Francine");
         signUpHelper.verificationDataProfileFotoDashboard();
@@ -347,7 +346,7 @@ public class SignUpTest extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Kron");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
         verificationHelper.verifDataProfFBAgent("75%", "I am an agent");
         signUpHelper.verificationDataProfileFotoDashboard();
@@ -362,7 +361,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.ageConfirmCheckMatching();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -389,7 +388,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataProfileLiveOut("50%");
 
 
@@ -419,7 +418,7 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("80% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         matchingHelper.closePopupMatching();
         verificationHelper.verificationDataLive_in1("80%");
 

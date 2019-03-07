@@ -284,8 +284,8 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void click1PropCardMes() {
-        $(byXpath("//div[@class='card-infos-flex-row']/a[2][@href]")).click();
+    public void click1PropCardMes(int indexProperty) {
+        $$(byXpath("//div[@class='card-infos-flex-row']/a[2][@href]")).get(indexProperty).click();
 
     }
 
@@ -426,6 +426,15 @@ public class SignUpHelper extends HelperBase {
 
     public void moreAboutYou(String day, String month, String year, String phone, String prof, String text) {
         profilePhotoAddJpeg();
+        profileDateBirthAdd(day, month, year);
+        profilePhone(phone);
+        occupation(prof);
+        aboutYourself(text);
+        clickYourInformationContinue();
+    }
+
+    public void moreAboutYou2(String day, String month, String year, String phone, String prof, String text) {
+        profilePhotoAddPng();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
         occupation(prof);

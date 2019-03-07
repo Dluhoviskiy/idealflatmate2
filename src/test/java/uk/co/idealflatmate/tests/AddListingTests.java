@@ -1,7 +1,6 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.Test;
-import utils.ConfData;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.$;
@@ -102,7 +101,8 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.finishPropertyAgency();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        verificationHelper.verifyAddedProperty();
+        verificationHelper.verifyAddedProperty("London SE1, UK");
+
         addPropertyHelper.RemoveListing();
 
         authorizationHelper.chooseProfileFromHeader();
@@ -162,6 +162,7 @@ public class AddListingTests extends TestBase {
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().viewListing();
+
         verificationHelper.verifyAddedPropertyWithAllFieldsCouple();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
@@ -172,6 +173,12 @@ public class AddListingTests extends TestBase {
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().viewListing();
         verificationHelper.verifyAboutFields();
+
+        addPropertyHelper.verifyBreadCrumbs("Search Rooms", "London", "Bankside", "3 bedrooms for rent in Bankside, South London from ");
+        addPropertyHelper.goByLink("Bankside");
+        searchHelper.verificationSearchProperty("rooms matched to rent in and around Bankside");
+
+
 
         authorizationHelper.logoutFromApp();
     }

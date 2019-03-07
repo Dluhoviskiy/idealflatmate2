@@ -50,9 +50,9 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));
     }
 
-    public void verifyAddedProperty() {
+    public void verifyAddedProperty(String location) {
 
-        $(byXpath("(//h2[@class='h3 u_m0-top text-info'])[1]")).waitUntil(visible, 4000).shouldHave(text("London SE1, UK"));
+        $(byXpath("(//h2[@class='h3 u_m0-top text-info'])[1]")).waitUntil(visible, 4000).shouldHave(text(location));
 
     }
 
@@ -87,7 +87,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("London SE1, UK"));
 
-        $(byXpath("//a[contains(.,'Rooms')]")).click();
+        $(byXpath("//ul[@class='tabs-2']//a[contains(.,'Rooms')]")).click();
 
         //$(byXpath("//strong/span[contains(.,'Room 1')]")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
         $(byXpath(roomNumber1+"//div[@class='col-xs-12 col-md-7']")).getText().contentEquals("500\n" +
@@ -667,7 +667,20 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         $(byXpath("//h2[contains(@class,'box-info')]")).shouldHave(text(text));
     }
 
-    public void nameUserInGroup(String name) {
-        $(byXpath("(//div[@id='js-groups-list']//div//div[@class='text-12 hunters-list--username'])[2]")).shouldHave(text(name));
+    public void nameUserInGroup(String name, int userInGroup) {
+        $$(byXpath("//div[@id='js-groups-list']//div//div[@class='text-12 hunters-list--username']")).get(userInGroup).shouldHave(text(name));
+    }
+
+    public void buddy_upGroup() {
+
+    }
+
+    public void isNotActive(final String propertyID) {
+
+        if($(byXpath("//div[@id='listing-" + propertyID + "']//a[contains(.,'here ')]")).isDisplayed()){
+            $(byXpath("//div[@id='listing-" + propertyID + "']//a[contains(.,'here ')]")).click();
+            sleep(2000);
+        }
+
     }
 }

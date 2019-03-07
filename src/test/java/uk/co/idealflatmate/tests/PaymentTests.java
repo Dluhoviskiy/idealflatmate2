@@ -110,12 +110,10 @@ public class PaymentTests extends TestBase {
 
         addPropertyHelper.addListingWithoutPhoto("SE1", "2", "4", "900");
 
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
-
         paymentsHelper.verificationPaymentPageFeatureListing("Want more from your listing? Upgrade now!");
         //paymentsHelper.selectPremiumFlathunterPlan();
         paymentsHelper.selectNLADiscount("NLA15", "EssentialPaymentForm");
-        paymentsHelper.verificationPrice("1 month Essentials - "+"£"+"16.99", "EssentialPaymentForm");
+        paymentsHelper.choosePrice("152", "EssentialPaymentForm"); //1 month Essentials - £16.99
         paymentsHelper.upgradeListing("Upgrade to Essentials", "Upgrade to Essentials");
         paymentsHelper.verificationCheckout("£"+"16.99 (monthly)");
         paymentsHelper.verificationCheckoutTotal("14.44");
@@ -137,7 +135,7 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -170,7 +168,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.verificationPaymentPageFeatureListing("Want more from your listing? Upgrade now!");
         //paymentsHelper.selectPremiumFlathunterPlan();
         paymentsHelper.selectNLADiscount("NLA15", "PremiumPaymentForm");
-        paymentsHelper.verificationPrice("1 week Premium - "+"£"+"12.99", "PremiumPaymentForm");
+        paymentsHelper.choosePrice("153", "PremiumPaymentForm");//1 week Premium - "+"£"+"12.99
         paymentsHelper.upgradeListing("Upgrade to Premium", "Upgrade to Premium");
         paymentsHelper.verificationCheckout("£"+"12.99 (week)");
         paymentsHelper.verificationCheckoutTotal("11.04");
@@ -191,7 +189,7 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -220,7 +218,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.verificationPaymentPageFeatureListing("Want more from your listing? Upgrade now!");
         //paymentsHelper.selectPremiumFlathunterPlan();
         paymentsHelper.upgradeListingProf("up to 5");
-        paymentsHelper.verificationPrice("1 month - "+"£"+"44.99", "ProfessionalPaymentForm");
+        paymentsHelper.choosePrice("183", "ProfessionalPaymentForm");//1 month - "+"£"+"44.99
         paymentsHelper.upgradeListing("Upgrade to Professional", "Upgrade to Professional");
         paymentsHelper.verificationCheckout("£"+"44.99 (monthly)");
         paymentsHelper.verificationCheckoutTotal("44.99");
@@ -244,7 +242,7 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -269,7 +267,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.goToPaymentsTab();
 
         paymentsHelper.upgradeListingProf("1-2");
-        paymentsHelper.verificationPrice("1 month - "+"£"+"34.99", "ProfessionalPaymentForm");
+        paymentsHelper.choosePrice("181", "ProfessionalPaymentForm");//1 month - £34.99
         paymentsHelper.selectNLADiscount("NLA15", "ProfessionalPaymentForm");
         paymentsHelper.upgradeListing("Upgrade to", "Professional");
         paymentsHelper.verificationCheckout("£"+"34.99 (monthly)");
@@ -297,7 +295,7 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");

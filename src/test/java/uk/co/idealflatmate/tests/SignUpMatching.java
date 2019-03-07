@@ -59,7 +59,7 @@ public class SignUpMatching extends TestBase {
         matchingHelper.verificationResultOfMatching();
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.verificationDataProfileMatching("80%");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -88,7 +88,7 @@ public class SignUpMatching extends TestBase {
         verificationHelper.verifyAddListingPage();
         addPropertyHelper.openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
        // matchingHelper.closePopupMatching();
         //signUpHelper.verificationDataProfileNameUser("flatmate");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -117,7 +117,7 @@ public class SignUpMatching extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
-        authorizationHelper.chooseProfileFromDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
        // matchingHelper.closePopupMatching();
         signUpHelper.verificationDataProfileNameUser("Ronald", "42");
         verificationHelper.verificationUserNameOnHomePage("Ronald");

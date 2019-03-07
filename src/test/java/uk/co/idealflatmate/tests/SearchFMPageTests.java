@@ -122,12 +122,14 @@ public class SearchFMPageTests extends TestBase{
         searchHelper.closePopupSignup();
 
         authorizationHelper.login("passwUniv", "MatchingSort");
-        closeListRenewPopUp();
+        //closeListRenewPopUp();
 
-        searchHelper.checkSort("Price high to low");
-        searchHelper.checkSort("Most recent");
-        searchHelper.checkSort("Price low to high");
-        searchHelper.checkSort("Top Matched");
+        searchHelper.checkSort("Price high to low");//Price high to low
+        searchHelper.checkSort("Most recent");//Most recen
+        searchHelper.checkSort("Price low to high");//Price low to high
+        searchHelper.checkSort("Top Matched");//Top Matched
+
+        authorizationHelper.logoutFromApp();
 
         helperBase.toHomePage();
     }

@@ -63,7 +63,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public void clickSignUpWithFBBuddy_up() {
-        $("#js-signup-facebook-buddy-up").waitUntil(visible, 4000).click();
+        $("#js-signup-facebook-interested").waitUntil(visible, 4000).click();
     }
 
     public void clickSignUpWithFB_ListFlow() {
@@ -128,6 +128,7 @@ public class AuthorizationHelper extends HelperBase {
     }
 
     public static void clickSignInButtonInForm() {
+        sleep(2000);
         $(byXpath("//a[contains(., 'Sign in')]")).hover();
         $(byXpath("//a[contains(., 'Sign in')]")).click();
 
@@ -135,12 +136,14 @@ public class AuthorizationHelper extends HelperBase {
 
 
     public void clickSignInButtonInPopup() {
+        sleep(2000);
         $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).waitUntil(exist,15000).hover();
         $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]")).waitUntil(exist,15000).click();
 
     }
 
     public void clickSignInButtonInPopupPhone() {
+        sleep(2000);
         $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[2]")).hover();
         $(byXpath("(//div[starts-with(@class, 'text-center u_m50-top')]//a[@class='text-bold' and contains(., 'Sign')])[2]")).click();
 
@@ -185,8 +188,8 @@ public class AuthorizationHelper extends HelperBase {
         $(byXpath("(//button[@class='btn btn-sm btn-close close'])[2]")).waitUntil(appears, 10000).click();
     }
 
-    public void chooseProfileFromDropDownMenu() {
-        $(byXpath("(//li/a[contains(., 'My profile')])[1]")).waitUntil(visible, 5000).click();
+    public void chooseSectionDropDownMenu(final String menuSection) {
+        $(byXpath("//ul[@class='dropdown-menu']//li/a[contains(., '" + menuSection + "')]")).waitUntil(visible, 5000).click();
     }
     public void chooseProfileFromHeader() {
         sleep(5000);
@@ -333,7 +336,7 @@ public class AuthorizationHelper extends HelperBase {
         closeMatchPopUp();
         addPropertyHelper.openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
-        chooseProfileFromDropDownMenu();
+        chooseSectionDropDownMenu("My profile");
         chooseSettingsFromDashboard();
         removeAccount();
 
@@ -343,6 +346,12 @@ public class AuthorizationHelper extends HelperBase {
 
     public void loginHeader(String confPassword, String confEmail){
         headerLogin();
+        login2(confEmail,confPassword);
+        submitLogin();
+    }
+
+    public void loginBuddy_up(String confPassword, String confEmail){
+
         login2(confEmail,confPassword);
         submitLogin();
     }

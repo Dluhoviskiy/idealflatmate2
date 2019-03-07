@@ -70,7 +70,7 @@ public class HomePageHelper {
 
 
     public void clickLogo() {
-        $(byXpath("//a/img[@alt='ideal flatmate']")).waitUntil(visible, 4000).click();
+        $(byXpath("//header//div[@class='branding']//a/img")).waitUntil(visible, 4000).click();
     }
 
     public void verificationLogo() {
@@ -149,7 +149,8 @@ public class HomePageHelper {
     }
 
     public void verificationPageLinkHowItWorksRooms() {
-        $(byXpath("//h1")).shouldHave(text("Find A Flatmate"));
+        $(byXpath("//h1")).shouldHave(text("Find Great Tenants"));
+
     }
 
     public void verificationPageLinkHowItWorksFM() {

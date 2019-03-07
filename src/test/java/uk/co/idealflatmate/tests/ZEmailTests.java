@@ -19,7 +19,7 @@ public class ZEmailTests extends TestBase {
         emailHelper.tipCheckboxListingisLive();
 
         emailHelper.tipCheckboxMessage("You have a new message!");
-        emailHelper.tipCheckboxMessage("You have a new enquiry!");
+        //emailHelper.tipCheckboxMessage("You have a new enquiry!");
 
         emailHelper.tipCheckboxMessage("ideal flatmate - Someone posted a group on your listing");
         emailHelper.tipCheckboxMessage("ideal flatmate - Someone is interested in your property");

@@ -27,10 +27,10 @@ public class ZEmailTests extends TestBase {
         emailHelper.tipCheckboxMessage("Group reported");
         emailHelper.tipCheckboxMessage("ideal flatmate - Someone joined your group");
         emailHelper.tipCheckboxMessage("ideal flatmate - Premium Flathunter Subscription created");
-        emailHelper.tipCheckboxPremiumFHSubscriptionCanceled();
-        emailHelper.tipCheckboxSubs();
-        emailHelper.tipCheckboxCancelSubs();
-        emailHelper.tipCheckboxPending();
+        emailHelper.tipCheckboxMessage("Premium Flathunter Subscription cancelled");
+        emailHelper.tipCheckboxMessage("ideal flatmate - Subscription created");
+        emailHelper.tipCheckboxMessage("ideal flatmate - Subscription cancelled");
+        emailHelper.tipCheckboxMessage("Your listing on ideal flatmate is pending.");
 
         emailHelper.removeAllEmails();
         emailHelper.verificationNoWelcome();

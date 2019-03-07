@@ -59,26 +59,6 @@ public class EmailHelper extends HelperBase {
     }
 
 
-    public void tipCheckboxPremiumFHSubscriptionCanceled() {
-        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'Premium Flathunter Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
-        sleep(2000);
-    }
-
-    public void tipCheckboxSubs() {
-        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'ideal flatmate - Subscription created')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
-        sleep(2000);
-    }
-
-    public void tipCheckboxCancelSubs() {
-        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'ideal flatmate - Subscription cancelled')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
-        sleep(2000);
-    }
-    public void tipCheckboxPending() {
-        $(byXpath("//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//span[contains(., 'Your listing on ideal flatmate is pending.')]//ancestor::tr//td/div[@role='checkbox']")).waitUntil(visible, 6000).click();
-        sleep(2000);
-    }
-
-
     public void removeAllEmails() {
         sleep(2000);
         $(byXpath("//div[@class='aeH']")).waitUntil(visible, 5000).click();

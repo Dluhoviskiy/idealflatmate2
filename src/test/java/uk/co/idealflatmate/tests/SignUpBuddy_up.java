@@ -10,8 +10,8 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 public class SignUpBuddy_up extends TestBase {
 
 
-    @Test (priority = 1)
-    public void testAddWholeProperty() {
+    @Test //(priority = 1)
+    public void testAaaAddWholeProperty() {
 
         authorizationHelper.login("passwUniv", "agentBuddyUp");
 
@@ -44,9 +44,9 @@ public class SignUpBuddy_up extends TestBase {
     }
 
 
-    @Test (priority = 2)
+    @Test //(priority = 2)
 
-    public void testMessageSignUpFMPageBuddy_Up() {
+    public void testBbbMessageSignUpFMPageBuddy_Up() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
@@ -104,8 +104,8 @@ public class SignUpBuddy_up extends TestBase {
         authorizationHelper.removeAnyAccount();
     }
 
-    @Test (priority = 3)
-    public void testButtonPropPage() {
+    @Test //(priority = 3)
+    public void testCccButtonPropPage() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
@@ -131,8 +131,8 @@ public class SignUpBuddy_up extends TestBase {
     }
 
 
-    @Test (priority = 4)
-    public void testGroupPropPage() {
+    @Test //(priority = 4)
+    public void testDddGroupPropPage() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
@@ -162,8 +162,8 @@ public class SignUpBuddy_up extends TestBase {
         refresh();
     }
 
-    @Test (priority = 5)
-    public void testCardChatSignUpViaFB() {
+    @Test //(priority = 5)
+    public void testGggCardChatSignUpViaFB() {
 
         pageUrlVerifStageGoLive();
         searchHelper.searchPropertyBySelectfromList("Crew", "Crewe");
@@ -204,7 +204,7 @@ public class SignUpBuddy_up extends TestBase {
 
     }
 
-    @Test (priority = 6)
+    @Test //(priority = 6)
     //Facebook authorization doen`t work on staging
     public void addLogInViaFBBuddy_up() {
 
@@ -231,9 +231,9 @@ public class SignUpBuddy_up extends TestBase {
 
     }
 
-    @Test (priority = 7)
+    @Test //(priority = 7)
 
-    public void testaMessageSignUpGroupCreate() {
+    public void testaKkkMessageSignUpGroupCreate() {
         clearCache();
         refresh();
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
@@ -329,9 +329,9 @@ public class SignUpBuddy_up extends TestBase {
         //authorizationHelper.removeAnyAccount();
     }
 
-    @Test (priority = 8)//(dependsOnMethods = { "testMessageSignUpGroupCreate" })
+    @Test //(priority = 8)//(dependsOnMethods = { "testMessageSignUpGroupCreate" })
 
-    public void testbSignUpGroupJoin() {
+    public void testMmmSignUpGroupJoin() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
@@ -427,9 +427,9 @@ public class SignUpBuddy_up extends TestBase {
 
         //authorizationHelper.removeAnyAccount();
     }
-    @Test (priority = 9)
+    @Test //(priority = 9)
 
-    public void testyYMessageLoginGroupFull() {
+    public void testTttMessageLoginGroupFull() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
@@ -477,9 +477,9 @@ public class SignUpBuddy_up extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test (priority = 10)
+    @Test //(priority = 10)
 
-    public void testzZMessageLoginGroupEditRemove() {
+    public void testYyyMessageLoginGroupEditRemove() {
 
         searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
         searchHelper.closePopupSignup();
@@ -511,9 +511,9 @@ public class SignUpBuddy_up extends TestBase {
     }
 
 
-    @Test (priority = 11)
+    @Test //(priority = 11)
 
-    public void testzzzZMessageLoginPropertyRemove() {
+    public void testZzzZMessageLoginPropertyRemove() {
 
 
         authorizationHelper.login("passwUniv", "agentBuddyUp");

@@ -58,20 +58,20 @@ public class TestBase {
     }*/
 
 
-    @BeforeMethod
+    @BeforeSuite
 
     public void setupClass() {
         //ChromeDriverManager.getInstance().setup();
-        WebDriverManager.chromedriver().setup();
-        //WebDriverManager.firefoxdriver().setup();
+        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
        // FirefoxDriverManager.getInstance().setup();
        // EdgeDriverManager.getInstance().setup();
         //Configuration.browser = "webdriver";
-        Configuration.browser = "chrome";
+        //Configuration.browser = "chrome";
 
         //Configurations.startmaximized=true;
-        //Configuration.browser = "firefox";
-       // Configuration.browser = "firefox";
+        Configuration.browser = "firefox";
+
       //  Configuration.browser = "edge";
 
        // Configuration.assertionMode = Configuration.AssertionMode.SOFT;

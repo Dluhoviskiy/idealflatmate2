@@ -103,10 +103,10 @@
 
 
                 <configuration>
-                    <suiteXmlFiles>
+                    <!--<suiteXmlFiles>
                         <suiteXmlFile>C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\testNG3.xml</suiteXmlFile>
 
-                    </suiteXmlFiles>
+                    </suiteXmlFiles>-->
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                     <systemProperties>
                         <property>

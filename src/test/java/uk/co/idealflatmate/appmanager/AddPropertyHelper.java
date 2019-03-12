@@ -2,15 +2,15 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.testng.Assert;
-import com.codeborne.selenide.Configuration;
+
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-import org.openqa.selenium.support.FindBy;
 public class AddPropertyHelper extends HelperBase {
 
 
@@ -49,9 +49,12 @@ public class AddPropertyHelper extends HelperBase {
 
     }
 
-    public void setPostalCode(String postCode) {
-        $(".form-control.u_ed-block").setValue(postCode).pressEnter();
-        sleep(2000);
+    public void setPostalCode(String postCode, final String location) {
+        $(By.xpath("//span[@class='selection']//span[contains(@class,'select2-selection__rendered')]")).click();
+        sleep(4000);
+        $(By.xpath("//input[contains(@class,'select2-search')]")).setValue(postCode);
+        sleep(4000);
+        $(By.xpath("//li[contains(.,'" + location + "')]")).click();
     }
 
     public void pressContinueButton() {
@@ -410,7 +413,7 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void addListingWithoutPhoto(String postCode, String areaInDropDown, String amount, String rent) {
-        setPostalCode(postCode);
+        setPostalCode(postCode, "London SE1, UK");
         pressContinue();
 
         pressContinue1();
@@ -457,7 +460,7 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void addListingWithoutPhotoBuddyUp(String postCode, String amount, String rent) {
-            setPostalCode(postCode);
+            setPostalCode(postCode, "London SE1, UK");
             pressContinue();
 
             pressContinue1();

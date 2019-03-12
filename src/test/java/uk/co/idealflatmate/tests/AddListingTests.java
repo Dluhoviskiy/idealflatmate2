@@ -20,7 +20,7 @@ public class AddListingTests extends TestBase {
         //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("SE1");
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1 ", "London SE1, UK");
         //getAddPropertyHelper().pressContinue1();
         getAddPropertyHelper().pressContinue();
 
@@ -57,7 +57,7 @@ public class AddListingTests extends TestBase {
         //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("SE1");
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1 ", "London SE1, UK");
         //getAddPropertyHelper().pressContinue1();
         getAddPropertyHelper().pressContinue();
 
@@ -96,7 +96,7 @@ public class AddListingTests extends TestBase {
 
         verificationHelper.verifyAddListingPage();
 
-        addPropertyHelper.addListingWithoutPhoto("SE1", "2", "4", "900");
+        addPropertyHelper.addListingWithoutPhoto("SE1 ", "2", "4", "900");
 
         paymentsHelper.addPropertyHelper.finishPropertyAgency();
 
@@ -196,7 +196,7 @@ public class AddListingTests extends TestBase {
 
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("l11");
+        paymentsHelper.addPropertyHelper.setPostalCode("l11 ", "Liverpool L11, UK");
         getAddPropertyHelper().pressContinue();
 
         addPropertyHelper.chooseRoadFor("testRoad");
@@ -237,7 +237,7 @@ public class AddListingTests extends TestBase {
 
     public void allFields() {
         addPropertyHelper.pressAddListingFromBody();
-        addPropertyHelper.setPostalCode("SE1");
+        addPropertyHelper.setPostalCode("SE1 ", "London SE1, UK");
         addPropertyHelper.pressContinue();
 
         addPropertyHelper.chooseRoadFor("Idealstreet");

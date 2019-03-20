@@ -32,7 +32,7 @@ public class AddListingTests extends TestBase {
         //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("SE1          ", "London SE1, UK");
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1            ", "London SE1, UK");
         //getAddPropertyHelper().pressContinue1();
         getAddPropertyHelper().pressContinue();
 

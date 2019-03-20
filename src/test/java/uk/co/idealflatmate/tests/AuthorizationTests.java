@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.ConfData;
 
@@ -13,7 +14,12 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 public class AuthorizationTests extends TestBase {
 
+    @BeforeMethod
 
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
     @Test
     public void classicLogInOut() {

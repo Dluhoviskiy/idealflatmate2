@@ -62,15 +62,16 @@ public class TestBase {
 
     public void setupClass() {
         //ChromeDriverManager.getInstance().setup();
-        //WebDriverManager.chromedriver().setup();
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.firefoxdriver().setup();
+        //WebDriverManager.safaridr().setup();
        // FirefoxDriverManager.getInstance().setup();
        // EdgeDriverManager.getInstance().setup();
         //Configuration.browser = "webdriver";
-        //Configuration.browser = "chrome";
+        Configuration.browser = "chrome";
 
         //Configurations.startmaximized=true;
-        Configuration.browser = "firefox";
+        //Configuration.browser = "firefox";
 
       //  Configuration.browser = "edge";
 
@@ -84,20 +85,6 @@ public class TestBase {
         open("http://front.idealflatmate4test.demo.devplatform2.com");
 
     }
-
-
-
-
-    @BeforeMethod
-
-    public void setupMethod() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
-
-    }
-
-
-
 
 
 

@@ -1,21 +1,22 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.FooterHelper;
+
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
-import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class FooterTest extends TestBase {
 
-    /*@AfterTest
-    public void goHomePage(){
-        //helperBase.toHomePage();
-        navigator.back();
-    }*/
-   // FooterHelper test1 = new FooterHelper();
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
     @Test
     public void footerHomeLink() {
@@ -87,7 +88,9 @@ public class FooterTest extends TestBase {
         System.out.println("Browse Flatshares - Click");
         footerHelper.footerClick("Browse Flatshares");
         System.out.println("verif - North London, Brent Park");
-        footerHelper.verificationBrowseFlatshares("North London", "Brent Park");
+        int listingCards = FooterHelper.propertyCardOnPage();
+        footerHelper.verificationBrowseFlatshares("North London", "Brent Park",
+                "Found "+listingCards+" room to rent in Brent Park");
             }
 
     @Test

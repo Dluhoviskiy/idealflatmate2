@@ -63,8 +63,14 @@ public class SearchHelper extends HelperBase {
         $(byXpath("//h1[@class='h4']")).waitUntil(visible, 10000).shouldHave(text(location));
     }
 
-    public void verificationSearchProperty(String location) {
-        $(byXpath("//h1[@class='h4']")).waitUntil(visible, 15000).shouldHave(text(location));
+    public static String getNumberOfListing() {
+        String getNumberOfListing = String.valueOf($(byXpath("//h1[@class='h4']")).text().substring(0, 12).replaceAll("[^0-9]", ""));
+        return getNumberOfListing;
+    }
+
+    public void verificationSearchProperty(String listingNumber) {
+
+        $(byXpath("//h1[@class='h4']")).waitUntil(visible, 15000).shouldHave(text(listingNumber));
     }
 
     public void verificationSearchPropertyMap(String location) {

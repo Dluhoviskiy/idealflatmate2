@@ -132,14 +132,15 @@ public class HelperBase  {
         if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
             sleep(1000);
             newPage("http://front.idealflatmate4test.demo.devplatform2.com");
-
-
-        } else{}
+            String currentUrl = url();
+            System.out.println(currentUrl);
+        }
     }
 
 
     public void closeOpen(String relOrAbsolUrl) {
-        clearCache();
+        clearBrowserCache();
+        clearBrowserCookies();
         close();
         open(relOrAbsolUrl);
     }

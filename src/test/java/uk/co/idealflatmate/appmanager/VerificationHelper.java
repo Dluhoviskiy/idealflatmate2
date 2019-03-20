@@ -69,18 +69,21 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         //$(byXpath("//div[@class='panel-heading']")).scrollTo();
 
 
-        $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available\n" +
-                "Garden\n" +
-                "Communal living room\n" +
-                "Balcony/patio\n" +
-                "Parking space\n" +
-                "Smokers accepted\n" +
-                "Pets accepted\n" +
-                "LGBT friendly\n" +
-                "Trans friendly\n" +
-                "Family friendly\n" +
-                "Vegan household\n" +
-                "Vegetarian household"));
+        $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available" +
+                "  Garden" +
+                "  Communal" +
+                "  living room" +
+                "  Balcony/patio" +
+                "  Parking space" +
+                "  Smokers accepted" +
+                "  Suitable for couples" +
+                "  Pets accepted" +
+                "  LGBT friendly" +
+                "  Trans friendly" +
+                "  Family friendly" +
+                "  Vegan household" +
+                "  Vegetarian household" +
+                "  DSS accepted"));
 
 
 
@@ -349,10 +352,12 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     public void dateMonthYearPhoneOccupationBlankError() {
         dayMonthYearAlert();
         $(byXpath("//div[contains(@class,'phone')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
+
+        $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).selectOptionByValue("");
         $(byXpath("//div[select[@id='moreinfosignupform-occupation_id']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Occupation Id cannot be blank."));
     }
 
-    public void dateMonthYearPhoneOccupationBlankErrorMessage() {
+    public void dateMonthYearBlankErrorMessage() {
         dayMonthYearAlert();
         //$(byXpath("//div[div/input[@id='moreinfosignupform-phone']]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
         //$(byXpath("//div[select[@id='moreinfosignupform-occupation_id']]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Occupation Id cannot be blank."));
@@ -360,7 +365,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
 
 
-    public void dateMonthYearPhoneOccupationBlankErrorPhone() {
+    public void dateMonthYearPhoneBlankErrorPhone() {
         dayMonthYearAlert();
         $(byXpath("//div[contains(@class,'phone')]/div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text("Phone cannot be blank."));
     }

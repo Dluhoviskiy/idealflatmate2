@@ -1,14 +1,21 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 
-public class SignUpBuddy_up extends TestBase {
+public class Buddy_up extends TestBase {
+    @BeforeMethod
 
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
     @Test //(priority = 1)
     public void testAaaAddWholeProperty() {
@@ -28,7 +35,7 @@ public class SignUpBuddy_up extends TestBase {
         verificationHelper.verifyNoProperty();
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoBuddyUp("LL55 4TT", "3", "900");
+        addPropertyHelper.addListingWithoutPhotoBuddyUp("LL55 4TT", "3", "900", "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK");
 
         //addPropertyHelper.finishPropertyAgency();
 
@@ -46,9 +53,9 @@ public class SignUpBuddy_up extends TestBase {
 
     @Test //(priority = 2)
 
-    public void testBbbMessageSignUpFMPageBuddy_Up() {
+    public void testBbbAaaMessageSignUpFMPageBuddy_Up() {
 
-        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
@@ -83,9 +90,10 @@ public class SignUpBuddy_up extends TestBase {
         sleep(2000);
 
         signUpHelper.clickYourInformationContinue();
-        verificationHelper.dateMonthYearPhoneOccupationBlankErrorMessage();
+        verificationHelper.dateMonthYearBlankErrorMessage();
 
-        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "227", "I want to Buddy_up");
+        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "20",
+                "I want to Buddy_up", "Professional", "Freelancer/self employed");
 
         //signUpHelper.clickBackToSearch();
         buddyUpHelper.closeIntrodGroupsPopup();
@@ -107,7 +115,7 @@ public class SignUpBuddy_up extends TestBase {
     @Test //(priority = 3)
     public void testCccButtonPropPage() {
 
-        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
@@ -134,7 +142,7 @@ public class SignUpBuddy_up extends TestBase {
     @Test //(priority = 4)
     public void testDddGroupPropPage() {
 
-        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.searchPropertyBySelectfromList("LL55 4TT", "LL55 4TT");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
@@ -169,9 +177,9 @@ public class SignUpBuddy_up extends TestBase {
         searchHelper.searchPropertyBySelectfromList("Crew", "Crewe");
         searchHelper.closePopupSignup();
         searchHelper.selectRadius("+2 km");
-        String postCode = $(byXpath("//div[@id='property_card_40893']//div[@class='card-infos-left']/div")).text();
+        String postCode = $(byXpath("//div[@id='property_card_41688']//div[@class='card-infos-left']/div")).text();
 
-        signUpHelper.click1PropCardIDMes("40893");
+        signUpHelper.click1PropCardIDMes("41688");
 
         authorizationHelper.clickSignUpWithFBBuddy_up();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -181,7 +189,7 @@ public class SignUpBuddy_up extends TestBase {
         signUpHelper.clickYourInformationContinue();
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("20");
+        signUpHelper.occupation("19", "Professional", "Student");
         //signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
@@ -206,15 +214,15 @@ public class SignUpBuddy_up extends TestBase {
 
     @Test //(priority = 6)
     //Facebook authorization doen`t work on staging
-    public void addLogInViaFBBuddy_up() {
+    public void Z_z_addLogInViaFBBuddy_up() {
 
         pageUrlVerifStageGoLive();
         searchHelper.searchPropertyBySelectfromList("Crew", "Crewe");
         searchHelper.closePopupSignup();
         searchHelper.selectRadius("+2 km");
-        String postCode = $(byXpath("//div[@id='property_card_40893']//div[@class='card-infos-left']/div")).text();
+        String postCode = $(byXpath("//div[@id='property_card_41688']//div[@class='card-infos-left']/div")).text();
 
-        signUpHelper.click1PropCardIDMes("40893");
+        signUpHelper.click1PropCardIDMes("41688");
 
         authorizationHelper.clickSignUpWithFBBuddy_up();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -233,10 +241,10 @@ public class SignUpBuddy_up extends TestBase {
 
     @Test //(priority = 7)
 
-    public void testaKkkMessageSignUpGroupCreate() {
+    public void testR_R_GroupCreate() {
         clearCache();
         refresh();
-        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.searchPropertyBySelectfromList("LL55 4TT", "LL55 4TT");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
@@ -253,13 +261,15 @@ public class SignUpBuddy_up extends TestBase {
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy2");
         sleep(2000);
-        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "227", "I want to Buddy_up");
+        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "19", "I want to Buddy_up", "Professional", "Student");
         messageHelper.photoOfOwnerInMesBuddy_up(photo1);
         messageHelper.propertyPostcodeVerifying(postCode);
 
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
-        buddyUpHelper.createPopupGroup();
-        //buddyUpHelper.postGroup();
+
+        buddyUpHelper.popupGroup("Post a group");
+        //buddyUpHelper.popupGroup("Create a Group");
+
         buddyUpHelper.postGroupButton();
 
         buddyUpHelper.assertNumberOfGroupsPropPage(2);
@@ -298,7 +308,8 @@ public class SignUpBuddy_up extends TestBase {
 
         buddyUpHelper.clickBuddy_upButton("m interested");
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
-        buddyUpHelper.createPopupGroup();
+        //buddyUpHelper.popupGroup("Create a Group");
+        buddyUpHelper.popupGroup("Post a group");
         buddyUpHelper.postGroupButton();
 
         buddyUpHelper.assertNumberOfGroupsPropPage(2);
@@ -331,9 +342,9 @@ public class SignUpBuddy_up extends TestBase {
 
     @Test //(priority = 8)//(dependsOnMethods = { "testMessageSignUpGroupCreate" })
 
-    public void testMmmSignUpGroupJoin() {
+    public void testT_T_MmmSignUpGroupJoin() {
 
-        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
@@ -350,7 +361,7 @@ public class SignUpBuddy_up extends TestBase {
 
         signUpHelper.yourInformation("passwUniv", "Trump", "FMupsBuddy3");
         sleep(2000);
-        signUpHelper.moreAboutYou2("25", "12", "1985", "777777777", "227", "I an interested in Buddy_up");
+        signUpHelper.moreAboutYou2("25", "12", "1985", "777777777", "227", "I an interested in Buddy_up", "Professional", "Other");
 
         messageHelper.photoOfOwnerInMesBuddy_up(photo1);
         messageHelper.propertyPostcodeVerifying(postCode);
@@ -384,7 +395,7 @@ public class SignUpBuddy_up extends TestBase {
 
         buddyUpHelper.clickBuddy_upButton("m interested");
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
-        buddyUpHelper.arrowPopupNext();
+        //buddyUpHelper.arrowPopupNext();
 
         buddyUpHelper.requestPopupToGroup();
         buddyUpHelper.chat_MemberClick();
@@ -395,14 +406,14 @@ public class SignUpBuddy_up extends TestBase {
 
         buddyUpHelper.clickBuddy_upButton("m interested");
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
-        buddyUpHelper.createPopupGroup();
+        buddyUpHelper.popupGroup("Create a Group");
         buddyUpHelper.postGroupButton();
         buddyUpHelper.assertNumberOfGroupsPropPage(3);
 
         buddyUpHelper.clickBuddy_upButton("m interested");
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
-        buddyUpHelper.arrowPopupNext();
-        buddyUpHelper.arrowPopupPrevious();
+        //buddyUpHelper.arrowPopupNext();
+        //buddyUpHelper.arrowPopupPrevious();
         buddyUpHelper.closePopupLookingGroup();
 
         getAddPropertyHelper().openDropDownMenu();
@@ -429,9 +440,9 @@ public class SignUpBuddy_up extends TestBase {
     }
     @Test //(priority = 9)
 
-    public void testTttMessageLoginGroupFull() {
+    public void testW_W_MessageLoginGroupFull() {
 
-        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
@@ -479,9 +490,9 @@ public class SignUpBuddy_up extends TestBase {
 
     @Test //(priority = 10)
 
-    public void testYyyMessageLoginGroupEditRemove() {
+    public void testY_Y_MessageLoginGroupEditRemove() {
 
-        searchHelper.searchPropertyBySelectfromList("llanberis", "llanberis");
+        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
         searchHelper.closePopupSignup();
         searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
 
@@ -513,7 +524,7 @@ public class SignUpBuddy_up extends TestBase {
 
     @Test //(priority = 11)
 
-    public void testZzzZMessageLoginPropertyRemove() {
+    public void testZ_Z_ZMessageLoginPropertyRemove() {
 
 
         authorizationHelper.login("passwUniv", "agentBuddyUp");

@@ -1,17 +1,22 @@
 package uk.co.idealflatmate.tests;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeListRenewPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class AbclearDataTests extends TestBase {
+
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
 
     @DataProvider(name = "Authentication")

@@ -1,14 +1,22 @@
 package uk.co.idealflatmate.tests;
 
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class MatchingTests extends TestBase {
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
     @Test
     public void fullMenuNewUserWithVerifPercent() {

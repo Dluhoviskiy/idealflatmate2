@@ -1,4 +1,5 @@
 package uk.co.idealflatmate.tests;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 
@@ -8,6 +9,12 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 
 public class SignUpTest extends TestBase {
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
     @Test
     public void testSignUpBlankFieldsPropAddRentBlock() {
@@ -85,11 +92,11 @@ public class SignUpTest extends TestBase {
         verificationHelper.phoneVerification("55555555d", "Phone number is incorrect.");
         signUpHelper.profilePhone("5555555555");
 
-        signUpHelper.occupation("19");
+        signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.backLocation();
+        signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.preferredLocation("Watf", "Watford");
@@ -232,11 +239,11 @@ public class SignUpTest extends TestBase {
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
+        signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.backLocation();
+        signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.clickYourInformationContinue();
@@ -265,11 +272,11 @@ public class SignUpTest extends TestBase {
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
+        signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.backLocation();
+        signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.preferredLocation("Watf", "Watford");
@@ -301,7 +308,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickYourInformationContinue();
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("20");
+        signUpHelper.occupation("20", "Professional", "Freelancer/self employed");
         //signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
@@ -409,7 +416,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("227");
+        signUpHelper.occupation("227", "Professional", "Other");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 

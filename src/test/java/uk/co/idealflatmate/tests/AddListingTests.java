@@ -1,14 +1,26 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.SearchHelper;
 
 import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListing;
 
 public class AddListingTests extends TestBase {
+
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
     @Test
     public void loginStartListing() {
@@ -20,7 +32,7 @@ public class AddListingTests extends TestBase {
         //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("SE1 ", "London SE1, UK");
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1          ", "London SE1, UK");
         //getAddPropertyHelper().pressContinue1();
         getAddPropertyHelper().pressContinue();
 
@@ -57,7 +69,7 @@ public class AddListingTests extends TestBase {
         //verificationHelper.verifyNoProperty();
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("SE1 ", "London SE1, UK");
+        paymentsHelper.addPropertyHelper.setPostalCode("SE1          ", "London SE1, UK");
         //getAddPropertyHelper().pressContinue1();
         getAddPropertyHelper().pressContinue();
 
@@ -98,7 +110,7 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.addListingWithoutPhoto("SE1 ", "2", "4", "900");
 
-        paymentsHelper.addPropertyHelper.finishPropertyAgency();
+        //addPropertyHelper.finishPropertyCreatingAgency();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         verificationHelper.verifyAddedProperty("London SE1, UK");
@@ -176,7 +188,7 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.verifyBreadCrumbs("Search Rooms", "London", "Bankside", "3 bedrooms for rent in Bankside, South London from ");
         addPropertyHelper.goByLink("Bankside");
-        searchHelper.verificationSearchProperty("rooms matched to rent in and around Bankside");
+        searchHelper.verificationSearchProperty("Found " + getNumberOfListing() + " rooms to rent in Bankside");
 
 
 
@@ -196,7 +208,7 @@ public class AddListingTests extends TestBase {
 
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("l11 ", "Liverpool L11, UK");
+        paymentsHelper.addPropertyHelper.setPostalCode("l11         ", "Liverpool L11, UK");
         getAddPropertyHelper().pressContinue();
 
         addPropertyHelper.chooseRoadFor("testRoad");
@@ -237,7 +249,7 @@ public class AddListingTests extends TestBase {
 
     public void allFields() {
         addPropertyHelper.pressAddListingFromBody();
-        addPropertyHelper.setPostalCode("SE1 ", "London SE1, UK");
+        addPropertyHelper.setPostalCode("SE1           ", "London SE1, UK");
         addPropertyHelper.pressContinue();
 
         addPropertyHelper.chooseRoadFor("Idealstreet");
@@ -247,9 +259,13 @@ public class AddListingTests extends TestBase {
         //getAddPropertyHelper().setPhoneNumber("+44 20 7234 3456", "\n" + "Don't display on my listing");
         addPropertyHelper.setPhoneNumber1("+44 20 7234 3456");
         addPropertyHelper.setTotalBedrooms("4");
+        addPropertyHelper.isCheckedSutableFore("Professionals and/or Students");
+        addPropertyHelper.clickSutableFore("Professionals Only");
+        addPropertyHelper.isCheckedSutableFore("Professionals Only");
         addPropertyHelper.setAllAmanities("Garden", "Parking", " Communal living room",
                 " Balcony/patio", "property-pets_accepted", "property-smokers_accepted", "property-family_friendly",
-                "property-lgbt_friendly", "property-trans_friendly", "property-vegan_household", "property-vegetarian_household");
+                "property-lgbt_friendly", "property-trans_friendly", "property-vegan_household",
+                "property-vegetarian_household", "DSS Accepted", "Suitable for couples");
         addPropertyHelper.setPropertyDescription();
         addPropertyHelper.setMonthlyRent("500");
         addPropertyHelper.setDeposit("1000");

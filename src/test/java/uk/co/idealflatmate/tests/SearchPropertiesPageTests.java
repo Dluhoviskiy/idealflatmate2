@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -10,7 +11,12 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.TespageUrlVerifLiveGoStage;
 
 public class SearchPropertiesPageTests extends TestBase{
+    @BeforeMethod
 
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
     @Test
     public void propertySearchByDropDown() {

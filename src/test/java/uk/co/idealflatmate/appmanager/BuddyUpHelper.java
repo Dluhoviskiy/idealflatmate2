@@ -37,9 +37,10 @@ public class BuddyUpHelper extends HelperBase {
         $(byXpath("//div[@id='introducingBuddyUpGroupModal']//div[@class='btn btn-sm close']")).click();
     }
 
-    public void createPopupGroup() {
+
+    public void popupGroup(final String create) {
         sleep(3000);
-        $(byXpath("//section//div[@id='js-in-popup-groups-list']//a[contains(.,'Create a Group')]")).click();
+        $(byXpath("//section//div[@id='js-in-popup-groups-list']//a[contains(.,'" + create + "')]")).click();
     }
 
     public void createPageGroupButton() {
@@ -210,4 +211,6 @@ public class BuddyUpHelper extends HelperBase {
         $(byXpath("//div[@class='item'][strong[contains(.,'TARGET MOVING DATE')]]/p")).shouldHave(Condition.text(movingDate));
 
     }
+
+
 }

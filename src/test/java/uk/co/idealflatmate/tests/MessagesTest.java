@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
 
@@ -9,6 +10,13 @@ import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
 
 public class MessagesTest extends TestBase {
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
+
 
    public final MessageHelper messageHelper = new MessageHelper();
 

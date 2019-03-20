@@ -1,8 +1,8 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
@@ -10,6 +10,14 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class AreaPageTest extends TestBase {
+
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+
+    }
 
     @Test
     public void firstFeaturedHomePageHeader() {
@@ -51,7 +59,7 @@ public class AreaPageTest extends TestBase {
         areaPageHelper.clickMoreRooms();
         closeAdvPopUp();
         areaPageHelper.checkLinkSeeMoreRooms(area1);
-        areaPageHelper.checkNumberOfProperties();
+        areaPageHelper.numberPropertiesUnderSearchEqualsCards();
         areaPageHelper.checkSortDropDownRoom();
         areaPageHelper.pagination();
 

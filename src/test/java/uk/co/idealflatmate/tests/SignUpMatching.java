@@ -1,10 +1,17 @@
 package uk.co.idealflatmate.tests;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class SignUpMatching extends TestBase {
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
 
     @Test
@@ -29,9 +36,9 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch5");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself", "Professional", "Other");
 
-        signUpHelper.backLocation();
+        signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.preferredLocation( "watf", "Watford");
@@ -81,7 +88,7 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch4");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself", "Professional", "Other");
 
         signUpHelper.clickListYourRoomMatching();
 
@@ -109,7 +116,7 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch6");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself", "Professional", "Other");
 
         signUpHelper.clickSearchFMMatching();
         verificationHelper.verifySearchFMPage();

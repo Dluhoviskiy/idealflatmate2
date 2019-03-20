@@ -50,11 +50,13 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void setPostalCode(String postCode, final String location) {
+        sleep(2000);
         $(By.xpath("//span[@class='selection']//span[contains(@class,'select2-selection__rendered')]")).click();
-        sleep(4000);
+        $(By.xpath("//input[contains(@class,'select2-search')]")).clear();
         $(By.xpath("//input[contains(@class,'select2-search')]")).setValue(postCode);
-        sleep(4000);
+        sleep(1000);
         $(By.xpath("//li[contains(.,'" + location + "')]")).click();
+        sleep(1000);
     }
 
     public void pressContinueButton() {
@@ -115,7 +117,9 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//h2[contains(.,'The property')]")).click();
     }
 
-    public void setAllAmanities(String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11) {
+    public void setAllAmanities(String text1, String text2, String text3, String text4, String text5,
+                                String text6, String text7, String text8, String text9, String text10,
+                                String text11, String text12, String text13) {
         String string = "//div/label[contains(.,'";
         String string2 = "')]";
         String string3 = "')]/..";
@@ -134,6 +138,12 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath(string + text4 + string2)).click();
         $(byXpath(string + text4 + string3)).shouldHave(attribute);
         sleep(1000);
+        $(byXpath(string + text12 + string2)).click();
+        $(byXpath(string + text12 + string3)).shouldHave(attribute);
+        sleep(1000);
+        $(byXpath(string + text13 + string2)).click();
+        $(byXpath(string + text13 + string3)).shouldHave(attribute);
+        sleep(1000);
         $(byXpath(string4 + text5 + "']")).click();
         $("#"+text5+"").shouldBe(selected);
         sleep(1000);
@@ -144,16 +154,16 @@ public class AddPropertyHelper extends HelperBase {
         $("#"+text7+"").shouldBe(selected);
         sleep(1000);
         $(byXpath(string4 + text8 + "']")).click();
-        $("#"+text7+"").shouldBe(selected);
+        $("#"+text8+"").shouldBe(selected);
         sleep(1000);
         $(byXpath(string4 + text9 + "']")).click();
-        $("#"+text7+"").shouldBe(selected);
+        $("#"+text9+"").shouldBe(selected);
         sleep(1000);
         $(byXpath(string4 + text10 + "']")).click();
-        $("#"+text7+"").shouldBe(selected);
+        $("#"+text10+"").shouldBe(selected);
         sleep(1000);
         $(byXpath(string4 + text11 + "']")).click();
-        $("#"+text7+"").shouldBe(selected);
+        $("#"+text10+"").shouldBe(selected);
         sleep(1000);
 
 
@@ -278,21 +288,10 @@ public class AddPropertyHelper extends HelperBase {
 
     }
 
-    public void finishPropertyCreating() {
-        $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
-        //$(byXpath("//*[@id=\"wizard-finish\"]")).waitUntil(Condition.disappears, 4000);
-        continueUpgradeListAgent.waitUntil(appear, 4000).click();
-        $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
-    }
     public void finishPropertyCreatingAgency() {
         $(byXpath("//*[@id='wizard-finish-btn']")).shouldBe(enabled).click();
-        continueUpgradeListAgent.waitUntil(appear, 4000).click();
-        $(byXpath("//p[@class='u_m20-top list-property-title']")).shouldHave(text("In order to list your property you need to"));
-    }
-
-    public void finishPropertyCreatingWithoutPhoto() {
-        continueUpgradeListAgent.waitUntil(appear, 4000).click();
-        $(byXpath("//span[contains(text(), 'Your')]")).shouldHave(text("Your listing is now live!"));
+       // continueUpgradeListAgent.click();
+       // $(byXpath("//p[@class='u_m20-top list-property-title']")).shouldHave(text("In order to list your property you need to"));
     }
 
     public void viewListing() {
@@ -339,12 +338,6 @@ public class AddPropertyHelper extends HelperBase {
 
     }
 
-
-    public void finishPropertyAgency() {
-        continueUpgradeListAgent.click();
-        $(byXpath("//span[contains(., 'In order to list your property you need to')]/../a")).shouldHave(text("Upgrade to professional"));
-
-    }
 
     public void finishPropertyAgencyWithSubs(String text) {
 
@@ -459,8 +452,8 @@ public class AddPropertyHelper extends HelperBase {
         //$(byXpath("//input[@id='property-vegetarian_household']")).click();
     }
 
-    public void addListingWithoutPhotoBuddyUp(String postCode, String amount, String rent) {
-            setPostalCode(postCode, "London SE1, UK");
+    public void addListingWithoutPhotoBuddyUp(String postCode, String amount, String rent, String location) {
+            setPostalCode(postCode, location);
             pressContinue();
 
             pressContinue1();
@@ -497,5 +490,13 @@ public class AddPropertyHelper extends HelperBase {
 
     public void goByLink(final String areaSearch) {
         $(byXpath("//ul[@class='custom-breadcrumbs']//li/a[contains(.,'" + areaSearch + "')]")).click();
+    }
+
+    public void isCheckedSutableFore(final String sutableFor) {
+        $(byXpath("//span[contains(.,'" + sutableFor + "')]/../input")).shouldBe(checked);
+    }
+
+    public void clickSutableFore(final String sutableFor) {
+        $(byXpath("//span[contains(.,'" + sutableFor + "')]")).click();
     }
 }

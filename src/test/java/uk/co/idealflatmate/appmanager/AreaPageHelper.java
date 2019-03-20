@@ -64,7 +64,7 @@ public class AreaPageHelper extends HelperBase {
         $$(byXpath("//div[@class='card-profile-text']")).shouldHaveSize(7);
         String areaNameOnPageH1 = $(byXpath("//h1[@class='h4']")).text();
         System.out.println(areaNameOnPageH1);
-        String area2 = (areaNameOnPageH1.substring(0, 37) + " " + area1);
+        String area2 = (areaNameOnPageH1.substring(0, 24) + " " + area1);
         Assert.assertEquals(areaNameOnPageH1, area2);
 
     }
@@ -81,7 +81,7 @@ public class AreaPageHelper extends HelperBase {
         Assert.assertEquals(areaNameOnPageH1, area2);
 
         String areaNameOnPageH2 = $(byXpath("//h1[@class='h4']")).text();
-        String area3 = (areaNameOnPageH2.substring(0, 37) + " " + area1);
+        String area3 = (areaNameOnPageH2.substring(0, 24) + " " + area1);
         Assert.assertEquals(areaNameOnPageH2, area3);
 
 
@@ -134,12 +134,14 @@ public class AreaPageHelper extends HelperBase {
         Assert.assertEquals(areaNameOnPageH1, area2);
     }
 
-    public void checkNumberOfProperties() {
+    public void numberPropertiesUnderSearchEqualsCards() {
 
-        String areaNameOnPageH1 = $(byXpath("//h1[@class='h4']")).text();
-        int Properties = Integer.valueOf((areaNameOnPageH1.substring(0, 1)));
-        int PropertiesCard = $$(byXpath("//div[@class='cards-container']/div[@id]")).size();
-        Assert.assertEquals(Properties, PropertiesCard);
+        String areaNameOnPageH1 = $(byXpath("//h1[@class='h4']")).text().replaceAll("[^0-9]", "");
+        //int Properties = Integer.valueOf((areaNameOnPageH1.substring(5, 6)));
+        int Properties = Integer.valueOf((areaNameOnPageH1));
+        //int PropertiesCard = $$(byXpath("//div[@class='cards-container']/div[@id]")).size();
+        int propertiesCard = FooterHelper.propertyCardOnPage();
+        Assert.assertEquals(Properties, propertiesCard);
 
 
     }

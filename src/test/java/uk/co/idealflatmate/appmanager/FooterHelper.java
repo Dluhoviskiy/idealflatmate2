@@ -15,19 +15,25 @@ public class FooterHelper extends HelperBase{
         $(byXpath("//div[@class='homepage-quiz-container container']")).waitUntil(exist, 6000).should(exist);
     }
 
-    public void verificationBrowseFlatshares(String location, String area) {
+    public void verificationBrowseFlatshares(String location, String area, final String textOnThePage) {
         $(byXpath("//button[contains(., '" + location + "')]")).waitUntil(visible, 10000).click();
-        $(byXpath("(//li/a[contains(text(), 'Brent Park')])[1]")).waitUntil(visible, 4000).click();
+        $(byXpath("(//li/a[contains(text(), '"+area+"')])[1]")).waitUntil(visible, 4000).click();
         //switchTo().window(1);
         closeAdvPopUp();
+
         if($(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')])[1]")).is(visible)){
             $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
-            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text("0 room matched to rent in and around " + area));
+            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text(textOnThePage+area));
         }else {
-            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text("0 room matched to rent in and around " + area));
+            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text(textOnThePage+area));
         }
 
     }
+    public static int propertyCardOnPage() {
+        int propertyCardOnPage = $$(byXpath("//div[@class='cards-container']/div[@id]")).size();
+        return propertyCardOnPage;
+    }
+
 
     public void verificationHowItWorks() {
         $(byXpath("//h2")).waitUntil(visible, 10000).shouldHave(text("How Ideal Flatmate Works"));

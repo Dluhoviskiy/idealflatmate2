@@ -152,8 +152,12 @@ public class SignUpHelper extends HelperBase {
         Field2("#messagewritesignupform-phone",phone);
     }
 
-    public void occupation(String prof) {
+    public void occupation(String prof, String defaultOccupation, String occupationNew) {
+        String occupation = $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).getSelectedOption().getText();
+        Assert.assertEquals(defaultOccupation, occupation);
         $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).selectOptionByValue(prof);
+        String newOccupation = $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).getSelectedOption().getText();
+        Assert.assertEquals(occupationNew, newOccupation);
     }
 
     public void aboutYourself(String text) {
@@ -174,7 +178,7 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//a[starts-with(@class,'btn btn-primary-outline') and contains(.,'" + area2 + "')]")).click();
     }
 
-    public void backLocation() {
+    public void backClick() {
         $(byXpath("//a[contains (., 'back')]")).click();
 
     }
@@ -424,20 +428,20 @@ public class SignUpHelper extends HelperBase {
         clickYourInformationContinue();
     }
 
-    public void moreAboutYou(String day, String month, String year, String phone, String prof, String text) {
+    public void moreAboutYou(String day, String month, String year, String phone, String prof, String text, String defaultOccupation, String occupationNew) {
         profilePhotoAddJpeg();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
-        occupation(prof);
+        occupation(prof, defaultOccupation, occupationNew);
         aboutYourself(text);
         clickYourInformationContinue();
     }
 
-    public void moreAboutYou2(String day, String month, String year, String phone, String prof, String text) {
+    public void moreAboutYou2(String day, String month, String year, String phone, String prof, String text, String defaultOccupation, String occupationNew) {
         profilePhotoAddPng();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
-        occupation(prof);
+        occupation(prof, defaultOccupation, occupationNew);
         aboutYourself(text);
         clickYourInformationContinue();
     }
@@ -456,7 +460,7 @@ public class SignUpHelper extends HelperBase {
         profilePhotoRemove();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
-        occupation(prof);
+        occupation(prof, "Professional", "Student");
         //signUpHelper.aboutYourself("Tell us about yourself");
         clickYourInformationContinue();
     }

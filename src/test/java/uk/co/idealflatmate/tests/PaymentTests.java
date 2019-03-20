@@ -1,11 +1,19 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class PaymentTests extends TestBase {
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
 
     @Test
@@ -63,7 +71,7 @@ public class PaymentTests extends TestBase {
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "fmNotPaid3");
 
-        signUpHelper.moreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter");
+        signUpHelper.moreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter", "Professional", "Other");
 
         signUpHelper.whereWouldLikeLive("watf", "Watford");
 

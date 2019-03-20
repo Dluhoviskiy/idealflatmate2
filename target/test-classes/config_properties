@@ -3,6 +3,7 @@ agentEdit=cro.gen.AgNotPaidEdit@gmail.com
 FMNotPaid=cro.gen.FH@gmail.com
 FMwithoutSub=FM_Manch_2@gmail.com
 FMwithoutSub2=FMnew314@gmail.com
+FMwithoutSub3=FMnew315@gmail.com
 Live_in_Mes=cro.gen.Landlord101@gmail.com
 AgencyPaid=cro.gen.AgencyPaid@gmail.com
 FMwithMatch=cro.gen.FHMatching@gmail.com
@@ -14,6 +15,7 @@ existingEmail=FMnew777@gmail.com
 liveIn1=LiveInNt77a2@gmail.com
 agency3=cro30456yyy@gmail.com
 FMMatch3=TerezaHQ1@gmail.com
+propertyBuddy_up=propertyBuddy_up@gmail.com
 
 
 //FB_users_Live
@@ -59,10 +61,12 @@ LiveOut2=LiveOut7t111r21@gmail.com
 
 
 
+
 //users_shouldBe_without_properties
 userNotpaid=cro.gen.FHListingNotPaid@gmail.com
 agentNotPaid=cro.gen.AgencyNotPaid@gmail.com
 userTitle=Titlelive_in1@gmail.com
+agentBuddyUp=agent777Buddy@gmail.com
 
 
 

@@ -1,13 +1,21 @@
 package uk.co.idealflatmate.tests;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class SignUpLikeOrMessage extends TestBase {
+    @BeforeMethod
+
+    public void setupMethod() {
+        pageUrlVerifLiveGoStage();
+        clearCache();
+    }
 
 
     @Test
@@ -49,7 +57,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
         //verificationHelper.passwordBlankAlertMessage();
-        verificationHelper.dateMonthYearPhoneOccupationBlankErrorMessage();
+        verificationHelper.dateMonthYearBlankErrorMessage();
 
 
         signUpHelper.setSignUpNameFMessage("Ronald");
@@ -157,7 +165,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
+        signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
@@ -198,11 +206,11 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("19");
+        signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.backLocation();
+        signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.preferredLocation("Watf", "Watford");
@@ -265,7 +273,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
         //verificationHelper.passwordBlankAlertMessage();
-        verificationHelper.dateMonthYearPhoneOccupationBlankErrorMessage();
+        verificationHelper.dateMonthYearBlankErrorMessage();
 
         signUpHelper.quit();
         verificationHelper.isPropertyPageLocation(title);
@@ -304,10 +312,12 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.dateMonthYearPhoneOccupationBlankError();
+        signUpHelper.backClick();
+        signUpHelper.clickYourInformationContinue();
 
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("39");
+        signUpHelper.occupation("39", "Professional", "Student");
         //signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
@@ -349,7 +359,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.nameFirstBlankAlertPhone();
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
-        verificationHelper.dateMonthYearPhoneOccupationBlankErrorPhone();
+        verificationHelper.dateMonthYearPhoneBlankErrorPhone();
 
         signUpHelper.quit();
         verificationHelper.isPropertyPageLocation(searchLocation);

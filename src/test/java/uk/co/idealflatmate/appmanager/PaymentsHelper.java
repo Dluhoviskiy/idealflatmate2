@@ -80,7 +80,7 @@ public class PaymentsHelper extends HelperBase {
     }
 
     public void verificationPaymentPageFeatureListing(String text) {
-        $(byXpath("//h2[@class='text-20 u_m0-top']")).waitUntil(visible, 10000).shouldHave(text(text));
+        $(byXpath("//h2[@class='text-18 u_m0-top u_m30-bottom']")).waitUntil(visible, 10000).shouldHave(text(text));
     }
 
 
@@ -90,6 +90,10 @@ public class PaymentsHelper extends HelperBase {
 
     public void verificationCheckoutTotal(String text) {
         $(byXpath("//span[@id='total-price']")).waitUntil(visible, 10000).shouldHave(text(text));
+    }
+
+    public void verificationCheckoutNewTotal(String price) {
+        $(byXpath("//p/strong[contains(.,'"+price+"')]")).should(exist);
     }
 
     public void selectNLADiscount(String NLA, String payment) {
@@ -103,9 +107,18 @@ public class PaymentsHelper extends HelperBase {
         sleep(3000);
     }
 
-    public void upgradeListingProf(String option) {
+    public void upgradeListingProfNew(String option) {
+        $(byXpath("//select[@id='js-professional-properties-list']")).selectOptionContainingText(option);
+
+    }
+
+    public void upgradeListingProfOld(String option) {
         $(byXpath("//select[@class='form-control pro-property-no']")).selectOptionContainingText(option);
-        sleep(3000);
+
+    }
+
+    public void priceVerifPaymentSystemPage(final  String priceProfIs) {
+        $(byXpath("//span[@id='professional-big-price']")).shouldHave(text(priceProfIs));
     }
 
     public void promoteCardClick(String text) {
@@ -131,4 +144,32 @@ public class PaymentsHelper extends HelperBase {
         sleep(1000);
     }
 
+    public void clickPlan(final String plan) {
+        $(byXpath("//a[@class='js-duration' and contains(.,'"+plan+"')]")).click();
+
+    }
+
+    public void defaultPlanActiveIs(String plan,final String priceEssenIs, final String pricePremIs,
+                                         final String priceProfIs) {
+        sleep(2000);
+        $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'"+plan+"')]")).should(exist);
+        $(byXpath("//span[@id='essentials-big-price' and contains(.,'"+priceEssenIs+"')]")).should(exist);
+        $(byXpath("//span[@id='premium-big-price' and contains(.,'"+pricePremIs+"')]")).should(exist);
+        if($(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Monthly')]")).exists()){
+        $(byXpath("//span[@id='professional-big-price' and contains(.,'"+priceProfIs+"')]")).should(exist);}
+        else if($(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Weekly')]")).exists()){
+            $(byXpath("//form[@id='ProfessionalPaymentForm' and @class='col-sm-4 col-xs-12 js-plan-block" +
+                    " plan-block disabled']")).should(exist);}
+    }
+
+    public void defaultPlanProf(final String priceProfIs) {
+        $(byXpath("//form[@id='PremiumPaymentForm' and @class='col-sm-4 col-xs-12 js-plan-block plan-block disabled']")).should(exist);
+        $(byXpath("//form[@id='EssentialPaymentForm' and @class='col-sm-4 col-xs-12 js-plan-block plan-block disabled']")).should(exist);
+        $(byXpath("//span[@id='professional-big-price']")).shouldHave(text(priceProfIs));
+    }
+
+
+    public void clickSelectPlan(final String plan, final String tag) {
+        $(byXpath("//form[@id='" + plan + "PaymentForm']//" + tag + "[contains(.,'Select plan')]")).click();
+    }
 }

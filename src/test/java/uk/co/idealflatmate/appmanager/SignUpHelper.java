@@ -152,10 +152,10 @@ public class SignUpHelper extends HelperBase {
         Field2("#messagewritesignupform-phone",phone);
     }
 
-    public void occupation(String prof, String defaultOccupation, String occupationNew) {
+    public void occupation(String profOption, String defaultOccupation, String occupationNew) {
         String occupation = $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).getSelectedOption().getText();
         Assert.assertEquals(defaultOccupation, occupation);
-        $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).selectOptionByValue(prof);
+        $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).selectOptionByValue(profOption);
         String newOccupation = $(byXpath("//select[@id='moreinfosignupform-occupation_id']")).getSelectedOption().getText();
         Assert.assertEquals(occupationNew, newOccupation);
     }
@@ -283,8 +283,8 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//input[contains(@id,'-password')]")).clear();
     }
 
-    public void click1PropertyCardMessage() {
-        $(byXpath("(//div[@class='card-infos-flex-row']/a[2][@href])[3]")).click();
+    public void click1CardMessage(final String numberOfCard) {
+        $(byXpath("(//div[@class='card-infos-flex-row']/a[2][@href])[" + numberOfCard + "]")).click();
 
     }
 
@@ -361,8 +361,9 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//button[@type='submitLogin']")).click();
     }
 
-    public void clickPropertyCard1() {
-        $$(byXpath("//div[@class='card-img']")).get(1).click();
+    public void clickPropertyCard1(int indexOfCard) {
+        $(byXpath("//h1")).click();
+        $$(byXpath("//div[@class='card-img']")).get(indexOfCard).click();
 
     }
 
@@ -428,25 +429,25 @@ public class SignUpHelper extends HelperBase {
         clickYourInformationContinue();
     }
 
-    public void moreAboutYou(String day, String month, String year, String phone, String prof, String text, String defaultOccupation, String occupationNew) {
+    public void moreAboutYou(String day, String month, String year, String phone, String newOccupation, String text, String defaultOccupation, String occupationNew) {
         profilePhotoAddJpeg();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
-        occupation(prof, defaultOccupation, occupationNew);
+        occupation(newOccupation, defaultOccupation, occupationNew);
         aboutYourself(text);
         clickYourInformationContinue();
     }
 
-    public void moreAboutYou2(String day, String month, String year, String phone, String prof, String text, String defaultOccupation, String occupationNew) {
+    public void moreAboutYou2(String day, String month, String year, String phone, String newOccupation, String text, String defaultOccupation, String occupationNew) {
         profilePhotoAddPng();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
-        occupation(prof, defaultOccupation, occupationNew);
+        occupation(newOccupation, defaultOccupation, occupationNew);
         aboutYourself(text);
         clickYourInformationContinue();
     }
 
-    public void signListingFM_LiveIn(String confEmail, String confPassword, String day, String month, String year, String phone, String prof, String firstName) {
+    public void signListingFM_LiveIn(String confEmail, String confPassword, String day, String month, String year, String phone, String newOccupation, String firstName, String defaultOccupation, String occupationNew) {
 
 
         clickEmail();
@@ -460,7 +461,7 @@ public class SignUpHelper extends HelperBase {
         profilePhotoRemove();
         profileDateBirthAdd(day, month, year);
         profilePhone(phone);
-        occupation(prof, "Professional", "Student");
+        occupation(newOccupation, defaultOccupation, occupationNew);
         //signUpHelper.aboutYourself("Tell us about yourself");
         clickYourInformationContinue();
     }
@@ -505,6 +506,9 @@ public class SignUpHelper extends HelperBase {
         setSignEmail(confEmail);
         setSignPassword(confPassword);
     }
-
+    public static String userName() {
+        String userName = $("span.user-welcome--name").text();
+        return userName;
+    }
 
 }

@@ -3,7 +3,6 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -25,7 +24,7 @@ public class MatchingTests extends TestBase {
         signUpHelper.clickRoom1();
 
         signUpHelper.signListingFM_LiveIn("fmMatch", "passwUniv", "2",
-                                          "6", "2000", "85296200", "19", "Ronaldina");
+                                          "6", "2000", "85296200", "19", "Ronaldina", "Professional", "Student");
 
         signUpHelper.preferredLocation("Watf", "Watford");
         signUpHelper.clickYourInformationContinue();
@@ -109,6 +108,29 @@ public class MatchingTests extends TestBase {
         helperBase.toHomePage();
         matchingHelper.clickHomePageMatching();
         matchingHelper.quitQuiz();
+
+        authorizationHelper.logoutFromApp();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
+    }
+
+    @Test
+    public void matchingForLordsIsHidden() {
+        clearCache();
+
+        authorizationHelper.clickJoinFreeButton();
+        authorizationHelper.clickSignInButtonInForm();
+        authorizationHelper.setLoginAsUserWithoutPackage("FMWithMatching");
+        authorizationHelper.setPassword("passwUniv");
+        authorizationHelper.submitLogin();
+
+        verificationHelper.verificationUserNameOnHomePage("FMWithMatching1");
+
+        searchHelper.searchPropertyBySelectfromList("W12 0HS", "W12 0HS");
+
+        searchHelper.closePopupSignup();
+
+        verificationHelper.matchingForLordIsHidden();
 
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");

@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
+import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListing;
 
 
 public class MessagesTest extends TestBase {
@@ -35,7 +35,7 @@ public class MessagesTest extends TestBase {
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFM();
         getMessageHelper().clickUpgradeToMessage();
-        verificationHelper.paymentPage("Want more from your listing? Upgrade now!");
+        verificationHelper.paymentPageNotifUpgrade("Now choose the plan that is right for you.");
         authorizationHelper.logoutFromApp();
 
     }
@@ -86,7 +86,7 @@ public class MessagesTest extends TestBase {
         //messageHelper.clickPropertyPageMessage();
         verificationHelper.noTextUpgradeToFasterReply();
         verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
-        paymentsHelper.addPropertyHelper.messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
+        addPropertyHelper.messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
         verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
@@ -101,9 +101,10 @@ public class MessagesTest extends TestBase {
         searchHelper.priceFilterActive();
         searchHelper.clearFilter();
         searchHelper.clearSearch();
-        searchHelper.clickSearchPropPage("PO30 2DN");
-        messageHelper.clickCardImgProperty();
-        messageHelper.clickPropertyPageMessage();
+        searchHelper.clickSearchPropPage("PO30 2Dn  ");
+        messageHelper.clickCardImgProperty("Newport PO30 2DN, UK");
+        messageHelper.clickPropertyContact();
+        //messageHelper.clickPropertyPageMessage();
         verificationHelper.upgradeToFasterReply();
         verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
         messageHelper.sendDecline("Unfortunately I have found a place elsewhere and no longer" + //FH to Lord
@@ -114,33 +115,73 @@ public class MessagesTest extends TestBase {
     }
 
     @Test
-    public void fmWithoutSubsTolordWithoutSubsWithListFromFMpage() {
+    public void fmWithoutSubsTolordWithoutSubsDirectly() {
 
-        //System.out.println("JoinFreeButton");
+        String location = "Whitton";
         authorizationHelper.loginMessage("FMNotPaid", "passwUniv");
 
 
-        searchHelper.searchPropertyHome("Clapham");
+        searchHelper.searchPropertyHome(location);
+        searchHelper.selectRadius("+3 km");
 
+        verificationHelper.searchResultText("Found " + getNumberOfListing() + " room to rent in "+location);
 
-        verificationHelper.searchResultText("6 rooms matched to rent in and around Clapham");
-        //searchHelper.clearSearch();
-
-
-        searchHelper.lastCardClick();//6 cards
-        //messageHelper.clickCardMessageLogged();
-        //messageHelper.clickPropertyCardFMnamePagelogged();
-
+        searchHelper.cardUserClick();
 
         messageHelper.clickFMPageMessage();
 
-
-        verificationHelper.noUpgradeToFasterReply();
+        verificationHelper.upgradeToFasterReply();
         verificationHelper.noSendDecline();
         verificationHelper.messageGroup("No property");
         messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
+    }
+
+    @Test
+    public void spamFmWithoutSubsToFMLink() {
+
+        String name = "Mash";
+        pageUrlVerifLiveGoStage();
+        clearCache();
+
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("A current tenant");
+
+        signUpHelper.signListingFM_LiveIn("TenantSpam", "passwUniv",
+                "5", "5", "1959", "55555555", "19",
+                name, "Professional", "Student");
+
+
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.verifyAddListingPage();
+        verificationHelper.verificationUserNameOnHomePage(name);
+
+        authorizationHelper.goToFMpage();
+        searchHelper.closePopupSignup();
+        signUpHelper.click1CardMessage("1");
+        addPropertyHelper.messageHelper.typeAndSendMessage("https://www.trend.az");
+
+        authorizationHelper.goToFMpage();
+        searchHelper.closePopupSignup();
+        signUpHelper.click1CardMessage("2");
+        addPropertyHelper.messageHelper.typeAndSendMessage("https://www.trend.az");
+
+        authorizationHelper.goToFMpage();
+        searchHelper.closePopupSignup();
+        signUpHelper.click1CardMessage("3");
+        addPropertyHelper.messageHelper.typeAndSendMessage("https://www.trend.az");
+
+        verificationHelper.notifSpamer("Message limit reached. Please upgrade to premium flathunter" +
+                " or contact help@idealflatmate.co.uk to have your messaging restored.");
+
+
+        authorizationHelper.removeAnyAccount();
+
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+
     }
 
 }

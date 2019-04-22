@@ -7,7 +7,6 @@ import utils.ConfData;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
@@ -161,10 +160,23 @@ public class AuthorizationTests extends TestBase {
        //verificationHelper.VerificationMessagesTabIsAbsent();
     }
 
-    //@Test
-    public void logInMessageProperty() {
+    @Test
+    public void logInMesPropVerifProfilePageFull() {
+        String location1 = "Crewe";
+        String location2 = "Crofton Park";
+        String location3 = "South London";
+        String location4 = "Notting Hill";
+        String location5 = "West London";
+        String location6 = "Ealing";
+        String location7 = "Nottingham";
+        String location8 = "Hounslow";
+        String location9 = "West Hounslow";
+        String name = "Property1";
+        String age = "22";
 
-        getMessageHelper().clickPropertyCardMessageUnlogged();
+        searchHelper.searchPropertyByEnter("Hounslow");
+        searchHelper.closePopupSignup();
+        messageHelper.clickPropertyCardMessageUnlogged(0);
         authorizationHelper.clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMwithoutSub");
         authorizationHelper.setPassword("passwUniv");
@@ -172,17 +184,33 @@ public class AuthorizationTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("FM_Manch_2");
         verificationHelper.verifyPageMessage();
+
+        messageHelper.clickMessageOwnerIcon();
+        verificationHelper.profileDisplays("70%\n" + "complete",
+                "User Type\n" + "Personal Details\n" +  "Your ideal flatmate",
+                 name, age, "I have a room available",
+                "About me\n" + name +", "+age+" is a male professional looking for flatmates in" +
+                        " "+location1+" or "+location2+", "+location3+" or "+location4+", "+location5+" or" +
+                        " "+location6+", "+location5+" or "+location7+" or "+location8+", "+location9+".",
+                " Weston Rd, "+location1+" CW1 6NA, UK\n" + " "+location2+", SE4 2BY\n" +
+                        " "+location4+", W11 4UL\n" + " "+location6+", W13 0DD\n" +
+                        " Upper Parliament Street (Stop U1), "+location7+" NG1 6LD, UK\n" + " "+location8+", TW3 3LF",
+                6);
+
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
 
-    //@Test
+    @Test
     public void logInContactProperty() {
 
-        getMessageHelper().clickPropertyCardFirstOnPage();
+        searchHelper.searchPropertyByEnter("Hounslow");
+        searchHelper.closePopupSignup();
+
+        messageHelper.clickCardImgProperty("80-82 Staines Rd, Hounslow TW3 3LF, UK");
         //authorizationHelper.clickCloseSignUp();
-        getMessageHelper().clickPropertyContact();
+        messageHelper.clickPropertyContact();
         authorizationHelper.clickFormSignInContact();
         authorizationHelper.setLoginAsUserWithoutPackage("FMwithoutSub");
         authorizationHelper.setPassword("passwUniv");

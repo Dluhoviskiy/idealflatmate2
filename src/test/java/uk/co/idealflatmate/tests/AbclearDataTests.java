@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.*;
+//import ru.yandex.qatools.allure.annotations.Parameter;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.sleep;
@@ -36,8 +37,10 @@ public class AbclearDataTests extends TestBase {
         }
 
 
-    @Test(dataProvider = "Authentication")
 
+
+    @Test(dataProvider = "Authentication" )
+    
 
     public void removeAccountBeforeTest(String confEmail, String confPassword) {
 
@@ -48,7 +51,9 @@ public class AbclearDataTests extends TestBase {
 
     }
 
-    //@Test
+    //@Test (dataProvider = "dasf")
+
+
     @Parameters ({ "confEmail", "confPassword" })
     public void removeAccountBeforeTestLive(@Optional("qqqqqq") String confPassword,@Optional("proideal@ukr.net") String confEmail) {
 
@@ -67,10 +72,16 @@ public class AbclearDataTests extends TestBase {
         authorizationHelper.login("passwUniv", "userNotpaid");
         verifyNoPropertyOrRemove();
 
+        authorizationHelper.login("passwUniv", "userNotpaid1");
+        verifyNoPropertyOrRemove();
+
         authorizationHelper.login("passwUniv", "agentNotPaid");
         verifyNoPropertyOrRemove();
 
         authorizationHelper.login("passwUniv", "agentBuddyUp");
+        verifyNoPropertyOrRemove();
+
+        authorizationHelper.login("passwUniv", "agentNotpaid1");
         verifyNoPropertyOrRemove();
 
         authorizationHelper.login("passwUniv", "userTitle");

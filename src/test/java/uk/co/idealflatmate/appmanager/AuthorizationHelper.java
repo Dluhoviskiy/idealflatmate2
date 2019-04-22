@@ -35,6 +35,7 @@ public class AuthorizationHelper extends HelperBase {
 
     public void submitLogin() {
         $(byXpath("//button[contains(., 'Log in with email ')]")).click();
+        sleep(1000);
 
     }
 
@@ -368,4 +369,5 @@ public class AuthorizationHelper extends HelperBase {
         loginTest1(confEmail,confPassword);
         submitLogin();
     }
+
 }

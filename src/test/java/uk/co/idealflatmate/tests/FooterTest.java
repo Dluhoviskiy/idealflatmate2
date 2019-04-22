@@ -2,7 +2,6 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import uk.co.idealflatmate.appmanager.FooterHelper;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
@@ -84,14 +83,13 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerBrowseFlatsharesLink() {
+        String area = "Chalk Farm";
+        String city = "London";
 
-        System.out.println("Browse Flatshares - Click");
         footerHelper.footerClick("Browse Flatshares");
-        System.out.println("verif - North London, Brent Park");
-        int listingCards = FooterHelper.propertyCardOnPage();
-        footerHelper.verificationBrowseFlatshares("North London", "Brent Park",
-                "Found "+listingCards+" room to rent in Brent Park");
-            }
+        footerHelper.verificationBrowseFlatshares(city, area,"Click to search nearby areas",
+                "Found ", " rooms to rent in ");
+        }
 
     @Test
     public void footerAskLandlord() {

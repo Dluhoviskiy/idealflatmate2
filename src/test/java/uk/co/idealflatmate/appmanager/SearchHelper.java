@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchHelper extends HelperBase {
     SelenideElement clearSearchBar = $(byXpath("//form[@id='search-location']//input"));
@@ -22,22 +21,37 @@ public class SearchHelper extends HelperBase {
 
         searchPropertyBy(location, $("input.react-autosuggest__input"));
         sleep(2000);
+
         //$(byXpath("//button[@class='text-20']")).waitUntil(visible, 10000).pressEnter();
         $("input.react-autosuggest__input").pressEnter();
+    }
+
+    public void searchPropertyHome1(String location) {
+
+        String val = location;
+        SelenideElement element = $("input.react-autosuggest__input");
+
+        for (char  c : val.toCharArray()) {
+            sleep(500);
+            String s = String.valueOf(c);
+            element.sendKeys(s);
+        }
+
+        element.pressEnter();
     }
 
     public void searchPropertyHomePostCode(String location) {
 
         searchPropertyBy(location, $("input.react-autosuggest__input"));
         sleep(2000);
-        //$(byXpath("//button[@class='text-20']")).waitUntil(visible, 10000).pressEnter();
-        $$(byXpath("//form[@id='search-location']//li")).get(0).click();
+        $(byXpath("(//div[@id='react-autowhatever-1']//span[contains(.,'"+location+"')])[1]")).click();
     }
 
     public void searchPropertyByEnter(String location) {
 
         searchPropertyBy(location, $("input.react-autosuggest__input"));
         $(byXpath("//input")).waitUntil(exist, 4000).pressEnter();
+
 
     }
 
@@ -100,14 +114,10 @@ public class SearchHelper extends HelperBase {
         $(By.xpath("//a[contains(text(), 'East London')]")).click();
         sleep(5000);
     }
-    public void amountPropertyCards(int size) {
-
-        $$(byXpath("//div[@class='card-body clearfix']")).shouldHaveSize(size);
-    }
 
     public void firstCardIsColivingAdv() {
 
-        $$(byXpath("//div[@class='cards-container']/div")).first().waitUntil(visible, 15000).shouldHave(text("Select,"));
+        $$(byXpath("//div[@class='cards-container']/div")).first().waitUntil(visible, 25000).shouldHave(text("Select,"));
         $(By.xpath("//a[contains(text(), 'View all Select providers ')]")).click();
         $(By.xpath("//h2[contains(text(), 'Stunning homes, ')]")).exists();
 
@@ -167,7 +177,7 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void cardsWith2roomsAvailable(int number, String text) {
+    public void cardsFilterVerification(int number, String text) {
         ElementsCollection rooms1 = $$(byXpath("//div[@class='text-13 u_p10']"));
 
         //$$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']")).shouldHaveSize(number).shouldHave(CollectionCondition.texts(text));
@@ -182,11 +192,13 @@ public class SearchHelper extends HelperBase {
     }
 
     public void selectRadius(String radius) {
-        String radius1 = "//div[@class='radius-select-holder']";
-        $(byXpath(""+radius1+"")).click();
-        $(byXpath(""+radius1+"/select")).selectOptionContainingText(radius);
-        $(byXpath(""+radius1+"")).click();
-        sleep(5000);
+
+        SelenideElement radius1 = $(byXpath("//div[@class='radius-select-holder']"));
+        radius1.click();
+        $(byXpath("//div[@class='radius-select-holder']/select")).selectOptionContainingText(radius);
+        sleep(3000);
+        radius1.click();
+
     }
 
     public static void activeBudget() {
@@ -204,7 +216,7 @@ public class SearchHelper extends HelperBase {
         clickApply();
     }
 
-    public void activeRooms(String roomsAvailable, String roomsTotal) {
+    public void activateRooms(String roomsAvailable, String roomsTotal) {
         SelenideElement selectAvailRoom = $(byXpath("//label[contains(.,'Rooms available in property')]/..//select[@class='form-control']"));
         SelenideElement selectTotalRoom = $(byXpath("//label[contains(.,'Total rooms in property')]/..//select[@class='form-control']"));
 
@@ -216,27 +228,48 @@ public class SearchHelper extends HelperBase {
         clickApply();
     }
 
-    public void activeIdealFM() {
-        $(By.xpath("//div[@class='ideal-flatmate-filter ']")).click();
-        $$(By.xpath("//div[@class='circle-btn-group']/label")).shouldHaveSize(6);
-        $(By.xpath("//span[contains(.,'Male')]")).click();
-        $(By.xpath("//span[contains(.,'Student')]")).click();
-        $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//span[contains(.,'Student')]/../../../../div/label")));
+    public void activateIdealFM(String gender1, String suitableFor, final int fiterNumberIs) {
+        activateIdealFM(fiterNumberIs);
+        filterOptionClick(gender1);
+        filterOptionClick(suitableFor);
+        $(byXpath("//div[@class='noUi-handle noUi-handle-lower']")).dragAndDropTo($(byXpath("//span[contains(.,'"+suitableFor+"')]/../../../../div/label")));
         $(byXpath("//div[@class='noUi-handle noUi-handle-upper']")).dragAndDropTo($(byXpath("//span[contains(.,'Professionals and/or Students')]")));
         clickApply();
     }
 
-    public void clickMoreFilterVerify(String About, int numberAbout, String leaseLength, String addedTime) {
+    public void activateIdealFM( final int fiterNumberIs) {
+        $(By.xpath("//div[@class='ideal-flatmate-filter ']")).click();
+        $$(By.xpath("//div[@class='circle-btn-group']/label")).shouldHaveSize(fiterNumberIs);
+
+    }
+
+    public void clickMoreFilterVerify(String filter, int numberAboutFilters, String leaseLengthSelected, String addedTime) {
         SelenideElement lengthOfStay = $(By.xpath("//div[starts-with(@class, 'search-panel__more-cell')]//div[starts-with(@class, 'lease-length-filter')]//select[@class='form-control']"));
         SelenideElement propertyAdded = $(By.xpath("//div[starts-with(@class, 'search-panel__more-cell')]//div[starts-with(@class, 'property-added-filter')]//select[@class='form-control']"));
-        $(By.xpath("//div[@class='more-filters ']")).click();
-        $(By.xpath("//span[contains(.,'"+ About +"')]")).click();
-        $$(By.xpath("//label[@class='circle-button-with-text  ']/span")).shouldHaveSize(numberAbout);
+        moreFilterClick();
+        filterOptionClick(filter);
+        $$(By.xpath("//div[starts-with(@class,'search-panel__more-cell')]//label[@class='circle-button-with-text  ']/span")).shouldHaveSize(numberAboutFilters);
+        $(byXpath("//label[@class='circle-button-with-text  active' and contains(.,'"+filter+"')]")).exists();
         lengthOfStay.click();
-        lengthOfStay.selectOptionContainingText(leaseLength);
+        lengthOfStay.selectOptionContainingText(leaseLengthSelected);
         propertyAdded.click();
         propertyAdded.selectOptionContainingText(addedTime);
         clickApply();
+    }
+
+    public void filterOptionClick(String filter) {
+        $(By.xpath("//label[contains(.,'"+ filter +"')]")).click();
+    }
+
+
+    public void clickMyIdealFM_FilterTypeUserVerify(int numberTypes, int indexOfActiveFilter) {
+        String userTypeActive = "(//div[@class='circle-btn-group'])[3]/label[@class='circle" +
+                "-button-with-text active']";
+        ElementsCollection userTypeIcon = $$(By.xpath("userTypeActive"));
+        moreFilterClick();
+        userTypeIcon.shouldHaveSize(numberTypes);
+        if($(userTypeActive).exists()){userTypeIcon.get(indexOfActiveFilter).isEnabled();}
+
     }
 
     public void clickHighestPrice(int number) {
@@ -279,23 +312,20 @@ public class SearchHelper extends HelperBase {
         }
         sleep(3000);
         searchField.click();
-        searchField.setValue(location);
+
+        for (char  c : location.toCharArray()) {
+            sleep(500);
+            String s = String.valueOf(c);
+            searchField.sendKeys(s);
+
+        }
+
         searchField.pressEnter();
 
-    }
-
-    public void clickSearchPropPage1(String location, String location1) {
-        SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
-        SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
-
-        searchField.click();
-        searchField.clear();
-        sleep(3000);
-        searchField.setValue(location);
-        searchElastic.click();
-        sleep(2000);
 
     }
+
+
 
     public void selectSearchPropPage(String location) {
         SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
@@ -320,8 +350,8 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void lastCardClick() {
-        $(byXpath("(//div[@class='card-profile-text']/span[@class='card-top-username'])[6]")).click();
+    public void cardUserClick() {
+        $(byXpath("//div[@class='card-profile-text']/span[@class='card-top-username']")).click();
 
     }
 
@@ -330,24 +360,32 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void verifyClearMoreFilter(String About) {
+    public void verifyClearMoreFilter(String activeFilter) {
         $(By.xpath("//div[@class='more-filters selected']")).click();
-        $(By.xpath("//label[@class='circle-button-with-text  active']/span")).shouldHave(text("Garden"));
+        $(By.xpath("//label[@class='circle-button-with-text  active']/span")).shouldHave(text(activeFilter));
         clearFilter();
-        $(By.xpath("//div[@class='more-filters ']")).click();
-        $(By.xpath("//label[@class='circle-button-with-text  ']/span[contains(.,'"+About+"')]")).should(exist);
+        moreFilterClick();
+        $(By.xpath("//label[@class='circle-button-with-text  ']/span[contains(.,'"+activeFilter+"')]")).should(exist);
 
     }
 
 
 
-    public void noActiveFilters() {
-        $(By.xpath("//div[@class='search-panel hidden-xs']//span[@class='active-filters-count']")).shouldNot(exist);
+    public static int activeFiltersNumber() {
+        int activeFiltersNumber = $$(By.xpath("//div[@class='search-panel hidden-xs']//span[@class='active-filters-count']")).size();
+        return activeFiltersNumber;
     }
 
     public void numberOfActiveFilters(int size) {
-        $$(By.xpath("//div[@class='search-panel hidden-xs']//span[@class='active-filters-count']")).shouldHaveSize(size);
+        $$(By.xpath("//div[@class='container']//span[contains(@class,'active-filters-count')]")).shouldHaveSize(size);
+
     }
+    public void activeFiltersIs(String activeFilterAre) {
+        $(By.xpath("//label[contains(@class,' active')]")).shouldHave(text(activeFilterAre));
+
+    }
+
+
 
     public void verifSearchHasNoLocation(String location) {
         sleep(3000);
@@ -372,27 +410,13 @@ public class SearchHelper extends HelperBase {
     }
 
     public void checkSort(String value) {
-        sleep(3000);
 
         List<String> sortDef1 = getFMcardSearchText();
-        $("#property-sort").selectOptionContainingText(value);
-        sleep(3000);
+        propertySortBy(value);
+        sleep(4000);
         List<String> sortNew1 = getFMcardSearchText();
         Assert.assertNotEquals(sortNew1, sortDef1);
     }
-
-    public void checkSortHighPrice(String option) {
-        sleep(3000);
-
-        List<String> sortDef1 = getFMcardSearchText();
-        $(byXpath("//select[@class='form-control']")).selectOptionByValue(option);
-        sleep(3000);
-        List<String> sortNew1 = getFMcardSearchText();
-        Assert.assertNotEquals(sortNew1, sortDef1);
-    }
-
-
-
 
     public void checkHighPriceSort(String option) {
         sleep(5000);
@@ -427,4 +451,61 @@ public class SearchHelper extends HelperBase {
 
     }
 
+    public void moreFilterClick() {
+        $(By.xpath("//div[contains(@class,'more-filters ')]")).click();
+    }
+
+
+    public static List<String> cardsUserTypeAgent() {
+
+        List<String> cardsUserType = Arrays.asList("We are a representing agency", "We are a representing agency",
+                "We are a representing agency", "We are a representing agency", "We are a representing agency",
+                "We are a representing agency", "We are a representing agency", "We are a representing agency",
+                "We are a representing agency", "We are a representing agency", "We are a representing agency");
+        return cardsUserType;
+    }
+
+    public static List<String> cardsUserTypeFlatmate() {
+
+        List<String> cardsUserType = Arrays.asList("I live in the property", "I live in the property","I live in the property",
+                "I live in the property","I live in the property","I live in the property",
+                "I live in the property","I live in the property","I live in the property",
+                "I live in the property","I live in the property");
+        return cardsUserType;
+
+
+    }
+    public static List<String> cardsUserTypeLive_in() {
+        List<String> cardsUserType = Arrays.asList("I own and live in the property", "I own and live in the property","I own and live in the property",
+                "I own and live in the property","I own and live in the property","I own and live in the property",
+                "I own and live in the property","I own and live in the property","I own and live in the property",
+                "I own and live in the property","I own and live in the property");
+        return cardsUserType;
+    }
+
+    public static List<String> cardsUserTypeLive_out() {
+        List<String> cardsUserType = Arrays.asList("I own the property, but donʼt live here", "I own the property, but donʼt live here",
+                "I own the property, but donʼt live here", "I own the property, but donʼt live here","I own the property, but donʼt live here",
+                "I own the property, but donʼt live here", "I own the property, but donʼt live here","I own the property, but donʼt live here",
+                "I own the property, but donʼt live here", "I own the property, but donʼt live here","I own the property, but donʼt live here");
+        return cardsUserType;
+
+    }
+
+    public static List<String> cardsUserTypeSelect() {
+        List<String> cardsUserType = Arrays.asList("Select provider", "Select provider",  "Select provider", "Select provider",
+                "Select provider", "Select provider", "Select provider", "Select provider", "Select provider",
+                "Select provider","Select provider");
+        return cardsUserType;
+
+    }
+
+    public static List<String> cardsUserTypeSelectLabel() {
+        List<String> cardsUserType = Arrays.asList("SELECT", "SELECT",  "SELECT", "SELECT","SELECT", "SELECT",
+                "SELECT", "SELECT", "SELECT", "SELECT","SELECT");
+        return cardsUserType;
+
+    }
+
 }
+

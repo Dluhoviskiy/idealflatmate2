@@ -1,8 +1,9 @@
 package uk.co.idealflatmate.appmanager;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import utils.ConfData;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -13,7 +14,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static java.util.ResourceBundle.clearCache;
-import static uk.co.idealflatmate.tests.TestBase.newDriverPage;
 import static uk.co.idealflatmate.tests.TestBase.newPage;
 
 
@@ -44,6 +44,10 @@ public class HelperBase  {
         }
     }
 
+    public static void propertySortBy(String value) {
+        $("#property-sort").selectOptionContainingText(value);
+    }
+
     public static void closeMatchPopUp() {
         SelenideElement buttonMatch = $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']"));
         sleep(2000);
@@ -59,6 +63,25 @@ public class HelperBase  {
     public static List<String> getFMcardSearchText() {
         return $$(byXpath("//div[@class='card-profile-text']")).texts();
     }
+
+    public static List<String> getCardUserType() {
+
+        return $$(byXpath("//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted']")).texts();
+
+    }
+
+
+
+    public static List<String> getCardUserSelectLabel() {
+
+        return $$(byXpath("//div[@class='card-matching text-uppercase text-12 text-center u_bg-orange']")).texts();
+
+    }
+    public static void scrollDownPageOn(final String points) {
+        executeJavaScript("scrollBy(0," + points + ")");
+    }
+
+
 
     public void fillInField(String text, SelenideElement selElem) {
         sleep(1000);
@@ -160,13 +183,24 @@ public class HelperBase  {
     public void searchPropertyBy(String location, SelenideElement location1) {
 
         location1.waitUntil(visible, 10000).click();
-        location1.setValue(location);
+        for (char  c : location.toCharArray()) {
+            sleep(500);
+            String s = String.valueOf(c);
+            location1.sendKeys(s);
+        }
+        //location1.waitUntil(visible, 10000).click();
         sleep(1000);
 
 
     }
 
-    public void saveUpdateButton() {
-        $(byXpath("//button[contains(.,'Save and update')]")).click();
+    public static void clickButton(final String textButton, final String byTag) {
+        $(byXpath("//" + byTag + "[contains(.,'" + textButton + "')]")).click();
+    }
+
+    public static  ElementsCollection cardsOnThePage () {
+        ElementsCollection cardsOnThePage = $$(byXpath("//div[@class='card-body clearfix']"));
+
+        return cardsOnThePage;
     }
 }

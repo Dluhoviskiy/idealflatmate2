@@ -1,9 +1,13 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.*;
+import static uk.co.idealflatmate.appmanager.AreaPageHelper.numberOfPropAreaPage;
+import static uk.co.idealflatmate.appmanager.HelperBase.cardsOnThePage;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
@@ -34,12 +38,17 @@ public class AreaPageTest extends TestBase {
     @Test
     public void firstFeaturedLinkArea() {
         areaPageHelper.areaScroll();
-        String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
+        String areaName = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
         areaPageHelper.clickArea(0);
+        switchTo().window(1);
+        int amountPropOnAreaPage = numberOfPropAreaPage();
+
         areaPageHelper.clicklinkNearbyAreas();
-        areaPageHelper.checklinkNearbyAreas(area1);
-        areaPageHelper.checkSortDropDownRoom();
-        areaPageHelper.pagination();
+        Assert.assertTrue(cardsOnThePage().size() >= amountPropOnAreaPage);
+        areaPageHelper.checklinkNearbyAreas(areaName, "Display map");//it is the same area
+
+        areaPageHelper.checkSortDropDownRoom("0", "Default");
+        areaPageHelper.pagination(exist);
 
     }
 
@@ -60,8 +69,8 @@ public class AreaPageTest extends TestBase {
         closeAdvPopUp();
         areaPageHelper.checkLinkSeeMoreRooms(area1);
         areaPageHelper.numberPropertiesUnderSearchEqualsCards();
-        areaPageHelper.checkSortDropDownRoom();
-        areaPageHelper.pagination();
+        areaPageHelper.checkSortDropDownRoom("0", "Default");
+        areaPageHelper.pagination(exist);
 
     }
 
@@ -72,7 +81,7 @@ public class AreaPageTest extends TestBase {
         areaPageHelper.clickArea(0);
         areaPageHelper.checklinkFH(area1);
         areaPageHelper.checkSortDropDownFM();
-        areaPageHelper.pagination();
+        areaPageHelper.pagination(exist);
 
     }
     

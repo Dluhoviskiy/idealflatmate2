@@ -27,10 +27,17 @@ public class BuddyUpHelper extends HelperBase {
         $(byXpath("//a[@id='groups-label']")).click();
     }
 
+    public boolean groupSectionIsVisible(final boolean expression) {
+        $(byXpath("//a[@id='groups-label']")).isDisplayed();
+        return expression;
+    }
+
 
     public void clickCreateGroup() {
         $(byXpath("//section//div[contains(@class,'text-center create-group-label')]//a")).click();
     }
+
+
 
     public void closeIntrodGroupsPopup() {
         sleep(3000);

@@ -6,7 +6,9 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
+import static uk.co.idealflatmate.appmanager.HelperBase.cardsOnThePage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.SignUpHelper.userName;
 
 
 public class SignUpLikeOrMessage extends TestBase {
@@ -23,7 +25,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         homePageHelper.scrollToBlockProperty();
 
-        signUpHelper.click1PropertyCardMessage();
+        signUpHelper.click1CardMessage("3");
         signUpHelper.clickEmail();
         signUpHelper.clickYourInformationContinue();
 
@@ -33,21 +35,24 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
 
-        @Test
+    @Test
     public void mesPropSignUpNotBuddy_Up() {
+        String name = "Ronald";
+        String location = "Leeds";
+        String age = "61";
 
-        searchHelper.searchPropertyBySelectfromList("Leeds", "Leeds");
+        searchHelper.searchPropertyBySelectfromList(location, location);//input field, name in drop-down
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("New York Street (stop K11), Leeds LS2 7DT, UK", 1);
+        searchHelper.verificationSearchPropertyMes("New York Street (stop K11), "+location+" LS2 7DT, UK", 2);
 
-        String photo1 = $$(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).get(1).getAttribute("src");
-        String name1 = $$(byXpath("//span[@class='card-top-username']")).get(1).text();
+        String photo1 = $$(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).get(2).getAttribute("src");
+        String name1 = $$(byXpath("//span[@class='card-top-username']")).get(2).text();
         String title1 = $(byXpath("//head/title")).text();
         sleep(2000);
-        String postCode = $$(byXpath("//div[@class='card-infos-left']/div")).get(1).text();
+        String postCode = $$(byXpath("//div[@class='card-infos-left']/div")).get(2).text();
 
 
-        signUpHelper.click1PropCardMes(1);
+        signUpHelper.click1PropCardMes(2);
         signUpHelper.nameOfOwnerOnPopup(name1);
         signUpHelper.clickEmail();
 
@@ -60,7 +65,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.dateMonthYearBlankErrorMessage();
 
 
-        signUpHelper.setSignUpNameFMessage("Ronald");
+        signUpHelper.setSignUpNameFMessage(name);
         signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.setSignEmailMessage("existingEmail");
         signUpHelper.genderFemSelectAfterMesError();
@@ -73,7 +78,7 @@ public class SignUpLikeOrMessage extends TestBase {
         //signUpHelper.clearGender();
         signUpHelper.clearPasswordMessage();
 
-        signUpHelper.setSignUpNameFMessage("Ronald");
+        signUpHelper.setSignUpNameFMessage("Trouble");
         //signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.genderFemaleSelectMessage();
         signUpHelper.setSignEmailMessage("mes1Email");
@@ -83,6 +88,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.photoOfOwner(photo1);
         signUpHelper.nameOfOwner(name1);
         signUpHelper.verificationAutoMessageProperty(name1);
+
         String message1 = $("textarea#messagewritesignupform-message").text();
 
 
@@ -94,19 +100,28 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickBackToSearch();
         signUpHelper.titleOfSearchPage(title1);
+        //String userName = $("span.user-welcome--name").text();
 
         messageHelper.clickMenuMessages();
-        messageHelper.photoOfOwnerInMessage(photo1);
-        messageHelper.nameOfOwnerInMessage(name1);
+        messageHelper.nameOfOwnerInMessage(name1, userName());
 
         messageHelper.clickMessage1Inbox();
+        messageHelper.photoOfOwnerInMessage(photo1);
         messageHelper.messageVerifying(message1);
         messageHelper.propertyPostcodeVerifMes(postCode);
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.verificationDataProfileFMListing("50%");
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        verificationHelper.profileDisplays("50%\n" + "complete",
+                                            "User Type\n" + "Personal Details\n" +
+                                            "Property Preferences\n" + "Budget & Availability\n" +
+                                            "Your ideal flatmate",
+                                            name, age, "I'm looking for a room",
+                                            "About me\n" + "Tell us about yourself\n" +
+                                            "Maximum budget: £1250/month\n" + "Ready to move in: Immediately\n" +
+                                            "Looking for a room in\n" + location,
+                                            "no rooms", 0);
+        verificationHelper.verificationUserNameOnHomePage(name);
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("50% complete");
@@ -122,11 +137,12 @@ public class SignUpLikeOrMessage extends TestBase {
     @Test
     public void signUpLike3rdPageQuit() {
 
+
         authorizationHelper.goToPropertyPage();
         authorizationHelper.clickCloseSignUp();
 
         searchHelper.moveToPage(2, "2");
-        searchHelper.amountPropertyCards(11);
+        cardsOnThePage().shouldHaveSize(11);
         searchHelper.colivingButtonOnFirstPage("View all Select providers ");
         searchHelper.moveToPage(3, "3");
 
@@ -146,6 +162,10 @@ public class SignUpLikeOrMessage extends TestBase {
 
     @Test
     public void signUpLikeHomePage() {
+        String name = "Ronald";
+        String location = "Leeds";
+        String age = "18";
+        String about = "Tell us about yourself";
 
         homePageHelper.scrollToBlockProperty();
         sleep(2000);
@@ -155,7 +175,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.setSignUpNameF("Ronald");
+        signUpHelper.setSignUpNameF(name);
         signUpHelper.genderFemaleSelect();
         signUpHelper.setSignEmail("mes2Email");
         signUpHelper.setSignPassword("passwUniv");
@@ -166,14 +186,14 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         signUpHelper.profilePhone("5555555555");
         signUpHelper.occupation("19", "Professional", "Student");
-        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.aboutYourself(about);
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.backToSearch();
 
         //signUpHelper.clickShowMeMyMatches();
         getAddPropertyHelper().openDropDownMenu();
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        verificationHelper.verificationUserNameOnHomePage(name);
 
         authorizationHelper.savedPropertiesMenuGo();
         verificationHelper.savedProperties(referNumber);
@@ -184,7 +204,15 @@ public class SignUpLikeOrMessage extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.verificationDataLike("70%");
+        verificationHelper.profileDisplays("70%\n" + "complete",
+                                            "User Type\n" + "Personal Details\n" +
+                                            "Property Preferences\n" + "Budget & Availability\n" +
+                                            "Your ideal flatmate",
+                                            name, age, "I'm looking for a room",
+                                            "About me\n" + about+"\n" +
+                                                    "Maximum budget: £2500/month\n" +
+                                                    "Ready to move in: Immediately",
+                                            "no rooms", 0);
         authorizationHelper.chooseSettingsFromDashboard();
         authorizationHelper.removeAccount();
         sleep(5000);
@@ -195,25 +223,29 @@ public class SignUpLikeOrMessage extends TestBase {
     }
     @Test
     public void popupPropertyPage() {
+        String name = "Ronald";
+        String location = "Watford";
+        String age = "18";
+        String about = "Tell us about yourself";
 
         authorizationHelper.goToPropertyPage();
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "mes3Email");
+        signUpHelper.yourInformation("passwUniv", name, "mes3Email");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         signUpHelper.profilePhone("5555555555");
         signUpHelper.occupation("19", "Professional", "Student");
-        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.aboutYourself(about);
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.clickYourInformationContinue();
-        signUpHelper.preferredLocation("Watf", "Watford");
+        signUpHelper.preferredLocation("Watf", location);
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.budgetMin();
@@ -230,8 +262,16 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verifySearchListingPage();
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.verificationDataProfileMatching("80%");
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        verificationHelper.profileDisplays("80%\n" + "complete",
+                                            "User Type\n" + "Personal Details\n" +
+                                            "Property Preferences\n" + "Budget & Availability\n" +
+                                            "Your ideal flatmate",
+                                            name, age, "I'm looking for a room",
+                                            "About me\n" + "Tell us about yourself\n" +
+                                                    "Maximum budget: £1250/month\n" + "Ready to move in: 08-08-2019\n" +
+                                                    "Looking for a room in\n"+ location,
+                                            "no rooms", 0);
+        verificationHelper.verificationUserNameOnHomePage(name);
 
         authorizationHelper.removeAnyAccount();
     }
@@ -260,7 +300,8 @@ public class SignUpLikeOrMessage extends TestBase {
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickCloseSignUp();
 
-        signUpHelper.clickPropertyCard1();
+        searchHelper.searchPropertyByEnter("Catford");
+        signUpHelper.clickPropertyCard1(2);
         String title = $(byXpath("//h1")).getText();
         //System.out.println(title);
 
@@ -317,7 +358,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
         signUpHelper.profilePhone("5555555555");
-        signUpHelper.occupation("39", "Professional", "Student");
+        signUpHelper.occupation("20", "Professional", "Freelancer/self employed");
         //signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
@@ -347,7 +388,7 @@ public class SignUpLikeOrMessage extends TestBase {
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickCloseSignUp();
         searchHelper.moveToPage(3, "3");
-        signUpHelper.clickPropertyCard1();
+        signUpHelper.clickPropertyCard1(2);
         String searchLocation = $(byXpath("//h1")).getText();
         //System.out.println(title);
 

@@ -25,9 +25,12 @@ public class SignUpMatching extends TestBase {
 
     @Test
     public void SignUpMatchingWithRequiredFieldsRoom() {
+        String name = "Donald";
+        String location = "Watford";
+        String age = "42";
 
         matchingHelper.clickHomePageMatching();
-        matchingHelper.enterFirstName("Donald");
+        matchingHelper.enterFirstName(name);
         matchingHelper.clickARoom();
 
         //matchingHelper.clickAFM();
@@ -35,13 +38,14 @@ public class SignUpMatching extends TestBase {
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch5");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself", "Professional", "Other");
+        signUpHelper.yourInformation("passwUniv", name, "FMMatch5");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","20","Tell us about yourself",
+                                                "Professional", "Freelancer/self employed");
 
         signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.clickYourInformationContinue();
-        signUpHelper.preferredLocation( "watf", "Watford");
+        signUpHelper.preferredLocation( "watf", location);
         signUpHelper.clickYourInformationContinue();
 
 
@@ -67,9 +71,18 @@ public class SignUpMatching extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.verificationDataProfileMatching("80%");
+        verificationHelper.profileDisplays("80%\n" + "complete",
+                                            "User Type\n" + "Personal Details\n" +
+                                            "Property Preferences\n" + "Budget & Availability\n" +
+                                            "Your ideal flatmate",
+                                            name, age, "I'm looking for a room",
+                                            "About me\n" + "Tell us about yourself\n" +
+                                                    "Maximum budget: £1250/month\n" +
+                                                    "Ready to move in: 08-08-2019\n" +
+                                                    "Looking for a room in\n" + location,
+                                                    "no rooms", 0);
 
-        verificationHelper.verificationUserNameOnHomePage("Ronald");
+        verificationHelper.verificationUserNameOnHomePage(name);
 
         authorizationHelper.removeAnyAccount();
     }
@@ -88,7 +101,8 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch4");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself", "Professional", "Other");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","227",
+                    "Tell us about yourself", "Professional", "Other");
 
         signUpHelper.clickListYourRoomMatching();
 
@@ -116,7 +130,8 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch6");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","19","Tell us about yourself", "Professional", "Other");
+        signUpHelper.moreAboutYou("15","2","1977","45656776","227",
+                     "Tell us about yourself", "Professional", "Other");
 
         signUpHelper.clickSearchFMMatching();
         verificationHelper.verifySearchFMPage();

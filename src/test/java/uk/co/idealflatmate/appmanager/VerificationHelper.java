@@ -5,9 +5,15 @@ import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
+
 
 
 public class VerificationHelper extends HelperBase {
@@ -56,7 +62,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     }
 
-    public void verifyAddedPropertyWithAllFields(String month, final String room1, final String room2, final String room3) {//section[@id]//h1/small
+    public void verifyAddedPropertyWithAllFields(String month, final String room1, final String room2, final String room3, final String listingAbout, final String location) {//section[@id]//h1/small
         String roomNumber1 = "//strong/span[contains(.,'" + room1 + "')]/../..";
         String roomNumber2 = "//strong/span[contains(.,'" + room2 + "')]/../..";
         String roomNumber3 = "//strong/span[contains(.,'" + room3 + "')]/../..";
@@ -69,207 +75,44 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         //$(byXpath("//div[@class='panel-heading']")).scrollTo();
 
 
-        $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available" +
-                "  Garden" +
-                "  Communal" +
-                "  living room" +
-                "  Balcony/patio" +
-                "  Parking space" +
-                "  Smokers accepted" +
-                "  Suitable for couples" +
-                "  Pets accepted" +
-                "  LGBT friendly" +
-                "  Trans friendly" +
-                "  Family friendly" +
-                "  Vegan household" +
-                "  Vegetarian household" +
-                "  DSS accepted"));
+        verifyAddedPropertyNoRoom(listingAbout);
+
+
+        $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text(location));
+
+        roomVerification("February", "Room 1", "11th ", " 2025", "500", "1,000", "400", "minimum 1 month maximum 12 months", "Description of the room");
+        roomVerification("February", "Room 2", "11th ", " 2025", "500", "1,000", "400", "minimum 1 month maximum 12 months", "Description of the room");
+        roomVerification("February", "Room 3", "11th ", " 2025", "500", "1,000", "400", "minimum 1 month maximum 12 months", "Description of the room");
+    // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
+}
 
 
 
+    public void profileDisplays(final String percentComplete, final String myProfile, final String name, final String age, final String lookingFor, final String aboutMe, final String roomsLocation, final int amountPropertiesCard) {
+        if($(byXpath("//div[contains(@class,'circularProgress__value')]")).exists()){
+            $(byXpath("//div[contains(@class,'circularProgress__value')]")).shouldHave(text(percentComplete));}
+        if($(byXpath("//ul[contains(@class,'nav dashboard-side-nav')]")).exists()){
+            $(byXpath("//ul[contains(@class,'nav dashboard-side-nav')]")).shouldHave(text(myProfile));}
+        $(byXpath("//h2[contains(@class,'profile-info--name_age')]/strong")).shouldHave(text(name));
+        if($(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).exists()){
+            $(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).shouldHave(text(age));}
 
-        $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text("London SE1, UK"));
+        $(byXpath("//strong[contains(@class,'u_ed-block')]")).shouldHave(text(lookingFor));
+        $(byXpath("//div[contains(@class,'u_p30 u_bg-white')]")).shouldHave(text(aboutMe));
 
-        $(byXpath("//ul[@class='tabs-2']//a[contains(.,'Rooms')]")).click();
+        if($(byXpath("//h4[contains(.,'My available rooms are ')]")).exists()){
+            $(byXpath("//ul[contains(@class,'geo-list u_m0 u_p0')]")).shouldHave(text(roomsLocation));
+            cardsOnThePage().shouldHaveSize(amountPropertiesCard);
+        }
 
-        //$(byXpath("//strong/span[contains(.,'Room 1')]")).waitUntil(visible, 4000).shouldHave(text("Room 1\n" + "Room 2\n" + "Room 3\n"));
-        $(byXpath(roomNumber1+"//div[@class='col-xs-12 col-md-7']")).getText().contentEquals("500\n" +
-                "month\n" +
-                "Deposit\n" +
-                "1,000\n" +
-                "Bills pcm\n" +
-                "400\n");
-        $(byXpath(roomNumber1+"//div[@class='col-xs-6 u_p0-left']/strong")).getText().contentEquals("Available from");
-
-        $(byXpath(roomNumber1+"//div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
-                "minimum 1 month maximum 12 months"));
-
-        $(byXpath(roomNumber1+"//div[@class='clearfix u_m15-top']/p")).shouldHave(text("Very comfortable room\n"));
-
-        $(byXpath(roomNumber2+"/div")).click();
-
-        $(byXpath(roomNumber2+"//div[@class='col-xs-12 col-md-7']")).getText().contentEquals("500\n" +
-                "month\n" +
-                "Deposit\n" +
-                "1,000\n" +
-                "Bills pcm\n" +
-                "400\n");
-        $(byXpath(roomNumber2+"//div[@class='col-xs-6 u_p0-left']")).getText().contentEquals("Length of Stay \n" +
-                "minimum 1 month maximum 12 months");
-
-        $(byXpath(roomNumber2+"//div[@class='clearfix u_m15-top']/p")).shouldHave(text("Very comfortable room\n"));
-
-
-        $(byXpath(roomNumber3+"//div[@class='col-xs-12 col-md-7']")).getText().contentEquals("800\n" +
-                "month");
-        $(byXpath(roomNumber3+"//div[@class='col-xs-6 u_p0-left']")).shouldNotHave((text("Length of Stay\n" +
-                "minimum 1 month maximum 12 months")));
-
-        $(byXpath(roomNumber3+"//div[@class='col-xs-6 u_p0-left']")).getText().contentEquals("Available from\n" + "11th " + month + " 2025");
-        // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
-    }
-
-    public void verificationDataProfileFMListing(String PercentCompleted) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Property Preferences\n" +
-                " Budget & Availability\n" +
-                " Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(PercentCompleted + "\n" + "complete"));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).getText().contentEquals("About me\n" +
-                "Ronald, 59 is a female looking for a room.\n" +
-                "Maximum budget: "+"2500/month\n" +
-                "Ready to move in: Immediately");
-    }
-
-    public void verificationDataTenant1(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Property Preferences\n" +
-                " Budget & Availability\n" +
-                " Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        " + percent + "\n" +
-                "                                        "));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).getText().contentEquals("About me\n" +
-                "Tell us about yourself\n" +
-                "Maximum budget: "+"1250/month\n" +
-                "Ready to move in: 08-08-2019\n" +
-                "Looking for a room in\n" +
-                "Watford");
-    }
-
-    public void verificationDataLike(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Property Preferences\n" +
-                " Budget & Availability\n" +
-                " Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).getText().contentEquals("About me\n" +
-                "Ronald is a female looking for a room.\n" +
-                "Maximum budget: "+"2500/month\n" +
-                "Ready to move in: Immediately");
-    }
-
-    public void verificationDataAgent(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
-                "Personal Details\n" +
-                "Your ideal tenant"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About us\n" +
-                "Tell us about yourself"));
-
-    }
-
-    public void verificationDataLive_in(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Your ideal flatmate\n"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
-                "Ronald, 59 is a male professional looking for a room."));
-    }
-
-    public void verificationDataLive_in1(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Your ideal flatmate\n"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("Tell us about yourself"));
-    }
-
-    public void verificationDataProfileLiveOut(String percent) {
-
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text(" User Type\n" +
-                " Personal Details\n" +
-                " Your ideal tenant\n"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).shouldHave(text("About me\n" +
-                "Ronald is a live-out landlord looking for a room."));
-    }
-
-    public void verificationDataProfileFB(String percent, String name) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
-                "Personal Details\n" +
-                "Property Preferences\n" +
-                "Budget & Availability\n" +
-                "Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 60 is a female " +
-                "freelancer/self employed looking for a room in Zone 1 or Watford or North London."));
-     }
-
-    public void verificationDataProfileFBBuddy_UP(String percent, String name) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
-                "Personal Details\n" +
-                "Property Preferences\n" +
-                "Budget & Availability\n" +
-                "Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(name + ", 60 is a female " +
-                "freelancer/self employed looking for a room."));
-    }
-
-    public void verifDataProfFBAgent(String percent, String text1) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
-                "Personal Details\n" +
-                "Your ideal tenant"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text(percent + "\n" +
-                "complete"));
-        $(byXpath("(//h4/../div[@class='text-body-copy'])[1]")).shouldHave(text(text1));
-    }
-
-     public void verificationDataProfileMatching(String percent) {
-        $(byXpath("//ul[starts-with(@class,'nav dashboard')]")).shouldHave(text("User Type\n" +
-                "Personal Details\n" +
-                "Property Preferences\n" +
-                "Budget & Availability\n" +
-                "Your ideal flatmate"));
-        $(byXpath("//div[starts-with(@class,'circularProgress__value')]")).shouldHave(text("\n" +
-                "                                        " + percent + "\n" +
-                "                                        "));
-        $(byXpath("//div[starts-with(@class,'col-sm-8')]")).getText().contentEquals("About me\n" +
-                "Tell us about yourself\n" +
-                "Maximum budget: "+"1250/month\n" +
-                "Ready to move in: 08-08-2019\n" +
-                "Looking for a room in\n" +
-                "Watford");
     }
 
     public void verifyNoProperty() {
         refresh();
-        $(byXpath("(//ul[starts-with(@class, 'nav navbar-nav')]/li)[1]")).shouldHave(text("Add a Listing"));
-        $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
-        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
-        sleep(2000);
+        //$(byXpath("(//ul[starts-with(@class, 'nav navbar-nav')]/li)[1]")).shouldHave(text("Add a Listing"));
+        verifyNoUnfinishedProperty();
+        verifyNoPropertyPending();
+
         if ($(byXpath("//section//div[@class='label label-default listing-panel-label u_p5']")).has((text("Free listing")))){
             $(byXpath("//button[starts-with(@class,'btn btn-primary-outline')]")).waitUntil(appear, 10000).click();
             $(byXpath("(//input[1][@type='radio'])[1]")).waitUntil(appear, 5000).selectRadio("0");
@@ -278,7 +121,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         }
     }
 
-    public void verifyNoUnfinishedProperty() {
+    public static void verifyNoUnfinishedProperty() {
         refresh();
         $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
         sleep(2000);
@@ -292,9 +135,9 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void verifyNoPropertyPending() {
         refresh();
-        $(byXpath("(//ul[starts-with(@class, 'nav navbar-nav')]/li)[1]")).shouldHave(text("Add a Listing"));
+        //$(byXpath("(//ul[starts-with(@class, 'nav navbar-nav')]/li)[1]")).shouldHave(text("Add a Listing"));
         $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
-        $(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
+        //$(byXpath("//section/div[@class='container']")).shouldNotHave((text("Complete your listing now!")));
         sleep(2000);
         if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))){
             $(byXpath("//button[starts-with(@class,'btn btn-default')]")).waitUntil(appear, 10000).click();
@@ -395,10 +238,6 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     }
 
-    public void noUpgradeToFasterReply() {
-        $(byXpath("//div[@class='alert alert-warning text-center u_m0']")).shouldNot(exist);
-
-    }
     public void noTextUpgradeToFasterReply() {
         $(byXpath("//div[@class='alert alert-warning text-center u_m0']")).shouldNot(exist);
 
@@ -438,11 +277,8 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         }
     }
 
-    public void paymentPage(String text) {
-        $(byXpath("//h2[@class='text-20 u_m0-top']")).waitUntil(exist, 4000).shouldHave(text(text));
-    }
-    public void paymentPageWithoutListingLord(String text) {
-        $(byXpath("//h2[@class='text-20 u_m0-top']")).waitUntil(exist, 4000).shouldHave(text(text));
+    public void paymentPageNotifUpgrade(String text) {
+        $(byXpath("//h2[@class='text-18 u_m0-top u_m30-bottom']")).waitUntil(exist, 4000).shouldHave(text(text));
     }
 
     public void chatPage() {
@@ -450,7 +286,8 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
     public void verifyAddListingPage() {
-        $("h1.list-property-title.u_m0-top").shouldHave(text("Where is your property"));
+        $("li.active a").shouldHave(text("Active"));
+        $(byXpath("//li/a[contains(.,'Deactivated')]")).shouldHave((text("Deactivated")));
     }
 
     public void verifySearchListingPage() {
@@ -547,13 +384,12 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void removeUnfinishedListing() {
         $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 u_ef-left-sm']")).shouldHave(text("My Listings"));
-        $(byXpath("//section/div[@class='container']")).shouldHave((text("Complete your listing now!")));
-        sleep(2000);
-        if ($(byXpath("//section/div[@class='container']")).has((text("London SE1, UK")))) {
+
+        if ($(byXpath("//section//div[@class='text-body-copy text-info pull-left']")).has((text("Complete your listing now!")))) {
             $(byXpath("//button[@class='btn btn-default u_p0 btn-circle pull-right js-bring-cover listing-panel-delete u_bg-white']")).waitUntil(appear, 4000).click();
             $(byXpath("(//input[1][@type='radio'])[1]")).selectRadio("0");
             $(byXpath("//button[@type='submit' and contains(text(), 'Delete property')]")).click();
-            sleep(5000);
+            sleep(3000);
             }
         }
 
@@ -620,7 +456,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
     public void packageOnCard(String text, final String label) {
-        $(byXpath("//div[@class='container']//div[@class='cover-panel u_bg-white u_m30-bottom u_b']//div[@class='label label-" + label + " listing-panel-label u_p5']")).shouldHave(text(text));
+        $(byXpath("//div[@class='container']//div[@class='label label-" + label + " listing-panel-label u_p5']")).shouldHave(text(text));
     }
 
     public void promoteCard() {
@@ -631,6 +467,10 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         $("input#property-city").shouldHave(value(value));
     }
 
+    public void addingListFlowArea(String value) {
+        $(byXpath("//select[@id='property-area_link_id']/option[contains(.,'"+value+"')]")).shouldBe(selected);
+    }
+
     public void roadFor(String value) {
         $("input#property-route").shouldHave(value(value));
     }
@@ -639,23 +479,29 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         $(byXpath("//h1[starts-with(@class,'h2 u_m0-top')]")).getText().contentEquals(text1);
     }
 
-    public void verifyAboutFields() {
-        $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available"));
+    public void verifyAboutProperty(String aboutListing) {
+        $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text(aboutListing));
     }
 
-    public void verifyAddedPropertyWithAllFieldsCouple() {
+    public void verifyAboutPropertyRooms(String aboutListing) {
+        $(byXpath("//div[@id='property_about']/div[@class='u_m20-top']")).shouldHave(text(aboutListing));
+    }
 
-            $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text("3 of 4 bedrooms available\n" +
-                    "Garden\n" +
-                    "Communal living room\n" +
-                    "Balcony/patio\n" +
-                    "Parking space\n" +
-                    "Smokers accepted\n" +
-                    "Suitable for couples\n" +
-                    "Pets accepted\n" +
-                    "LGBT friendly\n" +
-                    "Trans friendly\n" +
-                    "Family friendly"));
+    public void verifyAddedPropertyWithAllFieldsCouple(String listingAbout) {
+
+        verifyAddedPropertyRooms(listingAbout);
+
+    }
+
+    public void verifyAddedPropertyRooms(String listingAbout) {
+
+        verifyAboutProperty(listingAbout);
+
+    }
+
+    public void verifyAddedPropertyNoRoom(final String listingAbout) {
+
+        verifyAddedPropertyWithAllFieldsCouple(listingAbout);
 
     }
 
@@ -686,6 +532,68 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
             $(byXpath("//div[@id='listing-" + propertyID + "']//a[contains(.,'here ')]")).click();
             sleep(2000);
         }
+
+    }
+
+    public void roomVerification(final String roomNumber, final String roomPrice,final String deposit, final String bills,
+                    String dateNumber, String month, String yearNumber, String lenthOfStay, String descriptionOfRoom) {
+        String room = "//span[contains(.,'"+roomNumber+"')]/../..//";
+
+        $(byXpath("//ul[@class='tabs-2']//a[contains(.,'Rooms')]")).click();
+
+        if($(byXpath(room+"div[@class='col-xs-4 u_p0-left']")).exists()){
+            $(byXpath(room+"div[@class='col-xs-4 u_p0-left']")).shouldHave(text(roomPrice + "\n" +   "month")); }
+
+        if($(byXpath(room+"div[@class='col-xs-4']")).exists()){
+            $(byXpath(room+"div[@class='col-xs-4']")).shouldHave(text("Deposit\n" + deposit)); }
+
+        if($(byXpath(room+"div[@class='u_ed-block text-13']")).exists()){
+            $(byXpath(room+"div[@class='u_ed-block text-13']")).shouldHave(text(("Bills pcm\n" + bills)));  }
+
+        if($(byXpath(room + "div[@class='col-xs-6 u_p0-right']")).exists()){
+            $(byXpath(room + "div[@class='col-xs-6 u_p0-right']")).shouldHave(text("Length of Stay\n" +
+                lenthOfStay));}
+
+        if($(byXpath(room + "div[@class='clearfix u_m15-top']/p")).exists()){
+            $(byXpath(room + "div[@class='clearfix u_m15-top']/p")).shouldHave(text(descriptionOfRoom));}
+
+        if($(byXpath(room + "div[@class='col-xs-6 u_p0-left']")).exists()){
+            $(byXpath(room + "div[@class='col-xs-6 u_p0-left']")).shouldHave(text(("Available from\n" + dateNumber+" " + month+" " + yearNumber)));
+        }
+
+
+    }
+
+    public void noRoomVerification(final String roomNumber) {
+        String room = "//span[contains(.,'"+roomNumber+"')]/../..//";
+
+        $(byXpath("//ul[@class='tabs-2']//a[contains(.,'Rooms')]")).click();
+        $(byXpath(room+"div[@class='col-xs-12 col-md-7']")).shouldNot(exist);
+        $(byXpath(room + "div[@class='col-xs-6 u_p0-left']/strong")).shouldNot(exist);
+        $(byXpath(room + "div[@class='col-xs-6 u_p0-right']")).shouldNot(exist);
+        $(byXpath(room + "div[@class='clearfix u_m15-top']/p")).shouldNot(exist);
+        $(byXpath(room + "div[@class='col-xs-6 u_p0-left']")).shouldNot(exist);
+    }
+
+    public void roomPriceNotif(final String tipsRent) {
+        $(byXpath("//input[@id='room-price']/../../p[contains(@class,'help-block-error')]")).shouldHave(text(tipsRent));
+    }
+
+    public void matchingForLordIsHidden() {
+        $(byXpath("//div[contains(@class,'card-matching ')]")).shouldNotBe(exist);
+    }
+
+    public void featuresOnTheCard() {
+        List<String> featureProp = $$(byXpath("//div[starts-with(@class,'card-img--label')]/a/span")).texts();
+        List<String> featurePropExpected = Arrays.asList("BILLS INCL.", "ZERO DEPOSIT", "GYM", "CONCIERGE", "STUDENT");
+        Assert.assertEquals(featurePropExpected,featureProp);
+
+
+    }
+
+    public void notifSpamer(final String mesToSpamer) {
+
+        $(byXpath("//div[@class='alert alert-danger']")).shouldHave(text(mesToSpamer));
 
     }
 }

@@ -66,9 +66,9 @@ public class MessageHelper extends HelperBase {
         }
     }
 
-    public void clickPropertyCardMessageUnlogged() {
-        $(byXpath("(//h2)[4]")).hover();
-        $$("a.card-start-chat.btn.btn-circle").get(3).click();
+    public void clickPropertyCardMessageUnlogged(final int indexOfCard) {
+        //$(byXpath("(//h2)[4]")).hover();
+        $$("a.card-start-chat.btn.btn-circle").get(indexOfCard).click();
 
     }
 
@@ -87,13 +87,6 @@ public class MessageHelper extends HelperBase {
 
         hoverClick("//section[@id='property-infos']//a[@class='btn btn-success u_ed-block u_m10-top text-18']");
 
-    }
-
-
-    public  void clickPropertyPageMessage(){
-        sleep(2000);
-        $(byXpath("//section[@id='property-infos']//" +
-                "a[@class='btn btn-success u_ed-block u_m10-top text-18' and contains(., 'Request details')]")).waitUntil(visible, 4000).click();
     }
 
     public void clickFMCardMessageUnlogged() {
@@ -119,9 +112,9 @@ public class MessageHelper extends HelperBase {
 
     }
 
-    public void clickCardImgProperty() {
+    public void clickCardImgProperty(final String byLocation) {
         sleep(3000);
-        $(byXpath("//div[contains(text(), 'Newport PO30 2DN, UK')]/../../../../../..//picture/img")).click();
+        $(byXpath("//div[contains(text(), '" + byLocation + "')]/../../../../../..//picture/img")).click();
     }
 
     public void clickPropertyCardFMnamePagelogged() {
@@ -155,14 +148,18 @@ public class MessageHelper extends HelperBase {
         $(byXpath("//span/a[contains(., 'Messages')]")).click();
     }
 
+    public void clickMessageOwnerIcon() {
+        $(byXpath("(//a[@class='u_ed-inline-block messages-top-images--item']/ img)[1]")).click();
+    }
+
     public void photoOfOwnerInMessage(String photo1) {
         if (photo1.endsWith("no-image-initial.jpg")) {
             String photo2 = photo1.substring(0, 64);
-            String messagePhoto = $(byXpath("//div[@class='circle-card-img']/ img")).getAttribute("src").substring(0, 64);
+            String messagePhoto = $(byXpath("(//a[@class='u_ed-inline-block messages-top-images--item']/ img)[1]")).getAttribute("src").substring(0, 64);
             Assert.assertEquals(photo2, messagePhoto);
         } else {
             String photo2 = photo1.substring(0, 73);
-            String messagePhoto = $(byXpath("//div[@class='circle-card-img']/ img")).getAttribute("src").substring(0, 73);
+            String messagePhoto = $(byXpath("(//a[@class='u_ed-inline-block messages-top-images--item']/ img)[1]")).getAttribute("src").substring(0, 73);
             Assert.assertEquals(photo2, messagePhoto);
 
         }
@@ -183,13 +180,15 @@ public class MessageHelper extends HelperBase {
 
 
 
-        public void nameOfOwnerInMessage (String name1){
+        public void nameOfOwnerInMessage(String name1, final String userName){
             String name2 = (name1.split(","))[0].replaceAll("/,",  "");
 
-            String nameInMessage = $(byXpath("//span/strong")).getText();
-            String nameInMessage1 = (nameInMessage.split("\\|"))[0].replaceAll("\\|",  "");
+            //String nameInMessage = $(byXpath("//p[@class='quickMessage']")).getText();
+            //String nameInMessage1 = (nameInMessage.split("\\|"))[0].replaceAll("\\|",  "");
+            //String nameInMessage1 = (nameInMessage.substring(11, 22));
+            $(byXpath("//p[@class='quickMessage']")).shouldHave(text(userName + ": Hi " +name2+", your room looks great! Are you holding viewings?"));
             //String nameInMessage1 = (nameInMessage.replaceAll("\\|",  ""));
-            Assert.assertEquals(name2, nameInMessage1);
+            //Assert.assertEquals(name2, nameInMessage1);
 
         }
 

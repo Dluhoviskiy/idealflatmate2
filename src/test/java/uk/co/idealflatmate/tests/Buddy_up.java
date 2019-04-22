@@ -22,10 +22,6 @@ public class Buddy_up extends TestBase {
 
         authorizationHelper.login("passwUniv", "agentBuddyUp");
 
-        //addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
-        //addPropertyHelper.selectTypeUser("An agency");
-        //signUpHelper.agentSignListing("Ronald", "agentBuddyUp", "passwUniv", "66666666", "Tell us about yourself");
-
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         matchingHelper.closePopupMatching();
         addPropertyHelper.closeRenewPopup();
@@ -35,7 +31,7 @@ public class Buddy_up extends TestBase {
         verificationHelper.verifyNoProperty();
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoBuddyUp("LL55 4TT", "3", "900", "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK");
+        addPropertyHelper.addListingWithoutPhotoBuddyUp("LL55 4TT", "3", "900",  "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK");
 
         //addPropertyHelper.finishPropertyAgency();
 
@@ -43,7 +39,19 @@ public class Buddy_up extends TestBase {
         verificationHelper.verifyAddedProperty("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK Available");
 
         authorizationHelper.chooseProfileFromHeader();
-        verificationHelper.verificationDataAgent("75%");
+        verificationHelper.profileDisplays("70",
+                                            "User Type\n" + "Personal Details\n" +
+                                            "Property Preferences\n" +"Budget & Availability\n" +
+                                            "Your ideal flatmate",
+                                            "Rob", "27",
+                                            "I'm looking for a room",
+                                            "Teddy, 27 is a male professional looking for a room in London or East London or Hackney.\n" +
+                                            "Maximum budget: £2400/month\n" + "Ready to move in: 17-01-2021\n" + "Looking for a room in\n"+" London\n"+" East London\n"+" Hackney", " Weston Rd, Crewe CW1 6NA, UK\n" +
+                        " Crofton Park, SE4 2BY\n" +
+                        " Notting Hill, W11 4UL\n" +
+                        " Ealing, W13 0DD\n" +
+                        " Upper Parliament Street (Stop U1), Nottingham NG1 6LD, UK\n" +
+                        " Hounslow, TW3 3LF", 6);
 
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -106,7 +114,20 @@ public class Buddy_up extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.verificationDataProfileFMListing("70%");
+        verificationHelper.profileDisplays("70",
+                                            "User Type\n" + "Personal Details\n" +
+                                            "Property Preferences\n" +"Budget & Availability\n" +
+                                            "Your ideal flatmate",
+                                            "Rob", "27",
+                                            "I'm looking for a room",
+                                            "Teddy, 27 is a male professional looking for a room in London or East London or Hackney.\n" +
+                                            "Maximum budget: £2400/month\n" + "Ready to move in: 17-01-2021\n" +
+                                            "Looking for a room in\n"+" London\n"+" East London\n"+" Hackney", " Weston Rd, Crewe CW1 6NA, UK\n" +
+                        " Crofton Park, SE4 2BY\n" +
+                        " Notting Hill, W11 4UL\n" +
+                        " Ealing, W13 0DD\n" +
+                        " Upper Parliament Street (Stop U1), Nottingham NG1 6LD, UK\n" +
+                        " Hounslow, TW3 3LF", 6);
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
@@ -204,7 +225,20 @@ public class Buddy_up extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
-        verificationHelper.verificationDataProfileFBBuddy_UP("60%", "Francine");
+        verificationHelper.profileDisplays("70",
+                                            "User Type\n" + "Personal Details\n" +
+                                            "Property Preferences\n" +"Budget & Availability\n" +
+                                            "Your ideal flatmate",
+                                            "Rob", "27",
+                                            "I'm looking for a room",
+                                            "Teddy, 27 is a male professional looking for a room in London or East London or Hackney.\n" +
+                                             "Maximum budget: £2400/month\n" + "Ready to move in: 17-01-2021\n" +
+                                            "Looking for a room in\n"+" London\n"+" East London\n"+" Hackney", " Weston Rd, Crewe CW1 6NA, UK\n" +
+                        " Crofton Park, SE4 2BY\n" +
+                        " Notting Hill, W11 4UL\n" +
+                        " Ealing, W13 0DD\n" +
+                        " Upper Parliament Street (Stop U1), Nottingham NG1 6LD, UK\n" +
+                        " Hounslow, TW3 3LF", 6);
         signUpHelper.verificationDataProfileFotoDashboard();
 
 

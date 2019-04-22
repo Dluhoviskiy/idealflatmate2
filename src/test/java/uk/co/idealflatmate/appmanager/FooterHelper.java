@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
+import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListing;
 
 public class FooterHelper extends HelperBase{
 
@@ -15,18 +16,15 @@ public class FooterHelper extends HelperBase{
         $(byXpath("//div[@class='homepage-quiz-container container']")).waitUntil(exist, 6000).should(exist);
     }
 
-    public void verificationBrowseFlatshares(String location, String area, final String textOnThePage) {
-        $(byXpath("//button[contains(., '" + location + "')]")).waitUntil(visible, 10000).click();
-        $(byXpath("(//li/a[contains(text(), '"+area+"')])[1]")).waitUntil(visible, 4000).click();
-        //switchTo().window(1);
-        closeAdvPopUp();
+    public void verificationBrowseFlatshares(String location, String area, final String searchText, final String text, final String rooms) {
+        $(byXpath("//a/strong[contains(., '"+location+"')]")).click();
+        $(byXpath("//a/strong[contains(., '"+area+"')]")).click();
 
-        if($(byXpath("(//h4[contains(text(), 'Sign up to find flatmates')])[1]")).is(visible)){
-            $(byXpath("(//button[@class='btn btn-sm btn-close close'])[3]")).waitUntil(appears, 4000).click();
-            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text(textOnThePage+area));
-        }else {
-            $(byXpath("//h1[@class='h4']")).waitUntil(exist, 6000).shouldHave(text(textOnThePage+area));
-        }
+        clickButton(searchText, "a");
+        closeAdvPopUp();
+        //switchTo().window(1);
+        $(byXpath("//h1[@class='h4']")).shouldHave(text(text + getNumberOfListing() + rooms + area));
+
 
     }
     public static int propertyCardOnPage() {

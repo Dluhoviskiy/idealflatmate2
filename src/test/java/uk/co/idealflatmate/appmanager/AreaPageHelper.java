@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.appmanager;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
@@ -58,10 +59,18 @@ public class AreaPageHelper extends HelperBase {
 
     }
 
-    public void checklinkNearbyAreas(String area1) {
+    public static int numberOfPropAreaPage() {
+
+       int numberOfPropAreaPage = Integer.parseInt($(byXpath("//div[@class='col-sm-5 col-md-4']//span[@class='u_ed-block text-11']")).text().
+               replaceAll("[^0-9]", ""));
+       return numberOfPropAreaPage;
+
+    }
+
+    public void checklinkNearbyAreas(String area1, final String mapState) {
         closeAdvPopUp();
-        $(byXpath("//span[@class='map-toggle-button open-map-button']")).shouldHave(text("Display map"));
-        $$(byXpath("//div[@class='card-profile-text']")).shouldHaveSize(7);
+        $(byXpath("//span[@class='map-toggle-button open-map-button']")).shouldHave(text(mapState));
+
         String areaNameOnPageH1 = $(byXpath("//h1[@class='h4']")).text();
         System.out.println(areaNameOnPageH1);
         String area2 = (areaNameOnPageH1.substring(0, 24) + " " + area1);
@@ -140,7 +149,7 @@ public class AreaPageHelper extends HelperBase {
         //int Properties = Integer.valueOf((areaNameOnPageH1.substring(5, 6)));
         int Properties = Integer.valueOf((areaNameOnPageH1));
         //int PropertiesCard = $$(byXpath("//div[@class='cards-container']/div[@id]")).size();
-        int propertiesCard = FooterHelper.propertyCardOnPage();
+        int propertiesCard = cardsOnThePage().size();
         Assert.assertEquals(Properties, propertiesCard);
 
 
@@ -157,20 +166,18 @@ public class AreaPageHelper extends HelperBase {
     }
 
     public void checkSortDropDownFM() {
-        closeAdvPopUp();
-        sortOption.shouldHave(value("5"));
-        sortOption.shouldHave(text("Top Matched"));
+        checkSortDropDownRoom("5", "Top Matched");
 
     }
 
-    public void checkSortDropDownRoom() {
+    public void checkSortDropDownRoom(final String expectedValue, final String defaultText) {
         closeAdvPopUp();
-        sortOption.shouldHave(value("0"));
-        sortOption.shouldHave(text("Default"));
+        sortOption.shouldHave(value(expectedValue));
+        sortOption.shouldHave(text(defaultText));
     }
 
-    public void pagination() {
-        $(byXpath("//ul[@class='pagination']/li/a[@class='btn pagination-button pagination-button--prev btn-lg']")).should(exist);
+    public void pagination(final Condition condition) {
+        $(byXpath("//ul[@class='pagination']/li/a[@class='btn pagination-button pagination-button--prev btn-lg']")).should(condition);
 
     }
 

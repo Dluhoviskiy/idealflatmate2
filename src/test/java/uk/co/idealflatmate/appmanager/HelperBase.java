@@ -203,4 +203,10 @@ public class HelperBase  {
 
         return cardsOnThePage;
     }
+
+    public static  String postCodeFromCard(final String id_property) {
+        String postCodeFromCard = $(byXpath("//div[@id='property_card_" + id_property + "']//div[@class='card-infos-left']/div")).text();
+
+        return postCodeFromCard;
+    }
 }

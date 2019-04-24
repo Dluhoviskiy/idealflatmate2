@@ -506,6 +506,12 @@ public class SearchHelper extends HelperBase {
         return cardsUserType;
 
     }
+    public void startBuddyupSearch(final String location, final String inDrop, final String radius, final String locationCardIs, final int indexOfCard) {
+        searchPropertyBySelectfromList(location, inDrop);
+        closePopupSignup();
+        selectRadius(radius);
+        verificationSearchPropertyMes(locationCardIs, indexOfCard);
+    }
 
 }
 

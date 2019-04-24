@@ -4,6 +4,10 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -11,7 +15,7 @@ public class BuddyUpHelper extends HelperBase {
     SelenideElement closePopup = $(byXpath("//div[@id='createBuddyUpGroupModal']//button[@class='btn btn-sm close u_m15']"));
     static SelenideElement dragLow = $(byXpath("//div[@id='js-groups-list']//div[@class='noUi-handle noUi-handle-lower']"));
     static SelenideElement dragUpper = $(byXpath("//div[@id='js-groups-list']//div[@class='noUi-handle noUi-handle-upper']"));
-
+    SelenideElement createGroupButton = $(byXpath("//section[@id='property-infos']//a[contains(.,'Create a Group')]"));
 
     public void clickCardProperty() {
         $(byXpath("//div[@class='cards-container']//picture/img")).click();
@@ -24,7 +28,9 @@ public class BuddyUpHelper extends HelperBase {
     }
 
     public void clickGroupSection() {
+        sleep(2000);
         $(byXpath("//a[@id='groups-label']")).click();
+
     }
 
     public boolean groupSectionIsVisible(final boolean expression) {
@@ -51,8 +57,12 @@ public class BuddyUpHelper extends HelperBase {
     }
 
     public void createPageGroupButton() {
-        sleep(3000);
-        $(byXpath("//section[@id='property-infos']//a[contains(.,'Create a Group')]")).click();
+        sleep(2000);
+        createGroupButton.click();
+    }
+    public void notVisibleCreatePageGroupButton() {
+        sleep(2000);
+        createGroupButton.shouldNotBe(Condition.visible);
     }
 
     public void learnMore(int selectGroup) {
@@ -66,7 +76,7 @@ public class BuddyUpHelper extends HelperBase {
     }
 
     public void yesRemoveGroup(int indexGroup) {
-        sleep(2000);
+        sleep(3000);
         $$(byXpath("//section[@class='modal-content']//a[contains(.,'remove the group')]")).get(indexGroup).click();
     }
 
@@ -220,4 +230,11 @@ public class BuddyUpHelper extends HelperBase {
     }
 
 
+    public void groupPopupVerif(final String[] memberData) {
+
+        List<String> inf = $$(byXpath("//div[@class='u_p10 group-modal-item']//li")).texts();
+        List<String> expected = Arrays.asList(memberData);
+        //List<String> memberData = Collections.singletonList(memberData1);
+        Assert.assertEquals(inf, expected);
+    }
 }

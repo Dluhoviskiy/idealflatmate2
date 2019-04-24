@@ -13,6 +13,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AddPropertyHelper extends HelperBase {
+    String privateRooms = "//div[@id='property-is_whole_rent']//label[contains(.,'Private room(s)')]";
+    String whole = "//div[@id='property-is_whole_rent']//label[contains(.,'Entire property')]";
 
 
 
@@ -132,6 +134,7 @@ public class AddPropertyHelper extends HelperBase {
     public void setTotalBedrooms(final String amount) {
         SelenideElement totalbedrooms = $("#property-bedrooms_no");
         sleep(1000);
+
         totalbedrooms.click();
         sleep(1000);
         totalbedrooms.selectOptionContainingText(amount);
@@ -523,10 +526,12 @@ public class AddPropertyHelper extends HelperBase {
             pressContinue1();
             //verificationHelper.areaBlank();
 
-            pressContinue();
-            setTotalBedrooms(amount);
             verifyRoomOnly();
             checkWholeProperty();
+
+            setTotalBedrooms(amount);
+
+            scrollDownPageOn("1400"); sleep(1000);
             setMonthlyRent(rent);
             pressContinue();
 
@@ -534,14 +539,22 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     private void checkWholeProperty() {
-        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'Yes')]")).click();
-        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'No, by the room only')]/input")).shouldNotBe(checked);
-        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'Yes')]/input")).shouldBe(checked);
+        if (!$(byXpath(privateRooms)).exists()) {
+            scrollDownPageOn("-300");
+            sleep(500);}
+        $(byXpath(privateRooms+"/input")).shouldBe(checked);
+        $(byXpath(whole)).click();
+        $(byXpath(whole+"/input")).shouldBe(checked);
+        $(byXpath(privateRooms+"/input")).shouldNotBe(checked);
     }
 
     private void verifyRoomOnly() {
-        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'Yes')]/input")).shouldNotBe(checked);
-        $(byXpath("//div[@id='property-is_whole_rent']//label[contains(.,'No, by the room only')]/input")).shouldBe(checked);
+        if (!$(byXpath(privateRooms)).exists()) {
+            scrollDownPageOn("-300");
+        sleep(500);}
+
+        $(byXpath(whole+"/input")).shouldNotBe(checked);
+        $(byXpath(privateRooms+"/input")).shouldBe(checked);
 
     }
 

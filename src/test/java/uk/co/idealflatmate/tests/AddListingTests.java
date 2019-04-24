@@ -72,21 +72,21 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoProperty();
 
-        paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
+        addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.addListingFromPage();
         paymentsHelper.addPropertyHelper.setPostalCode("sw1a ", "London SW1A 1AA, UK");
         //getAddPropertyHelper().pressContinue1();
         getAddPropertyHelper().pressContinue();
 
-        paymentsHelper.addPropertyHelper.chooseArea("Knightsbridge");
+        addPropertyHelper.chooseArea("Knightsbridge");
         getAddPropertyHelper().pressContinue();
 
-        paymentsHelper.addPropertyHelper.setTotalBedrooms("4");
+        addPropertyHelper.setTotalBedrooms("4");
         scrollDownPageOn("2000");
         addPropertyHelper.setMonthlyRent("500");
         getAddPropertyHelper().pressContinue();
 
-        paymentsHelper.addPropertyHelper.ContinueListingWithoutPhoto();
+        addPropertyHelper.ContinueListingWithoutPhoto();
         verificationHelper.finishPendingProperty();
 
         addPropertyHelper.chooseListingsFromDropDownMenu();

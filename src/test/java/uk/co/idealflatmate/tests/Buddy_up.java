@@ -7,9 +7,13 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
+import static uk.co.idealflatmate.appmanager.HelperBase.postCodeFromCard;
 
 
 public class Buddy_up extends TestBase {
+
+
+
     @BeforeMethod
 
     public void setupMethod() {
@@ -39,19 +43,14 @@ public class Buddy_up extends TestBase {
         verificationHelper.verifyAddedProperty("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK Available");
 
         authorizationHelper.chooseProfileFromHeader();
-        verificationHelper.profileDisplays("70",
-                                            "User Type\n" + "Personal Details\n" +
-                                            "Property Preferences\n" +"Budget & Availability\n" +
-                                            "Your ideal flatmate",
-                                            "Rob", "27",
-                                            "I'm looking for a room",
-                                            "Teddy, 27 is a male professional looking for a room in London or East London or Hackney.\n" +
-                                            "Maximum budget: £2400/month\n" + "Ready to move in: 17-01-2021\n" + "Looking for a room in\n"+" London\n"+" East London\n"+" Hackney", " Weston Rd, Crewe CW1 6NA, UK\n" +
-                        " Crofton Park, SE4 2BY\n" +
-                        " Notting Hill, W11 4UL\n" +
-                        " Ealing, W13 0DD\n" +
-                        " Upper Parliament Street (Stop U1), Nottingham NG1 6LD, UK\n" +
-                        " Hounslow, TW3 3LF", 6);
+        verificationHelper.profileDisplays("75",
+                                            "User Type\n" +"Personal Details\n" +"Your ideal tenant",
+                                            "Ronald", "notDisplaying",
+                                            "Check out our available rooms.",
+                                            "About us\n" + "Tell us about yourself",
+                                            "no locations", 1);
+        addPropertyHelper.chooseListingsFromDropDownMenu();
+        addPropertyHelper.RemoveListing();
 
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -63,9 +62,12 @@ public class Buddy_up extends TestBase {
 
     public void testBbbAaaMessageSignUpFMPageBuddy_Up() {
 
-        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
-        searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+        //searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
+       // searchHelper.closePopupSignup();
+       // searchHelper.selectRadius("+5 km");
+       // searchHelper.verificationSearchPropertyMes("Castle Ditch, Caernarfon LL55 2AY, UK", 0);
+        searchHelper.startBuddyupSearch("Caernarfon", "Caernarfon", "+5 km",
+                                         "Castle Ditch, Caernarfon LL55 2AY, UK", 0);
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -118,16 +120,10 @@ public class Buddy_up extends TestBase {
                                             "User Type\n" + "Personal Details\n" +
                                             "Property Preferences\n" +"Budget & Availability\n" +
                                             "Your ideal flatmate",
-                                            "Rob", "27",
+                                            "Ronald", "64",
                                             "I'm looking for a room",
-                                            "Teddy, 27 is a male professional looking for a room in London or East London or Hackney.\n" +
-                                            "Maximum budget: £2400/month\n" + "Ready to move in: 17-01-2021\n" +
-                                            "Looking for a room in\n"+" London\n"+" East London\n"+" Hackney", " Weston Rd, Crewe CW1 6NA, UK\n" +
-                        " Crofton Park, SE4 2BY\n" +
-                        " Notting Hill, W11 4UL\n" +
-                        " Ealing, W13 0DD\n" +
-                        " Upper Parliament Street (Stop U1), Nottingham NG1 6LD, UK\n" +
-                        " Hounslow, TW3 3LF", 6);
+                                            "About me\n" + "I want to Buddy_up",
+                                            " no", 0);
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
@@ -136,10 +132,12 @@ public class Buddy_up extends TestBase {
     @Test //(priority = 3)
     public void testCccButtonPropPage() {
 
-        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
-        searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
-
+        //searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
+        //searchHelper.closePopupSignup();
+        //searchHelper.selectRadius("+5 km");
+       // searchHelper.verificationSearchPropertyMes("Castle Ditch, Caernarfon LL55 2AY, UK", 0);
+        searchHelper.startBuddyupSearch("Caernarfon", "Caernarfon", "+5 km",
+                                        "Castle Ditch, Caernarfon LL55 2AY, UK", 0);
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
         buddyUpHelper.clickCardProperty();
@@ -161,11 +159,11 @@ public class Buddy_up extends TestBase {
 
 
     @Test //(priority = 4)
-    public void testDddGroupPropPage() {
+    public void testDddGroupPropPageStartSignUp() {
 
-        searchHelper.searchPropertyBySelectfromList("LL55 4TT", "LL55 4TT");
-        searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+        searchHelper.startBuddyupSearch("ha0 1eh", "HA0 1EH", "+2 km",
+                                        "Wembley HA0 1EH, UK", 0);
+
 
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
@@ -191,16 +189,20 @@ public class Buddy_up extends TestBase {
         refresh();
     }
 
+
+
     @Test //(priority = 5)
     public void testGggCardChatSignUpViaFB() {
+        String id_property = "41287";
 
         pageUrlVerifStageGoLive();
-        searchHelper.searchPropertyBySelectfromList("Crew", "Crewe");
-        searchHelper.closePopupSignup();
-        searchHelper.selectRadius("+2 km");
-        String postCode = $(byXpath("//div[@id='property_card_41688']//div[@class='card-infos-left']/div")).text();
 
-        signUpHelper.click1PropCardIDMes("41688");
+        searchHelper.startBuddyupSearch("Crew", "Crewe", "+5 km",
+                                   "Crewe Station, Nantwich Rd, Crewe CW2 6HR, UK", 0);
+
+        String postcode = postCodeFromCard(id_property);
+
+        signUpHelper.click1PropCardIDMes(id_property);
 
         authorizationHelper.clickSignUpWithFBBuddy_up();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -216,7 +218,7 @@ public class Buddy_up extends TestBase {
 
         buddyUpHelper.closeIntrodGroupsPopup();
 
-        messageHelper.propertyPostcodeVerifying(postCode);
+        messageHelper.propertyPostcodeVerifying(postcode);
 
         messageHelper.clickMenuMessages();
         verificationHelper.noConverInbox("0 conversations");
@@ -249,14 +251,14 @@ public class Buddy_up extends TestBase {
     @Test //(priority = 6)
     //Facebook authorization doen`t work on staging
     public void Z_z_addLogInViaFBBuddy_up() {
+        String id_property = "41287";
 
         pageUrlVerifStageGoLive();
-        searchHelper.searchPropertyBySelectfromList("Crew", "Crewe");
-        searchHelper.closePopupSignup();
-        searchHelper.selectRadius("+2 km");
-        String postCode = $(byXpath("//div[@id='property_card_41688']//div[@class='card-infos-left']/div")).text();
+        searchHelper.startBuddyupSearch("Crew", "Crewe", "+5 km",
+                                         "Crewe Station, Nantwich Rd, Crewe CW2 6HR, UK", 0);
+        String postcode = postCodeFromCard(id_property);
 
-        signUpHelper.click1PropCardIDMes("41688");
+        signUpHelper.click1PropCardIDMes(id_property);
 
         authorizationHelper.clickSignUpWithFBBuddy_up();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
@@ -266,7 +268,7 @@ public class Buddy_up extends TestBase {
 
         buddyUpHelper.closeIntrodGroupsPopup();
 
-        messageHelper.propertyPostcodeVerifying(postCode);
+        messageHelper.propertyPostcodeVerifying(postcode);
 
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -278,9 +280,8 @@ public class Buddy_up extends TestBase {
     public void testR_R_GroupCreate() {
         clearCache();
         refresh();
-        searchHelper.searchPropertyBySelectfromList("LL55 4TT", "LL55 4TT");
-        searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
+                                         "Wembley HA0 1EH, UK", 0);
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -301,31 +302,32 @@ public class Buddy_up extends TestBase {
 
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
 
-        buddyUpHelper.popupGroup("Post a group");
+        //buddyUpHelper.popupGroup("Post a group");
         //buddyUpHelper.popupGroup("Create a Group");
 
-        buddyUpHelper.postGroupButton();
+        //buddyUpHelper.postGroupButton();
 
-        buddyUpHelper.assertNumberOfGroupsPropPage(2);
+        buddyUpHelper.assertNumberOfGroupsPropPage(1);
 
         messageHelper.clickMenuMessages();
-        buddyUpHelper.assertNumberOfMessInbox(2);
+        buddyUpHelper.assertNumberOfMessInbox(1);
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My Group");
-        buddyUpHelper.assertNumberOfMyGroups(2);
+        buddyUpHelper.assertNumberOfMyGroups(1);
         buddyUpHelper.clickListingImgGroupCard();
         buddyUpHelper.clickGroupSection();
-
-        buddyUpHelper.learnMore(1);
-        buddyUpHelper.removeGroup(1);
-        buddyUpHelper.yesRemoveGroup(1);
 
         buddyUpHelper.learnMore(0);
         buddyUpHelper.removeGroup(0);
         buddyUpHelper.yesRemoveGroup(0);
 
-        verificationHelper.textNoGroup("This property is available to rent as a whole. Click \"I'm interested\" to start a group and choose your flatmates");
+        //buddyUpHelper.closeIntrodGroupsPopup();
+
+        buddyUpHelper.clickGroupSection();
+
+        verificationHelper.textNoGroup("This property is available to rent as a whole. Click \"I'm interested\" to " +
+                "start a group and choose your flatmates");
 
         messageHelper.clickMenuMessages();
         buddyUpHelper.assertNumberOfMessInbox(0);
@@ -334,27 +336,27 @@ public class Buddy_up extends TestBase {
         authorizationHelper.chooseSectionDropDownMenu("My Group");
         buddyUpHelper.assertNumberOfMyGroups(0);
         homePageHelper.clickLogo();
-        searchHelper.searchPropertyBySelectfromList("LL55 4TT", "LL55 4TT");
-        signUpHelper.click1PropCardMes(0);
 
+        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
+                "Wembley HA0 1EH, UK", 0);
+
+        signUpHelper.click1PropCardMes(0);
         buddyUpHelper.closeIntrodGroupsPopup();
         buddyUpHelper.clickGroupSection();
 
         buddyUpHelper.clickBuddy_upButton("m interested");
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
         //buddyUpHelper.popupGroup("Create a Group");
-        buddyUpHelper.popupGroup("Post a group");
-        buddyUpHelper.postGroupButton();
+        //buddyUpHelper.popupGroup("Post a group");
+        //buddyUpHelper.postGroupButton();
 
-        buddyUpHelper.assertNumberOfGroupsPropPage(2);
-
-        buddyUpHelper.learnMore(1);
-        buddyUpHelper.removeGroup(1);
-        buddyUpHelper.yesRemoveGroup(1);
+        buddyUpHelper.assertNumberOfGroupsPropPage(1);
 
         buddyUpHelper.learnMore(0);
         buddyUpHelper.removeGroup(0);
         buddyUpHelper.yesRemoveGroup(0);
+        buddyUpHelper.closeIntrodGroupsPopup();
+        buddyUpHelper.clickGroupSection();
 
         verificationHelper.textNoGroup("This property is available to rent as a whole. Click \"I'm interested\" to start a group and choose your flatmates");
 
@@ -365,8 +367,9 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.learnMore(0);
         buddyUpHelper.closePopupGroup(0);
 
-        buddyUpHelper.createPageGroupButton();
-        buddyUpHelper.closeCreateGroup();
+        //buddyUpHelper.createPageGroupButton();
+        buddyUpHelper.notVisibleCreatePageGroupButton();
+        //buddyUpHelper.closeCreateGroup();
 
         authorizationHelper.logoutFromApp();
 
@@ -378,9 +381,8 @@ public class Buddy_up extends TestBase {
 
     public void testT_T_MmmSignUpGroupJoin() {
 
-        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
-        searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
+                                         "Wembley HA0 1EH, UK", 0);
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -437,48 +439,33 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.closeMemberPopup();
         buddyUpHelper.clickPropImgChat();
         buddyUpHelper.clickGroupSection();
+        buddyUpHelper.assertNumberOfGroupsPropPage(2);
 
         buddyUpHelper.clickBuddy_upButton("m interested");
         buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
-        buddyUpHelper.popupGroup("Create a Group");
-        buddyUpHelper.postGroupButton();
-        buddyUpHelper.assertNumberOfGroupsPropPage(3);
+        buddyUpHelper.groupPopupVerif( new String[]{"Ronald\n" + "64 years", "Trump\n"+ "33 years", "1 flatmate", ""});
 
-        buddyUpHelper.clickBuddy_upButton("m interested");
-        buddyUpHelper.clickBuddy_upButton("Choose Your Flatmates");
-        //buddyUpHelper.arrowPopupNext();
-        //buddyUpHelper.arrowPopupPrevious();
         buddyUpHelper.closePopupLookingGroup();
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My Group");
-        buddyUpHelper.assertNumberOfMyGroups(3);
+        buddyUpHelper.assertNumberOfMyGroups(2);
         buddyUpHelper.clickListingImgGroupCard();
         buddyUpHelper.clickGroupSection();
-
-        buddyUpHelper.learnMore(1);
-        buddyUpHelper.removeGroup(1);
-        buddyUpHelper.yesRemoveGroup(1);
 
         buddyUpHelper.learnMore(0);
         buddyUpHelper.removeGroup(0);
         buddyUpHelper.yesRemoveGroup(0);
 
-        //buddyUpHelper.learnMore(1);
-        //buddyUpHelper.removeGroup(0);
-        //buddyUpHelper.yesRemoveGroup(1);
-
         authorizationHelper.logoutFromApp();
 
-        //authorizationHelper.removeAnyAccount();
     }
     @Test //(priority = 9)
 
     public void testW_W_MessageLoginGroupFull() {
 
-        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
-        searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
+                                        "Wembley HA0 1EH, UK", 0);
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -526,9 +513,8 @@ public class Buddy_up extends TestBase {
 
     public void testY_Y_MessageLoginGroupEditRemove() {
 
-        searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
-        searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", 0);
+        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
+                                           "Wembley HA0 1EH, UK", 0);
 
         signUpHelper.click1PropCardMes(0);
         authorizationHelper.clickFormSignInContact();
@@ -561,7 +547,7 @@ public class Buddy_up extends TestBase {
     public void testZ_Z_ZMessageLoginPropertyRemove() {
 
 
-        authorizationHelper.login("passwUniv", "agentBuddyUp");
+        authorizationHelper.login("passwUniv", "agentNewBuddyUp");
         //closeListRenewPopUp();
 
         addPropertyHelper.closeRenewPopup();

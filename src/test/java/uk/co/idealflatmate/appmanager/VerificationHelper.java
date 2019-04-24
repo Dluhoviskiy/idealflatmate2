@@ -97,7 +97,9 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         if($(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).exists()){
             $(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).shouldHave(text(age));}
 
-        $(byXpath("//strong[contains(@class,'u_ed-block')]")).shouldHave(text(lookingFor));
+        if($(byXpath("//strong[contains(@class,'u_ed-block')]")).exists()){
+            $(byXpath("//strong[contains(@class,'u_ed-block')]")).shouldHave(text(lookingFor));
+        }
         $(byXpath("//div[contains(@class,'u_p30 u_bg-white')]")).shouldHave(text(aboutMe));
 
         if($(byXpath("//h4[contains(.,'My available rooms are ')]")).exists()){
@@ -515,6 +517,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
     public void textNoGroup(String text) {
+        sleep(2000);
         $(byXpath("//h2[contains(@class,'box-info')]")).shouldHave(text(text));
     }
 

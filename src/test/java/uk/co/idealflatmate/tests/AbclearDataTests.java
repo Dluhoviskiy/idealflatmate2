@@ -24,7 +24,7 @@ public class AbclearDataTests extends TestBase {
 
     public static Object[][] credentials() {
 
-        return new Object[][] { {ConfData.getData("passwUniv"), ConfData.getData("agent" )},
+        return new Object[][] { {ConfData.getData("passwUniv"), ConfData.getData("agentRemoved" )},
                 { "qqqqqq", "FMnewlq1t6@gmail.com" }, { "qqqqqq", "FMnew999@gmail.com"}, { "qqqqqq", "agentTest08@gmail.com" },
                 { "qqqqqq", "Li1q3e11@gmail.com" }, { "qqqqqq", "Live_inNew021r@gmail.com" },{ "qqqqqq", "Lord_out_New034@gmail.com" },
                 { "qqqqqq", "Live_inNewL012@gmail.com" },{ "qqqqqq", "Live_inNewL012yyy@gmail.com" },{ "qqqqqq", "Mes1email@gmail.com" },
@@ -69,22 +69,20 @@ public class AbclearDataTests extends TestBase {
     @Test
     public void removeListingBeforeTest() {
 
+        authorizationHelper.login("passwUniv", "agentNotPaid");
+        verifyNoPropertyOrRemove();
+
         authorizationHelper.login("passwUniv", "userNotpaid");
         verifyNoPropertyOrRemove();
 
         authorizationHelper.login("passwUniv", "userNotpaid1");
         verifyNoPropertyOrRemove();
 
-        authorizationHelper.login("passwUniv", "agentNotPaid");
-        verifyNoPropertyOrRemove();
-
         authorizationHelper.login("passwUniv", "agentBuddyUp");
         verifyNoPropertyOrRemove();
 
-        authorizationHelper.login("passwUniv", "agentNotpaid1");
-        verifyNoPropertyOrRemove();
-
         authorizationHelper.login("passwUniv", "agentNewBuddyUp");
+        closeListRenewPopUp();
         verifyNoPropertyOrRemove();
 
         authorizationHelper.login("passwUniv", "userTitle");

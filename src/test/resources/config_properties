@@ -70,11 +70,10 @@ LiveOut2=LiveOut7t111r21@gmail.com
 //users_shouldBe_without_properties
 userNotpaid=cro.gen.FHListingNotPaid@gmail.com
 userNotpaid1=cro.gen.FHListingNotPaid1@gmail.com
-agentNotPaid=cro.gen.AgencyNotPaid@gmail.com
 userTitle=Titlelive_in1@gmail.com
 agentBuddyUp=agent777Buddy@gmail.com
 agentNewBuddyUp=agent15Apr@gmail.com
-
+agentNotPaid=cro.gen.AgencyNotPaid@gmail.com
 
 
 test1=croghjghj.FH@gmail.com

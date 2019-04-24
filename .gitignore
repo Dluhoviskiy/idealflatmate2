@@ -2,4 +2,7 @@
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 
-/build/reports/tests/
+/build/*
+/venv/*
+.idea/*
+.idea\*

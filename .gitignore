@@ -5,8 +5,7 @@
 /venv/*
 
 .idea
-*.json
-*.json
+
 build
 target
 

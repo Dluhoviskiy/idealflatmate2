@@ -3,12 +3,13 @@ C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\ide
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\BuddyUpHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\AbclearDataTests.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\AreaPageTest.java
+C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\ProfileData.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\FooterTest.java
-C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\SignUpBuddy_up.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\TestBase.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\AddPropertyHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\SignUpTest.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\MessagesTest.java
+C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\AuthorHeaderMenuHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\SignUpLikeOrMessage.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\VerificationHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\EmailHelper.java
@@ -16,9 +17,9 @@ C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\ide
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\HomePageTest.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\SearchHomePageTests.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\SearchHelperFM.java
-C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\AuthorizationHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\utils\ConfData.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\AddListingTests.java
+C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\Buddy_up.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\SearchPropertiesPageTests.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\MessageHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\HomePageHelper.java
@@ -29,7 +30,9 @@ C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\ide
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\MatchingHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\ZEmailTests.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\HelperBase.java
+C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\PropertyData.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\SignUpHelper.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\tests\SearchFMPageTests.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\SearchHelper.java
+C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\utils\ConfDataProperty.java
 C:\Users\lukhovytskyi\Documents\GitHub\idealflatmatetest\src\test\java\uk\co\idealflatmate\appmanager\PaymentsHelper.java

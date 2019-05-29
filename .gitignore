@@ -4,5 +4,13 @@
 
 /build/*
 /venv/*
-.idea/*
-.idea\*
+
+.idea
+*.json
+*.json
+build
+target
+
+*.json
+*.iml
+*.json

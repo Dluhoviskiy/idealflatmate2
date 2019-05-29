@@ -50,7 +50,7 @@ public class Buddy_up extends TestBase {
 
         authorizationHelper.chooseTabFromInnerMenuDashboard("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete5",  "myProfile5",
-                "name5", "age5","lokingFor5", "aboutMe5","rooms5",
+                "name5", "age5","lookingFor5", "aboutMe5","rooms5",
                 "amountPropCards5"));
         addPropertyHelper.chooseListingsFromDropDownMenu();
         addPropertyHelper.removeListingClick("0");
@@ -120,7 +120,7 @@ public class Buddy_up extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete6",  "myProfile6",
-                "name6", "age6","lokingFor6", "aboutMe6","rooms6",
+                "name6", "age6","lookingFor6", "aboutMe6","rooms6",
                 "amountPropCards6"));
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
@@ -226,7 +226,7 @@ public class Buddy_up extends TestBase {
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
         verificationHelper.profileDisplays(new ProfileData("percentComplete7",  "myProfile7",
-                "name7", "age7","lokingFor7", "aboutMe7","rooms7",
+                "name7", "age7","lookingFor7", "aboutMe7","rooms7",
                 "amountPropCards7"));
         signUpHelper.verificationDataProfileFotoDashboard();
 

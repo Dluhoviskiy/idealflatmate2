@@ -73,7 +73,7 @@ public class SignUpMatching extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete8",  "myProfile8",
-                "name8", "age8","lokingFor8", "aboutMe8","rooms8",
+                "name8", "age8","lookingFor8", "aboutMe8","rooms8",
                 "amountPropCards8"));
 
         verificationHelper.verificationUserNameOnHomePage(name);

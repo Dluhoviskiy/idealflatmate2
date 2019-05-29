@@ -194,7 +194,7 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.chooseTabFromInnerMenuDashboard("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete4",  "myProfile4",
-                "name4", "age4","lokingFor4", "aboutMe4","rooms4",
+                "name4", "age4","lookingFor4", "aboutMe4","rooms4",
                 "amountPropCards4"));
 
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");

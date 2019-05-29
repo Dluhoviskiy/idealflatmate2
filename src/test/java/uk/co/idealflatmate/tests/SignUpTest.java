@@ -122,7 +122,7 @@ public class SignUpTest extends TestBase {
        // verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete8",  "myProfile8",
-                "name8", "age8","lokingFor8", "aboutMe8","rooms8",
+                "name8", "age8","lookingFor8", "aboutMe8","rooms8",
                 "amountPropCards8"));
 
 
@@ -149,7 +149,7 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete9",  "myProfile9",
-                "name9", "age9","lokingFor9", "aboutMe9","rooms9",
+                "name9", "age9","lookingFor9", "aboutMe9","rooms9",
                 "amountPropCards9"));
 
         matchingHelper.closePopupMatching();
@@ -342,7 +342,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
         verificationHelper.profileDisplays(new ProfileData("percentComplete10",  "myProfile10",
-                "name10", "age10","lokingFor10", "aboutMe10","rooms10",
+                "name10", "age10","lookingFor10", "aboutMe10","rooms10",
                 "amountPropCards10"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
@@ -376,7 +376,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
         verificationHelper.profileDisplays(new ProfileData("percentComplete11",  "myProfile11",
-                "name11", "age11","lokingFor11", "aboutMe11","rooms11",
+                "name11", "age11","lookingFor11", "aboutMe11","rooms11",
                 "amountPropCards11"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
@@ -419,7 +419,7 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete12",  "myProfile12",
-                "name12", "age12","lokingFor12", "aboutMe12","rooms12",
+                "name12", "age12","lookingFor12", "aboutMe12","rooms12",
                 "amountPropCards12"));
         authorizationHelper.removeAnyAccount();
     }
@@ -452,7 +452,7 @@ public class SignUpTest extends TestBase {
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         matchingHelper.closePopupMatching();
         verificationHelper.profileDisplays(new ProfileData("percentComplete13",  "myProfile13",
-                "name13", "age13","lokingFor13", "aboutMe13","rooms13",
+                "name13", "age13","lookingFor13", "aboutMe13","rooms13",
                 "amountPropCards13"));
         authorizationHelper.removeAnyAccount();
     }

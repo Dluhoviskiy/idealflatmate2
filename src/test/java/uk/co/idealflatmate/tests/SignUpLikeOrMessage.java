@@ -119,7 +119,7 @@ public class SignUpLikeOrMessage extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete1",  "myProfile1",
-                "name1", "age1","lokingFor1", "aboutMe1","rooms1",
+                "name1", "age1","lookingFor1", "aboutMe1","rooms1",
                 "amountPropCards1"));
         verificationHelper.verificationUserNameOnHomePage(name);
 
@@ -205,7 +205,7 @@ public class SignUpLikeOrMessage extends TestBase {
         //verificationHelper.verifyProfComplMenu("70% complete");
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete2",  "myProfile2",
-                        "name2", "age2","lokingFor2", "aboutMe2","rooms2",
+                        "name2", "age2","lookingFor2", "aboutMe2","rooms2",
                         "amountPropCards2"));
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
@@ -257,7 +257,7 @@ public class SignUpLikeOrMessage extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete3",  "myProfile3",
-                "name3", "age3","lokingFor3", "aboutMe3","rooms3",
+                "name3", "age3","lookingFor3", "aboutMe3","rooms3",
                 "amountPropCards3"));
         verificationHelper.verificationUserNameOnHomePage(name);
 

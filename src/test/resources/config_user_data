@@ -21,6 +21,7 @@ agentAddRoom=agentAddRoom@gmail.com
 agentEditRoom=agentEditRoom1@gmail.com
 FMWithMatching=FMWithMatching1@gmail.com
 agentNotpaid1=testAgentListFeat@gmail.com
+agentNewBuddyUp=agent15Apr@gmail.com
 
 //FB_users_Live
 FB1=aleksandr.serdiuk@gmail.com
@@ -71,8 +72,8 @@ LiveOut2=LiveOut7t111r21@gmail.com
 userNotpaid=cro.gen.FHListingNotPaid@gmail.com
 userNotpaid1=cro.gen.FHListingNotPaid1@gmail.com
 userTitle=Titlelive_in1@gmail.com
-agentBuddyUp=agent777Buddy@gmail.com
-agentNewBuddyUp=agent15Apr@gmail.com
+agentBuddyUp=agent888Buddy@gmail.com
+
 agentNotPaid=cro.gen.AgencyNotPaid@gmail.com
 
 
@@ -82,5 +83,12 @@ test1=croghjghj.FH@gmail.com
 helpixon@gmail.com/w0028908
 ron1978d@gmail.com/wwwwww666W
 ron1992d@gmail.com/rrr666!!!R
+
+
+//property_data
+name1 = "Ronald";
+location1 = "Leeds";
+String age1 = "61";
+property_id1=18376
 
 

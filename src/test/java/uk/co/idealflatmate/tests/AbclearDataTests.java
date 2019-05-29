@@ -81,9 +81,9 @@ public class AbclearDataTests extends TestBase {
         authorizationHelper.login("passwUniv", "agentBuddyUp");
         verifyNoPropertyOrRemove();
 
-        authorizationHelper.login("passwUniv", "agentNewBuddyUp");
-        closeListRenewPopUp();
-        verifyNoPropertyOrRemove();
+        //authorizationHelper.login("passwUniv", "agentNewBuddyUp");
+        //closeListRenewPopUp();
+        //verifyNoPropertyOrRemove();
 
         authorizationHelper.login("passwUniv", "userTitle");
         closeMatchPopUp();

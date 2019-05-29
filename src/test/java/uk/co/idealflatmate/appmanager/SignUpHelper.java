@@ -185,8 +185,8 @@ public class SignUpHelper extends HelperBase {
 
     public static void budgetMin() {
 
-        dragLow.dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
-        dragLow.dragAndDropTo($(byXpath("//div/span[@class='text-14']")));
+        dragLow.dragAndDropTo($(byXpath("//span[@class='text-12']")));
+        //dragLow.dragAndDropTo($(byXpath("//div/span[@class='text-14']")));
     }
 
     public static void budgetMax() {
@@ -288,8 +288,8 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public void click1PropCardMes(int indexProperty) {
-        $$(byXpath("//div[@class='card-infos-flex-row']/a[2][@href]")).get(indexProperty).click();
+    public void click1PropCardMes(String property_id) {
+        $(byXpath("//div[@id='property_card_"+ConfData.getData(property_id)+"']//div[@class='card-infos-flex-row']/a[2][@href]")).click();
 
     }
 
@@ -368,7 +368,7 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void clickMessageProperty(String buttonText) {
-        sleep(3000);
+
         $(byXpath("//section//a[contains(.,'" + buttonText + "')]")).click();
 
     }

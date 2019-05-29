@@ -2,6 +2,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
+import uk.co.idealflatmate.appmanager.ProfileData;
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
@@ -105,14 +106,14 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.budgetMin();
-        signUpHelper.budgetMax();
+        //signUpHelper.budgetMax();
         signUpHelper.verifyToMoveCheckboxDisabled();
         signUpHelper.toMoveCheckboxEnabled();
         signUpHelper.selectMoveDate("8", "8", "2019");
         signUpHelper.selectHappyReceiveNews();
         signUpHelper.clickYourInformationContinue();
 
-        authorizationHelper.clickCloseSignUp();
+        authorizationHelper.clickClosePopupSignUp();
 
         verificationHelper.verifySearchListingPage();
         verificationHelper.verificationUserNameOnHomePage(name);
@@ -120,15 +121,9 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
        // verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.profileDisplays("80%\n" + "complete",
-                                            "User Type\n" + "Personal Details\n" +
-                                            "Property Preferences\n" + "Budget & Availability\n" +
-                                            "Your ideal flatmate",
-                                            name, "18",
-                                            "I'm looking for a room",
-                                            "Tell us about yourself\n" + "Maximum budget: £1250/month\n" +
-                                            "Ready to move in: 08-08-2019\n" + "Looking for a room in\n" + location1,
-                                            "no rooms", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete8",  "myProfile8",
+                "name8", "age8","lokingFor8", "aboutMe8","rooms8",
+                "amountPropCards8"));
 
 
         authorizationHelper.removeAnyAccount();
@@ -153,12 +148,9 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.profileDisplays("60%\n" + "complete",
-                                            "User Type\n" + "Personal Details\n" + "Your ideal flatmate",
-                                            name, "59",
-                                            "I have a room available",
-                                            "Ronald, 59 is a male student looking for a room.",
-                                            "no rooms", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete9",  "myProfile9",
+                "name9", "age9","lokingFor9", "aboutMe9","rooms9",
+                "amountPropCards9"));
 
         matchingHelper.closePopupMatching();
 
@@ -323,7 +315,7 @@ public class SignUpTest extends TestBase {
         pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
-        authorizationHelper.clickSignUpWithFacebook();
+        authorizationHelper.clickSignUp_In_WithFacebook();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
         authorizationHelper.LoginFacebookWithNewAccount("FB2", "passwFB2");
         signUpHelper.setSignPassword("passwUniv");
@@ -341,7 +333,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.budgetMin();
-        signUpHelper.budgetMax();
+        //signUpHelper.budgetMax();
         signUpHelper.verifyToMoveCheckboxDisabled();
         signUpHelper.clickYourInformationContinue();
 
@@ -349,18 +341,9 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
-        verificationHelper.profileDisplays("70%\n" + "complete",
-                                            "User Type\n" + "Personal Details\n" +
-                                            "Property Preferences\n" + "Budget & Availability\n" +
-                                            "Your ideal flatmate",
-                                            name, age, "I'm looking for a room",
-                                            "About me\n" + name +", "+age+" is a female freelancer/self employed" +
-                                                    " looking for a room in "+location1+" or "+location2+" or "+location3+
-                                                    ".\n" + "Maximum budget: £1250/month\n" +
-                                                    "Ready to move in: Immediately\n" +
-                                                    "Looking for a room in\n" + " "+location1+"\n" +" "+location2+"\n" +
-                                                    " " + location3,
-                                            "no rooms", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete10",  "myProfile10",
+                "name10", "age10","lokingFor10", "aboutMe10","rooms10",
+                "amountPropCards10"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
 
@@ -377,7 +360,7 @@ public class SignUpTest extends TestBase {
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser( "An agency");
 
-        authorizationHelper.clickSignUpWithFB_ListFlow();
+        authorizationHelper.clickSignUp_In_WithFacebook();
 
 
         authorizationHelper.LoginFacebookWithNewAccount("FB3", "passwFB2");
@@ -392,11 +375,9 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
-        verificationHelper.profileDisplays("75%\n" + "complete",
-                                            "User Type\n" + "Personal Details\n" + "Your ideal tenant",
-                                            name, "no age", "Check out our available rooms.",
-                                            "About us\n" + "I am an agent",
-                                            "no rooms", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete11",  "myProfile11",
+                "name11", "age11","lokingFor11", "aboutMe11","rooms11",
+                "amountPropCards11"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
 
@@ -410,7 +391,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
@@ -437,12 +418,9 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.profileDisplays("50%\n" + "complete",
-                                            "User Type\n"+"Personal Details\n"+"Your ideal tenant",
-                                            name, "no age",
-                                            "I have a room available",
-                                            "About me\n" +name+" is a live-out landlord looking for a room.",
-                                            "no rooms", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete12",  "myProfile12",
+                "name12", "age12","lokingFor12", "aboutMe12","rooms12",
+                "amountPropCards12"));
         authorizationHelper.removeAnyAccount();
     }
 
@@ -473,12 +451,9 @@ public class SignUpTest extends TestBase {
         //verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         matchingHelper.closePopupMatching();
-        verificationHelper.profileDisplays("80%\n" + "complete",
-                                            "User Type\n" + "Personal Details\n" +"Your ideal flatmate",
-                                            name, age,
-                                            "I have a room available",
-                                            "About me\n" + "Tell us about yourself",
-                                            "no rooms", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete13",  "myProfile13",
+                "name13", "age13","lokingFor13", "aboutMe13","rooms13",
+                "amountPropCards13"));
         authorizationHelper.removeAnyAccount();
     }
 

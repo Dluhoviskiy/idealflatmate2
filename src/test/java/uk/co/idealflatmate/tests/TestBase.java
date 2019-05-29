@@ -6,21 +6,16 @@ import org.testng.annotations.*;
 import uk.co.idealflatmate.appmanager.*;
 
 
-import java.util.ArrayList;
-import java.util.Set;
-
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class TestBase {
 
     public final VerificationHelper verificationHelper = new VerificationHelper();
-    public final AuthorizationHelper authorizationHelper = new AuthorizationHelper();
+    public final AuthorHeaderMenuHelper authorizationHelper = new AuthorHeaderMenuHelper();
     public final PaymentsHelper paymentsHelper = new PaymentsHelper();
     public final AddPropertyHelper addPropertyHelper = new AddPropertyHelper();
     public final MessageHelper messageHelper = new MessageHelper();
@@ -100,14 +95,14 @@ public class TestBase {
 
     public VerificationHelper getVerificationHelper() { return verificationHelper; }
 
-    public MessageHelper getMessageHelper() { return paymentsHelper.addPropertyHelper.messageHelper;    }
+    public MessageHelper getMessageHelper() { return messageHelper;    }
 
-    public AuthorizationHelper getAuthorizationHelper() {
+    public AuthorHeaderMenuHelper getAuthorizationHelper() {
         return authorizationHelper;
     }
 
     public AddPropertyHelper getAddPropertyHelper() {
-        return paymentsHelper.addPropertyHelper;
+        return addPropertyHelper;
     }
 
 

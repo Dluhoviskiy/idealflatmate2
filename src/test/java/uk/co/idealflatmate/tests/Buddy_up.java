@@ -2,9 +2,11 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.ProfileData;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickSignInButtonInForm;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 import static uk.co.idealflatmate.appmanager.HelperBase.postCodeFromCard;
@@ -21,11 +23,14 @@ public class Buddy_up extends TestBase {
         clearCache();
     }
 
+
     @Test //(priority = 1)
-    public void testAaaAddWholeProperty() {
+
+
+
+    public void testAaabAddWholeProperty2() {
 
         authorizationHelper.login("passwUniv", "agentBuddyUp");
-
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         matchingHelper.closePopupMatching();
         addPropertyHelper.closeRenewPopup();
@@ -35,22 +40,20 @@ public class Buddy_up extends TestBase {
         verificationHelper.verifyNoProperty();
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoBuddyUp("LL55 4TT", "3", "900",  "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK");
+        addPropertyHelper.addListingWithoutPhotoBuddyUp("w2 ", "London W2, UK",
+                "Bayswater","3", "900", "Area cannot be blank.");
 
         //addPropertyHelper.finishPropertyAgency();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        verificationHelper.verifyAddedProperty("Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK Available");
+        verificationHelper.verifyAddedProperty("London W2, UK");
 
-        authorizationHelper.chooseProfileFromHeader();
-        verificationHelper.profileDisplays("75",
-                                            "User Type\n" +"Personal Details\n" +"Your ideal tenant",
-                                            "Ronald", "notDisplaying",
-                                            "Check out our available rooms.",
-                                            "About us\n" + "Tell us about yourself",
-                                            "no locations", 1);
+        authorizationHelper.chooseTabFromInnerMenuDashboard("My profile");
+        verificationHelper.profileDisplays(new ProfileData("percentComplete5",  "myProfile5",
+                "name5", "age5","lokingFor5", "aboutMe5","rooms5",
+                "amountPropCards5"));
         addPropertyHelper.chooseListingsFromDropDownMenu();
-        addPropertyHelper.RemoveListing();
+        addPropertyHelper.removeListingClick("0");
 
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -66,8 +69,8 @@ public class Buddy_up extends TestBase {
        // searchHelper.closePopupSignup();
        // searchHelper.selectRadius("+5 km");
        // searchHelper.verificationSearchPropertyMes("Castle Ditch, Caernarfon LL55 2AY, UK", 0);
-        searchHelper.startBuddyupSearch("Caernarfon", "Caernarfon", "+5 km",
-                                         "Castle Ditch, Caernarfon LL55 2AY, UK", 0);
+        searchHelper.startBuddyUpSearch("Caernarfon", "Caernarfon", "+5 km",
+                                         "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", "index2");
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -76,7 +79,7 @@ public class Buddy_up extends TestBase {
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropCardMes(0);
+        signUpHelper.click1PropCardMes("0");
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
@@ -116,14 +119,9 @@ public class Buddy_up extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.profileDisplays("70",
-                                            "User Type\n" + "Personal Details\n" +
-                                            "Property Preferences\n" +"Budget & Availability\n" +
-                                            "Your ideal flatmate",
-                                            "Ronald", "64",
-                                            "I'm looking for a room",
-                                            "About me\n" + "I want to Buddy_up",
-                                            " no", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete6",  "myProfile6",
+                "name6", "age6","lokingFor6", "aboutMe6","rooms6",
+                "amountPropCards6"));
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
@@ -136,8 +134,8 @@ public class Buddy_up extends TestBase {
         //searchHelper.closePopupSignup();
         //searchHelper.selectRadius("+5 km");
        // searchHelper.verificationSearchPropertyMes("Castle Ditch, Caernarfon LL55 2AY, UK", 0);
-        searchHelper.startBuddyupSearch("Caernarfon", "Caernarfon", "+5 km",
-                                        "Castle Ditch, Caernarfon LL55 2AY, UK", 0);
+        searchHelper.startBuddyUpSearch("Caernarfon", "Caernarfon", "+5 km",
+                                        "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", "index2");
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
         buddyUpHelper.clickCardProperty();
@@ -161,8 +159,8 @@ public class Buddy_up extends TestBase {
     @Test //(priority = 4)
     public void testDddGroupPropPageStartSignUp() {
 
-        searchHelper.startBuddyupSearch("ha0 1eh", "HA0 1EH", "+2 km",
-                                        "Wembley HA0 1EH, UK", 0);
+        searchHelper.startBuddyUpSearch("ha0 1eh", "HA0 1EH", "+3 km",
+                                        "Wembley HA0 1EH, UK", "index2");
 
 
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
@@ -193,22 +191,21 @@ public class Buddy_up extends TestBase {
 
     @Test //(priority = 5)
     public void testGggCardChatSignUpViaFB() {
-        String id_property = "41287";
+        String id_property = "38204";
 
         pageUrlVerifStageGoLive();
-
-        searchHelper.startBuddyupSearch("Crew", "Crewe", "+5 km",
-                                   "Crewe Station, Nantwich Rd, Crewe CW2 6HR, UK", 0);
+        //idealfm_test@mail.co.uk user_id=92412
+        searchHelper.startBuddyUpSearch1("Crew", "Crewe", "+5 km",
+                "Crewe CW1 6BW, UK", id_property);
 
         String postcode = postCodeFromCard(id_property);
 
         signUpHelper.click1PropCardIDMes(id_property);
 
-        authorizationHelper.clickSignUpWithFBBuddy_up();
+        authorizationHelper.clickSignUp_In_WithFacebook();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
         authorizationHelper.LoginFacebookWithNewAccount("FB2", "passwFB2");
-
-        //signUpHelper.genderMaleSelect();
+        signUpHelper.setSignPassword("passwUniv");
         signUpHelper.clickYourInformationContinue();
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
         signUpHelper.profilePhone("5555555555");
@@ -220,6 +217,7 @@ public class Buddy_up extends TestBase {
 
         messageHelper.propertyPostcodeVerifying(postcode);
 
+        buddyUpHelper.closeIntrodGroupsPopup();
         messageHelper.clickMenuMessages();
         verificationHelper.noConverInbox("0 conversations");
 
@@ -227,20 +225,9 @@ public class Buddy_up extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
-        verificationHelper.profileDisplays("70",
-                                            "User Type\n" + "Personal Details\n" +
-                                            "Property Preferences\n" +"Budget & Availability\n" +
-                                            "Your ideal flatmate",
-                                            "Rob", "27",
-                                            "I'm looking for a room",
-                                            "Teddy, 27 is a male professional looking for a room in London or East London or Hackney.\n" +
-                                             "Maximum budget: £2400/month\n" + "Ready to move in: 17-01-2021\n" +
-                                            "Looking for a room in\n"+" London\n"+" East London\n"+" Hackney", " Weston Rd, Crewe CW1 6NA, UK\n" +
-                        " Crofton Park, SE4 2BY\n" +
-                        " Notting Hill, W11 4UL\n" +
-                        " Ealing, W13 0DD\n" +
-                        " Upper Parliament Street (Stop U1), Nottingham NG1 6LD, UK\n" +
-                        " Hounslow, TW3 3LF", 6);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete7",  "myProfile7",
+                "name7", "age7","lokingFor7", "aboutMe7","rooms7",
+                "amountPropCards7"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
 
@@ -251,16 +238,16 @@ public class Buddy_up extends TestBase {
     @Test //(priority = 6)
     //Facebook authorization doen`t work on staging
     public void Z_z_addLogInViaFBBuddy_up() {
-        String id_property = "41287";
+        String id_property = "38204";
 
         pageUrlVerifStageGoLive();
-        searchHelper.startBuddyupSearch("Crew", "Crewe", "+5 km",
-                                         "Crewe Station, Nantwich Rd, Crewe CW2 6HR, UK", 0);
+        searchHelper.startBuddyUpSearch1("Crew", "Crewe", "+5 km",
+                                         "Crewe CW1 6BW, UK", id_property);
         String postcode = postCodeFromCard(id_property);
 
         signUpHelper.click1PropCardIDMes(id_property);
 
-        authorizationHelper.clickSignUpWithFBBuddy_up();
+        authorizationHelper.clickSignUp_In_WithFacebook();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
         authorizationHelper.LoginFacebookWithNewAccount("FB1", "passwFB1");
 
@@ -280,8 +267,10 @@ public class Buddy_up extends TestBase {
     public void testR_R_GroupCreate() {
         clearCache();
         refresh();
-        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
-                                         "Wembley HA0 1EH, UK", 0);
+        searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3 km",
+                                         "Wembley HA0 1EH, UK", "index2");
+
+
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -290,7 +279,7 @@ public class Buddy_up extends TestBase {
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropCardMes(0);
+        signUpHelper.click1PropCardMes("0");
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
@@ -337,10 +326,10 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.assertNumberOfMyGroups(0);
         homePageHelper.clickLogo();
 
-        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
-                "Wembley HA0 1EH, UK", 0);
+        searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3",
+                                        "Wembley HA0 1EH, UK", "index2");
 
-        signUpHelper.click1PropCardMes(0);
+        signUpHelper.click1PropCardMes("0");
         buddyUpHelper.closeIntrodGroupsPopup();
         buddyUpHelper.clickGroupSection();
 
@@ -381,8 +370,8 @@ public class Buddy_up extends TestBase {
 
     public void testT_T_MmmSignUpGroupJoin() {
 
-        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
-                                         "Wembley HA0 1EH, UK", 0);
+        searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+2",
+                                         "Wembley HA0 1EH, UK", "index2");
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -391,7 +380,7 @@ public class Buddy_up extends TestBase {
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropCardMes(0);
+        signUpHelper.click1PropCardMes("0");
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
@@ -464,8 +453,8 @@ public class Buddy_up extends TestBase {
 
     public void testW_W_MessageLoginGroupFull() {
 
-        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
-                                        "Wembley HA0 1EH, UK", 0);
+        searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3 km",
+                                        "Wembley HA0 1EH, UK", "index2");
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -474,8 +463,8 @@ public class Buddy_up extends TestBase {
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
 
-        signUpHelper.click1PropCardMes(0);
-        authorizationHelper.clickFormSignInContact();
+        signUpHelper.click1PropCardMes("0");
+        clickSignInButtonInForm();
         authorizationHelper.loginBuddy_up("passwUniv", "FMwithoutSub3");
 
         buddyUpHelper.closeIntrodGroupsPopup();
@@ -494,12 +483,9 @@ public class Buddy_up extends TestBase {
 
         //messageHelper.clickMenuMessages();
         messageHelper.backToInbox();
-        messageHelper.verifyMemberImgInboxNumber(3);
+        //messageHelper.verifyMemberImgInboxNumber(3);
+        messageHelper.messageToPropertyExist("45880");
         messageHelper.clickMessage1Inbox();
-
-        //buddyUpHelper.chat_MemberClick();
-        //buddyUpHelper.veryfNumberMember(3);
-        //buddyUpHelper.closeMemberPopup();
 
         buddyUpHelper.messageGroupVerif("Hi, thank you for your interest in this property.",
                 "Hi my name is Trump", "Hi my name is Ronald", "Hi my name is Rene");
@@ -511,13 +497,13 @@ public class Buddy_up extends TestBase {
 
     @Test //(priority = 10)
 
-    public void testY_Y_MessageLoginGroupEditRemove() {
+    public void testY_Y_MessageLoginGroupEditFull() {
 
-        searchHelper.startBuddyupSearch("HA0 1EH", "HA0 1EH", "+2 km",
-                                           "Wembley HA0 1EH, UK", 0);
+        searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3 km",
+                                           "Wembley HA0 1EH, UK", "index2");
 
-        signUpHelper.click1PropCardMes(0);
-        authorizationHelper.clickFormSignInContact();
+        signUpHelper.click1PropCardMes("0");
+        clickSignInButtonInForm();
         authorizationHelper.loginBuddy_up("passwUniv", "FMupsBuddy2");
 
         buddyUpHelper.closeIntrodGroupsPopup();
@@ -534,10 +520,22 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.ageMax();
         buddyUpHelper.addTextDescribe("test description");
         buddyUpHelper.postGroupButtonEdit();
+        open("http://front.idealflatmate4test.demo.devplatform2.com/spare-room/wembley/property-id45880");
+        buddyUpHelper.closeIntrodGroupsPopup();
+        String minBud = buddyUpHelper.minBudget();
+        String movData = buddyUpHelper.movingData();
 
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        buddyUpHelper.veryfyGroupEditData(minBud, movData);
 
+        buddyUpHelper.myGroupPageClick("Edit group");
+        buddyUpHelper.genderBuddy_upGroupPageSelect("Female");
+        buddyUpHelper.postGroupButtonEdit();
+        open("http://front.idealflatmate4test.demo.devplatform2.com/spare-room/wembley/property-id45880");
+        //open("http://front.idealflatmate4test.demo.devplatform2.com/buddy-up#");
 
-        //authorizationHelper.logoutFromApp();
+        authorizationHelper.logoutFromApp();
 
     }
 
@@ -554,8 +552,8 @@ public class Buddy_up extends TestBase {
 
         messageHelper.chooseMesTabView();
         messageHelper.clickMenuMessages();
-        messageHelper.numberConverInbox(3);
-        messageHelper.verifyMemberImgInboxNumber(3);
+        messageHelper.numberConverInbox(1);
+        //messageHelper.verifyMemberImgInboxNumber(3);
         messageHelper.clickMessage1Inbox();
 
         buddyUpHelper.chat_MemberClick();
@@ -567,11 +565,12 @@ public class Buddy_up extends TestBase {
 
         buddyUpHelper.clickPropImgChat();
         buddyUpHelper.clickGroupSection();
+        buddyUpHelper.learnMore(0);
+        buddyUpHelper.removeGroup(0);
+        buddyUpHelper.yesRemoveGroup(0);
 
-        buddyUpHelper.veryfyGroupEditData("1000", "13th April 2021");
-
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        getAddPropertyHelper().RemoveListing();
+        //getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        //getAddPropertyHelper().removeListingClick();
 
         messageHelper.clickMenuMessages();
         messageHelper.numberConverInbox(0);

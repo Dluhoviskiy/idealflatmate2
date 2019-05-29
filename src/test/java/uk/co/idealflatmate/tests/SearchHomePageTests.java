@@ -3,13 +3,11 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import uk.co.idealflatmate.appmanager.SearchHelper;
 
-import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListing;
+import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFound;
 
 public class SearchHomePageTests extends TestBase {
 
@@ -32,7 +30,8 @@ public class SearchHomePageTests extends TestBase {
         searchHelper.searchPropertyHome1("PO30 2DN");
         searchHelper.closePopupSignup();
 
-        searchHelper.verificationSearchProperty("Found "+getNumberOfListing() +" room to rent in PO30 2DN");
+        searchHelper.verificationSearchProperty("Find A Room To Rent",
+                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
 
     }
 
@@ -41,7 +40,8 @@ public class SearchHomePageTests extends TestBase {
 
         searchHelper.searchPropertyByEnter("Clapham");
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchOnFMPage("Found " + getNumberOfListing() + " rooms to rent in Clapham");
+        searchHelper.verificationSearchProperty("Find A Room To Rent",
+                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
 
     }
     @Test
@@ -50,7 +50,8 @@ public class SearchHomePageTests extends TestBase {
         searchHelper.searchPropertyBySelectfromList("Clapham", "Clapham Junction");
         searchHelper.closePopupSignup();
 
-        searchHelper.verificationSearchProperty("Found " + getNumberOfListing() + " rooms to rent in Clapham Junction");
+        searchHelper.verificationSearchProperty("Find A Room To Rent",
+                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
 
     }
 
@@ -68,7 +69,8 @@ public class SearchHomePageTests extends TestBase {
         searchHelper.searchPropertyHome("wellessbour we");
         searchHelper.closePopupSignup();
 
-        searchHelper.verificationSearchProperty("Found "+ getNumberOfListing() + " room to rent in Wellesbourne West");
+        searchHelper.verificationSearchProperty("Find A Room To Rent",
+                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
 
     }
     @Test
@@ -85,7 +87,8 @@ public class SearchHomePageTests extends TestBase {
         searchHelper.searchPropertyHome("North London");
         sleep(20000);
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchProperty("Found "+ getNumberOfListing() + " rooms to rent in North London");
+        searchHelper.verificationSearchProperty("Find A Room To Rent",
+                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
     }
 
 

@@ -4,14 +4,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfData {
+public class ConfDataProperty {
 
     protected static FileInputStream fileInputStream;
     protected static Properties PROPERTIES;
+    //protected static Properties PROPERTIES1;
 
     static  {
         try {
-            fileInputStream = new FileInputStream("src/test/resources/config_user_data");
+            fileInputStream = new FileInputStream("src/test/resources/config_property_data");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {
@@ -28,9 +29,13 @@ public class ConfData {
 
 
 
+
     public static String getData(String key) {
         return PROPERTIES.getProperty(key);
     }
+    //public static Integer getDataInt(int key1) { return PROPERTIES1.getProperty(key1);}
+
+
 }
 
 

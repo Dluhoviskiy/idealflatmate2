@@ -24,14 +24,11 @@ public class SearchPropertiesPageTests extends TestBase{
 
     @Test
     public void propertySearchByDropDown() {
-
-
         searchHelper.closePopupSignup();
         cardsOnThePage().shouldHaveSize(11);
         searchHelper.colivingButtonOnFirstPage("View all Select providers ");
         searchHelper.firstCardIsColivingAdv();
         helperBase.toHomePage();
-
     }
 
     @Test
@@ -77,9 +74,9 @@ public class SearchPropertiesPageTests extends TestBase{
 
         searchHelper.clickMoreFilterVerify("Garden", 14, "1 month", "1 week ago");
 
-        searchHelper.numberOfActiveFilters(1);
+        searchHelper.numberOfActiveFilters(2);
         searchHelper.verifyClearMoreFilter("Garden");
-        Assert.assertEquals(0, activeFiltersNumber());
+        Assert.assertEquals(1, activeFiltersNumber());
         helperBase.toHomePage();
     }
     @Test
@@ -91,7 +88,7 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.verifSearchHasLocation("London");
         searchHelper.selectRadius("+20 km");
 
-        Assert.assertEquals(0, activeFiltersNumber());
+        Assert.assertEquals(1, activeFiltersNumber());
 
         searchHelper.activeBudget();
         searchHelper.checkSort("Top matched");
@@ -135,20 +132,23 @@ public class SearchPropertiesPageTests extends TestBase{
 
         searchHelper.activateIdealFM(11);
 
-        //searchHelper.numberOfActiveFilters(1);
-        //searchHelper.activeFiltersIs("All properties");
+        searchHelper.filterOptionClick("Flatmates");
+        searchHelper.filterOptionClick("Live-in landlords");
+        searchHelper.filterOptionClick("Live-out landlords");
+        searchHelper.filterOptionClick("Select");
 
-        searchHelper.filterOptionClick("Agencies");
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Agencies");
         clickApply();
         sleep(2000);
         Assert.assertEquals(getCardUserType(), cardsUserTypeAgent());
 
-        searchHelper.clickMyIdealFM_FilterTypeUserVerify(5, 4);
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(1);
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Agencies");
-
+        //deactivate previous filter
+        searchHelper.filterOptionClick("Agencies");
+        //activate filter
         searchHelper.filterOptionClick("Flatmates");
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Flatmates");
@@ -156,44 +156,68 @@ public class SearchPropertiesPageTests extends TestBase{
         sleep(2000);
         Assert.assertEquals(getCardUserType(), cardsUserTypeFlatmate());
 
-        searchHelper.clickMyIdealFM_FilterTypeUserVerify(5, 0);
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(1);
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Flatmates");
-
+        //deactivate previous filter
+        searchHelper.filterOptionClick("Flatmates");
+        //activate filter
         searchHelper.filterOptionClick("Live-in landlords");
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Live-in landlords");
         clickApply();
         sleep(2000);
-        searchHelper.moveToPage(3, "3");
-
         Assert.assertEquals(getCardUserType(), cardsUserTypeLive_in());
 
-        searchHelper.clickMyIdealFM_FilterTypeUserVerify(5, 1);
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(1);
+        searchHelper.numberOfActiveFilters(1);
+        searchHelper.activeFiltersIs("Live-in landlords");
+        //deactivate previous filter
+        searchHelper.filterOptionClick("Live-in landlords");
+        //activate filter
         searchHelper.filterOptionClick("Live-out landlords");
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Live-out landlords");
         clickApply();
         sleep(2000);
-        searchHelper.moveToPage(3, "3");
-
         Assert.assertEquals(getCardUserType(), cardsUserTypeLive_out());
 
-        searchHelper.moveToPage(1, "1");
-        searchHelper.clickMyIdealFM_FilterTypeUserVerify(6, 2);
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(1);
+        searchHelper.numberOfActiveFilters(1);
+        searchHelper.activeFiltersIs("Live-out landlords");
+        //deactivate previous filter
+        searchHelper.filterOptionClick("Live-out landlords");
+        //activate filter
         searchHelper.filterOptionClick("Select");
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Select");
         clickApply();
         sleep(2000);
-
-        Assert.assertEquals(getCardUserSelectLabel(), cardsUserTypeSelectLabel());
         Assert.assertEquals(getCardUserType(), cardsUserTypeSelect());
+        Assert.assertEquals(getCardUserSelectLabel(), cardsUserTypeSelectLabel());
 
         searchHelper.moveToPage(1, "1");
-        searchHelper.clickMyIdealFM_FilterTypeUserVerify(6, 4);
+        Assert.assertEquals(getCardUserType(), cardsUserTypeSelect());
+        Assert.assertEquals(getCardUserSelectLabel(), cardsUserTypeSelectLabel());
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(1);
         searchHelper.filterOptionClick("Select");
-        searchHelper.clickMyIdealFM_FilterTypeUserVerify(6, 0);
+        clickApply();
+        sleep(2000);
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(0);
+        clickApply();
+        sleep(2000);
+
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(0);
+        searchHelper.filterOptionClick("Agencies");
+        searchHelper.filterOptionClick("Flatmates");
+        searchHelper.filterOptionClick("Live-in landlords");
+        searchHelper.filterOptionClick("Live-out landlords");
+        searchHelper.filterOptionClick("Select");
+        clickApply();
+        sleep(1000);
+        searchHelper.clickMyIdealFM_FilterTypeUserVerify(5);
+        clickApply();
+        sleep(1000);
 
         helperBase.toHomePage();
     }

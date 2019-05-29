@@ -39,15 +39,15 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchPropertyHome("#0012906");
-        paymentsHelper.verificationPhone("XXXX");
-        getMessageHelper().clickPhoneReveal();
-        paymentsHelper.verificationPremiumPopup("Get access to all properties");
-        paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
-        paymentsHelper.verificationPaymentPage("Premium Flathunter");
+        paymentsHelper.verificationNoPhone();
+        //getMessageHelper().clickPhoneReveal();
+        //paymentsHelper.verificationPremiumPopup("Get access to all properties");
+        //paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
+        //paymentsHelper.verificationPaymentPage("Premium Flathunter");
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    //@Test
     public void goPremiumFHPaymentOnMessage() {
 
         authorizationHelper.login("passwUniv", "FMNotPaid");
@@ -55,17 +55,17 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Borris");
         searchHelper.searchPropertyHome("#0012906");
         getMessageHelper().clickPropertyContact();
-        paymentsHelper.clickUpgradePremiumFH("Upgrade to get a faster reply");
-        paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
-        paymentsHelper.verificationPaymentPage("Premium Flathunter");
+        paymentsHelper.noUpgradePremiumFH("Upgrade to get a faster reply");
+        //paymentsHelper.clickUpgradePremiumFH("Upgrade Now");
+        //paymentsHelper.verificationPaymentPage("Premium Flathunter");
         authorizationHelper.logoutFromApp();
     }
 
-    @Test
+    //@Test
     public void premiumFHPaymentWorldPay() {
 
         authorizationHelper.goToPropertyPage();
-        authorizationHelper.clickCloseSignUpFMPage();
+        //authorizationHelper.clickCloseSignUpFMPage();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
@@ -78,7 +78,7 @@ public class PaymentTests extends TestBase {
         signUpHelper.whereWouldLikeLive("watf", "Watford");
 
         signUpHelper.budgetMin();
-        signUpHelper.budgetMax();
+        //signUpHelper.budgetMax();
         signUpHelper.verifyToMoveCheckboxDisabled();
         signUpHelper.clickYourInformationContinue();
 
@@ -86,7 +86,7 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         addPropertyHelper.openDropDownMenu();
-        paymentsHelper.goToPaymentsTab();
+        addPropertyHelper.chooseFromDropDownMenu("Payments");
 
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
         //paymentsHelper.selectPremiumFlathunterPlan();
@@ -101,7 +101,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
@@ -123,7 +123,8 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         addPropertyHelper.pressAddListingFromBody();
-        addPropertyHelper.addListingWithoutPhoto("SE1", "Bermondsey", "2", "900",  "London SE1, UK");
+        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("SE1", "London SE1, UK",
+                "Bermondsey", "2",  "900", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
 
@@ -140,18 +141,19 @@ public class PaymentTests extends TestBase {
         verificationHelper.verifyPackagePurchaseList("ideal flatmate Essentials");
         closeMatchPopUp();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
+
         verificationHelper.promoteCard();
         verificationHelper.packageOnCard("Essentials listing", "default");
 
         addPropertyHelper.openDropDownMenu();
-        paymentsHelper.goToPaymentsTab();
+        addPropertyHelper.chooseFromDropDownMenu("Payments");
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
@@ -161,7 +163,7 @@ public class PaymentTests extends TestBase {
 
         authorizationHelper.goToFMpage();
 
-        authorizationHelper.clickCloseSignUp();
+        authorizationHelper.clickClosePopupSignUp();
 
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("Live-out landlord");
@@ -173,10 +175,14 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhoto("lon", "Chalk Farm", "15", "1333",
-                                                "London Euston, London, UK");
+        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("lon", "London Euston, London, UK",
+                "Chalk Farm", "15","1333", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
+
+        addPropertyHelper.openDropDownMenu();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        paymentsHelper.goToPaymentsTabInnerMenuUpgrade();
 
         paymentsHelper.defaultPlanActiveIs("Monthly", "16", "22", "34");
         paymentsHelper.clickPlan("Weekly");
@@ -197,14 +203,14 @@ public class PaymentTests extends TestBase {
         verificationHelper.packageOnCard("Premium listing", "primary");
 
         addPropertyHelper.openDropDownMenu();
-        paymentsHelper.goToPaymentsTab();
+        addPropertyHelper.chooseFromDropDownMenu("Payments");
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
 
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
@@ -261,14 +267,16 @@ public class PaymentTests extends TestBase {
         verificationHelper.packageOnCard("Premium listing", "primary");
 
         addPropertyHelper.openDropDownMenu();
-        paymentsHelper.goToPaymentsTab();
+        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        closeMatchPopUp();
+        paymentsHelper.goToPaymentsSubscriptionMenu();
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
@@ -288,8 +296,7 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.saveQuitHeaderMenuListing();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
-        addPropertyHelper.openDropDownMenu();
-        paymentsHelper.goToPaymentsTab();
+        paymentsHelper.goToPaymentsTabNoProperty();
 
         paymentsHelper.upgradeListingProfOld("1-2");
 
@@ -316,14 +323,14 @@ public class PaymentTests extends TestBase {
         verificationHelper.packageOnCard("Essentials listing", "default");
 
         addPropertyHelper.openDropDownMenu();
-        paymentsHelper.goToPaymentsTab();
+        addPropertyHelper.chooseFromDropDownMenu("Payments");
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
 

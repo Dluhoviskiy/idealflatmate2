@@ -205,8 +205,8 @@ public class MatchingHelper extends HelperBase {
         $(byXpath("//a[contains(.,'Quit')]")).click();
     }
 
-    public void endQuizGo() {
-        $(byXpath("//button[contains(.,'Go')]")).click();
+    public void end_Update_Quiz(final String text) {
+        $(byXpath("//button[contains(.,'" + text + "')]")).click();
         $(byXpath("//div[@class='alert alert-success']")).waitUntil(visible, 15000).getText().contains("Well done! Thanks for " +
                 "answering these questions. We can now match you with compatible flatmates." +
                 " Remember, you can change your answers at any time in the ");

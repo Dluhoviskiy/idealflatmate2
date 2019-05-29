@@ -24,13 +24,14 @@ public class MatchingTests extends TestBase {
         signUpHelper.clickRoom1();
 
         signUpHelper.signListingFM_LiveIn("fmMatch", "passwUniv", "2",
-                                          "6", "2000", "85296200", "19", "Ronaldina", "Professional", "Student");
+                                          "6", "2000", "85296200", "19", "Ronaldina",
+                "Professional", "Student");
 
         signUpHelper.preferredLocation("Watf", "Watford");
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.budgetMin();
-        signUpHelper.budgetMax();
+        //signUpHelper.budgetMax();
         signUpHelper.verifyToMoveCheckboxDisabled();
         signUpHelper.clickYourInformationContinue();
 
@@ -51,11 +52,11 @@ public class MatchingTests extends TestBase {
         verificationHelper.checkMatchingConcurrence("30% complete");
         matchingHelper.chooseMatchingFromDropDownMenu();
         matchingHelper.verificationResultOfSixMatching();
-        matchingHelper.endQuizGo();
+        matchingHelper.end_Update_Quiz("Update results");
         //getAddPropertyHelper().openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
 
-        authorizationHelper.chooseSettingsFromDashboard();
+        authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
         helperBase.toHomePage();
@@ -66,7 +67,7 @@ public class MatchingTests extends TestBase {
     public void startMatchingOnFMSearchPage() {
 
         authorizationHelper.goToFMpage();
-        authorizationHelper.clickCloseSignUp();
+        authorizationHelper.clickClosePopupSignUp();
         matchingHelper.clickMatchBanner();
         matchingHelper.quitQuiz();
         verificationHelper.isFMPage();
@@ -82,7 +83,7 @@ public class MatchingTests extends TestBase {
     public void startMatchingQuizPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
-        authorizationHelper.clickCloseSignUp();
+        authorizationHelper.clickClosePopupSignUp();
         matchingHelper.clickMatchBanner();
         matchingHelper.enterFirstName("Reno");
         matchingHelper.clickARoom();
@@ -98,7 +99,7 @@ public class MatchingTests extends TestBase {
         authorizationHelper.goToPropertyPage();
 
         searchHelper.clearLocation();
-        searchHelper.selectSearchPropPage("SW3");
+        searchHelper.clickSearchPropPage("SW3 1hw");
 
 
         addPropertyHelper.clickCardWithMatch();

@@ -16,7 +16,7 @@ public class MessageHelper extends HelperBase {
     public void chooseAnyMessageFromList() {
 
         //$(".list-group").shouldBe(Condition.visible).click();
-        $(byXpath("//p[contains(text(), 'Hi there! It looks great!')]")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//p[contains(., 'Hi there! It looks great!')]")).waitUntil(Condition.appears, 4000).click();
     }
 
     public void typeAndSendMessage(String message) {
@@ -25,7 +25,7 @@ public class MessageHelper extends HelperBase {
         $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
 
         if ($(byXpath("//img[@id='imgSrc']")).is(exist)) {
-            $(byXpath("(//p[contains(text(), 'See the newest London')])[1]")).shouldBe(appear).hover();
+            $(byXpath("(//p[contains(., 'See the newest London')])[1]")).shouldBe(appear).hover();
             $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
             submit.shouldBe(visible).click();
         } else {
@@ -48,13 +48,13 @@ public class MessageHelper extends HelperBase {
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
             if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
                 $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
-                $(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
+                $(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
                     if ($(byXpath("//li/a[@page='2']")).isDisplayed()) {
                         $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
                         sleep(5000);
-                        $(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
+                        $(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
                 }
-        }else{$(byXpath("//p[contains(text(), '" + massage + "')]")).waitUntil(Condition.appears, 8000).click();}
+        }else{$(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();}
    }
 
     public void chooseMesTabView() {
@@ -166,6 +166,7 @@ public class MessageHelper extends HelperBase {
     }
 
     public void photoOfOwnerInMesBuddy_up(String photo1) {
+            sleep(1000);
             if (photo1.endsWith("no-picture-circle.jpg")) {
                 String photo2 = photo1.substring(55, 65);
                 String messagePhoto = $(byXpath("//section[@id='property-infos']//div[@id='fixed-sidebar']//a/ img")).getAttribute("src").substring(54, 64);
@@ -204,6 +205,11 @@ public class MessageHelper extends HelperBase {
         $$(byXpath("//div[@class='text-14 u_m15-left u_m5-top-sm u_m10-top-lg']")).get(0).click();
     }
 
+    public void messageToPropertyExist(final String idProperty) {
+        $(byXpath("//div[@class='col-md-5 u_ea-right-md']/em[contains(.,'" + idProperty + "')]")).should(exist);
+
+    }
+
     public void propertyPostcodeVerifying(String postCode) {
         String messageInbox = $(byXpath("//section//div[h2[contains(.,'Location')]]//p")).text();
         messageInbox.endsWith(postCode);
@@ -224,7 +230,7 @@ public class MessageHelper extends HelperBase {
         $(byXpath("//button[@class='btn-cancel']")).click();
         $(byXpath("//button[@class='btn btn-success']")).click();
         sleep(2000);
-        $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(text(text)).click();
+        $(byXpath("(//div[@class='msg msg-sent'][last()]//span[last()])[2]")).shouldHave(text(text)).click();
         sleep(2000);
     }
 
@@ -232,14 +238,14 @@ public class MessageHelper extends HelperBase {
     public void verifyMemberImgInboxNumber(int numberOfUsers) {
         sleep(3000);
         int memberNumber = $$(byXpath("(//div[contains(@class,'col-xs-9 col-md-10')]//strong[contains(.,'Ronald')]/../../../..//div[@class='circle-card-img'])[1]/img")).size();
-        Assert.assertTrue(memberNumber==numberOfUsers);
+        Assert.assertEquals(memberNumber,numberOfUsers);
     }
 
 
     public void numberConverInbox(int numberOfConv) {
         sleep(3000);
         int converNumber = $$(byXpath("//div[@class='text-14 u_m15-left u_m5-top-sm u_m10-top-lg']")).size();
-        Assert.assertTrue(converNumber==numberOfConv);
+        Assert.assertEquals(converNumber,numberOfConv);
     }
 
     public void backToInbox() {

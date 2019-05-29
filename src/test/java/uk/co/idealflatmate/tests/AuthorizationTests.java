@@ -2,11 +2,14 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickLogInButtonInForm;
+import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickSignInButtonInForm;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
@@ -24,7 +27,7 @@ public class AuthorizationTests extends TestBase {
     public void classicLogInOut() {
 
         authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
+        clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMNotPaid");
         authorizationHelper.setPassword("passwUniv");
         authorizationHelper.submitLogin();
@@ -69,7 +72,7 @@ public class AuthorizationTests extends TestBase {
 
         //helperBase.pageUrlHomeNew();
         authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
+        clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("fmNotPaid5");
         authorizationHelper.setPassword("passwUniv");
         authorizationHelper.submitLogin();
@@ -84,7 +87,7 @@ public class AuthorizationTests extends TestBase {
 
         clearCache();
         authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
+        clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMNotPaid");
         authorizationHelper.setPassword("passwWrong");
         authorizationHelper.submitLogin();
@@ -100,8 +103,8 @@ public class AuthorizationTests extends TestBase {
 
         pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.clickLoginWithFacebook1();
+        clickSignInButtonInForm();
+        authorizationHelper.clickSignUp_In_WithFacebook();
         authorizationHelper.LoginFacebookWithActiveAccount(ConfData.getData("FB1"), ConfData.getData("passwFB1"));
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
@@ -137,8 +140,8 @@ public class AuthorizationTests extends TestBase {
         matchingHelper.clickContinueMatching18();
         matchingHelper.clickContinueMatching19();
         matchingHelper.clickContinueMatching20();
-
-        authorizationHelper.clickLoginWithFacebook();
+        clickLogInButtonInForm();
+        authorizationHelper.clickSignUp_In_WithFacebook();
         authorizationHelper.LoginFacebookWithActiveAccount(ConfData.getData("FB1"), ConfData.getData("passwFB1"));
         verificationHelper.verificationUserNameOnHomePage("Alex");
         authorizationHelper.logoutFromApp();
@@ -152,7 +155,7 @@ public class AuthorizationTests extends TestBase {
     public void invalidLoginWithEmptyFields() {
 
         authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
+        clickSignInButtonInForm();
         authorizationHelper.submitLogin();
         verificationHelper.VerificationLoginError();
         verificationHelper.VerificationPasswordError();
@@ -162,22 +165,12 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void logInMesPropVerifProfilePageFull() {
-        String location1 = "Crewe";
-        String location2 = "Crofton Park";
-        String location3 = "South London";
-        String location4 = "Notting Hill";
-        String location5 = "West London";
-        String location6 = "Ealing";
-        String location7 = "Nottingham";
-        String location8 = "Hounslow";
-        String location9 = "West Hounslow";
-        String name = "Property1";
-        String age = "22";
+
 
         searchHelper.searchPropertyByEnter("Hounslow");
         searchHelper.closePopupSignup();
         messageHelper.clickPropertyCardMessageUnlogged(0);
-        authorizationHelper.clickSignInButtonInForm();
+        clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMwithoutSub");
         authorizationHelper.setPassword("passwUniv");
         authorizationHelper.submitLogin();
@@ -186,16 +179,9 @@ public class AuthorizationTests extends TestBase {
         verificationHelper.verifyPageMessage();
 
         messageHelper.clickMessageOwnerIcon();
-        verificationHelper.profileDisplays("70%\n" + "complete",
-                "User Type\n" + "Personal Details\n" +  "Your ideal flatmate",
-                 name, age, "I have a room available",
-                "About me\n" + name +", "+age+" is a male professional looking for flatmates in" +
-                        " "+location1+" or "+location2+", "+location3+" or "+location4+", "+location5+" or" +
-                        " "+location6+", "+location5+" or "+location7+" or "+location8+", "+location9+".",
-                " Weston Rd, "+location1+" CW1 6NA, UK\n" + " "+location2+", SE4 2BY\n" +
-                        " "+location4+", W11 4UL\n" + " "+location6+", W13 0DD\n" +
-                        " Upper Parliament Street (Stop U1), "+location7+" NG1 6LD, UK\n" + " "+location8+", TW3 3LF",
-                6);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete14",  "myProfile14",
+                "name14", "age14","lookingFor14", "aboutMe14","rooms14",
+                "amountPropCards14"));
 
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -209,9 +195,9 @@ public class AuthorizationTests extends TestBase {
         searchHelper.closePopupSignup();
 
         messageHelper.clickCardImgProperty("80-82 Staines Rd, Hounslow TW3 3LF, UK");
-        //authorizationHelper.clickCloseSignUp();
+        //authorizationHelper.clickClosePopupSignUp();
         messageHelper.clickPropertyContact();
-        authorizationHelper.clickFormSignInContact();
+        clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMwithoutSub");
         authorizationHelper.setPassword("passwUniv");
         authorizationHelper.submitLogin();
@@ -226,9 +212,9 @@ public class AuthorizationTests extends TestBase {
     public void logInMessageFM() {
 
         authorizationHelper.goToFMpage();
-        authorizationHelper.clickCloseSignUp();
+        authorizationHelper.clickClosePopupSignUp();
         getMessageHelper().clickFMCardMessageUnlogged();
-        authorizationHelper.clickFormSignInContact();
+        clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMwithoutSub2");
         authorizationHelper.setPassword("passwUniv");
         authorizationHelper.submitLogin();
@@ -243,10 +229,10 @@ public class AuthorizationTests extends TestBase {
     public void logInContactFM() {
 
         authorizationHelper.goToFMpage();
-        authorizationHelper.clickCloseSignUp();
+        authorizationHelper.clickClosePopupSignUp();
         getMessageHelper().clickFMCardFirstOnPage();
         getMessageHelper().clickFMContact();
-        authorizationHelper.clickFormSignInContact();
+        clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMwithoutSub2");
         authorizationHelper.setPassword("passwUniv");
         authorizationHelper.submitLogin();

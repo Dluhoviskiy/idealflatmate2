@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -12,6 +13,11 @@ import static com.codeborne.selenide.Selenide.switchTo;
 public class PaymentsHelper extends HelperBase {
 
     public final AddPropertyHelper addPropertyHelper = new AddPropertyHelper();
+
+    private SelenideElement tab_Upgrade_Header = $(byXpath("//nav//span[contains(text(), 'Upgrade')]"));
+    private SelenideElement tab_Subscription_InnerMenu = $(byXpath("//body//div[@class='inner-menu--scroll']//li/a[contains(., 'Subscription')]"));
+    private SelenideElement tab_Upgrade_InnerMenu = $(byXpath("//body//div[@class='inner-menu--scroll']//li/a[contains(., 'Upgrade')]"));
+
 
     public void fillinDebitCardData(String name, String cardNumber, String month, String year, String cvc) {
         switchTo().frame("_iframe_holder");
@@ -27,7 +33,7 @@ public class PaymentsHelper extends HelperBase {
         sleep(1000);
         $(byXpath("//div[@id='_el_input_cvc']/input")).setValue(cvc);
         sleep(1000);
-        addPropertyHelper.messageHelper.click(byXpath("//div[@id='_el_button_save']/button"));
+        $(byXpath("//div[@id='_el_button_save']/button")).click();
         sleep(3000);
     }
 
@@ -36,24 +42,35 @@ public class PaymentsHelper extends HelperBase {
     }
 
     public void upgradePremiumFH() {
-        addPropertyHelper.messageHelper.click(byXpath("//button[contains(text(), 'Upgrade to Premium Flathunter')]"));
+        $(byXpath("//button[contains(text(), 'Upgrade to Premium Flathunter')]")).click();
     }
 
     public void checkout() {
-        addPropertyHelper.messageHelper.click(byXpath("//button[contains(text(), 'Check out')]"));
+        $(byXpath("//button[contains(text(), 'Check out')]")).click();
     }
 
     public void selectPremiumFlathunterPlan() {
-        addPropertyHelper.messageHelper.click(byXpath("//*[@id=\"ProfessionalPaymentForm\"]/div/table/tbody/tr[4]/td/button"));
+        $(byXpath("//*[@id=\"ProfessionalPaymentForm\"]/div/table/tbody/tr[4]/td/button")).click();
     }
 
-    public void goToPaymentsTab() {
+    public void goToPaymentsSubscriptionMenu() {
+        tab_Subscription_InnerMenu.click();
+    }
 
-        addPropertyHelper.messageHelper.click(byXpath("//span[contains(text(), ' Payments')]"));
+    public void goToPaymentsTabNoProperty() {
+        tab_Upgrade_Header.click();
+    }
+
+    public void goToPaymentsTabInnerMenuUpgrade() {
+        tab_Upgrade_InnerMenu.click();
     }
 
     public void verificationPhone(String text) {
-        $(byXpath("//section[@id='property-infos']//span[@class='property-phone_hide js-phone-box']")).waitUntil(visible, 10000).shouldHave(text(text));
+        $(byXpath("//section[@id='property-infos']//span[@class='property-phone_hide js-phone-box']")).
+                waitUntil(visible, 10000).shouldHave(text(text));
+    }
+    public void verificationNoPhone() {
+        $(byXpath("//section[@id='property-infos']//span[@class='property-phone_hide js-phone-box']")).shouldNotBe(visible);
     }
 
     public void verificationPremiumPopup(String text) {
@@ -72,6 +89,11 @@ public class PaymentsHelper extends HelperBase {
 
     public void clickUpgradePremiumFH(String text) {
         $(byText(text)).click();
+
+    }
+
+    public void noUpgradePremiumFH(String noText) {
+        $(byText(noText)).shouldNotBe(visible);
 
     }
 

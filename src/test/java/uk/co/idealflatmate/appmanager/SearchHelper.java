@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import com.google.common.collect.Ordering;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import utils.ConfDataProperty;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +16,40 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchHelper extends HelperBase {
-    SelenideElement clearSearchBar = $(byXpath("//form[@id='search-location']//input"));
+
+    public static final String cardProp_Image = "//div[@id='property_card_";
+    public static final String cardProp_Image_End = "']//div[@class='card-top-profile-img u_p5-right']/img";
+    public static final String cardProp_Username = "//div[@id='property_card_";
+    public static final String cardProp_Username_End = "']//span[@class='card-top-username']";
+    public static final String headerTitle = "//head/title";
+    public static final String postCode = "//div[@id='property_card_";
+    public static final String postCode_End = "']//div[@class='card-infos-left']/div";
+
+
+
+    public static String getPropertyImage(String property_id) {
+        String getPropertyImage = $(byXpath(cardProp_Image+ConfDataProperty.getData(property_id)+cardProp_Image_End)).getAttribute("src");
+        return getPropertyImage;
+    }
+    public static String getPropertyOwner(String property_id) {
+        String getPropertyOwner = $(byXpath(cardProp_Username+ConfDataProperty.getData(property_id)+cardProp_Username_End)).text();
+        return getPropertyOwner;
+    }
+    public static String getPropertyTitle() {
+        String getPropertyTitle = $(byXpath(headerTitle)).text();
+        return getPropertyTitle;
+    }
+    public static String getPropertyPostCode(String property_id) {
+        String getPropertyPostCode = $(byXpath(postCode+ConfDataProperty.getData(property_id)+postCode_End)).text();
+        return getPropertyPostCode;
+    }
+
+
+
+    private String inputSearch = "form input.react-autosuggest__input";
+    public static SelenideElement field_searchBar_listing = $(byXpath("//form[@id='search-location']//input"));
+
+
 
     public void searchPropertyHome(String location) {
 
@@ -29,14 +63,14 @@ public class SearchHelper extends HelperBase {
     public void searchPropertyHome1(String location) {
 
         String val = location;
-        SelenideElement element = $("input.react-autosuggest__input");
+        SelenideElement element = $(inputSearch);
 
         for (char  c : val.toCharArray()) {
             sleep(500);
             String s = String.valueOf(c);
             element.sendKeys(s);
         }
-
+        sleep(1000);
         element.pressEnter();
     }
 
@@ -82,9 +116,18 @@ public class SearchHelper extends HelperBase {
         return getNumberOfListing;
     }
 
-    public void verificationSearchProperty(String listingNumber) {
+    public static String getNumberOfListingFound() {
+        String getNumberOfListing = String.valueOf($(byXpath("//h2[@class='text-14']")).text().substring(0, 12).replaceAll("[^0-9]", ""));
+        return getNumberOfListing;
+    }
+
+    public void verificationSearchProperty(String listingNumber, final String text, final String text1) {
 
         $(byXpath("//h1[@class='h4']")).waitUntil(visible, 15000).shouldHave(text(listingNumber));
+        String number = getNumberOfListingFound();
+        if(number.equals("1") || number.equals("0")){
+            $(byXpath("//h2[@class='text-14']")).waitUntil(visible, 15000).shouldHave(text(text1));
+        } else $(byXpath("//h2[@class='text-14']")).waitUntil(visible, 15000).shouldHave(text(text));
     }
 
     public void verificationSearchPropertyMap(String location) {
@@ -92,8 +135,14 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void verificationSearchPropertyMes(String location, int IndexOfListing) {
-        $$(byXpath("//div[@class='flex-search-columns']//div[@class='row u_m0 u_m5-top']")).get(IndexOfListing).waitUntil(visible, 30000).shouldHave(text(location));
+    public void verificationSearchPropertyMes(String location, String IndexOfListing) {
+
+        $$(byXpath("//div[@class='flex-search-columns']//div[@class='row u_m0 u_m5-top']")).get((Integer.parseInt(ConfDataProperty.getData(IndexOfListing)))).waitUntil(visible, 30000).shouldHave(text(ConfDataProperty.getData(location)));
+
+    }
+
+    public void verificationSearchPropertyMesLive(String location, final String idProperty) {
+        $(byXpath("//div[@id='property_card_" + idProperty + "']//div[@class='row u_m0 u_m5-top']")).waitUntil(visible, 30000).shouldHave(text(location));
 
     }
 
@@ -199,6 +248,7 @@ public class SearchHelper extends HelperBase {
         sleep(3000);
         radius1.click();
 
+
     }
 
     public static void activeBudget() {
@@ -238,7 +288,7 @@ public class SearchHelper extends HelperBase {
     }
 
     public void activateIdealFM( final int fiterNumberIs) {
-        $(By.xpath("//div[@class='ideal-flatmate-filter ']")).click();
+        clickIdealFMFilterActiveInactive();
         $$(By.xpath("//div[@class='circle-btn-group']/label")).shouldHaveSize(fiterNumberIs);
 
     }
@@ -262,13 +312,17 @@ public class SearchHelper extends HelperBase {
     }
 
 
-    public void clickMyIdealFM_FilterTypeUserVerify(int numberTypes, int indexOfActiveFilter) {
-        String userTypeActive = "(//div[@class='circle-btn-group'])[3]/label[@class='circle" +
-                "-button-with-text active']";
-        ElementsCollection userTypeIcon = $$(By.xpath("userTypeActive"));
-        moreFilterClick();
+    public void clickMyIdealFM_FilterTypeUserVerify(int numberTypes) {
+        //FilterIdealClick();
+        clickIdealFMFilterActiveInactive();
+        //active filter
+        String userTypeActive = "//div[contains(@class,'search-panel')]//label[@class='circle-button-with-text active']";
+        //collection of active filter
+        ElementsCollection userTypeIcon = $$(byXpath(userTypeActive));
+        //number of active filter
         userTypeIcon.shouldHaveSize(numberTypes);
-        if($(userTypeActive).exists()){userTypeIcon.get(indexOfActiveFilter).isEnabled();}
+        //which filter is active by number
+        //if($(byXpath(userTypeActive)).exists()){userTypeIcon.get(indexOfActiveFilter).isEnabled();}
 
     }
 
@@ -306,8 +360,8 @@ public class SearchHelper extends HelperBase {
         SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
         //SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
 
-        if(clearSearchBar.exists()){
-            clearSearchBar.click();
+        if(field_searchBar_listing.exists()){
+            field_searchBar_listing.click();
 
         }
         sleep(3000);
@@ -324,25 +378,6 @@ public class SearchHelper extends HelperBase {
 
 
     }
-
-
-
-    public void selectSearchPropPage(String location) {
-        SelenideElement searchField = $(byXpath("//div[@class='search-location-form']//input"));
-        //SelenideElement searchElastic = $(byXpath("//span[contains(.,'"+location1+"')]"));
-
-        if(clearSearchBar.exists()){
-            clearSearchBar.click();
-
-        }
-        sleep(3000);
-        searchField.click();
-        searchField.setValue(location);
-        $(byXpath("//body//div//form//div[starts-with(@class,'react')]//li[@class='react-autosuggest__suggestion']//span[contains(.,'3')]")).click();
-
-    }
-
-
 
     public void clearSearch() {
         $(byXpath("//form//span[@class='clear-location ']")).click();
@@ -394,7 +429,7 @@ public class SearchHelper extends HelperBase {
 
     public void verifSearchHasLocation(String location) {
 
-        $(byXpath("//h1[@class='h4' and contains(.,'"+location+"')]")).waitUntil(visible, 15000).should(exist);
+        $("form input.react-autosuggest__input").waitUntil(visible, 15000).shouldHave(value(location));
     }
 
 
@@ -405,7 +440,7 @@ public class SearchHelper extends HelperBase {
         clearFilter();
         $(byXpath("//div[@class='bedrooms-filter selected']")).click();
         clearFilter();
-        $(By.xpath("//div[@class='ideal-flatmate-filter selected']")).click();
+        clickIdealFMFilterActiveInactive();
         clearFilter();
     }
 
@@ -446,7 +481,7 @@ public class SearchHelper extends HelperBase {
     }
 
     public void clearLocation() {
-        clearSearchBar.click();
+        field_searchBar_listing.click();
 
 
     }
@@ -506,11 +541,51 @@ public class SearchHelper extends HelperBase {
         return cardsUserType;
 
     }
-    public void startBuddyupSearch(final String location, final String inDrop, final String radius, final String locationCardIs, final int indexOfCard) {
+    public void startBuddyUpSearch(final String location, final String inDrop, final String radius,
+                                   final String locationCardIs, final String indexOfCard) {
         searchPropertyBySelectfromList(location, inDrop);
         closePopupSignup();
         selectRadius(radius);
         verificationSearchPropertyMes(locationCardIs, indexOfCard);
+    }
+    public void startBuddyUpSearch1(final String location, final String inDrop, final String radius,
+                                    final String locationCardIs, final String idProperty) {
+        searchPropertyBySelectfromList(location, inDrop);
+        closePopupSignup();
+        selectRadius(radius);
+        verificationSearchPropertyMesLive(locationCardIs, idProperty);
+    }
+
+
+    public void clickIdealFMFilterActiveInactive() {
+        sleep(1000);
+        if ($(By.xpath("//div[@class='ideal-flatmate-filter selected']")).exists()){
+            $(By.xpath("//div[@class='ideal-flatmate-filter selected']")).click();
+        } else $(By.xpath("//div[@class='ideal-flatmate-filter ']")).click();
+
+    }
+
+    public static void getNumberOfListingFoundwq() {
+        String number = ($(byXpath("//h2[@class='text-14']")).text().substring(0, 12).replaceAll("[^0-9]", ""));
+
+
+        if ("".equals(number)) {
+            System.out.println("Вы ввели число 1");
+
+        } else if ("d".equals(number)) {
+            System.out.println("Вы ввели число 2");
+
+        } else if ("df".equals(number)) {
+            System.out.println("Вы ввели число 3");
+
+        } else if ("dsf".equals(number)) {
+            System.out.println("Вы ввели число 4");
+
+        } else {
+            System.out.println("Вы ввели неправильное число");
+        }
+
+
     }
 
 }

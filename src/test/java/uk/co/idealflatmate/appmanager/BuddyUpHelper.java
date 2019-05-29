@@ -16,6 +16,7 @@ public class BuddyUpHelper extends HelperBase {
     static SelenideElement dragLow = $(byXpath("//div[@id='js-groups-list']//div[@class='noUi-handle noUi-handle-lower']"));
     static SelenideElement dragUpper = $(byXpath("//div[@id='js-groups-list']//div[@class='noUi-handle noUi-handle-upper']"));
     SelenideElement createGroupButton = $(byXpath("//section[@id='property-infos']//a[contains(.,'Create a Group')]"));
+    SelenideElement closebuddyPopup = $(byXpath("//div[@id='introducingBuddyUpGroupModal' and contains(@style,'display: block;')]//div[@aria-label='Close']"));
 
     public void clickCardProperty() {
         $(byXpath("//div[@class='cards-container']//picture/img")).click();
@@ -46,8 +47,11 @@ public class BuddyUpHelper extends HelperBase {
 
 
     public void closeIntrodGroupsPopup() {
-        sleep(3000);
-        $(byXpath("//div[@id='introducingBuddyUpGroupModal']//div[@class='btn btn-sm close']")).click();
+        sleep(4000);
+        if(closebuddyPopup.exists()){
+            closebuddyPopup.click();
+        }
+
     }
 
 
@@ -70,6 +74,11 @@ public class BuddyUpHelper extends HelperBase {
         $$(byXpath("//section//div[contains(@class,'js-group-item')]//a[contains(.,'Learn')]")).get(selectGroup).click();
     }
 
+    public void myGroupPageClick(final String button) {
+        sleep(2000);
+        $(byXpath("//div//a[contains(.,'" + button + "')]")).click();
+    }
+
     public void removeGroup(int indexGroup) {
         sleep(2000);
         $$(byXpath("//section[@class='modal-content']//a[contains(.,'Remove group')]")).get(indexGroup).click();
@@ -89,6 +98,7 @@ public class BuddyUpHelper extends HelperBase {
         sleep(2000);
         $(byXpath("//section//div[@class='modal-dialog vertical-align-center']//a[contains(.,'Say hi')]")).click();
     }
+
 
     public void assertNumberOfGroupsPropPage(int numberOfGroups) {
         sleep(3000);
@@ -145,8 +155,8 @@ public class BuddyUpHelper extends HelperBase {
     }
 
     public void postGroupButtonEdit() {
-        sleep(5000);
-        $(byXpath("//div[contains(@class,'col-xs-12')]//button[contains(.,'Post this group')]")).click();
+        sleep(2000);
+        $(byXpath("(//div[contains(@class,'col-xs-12')]//button[contains(.,'Post this group')])[1]")).click();
 
     }
 
@@ -223,9 +233,23 @@ public class BuddyUpHelper extends HelperBase {
         $$(byXpath("//div[contains(@class, 'page-content main-content dashboard messages')]//a[@class='u_ed-inline-block messages-top-images--item']")).get(1).click();
     }
 
+    public String minBudget() {
+        String minBudget = $(byXpath("//div[@class='item'][strong[contains(.,'Min. budget per renter')]]/p")).text();
+        //String moving = $(byXpath("//div[@class='item'][strong[contains(.,'TARGET MOVING DATE')]]/p")).text();
+        return minBudget;
+
+    }
+
+    public String movingData() {
+        //String minBudget = $(byXpath("//div[@class='item'][strong[contains(.,'Min. budget per renter')]]/p")).text();
+        String movingData = $(byXpath("//div[@class='item'][strong[contains(.,'TARGET MOVING DATE')]]/p")).text();
+        return movingData;
+
+    }
+
     public void veryfyGroupEditData(String minBudget, String movingDate) {
-        $(byXpath("//div[@class='item'][strong[contains(.,'Min. budget per renter')]]/p")).shouldHave(Condition.text(minBudget));
-        $(byXpath("//div[@class='item'][strong[contains(.,'TARGET MOVING DATE')]]/p")).shouldHave(Condition.text(movingDate));
+        $(byXpath("(//dd[@class='text-bold text-11-xs'])[1]")).shouldHave(Condition.text(minBudget));
+        $(byXpath("(//dd[@class='text-bold text-11-xs'])[2]")).shouldHave(Condition.text(movingDate));
 
     }
 
@@ -236,5 +260,13 @@ public class BuddyUpHelper extends HelperBase {
         List<String> expected = Arrays.asList(memberData);
         //List<String> memberData = Collections.singletonList(memberData1);
         Assert.assertEquals(inf, expected);
+    }
+
+    public void crumbsVerif(final String area) {
+        $(byXpath("//ul[@class='custom-breadcrumbs']/li[contains(.,'" + area + "')]")).click();
+    }
+
+    public void genderBuddy_upGroupPageSelect(String gender) {
+        $(byXpath("(//section[@class='modal-content']//label[input[@name='BuddyupGroup[gender]' and @value='"+gender+"']])[1]")).click();
     }
 }

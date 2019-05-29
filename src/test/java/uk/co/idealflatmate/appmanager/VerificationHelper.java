@@ -6,7 +6,6 @@ import org.testng.Assert;
 
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
@@ -29,7 +28,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void verificationUserIsUnlogged(String SignUp) {
 
-        $(byXpath("//nav/a[@class]")).shouldHave(text(SignUp));
+        $(byXpath("//nav/a[@class]")).waitUntil(visible, 10000).shouldHave(text(SignUp));
     }
 
     public void VerificationPasswordError() {
@@ -50,7 +49,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void verifyTextMessage(String text) {
         sleep(5000);
-        $(byXpath("(//div[@class='msg msg-host msg-sent'][last()]//span[last()])[2]")).shouldHave(Condition.text(text));
+        $(byXpath("(//div[@class='msg msg-sent'][last()]//span[last()])[2]")).shouldHave(Condition.text(text));
     }
     public void verifyPageMessage() {
         $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));
@@ -88,23 +87,25 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
 
 
-    public void profileDisplays(final String percentComplete, final String myProfile, final String name, final String age, final String lookingFor, final String aboutMe, final String roomsLocation, final int amountPropertiesCard) {
+    public void profileDisplays(ProfileData profileData) {
         if($(byXpath("//div[contains(@class,'circularProgress__value')]")).exists()){
-            $(byXpath("//div[contains(@class,'circularProgress__value')]")).shouldHave(text(percentComplete));}
+            $(byXpath("//div[contains(@class,'circularProgress__value')]")).shouldHave(text(profileData.getPercentComplete()));}
         if($(byXpath("//ul[contains(@class,'nav dashboard-side-nav')]")).exists()){
-            $(byXpath("//ul[contains(@class,'nav dashboard-side-nav')]")).shouldHave(text(myProfile));}
-        $(byXpath("//h2[contains(@class,'profile-info--name_age')]/strong")).shouldHave(text(name));
+            $(byXpath("//ul[contains(@class,'nav dashboard-side-nav')]")).shouldHave(text(profileData.getMyProfile()));}
+        $(byXpath("//h2[contains(@class,'profile-info--name_age')]/strong")).shouldHave(text(profileData.getName()));
         if($(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).exists()){
-            $(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).shouldHave(text(age));}
+            $(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).shouldHave(text(profileData.getAge()));}
 
         if($(byXpath("//strong[contains(@class,'u_ed-block')]")).exists()){
-            $(byXpath("//strong[contains(@class,'u_ed-block')]")).shouldHave(text(lookingFor));
+            $(byXpath("//strong[contains(@class,'u_ed-block')]")).shouldHave(text(profileData.getLookingFor()));
         }
-        $(byXpath("//div[contains(@class,'u_p30 u_bg-white')]")).shouldHave(text(aboutMe));
+        $(byXpath("//div[contains(@class,'u_p30 u_bg-white')]")).shouldHave(text(profileData.getAboutMe()));
 
         if($(byXpath("//h4[contains(.,'My available rooms are ')]")).exists()){
-            $(byXpath("//ul[contains(@class,'geo-list u_m0 u_p0')]")).shouldHave(text(roomsLocation));
-            cardsOnThePage().shouldHaveSize(amountPropertiesCard);
+            $(byXpath("//ul[contains(@class,'geo-list u_m0 u_p0')]")).shouldHave(text(profileData.getRoomsLocation()));
+            collectionReturn("//ul[contains(@class,'geo-list u_m0 u_p0')]/li").shouldHaveSize(Integer.parseInt((profileData.getRoomsLocation())));
+            cardsOnThePage().shouldHaveSize(Integer.parseInt((profileData.getAmountPropertiesCard())));
+
         }
 
     }
@@ -354,7 +355,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
 
     public void isFMPage() {
-        $(byXpath("//h2[@class='h4' and contains(.,' flatmate')]")).shouldBe(visible);
+        $(byXpath("//h1[@class='h4' and contains(.,'Find Flatmates')]")).shouldBe(visible);
     }
 
     public void isPropertyPageLocation(String searchLocation) {
@@ -405,8 +406,8 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         $(byXpath("//div[@class='col-xs-6 col-sm-4 u_p10-bottom']")).shouldHave(text(" 0 bedroom available"));
     }
 
-    public void areaBlank() {
-        $(byXpath("//div[select[@id='property-area_link_id']]/p")).shouldHave(text("Area cannot be blank."));
+    public static void areaBlank(final String errorMessage) {
+        $(byXpath("//div[select[@id='property-area_link_id']]/p")).shouldHave(text(errorMessage));
 
     }
 

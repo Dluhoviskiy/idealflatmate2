@@ -55,9 +55,8 @@ public class FooterHelper extends HelperBase{
 
     public void verificationNLAWorks() {
         switchTo().window(0);
-        hoverCShouldExist("(//ul/li/a[contains(text(), 'Join the NLA')])[1]");
 
-        sleep(3000);
+        $(byXpath("(//ul/li/a[contains(text(), 'Join the NLA')])[1]")).waitUntil(visible, 10000).exists();
     }
 
     public void footerFB() {

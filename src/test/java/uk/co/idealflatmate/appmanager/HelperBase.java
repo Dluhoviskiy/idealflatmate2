@@ -3,7 +3,6 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -18,6 +17,8 @@ import static uk.co.idealflatmate.tests.TestBase.newPage;
 
 
 public class HelperBase  {
+
+    String cards = "//div[@class='card-body clearfix']";
 
 
 
@@ -77,6 +78,12 @@ public class HelperBase  {
         return $$(byXpath("//div[@class='card-matching text-uppercase text-12 text-center u_bg-orange']")).texts();
 
     }
+
+    public static int getCardUserSelectLabelNumber() {
+
+        return $$(byXpath("//div[@class='card-matching text-uppercase text-12 text-center u_bg-orange']")).size();
+
+    }
     public static void scrollDownPageOn(final String points) {
         executeJavaScript("scrollBy(0," + points + ")");
     }
@@ -85,19 +92,11 @@ public class HelperBase  {
 
     public void fillInField(String text, SelenideElement selElem) {
         sleep(1000);
-
         selElem.waitUntil(visible, 20000).click();
         selElem.waitUntil(visible, 20000).clear();
-        sleep(1000);
         selElem.waitUntil(visible, 20000).setValue(text);
     }
-    protected void fillInField1(String Number, SelenideElement selElem1, SelenideElement selElem2) {
-        selElem1.waitUntil(visible, 20000).click();
-        selElem2.waitUntil(visible, 20000).clear();
-        sleep(1000);
-        selElem2.waitUntil(visible, 20000).setValue(Number);
 
-    }
 
     public void gmailLogin(String text, String field, String next) {
         $(byXpath(field)).waitUntil(appears, 4000).click();
@@ -174,10 +173,10 @@ public class HelperBase  {
         elementHoverClick.click();
     }
 
-    public void hoverCShouldExist(String xpath) {
-        SelenideElement elementHoverClick = $(byXpath(""+xpath+"")).waitUntil(visible, 10000);
-        elementHoverClick.hover();
-        elementHoverClick.should(exist);
+    public static void hoverClick1(SelenideElement element) {
+        SelenideElement elementHoverClick = element;
+        elementHoverClick.waitUntil(visible, 10000).hover();
+        elementHoverClick.waitUntil(visible, 10000).click();
     }
 
     public void searchPropertyBy(String location, SelenideElement location1) {
@@ -195,18 +194,35 @@ public class HelperBase  {
     }
 
     public static void clickButton(final String textButton, final String byTag) {
+        sleep(1000);
         $(byXpath("//" + byTag + "[contains(.,'" + textButton + "')]")).click();
     }
 
-    public static  ElementsCollection cardsOnThePage () {
+    public static  ElementsCollection cardsOnThePage() {
         ElementsCollection cardsOnThePage = $$(byXpath("//div[@class='card-body clearfix']"));
-
         return cardsOnThePage;
     }
+
+    public static  ElementsCollection collectionReturn(final String xpath) {
+        ElementsCollection collectionReturn = $$(byXpath(xpath));
+        return collectionReturn;
+    }
+
+
+
+
 
     public static  String postCodeFromCard(final String id_property) {
         String postCodeFromCard = $(byXpath("//div[@id='property_card_" + id_property + "']//div[@class='card-infos-left']/div")).text();
 
         return postCodeFromCard;
     }
+    public static SelenideElement selenidElement(final SelenideElement sel_element) {
+        SelenideElement selenidElement = (sel_element);
+
+        return selenidElement;
+    }
+
+
+
 }

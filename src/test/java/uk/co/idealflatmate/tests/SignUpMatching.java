@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.ProfileData;
 
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
@@ -49,7 +50,7 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
 
-        signUpHelper.budgetMax();
+        //signUpHelper.budgetMax();
         signUpHelper.clickYourInformationContinue();
         verificationHelper.budgetError();
 
@@ -71,16 +72,9 @@ public class SignUpMatching extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.profileDisplays("80%\n" + "complete",
-                                            "User Type\n" + "Personal Details\n" +
-                                            "Property Preferences\n" + "Budget & Availability\n" +
-                                            "Your ideal flatmate",
-                                            name, age, "I'm looking for a room",
-                                            "About me\n" + "Tell us about yourself\n" +
-                                                    "Maximum budget: £1250/month\n" +
-                                                    "Ready to move in: 08-08-2019\n" +
-                                                    "Looking for a room in\n" + location,
-                                                    "no rooms", 0);
+        verificationHelper.profileDisplays(new ProfileData("percentComplete8",  "myProfile8",
+                "name8", "age8","lokingFor8", "aboutMe8","rooms8",
+                "amountPropCards8"));
 
         verificationHelper.verificationUserNameOnHomePage(name);
 

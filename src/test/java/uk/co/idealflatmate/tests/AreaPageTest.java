@@ -3,20 +3,22 @@ package uk.co.idealflatmate.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.HelperBase;
+import uk.co.idealflatmate.appmanager.SearchHelper;
 
 import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static uk.co.idealflatmate.appmanager.AreaPageHelper.areaNameInCarousel;
 import static uk.co.idealflatmate.appmanager.AreaPageHelper.numberOfPropAreaPage;
-import static uk.co.idealflatmate.appmanager.HelperBase.cardsOnThePage;
-import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.*;
+import static uk.co.idealflatmate.appmanager.SearchHelper.field_searchBar_listing;
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class AreaPageTest extends TestBase {
 
     @BeforeMethod
-
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
@@ -24,12 +26,32 @@ public class AreaPageTest extends TestBase {
     }
 
     @Test
-    public void firstFeaturedHomePageHeader() {
+    public void firstFeaturedAreasHomePageHeader() {
         areaPageHelper.areaScroll();
-        String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
-        areaPageHelper.clickArea(0);
+        String area1 = collectionReturn(areaNameInCarousel()).get(2).text();
+        areaPageHelper.clickArea(1);
         areaPageHelper.checkAreaName(area1);
-        areaPageHelper.clickHeaderItem("top-spots", "rooms", "flatmates");
+        areaPageHelper.clickHeaderItem("top-spots", "rooms", "flatmates", "explore");
+
+    }
+
+    @Test
+    public void firstFeaturedAreas_Coliving_HomePageHeader() {
+        areaPageHelper.areaScroll();
+        String area1 = collectionReturn(areaNameInCarousel()).get(4).text();
+        areaPageHelper.clickArea(2);
+        areaPageHelper.checkAreaName(area1);
+        areaPageHelper.clickHeaderItemColiving("coliving");
+        int amountPropOnAreaPage = numberOfPropAreaPage();
+        //Integer NumberColiving = collectionReturn(colivingCards()).size();
+        clickButton("See more coliving properties", "a");
+        switchTo().window(1);
+        closeAdvPopUp();
+        areaPageHelper.h1_HeaderTextIsExist("Co living in Barnet Gate");
+        int NumberColiving1Cards = cardsOnThePage().size();
+        Assert.assertEquals(getCardUserSelectLabelNumber(), NumberColiving1Cards);
+        Assert.assertEquals(amountPropOnAreaPage, NumberColiving1Cards);
+
 
     }
 
@@ -38,15 +60,18 @@ public class AreaPageTest extends TestBase {
     @Test
     public void firstFeaturedLinkArea() {
         areaPageHelper.areaScroll();
-        String areaName = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
-        areaPageHelper.clickArea(0);
+        String areaName = collectionReturn(areaNameInCarousel()).get(2).text();
+        areaPageHelper.clickArea(1);
         switchTo().window(1);
         int amountPropOnAreaPage = numberOfPropAreaPage();
 
         areaPageHelper.clicklinkNearbyAreas();
+        closeAdvPopUp();
         Assert.assertTrue(cardsOnThePage().size() >= amountPropOnAreaPage);
         areaPageHelper.checklinkNearbyAreas(areaName, "Display map");//it is the same area
+        String areaNameInput = selenidElement(field_searchBar_listing).getValue();
 
+        Assert.assertEquals(areaNameInput, areaName);
         areaPageHelper.checkSortDropDownRoom("0", "Default");
         areaPageHelper.pagination(exist);
 
@@ -55,7 +80,7 @@ public class AreaPageTest extends TestBase {
     @Test
     public void firstFeaturedLinkMap() {
         areaPageHelper.areaScroll();
-        areaPageHelper.clickArea(2);
+        areaPageHelper.clickArea(1);
         areaPageHelper.checklinkMap();
 
     }
@@ -63,7 +88,7 @@ public class AreaPageTest extends TestBase {
     @Test
     public void seeMoreRooms() {
         areaPageHelper.areaScroll();
-        String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(4).text();
+        String area1 = collectionReturn(areaNameInCarousel()).get(4).text();
         areaPageHelper.clickArea(2);
         areaPageHelper.clickMoreRooms();
         closeAdvPopUp();
@@ -77,8 +102,9 @@ public class AreaPageTest extends TestBase {
     @Test
     public void linkFH() {
         areaPageHelper.areaScroll();
-        String area1 = $$("#hp-areas div.card-btr-amenities.text-white div").get(0).text();
-        areaPageHelper.clickArea(0);
+        String area1 = collectionReturn(areaNameInCarousel()).get(2).text();
+        areaPageHelper.clickArea(1);
+
         areaPageHelper.checklinkFH(area1);
         areaPageHelper.checkSortDropDownFM();
         areaPageHelper.pagination(exist);
@@ -89,8 +115,8 @@ public class AreaPageTest extends TestBase {
     public void exploreMoreArea() {
         areaPageHelper.areaScroll();
         areaPageHelper.clickArea(1);
-        areaPageHelper.checkArrowsBrowsAll();
-        areaPageHelper.checkAllAreas("Liverpool");
+        areaPageHelper.checkArrowsBrowsAll("Coliving", "Explore", "Browse all areas");
+        areaPageHelper.checkRestAreas("Rest of the UK", "Brixham");
 
     }
 }

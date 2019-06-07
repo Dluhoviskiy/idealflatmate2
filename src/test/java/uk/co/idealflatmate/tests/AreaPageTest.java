@@ -67,7 +67,7 @@ public class AreaPageTest extends TestBase {
 
         areaPageHelper.clicklinkNearbyAreas();
         closeAdvPopUp();
-        Assert.assertTrue(cardsOnThePage().size() >= amountPropOnAreaPage);
+        Assert.assertTrue(cardsOnThePage().size() <= amountPropOnAreaPage);
         areaPageHelper.checklinkNearbyAreas(areaName, "Display map");//it is the same area
         String areaNameInput = selenidElement(field_searchBar_listing).getValue();
 

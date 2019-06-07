@@ -29,6 +29,7 @@ public class TestBase {
     public final SignUpHelper signUpHelper = new SignUpHelper();
     public final SearchHelperFM searchHelperFM = new SearchHelperFM();
     public final BuddyUpHelper buddyUpHelper = new BuddyUpHelper();
+    public final PopUpHelper popUpHelper = new PopUpHelper();
 
 
     /*@BeforeGroups
@@ -105,7 +106,9 @@ public class TestBase {
         return addPropertyHelper;
     }
 
-
+    public PopUpHelper getPopUpHelper() {
+        return popUpHelper;
+    }
 
     public PaymentsHelper getPaymentsHelper() {
         return paymentsHelper;

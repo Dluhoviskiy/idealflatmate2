@@ -118,6 +118,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
 
+
     public void clickSignInButtonInPopup() {
         sleep(2000);
         hoverClick1(popup_SignIn);
@@ -200,7 +201,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         chooseTabFromInnerMenuDashboard("Settings");
         removeAccount();
 
-        verificationHelper.isHomePage();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 

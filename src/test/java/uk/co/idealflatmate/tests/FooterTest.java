@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFound;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class FooterTest extends TestBase {
@@ -83,12 +84,11 @@ public class FooterTest extends TestBase {
 
     @Test
     public void footerBrowseFlatsharesLink() {
-        String area = "Chalk Farm";
-        String city = "London";
+        //verifying city = "London"; region = "North London"; area = "Chalk Farm";
+
 
         footerHelper.footerClick("Browse Flatshares");
-        footerHelper.verificationBrowseFlatshares(city, area,"Click to search nearby areas",
-                "Found ", " rooms to rent in ");
+        searchHelper.verificationFlatshare();
         }
 
     @Test

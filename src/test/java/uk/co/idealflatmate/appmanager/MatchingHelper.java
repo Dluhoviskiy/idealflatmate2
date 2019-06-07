@@ -145,7 +145,7 @@ public class MatchingHelper extends HelperBase {
     public void closePopupMatching() {
         String match1= "//button[@class='btn btn-sm btn-close close js-close-notify-matching']";
         sleep(3000);
-        if ($(byXpath(match1)).exists()) {
+        if ($(byXpath(match1)).isDisplayed()) {
             $(byXpath(match1)).waitUntil(visible, 10000).click();
         }
     }

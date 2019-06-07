@@ -118,7 +118,7 @@ public class AreaPageHelper extends HelperBase {
         //String sample = String.valueOf($(byXpath("//h2[@class='text-14']")).text().split("[^0-9]"));
         //System.out.println(sample);
         //$(byXpath("//h2[@class='text-14']")).text().replace(, );
-        Assert.assertEquals(textOfPropAreaPage(), " room to rent available");
+        Assert.assertEquals(textOfPropAreaPage(), " rooms to rent available");
 
         //String areaNameOnPageH2 = $(byXpath("//h1[@class='h4']")).text();
         //String area3 = (areaNameOnPageH2.substring(0, 24) + " " + area1);

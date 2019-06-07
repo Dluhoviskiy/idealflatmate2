@@ -24,6 +24,7 @@ public class SearchHelper extends HelperBase {
     public static final String headerTitle = "//head/title";
     public static final String postCode = "//div[@id='property_card_";
     public static final String postCode_End = "']//div[@class='card-infos-left']/div";
+    public final String sortProperty = "#property-sort";
 
 
 
@@ -104,12 +105,7 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void verificationSearchFromHome(String location) {
-        $(byXpath("//div[@class='row cards-container']")).waitUntil(visible, 4000).shouldHave(text(location));
-    }
-    public void verificationSearchOnFMPage(String location) {
-        $(byXpath("//h1[@class='h4']")).waitUntil(visible, 10000).shouldHave(text(location));
-    }
+
 
     public static String getNumberOfListing() {
         String getNumberOfListing = String.valueOf($(byXpath("//h1[@class='h4']")).text().substring(0, 12).replaceAll("[^0-9]", ""));
@@ -122,6 +118,8 @@ public class SearchHelper extends HelperBase {
     }
 
     public void verificationSearchProperty(String listingNumber, final String text, final String text1) {
+
+
 
         $(byXpath("//h1[@class='h4']")).waitUntil(visible, 15000).shouldHave(text(listingNumber));
         String number = getNumberOfListingFound();
@@ -137,7 +135,7 @@ public class SearchHelper extends HelperBase {
 
     public void verificationSearchPropertyMes(String location, String IndexOfListing) {
 
-        $$(byXpath("//div[@class='flex-search-columns']//div[@class='row u_m0 u_m5-top']")).get((Integer.parseInt(ConfDataProperty.getData(IndexOfListing)))).waitUntil(visible, 30000).shouldHave(text(ConfDataProperty.getData(location)));
+        $(byXpath("//div[@id='property_card_"+(ConfDataProperty.getData(IndexOfListing))+"']//div[@class='row u_m0 u_m5-top']")).waitUntil(visible, 30000).shouldHave(text(ConfDataProperty.getData(location)));
 
     }
 
@@ -152,8 +150,13 @@ public class SearchHelper extends HelperBase {
         $(byXpath("//div[@class='js-no-location no-location u_p10-top text-center text-white']")).waitUntil(visible, 10000).shouldHave(text(alert));
     }
 
-    public void verificationSearchFromHomeLocationProperty(String location) {
-        $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).waitUntil(visible, 10000).shouldHave(text(location));
+    public void verificationFlatshare() {
+        $(byXpath("//h1[contains(.,'Browse all cities')]")).exists();
+        $(byXpath("//a/strong[contains(.,'London')]")).click();
+        title().contains("Find A UK Room To Rent | Rent A Room | ideal flatmate");
+        $(byXpath("//h2/a[contains(.,'North London')]")).click();
+        $(byXpath("//strong[contains(.,'Chalk Farm')]")).click();
+        $(byXpath("//h1[contains(.,'Living in Chalk Farm')]")).exists();
     }
 
     public void zone1() {
@@ -326,14 +329,6 @@ public class SearchHelper extends HelperBase {
 
     }
 
-    public void clickHighestPrice(int number) {
-        $("select#property-sort").selectOption(number);
-
-
-        ElementsCollection expectedNames = $$(byXpath("//div[@class='col-xs-6 u_p0-right text-13 u_ea-right']"));
-      //  Collections.sort(expectedNames);
-    }
-
     public void closePopupSignup() {
 
         sleep(4000);
@@ -457,33 +452,16 @@ public class SearchHelper extends HelperBase {
         sleep(5000);
 
         List<String> sortDef2 = getFMcardSearchText();
-        $("#property-sort").click();
-        $(byId("property-sort")).selectOptionByValue(option);
+        $(sortProperty).click();
+        $(sortProperty).selectOptionByValue(option);
         sleep(3000);
         List<String> sortNew2 = getFMcardSearchText();
         Assert.assertNotEquals(sortNew2, sortDef2);
         sleep(3000);
     }
-    public void checkHighPriceSort1(String option) {
-        sleep(5000);
-
-        List<String> sortDef2 = $$(byXpath("//div[@class='card-profile-text']")).texts();
-        System.out.println(sortDef2);
-        Arrays.sort(new List[]{sortDef2});
-        //Arrays.sort $$(byXpath("//div[@class='card-profile-text']")).texts();
-        System.out.println(new List[]{sortDef2});
-        //System.out.println(sortDef2);
-        sleep(3000);
-        //Assert.assertEquals(sortDef2, new List[]{sortDef2});
-        //Arrays.sort(String {sortDef2});
-        boolean isSorted = Ordering.natural().isOrdered(sortDef2);
-        System.out.println(isSorted);
-    }
 
     public void clearLocation() {
         field_searchBar_listing.click();
-
-
     }
 
     public void moreFilterClick() {

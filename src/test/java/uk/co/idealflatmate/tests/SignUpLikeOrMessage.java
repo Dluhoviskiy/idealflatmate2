@@ -2,9 +2,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
-import uk.co.idealflatmate.appmanager.PropertyData;
 import uk.co.idealflatmate.appmanager.SearchHelper;
-import utils.ConfDataProperty;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -12,7 +10,6 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.cardsOnThePage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static uk.co.idealflatmate.appmanager.SearchHelper.cardProp_Image;
 import static uk.co.idealflatmate.appmanager.SignUpHelper.userName;
 
 
@@ -35,7 +32,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
@@ -49,7 +46,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         searchHelper.searchPropertyBySelectfromList(location, location);//input field, name in drop-down
         searchHelper.closePopupSignup();
-        searchHelper.verificationSearchPropertyMes("location1", "index1");
+        searchHelper.verificationSearchPropertyMes("location1", "property_id1");
 
         String photo1 = SearchHelper.getPropertyImage("property_id1");
         String name1 = SearchHelper.getPropertyOwner("property_id1");
@@ -101,7 +98,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickYourInformationContinue();
         verificationHelper.checkPhoneAlertMessage("Phone cannot be blank.");
 
-        signUpHelper.profilePhoneMessage("5555555555");
+        signUpHelper.profilePhoneMessage("03456666666");
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.clickBackToSearch();
@@ -184,7 +181,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself(about);
         signUpHelper.clickYourInformationContinue();
@@ -231,7 +228,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself(about);
         signUpHelper.clickYourInformationContinue();
@@ -345,7 +342,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.occupation("20", "Professional", "Freelancer/self employed");
         //signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();

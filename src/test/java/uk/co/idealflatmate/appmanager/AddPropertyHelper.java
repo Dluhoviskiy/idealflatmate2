@@ -21,6 +21,10 @@ public class AddPropertyHelper extends HelperBase {
     private String input = "/input";
     private String setAmanity_string1 = "//div/label[contains(.,'";
     private String end_string = "')]";
+    private String end_string1 = "']";
+    private String end_string2 = "]";
+    private String getEnd_string3 = "']]";
+    private String end_string_input= "')]/input";
     private SelenideElement tab_openDropDownMenuHeader = $(byXpath("(//li[@class='dropdown nav-ihm-profile-bars'])[1]"));
     private SelenideElement tab_addListing = $(byXpath("//ul[contains(@class,'nav navbar-nav')]//a[contains(.,'Add a Listing')]"));
     private String item_header_drop_Menu1 = "//ul[@class='dropdown-menu']//li/a[contains(., '";
@@ -71,7 +75,18 @@ public class AddPropertyHelper extends HelperBase {
     private String button_add_Room = "//button[@class='btn btn-sm btn--type-4 js-room-add']";
 
     private String check_room_Available = "//input[contains(@id,'room-available_from') and @name='Room[";
+    private String label_room_Available = "//label[input[contains(@id,'room-available_from') and @name='Room[";
     private String check_room_Available_end = "][availability]']";
+    private String label_Available_end = "][availability]']]";
+    private String room_date = "//div[input[contains(@id,'room-";
+    private String room_date_end =  "-available_from')]]";
+    private String month_room__date = "//a[contains(@class,'ui-corner-all') and @title='";
+    private String year_room__date = ".ui-datepicker-year";
+    private String year_room__option = "//select[@class='ui-datepicker-year']";
+    private String state_room_date ="//a[@class='ui-state-default' and contains(text(), '";
+    private String check_date_from = "//div[contains(@class,'form-group')]//input[contains(@id,'room-available_from') and @name='Room[availability]']";
+    private String date_from_tick = "//div[contains(@class,'form-group')]//label[input[contains(@id,'room-available_from') and @name='Room[availability]']]";
+    private String field_date_from_room = "//label[contains(.,'Available from')]";
 
     private String button_listing_photo_Finish = "//*[@id='wizard-finish-btn']";
     private String button_listing_Next = "#wizard-form #wizard-next";
@@ -96,23 +111,35 @@ public class AddPropertyHelper extends HelperBase {
     private String button_closeRenewPopup = "//button[@class='btn btn-sm close u_m15' and @aria-label='Close']";
     private String input_listing_Titile = "#property-title";
     private String button_listingEdit = "//div/a[contains(.,'Edit')]";
-    private String link_breadCrumb = "//ul[@class='custom-breadcrumbs']//li[contains(.,'";
+    private String link_breadCrumb = "//ul[@class='custom-breadcrumbs']//a[contains(.,'";
+    private String link_breadCrumb_end = "//ul[@class='custom-breadcrumbs']//li[contains(.,'";
     private String input_roomPrice = "//input[@id='room-price']";
     private String input_roomDeposit = "//input[@id='room-deposit']";
     private String input_roomBills = "//input[@id='room-bills']";
     private String field_roomMinStay = "//select[@id='room-min_stay']";
     private String field_roomMaxStay = "//select[@id='room-max_stay']";
     private String field_roomMinStay_option = "//select[@id='room-min_stay']/option";
-    private String field_roomMaxStay_option = "//select[@id='room-max_stay']";
+    private String field_roomMaxStay_option = "//select[@id='room-max_stay']/option";
     private String input_roomDescr_editPage = "//textarea[@id='room-description']";
     private String check_edit_addingRoom_Available = "//form[@id='property_add_room']//input[contains(@id,'room-available_from') and @name='Room[availability]']";
     private String check_edit_roomDate_Available1 = "//tr[@data-room-id='";
     private String check_edit_roomDate_Available1_end = "']//label[input[contains(@id,'room-available_from')]]";
     private String icon_edit_room = "//a[@aria-controls='room_editor_";
     private String text_available_Room = "//td[@data-state='availability_";
+    private String text_available_Room_2 = "//span[@class='serial' and contains(.,'2')]/../../..//td[2]";
+    private String text_available_Room_3 = "//span[@class='serial' and contains(.,'3')]/../../..//td[2]";
     private String icon_disable_Room = "//a[@data-room-id='";
     private String icon_disable_Room_Room_end = "' and @data-action='toggle-availability']";
 
+    private String input_city = "//input[@id='property-city']";
+    private String icon_remove_room = "(//a[@title='Delete'])[";
+    private String room__listing_block = "//div[@class='row']//a[contains(.,'Rooms')]";
+    private static String room_number = "//table[contains(@class,'table u_m20-bottom-xs u_m0-bottom-sm')]";
+    private String check_whole = "//label[contains(.,'";
+    private String check_featured = "//label/input[@id='";
+    private String check_label_featured = "//label[input[@id='";
+    private String tab_header_quit = "//header//a[contains(.,'Save & quit')]";
+    private String tab_header_list_continue = "//header//a[span[contains(.,'adding a')]]";
 
 
 
@@ -600,7 +627,7 @@ public class AddPropertyHelper extends HelperBase {
     public void verifyBreadCrumbsWithoutArea(final String roomsSearch, final String citySearch, final String listingOverview) {
         $(byXpath(link_breadCrumb+roomsSearch+end_string)).should(exist);
         $(byXpath(link_breadCrumb+citySearch+end_string)).should(exist);
-        $(byXpath(link_breadCrumb+listingOverview+end_string)).should(exist);
+        $(byXpath(link_breadCrumb_end+listingOverview+end_string)).should(exist);
     }
 
     public void goByLink(final String areaSearch) {
@@ -644,87 +671,84 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public void clickEditRoom(final String roomNumber) {
-        $(byXpath(icon_edit_room+roomNumber+end_string)).click();
+        $(byXpath(icon_edit_room+roomNumber+end_string1)).click();
     }
 
     public void deactivateVerifyRoom(final String roomId1, String availableFrom, final String textRoomAvail) {
-        $(byXpath(text_available_Room+roomId1+end_string)).shouldHave(text(availableFrom));
+        $(byXpath(text_available_Room+roomId1+end_string1)).shouldHave(text(availableFrom));
         sleep(1000);
         $(byXpath(icon_disable_Room+roomId1+icon_disable_Room_Room_end)).click();
         sleep(1000);
-        $(byXpath(text_available_Room+roomId1+end_string)).shouldHave(text(textRoomAvail));
+        $(byXpath(text_available_Room+roomId1+end_string1)).shouldHave(text(textRoomAvail));
 
     }
     public String monthAvailableFrom(String roomID) {
 
-        String monthAvailableFrom = $(byXpath(text_available_Room+roomID+end_string)).text().substring(17);
+        String monthAvailableFrom = $(byXpath(text_available_Room+roomID+end_string1)).text().substring(17);
         return monthAvailableFrom;
 
     }
 
-    public static String monthAvailableFrom1(final String roomNumber) {
-
-        String monthAvailableFrom1 = $(byXpath("(//td[contains(@data-state,'availability_')])[" + roomNumber + "]")).text().substring(17);
-        return monthAvailableFrom1;
-
+    public String monthAvailableFromRoom2() {
+        String monthAvailableFrom = $(byXpath(text_available_Room_2)).text().substring(17);
+        return monthAvailableFrom;
     }
-
+    public String monthAvailableFromRoom3() {
+        String monthAvailableFrom = $(byXpath(text_available_Room_3)).text().substring(17);
+        return monthAvailableFrom;
+    }
 
     public void activateVerifyRoom(final String roomId) {
 
-        $(byXpath("//td[@data-state='availability_" + roomId + "']")).shouldHave(text("Unavailable"));
+        $(byXpath(text_available_Room+roomId+end_string1)).shouldHave(text("Unavailable"));
         sleep(1000);
         $(byXpath(icon_disable_Room+roomId+icon_disable_Room_Room_end)).click();
         sleep(1000);
-        $(byXpath("//td[@data-state='availability_" + roomId + "']")).shouldHave(text("Available now"));
+        $(byXpath(text_available_Room+roomId+end_string1)).shouldHave(text("Available now"));
 
     }
 
     public void dateChange(String roomNumber, final String year, final String date, final String Month) {
 
-        if ($(byXpath("//input[contains(@id,'room-available_from') and @name='Room[" + roomNumber + "][availability]']")).is(checked)){
-            $(byXpath("//label[input[contains(@id,'room-available_from') and @name='Room[" + roomNumber + "][availability]']]")).click();}
+        if ($(byXpath(check_room_Available+roomNumber+check_room_Available_end)).is(checked)){
+            $(byXpath(label_room_Available+roomNumber+label_Available_end)).click();}
 
-        $(byXpath("//div[input[contains(@id,'room-" + roomNumber + "-available_from')]]")).click();
+        $(byXpath(room_date+roomNumber+room_date_end)).click();
 
-        $(byXpath("//a[contains(@class,'ui-corner-all') and @title='" + Month + "']")).waitUntil(appear, 4000).click();
-        $(".ui-datepicker-year").waitUntil(appear, 4000).click();
-        messageHelper.click(byXpath("//option[@value='" + year + "']"));
-        $(byXpath("//a[@class='ui-state-default' and contains(text(), '" + date + "')]")).waitUntil(appear, 4000).click();
+        $(byXpath(month_room__date+ Month+end_string1)).waitUntil(appear, 4000).click();
+        $(year_room__date).waitUntil(appear, 4000).click();
+        $(byXpath(year_room__option)).selectOptionByValue(year);
+        $(byXpath(state_room_date+date+end_string)).waitUntil(appear, 4000).click();
     }
 
     public void dateChangeEdit(final String year, final String date, final String Month) {
 
-        if ($(byXpath("//div[contains(@class,'form-group')]//input[contains(@id,'room-available_from') and @name='Room[availability]']")).is(checked)){
-            $(byXpath("//div[contains(@class,'form-group')]//label[input[contains(@id,'room-available_from') and @name='Room[availability]']]")).click();}
+        if ($(byXpath(check_date_from)).is(checked)){
+            $(byXpath(date_from_tick)).click();}
 
-        $(byXpath("//label[contains(.,'Available from')]")).click();
+        $(byXpath(field_date_from_room)).click();
 
-        $(byXpath("//a[contains(@class,'ui-corner-all') and @title='" + Month + "']")).waitUntil(appear, 4000).click();
-        $(".ui-datepicker-year").waitUntil(appear, 4000).click();
-        messageHelper.click(byXpath("//option[@value='" + year + "']"));
-        $(byXpath("//a[@class='ui-state-default' and contains(text(), '" + date + "')]")).waitUntil(appear, 4000).click();
+        $(byXpath(month_room__date+Month+end_string1)).waitUntil(appear, 4000).click();
+        $(year_room__date).waitUntil(appear, 4000).click();
+        $(byXpath(year_room__option)).selectOptionByValue(year);
+        $(byXpath(state_room_date+date+end_string)).waitUntil(appear, 4000).click();
     }
 
     public void verifyAvailable(final Condition checked) {
-        $(byXpath("//div[contains(@class,'form-group')]//input[contains(@id,'room-available_from') " +
-                "and @name='Room[availability]']")).shouldBe(checked);
+        $(byXpath(check_date_from)).shouldBe(checked);
     }
-
-
-
 
 
     public void verifyCity(final String city) {
-        $(byXpath("//input[@id='property-city']")).shouldHave(value(city));
+        $(byXpath(input_city)).shouldHave(value(city));
     }
 
     public void clickRoomsSection() {
-        $(byXpath("//div[@class='row']//a[contains(.,'Rooms')]")).click();
+        $(byXpath(room__listing_block)).click();
     }
 
     public void removeRooms(final String roomNumber, final String expectedDialogText) {
-        $(byXpath("(//a[@title='Delete'])[" + roomNumber + "]")).click();
+        $(byXpath(icon_remove_room+roomNumber+end_string2)).click();
         //confirm(expectedDialogText);
         sleep(1000);
         clickButton(expectedDialogText, "button");
@@ -733,43 +757,43 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public static int roomAmountIs() {
-        int roomAmountIs = $$(byXpath("//table[contains(@class,'table u_m20-bottom-xs u_m0-bottom-sm')]")).size();
+        int roomAmountIs = $$(byXpath(room_number)).size();
         return roomAmountIs;
     }
 
 
     public void changeWholeOfProperty(final String defaultListingIs, final String clickChangeTo) {
         checkerPropertyWhole(defaultListingIs);
-        $(byXpath("//label[contains(.,'" + clickChangeTo + "')]")).click();
+        $(byXpath(check_whole+clickChangeTo+end_string)).click();
 
     }
 
     public void checkerPropertyWhole(final String listingIs) {
-        $(byXpath("//label[contains(.,'" + listingIs + "')]/input")).shouldBe(checked);
+        $(byXpath(check_whole+listingIs+end_string_input)).shouldBe(checked);
 
     }
 
 
     public void featuresPropertyClick(final String featureIdName, final Condition conditionNot) {
 
-        $(byXpath("//label/input[@id='"+featureIdName+"']")).shouldNotBe(conditionNot);
-        $(byXpath("//label[input[@id='"+featureIdName+"']]")).click();
+        $(byXpath(check_featured+featureIdName+end_string1)).shouldNotBe(conditionNot);
+        $(byXpath(check_label_featured+featureIdName+getEnd_string3)).click();
     }
 
     public void featuresPropertyIsChecked(final String featureIdName, final Condition condition) {
-        $(byXpath("//label/input[@id='"+featureIdName+"']")).shouldBe(condition);
+        $(byXpath(check_featured+featureIdName+end_string1)).shouldBe(condition);
 
     }
 
     public void saveQuitHeaderMenuListing() {
-        $(byXpath("//header//a[contains(.,'Save & quit')]")).click();
+        $(byXpath(tab_header_quit)).click();
         //$(byXpath("//header//ul[@class='nav navbar-right']/a")).click();
 
 
     }
 
     public void continueListing() {
-        $(byXpath("//header//a[span[contains(.,'adding a')]]")).click();
+        $(byXpath(tab_header_list_continue)).click();
     }
 
 
@@ -778,8 +802,10 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//input[@id='room-price']")).shouldHave(value(monthlyRentOld));
         $(byXpath("//input[@id='room-deposit']")).shouldHave(value(oldDeposit));
         $(byXpath("//input[@id='room-deposit']")).shouldHave(value(totalBills));
-        $(byXpath("//select[@id='room-min_stay']/option[@value='" + optionMinStay + "']")).shouldBe(selected);
-        $(byXpath("//select[@id='room-max_stay']/option[@value='" + optionMaxStay + "']")).shouldBe(selected);
+        $(byXpath("//select[@id='room-min_stay']/option[@value='" + optionMinStay + end_string1)).shouldBe(selected);
+        $(byXpath("//select[@id='room-max_stay']/option[@value='" + optionMaxStay + end_string1)).shouldBe(selected);
         $(byXpath("//textarea[@id='room-description']")).shouldHave(text(roomDescription));
     }
+
+
 }

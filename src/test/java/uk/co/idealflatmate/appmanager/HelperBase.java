@@ -2,6 +2,7 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import uk.co.idealflatmate.tests.TestBase;
 
 import java.util.List;
 
@@ -18,12 +19,9 @@ import static uk.co.idealflatmate.tests.TestBase.newPage;
 
 public class HelperBase  {
 
-    String cards = "//div[@class='card-body clearfix']";
-
-
-
     public static void closeAdvPopUp() {
-        String needSpace = "//div[@id='signupNeedspaceModal']//button[@aria-label='Close']";
+        PopUpHelper popUpHelper = new PopUpHelper();
+        String needSpace = popUpHelper.closeAdvPopup;
 
         if ($(byXpath(needSpace)).is(visible)) {
             hoverClick(needSpace);
@@ -38,22 +36,25 @@ public class HelperBase  {
     }
 
     public static void closeListRenewPopUp() {
-        SelenideElement buttonRenew = $(byXpath("//section[@class='modal-content u_bg-gray-lighter']//button[@aria-label='Close']"));
+        PopUpHelper popUpHelper = new PopUpHelper();
+        String buttonRenew = popUpHelper.closeRenewPopup;
         sleep(5000);
-        if(buttonRenew.isDisplayed()){
-            buttonRenew.waitUntil(visible, 7000).click();
+        if($(buttonRenew).isDisplayed()){
+            $(buttonRenew).waitUntil(visible, 7000).click();
         }
     }
 
     public static void propertySortBy(String value) {
-        $("#property-sort").selectOptionContainingText(value);
+        SearchHelper searchHelper = new SearchHelper();
+        $(searchHelper.sortProperty).selectOptionContainingText(value);
     }
 
     public static void closeMatchPopUp() {
-        SelenideElement buttonMatch = $(byXpath("//button[@class='btn btn-sm btn-close close js-close-notify-matching']"));
-        sleep(2000);
+        PopUpHelper popUpHelper = new PopUpHelper();
+        SelenideElement buttonMatch = $(byXpath(popUpHelper.closeMatching));
+        sleep(1000);
         if (buttonMatch.isDisplayed()) {
-            buttonMatch.waitUntil(visible, 7000).click();
+            buttonMatch.waitUntil(visible, 3000).click();
         }
     }
 

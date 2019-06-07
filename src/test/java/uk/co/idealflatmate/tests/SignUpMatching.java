@@ -40,7 +40,7 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", name, "FMMatch5");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","20","Tell us about yourself",
+        signUpHelper.moreAboutYou("15","2","1977","3456666666","20","Tell us about yourself",
                                                 "Professional", "Freelancer/self employed");
 
         signUpHelper.backClick();
@@ -51,8 +51,8 @@ public class SignUpMatching extends TestBase {
 
 
         //signUpHelper.budgetMax();
-        signUpHelper.clickYourInformationContinue();
-        verificationHelper.budgetError();
+        //signUpHelper.clickYourInformationContinue();
+        //verificationHelper.budgetError();
 
 
         signUpHelper.budgetMin();
@@ -95,11 +95,12 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch4");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","227",
+        signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                     "Tell us about yourself", "Professional", "Other");
 
         signUpHelper.clickListYourRoomMatching();
-
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyAddListingPage();
         addPropertyHelper.openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
@@ -124,7 +125,7 @@ public class SignUpMatching extends TestBase {
         signUpHelper.clickEmailMatching1();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch6");
-        signUpHelper.moreAboutYou("15","2","1977","45656776","227",
+        signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                      "Tell us about yourself", "Professional", "Other");
 
         signUpHelper.clickSearchFMMatching();
@@ -164,7 +165,7 @@ public class SignUpMatching extends TestBase {
         verificationHelper.passwordBlankAlert();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }

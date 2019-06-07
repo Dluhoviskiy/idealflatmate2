@@ -1,5 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+meta charset="utf-8"
+meta http-equiv="Content-Type" content="text/html; charset=utf-8"
 //mesPropSignUpNotBuddy_Up
 property_id1=18376
+property_id2=44234
+property_id3=45880
 name1=Trouble
 location1=Leeds
 age1=60
@@ -11,7 +16,7 @@ myProfile1=User Type Personal Details Property Preferences Budget & Availability
 name1=Trouble
 age1=60
 lookingFor1=I'm looking for a room
-aboutMe1=About me Trouble 60 is a female looking for a room. Maximum budget: £2500/month Ready to move in: Immediately
+aboutMe1=About me\nTrouble, 60 is a female looking for a room.\nMaximum budget: 2500/month\nReady to move in: Immediately
 amountPropCards1=0
 rooms1=0
 index2=0
@@ -22,7 +27,7 @@ myProfile2=User Type Personal Details Property Preferences Budget & Availability
 name2=Ronald
 age2=19
 lookingFor2=I'm looking for a room
-aboutMe2=About me Tell us about yourself Maximum budget: £2500/month Ready to move in: Immediately
+aboutMe2=About me\nTell us about yourself\nMaximum budget: 2500/month\nReady to move in: Immediately
 amountPropCards2=0
 rooms2=0
 
@@ -31,19 +36,19 @@ percentComplete3=80% complete
 myProfile3=User Type Personal Details Property Preferences Budget & Availability Your ideal flatmate
 name3=Ronald
 age3=19
-lookingFor3=Looking for a room in Watford
-aboutMe3=About me Tell us about yourself Maximum budget: £400/month Ready to move in: 08-08-2019
+lookingFor3=I'm looking for a room
+aboutMe3=About me\nTell us about yourself\nMaximum budget: 400/month\nReady to move in: 08-08-2019\nLooking for a room in\nWatford
 amountPropCards3=0
-rooms3=0
+rooms3=1
 
 //signUpPropertyAdding
 percentComplete4=75% complete
-myProfile4=User Type Personal Details Property Preferences
+myProfile4=User Type Personal Details Your ideal tenant
 name4=Ronald
 age4=no age
 lookingFor4=Check out our available rooms.
-aboutMe4=About me Tell us about yourself
-amountPropCards4=1
+aboutMe4=About us\nTell us about yourself
+amountPropCards4=0
 rooms4=0
 
 //testAaabAddWholeProperty2
@@ -80,21 +85,21 @@ rooms7=0
 //SignUpMatchingWithRequiredFieldsRoom
 percentComplete8=80% complete
 myProfile8=User Type Personal Details Property Preferences Budget & Availability Your ideal flatmate
-name8=Donald
+name8=Ronaldina
 age8=42
 lookingFor8=I'm looking for a room
-aboutMe8=About me Tell us about yourself Maximum budget: £400/month Ready to move in: 08-08-2019
+aboutMe8=About me\nTell us about yourself\nMaximum budget: 400/month\nReady to move in: 08-08-2019\nLooking for a room in\nWatford
 amountPropCards8=0
-rooms8=0
+rooms8=1
 
 
 //testHeaderRoomSignUpHomePageTenant
 percentComplete9=80% complete
 myProfile9=User Type Personal Details Property Preferences Budget & Availability Your ideal flatmate
-name9=Donaldina
-age8=18
+name9=Ronaldina
+age9=19
 lookingFor9=I'm looking for a room
-aboutMe9=About me Tell us about yourself Maximum budget: £400/month Ready to move in: 08-08-2019
+aboutMe9=About me\nTell us about yourself\nMaximum budget: 400/month\nReady to move in: 08-08-2019\nLooking for a room in\nWatford
 amountPropCards9=0
 rooms9=0
 
@@ -103,19 +108,19 @@ rooms9=0
 percentComplete10=60% complete
 myProfile10=User Type Personal Details Your ideal flatmate
 name10=Donald
-age10=59
+age10=60
 lookingFor10=I have a room available
-aboutMe10=About me Ronald, 59 is a male student looking for a room. Maximum budget: £400/month Ready to move in: 08-08-2019
+aboutMe10=About me\nDonald, 60 is a male student looking for a flatmate.
 amountPropCards10=0
 rooms10=0
 
 //testHeaderSignUpViaFacebook
 percentComplete11=75% complete
-myProfile11=User Type Personal Details Your ideal tenant
+myProfile11=User Type\nPersonal Details\nYour ideal tenant
 name11=Kron
 age11=60
 lookingFor11=Check out our available rooms.
-aboutMe11=About me I am an agent
+aboutMe11=About us\nI am an agent
 amountPropCards11=0
 rooms11=0
 
@@ -124,9 +129,9 @@ rooms11=0
 percentComplete12=50% complete
 myProfile12=User Type Personal Details Your ideal tenant
 name12=Kron
-age12=18
-lookingFor12=Check out our available rooms.
-aboutMe12=About me Kron is a live-out landlord looking for a room.
+age12=no
+lookingFor12=I have a room available
+aboutMe12=About me\nKron is a live-out landlord looking for a tenant.
 amountPropCards12=0
 rooms12=0
 
@@ -134,9 +139,9 @@ rooms12=0
 percentComplete13=80% complete
 myProfile13=User Type Personal Details Your ideal flatmate
 name13=Kron
-age13=18
-lookingFor13=Check out our available rooms.
-aboutMe13=About me Tell us about yourself
+age13=19
+lookingFor13=I have a room available
+aboutMe13=About me\nTell us about yourself
 amountPropCards13=0
 rooms13=0
 
@@ -146,6 +151,7 @@ myProfile14=User Type Personal Details Your ideal flatmate
 name14=Property1
 age14=22
 lookingFor14=I have a room available
-aboutMe14=About me Property1, 22 is a male professional looking for flatmates in Crewe or Crofton Park, South London or Notting Hill, West London or Ealing, West London or Nottingham or Hounslow, West Hounslow.
+aboutMe14=About me\Property1, 22 is a male professional looking for flatmates in Crewe or Crofton Park, South London or Notting Hill, West London or Ealing, West London or Nottingham or Hounslow, West Hounslow.
 amountPropCards14=6
 rooms14=6
+

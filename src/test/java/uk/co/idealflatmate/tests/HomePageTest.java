@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 
+import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class HomePageTest extends TestBase {
@@ -22,7 +23,7 @@ public class HomePageTest extends TestBase {
         homePageHelper.amountOfBlogBlocks(2);
         //homePageHelper.amountOfLatestFMblocks(4);
         homePageHelper.amountOfFeaturedRoom(6);
-        homePageHelper.amountOfAreasBlocks(7);
+        homePageHelper.amountOfAreasBlocks(8);
         homePageHelper.TextInAreas();
         homePageHelper.amountOfMatchListRoom(2);
     }
@@ -30,7 +31,7 @@ public class HomePageTest extends TestBase {
     @Test
     public void findOutMore() {
 
-        HelperBase.closeAdvPopUp();
+        closeAdvPopUp();
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFindRooms();
         homePageHelper.verificationPageLinkHowItWorksRooms();
@@ -54,7 +55,7 @@ public class HomePageTest extends TestBase {
 
         homePageHelper.scrollToBlockSelect();
         homePageHelper.clickAddListingFromHow();
-        verificationHelper.ListingStart();
+        verificationHelper.ListingStart("Start your listing here");
         homePageHelper.clickLogo();
     }
 

@@ -14,6 +14,8 @@ public class HomePageHelper {
 
 
 
+
+
     public void clickFM() {
 
         $(byXpath("(//div[@class='card-top-profile-img u_p5-right'])[1]")).waitUntil(visible, 4000).click();
@@ -123,7 +125,9 @@ public class HomePageHelper {
     }
 
     public void TextInAreas() {
-        $$("#hp-areas div.owl-stage-outer").shouldHave(texts("Clapham\n" +
+        $$("#hp-areas div.owl-stage-outer").shouldHave(texts("test\n" +
+                "East London\n" +
+                "Clapham\n" +
                 "South London\n" +
                 "ZONE 2\n" +
                 "Barnet Gate\n" +
@@ -132,9 +136,6 @@ public class HomePageHelper {
                 "West London\n" +
                 "ZONE 3\n" +
                 "Walthamstow\n" +
-                "East London\n" +
-                "ZONE 3\n" +
-                "Stratford\n" +
                 "East London\n" +
                 "ZONE 3"));
     }
@@ -165,6 +166,8 @@ public class HomePageHelper {
     public void scrollToBlockSelect() {
         $(byXpath("//h3[@class='text-64 u_m0 u_m5-bottom']/../p")).waitUntil(visible, 10000).click();
     }
+
+
 
     //private void $$(boolean equals) {
 

@@ -70,7 +70,7 @@ public class Buddy_up extends TestBase {
        // searchHelper.selectRadius("+5 km");
        // searchHelper.verificationSearchPropertyMes("Castle Ditch, Caernarfon LL55 2AY, UK", 0);
         searchHelper.startBuddyUpSearch("Caernarfon", "Caernarfon", "+5 km",
-                                         "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", "index2");
+                                         "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", "property_id2");
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -135,7 +135,7 @@ public class Buddy_up extends TestBase {
         //searchHelper.selectRadius("+5 km");
        // searchHelper.verificationSearchPropertyMes("Castle Ditch, Caernarfon LL55 2AY, UK", 0);
         searchHelper.startBuddyUpSearch("Caernarfon", "Caernarfon", "+5 km",
-                                        "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", "index2");
+                                        "Victoria Terrace, Llanberis, Caernarfon LL55 4TT, UK", "property_id2");
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
 
         buddyUpHelper.clickCardProperty();
@@ -160,7 +160,7 @@ public class Buddy_up extends TestBase {
     public void testDddGroupPropPageStartSignUp() {
 
         searchHelper.startBuddyUpSearch("ha0 1eh", "HA0 1EH", "+3 km",
-                                        "Wembley HA0 1EH, UK", "index2");
+                                        "Wembley HA0 1EH, UK", "property_id3");
 
 
         String postCode = $(byXpath("//div[@class='card-infos-left']/div")).text();
@@ -268,7 +268,7 @@ public class Buddy_up extends TestBase {
         clearCache();
         refresh();
         searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3 km",
-                                         "Wembley HA0 1EH, UK", "index2");
+                                         "Wembley HA0 1EH, UK", "property_id3");
 
 
 
@@ -327,7 +327,7 @@ public class Buddy_up extends TestBase {
         homePageHelper.clickLogo();
 
         searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3",
-                                        "Wembley HA0 1EH, UK", "index2");
+                                        "Wembley HA0 1EH, UK", "property_id3");
 
         signUpHelper.click1PropCardMes("0");
         buddyUpHelper.closeIntrodGroupsPopup();
@@ -371,7 +371,7 @@ public class Buddy_up extends TestBase {
     public void testT_T_MmmSignUpGroupJoin() {
 
         searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+2",
-                                         "Wembley HA0 1EH, UK", "index2");
+                                         "Wembley HA0 1EH, UK", "property_id3");
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -454,7 +454,7 @@ public class Buddy_up extends TestBase {
     public void testW_W_MessageLoginGroupFull() {
 
         searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3 km",
-                                        "Wembley HA0 1EH, UK", "index2");
+                                        "Wembley HA0 1EH, UK", "property_id3");
 
         String photo1 = $(byXpath("//div[@class='card-top-profile-img u_p5-right']/img")).getAttribute("src");
         //String name1 = $(byXpath("//span[@class='card-top-username']")).text();
@@ -500,7 +500,7 @@ public class Buddy_up extends TestBase {
     public void testY_Y_MessageLoginGroupEditFull() {
 
         searchHelper.startBuddyUpSearch("HA0 1EH", "HA0 1EH", "+3 km",
-                                           "Wembley HA0 1EH, UK", "index2");
+                                           "Wembley HA0 1EH, UK", "property_id3");
 
         signUpHelper.click1PropCardMes("0");
         clickSignInButtonInForm();
@@ -530,6 +530,7 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.veryfyGroupEditData(minBud, movData);
 
         buddyUpHelper.myGroupPageClick("Edit group");
+
         buddyUpHelper.genderBuddy_upGroupPageSelect("Female");
         buddyUpHelper.postGroupButtonEdit();
         open("http://front.idealflatmate4test.demo.devplatform2.com/spare-room/wembley/property-id45880");

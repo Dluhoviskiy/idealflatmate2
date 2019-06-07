@@ -5,11 +5,17 @@ import uk.co.idealflatmate.appmanager.HelperBase;
 import uk.co.idealflatmate.appmanager.ProfileData;
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
+import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 
 
 public class SignUpTest extends TestBase {
+
+
+
     @BeforeMethod
 
     public void setupMethod() {
@@ -33,7 +39,9 @@ public class SignUpTest extends TestBase {
         verificationHelper.passwordBlankAlert();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        sleep(1000);
+        signUpHelper.quit();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
 
@@ -55,7 +63,9 @@ public class SignUpTest extends TestBase {
         verificationHelper.passwordBlankAlert();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        sleep(1000);
+        signUpHelper.quit();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
 
@@ -91,9 +101,14 @@ public class SignUpTest extends TestBase {
         //verificationHelper.profilePhotoPdf();
 
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        verificationHelper.phoneVerification("Please enter a valid phone number (", "55555555d");
+        verificationHelper.phoneVerification("Please enter a valid phone number (", "00000000000");
+        verificationHelper.phoneVerification("Please enter a valid phone number (", "555555555");
+        verificationHelper.phoneVerification("Please enter a valid phone number (", "d5555555");
+        verificationHelper.phoneVerification("Please enter a valid phone number (", "+()55555555");
 
-        verificationHelper.phoneVerification("55555555d", "Phone number is incorrect.");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("3456666666");
+
 
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
@@ -121,9 +136,9 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
        // verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.profileDisplays(new ProfileData("percentComplete8",  "myProfile8",
-                "name8", "age8","lookingFor8", "aboutMe8","rooms8",
-                "amountPropCards8"));
+        verificationHelper.profileDisplays(new ProfileData("percentComplete9",  "myProfile9",
+                "name9", "age9","lookingFor9", "aboutMe9","rooms9",
+                "amountPropCards9"));
 
 
         authorizationHelper.removeAnyAccount();
@@ -131,7 +146,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void testHeaderSignUpHomePageFMSearchLiv_inWithoutAbout() {
-        String name = "Ronald";
+        String name = "Donald";
         pageUrlVerifLiveGoStage();
         clearCache();
 
@@ -140,17 +155,19 @@ public class SignUpTest extends TestBase {
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
         signUpHelper.signListingFM_LiveIn("LiveIn2", "passwUniv",
-                                        "5", "5", "1959", "55555555", "19",
+                                        "5", "5", "1959", "03456666666", "19",
                                         name, "Professional", "Student");
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        closeMatchPopUp();
 
-        verificationHelper.verifyAddListingPage();
+        //verificationHelper.verifyAddListingPage();
         verificationHelper.verificationUserNameOnHomePage(name);
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
-        verificationHelper.profileDisplays(new ProfileData("percentComplete9",  "myProfile9",
-                "name9", "age9","lookingFor9", "aboutMe9","rooms9",
-                "amountPropCards9"));
+        verificationHelper.profileDisplays(new ProfileData("percentComplete10",  "myProfile10",
+                "name10", "age10","lookingFor10", "aboutMe10","rooms10",
+                "amountPropCards10"));
 
         matchingHelper.closePopupMatching();
 
@@ -158,6 +175,7 @@ public class SignUpTest extends TestBase {
 
         authorizationHelper.removeAnyAccount();
     }
+
 
 
 
@@ -176,6 +194,9 @@ public class SignUpTest extends TestBase {
 
         verificationHelper.verificationFieldLenth(460);
 
+
+        //helperBase.closeOpen("");
+
         //signUpHelper.genderFemaleSelect();
         signUpHelper.setSignEmail("agency3");
         signUpHelper.setSignPassword("passwUniv");
@@ -183,7 +204,9 @@ public class SignUpTest extends TestBase {
         verificationHelper.emailAlreadyExistedAlert();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        sleep(1000);
+        signUpHelper.quit();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
      }
 
@@ -204,7 +227,9 @@ public class SignUpTest extends TestBase {
         verificationHelper.passwordBlankAlert();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        sleep(1000);
+        signUpHelper.quit();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
@@ -227,7 +252,8 @@ public class SignUpTest extends TestBase {
         verificationHelper.dateMonthYearPhoneOccupationBlankError();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        verificationHelper.ListingStart("Start your listing here");
+        signUpHelper.quit();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
@@ -248,7 +274,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("034566666666");
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
@@ -260,7 +286,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.checkLocationBlank();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
@@ -281,7 +307,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
@@ -292,11 +318,11 @@ public class SignUpTest extends TestBase {
         signUpHelper.preferredLocation("Watf", "Watford");
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.clickYourInformationContinue();
-        verificationHelper.budgetError();
+        //signUpHelper.clickYourInformationContinue();
+        //verificationHelper.budgetError();
 
         signUpHelper.quit();
-        verificationHelper.isHomePage();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
@@ -322,7 +348,7 @@ public class SignUpTest extends TestBase {
         //signUpHelper.genderMaleSelect();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.occupation("20", "Professional", "Freelancer/self employed");
         //signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
@@ -341,9 +367,9 @@ public class SignUpTest extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseSectionDropDownMenu("My profile");
         //matchingHelper.closePopupMatching();
-        verificationHelper.profileDisplays(new ProfileData("percentComplete10",  "myProfile10",
-                "name10", "age10","lookingFor10", "aboutMe10","rooms10",
-                "amountPropCards10"));
+        verificationHelper.profileDisplays(new ProfileData("percentComplete11",  "myProfile11",
+                "name11", "age11","lookingFor11", "aboutMe11","rooms11",
+                "amountPropCards11"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
 
@@ -367,9 +393,12 @@ public class SignUpTest extends TestBase {
         signUpHelper.setSignPassword("passwUniv");
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("034566666666");
         signUpHelper.aboutAgency("I am an agent", "About your agency");
         signUpHelper.clickYourInformationContinue();
+
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        closeMatchPopUp();
 
         verificationHelper.verificationUserNameOnHomePage(name);
         getAddPropertyHelper().openDropDownMenu();
@@ -410,10 +439,13 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("034566666666");
         signUpHelper.clickYourInformationContinue();
 
-        verificationHelper.verifyAddListingPage();
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        closeMatchPopUp();
+
+        //verificationHelper.verifyAddListingPage();
         verificationHelper.verificationUserNameOnHomePage(name);
 
         getAddPropertyHelper().openDropDownMenu();
@@ -434,18 +466,21 @@ public class SignUpTest extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", name, "liveIn1");
+        signUpHelper.yourInformation("passwUniv", name, "live-In1");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("5555555555");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.occupation("227", "Professional", "Other");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        closeMatchPopUp();
+
         verificationHelper.verificationUserNameOnHomePage(name);
-        verificationHelper.verifyAddListingPage();
+        //verificationHelper.verifyAddListingPage();
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("80% complete");

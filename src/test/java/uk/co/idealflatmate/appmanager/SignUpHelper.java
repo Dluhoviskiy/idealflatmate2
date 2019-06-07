@@ -94,6 +94,7 @@ public class SignUpHelper extends HelperBase {
         sleep(2000);
     }
     public void clickYourInformationContinue() {
+
         $(byXpath("//button[contains(text(), 'Continue')]")).waitUntil(appears, 4000).click();
         sleep(2000);
     }
@@ -145,11 +146,33 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void profilePhone(String phone) {
-        Field2("#moreinfosignupform-phone", phone);
+        //Field2("input#moreinfosignupform-phone", phone);
+
+
+            String val = phone;
+            SelenideElement element = $("input#moreinfosignupform-phone");
+            element.clear();
+            for (char  c : val.toCharArray()) {
+                sleep(500);
+                String s = String.valueOf(c);
+                element.sendKeys(s);
+            }
+            sleep(1000);
+
+
     }
 
     public void profilePhoneMessage(String phone) {
-        Field2("#messagewritesignupform-phone",phone);
+        //Field2("#messagewritesignupform-phone",phone);
+        String val = phone;
+        SelenideElement element = $("#messagewritesignupform-phone");
+
+        for (char  c : val.toCharArray()) {
+            sleep(500);
+            String s = String.valueOf(c);
+            element.sendKeys(s);
+        }
+        sleep(1000);
     }
 
     public void occupation(String profOption, String defaultOccupation, String occupationNew) {
@@ -169,7 +192,10 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//textarea[@id='moreinfosignupform-bio']/../../div/label")).shouldHave(text(text1));
     }
 
+
+
     public void preferredLocation(String location, String area) {
+
         FieldEnter(location, $("input#location"), $(byXpath("//li//div[contains(text(), '" + area + "')]")));
 
     }

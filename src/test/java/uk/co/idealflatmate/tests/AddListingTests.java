@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$$;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static com.codeborne.selenide.Selenide.sleep;
 //import static uk.co.idealflatmate.appmanager.AddPropertyHelper.monthAvailableFrom;
-import static uk.co.idealflatmate.appmanager.AddPropertyHelper.monthAvailableFrom1;
+
 import static uk.co.idealflatmate.appmanager.AddPropertyHelper.roomAmountIs;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFound;
@@ -171,7 +171,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.selectTypeUser("An agency");
 
         signUpHelper.agentSignListing("Ronald", "agentRemoved", "passwUniv",
-                                      "66666666", "Tell us about yourself");
+                                      "07399042641", "Tell us about yourself");
 
         //verificationHelper.verificationUserNameOnHomePage("Ronald");
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -289,14 +289,22 @@ public class AddListingTests extends TestBase {
     }
 
     @Test
-    public void propertyDeactivateRooms(final String roomId1, final String roomId2, final String roomId3, final String roomid2, final String roomID2, final String roomid3, final String roomID3, final String save, final String button) {
+    public void propertyDeactivateRooms() {
+
+        String roomId1 = "24155";
+        String roomId2 = "24156";
+        String roomId3 = "24157";
+        String save = "Save";
+        String button = "button";
+
+
 
         authorizationHelper.login("passwUniv", "agentDeactivateRoom");
         matchingHelper.closePopupMatching();
         addPropertyHelper.closeRenewPopup();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        String Month = monthAvailableFrom1("3");
+        String Month = addPropertyHelper.monthAvailableFromRoom3();
         getAddPropertyHelper().viewListing();
         verificationHelper.verifyAboutProperty("3 bedrooms available\n" + "Garden\n" + "Communal living room\n" +
                 "Balcony/patio\n" + "Parking space\n" + "Smokers Accepted\n" + "Suitable for couples\n" +
@@ -325,9 +333,9 @@ public class AddListingTests extends TestBase {
         int searchWithActivatedRooms = Integer.parseInt(getNumberOfListingFound());
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        addPropertyHelper.deactivateVerifyRoom("24155", "Available now", "Unavailable");
-        addPropertyHelper.deactivateVerifyRoom("24156", "Available now", "Unavailable");
-        addPropertyHelper.deactivateVerifyRoom("24157", "Available from 15 April", "Unavailable");
+        addPropertyHelper.deactivateVerifyRoom(roomId1, "Available now", "Unavailable");
+        addPropertyHelper.deactivateVerifyRoom(roomId2, "Available now", "Unavailable");
+        addPropertyHelper.deactivateVerifyRoom(roomId3, "Available from 15 April", "Unavailable");
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         getAddPropertyHelper().viewListing();
         verificationHelper.verifyAboutPropertyRooms("room available in 3 bed property in Birmingham.");
@@ -351,11 +359,11 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.activateVerifyRoom(roomId1);
         addPropertyHelper.activateVerifyRoom(roomId2);
         addPropertyHelper.activateVerifyRoom(roomId3);
-        addPropertyHelper.clickEditRoom(roomid2);
-        addPropertyHelper.availableEdiRoomCheck(roomID2);
+        addPropertyHelper.clickEditRoom(roomId2);
+        addPropertyHelper.availableEdiRoomCheck(roomId2);
         clickButton("Save", "button");
-        addPropertyHelper.clickEditRoom(roomid3);
-        addPropertyHelper.availableEdiRoomCheck(roomID3);
+        addPropertyHelper.clickEditRoom(roomId3);
+        addPropertyHelper.availableEdiRoomCheck(roomId3);
         clickButton(save, button);
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
@@ -478,7 +486,8 @@ public class AddListingTests extends TestBase {
                                         "How test1", "Next");
         clickButton("Save and create", "button");
         sleep(1000);
-        String Month = monthAvailableFrom1("2");
+
+        String Month = addPropertyHelper.monthAvailableFromRoom2();
         sleep(1000);
 
         clickButton("Add room", "a");
@@ -531,8 +540,11 @@ public class AddListingTests extends TestBase {
         verificationHelper.roomVerification("Room 1", "999", "no", "no", "Now",
                                             "", "", "no", "no");
 
+
         authorizationHelper.logoutFromApp();
     }
+
+
 
     @Test
     public void titleListing() {

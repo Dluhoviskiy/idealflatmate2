@@ -99,7 +99,8 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         if($(byXpath("//strong[contains(@class,'u_ed-block')]")).exists()){
             $(byXpath("//strong[contains(@class,'u_ed-block')]")).shouldHave(text(profileData.getLookingFor()));
         }
-        $(byXpath("//div[contains(@class,'u_p30 u_bg-white')]")).shouldHave(text(profileData.getAboutMe()));
+        String about = $(byXpath("//div[contains(@class,'u_p30 u_bg-white')]")).text().replaceAll("£", "");
+        Assert.assertEquals(about, profileData.getAboutMe().replaceAll("£", ""));
 
         if($(byXpath("//h4[contains(.,'My available rooms are ')]")).exists()){
             $(byXpath("//ul[contains(@class,'geo-list u_m0 u_p0')]")).shouldHave(text(profileData.getRoomsLocation()));
@@ -321,9 +322,12 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
 
-    public void phoneVerification(String phone, String text) {
-        Field2("#moreinfosignupform-phone", phone);
-        $(byXpath("//div[starts-with(@class,'form-group required u_m15-bottom')]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
+    public void phoneVerification(String text, final String phone) {
+        SignUpHelper signUpHelper = new SignUpHelper();
+        signUpHelper.profilePhone(phone);
+
+        signUpHelper.clickYourInformationContinue();
+        $(byXpath("//div[contains(@class,'form-group required u_m15-bottom')]//div[@class='help-block']")).waitUntil(exist, 4000).shouldHave(text(text));
 
     }
 
@@ -338,8 +342,8 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     }
 
-    public void isHomePage() {
-        title().contains("Flatshare and Houseshare Across the UK: ideal flatmate");
+    public void isHomePage(final String textTitle) {
+        title().contains(textTitle);
 
     }
 
@@ -348,8 +352,8 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
                 "Better flatshares."));
 
     }
-    public void ListingStart() {
-            $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 text-20-xs']")).waitUntil(visible, 4000).shouldHave(text("Start your listing here"));
+    public void ListingStart(final String text) {
+            $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 text-20-xs']")).waitUntil(visible, 4000).shouldHave(text(text));
     }
 
 
@@ -365,7 +369,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
     public void isPropertyPage() {
 
-        title().contains("Find A Room To Rent In The UK | Ideal Flatmate");
+        isHomePage("Find A Room To Rent In The UK | Ideal Flatmate");
     }
 
     public void PropertyPageNumber(String page) {

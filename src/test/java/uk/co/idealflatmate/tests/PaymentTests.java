@@ -22,13 +22,14 @@ public class PaymentTests extends TestBase {
     public void abilityToSeePhone() {
 
 
-        authorizationHelper.login("passwUniv", "Prem_FH_paid");
+        authorizationHelper.login("passwUniv", "FH_Not_paid");
         verificationHelper.verificationUserNameOnHomePage("Zlatan");
         searchHelper.searchPropertyHome("#0012906");
-        paymentsHelper.verificationPhone("XXXX");
-        getMessageHelper().clickPhoneReveal();
+        paymentsHelper.verificationNoPhone();
+        //paymentsHelper.verificationPhone("XXXX");
+        //getMessageHelper().clickPhoneReveal();
 
-        paymentsHelper.verificationPhoneVisible("777777777");
+        //paymentsHelper.verificationPhoneVisible("3456666666");
         authorizationHelper.logoutFromApp();
     }
 
@@ -73,7 +74,7 @@ public class PaymentTests extends TestBase {
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "fmNotPaid3");
 
-        signUpHelper.moreAboutYou("5", "12","1988","77777777", "227","I am a FlatHunter", "Professional", "Other");
+        signUpHelper.moreAboutYou("5", "12","1988","3456666666", "227","I am a FlatHunter", "Professional", "Other");
 
         signUpHelper.whereWouldLikeLive("watf", "Watford");
 
@@ -115,7 +116,7 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
         signUpHelper.signListingFM_LiveIn("live-In1", "passwUniv",
-                "5", "5", "1959", "55555555", "19", "Ronald",
+                "5", "5", "1959", "3456666666", "19", "Ronald",
                 "Professional", "Student");
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -228,7 +229,7 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
         signUpHelper.signListingFM_LiveIn("fmNotPaid4", "passwUniv",
-                "5", "5", "1959", "55555555", "19", "Ronald",
+                "5", "5", "1959", "3456666666", "19", "Ronald",
                 "Professional", "Student");
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -292,7 +293,7 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.selectTypeUser("An agency");
 
         signUpHelper.agentSignListing("Ronald", "agent2", "passwUniv",
-                "66666666", "Tell us about yourself");
+                "3456666666", "Tell us about yourself");
         addPropertyHelper.saveQuitHeaderMenuListing();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 

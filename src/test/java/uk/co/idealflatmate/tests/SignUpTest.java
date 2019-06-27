@@ -7,9 +7,7 @@ import uk.co.idealflatmate.appmanager.ProfileData;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
-import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
+import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
 
 public class SignUpTest extends TestBase {
@@ -25,8 +23,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void testSignUpBlankFieldsPropAddRentBlock() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         addPropertyHelper.pressAddListingNotLoggedBlock();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
@@ -49,8 +46,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void testSignUpBlankFieldsPropAddWorkBlock() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         addPropertyHelper.pressAddListingNotLoggedBlock1();
         addPropertyHelper.selectTypeUser( "A current tenant");
 
@@ -67,26 +63,22 @@ public class SignUpTest extends TestBase {
         signUpHelper.quit();
         verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
-
-
     }
 
     @Test
     public void testHeaderRoomSignUpHomePageTenant() {
         String location1 = "Watford";
         String name = "Ronaldina";
-        pageUrlVerifLiveGoStage();
-        clearCache();
 
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
-
         signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickRoom();
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", name, "Tenant1");
+        signUpHelper.yourInformation("passwUniv", name, "Tenant1", "Female");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -101,6 +93,7 @@ public class SignUpTest extends TestBase {
         //verificationHelper.profilePhotoPdf();
 
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        verificationHelper.phoneVerification("Phone cannot be blank.", "          ");
         verificationHelper.phoneVerification("Please enter a valid phone number (", "55555555d");
         verificationHelper.phoneVerification("Please enter a valid phone number (", "00000000000");
         verificationHelper.phoneVerification("Please enter a valid phone number (", "555555555");
@@ -135,7 +128,7 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
        // verificationHelper.verifyProfComplMenu("80% complete");
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete9",  "myProfile9",
                 "name9", "age9","lookingFor9", "aboutMe9","rooms9",
                 "amountPropCards9"));
@@ -147,8 +140,6 @@ public class SignUpTest extends TestBase {
     @Test
     public void testHeaderSignUpHomePageFMSearchLiv_inWithoutAbout() {
         String name = "Donald";
-        pageUrlVerifLiveGoStage();
-        clearCache();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -164,7 +155,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNameOnHomePage(name);
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete10",  "myProfile10",
                 "name10", "age10","lookingFor10", "aboutMe10","rooms10",
                 "amountPropCards10"));
@@ -181,8 +172,6 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void testHeaderSignUpWithExistingEmail() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -212,8 +201,7 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsYourInf() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("A current tenant");
@@ -236,8 +224,6 @@ public class SignUpTest extends TestBase {
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsMoreAboutYou() {
 
-        pageUrlVerifLiveGoStage();
-        clearCache();
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickFM();
@@ -246,7 +232,7 @@ public class SignUpTest extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMnew1");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMnew1", "Female");
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.dateMonthYearPhoneOccupationBlankError();
@@ -259,22 +245,21 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsLocation() {
-        //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
-        pageUrlVerifLiveGoStage();
-        clearCache();
+
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
-
         signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickRoom();
+
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMnew2");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMnew2", "Female");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        signUpHelper.profilePhone("034566666666");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
@@ -292,17 +277,16 @@ public class SignUpTest extends TestBase {
 
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsBudget() {
-        pageUrlVerifLiveGoStage();
-        clearCache();
 
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickRoom();
-
         signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickRoom();
+
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMnew3");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMnew3", "Female");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -365,7 +349,7 @@ public class SignUpTest extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage(name);
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         //matchingHelper.closePopupMatching();
         verificationHelper.profileDisplays(new ProfileData("percentComplete11",  "myProfile11",
                 "name11", "age11","lookingFor11", "aboutMe11","rooms11",
@@ -393,20 +377,20 @@ public class SignUpTest extends TestBase {
         signUpHelper.setSignPassword("passwUniv");
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.profilePhone("034566666666");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.aboutAgency("I am an agent", "About your agency");
         signUpHelper.clickYourInformationContinue();
 
         addPropertyHelper.saveQuitHeaderMenuListing();
-        closeMatchPopUp();
+        noCloseMatchPopUp();
 
         verificationHelper.verificationUserNameOnHomePage(name);
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         //matchingHelper.closePopupMatching();
-        verificationHelper.profileDisplays(new ProfileData("percentComplete11",  "myProfile11",
-                "name11", "age11","lookingFor11", "aboutMe11","rooms11",
-                "amountPropCards11"));
+        verificationHelper.profileDisplays(new ProfileData("percentComplete15",  "myProfile15",
+                "name15", "age15","lookingFor15", "aboutMe15","rooms15",
+                "amountPropCards15"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
 
@@ -419,7 +403,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.ageConfirmCheckMatching();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -439,7 +423,7 @@ public class SignUpTest extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhone("034566666666");
+        signUpHelper.profilePhone("03456666666");
         signUpHelper.clickYourInformationContinue();
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -449,7 +433,7 @@ public class SignUpTest extends TestBase {
         verificationHelper.verificationUserNameOnHomePage(name);
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete12",  "myProfile12",
                 "name12", "age12","lookingFor12", "aboutMe12","rooms12",
                 "amountPropCards12"));
@@ -466,7 +450,7 @@ public class SignUpTest extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", name, "live-In1");
+        signUpHelper.yourInformation("passwUniv", name, "live-In1", "Female");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -484,7 +468,7 @@ public class SignUpTest extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("80% complete");
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         matchingHelper.closePopupMatching();
         verificationHelper.profileDisplays(new ProfileData("percentComplete13",  "myProfile13",
                 "name13", "age13","lookingFor13", "aboutMe13","rooms13",

@@ -26,3 +26,5 @@ target
 *.zip
 *.tar.gz
 *.rar
+*.class
+

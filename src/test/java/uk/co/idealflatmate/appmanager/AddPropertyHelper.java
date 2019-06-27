@@ -2,6 +2,7 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.apache.commons.lang3.ObjectUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -25,9 +26,10 @@ public class AddPropertyHelper extends HelperBase {
     private String end_string2 = "]";
     private String getEnd_string3 = "']]";
     private String end_string_input= "')]/input";
-    private SelenideElement tab_openDropDownMenuHeader = $(byXpath("(//li[@class='dropdown nav-ihm-profile-bars'])[1]"));
+    private SelenideElement tab_openDropDownMenuHeader = $(byXpath("//nav//li[@class='dropdown nav-ihm-profile-bars']/a[@class='dropdown-toggle']"));
     private SelenideElement tab_addListing = $(byXpath("//ul[contains(@class,'nav navbar-nav')]//a[contains(.,'Add a Listing')]"));
-    private String item_header_drop_Menu1 = "//ul[@class='dropdown-menu']//li/a[contains(., '";
+    private String header_dropMenu_Payments = "//ul[@class='dropdown-menu']//li/a[contains(., 'Payments')]";
+    private String header_dropMenu_My_Saved = "//ul[@class='dropdown-menu']//li/a[contains(., 'My saved')]";
     private String tab_Header_AddListing = "//ul[contains(@class,'nav-aux hidden-xs hidden-sm')]//a[contains(.,'Add a Listing')]";
     private String input_listingFlow_postcode = "//input[contains(@class,'select2-search')]";
     private String input_listingFlow_postcode_inner = "//span[contains(@id,'select2-property-location-container')]";
@@ -151,35 +153,46 @@ public class AddPropertyHelper extends HelperBase {
     //SelenideElement continueUpgradeListAgent =  $(byXpath("//div[@class='container u_p20-top-xs u_p30-top-sm']/a[contains(., 'Continue without upgrading')]"));
 
 
-    public void openDropDownMenu() {
+    public AddPropertyHelper openDropDownMenu() {
         tab_openDropDownMenuHeader.waitUntil(visible, 5000).click();
+        return this;
     }
 
-    public void pressAddListingFromBody() {
+    public AddPropertyHelper pressAddListingFromBody() {
         tab_addListing.click();
+        return this;
     }
 
-    public void chooseListingsFromDropDownMenu() {
+    public AddPropertyHelper chooseListingsFromDropDownMenu() {
         sleep(2000);
         tab_openDropDownMenuHeader.click();
-        chooseFromDropDownMenu("My listings");
+        choose_My_listings();
+        return this;
     }
 
-    public void chooseFromDropDownMenu(String item) {
-        $(byXpath(item_header_drop_Menu1+item+end_string)).click();
+    public AddPropertyHelper choose_My_listings() {
+        String header_dropMenu_My_listings = "//ul[@class='dropdown-menu']//li/a[contains(., 'My_listings')]";
+        $(byXpath(header_dropMenu_My_listings)).click();
+        return this;
     }
 
-    public void mySavedPropertiesMenu() {
-        chooseFromDropDownMenu("My saved");
+    public AddPropertyHelper choosePayments() {
+        $(byXpath(header_dropMenu_Payments)).click();
+        return this;
     }
 
-    public void chooseListLoggedFromHeaderProfile() {
+    public AddPropertyHelper chooseMenuSaved() {
+        $(byXpath(header_dropMenu_My_Saved)).click();
+        return this;
+    }
+
+    public AddPropertyHelper chooseListLoggedFromHeaderProfile() {
         sleep(2000);
         $(byXpath(tab_Header_AddListing)).click();
-
+        return this;
     }
 
-    public void setPostalCode(String postCode, final String location) {
+    public AddPropertyHelper setPostalCode(String postCode, final String location) {
         String val = postCode;
         SelenideElement element = $(By.xpath(input_listingFlow_postcode));
 
@@ -197,15 +210,16 @@ public class AddPropertyHelper extends HelperBase {
             element.sendKeys(s);
             //$(By.xpath(input_listingFlow_postcode)).setValue(postCode);
             //$(By.xpath(input_listingFlow_postcode)).sendKeys(postCode);
-
         }
 
         sleep(1000);
         $(By.xpath(drop_postcode_location1+location+end_string)).click();
         sleep(1000);
+
+        return this;
     }
 
-    public void setPostalCode1(String postCode, final String location) {
+    public AddPropertyHelper setPostalCode1(String postCode, final String location) {
         String val = postCode;
         SelenideElement element = $(By.xpath(input_listingFlow_postcode));
 
@@ -224,29 +238,34 @@ public class AddPropertyHelper extends HelperBase {
         sleep(1000);
         $(By.xpath(drop_postcode_location1+location+end_string)).click();
         sleep(1000);
+        return this;
     }
 
-    public void chooseRoadFor(String road) {
+    public AddPropertyHelper chooseRoadFor(String road) {
         fillInField(road, $(byXpath(input_road)));
         sleep(1000);
+        return  this;
     }
 
-    public void chooseArea(final String area) {
+    public AddPropertyHelper chooseArea(final String area) {
         $(byXpath(drop_listFlow_area)).click();
         messageHelper.click(byXpath(drop_listFlow_area_list + area + end_string));
         sleep(2000);
+        return this;
     }
 
-    public void pressAddListingFromHeaderNotLoggedUser() {
+    public AddPropertyHelper pressAddListingFromHeaderNotLoggedUser() {
         $(byXpath(tab_listing_List_a_room)).click();
+        return this;
     }
 
-    public void setPhoneNumber1(String Number) {
+    public AddPropertyHelper setPhoneNumber1(String Number) {
         fillInField(Number, $(byXpath(input_listingFlow_phone)));
         sleep(1000);
+        return this;
     }
 
-    public void setTotalBedrooms(final String amount) {
+    public AddPropertyHelper setTotalBedrooms(final String amount) {
         SelenideElement totalbedrooms = $(drop_totalRoom);
         sleep(2000);
 
@@ -255,9 +274,10 @@ public class AddPropertyHelper extends HelperBase {
         totalbedrooms.selectOptionContainingText(amount);
         sleep(1000);
         $(byXpath(drop_totalRoom_field)).click();
+        return this;
     }
 
-    public void setAllAmanities(String text1, String text2, String text3, String text4, String text5,
+    public AddPropertyHelper setAllAmanities(String text1, String text2, String text3, String text4, String text5,
                                 String text6, String text7, String text8, String text9, String text10,
                                 String text11, String text12, String text13, String text14, String text15) {
 
@@ -292,18 +312,19 @@ public class AddPropertyHelper extends HelperBase {
         sleep(1000);
         $(byXpath(setAmanity_string1 + text15 + end_string)).click();
         sleep(1000);
-
+        return  this;
     }
 
-    public void setAllAmanitiesFeatures(String text14, String text15) {
+    public AddPropertyHelper setAllAmanitiesFeatures(String text14, String text15) {
 
         $(byXpath(select_icon_Amanity+text14+end_string)).click();
         sleep(1000);
         $(byXpath(select_icon_Amanity+text15+end_string)).click();
         sleep(1000);
+        return this;
     }
 
-    public void checkAllAmanities(String text1, String text2, String text3, String text4, String text5,
+    public AddPropertyHelper checkAllAmanities(String text1, String text2, String text3, String text4, String text5,
                                 String text6, String text7, String text8, String text9, String text10,
                                 String text11, String text12, String text13) {
         Condition attribute = attribute("checked");
@@ -321,39 +342,47 @@ public class AddPropertyHelper extends HelperBase {
         $(check_Amanity1+text9+check_Amanity_end1).shouldBe(selected);
         $(check_Amanity1+text10+check_Amanity_end1).shouldBe(selected);
         $(check_Amanity1+text11+check_Amanity_end1).shouldBe(selected);
+
+        return this;
     }
 
 
-    public void setPropertyDescription(final String text) {
+    public AddPropertyHelper setPropertyDescription(final String text) {
         fillInField(text, $(byXpath(field_ListFlow_propDecription)));
+        return this;
     }
 
-    public void setMonthlyRent(String rent) {
+    public AddPropertyHelper setMonthlyRent(String rent) {
         fillInField(rent, $(input_ListFlow_roomPrice));
+        return this;
      }
 
-    public void setDeposit(String deposit) {
+    public AddPropertyHelper setDeposit(String deposit) {
         fillInField(deposit, $(input_ListFlow_roomDeposit));
+        return this;
     }
 
-    public void setTotalBills(String bills) {
+    public AddPropertyHelper setTotalBills(String bills) {
         $(input_ListFlow_roomBills).scrollIntoView(true).setValue(bills);
         $(input_ListFlow_roomBills).shouldHave(value("400"));
+        return this;
     }
 
-    public void setLeasePeriodRoom(final String roomNumber, final String min_Staying, final String max_Staying) {
+    public AddPropertyHelper setLeasePeriodRoom(final String roomNumber, final String min_Staying, final String max_Staying) {
         periodDate(roomNumber, min_Staying, max_Staying);
+        return this;
     }
 
-    public void periodDate(final String roomNumber, final String minStaying,final String maxStaying) {
+    public AddPropertyHelper periodDate(final String roomNumber, final String minStaying,final String maxStaying) {
 
         $(input_room_Stay + roomNumber + minStay_End).click();
         $(byXpath(option_Stay_min + minStaying + end_string)).click();
         $(input_room_Stay + roomNumber + maxStay_End).click();
         $(byXpath(option_Stay_max + maxStaying + end_string)).click();
+        return this;
     }
 
-    public void periodDateBuddy_up() {
+    public AddPropertyHelper periodDateBuddy_up() {
         sleep(3000);
         $(byXpath(check_list_flow_Available)).shouldBe(checked);
         sleep(1000);
@@ -367,124 +396,146 @@ public class AddPropertyHelper extends HelperBase {
         sleep(1000);
         $(byXpath(option_buddy_year)).click();
         sleep(1000);
+        return this;
     }
 
 
-    public void setRoomDescription(String text) {
+    public AddPropertyHelper setRoomDescription(String text) {
         $(byXpath(room_Text)).click();
         $(byXpath(input_room_Text)).setValue(text);
-        // $("#room-1-description").shouldHave(text("text"));
+        return this;
     }
 
-    public void copySecondRoom() {
+    public AddPropertyHelper copySecondRoom() {
         $(byXpath(button_copy_Room)).waitUntil(appear, 4000).click();
         $(input_price_second_Room).shouldBe(visible);
+        return this;
     }
 
-    public void removeSecondRoom() {
+    public AddPropertyHelper removeSecondRoom() {
         $(byXpath(button_remove_Room)).waitUntil(appear, 4000).click();
         $(input_price_second_Room).shouldNotBe(visible);
+        return this;
     }
 
-    public void addAnotherRoom() {
+    public AddPropertyHelper addAnotherRoom() {
         $(byXpath(button_add_Room)).waitUntil(visible, 4000).click();
+        return this;
     }
 
 
-    public void setAnotherMonthlyRent(String rent, final String expectedValue) {
+    public AddPropertyHelper setAnotherMonthlyRent(String rent, final String expectedValue) {
         fillInField(rent, $(input_price_third_Room));
         $(input_price_third_Room).shouldHave(Condition.value(expectedValue));
+        return this;
     }
 
-    public void setAvailablePeriodRoom(final String roomNumber, final String year, final String date, final String nextMonth) {
+    public AddPropertyHelper setAvailablePeriodRoom(final String roomNumber, final String year, final String date, final String nextMonth) {
         dateChange(roomNumber, year, date, nextMonth);
+        return this;
     }
 
-    public void availabaleChecked(final String roomNumber) {
+    public AddPropertyHelper availabaleChecked(final String roomNumber) {
         $(byXpath(check_room_Available+roomNumber+check_room_Available_end)).shouldBe(checked);
+        return  this;
     }
 
-    public void continueListingWithoutPhoto() {
+    public AddPropertyHelper continueListingWithoutPhoto() {
         $(byXpath(button_listing_photo_Finish)).waitUntil(appear, 4000).click();
         sleep(4000);
         $(byXpath(button_listing_photo_Finish_confirm)).waitUntil(appear, 6000).click();
         sleep(4000);
+        return this;
     }
 
-    public void uploadProperty3Photos() {
+    public AddPropertyHelper uploadProperty3Photos() {
         $(byXpath(input_Photo)).uploadFile(new File("src/test/resources/listing1.jpg"));
         sleep(6000);
         $(byXpath(input_Photo)).uploadFile(new File("src/test/resources/listing2.jpeg"));
         sleep(6000);
         $(byXpath(input_Photo)).uploadFile(new File("src/test/resources/Profile.png"));
         sleep(6000);
+        return  this;
     }
 
-    public void checkPhotos() {
+    public AddPropertyHelper checkPhotos() {
         $(byXpath(listing_preview_Photo1)).shouldBe(Condition.visible);
         $(byXpath(listing_preview_Photo2)).shouldBe(Condition.visible);
         $(byXpath(listing_preview_Photo3)).shouldBe(Condition.visible);
+        return this;
     }
 
-    public void finishPropertyCreatingAgency() {
+    public AddPropertyHelper finishPropertyCreatingAgency() {
         $(byXpath(button_listing_photo_Finish)).shouldBe(enabled).click();
+        return  this;
     }
 
-    public void viewListing() {
+    public AddPropertyHelper viewListing() {
         sleep(2000);
         $(byXpath(button_viewListing)).click();
+        return this;
     }
 
-    public void removeListingClick(final String option) {
+    public AddPropertyHelper removeListingClick(final String option) {
         $(byXpath(button_removeListing)).waitUntil(appear, 10000).click();
         sleep(2000);
         $(byXpath(radio_button_Remove_first)).waitUntil(appear, 10000).selectRadio(option);
         sleep(2000);
         $(byXpath(button_submit_Remove)).waitUntil(Condition.appears, 10000).click();
         sleep(2000);
+        return this;
     }
 
-    public void selectTypeUser(final String userType) {
+    public AddPropertyHelper selectTypeUser(final String userType) {
         $(byXpath(field_select_UserType1+userType+end_string)).waitUntil(appear, 4000).click();
+        return this;
     }
 
-    public void pressContinue() {
+    public AddPropertyHelper pressContinue() {
         $(button_listing_Next).waitUntil(appear, 4000).click();
+        return this;
     }
 
-    public void pressBack() {
+    public AddPropertyHelper pressBack() {
         sleep(3000);
         $(button_listing_Back).waitUntil(appear, 4000).click();
+        return this;
     }
 
-    public void pressContinue1() {
+    public AddPropertyHelper pressContinue1() {
         $(byXpath(h1_Page)).click();
         sleep(2000);
         $(button_listing_Next).waitUntil(appear, 4000).click();
+        return  this;
     }
 
-    public void finishPropertyAgencyWithSubs(String text) {
+    public AddPropertyHelper finishPropertyAgencyWithSubs(String text) {
         $(byXpath(text_view_finishListing)).shouldHave(text(text));
+        return this;
     }
 
-    public void pressAddListingNotLogged() {
+    public AddPropertyHelper pressAddListingNotLogged() {
         $(byXpath(tab_listing_List_a_room)).click();
+        return  this;
     }
 
-    public void pressAddListingNotLoggedBlock() {
+    public AddPropertyHelper pressAddListingNotLoggedBlock() {
         $(byXpath(button_listing_blockUnderSearch_homePage)).click();
+        return this;
     }
 
-    public void pressAddListingNotLoggedBlock1() {
+    public AddPropertyHelper pressAddListingNotLoggedBlock1() {
         $(byXpath(h3_select_Homepage)).click();
         $(byXpath(button_listing_blockSelect_homePage)).click();
+        return this;
     }
 
-    public void addListingFromListingPage() {
+    public AddPropertyHelper addListingFromListingPage() {
         $(byXpath(button_myListingPage_addNewListing)).click();
+        return this;
     }
 
-    public void uploadPropertyLargePhoto() {
+    public AddPropertyHelper uploadPropertyLargePhoto() {
         int before = $$(byXpath(listing_preview_Photo)).size();
         $(byXpath(input_Photo)).uploadFile(new File("src/test/resources/8mb-artwork.jpg"));
         sleep(2000);
@@ -492,11 +543,11 @@ public class AddPropertyHelper extends HelperBase {
         sleep(6000);
         int after = $$(byXpath(listing_preview_Photo)).size();
         Assert.assertEquals(before, after);
-
+        return this;
 
     }
 
-    public void uploadPropertyNotPhoto() {
+    public AddPropertyHelper uploadPropertyNotPhoto() {
         int before = $$(byXpath(listing_preview_Photo)).size();
         $(byXpath(input_Photo)).uploadFile(new File("src/test/resources/IF-pdf.pdf"));
         sleep(2000);
@@ -504,26 +555,30 @@ public class AddPropertyHelper extends HelperBase {
         sleep(6000);
         int after = $$(byXpath(listing_preview_Photo)).size();
         Assert.assertEquals(before, after);
-
+        return  this;
 
     }
 
-    public void bottomAddListing() {
+    public AddPropertyHelper bottomAddListing() {
         $(byXpath(button_addYourListing_bottomBlock_HomePage)).click();
+        return this;
     }
 
 
-    public void closeRenewPopup() {
+    public AddPropertyHelper closeRenewPopup() {
         sleep(2000);
         if ($(byXpath(button_closeRenewPopup)).exists()) {
-            $(byXpath(button_closeRenewPopup)).waitUntil(visible, 2000).click();        }
+            $(byXpath(button_closeRenewPopup)).waitUntil(visible, 2000).click();
+        }
+        return this;
     }
 
-    public void clickCardWithMatch() {
+    public AddPropertyHelper clickCardWithMatch() {
         $(byXpath("//span[@class='u_ed-inline-block']")).click();
+        return this;
     }
 
-    public void addListingWithoutPhotoEmptyAreaVerif(String postCode, String locationDropInDown, String area, String totalBedrooms,
+    public AddPropertyHelper addListingWithoutPhotoEmptyAreaVerif(String postCode, String locationDropInDown, String area, String totalBedrooms,
                                                      String rent, final String errorMessage) {
         setPostalCode1(postCode, locationDropInDown);
         pressContinue();
@@ -537,9 +592,10 @@ public class AddPropertyHelper extends HelperBase {
         setMonthlyRent(rent);
         pressContinue();
         continueListingWithoutPhoto();
+        return this;
     }
 
-    public void addListingWithoutAreaDefault(String postCode, String totalBedrooms, String rent, String locationDropInDown, final String city) {
+    public AddPropertyHelper addListingWithoutAreaDefault(String postCode, String totalBedrooms, String rent, String locationDropInDown, final String city) {
         setPostalCode(postCode, locationDropInDown);
         pressContinue();
         verifyCity(city);
@@ -551,18 +607,21 @@ public class AddPropertyHelper extends HelperBase {
         setMonthlyRent(rent);
         pressContinue();
         continueListingWithoutPhoto();
+        return this;
     }
 
-    public void propertytitle(String title) {
+    public AddPropertyHelper propertytitle(String title) {
         $(input_listing_Titile).setValue(title);
+        return this;
     }
 
-    public void clickEdit() {
+    public AddPropertyHelper clickEdit() {
         $(byXpath(button_listingEdit)).click();
+        return this;
     }
 
 
-    public void changeAboutOptions(final String amenity1, final String amenity2, final String amenity3, final String amenity4, final String amenity5, final String amenity6, final String amenity7, final String amenity8, final String amenity9, final String amenity10, final String amenity11, final String amenity12, final String amenity13) {
+    public AddPropertyHelper changeAboutOptions(final String amenity1, final String amenity2, final String amenity3, final String amenity4, final String amenity5, final String amenity6, final String amenity7, final String amenity8, final String amenity9, final String amenity10, final String amenity11, final String amenity12, final String amenity13) {
         $(byXpath(select_icon_Amanity+amenity1+end_string)).waitUntil(visible, 20000).click();
         $(byXpath(select_icon_Amanity+amenity2+end_string)).click();
         $(byXpath(select_icon_Amanity+amenity3+end_string)).click();
@@ -578,10 +637,11 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath(select_icon_Amanity+amenity11+end_string)).click();
         $(byXpath(select_icon_Amanity+amenity12+end_string)).click();
         $(byXpath(select_icon_Amanity+amenity13+end_string)).click();
+        return this;
 
     }
 
-    public void addListingWithoutPhotoBuddyUp(String postCode, String locationDropInDown, String area, String totalBedrooms,
+    public AddPropertyHelper addListingWithoutPhotoBuddyUp(String postCode, String locationDropInDown, String area, String totalBedrooms,
                                               String rent, final String errorMessage) {
         setPostalCode(postCode, locationDropInDown);
         pressContinue();
@@ -597,9 +657,10 @@ public class AddPropertyHelper extends HelperBase {
         setMonthlyRent(rent);
         pressContinue();
         continueListingWithoutPhoto();
+        return this;
     }
 
-    private void checkWholeProperty(final String scrollPoints) {
+    private AddPropertyHelper checkWholeProperty(final String scrollPoints) {
         if (!$(byXpath(check_listFlow_aboutProp_privateRooms)).exists()) {
             scrollDownPageOn(scrollPoints);
             sleep(500);}
@@ -607,42 +668,47 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath(check_listFlow_aboutProp_whole)).click();
         $(byXpath(check_listFlow_aboutProp_whole +input)).shouldBe(checked);
         $(byXpath(check_listFlow_aboutProp_privateRooms +input)).shouldNotBe(checked);
+        return this;
     }
 
-    private void verifyRoomOnly(final String scrollPoints) {
+    private AddPropertyHelper verifyRoomOnly(final String scrollPoints) {
         if (!$(byXpath(check_listFlow_aboutProp_privateRooms)).exists()) {
             scrollDownPageOn(scrollPoints);
         sleep(500);}
         $(byXpath(check_listFlow_aboutProp_whole +input)).shouldNotBe(checked);
         $(byXpath(check_listFlow_aboutProp_privateRooms +input)).shouldBe(checked);
-
+        return  this;
     }
 
-    public void verifyBreadCrumbs(final String roomsSearch, final String citySearch, final String areaSearch, final String listingOverview) {
+    public AddPropertyHelper verifyBreadCrumbs(final String roomsSearch, final String citySearch, final String areaSearch, final String listingOverview) {
         verifyBreadCrumbsWithoutArea(roomsSearch,citySearch,listingOverview);
         $(byXpath(link_breadCrumb+areaSearch+end_string)).should(exist);
-
+        return  this;
     }
 
-    public void verifyBreadCrumbsWithoutArea(final String roomsSearch, final String citySearch, final String listingOverview) {
+    public AddPropertyHelper verifyBreadCrumbsWithoutArea(final String roomsSearch, final String citySearch, final String listingOverview) {
         $(byXpath(link_breadCrumb+roomsSearch+end_string)).should(exist);
         $(byXpath(link_breadCrumb+citySearch+end_string)).should(exist);
         $(byXpath(link_breadCrumb_end+listingOverview+end_string)).should(exist);
+        return this;
     }
 
-    public void goByLink(final String areaSearch) {
+    public AddPropertyHelper goByLink(final String areaSearch) {
         $(byXpath(link_breadCrumb+areaSearch+end_string)).click();
+        return this;
     }
 
-    public void isCheckedSutableFore(final String sutableFor) {
+    public AddPropertyHelper isCheckedSutableFore(final String sutableFor) {
         $(byXpath(check_suitable_ListFlow+sutableFor+check_suitable_ListFlow_end)).shouldBe(checked);
+        return this;
     }
 
-    public void clickSutableFore(final String sutableFor) {
+    public AddPropertyHelper clickSutableFore(final String sutableFor) {
         $(byXpath(check_suitable_ListFlow+sutableFor+end_string)).click();
+        return this;
     }
 
-    public void fillRoomData(String newRent, String newDeposit, String newBills, String year, String date,
+    public AddPropertyHelper fillRoomData(String newRent, String newDeposit, String newBills, String year, String date,
                              final int optionMinStay, final int optionMaxStay, String roomDescription, final String Month) {
 
         fillInField(newRent, $(byXpath(input_roomPrice)));
@@ -660,27 +726,31 @@ public class AddPropertyHelper extends HelperBase {
 
         fillInField(roomDescription, $(byXpath(input_roomDescr_editPage)));
         sleep(1000);
+        return this;
     }
 
-    public void availableDateIsCheckedAddingRoom() {
+    public AddPropertyHelper availableDateIsCheckedAddingRoom() {
         $(byXpath(check_edit_addingRoom_Available)).shouldBe(checked);
+        return this;
     }
 
-    public void availableEdiRoomCheck(final String roomID) {
+    public AddPropertyHelper availableEdiRoomCheck(final String roomID) {
         $(byXpath(check_edit_roomDate_Available1+roomID+check_edit_roomDate_Available1_end)).click();
+        return this;
     }
 
-    public void clickEditRoom(final String roomNumber) {
+    public AddPropertyHelper clickEditRoom(final String roomNumber) {
         $(byXpath(icon_edit_room+roomNumber+end_string1)).click();
+        return this;
     }
 
-    public void deactivateVerifyRoom(final String roomId1, String availableFrom, final String textRoomAvail) {
+    public AddPropertyHelper deactivateVerifyRoom(final String roomId1, String availableFrom, final String textRoomAvail) {
         $(byXpath(text_available_Room+roomId1+end_string1)).shouldHave(text(availableFrom));
         sleep(1000);
         $(byXpath(icon_disable_Room+roomId1+icon_disable_Room_Room_end)).click();
         sleep(1000);
         $(byXpath(text_available_Room+roomId1+end_string1)).shouldHave(text(textRoomAvail));
-
+        return this;
     }
     public String monthAvailableFrom(String roomID) {
 
@@ -698,17 +768,17 @@ public class AddPropertyHelper extends HelperBase {
         return monthAvailableFrom;
     }
 
-    public void activateVerifyRoom(final String roomId) {
+    public AddPropertyHelper activateVerifyRoom(final String roomId) {
 
         $(byXpath(text_available_Room+roomId+end_string1)).shouldHave(text("Unavailable"));
         sleep(1000);
         $(byXpath(icon_disable_Room+roomId+icon_disable_Room_Room_end)).click();
         sleep(1000);
         $(byXpath(text_available_Room+roomId+end_string1)).shouldHave(text("Available now"));
-
+        return this;
     }
 
-    public void dateChange(String roomNumber, final String year, final String date, final String Month) {
+    public AddPropertyHelper dateChange(String roomNumber, final String year, final String date, final String Month) {
 
         if ($(byXpath(check_room_Available+roomNumber+check_room_Available_end)).is(checked)){
             $(byXpath(label_room_Available+roomNumber+label_Available_end)).click();}
@@ -719,9 +789,10 @@ public class AddPropertyHelper extends HelperBase {
         $(year_room__date).waitUntil(appear, 4000).click();
         $(byXpath(year_room__option)).selectOptionByValue(year);
         $(byXpath(state_room_date+date+end_string)).waitUntil(appear, 4000).click();
+        return this;
     }
 
-    public void dateChangeEdit(final String year, final String date, final String Month) {
+    public AddPropertyHelper dateChangeEdit(final String year, final String date, final String Month) {
 
         if ($(byXpath(check_date_from)).is(checked)){
             $(byXpath(date_from_tick)).click();}
@@ -732,27 +803,32 @@ public class AddPropertyHelper extends HelperBase {
         $(year_room__date).waitUntil(appear, 4000).click();
         $(byXpath(year_room__option)).selectOptionByValue(year);
         $(byXpath(state_room_date+date+end_string)).waitUntil(appear, 4000).click();
+        return this;
     }
 
-    public void verifyAvailable(final Condition checked) {
+    public AddPropertyHelper verifyAvailable(final Condition checked) {
         $(byXpath(check_date_from)).shouldBe(checked);
+        return this;
     }
 
 
-    public void verifyCity(final String city) {
+    public AddPropertyHelper verifyCity(final String city) {
         $(byXpath(input_city)).shouldHave(value(city));
+        return this;
     }
 
-    public void clickRoomsSection() {
+    public AddPropertyHelper clickRoomsSection() {
         $(byXpath(room__listing_block)).click();
+        return this;
     }
 
-    public void removeRooms(final String roomNumber, final String expectedDialogText) {
+    public AddPropertyHelper removeRooms(final String roomNumber, final String expectedDialogText) {
         $(byXpath(icon_remove_room+roomNumber+end_string2)).click();
         //confirm(expectedDialogText);
         sleep(1000);
         clickButton(expectedDialogText, "button");
         sleep(2000);
+        return this;
 
     }
 
@@ -762,42 +838,45 @@ public class AddPropertyHelper extends HelperBase {
     }
 
 
-    public void changeWholeOfProperty(final String defaultListingIs, final String clickChangeTo) {
+    public AddPropertyHelper changeWholeOfProperty(final String defaultListingIs, final String clickChangeTo) {
         checkerPropertyWhole(defaultListingIs);
         $(byXpath(check_whole+clickChangeTo+end_string)).click();
-
+        return this;
     }
 
-    public void checkerPropertyWhole(final String listingIs) {
+    public AddPropertyHelper checkerPropertyWhole(final String listingIs) {
         $(byXpath(check_whole+listingIs+end_string_input)).shouldBe(checked);
+        return this;
 
     }
 
 
-    public void featuresPropertyClick(final String featureIdName, final Condition conditionNot) {
+    public AddPropertyHelper featuresPropertyClick(final String featureIdName, final Condition conditionNot) {
 
         $(byXpath(check_featured+featureIdName+end_string1)).shouldNotBe(conditionNot);
         $(byXpath(check_label_featured+featureIdName+getEnd_string3)).click();
+        return this;
     }
 
-    public void featuresPropertyIsChecked(final String featureIdName, final Condition condition) {
+    public AddPropertyHelper featuresPropertyIsChecked(final String featureIdName, final Condition condition) {
         $(byXpath(check_featured+featureIdName+end_string1)).shouldBe(condition);
-
+        return this;
     }
 
-    public void saveQuitHeaderMenuListing() {
+    public AddPropertyHelper saveQuitHeaderMenuListing() {
         $(byXpath(tab_header_quit)).click();
         //$(byXpath("//header//ul[@class='nav navbar-right']/a")).click();
-
+        return this;
 
     }
 
-    public void continueListing() {
+    public AddPropertyHelper continueListing() {
         $(byXpath(tab_header_list_continue)).click();
+        return this;
     }
 
 
-    public void editRoomVerifData(final String roomId, String monthlyRentOld, String oldDeposit, String totalBills, final String optionMinStay, final String optionMaxStay, String roomDescription) {
+    public AddPropertyHelper editRoomVerifData(final String roomId, String monthlyRentOld, String oldDeposit, String totalBills, final String optionMinStay, final String optionMaxStay, String roomDescription) {
         $(byXpath("//a[@data-room-id='" + roomId + "' and @data-toggle]")).click();
         $(byXpath("//input[@id='room-price']")).shouldHave(value(monthlyRentOld));
         $(byXpath("//input[@id='room-deposit']")).shouldHave(value(oldDeposit));
@@ -805,6 +884,7 @@ public class AddPropertyHelper extends HelperBase {
         $(byXpath("//select[@id='room-min_stay']/option[@value='" + optionMinStay + end_string1)).shouldBe(selected);
         $(byXpath("//select[@id='room-max_stay']/option[@value='" + optionMaxStay + end_string1)).shouldBe(selected);
         $(byXpath("//textarea[@id='room-description']")).shouldHave(text(roomDescription));
+        return this;
     }
 
 

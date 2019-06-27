@@ -25,17 +25,21 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     private SelenideElement field_fb_Email = $("#email");
     private SelenideElement field_fb_Password = $("#pass");
     private SelenideElement field_login_Username = $("input#loginform-username");
+    private String field_reset_Email ="input#passwordresetrequestform-email";
     private SelenideElement field_login_Password = $("input#loginform-password");
     private SelenideElement button_login_FB = $(byXpath("//input[@value='Log In']"));
-    private SelenideElement button_listing_Remove = $(byXpath("//button[@type='submit' and contains(text(), 'Delete!')]"));
+    private SelenideElement button_listing_Remove = $(byXpath("//button[@type='submit' and contains(text(), 'Delete')]"));
+    private String button_submit_Reset = "//button[@type='submit' and contains(text(), 'yes, reset my password ')]";
     private SelenideElement notif_incorrect_EmailPassword = $(byXpath("//body//div[contains(@class,' required has-error')]/div[contains(text(),'Incorrect email or password.')]"));
     private static SelenideElement link_SignIn = $(byXpath("//a[contains(., 'Sign in')]"));
 
     private static SelenideElement link_LogIn = $(byXpath("//a[contains(., 'Login')]"));
+
+    private SelenideElement reset = $(byXpath("//a[contains(.,'Reset')]"));
     private SelenideElement popup_SignIn = $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]"));
     private SelenideElement popup_SignIn_phone = $(byXpath("//div[@id='signupRevealModal']//div//a[@class='text-bold' and contains(., 'Sign')]"));
-    private String item_header_drop_Menu1 = "//ul[@class='dropdown-menu']//a[contains(., '";
-    private String item_header_drop_Menu2 = "')]";
+    private SelenideElement drop_Menu_My_profile = $(byXpath("//ul[@class='dropdown-menu']//a[contains(., 'My profile')]"));
+
     private String  tab_inner_header1 = "//body//div[@class='inner-menu--scroll']//li/a[contains(., '";
     private String  tab_inner_header2 = "')]";
     private SelenideElement popup_button_close_SignUp = $(byXpath("//div[@id='signupNeedspaceModal']//button[@class='btn btn-sm close u_m15']"));
@@ -54,7 +58,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public void tabHeaderUserName() {
-        tab_header_Username.waitUntil(visible, 10000).click();
+        clickAfterWaitVisible(tab_header_Username, 10000);
     }
 
     public void goToPropertyPage() {
@@ -87,7 +91,8 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public void clickSignUp_In_WithFacebook() {
-        button_popup_FB.waitUntil(visible, 4000).click();
+        clickAfterWaitVisible(button_popup_FB, 4000);
+
     }
 
     public void clickJoinFreeButton() {
@@ -96,7 +101,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
 
     public void removeAccount() {
         button_listing_Remove.waitUntil(appears, 4000).click();
-        confirm("Are you sure you wish to delete your account?");
+        confirm(" Are you sure you want to  fully delete the account? The account can not be restored after this.");
         sleep(2000);
     }
 
@@ -110,6 +115,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public static void clickSignInButtonInForm() {
+        //clickAfterWaitVisible(link_SignIn, 10000);
         link_SignIn.waitUntil(visible, 10000).click();
     }
 
@@ -122,15 +128,16 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     public void clickSignInButtonInPopup() {
         sleep(2000);
         hoverClick1(popup_SignIn);
+
     }
 
     public void clickSignInButtonInPopupPhone() {
         sleep(2000);
-        hoverClick1(popup_SignIn_phone);
+        popup_SignIn_phone.waitUntil(visible, 10000).hover().click();
     }
 
-    public void chooseSectionDropDownMenu(final String menuSection) {
-        $(byXpath(item_header_drop_Menu1 + menuSection + item_header_drop_Menu2)).waitUntil(visible, 5000).click();
+    public void chooseMenu_My_profile() {
+        clickAfterWaitVisible(drop_Menu_My_profile, 5000);
     }
 
     public void chooseTabFromInnerMenuDashboard(final String item) {
@@ -197,7 +204,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         closeMatchPopUp();
         addPropertyHelper.openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
-        chooseSectionDropDownMenu("My profile");
+        chooseMenu_My_profile();
         chooseTabFromInnerMenuDashboard("Settings");
         removeAccount();
 
@@ -224,4 +231,10 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         submitLogin();
     }
 
+    public void checkResetEmail(String confEmail) {
+        reset.click();
+        fillInField(ConfData.getData(confEmail), $(field_reset_Email));
+        $(byXpath(button_submit_Reset)).click();
+
+    }
 }

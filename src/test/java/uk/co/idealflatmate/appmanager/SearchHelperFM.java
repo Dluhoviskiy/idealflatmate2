@@ -203,10 +203,11 @@ public class SearchHelperFM extends HelperBase {
     }
 
     public static void activeAge() {
+        SignUpHelper signUpHelper = new SignUpHelper();
 
         $(byXpath("//div[@class='ideal-flatmate-filter ']")).click();
-        SignUpHelper.dragLow.dragAndDropTo($(byXpath("//span[contains(.,'Clear')]")));
-        SignUpHelper.dragUpper.dragAndDropTo($(byXpath("//span[contains(.,'Apply')]")));
+        $(byXpath(signUpHelper.dragLow)).dragAndDropTo($(byXpath("//span[contains(.,'Clear')]")));
+        $(byXpath(signUpHelper.dragUpper)).dragAndDropTo($(byXpath("//span[contains(.,'Apply')]")));
         clickApply();
     }
 

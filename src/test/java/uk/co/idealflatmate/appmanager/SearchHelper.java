@@ -2,8 +2,9 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.google.common.collect.Ordering;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import utils.ConfDataProperty;
 
@@ -11,7 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -390,6 +390,17 @@ public class SearchHelper extends HelperBase {
 
     }
 
+
+
+    @FindBy(xpath = "//span[contains(.,'Apply')]")
+    private WebElement loginButton;
+
+
+    public SearchHelper setClickApply1() {
+        $(loginButton).click();
+        return this;
+    }
+
     public void verifyClearMoreFilter(String activeFilter) {
         $(By.xpath("//div[@class='more-filters selected']")).click();
         $(By.xpath("//label[@class='circle-button-with-text  active']/span")).shouldHave(text(activeFilter));
@@ -525,6 +536,13 @@ public class SearchHelper extends HelperBase {
         closePopupSignup();
         selectRadius(radius);
         verificationSearchPropertyMes(locationCardIs, indexOfCard);
+    }
+
+    public void startNewBuddyUpSearch(final String location, final String inDrop, final String radius) {
+        searchPropertyBySelectfromList(location, inDrop);
+        closePopupSignup();
+        selectRadius(radius);
+        //verificationSearchPropertyMes(locationCardIs, indexOfCard);
     }
     public void startBuddyUpSearch1(final String location, final String inDrop, final String radius,
                                     final String locationCardIs, final String idProperty) {

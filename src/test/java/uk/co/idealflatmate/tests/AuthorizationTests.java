@@ -38,9 +38,19 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
+    public void classicResetPassword() {
+
+        authorizationHelper.clickJoinFreeButton();
+        clickSignInButtonInForm();
+        authorizationHelper.checkResetEmail("FMNotPaid");
+        verificationHelper.isResetSuccessful();
+    }
+
+    @Test
     public void logInOutOnPropertyPage() {
 
         authorizationHelper.goToPropertyPage();
+
 
         authorizationHelper.clickSignInButtonInPopup();
         authorizationHelper.setLoginAsUserWithoutPackage("FMNotPaid");

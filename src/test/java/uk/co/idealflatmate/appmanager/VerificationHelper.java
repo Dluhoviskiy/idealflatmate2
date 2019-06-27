@@ -352,6 +352,11 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
                 "Better flatshares."));
 
     }
+
+    public void isResetSuccessful() {
+        $(byXpath("//p[@class='text-success']/span")).shouldHave(text("Check your email for further instructions"));
+
+    }
     public void ListingStart(final String text) {
             $(byXpath("//h2[@class='u_m0 u_m20-bottom text-24 text-20-xs']")).waitUntil(visible, 4000).shouldHave(text(text));
     }
@@ -602,6 +607,11 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     public void notifSpamer(final String mesToSpamer) {
 
         $(byXpath("//div[@class='alert alert-danger']")).shouldHave(text(mesToSpamer));
+
+    }
+
+    public void profileHasMatching() {
+        $(byXpath("//span[contains(@class,'btn u_ed-inline-block')]")).shouldHave(text("55% match"));
 
     }
 }

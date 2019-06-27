@@ -213,24 +213,18 @@ public class AreaPageHelper extends HelperBase {
     }
 
     public void checkArrowsBrowsAll(final String tab1click, final String tab2click, final String linkClick) {
-        SelenideElement arrow = $(byXpath("(//button[@role='presentation' and @class='owl-next'])[2]"));
+        SelenideElement arrow = $(byXpath("//div[@class='owl-carousel item-carousel js-carousel owl-theme owl-loaded']//button[@role='presentation' and @class='owl-next']"));
 
         switchTo().window(1);
-       // if($(byXpath("//a[contains(.,'" + tab1click + "')]")).exists()){
-            //$(byXpath("//a[contains(.,'" + tab1click + "')]")).click();}
-
         $(byXpath("//a[contains(.,'" + tab2click + "')]")).click();
+
         sleep(2000);
-        scrollDownPageOn("400");
-        sleep(1000);
-        arrow.click();
-        sleep(1000);
-        arrow.click();
-        sleep(1000);
-        arrow.click();
-        sleep(1000);
-        arrow.click();
-        sleep(1000);
+        //scrollDownPageOn("400");
+        do {
+                arrow.click();
+                sleep(1000);
+        }while (!$(byXpath("//div/a[contains(.,'" + linkClick + "')]")).isDisplayed());
+
         $(byXpath("//div/a[contains(.,'" + linkClick + "')]")).click();
     }
 
@@ -256,7 +250,9 @@ public class AreaPageHelper extends HelperBase {
         $(byXpath("//a[contains(.,'" + area + "')]")).click();
         //switchTo().window(2);
 
-        $(byXpath("//div[@class='search-panel hidden-xs']//input")).shouldHave(value(area));
+        if($(byXpath("//div[@class='search-panel hidden-xs']//input")).exists()){
+            $(byXpath("//div[@class='search-panel hidden-xs']//input")).shouldHave(value(area));
+        }
 
     }
 

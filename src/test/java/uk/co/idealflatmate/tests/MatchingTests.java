@@ -21,7 +21,7 @@ public class MatchingTests extends TestBase {
     public void fullMenuNewUserWithVerifPercent() {
 
         authorizationHelper.clickJoinFreeButton();
-        signUpHelper.clickRoom1();
+        signUpHelper.clickRoom();
 
         signUpHelper.signListingFM_LiveIn("fmMatch", "passwUniv", "2",
                                           "6", "2000", "85296200", "19", "Ronaldina",
@@ -137,4 +137,17 @@ public class MatchingTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
         helperBase.toHomePage();
     }
+    @Test
+    public void matchingOtherUserDisplaying() {
+        clearCache();
+        authorizationHelper.login("passwUniv", "matching_100");
+        authorizationHelper.goToFMpage();
+        matchingHelper.matchingOnCardClick();
+        verificationHelper.profileHasMatching();
+
+        authorizationHelper.logoutFromApp();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+        helperBase.toHomePage();
+    }
+
 }

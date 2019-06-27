@@ -132,9 +132,7 @@ public class TestBase {
     }
 
     public void clearCache() {
-
         clearBrowserCache();
-        refresh();
     }
 
 

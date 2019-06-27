@@ -24,6 +24,63 @@ public class Buddy_up extends TestBase {
     }
 
 
+
+    @Test //(priority = 2)
+
+    public void testNewBuddy_Up() {
+
+
+        searchHelper.startNewBuddyUpSearch("London", "London", "+20 km");
+
+
+        signUpHelper.click1PropCardMes("0");
+        verificationHelper.signUpPopupName("Sign up to continue");
+        signUpHelper.clickEmail();
+
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.emailBlankAlert();
+        verificationHelper.nameFirstBlankAlertMessage();
+        verificationHelper.genderBlankAlert();
+        verificationHelper.passwordBlankAlert();
+        //verificationHelper.passwordBlankAlertMessage();
+
+        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail", "Female");
+
+        verificationHelper.emailAlreadyExistedAlert();
+
+        signUpHelper.clearEmailMessage();
+        signUpHelper.clearFirstnameMessage();
+        //signUpHelper.clearGender();
+        signUpHelper.clearPasswordMessage();
+
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy1", "Female");
+        sleep(2000);
+
+        signUpHelper.clickYourInformationContinue();
+        verificationHelper.dateMonthYearBlankErrorMessage();
+
+        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "20",
+                "I want to Buddy_up", "Professional", "Freelancer/self employed");
+
+        //signUpHelper.clickBackToSearch();
+        buddyUpHelper.closeIntrodGroupsPopup();
+
+
+        messageHelper.clickMenuMessages();
+        verificationHelper.noConverInbox("0 conversations");
+
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseMenu_My_profile();
+        verificationHelper.profileDisplays(new ProfileData("percentComplete6",  "myProfile6",
+                "name6", "age6","lookingFor6", "aboutMe6","rooms6",
+                "amountPropCards6"));
+        verificationHelper.verificationUserNameOnHomePage("Ronald");
+
+        authorizationHelper.removeAnyAccount();
+    }
+
+
+
     @Test //(priority = 1)
 
 
@@ -90,7 +147,7 @@ public class Buddy_up extends TestBase {
         verificationHelper.passwordBlankAlert();
         //verificationHelper.passwordBlankAlertMessage();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail", "Female");
 
         verificationHelper.emailAlreadyExistedAlert();
 
@@ -99,7 +156,7 @@ public class Buddy_up extends TestBase {
         //signUpHelper.clearGender();
         signUpHelper.clearPasswordMessage();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy1");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy1", "Female");
         sleep(2000);
 
         signUpHelper.clickYourInformationContinue();
@@ -118,7 +175,7 @@ public class Buddy_up extends TestBase {
         verificationHelper.noConverInbox("0 conversations");
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete6",  "myProfile6",
                 "name6", "age6","lookingFor6", "aboutMe6","rooms6",
                 "amountPropCards6"));
@@ -223,7 +280,7 @@ public class Buddy_up extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Francine");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         //matchingHelper.closePopupMatching();
         verificationHelper.profileDisplays(new ProfileData("percentComplete7",  "myProfile7",
                 "name7", "age7","lookingFor7", "aboutMe7","rooms7",
@@ -283,7 +340,7 @@ public class Buddy_up extends TestBase {
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy2");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy2", "Female");
         sleep(2000);
         signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "19", "I want to Buddy_up", "Professional", "Student");
         messageHelper.photoOfOwnerInMesBuddy_up(photo1);
@@ -302,7 +359,7 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.assertNumberOfMessInbox(1);
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        authorizationHelper.chooseMenu_My_profile();
         buddyUpHelper.assertNumberOfMyGroups(1);
         buddyUpHelper.clickListingImgGroupCard();
         buddyUpHelper.clickGroupSection();
@@ -322,7 +379,7 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.assertNumberOfMessInbox(0);
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        authorizationHelper.chooseMenu_My_profile();
         buddyUpHelper.assertNumberOfMyGroups(0);
         homePageHelper.clickLogo();
 
@@ -384,7 +441,7 @@ public class Buddy_up extends TestBase {
         verificationHelper.signUpPopupName("Sign up to continue");
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Trump", "FMupsBuddy3");
+        signUpHelper.yourInformation("passwUniv", "Trump", "FMupsBuddy3", "Female");
         sleep(2000);
         signUpHelper.moreAboutYou2("25", "12", "1985", "777777777", "227", "I an interested in Buddy_up", "Professional", "Other");
 
@@ -437,7 +494,7 @@ public class Buddy_up extends TestBase {
         buddyUpHelper.closePopupLookingGroup();
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        authorizationHelper.chooseMenu_My_profile();
         buddyUpHelper.assertNumberOfMyGroups(2);
         buddyUpHelper.clickListingImgGroupCard();
         buddyUpHelper.clickGroupSection();
@@ -526,7 +583,7 @@ public class Buddy_up extends TestBase {
         String movData = buddyUpHelper.movingData();
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My Group");
+        authorizationHelper.chooseMenu_My_profile();
         buddyUpHelper.veryfyGroupEditData(minBud, movData);
 
         buddyUpHelper.myGroupPageClick("Edit group");

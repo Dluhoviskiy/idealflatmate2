@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.switchTo;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFound;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 public class FooterTest extends TestBase {
@@ -128,7 +128,8 @@ public class FooterTest extends TestBase {
     @Test
     public void footerNLALink() {
 
-        footerHelper.footerNLAWorks();
+        footerHelper.footerNLAPaymentsClick();
+        switchTo().window(0);
         footerHelper.verificationNLAWorks();
         //helperBase.toHomePage();
     }
@@ -153,7 +154,7 @@ public class FooterTest extends TestBase {
     public void footerInstagramLink() {
 
         footerHelper.footerInstagram();
-        footerHelper.verificationInstagram();
+        footerHelper.verificationInstagram("idealflatmate");
 
     }
 

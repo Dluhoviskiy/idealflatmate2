@@ -71,7 +71,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.setSignUpNameFMessage(name);
         signUpHelper.profileDateBirthAddMessage("5", "2", "1959");
         signUpHelper.setSignEmailMessage("existingEmail");
-        signUpHelper.genderFemSelectAfterMesError();
+        signUpHelper.genderFemaleSelect("Male");
         signUpHelper.setSignPasswordMessage("passwUniv");
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailAlreadyExistedAlert();
@@ -114,7 +114,7 @@ public class SignUpLikeOrMessage extends TestBase {
         messageHelper.propertyPostcodeVerifMes(postCode);
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete1",  "myProfile1",
                 "name1", "age1","lookingFor1", "aboutMe1","rooms1",
                 "amountPropCards1"));
@@ -122,7 +122,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("50% complete");
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
 
@@ -173,7 +173,7 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.clickEmail();
 
         signUpHelper.setSignUpNameF(name);
-        signUpHelper.genderFemaleSelect();
+        signUpHelper.genderFemaleSelect("Female");
         signUpHelper.setSignEmail("mes2Email");
         signUpHelper.setSignPassword("passwUniv");
         signUpHelper.clickYourInformationContinue();
@@ -192,7 +192,7 @@ public class SignUpLikeOrMessage extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         verificationHelper.verificationUserNameOnHomePage(name);
 
-        addPropertyHelper.mySavedPropertiesMenu();
+        addPropertyHelper.chooseMenuSaved();
         verificationHelper.savedProperties(referNumber);
         signUpHelper.removeLike();
         verificationHelper.cardIsUnliked();
@@ -200,7 +200,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("70% complete");
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete2",  "myProfile2",
                         "name2", "age2","lookingFor2", "aboutMe2","rooms2",
                         "amountPropCards2"));
@@ -223,7 +223,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", name, "mes3Email");
+        signUpHelper.yourInformation("passwUniv", name, "mes3Email", "Female");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -252,7 +252,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         verificationHelper.verifySearchListingPage();
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete3",  "myProfile3",
                 "name3", "age3","lookingFor3", "aboutMe3","rooms3",
                 "amountPropCards3"));
@@ -268,7 +268,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail", "Female");
 
         verificationHelper.emailAlreadyExistedAlert();
 
@@ -314,7 +314,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "existingEmail", "Female");
 
         verificationHelper.emailAlreadyExistedAlert();
 

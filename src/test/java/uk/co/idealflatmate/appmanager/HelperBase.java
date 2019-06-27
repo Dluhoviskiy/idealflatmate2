@@ -2,7 +2,6 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import uk.co.idealflatmate.tests.TestBase;
 
 import java.util.List;
 
@@ -38,9 +37,9 @@ public class HelperBase  {
     public static void closeListRenewPopUp() {
         PopUpHelper popUpHelper = new PopUpHelper();
         String buttonRenew = popUpHelper.closeRenewPopup;
-        sleep(5000);
-        if($(buttonRenew).isDisplayed()){
-            $(buttonRenew).waitUntil(visible, 7000).click();
+        sleep(2000);
+        if($(byXpath(buttonRenew)).isDisplayed()){
+            $(byXpath(buttonRenew)).waitUntil(visible, 2000).click();
         }
     }
 
@@ -56,6 +55,12 @@ public class HelperBase  {
         if (buttonMatch.isDisplayed()) {
             buttonMatch.waitUntil(visible, 3000).click();
         }
+    }
+    public static void noCloseMatchPopUp() {
+        PopUpHelper popUpHelper = new PopUpHelper();
+        SelenideElement buttonMatch = $(byXpath(popUpHelper.closeMatching));
+        buttonMatch.shouldNotBe(visible);
+
     }
 
     public static void closeButtonRenew() {
@@ -142,7 +147,6 @@ public class HelperBase  {
     public static void pageUrlVerifStageGoLive(){
         // проверить, что вы находитесь на верной странице
         if (! url().equals("https://www.idealflatmate.co.uk/")) {
-
             newPage("https://www.idealflatmate.co.uk/");
         }
 
@@ -151,13 +155,13 @@ public class HelperBase  {
 
     public static void pageUrlVerifLiveGoStage(){
         // проверить, что вы находитесь на верной странице
+        String currentUrl = url();
 
-        if (! url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
+        if (!url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
             sleep(1000);
-            newPage("http://front.idealflatmate4test.demo.devplatform2.com");
-            String currentUrl = url();
-            System.out.println(currentUrl);
-        }
+            open("http://front.idealflatmate4test.demo.devplatform2.com");
+
+        } else System.out.println(currentUrl);
     }
 
 
@@ -170,15 +174,23 @@ public class HelperBase  {
 
     public static void hoverClick(String xpath) {
         SelenideElement elementHoverClick = $(byXpath(""+xpath+"")).waitUntil(visible, 10000);
-        elementHoverClick.hover();
-        elementHoverClick.click();
+        elementHoverClick.hover().click();
     }
 
-    public static void hoverClick1(SelenideElement element) {
-        SelenideElement elementHoverClick = element;
-        elementHoverClick.waitUntil(visible, 10000).hover();
-        elementHoverClick.waitUntil(visible, 10000).click();
+    public  void hoverClick1(SelenideElement elementHoverClick) {
+        clickAfterWaitVisible(elementHoverClick, 10000);
+
     }
+
+    public  void clickAfterWaitVisible(SelenideElement elementHoverClick, final int wait) {
+        clickAfterWaitAppear(elementHoverClick, wait);
+
+    }
+    public  void clickAfterWaitAppear(SelenideElement elementHoverClick, final int wait) {
+        elementHoverClick.waitUntil(visible, wait).hover().click();
+
+    }
+
 
     public void searchPropertyBy(String location, SelenideElement location1) {
 

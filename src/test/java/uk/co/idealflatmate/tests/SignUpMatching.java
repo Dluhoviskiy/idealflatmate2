@@ -39,7 +39,7 @@ public class SignUpMatching extends TestBase {
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.yourInformation("passwUniv", name, "FMMatch5");
+        signUpHelper.yourInformation("passwUniv", name, "FMMatch5", "Female");
         signUpHelper.moreAboutYou("15","2","1977","3456666666","20","Tell us about yourself",
                                                 "Professional", "Freelancer/self employed");
 
@@ -71,7 +71,7 @@ public class SignUpMatching extends TestBase {
         matchingHelper.verificationResultOfMatching();
 
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         verificationHelper.profileDisplays(new ProfileData("percentComplete8",  "myProfile8",
                 "name8", "age8","lookingFor8", "aboutMe8","rooms8",
                 "amountPropCards8"));
@@ -94,7 +94,7 @@ public class SignUpMatching extends TestBase {
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch4");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch4", "Female");
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                     "Tell us about yourself", "Professional", "Other");
 
@@ -104,7 +104,7 @@ public class SignUpMatching extends TestBase {
         verificationHelper.verifyAddListingPage();
         addPropertyHelper.openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
        // matchingHelper.closePopupMatching();
         //signUpHelper.verificationDataProfileNameUser("flatmate");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
@@ -124,7 +124,7 @@ public class SignUpMatching extends TestBase {
 
         signUpHelper.clickEmailMatching1();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch6");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "FMMatch6", "Female");
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                      "Tell us about yourself", "Professional", "Other");
 
@@ -134,7 +134,7 @@ public class SignUpMatching extends TestBase {
 
         getAddPropertyHelper().openDropDownMenu();
         verificationHelper.checkMatchingConcurrence("100% complete");
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
        // matchingHelper.closePopupMatching();
         signUpHelper.verificationDataProfileNameUser("Ronald", "42");
         verificationHelper.verificationUserNameOnHomePage("Ronald");

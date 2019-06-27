@@ -3,6 +3,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.SearchHelper;
 
 //import static org.seleniumhq.jetty7.util.LazyList.getList;
 import static com.codeborne.selenide.Selenide.*;
@@ -140,11 +141,14 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.numberOfActiveFilters(1);
         searchHelper.activeFiltersIs("Agencies");
         clickApply();
+        //searchHelper.setClickApply1();
         sleep(2000);
         Assert.assertEquals(getCardUserType(), cardsUserTypeAgent());
 
         searchHelper.clickMyIdealFM_FilterTypeUserVerify(1);
+                    //.setClickApply1();
         searchHelper.numberOfActiveFilters(1);
+
         searchHelper.activeFiltersIs("Agencies");
         //deactivate previous filter
         searchHelper.filterOptionClick("Agencies");

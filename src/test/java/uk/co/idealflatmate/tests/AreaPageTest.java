@@ -67,7 +67,7 @@ public class AreaPageTest extends TestBase {
 
         areaPageHelper.clicklinkNearbyAreas();
         closeAdvPopUp();
-        Assert.assertTrue(cardsOnThePage().size() <= amountPropOnAreaPage);
+        Assert.assertTrue(cardsOnThePage().size() >= amountPropOnAreaPage);
         areaPageHelper.checklinkNearbyAreas(areaName, "Display map");//it is the same area
         String areaNameInput = selenidElement(field_searchBar_listing).getValue();
 
@@ -117,6 +117,16 @@ public class AreaPageTest extends TestBase {
         areaPageHelper.clickArea(1);
         areaPageHelper.checkArrowsBrowsAll("Coliving", "Explore", "Browse all areas");
         areaPageHelper.checkRestAreas("Rest of the UK", "Brixham");
+
+    }
+
+    @Test
+    public void exploreMoreAreaCity() {
+        areaPageHelper.areaScroll();
+        areaPageHelper.clickArea(1);
+        areaPageHelper.checkArrowsBrowsAll("Coliving", "Explore", " more areas");
+        switchTo().window(2);
+        areaPageHelper.checkRestAreas("Browse all cities", "London");
 
     }
 }

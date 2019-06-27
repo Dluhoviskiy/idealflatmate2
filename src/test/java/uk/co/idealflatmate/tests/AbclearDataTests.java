@@ -70,6 +70,7 @@ public class AbclearDataTests extends TestBase {
     public void removeListingBeforeTest() {
 
         authorizationHelper.login("passwUniv", "agentNotPaid");
+        closeListRenewPopUp();
         verifyNoPropertyOrRemove();
 
         authorizationHelper.login("passwUniv", "userNotpaid");

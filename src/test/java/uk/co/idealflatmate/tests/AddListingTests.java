@@ -34,64 +34,53 @@ public class AddListingTests extends TestBase {
         verificationHelper.closeMatchingPopup();
 
         //verificationHelper.verifyNoProperty();
-        paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
-        addPropertyHelper.addListingFromListingPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("L11","Liverpool L11 0JA, UK");
-
-        getAddPropertyHelper().pressContinue();
-
-        //paymentsHelper.addPropertyHelper.chooseArea("Elephant and Castle");
+        addPropertyHelper.chooseListingsFromDropDownMenu()
+                         .addListingFromListingPage()
+                         .setPostalCode("L11","Liverpool L11 0JA, UK")
+                         .pressContinue();
         sleep(1000);
-        getAddPropertyHelper().pressContinue();
+        addPropertyHelper.pressContinue();
         sleep(1000);
-        getAddPropertyHelper().saveQuitHeaderMenuListing();
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        addPropertyHelper.saveQuitHeaderMenuListing()
+                         .chooseListingsFromDropDownMenu();
         verificationHelper.finishUnfinished();
-        getAddPropertyHelper().saveQuitHeaderMenuListing();
-        sleep(1000);
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        verificationHelper.removeUnfinishedListing();
+        addPropertyHelper.saveQuitHeaderMenuListing()
+                         .chooseListingsFromDropDownMenu();
 
+        verificationHelper.removeUnfinishedListing();
         verificationHelper.verifyNoPropertyPending();
         verificationHelper.verificationUserNameOnHomePage("John");
 
         authorizationHelper.logoutFromApp();
+
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
     @Test
     public void loginPendingListing() {
-
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("userNotpaid");
-        authorizationHelper.setPassword("passwUniv");
-        authorizationHelper.submitLogin();
+        authorizationHelper.login("passwUniv","userNotpaid");
 
         verificationHelper.closeMatchingPopup();
 
         addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoProperty();
 
-        addPropertyHelper.chooseListingsFromDropDownMenu();
-        addPropertyHelper.addListingFromListingPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("sw1a ", "London SW1A 1AA, UK");
-        //getAddPropertyHelper().pressContinue1();
-        getAddPropertyHelper().pressContinue();
-
-        addPropertyHelper.chooseArea("Knightsbridge");
-        getAddPropertyHelper().pressContinue();
-
-        addPropertyHelper.setTotalBedrooms("4");
+        addPropertyHelper.chooseListingsFromDropDownMenu()
+                         .addListingFromListingPage()
+                         .setPostalCode("sw1a ", "London SW1A 1AA, UK")
+                         .pressContinue()
+                         .chooseArea("Knightsbridge")
+                         .pressContinue()
+                         .setTotalBedrooms("4");
         scrollDownPageOn("2000");
-        addPropertyHelper.setMonthlyRent("500");
-        getAddPropertyHelper().pressContinue();
-
-        addPropertyHelper.continueListingWithoutPhoto();
+        addPropertyHelper.setMonthlyRent("500")
+                         .pressContinue()
+                         .continueListingWithoutPhoto();
         verificationHelper.finishPendingProperty();
 
         addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyPendingProperty();
+
         addPropertyHelper.removeListingClick("0");
         verificationHelper.verifyNoPropertyPending();
         verificationHelper.verificationUserNameOnHomePage("John");
@@ -104,59 +93,50 @@ public class AddListingTests extends TestBase {
 
     @Test
     public void houseFeaturesListing() {
+        authorizationHelper.login("passwUniv","agentNotpaid1");
 
-        authorizationHelper.clickJoinFreeButton();
-        authorizationHelper.clickSignInButtonInForm();
-        authorizationHelper.setLoginAsUserWithoutPackage("agentNotpaid1");
-        authorizationHelper.setPassword("passwUniv");
-        authorizationHelper.submitLogin();
         verificationHelper.verificationUserNameOnHomePage("AgentF");
 
         addPropertyHelper.chooseListingsFromDropDownMenu();
+
         verificationHelper.verifyNoProperty();
-
-        addPropertyHelper.chooseListingsFromDropDownMenu();
-        addPropertyHelper.addListingFromListingPage();
-        addPropertyHelper.setPostalCode("N11 1GN", "London N11 1GN, UK");
-        //getAddPropertyHelper().pressContinue1();
-        getAddPropertyHelper().pressContinue();
-
-        addPropertyHelper.chooseArea("New Southgate");
-        getAddPropertyHelper().pressContinue();
-
-        addPropertyHelper.setTotalBedrooms("1");
-        addPropertyHelper.isCheckedSutableFore("Professionals and/or Students");
-        addPropertyHelper.clickSutableFore("Students Only");
-        addPropertyHelper.isCheckedSutableFore("Students Only");
-        addPropertyHelper.setAllAmanitiesFeatures("Gym", "Concierge");
+        addPropertyHelper.chooseListingsFromDropDownMenu()
+                         .addListingFromListingPage()
+                         .setPostalCode("N11 1GN", "London N11 1GN, UK")
+                         .pressContinue()
+                         .chooseArea("New Southgate")
+                         .pressContinue()
+                         .setTotalBedrooms("1")
+                         .isCheckedSutableFore("Professionals and/or Students")
+                         .clickSutableFore("Students Only")
+                         .isCheckedSutableFore("Students Only")
+                         .setAllAmanitiesFeatures("Gym", "Concierge");
 
         scrollDownPageOn("1000");
 
-        addPropertyHelper.featuresPropertyClick("property-is_bills_included", checked);
-        addPropertyHelper.featuresPropertyClick("property-has_no_deposit", checked);
+        addPropertyHelper.featuresPropertyClick("property-is_bills_included", checked)
+                         .featuresPropertyClick("property-has_no_deposit", checked);
 
         scrollDownPageOn("1000");
-        paymentsHelper.addPropertyHelper.setMonthlyRent("1700");
-        getAddPropertyHelper().pressContinue();
+
+        addPropertyHelper.setMonthlyRent("1700")
+                         .pressContinue();
         sleep(1000);
-        getAddPropertyHelper().pressBack();
 
-        addPropertyHelper.featuresPropertyIsChecked("property-is_bills_included", checked);
-        addPropertyHelper.featuresPropertyIsChecked("property-has_no_deposit", checked);
-        //addPropertyHelper.featuresPropertyIsChecked("property-has_concierge", checked);
-        //addPropertyHelper.featuresPropertyIsChecked("property-has_gym", checked);
+        addPropertyHelper.pressBack();
 
-        addPropertyHelper.saveQuitHeaderMenuListing();
-        addPropertyHelper.continueListing();
-
-        getAddPropertyHelper().pressContinue();
-
-        paymentsHelper.addPropertyHelper.continueListingWithoutPhoto();
+        addPropertyHelper.featuresPropertyIsChecked("property-is_bills_included", checked)
+                         .featuresPropertyIsChecked("property-has_no_deposit", checked)
+                         .saveQuitHeaderMenuListing()
+                         .continueListing()
+                         .pressContinue()
+                         .continueListingWithoutPhoto();
 
         helperBase.toHomePage();
+
         searchHelper.searchPropertyHome1("N11 1GN ");
         searchHelper.selectRadius("+3 km");
-        //searchHelper.checkSort("Top matched");
+
         verificationHelper.featuresOnTheCard();
 
         removeListing();
@@ -167,27 +147,21 @@ public class AddListingTests extends TestBase {
     @Test
     public void signUpPropertyAdding() {
 
-        addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
-        addPropertyHelper.selectTypeUser("An agency");
+        addPropertyHelper.pressAddListingFromHeaderNotLoggedUser()
+                         .selectTypeUser("An agency");
 
         signUpHelper.agentSignListing("Ronald", "agentRemoved", "passwUniv",
                                       "07399042641", "Tell us about yourself");
 
-        //verificationHelper.verificationUserNameOnHomePage("Ronald");
-        addPropertyHelper.saveQuitHeaderMenuListing();
-
-        addPropertyHelper.chooseListingsFromDropDownMenu();
+        addPropertyHelper.saveQuitHeaderMenuListing()
+                         .chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoProperty();
-
         verificationHelper.verifyAddListingPage();
-        addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("M11","Manchester M11 3FF, UK", "Bradford-with-Beswick", "2",
-                                               "1500", "Area cannot be blank.");
-
-        //addPropertyHelper.finishPropertyCreatingAgency();
-
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        addPropertyHelper.pressAddListingFromBody()
+                         .addListingWithoutPhotoEmptyAreaVerif("M11","Manchester M11 3FF, UK",
+        "Bradford-with-Beswick", "2","1500", "Area cannot be blank.")
+                         .chooseListingsFromDropDownMenu();
         verificationHelper.verifyAddedProperty("Manchester M11 3FF, UK");
 
         addPropertyHelper.removeListingClick("0");
@@ -218,8 +192,9 @@ public class AddListingTests extends TestBase {
 
         allFields();
 
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        getAddPropertyHelper().viewListing();
+        addPropertyHelper.chooseListingsFromDropDownMenu()
+                         .viewListing();
+
         verificationHelper.photoListingExist();
         verificationHelper.verifyAddedPropertyWithAllFields("February", "Room 1", "Room 2", "Room 3",
                 "3 of 4 bedrooms available\n" + "Garden\n" + "Communal living room\n" +  "Balcony/patio\n" +
@@ -235,17 +210,19 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.login("passwUniv", "agentEdit");
         matchingHelper.closePopupMatching();
-        addPropertyHelper.closeRenewPopup();
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        getAddPropertyHelper().viewListing();
+        addPropertyHelper.closeRenewPopup()
+                         .chooseListingsFromDropDownMenu()
+                         .viewListing();
 
         verificationHelper.photoListingExist();
         verificationHelper.verifyAboutProperty("3 of 4 bedrooms available");
 
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        addPropertyHelper.clickEdit();
-        addPropertyHelper.changeWholeOfProperty("No, by the room only", "Yes");
-        addPropertyHelper.changeAboutOptions(" Garden", " Communal living room", " Balcony/patio", " Parking", "Pets Accepted", "Smokers Accepted", "Suitable for couples", "LGBT Friendly", "Family Friendly", "Trans Friendly", "Vegan Household", "Vegetarian Household", "DSS Accepted");
+        addPropertyHelper.chooseListingsFromDropDownMenu()
+                         .clickEdit()
+                         .changeWholeOfProperty("No, by the room only", "Yes")
+                         .changeAboutOptions(" Garden", " Communal living room", " Balcony/patio",
+    " Parking", "Pets Accepted", "Smokers Accepted", "Suitable for couples", "LGBT Friendly", "Family Friendly",
+                                 "Trans Friendly", "Vegan Household", "Vegetarian Household", "DSS Accepted");
 
 
         clickButton("Save and update", "button");
@@ -259,11 +236,14 @@ public class AddListingTests extends TestBase {
 
         buddyUpHelper.groupSectionIsVisible(true);
 
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        addPropertyHelper.clickEdit();
-        addPropertyHelper.changeWholeOfProperty("Yes", "No, by the room only");
+        addPropertyHelper.chooseListingsFromDropDownMenu()
+                         .clickEdit()
+                         .changeWholeOfProperty("Yes", "No, by the room only");
+
         helperBase.clickButton("Decline", "a");
+
         addPropertyHelper.changeWholeOfProperty("Yes", "No, by the room only");
+
         helperBase.clickButton("Accept", "a");
 
         addPropertyHelper.changeAboutOptions(" Garden", " Communal living room", " Balcony/patio", " Parking", "Pets Accepted", "Smokers Accepted", "Suitable for couples", "LGBT Friendly", "Family Friendly", "Trans Friendly", "Vegan Household", "Vegetarian Household", "DSS Accepted");
@@ -277,9 +257,8 @@ public class AddListingTests extends TestBase {
         buddyUpHelper.groupSectionIsVisible(false);
         String areaSearch = "Bankside";
         addPropertyHelper.verifyBreadCrumbs("Search Rooms", "London", areaSearch,
-                                            "3 bedrooms for rent in "+areaSearch+", South London from ");
-
-        addPropertyHelper.goByLink(areaSearch);
+                                            "3 bedrooms for rent in "+areaSearch+", South London from ")
+                         .goByLink(areaSearch);
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
 
@@ -555,10 +534,9 @@ public class AddListingTests extends TestBase {
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoProperty();
 
-        addPropertyHelper.addListingFromListingPage();
-        paymentsHelper.addPropertyHelper.setPostalCode("Knowsl",
-                                                      "Knowsley Safari, Prescot, UK");
-        getAddPropertyHelper().pressContinue();
+        addPropertyHelper.addListingFromListingPage()
+                         .setPostalCode("Knowsl","Knowsley Safari, Prescot, UK")
+                         .pressContinue();
 
         addPropertyHelper.chooseRoadFor("testRoad");
         //verificationHelper.addingListFlowCity("London");
@@ -598,68 +576,61 @@ public class AddListingTests extends TestBase {
 
     public void allFields() {
 
-        addPropertyHelper.pressAddListingFromBody();
-        addPropertyHelper.setPostalCode("Se8", "London SE8 5HY, UK");
-        addPropertyHelper.pressContinue();
-
-        addPropertyHelper.chooseRoadFor("Idealstreet");
-        addPropertyHelper.chooseArea("Deptford");
-        addPropertyHelper.pressContinue();
-
-
-        addPropertyHelper.setTotalBedrooms("4");
-        addPropertyHelper.isCheckedSutableFore("Professionals and/or Students");
-        addPropertyHelper.clickSutableFore("Professionals Only");
-        addPropertyHelper.isCheckedSutableFore("Professionals Only");
+        addPropertyHelper.pressAddListingFromBody()
+                         .setPostalCode("Se8", "London SE8 5HY, UK")
+                         .pressContinue()
+                         .chooseRoadFor("Idealstreet")
+                         .chooseArea("Deptford")
+                         .pressContinue()
+                         .setTotalBedrooms("4")
+                         .isCheckedSutableFore("Professionals and/or Students")
+                         .clickSutableFore("Professionals Only")
+                         .isCheckedSutableFore("Professionals Only");
         scrollDownPageOn("600");
         addPropertyHelper.setAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
                                             "Pet Friendly", "Smoker Friendly", "Family Friendly",
                                             "LGBT Friendly", "Trans Friendly", "Vegan Household",
                                             "Vegetarian Household", "DSS Accepted", "Suitable for couples",
-                                             "Gym", "Concierge");
-        addPropertyHelper.setPropertyDescription("Very good flat");
+                                             "Gym", "Concierge")
+                         .setPropertyDescription("Very good flat");
         scrollDownPageOn("600");
-        addPropertyHelper.setMonthlyRent("500");
-        addPropertyHelper.setDeposit("1000");
-        addPropertyHelper.setTotalBills("400");
-        addPropertyHelper.availabaleChecked("1");
-        addPropertyHelper.setLeasePeriodRoom("1", "3", "7");
-        addPropertyHelper.setRoomDescription("Very comfortable room");
-        addPropertyHelper.copySecondRoom();
+        addPropertyHelper.setMonthlyRent("500")
+                         .setDeposit("1000")
+                         .setTotalBills("400")
+                         .availabaleChecked("1")
+                         .setLeasePeriodRoom("1", "3", "7")
+                         .setRoomDescription("Very comfortable room")
+                         .copySecondRoom();
         scrollDownPageOn("400");
-        addPropertyHelper.removeSecondRoom();
-        addPropertyHelper.copySecondRoom();
-        addPropertyHelper.addAnotherRoom();
+        addPropertyHelper.removeSecondRoom()
+                         .copySecondRoom()
+                         .addAnotherRoom();
         scrollDownPageOn("400");
-        addPropertyHelper.setAnotherMonthlyRent("800", "800");
-        addPropertyHelper.availabaleChecked("3");
-        addPropertyHelper.setAvailablePeriodRoom("3", "2025", "15", "Next");
+        addPropertyHelper.setAnotherMonthlyRent("800", "800")
+                         .availabaleChecked("3")
+                         .setAvailablePeriodRoom("3", "2025", "15", "Next");
         scrollDownPageOn("400");
-        addPropertyHelper.setPhoneNumber1("+44 20 7234 3456");
-        addPropertyHelper.pressContinue();
-
-        addPropertyHelper.uploadProperty3Photos();
-        addPropertyHelper.checkPhotos();
-        addPropertyHelper.uploadPropertyLargePhoto();
-        addPropertyHelper.uploadPropertyNotPhoto();
-        addPropertyHelper.checkPhotos();
-
-        addPropertyHelper.pressBack();
-        addPropertyHelper.checkAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
+        addPropertyHelper.setPhoneNumber1("+44 20 7234 3456")
+                         .pressContinue()
+                         .uploadProperty3Photos()
+                         .checkPhotos()
+                         .uploadPropertyLargePhoto()
+                         .uploadPropertyNotPhoto()
+                         .checkPhotos()
+                         .pressBack()
+                         .checkAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
                                             "property-pets_accepted", "property-smokers_accepted",
                                             "property-family_friendly", "property-lgbt_friendly",
                                             "property-trans_friendly", "property-vegan_household",
-                                            "property-vegetarian_household", "DSS Accepted", "Suitable for couples");
-
-        addPropertyHelper.pressContinue();
-        addPropertyHelper.checkPhotos();
-
-        addPropertyHelper.finishPropertyCreatingAgency();
+                                            "property-vegetarian_household", "DSS Accepted", "Suitable for couples")
+                         .pressContinue()
+                         .checkPhotos()
+                         .finishPropertyCreatingAgency();
     }
 
     public void removeListing() {
-        getAddPropertyHelper().chooseListingsFromDropDownMenu();
-        getAddPropertyHelper().removeListingClick("0");
+        addPropertyHelper.chooseListingsFromDropDownMenu()
+                         .removeListingClick("0");
         verificationHelper.verifyNoProperty();
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");

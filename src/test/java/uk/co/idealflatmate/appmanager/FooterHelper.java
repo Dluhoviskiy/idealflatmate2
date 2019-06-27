@@ -1,102 +1,78 @@
 package uk.co.idealflatmate.appmanager;
 
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
-import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListing;
 
 public class FooterHelper extends HelperBase{
-
+    private String block_home_quiz_addListing = "//div[@class='homepage-quiz-container container']";
+    private String h2_text = "//h2";
+    private String block_payment_method = "//div[@class='payment-logos']";
+    private String block_NLA = "//div[@class='row']//div[@class='col-md-6 hidden-xs hidden-sm text-right']//img";
+    private String button_NLApage = "(//ul/li/a[contains(text(), 'Join the NLA')])[1]";
+    private String button_icon_FB = "//img[@alt='Facebook']";
+    private String urlCurrent = "https://www.facebook.com/idealflatmate/";
+    private String button_icon_Twitter = "//img[@alt='Twitter']";
+    private String text_TwiterPage = "//img[@class='ProfileAvatar-image ' and @alt='ideal flatmate']";
+    private String text_InstagrPage = "//img[@alt='Instagram']";
+    private String h1_text = "(//h1)[1]";
+    private String button_icon_YouTube = "//img[@alt='YouTube']";
 
     public void verificationFooterHome() {
-        $(byXpath("//div[@class='homepage-quiz-container container']")).waitUntil(exist, 6000).should(exist);
+        $(byXpath(block_home_quiz_addListing)).waitUntil(exist, 6000).should(exist);
     }
-
-    public void verificationBrowseFlatshares(String location, String area, final String searchText, final String text, final String rooms) {
-        $(byXpath("//a/strong[contains(., '"+location+"')]")).click();
-        $(byXpath("//a/strong[contains(., '"+area+"')]")).click();
-
-        clickButton(searchText, "a");
-        closeAdvPopUp();
-        //switchTo().window(1);
-        $(byXpath("//h1[@class='h4']")).shouldHave(text(text + getNumberOfListing() + rooms + area));
-
-
-    }
-    public static int propertyCardOnPage() {
-        int propertyCardOnPage = $$(byXpath("//div[@class='cards-container']/div[@id]")).size();
-        return propertyCardOnPage;
-    }
-
 
     public void verificationHowItWorks() {
-        $(byXpath("//h2")).waitUntil(visible, 10000).shouldHave(text("How Ideal Flatmate Works"));
+        $(byXpath(h2_text)).waitUntil(visible, 10000).shouldHave(text("How Ideal Flatmate Works"));
     }
 
-    public SelenideElement verificationHowItWorks1(String text) {
-        return $(byXpath("//h2")).waitUntil(visible, 8000).shouldHave(text(text));
+    public void footerNLAPaymentsClick() {
 
-    }
-
-    public void verificationTipsWorks() {
-        $(byXpath("//title[contains(text(), 'Tips')]")).waitUntil(exist, 6000).should(exist);
-    }
-
-    public void footerNLAWorks() {
-
-        hoverClick("//div[@class='payment-logos']");
-        hoverClick("//div[@class='row']//div[@class='col-md-6 hidden-xs hidden-sm text-right']//img");
+        hoverClick(block_payment_method);
+        hoverClick(block_NLA);
 
     }
 
     public void verificationNLAWorks() {
-        switchTo().window(0);
-
-        $(byXpath("(//ul/li/a[contains(text(), 'Join the NLA')])[1]")).waitUntil(visible, 10000).exists();
+        $(byXpath(button_NLApage)).waitUntil(visible, 10000).exists();
     }
 
     public void footerFB() {
-
-        hoverClick("//img[@alt='Facebook']");
+        hoverClick(button_icon_FB);
 
     }
 
     public void verificationFB() {
         switchTo().window(1);
         String urlNla= url();
-        String urlCurrent = "https://www.facebook.com/idealflatmate/";
         Assert.assertEquals(urlCurrent, urlNla);
-        //$(byXpath("//a[@class='_64-f' and @href='https://www.facebook.com/idealflatmate/']")).shouldBe(visible);
         toHomePage();
-
-
     }
 
     public void footerTwitter() {
-        $(byXpath("//img[@alt='Twitter']")).waitUntil(visible, 4000).click();
+        $(byXpath(button_icon_Twitter)).waitUntil(visible, 4000).click();
     }
 
     public void verificationTwitter() {
         switchTo().window(1);
-        $(byXpath("//img[@class='ProfileAvatar-image ' and @alt='ideal flatmate']")).waitUntil(exist, 30000).should(exist);
+        $(byXpath(text_TwiterPage)).waitUntil(exist, 30000).should(exist);
     }
 
     public void footerInstagram() {
-        $(byXpath("//img[@alt='Instagram']")).waitUntil(visible, 4000).click();
+        $(byXpath(text_InstagrPage)).waitUntil(visible, 4000).click();
     }
 
-    public void verificationInstagram() {
+    public void verificationInstagram(final String text) {
         switchTo().window(1);
-        $(byXpath("(//h1)[1]")).waitUntil(exist, 30000).shouldHave(text("idealflatmate"));
+        $(byXpath(h1_text)).waitUntil(exist, 30000).shouldHave(text(text));
 
     }
 
     public void footerYoutube() {
-        $(byXpath("//img[@alt='YouTube']")).waitUntil(visible, 4000).click();
+        $(byXpath(button_icon_YouTube)).waitUntil(visible, 4000).click();
     }
 
     public void verificationYoutube() {

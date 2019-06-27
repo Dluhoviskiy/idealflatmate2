@@ -4,7 +4,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.refresh;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
@@ -14,7 +13,6 @@ public class PaymentTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
-        refresh();
     }
 
 
@@ -72,7 +70,7 @@ public class PaymentTests extends TestBase {
         signUpHelper.clickRoom();
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", "Ronald", "fmNotPaid3");
+        signUpHelper.yourInformation("passwUniv", "Ronald", "fmNotPaid3", "Female");
 
         signUpHelper.moreAboutYou("5", "12","1988","3456666666", "227","I am a FlatHunter", "Professional", "Other");
 
@@ -86,8 +84,8 @@ public class PaymentTests extends TestBase {
         //signUpHelper.priceMove("15", "12", "2019");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        addPropertyHelper.openDropDownMenu();
-        addPropertyHelper.chooseFromDropDownMenu("Payments");
+        addPropertyHelper.openDropDownMenu()
+                         .choosePayments();
 
         paymentsHelper.verificationPaymentPage("Premium Flathunter");
         //paymentsHelper.selectPremiumFlathunterPlan();
@@ -147,13 +145,13 @@ public class PaymentTests extends TestBase {
         verificationHelper.packageOnCard("Essentials listing", "default");
 
         addPropertyHelper.openDropDownMenu();
-        addPropertyHelper.chooseFromDropDownMenu("Payments");
+        addPropertyHelper.choosePayments();
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -182,7 +180,7 @@ public class PaymentTests extends TestBase {
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
 
         addPropertyHelper.openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         paymentsHelper.goToPaymentsTabInnerMenuUpgrade();
 
         paymentsHelper.defaultPlanActiveIs("Monthly", "16", "22", "34");
@@ -204,13 +202,13 @@ public class PaymentTests extends TestBase {
         verificationHelper.packageOnCard("Premium listing", "primary");
 
         addPropertyHelper.openDropDownMenu();
-        addPropertyHelper.chooseFromDropDownMenu("Payments");
+        addPropertyHelper.choosePayments();
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
 
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -268,7 +266,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.packageOnCard("Premium listing", "primary");
 
         addPropertyHelper.openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         closeMatchPopUp();
         paymentsHelper.goToPaymentsSubscriptionMenu();
         paymentsHelper.removePackage();
@@ -276,7 +274,7 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
@@ -324,13 +322,13 @@ public class PaymentTests extends TestBase {
         verificationHelper.packageOnCard("Essentials listing", "default");
 
         addPropertyHelper.openDropDownMenu();
-        addPropertyHelper.chooseFromDropDownMenu("Payments");
+        addPropertyHelper.choosePayments();
         paymentsHelper.removePackage();
         verificationHelper.verifyPackageCanceled("Your subscription will not renew automatically.");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         getAddPropertyHelper().openDropDownMenu();
-        authorizationHelper.chooseSectionDropDownMenu("My profile");
+        authorizationHelper.chooseMenu_My_profile();
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");

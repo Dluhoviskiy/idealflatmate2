@@ -11,25 +11,19 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SignUpHelper extends HelperBase {
-    static SelenideElement roomClick = $(byXpath("//h3[@class='u_m0' and contains (text(), 'A room')]"));
-    static SelenideElement photoClick = $(byXpath("//input[@id='moreinfosignupform-file']"));
-    static SelenideElement dragLow = $(byXpath("//div[@class='noUi-handle noUi-handle-lower']"));
-    static SelenideElement dragUpper = $(byXpath("//div[@class='noUi-handle noUi-handle-upper']"));
+    private String roomClick = "//h3[@class='u_m0' and contains (text(), 'A room')]";
+    private String photoClick = "//input[@id='moreinfosignupform-file']";
+    public String dragLow = "//div[@class='noUi-handle noUi-handle-lower']";
+    public String dragUpper = "//div[@class='noUi-handle noUi-handle-upper']";
 
-    public static void clickRoom1() {
-        roomClick.click();
-        navigator.forward();
-    }
 
     public void clickRoom() {
-        roomClick.click();
-        backFromEmailToRoom();
+        $(byXpath(roomClick)).click();
     }
 
     public void backFromEmailToRoom() {
         $(byXpath("//a[contains (., 'back')]")).click();
-        roomClick.click();
-    }
+     }
 
     public void clickEmailPopup() {
         $(byXpath("//div[@id='signupRevealModal']//a[span[contains (text(), 'Sign up with email')]]")).click();
@@ -49,14 +43,10 @@ public class SignUpHelper extends HelperBase {
         fillInField(nameF, $(byXpath("//input[contains(@id,'-username')]")));
     }
 
-    public void genderFemaleSelect() {
+    public void genderFemaleSelect(final String gender) {
 
-      $(byXpath("//div[contains(@class,'gender required')]//label[contains(text(), 'Female')]")).click();
+      $(byXpath("//div[contains(@class,'gender required')]//label[contains(text(), '" + gender + "')]")).click();
 
-    }
-
-    public void genderFemSelectAfterMesError() {
-        $(byXpath("//div[contains(@class,'gender required')]//label[contains(text(), 'Male')]")).click();
     }
 
     public void genderFemaleSelectMessage() {
@@ -106,25 +96,25 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void profilePhotoAddJpeg() {
-        photoClick.uploadFile(new File("src/test/resources/profile1.jpeg"));
+        $(byXpath(photoClick)).uploadFile(new File("src/test/resources/profile1.jpeg"));
         sleep(2000);
     }
     public void profilePhotoAddPng() {
-        photoClick.uploadFile(new File("src/test/resources/Profile.png"));
+        $(byXpath(photoClick)).uploadFile(new File("src/test/resources/Profile.png"));
         sleep(2000);
     }
     public void profilePhotoAddJpg() {
-        photoClick.uploadFile(new File("src/test/resources/Property1.jpg"));
+        $(byXpath(photoClick)).uploadFile(new File("src/test/resources/Property1.jpg"));
         sleep(2000);
     }
 
     public void profilePhotoAddJpeg10Mb() {
-        photoClick.uploadFile(new File("src/test/resources/8mb-artwork.jpg"));
+        $(byXpath(photoClick)).uploadFile(new File("src/test/resources/8mb-artwork.jpg"));
         sleep(2000);
     }
 
     public void profilePhotoAddPdf() {
-        photoClick.uploadFile(new File("src/test/resources/IF-pdf.pdf"));
+        $(byXpath(photoClick)).uploadFile(new File("src/test/resources/IF-pdf.pdf"));
         sleep(2000);
     }
 
@@ -209,15 +199,15 @@ public class SignUpHelper extends HelperBase {
 
     }
 
-    public static void budgetMin() {
+    public  void budgetMin() {
 
-        dragLow.dragAndDropTo($(byXpath("//span[@class='text-12']")));
+        $(byXpath(dragLow)).dragAndDropTo($(byXpath("//span[@class='text-12']")));
         //dragLow.dragAndDropTo($(byXpath("//div/span[@class='text-14']")));
     }
 
-    public static void budgetMax() {
+    public void budgetMax() {
 
-        dragUpper.dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
+        $(byXpath(dragUpper)).dragAndDropTo($(byXpath("//div[@class='text-11 u_m35-top text-center']")));
 
     }
 
@@ -318,6 +308,8 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//div[@id='property_card_"+ConfData.getData(property_id)+"']//div[@class='card-infos-flex-row']/a[2][@href]")).click();
 
     }
+
+
 
     public void click1PropCardIDMes(final String id_property) {
         $(byXpath("//div[@id='property_card_" + id_property + "']//a[@class='card-start-chat btn btn-circle']")).click();
@@ -427,16 +419,16 @@ public class SignUpHelper extends HelperBase {
 
 
 
-    public void yourInformation(String confPassword, String firstName, String confEmail) {
+    public void yourInformation(String confPassword, String firstName, String confEmail, final String gender) {
         setSignUpNameF(firstName);
-        genderFemaleSelect();
+        genderFemaleSelect(gender);
         login1(confEmail, confPassword);
         clickYourInformationContinue();
     }
 
     public void yourInformationWithPhone (String password, String firstName, String email) {
         setSignUpNameF(firstName);
-        genderFemaleSelect();
+        genderFemaleSelect("Female");
         setSignEmail(email);
         setSignPassword(password);
         clickYourInformationContinue();

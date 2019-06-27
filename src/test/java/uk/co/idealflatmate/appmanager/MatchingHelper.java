@@ -241,4 +241,8 @@ public class MatchingHelper extends HelperBase {
     }
 
 
+    public void matchingOnCardClick() {
+        $(byXpath("//div[@id='property_card_35292']//div[contains(@class,'card-matching')]")).exists();
+        $(byXpath("//div[@id='property_card_35292']//picture/img")).click();
+    }
 }

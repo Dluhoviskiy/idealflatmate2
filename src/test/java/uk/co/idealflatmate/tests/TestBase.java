@@ -73,12 +73,9 @@ public class TestBase {
 
        // Configuration.assertionMode = Configuration.AssertionMode.SOFT;
 
-        Configuration.timeout = 10000;
-        //open("https://www.idealflatmate.co.uk/");
-        HelperBase.closeAdvPopUp();
-        //open("http://front.idealflatmate.demo.devplatform2.com");
-
+        Configuration.timeout = 3000;
         open("http://front.idealflatmate4test.demo.devplatform2.com");
+        //HelperBase.closeAdvPopUp();
 
     }
 
@@ -116,7 +113,7 @@ public class TestBase {
 
     public static void newPage(String relativeOrAbsoluteUrl) {
 
-        close();
+        closeWebDriver();
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         open(relativeOrAbsoluteUrl);

@@ -171,7 +171,7 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public AddPropertyHelper choose_My_listings() {
-        String header_dropMenu_My_listings = "//ul[@class='dropdown-menu']//li/a[contains(., 'My_listings')]";
+        String header_dropMenu_My_listings = "//ul[@class='dropdown-menu']//li/a[contains(., 'My listings')]";
         $(byXpath(header_dropMenu_My_listings)).click();
         return this;
     }

@@ -114,8 +114,8 @@ public class TestBase {
     public static void newPage(String relativeOrAbsoluteUrl) {
 
         closeWebDriver();
-        WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
+        //WebDriverManager.chromedriver().setup();
+        //Configuration.browser = "chrome";
         open(relativeOrAbsoluteUrl);
     }
 

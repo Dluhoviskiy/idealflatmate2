@@ -54,7 +54,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         refresh();
         sleep(2000);
         tabHeaderUserName();
-        item_header_drop_Logout.waitUntil(visible, 10000).click();
+        item_header_drop_Logout.waitUntil(visible, 1000).click();
     }
 
     public void tabHeaderUserName() {
@@ -62,13 +62,13 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public void goToPropertyPage() {
-        tab_header_FindHome.waitUntil(appears, 10000).hover();
+        tab_header_FindHome.waitUntil(appears, 1000).hover();
         sleep(1000);
-        tab_header_AllProperties.waitUntil(appears, 4000).click();
+        tab_header_AllProperties.waitUntil(appears, 1000).click();
     }
 
     public void goToFMpage() {
-        tab_header_GoFMPage.waitUntil(appears, 4000).click();
+        tab_header_GoFMPage.waitUntil(appears, 1000).click();
      }
 
     public void submitLogin() {
@@ -106,9 +106,9 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public void removeAccountBeforeTest() {
-        sleep(2000);
+        sleep(1000);
         if(notif_incorrect_EmailPassword.exists()){
-            signUpHelper.quitLogin();
+            //signUpHelper.quitLogin();
         }else{
             removeAnyAccount();
         }
@@ -133,7 +133,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
 
     public void clickSignInButtonInPopupPhone() {
         sleep(2000);
-        popup_SignIn_phone.waitUntil(visible, 10000).hover().click();
+        popup_SignIn_phone.waitUntil(visible, 1000).hover().click();
     }
 
     public void chooseMenu_My_profile() {
@@ -152,11 +152,11 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public void FindHomeInMenu() {
-        tab_header_FindHome.waitUntil(appears, 5000).click();
+        tab_header_FindHome.waitUntil(appears, 1000).click();
     }
 
     public void headerLogin() {
-        tab_header_Login.waitUntil(appears, 5000).click();
+        tab_header_Login.waitUntil(appears, 1000).click();
     }
 
     public void setLoginAsUserWithoutPackage(String confEmail) {
@@ -168,11 +168,11 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public void setPassword1(String confPassword) {
-        field_login_Password.waitUntil(visible, 4000).setValue(confPassword);
+        field_login_Password.waitUntil(visible, 1000).setValue(confPassword);
     }
 
     public void setPassword(String confPassword) {
-       field_login_Password.waitUntil(visible, 4000).setValue(ConfData.getData(confPassword));
+       field_login_Password.waitUntil(visible, 1000).setValue(ConfData.getData(confPassword));
     }
 
     public void login(String confPassword, String confEmail){
@@ -219,7 +219,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
     public void loginHeader1(String confPassword, String confEmail){
-        headerLogin();
+        open("http://front.idealflatmate4test.demo.devplatform2.com/auth/login");
         loginTest1(confEmail,confPassword);
         submitLogin();
     }

@@ -159,7 +159,8 @@ public class HelperBase  {
 
         if (!url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
             sleep(1000);
-            open("http://front.idealflatmate4test.demo.devplatform2.com");
+            newPage("http://front.idealflatmate4test.demo.devplatform2.com");
+            //open("http://front.idealflatmate4test.demo.devplatform2.com");
 
         } else System.out.println(currentUrl);
     }
@@ -169,6 +170,7 @@ public class HelperBase  {
         clearBrowserCache();
         clearBrowserCookies();
         close();
+
         open(relOrAbsolUrl);
     }
 

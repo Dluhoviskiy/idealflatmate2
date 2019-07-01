@@ -87,18 +87,18 @@ public class SignUpTest extends TestBase {
         signUpHelper.profilePhotoAddJpg();
         signUpHelper.profilePhotoRemove();
 
-        //signUpHelper.profilePhotoAddJpeg10Mb();
-        //verificationHelper.profilePhoto10Mb();
-        //signUpHelper.profilePhotoAddPdf();
-        //verificationHelper.profilePhotoPdf();
+        signUpHelper.profilePhotoAddJpeg10Mb();
+        verificationHelper.profilePhoto10Mb();
+        signUpHelper.profilePhotoAddPdf();
+        verificationHelper.profilePhotoPdf();
 
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         verificationHelper.phoneVerification("Phone cannot be blank.", "          ");
-        verificationHelper.phoneVerification("Please enter a valid phone number (", "55555555d");
-        verificationHelper.phoneVerification("Please enter a valid phone number (", "00000000000");
-        verificationHelper.phoneVerification("Please enter a valid phone number (", "555555555");
-        verificationHelper.phoneVerification("Please enter a valid phone number (", "d5555555");
-        verificationHelper.phoneVerification("Please enter a valid phone number (", "+()55555555");
+        verificationHelper.phoneVerification("Phone is invalid.", "55555555d");
+        verificationHelper.phoneVerification("Phone is invalid.", "00000000000");
+        verificationHelper.phoneVerification("Phone is invalid.", "555555555");
+        verificationHelper.phoneVerification("Phone is invalid.", "d5555555");
+        verificationHelper.phoneVerification("Phone is invalid.", "+()55555555");
 
         signUpHelper.profilePhone("3456666666");
 

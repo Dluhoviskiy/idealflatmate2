@@ -114,20 +114,11 @@ public class TestBase {
         return paymentsHelper;
     }
 
-    public static void newDriverPage(String relativeOrAbsoluteUrl) {
-        closeWebDriver();
-        //ChromeDriverManager.getInstance().setup();
-        WebDriverManager.chromedriver().setup();
-        open(relativeOrAbsoluteUrl);
-    }
-
     public static void newPage(String relativeOrAbsoluteUrl) {
 
-        //ArrayList tabs2 = (ArrayList) getWebDriver().getWindowHandles();//Получение списка табов
-        //switchTo().window(String.valueOf(tabs2.get(1)));//Переключение на второй
         close();
-        //clearBrowserCache();
-        //refresh();
+        WebDriverManager.chromedriver().setup();
+        Configuration.browser = "chrome";
         open(relativeOrAbsoluteUrl);
     }
 

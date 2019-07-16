@@ -5,8 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ExcelReader {
 
@@ -27,7 +25,7 @@ public class ExcelReader {
         }
     }
     // Add all below described methods here
-
+    /*
     public List getRowContains(String testCaseName, int colNum){
         List list = new ArrayList<>();
         int rowCount = getRowUsed();
@@ -69,6 +67,6 @@ public class ExcelReader {
             tabArray[i] = getRowData(rowsNo.get(i));
         }
         return tabArray;
-    }
+    }*/
 
 }

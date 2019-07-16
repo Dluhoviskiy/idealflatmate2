@@ -2,6 +2,8 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.testng.Assert;
 
 
@@ -52,7 +54,29 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         $(byXpath("(//div[@class='msg msg-sent'][last()]//span[last()])[2]")).shouldHave(Condition.text(text));
     }
     public void verifyPageMessage() {
-        $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(visible, 4000).shouldHave(Condition.name("ConversationMessage[message]"));
+
+        $(byXpath("//label[@for='safety-tip-confirm']//span")).click();
+
+        $(byXpath("//textarea[@placeholder='Type your message here']")).waitUntil(visible, 4000).sendKeys("test message");
+        $(byXpath("//a[@title='Send']")).waitUntil(visible, 4000).click();
+
+        $(byXpath("//div[@class='ScrollbarsCustom-Content']//div[contains(text(),'Hey, looks like we are well matched. When are you looking to move?')]")).exists();
+        $(byXpath("//div[@class='ScrollbarsCustom-Content']//div[contains(text(),'test message')]")).exists();
+
+
+    }
+
+    public void verifyPageMessageToFM() {
+
+        $(byXpath("//label[@for='safety-tip-confirm']//span")).click();
+
+        $(byXpath("//textarea[@placeholder='Type your message here']")).waitUntil(visible, 4000).sendKeys("test message");
+        $(byXpath("//a[@title='Send']")).waitUntil(visible, 4000).click();
+
+        $(byXpath("//div[@class='ScrollbarsCustom-Content']//div[contains(text(),'Hey, looks like we are well matched. When are you looking to move?')]")).exists();
+        $(byXpath("//div[@class='ScrollbarsCustom-Content']//div[contains(text(),'test message')]")).exists();
+
+
     }
 
     public void verifyAddedProperty(String location) {
@@ -61,27 +85,22 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     }
 
-    public void verifyAddedPropertyWithAllFields(String month, final String room1, final String room2, final String room3, final String listingAbout, final String location) {//section[@id]//h1/small
-        String roomNumber1 = "//strong/span[contains(.,'" + room1 + "')]/../..";
-        String roomNumber2 = "//strong/span[contains(.,'" + room2 + "')]/../..";
-        String roomNumber3 = "//strong/span[contains(.,'" + room3 + "')]/../..";
+    public void verifyAddedPropertyWithAllFields(final String month, final String room1, final String room2, final String room3, final String listingAbout, final String location) {//section[@id]//h1/small
 
         String ref = $(byXpath("//section[@id]//h1/small")).getText();
         $(byXpath("//section[@id]//h1")).getText().contentEquals("3 bedrooms for rent in Bankside, South London from "+"500/month per room\n"
                  + ref);
-        $(byXpath("(//span[@class='property-phone_hide js-phone-box'])[2]")).shouldHave(text("\n" + "+44 2 XXXX"));
-
-        //$(byXpath("//div[@class='panel-heading']")).scrollTo();
-
+        $(byXpath("//span[@class='property-phone_hide js-phone-box']")).shouldHave(text("\n" + "+44 2 XXXX"));
 
         verifyAddedPropertyNoRoom(listingAbout);
 
-
         $(byXpath("//div[@class='u_p10-bottom u_m30-bottom u_b-bottom']")).shouldHave(text(location));
 
-        roomVerification("February", "Room 1", "11th ", " 2025", "500", "1,000", "400", "minimum 1 month maximum 12 months", "Description of the room");
-        roomVerification("February", "Room 2", "11th ", " 2025", "500", "1,000", "400", "minimum 1 month maximum 12 months", "Description of the room");
-        roomVerification("February", "Room 3", "11th ", " 2025", "500", "1,000", "400", "minimum 1 month maximum 12 months", "Description of the room");
+        $(byXpath("//ul[@class='tabs-2']//a[contains(.,'Rooms')]")).click();
+
+        roomVerification(room1, "£500", "£1,000", "£400", "Now", "", "", "7 months+", "Very comfortable room");
+        roomVerification(room2, "£500", "£1,000", "£400", "Now", "", "", "7 months+", "Very comfortable room");
+        roomVerification(room3, "£800", "", "", "15th ", month, " 2025", "", "");
     // $(byXpath("//h2[@class='h4 u_m20-top-xs u_m40-top-sm' and contains(text(), 'About this listing')]")).scrollIntoView(true);
 }
 
@@ -110,6 +129,31 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         }
 
     }
+    public void profileDisplaysForEdit(ProfileData profileData, String moveInDate) {
+        if($(byXpath("//div[contains(@class,'circularProgress__value')]")).exists()){
+            $(byXpath("//div[contains(@class,'circularProgress__value')]")).shouldHave(text(profileData.getPercentComplete()));}
+        if($(byXpath("//ul[contains(@class,'nav dashboard-side-nav')]")).exists()){
+            $(byXpath("//ul[contains(@class,'nav dashboard-side-nav')]")).shouldHave(text(profileData.getMyProfile()));}
+        $(byXpath("//h2[contains(@class,'profile-info--name_age')]/strong")).shouldHave(text(profileData.getName()));
+        if($(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).exists()){
+            $(byXpath("//h2[contains(@class,'profile-info--name_age')]/span")).shouldHave(text(profileData.getAge()));}
+
+        if($(byXpath("//strong[contains(@class,'u_ed-block')]")).exists()){
+            $(byXpath("//strong[contains(@class,'u_ed-block')]")).shouldHave(text(profileData.getLookingFor()));
+        }
+        String about = $(byXpath("//h4[contains(.,'Ready to move')]")).text();
+        Assert.assertEquals(about, profileData.getAboutMe()+" "+moveInDate);
+
+        if($(byXpath("//h4[contains(.,'My available rooms are ')]")).exists()){
+            $(byXpath("//ul[contains(@class,'geo-list u_m0 u_p0')]")).shouldHave(text(profileData.getRoomsLocation()));
+            collectionReturn("//ul[contains(@class,'geo-list u_m0 u_p0')]/li").shouldHaveSize(Integer.parseInt((profileData.getRoomsLocation())));
+            cardsOnThePage().shouldHaveSize(Integer.parseInt((profileData.getAmountPropertiesCard())));
+
+        }
+
+    }
+
+
 
     public void verifyNoProperty() {
         refresh();
@@ -552,8 +596,6 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
                     String dateNumber, String month, String yearNumber, String lenthOfStay, String descriptionOfRoom) {
         String room = "//span[contains(.,'"+roomNumber+"')]/../..//";
 
-        $(byXpath("//ul[@class='tabs-2']//a[contains(.,'Rooms')]")).click();
-
         if($(byXpath(room+"div[@class='col-xs-4 u_p0-left']")).exists()){
             $(byXpath(room+"div[@class='col-xs-4 u_p0-left']")).shouldHave(text(roomPrice + "\n" +   "month")); }
 
@@ -611,7 +653,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
     public void profileHasMatching() {
-        $(byXpath("//span[contains(@class,'btn u_ed-inline-block')]")).shouldHave(text("55% match"));
+        $(byXpath("//span[contains(@class,'btn u_ed-inline-block')]")).shouldHave(text("100% match"));
 
     }
 }

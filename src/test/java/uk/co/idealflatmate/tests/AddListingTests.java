@@ -5,17 +5,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
 
-import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.checked;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static com.codeborne.selenide.Selenide.sleep;
-//import static uk.co.idealflatmate.appmanager.AddPropertyHelper.monthAvailableFrom;
-
 import static uk.co.idealflatmate.appmanager.AddPropertyHelper.roomAmountIs;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFound;
+
+//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+//import static uk.co.idealflatmate.appmanager.AddPropertyHelper.monthAvailableFrom;
 
 public class AddListingTests extends TestBase {
 
@@ -36,7 +33,7 @@ public class AddListingTests extends TestBase {
         //verificationHelper.verifyNoProperty();
         addPropertyHelper.chooseListingsFromDropDownMenu()
                          .addListingFromListingPage()
-                         .setPostalCode("L11","Liverpool L11 0JA, UK")
+                         .setPostalCode("L11","5 Galemeade, Liverpool, L11")
                          .pressContinue();
         sleep(1000);
         addPropertyHelper.pressContinue();
@@ -67,10 +64,10 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.chooseListingsFromDropDownMenu()
                          .addListingFromListingPage()
-                         .setPostalCode("sw1a ", "London SW1A 1AA, UK")
+                         .setPostalCode("sw1a ", "79 Whitehall, London, SW1A")
                          .pressContinue()
-                         .chooseArea("Knightsbridge")
-                         .pressContinue()
+                         //.chooseArea("Knightsbridge")
+                         //.pressContinue()
                          .setTotalBedrooms("4");
         scrollDownPageOn("2000");
         addPropertyHelper.setMonthlyRent("500")
@@ -102,10 +99,10 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyNoProperty();
         addPropertyHelper.chooseListingsFromDropDownMenu()
                          .addListingFromListingPage()
-                         .setPostalCode("N11 1GN", "London N11 1GN, UK")
+                         .setPostalCode("N11 1GN", "Building 1, North London Business Park, Oakleigh Road South, London, N11")
                          .pressContinue()
-                         .chooseArea("New Southgate")
-                         .pressContinue()
+                         //.chooseArea("New Southgate")
+                         //.pressContinue()
                          .setTotalBedrooms("1")
                          .isCheckedSutableFore("Professionals and/or Students")
                          .clickSutableFore("Students Only")
@@ -159,10 +156,10 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyAddListingPage();
 
         addPropertyHelper.pressAddListingFromBody()
-                         .addListingWithoutPhotoEmptyAreaVerif("M11","Manchester M11 3FF, UK",
+                         .addListingWithoutPhotoEmptyAreaVerif("M11 ","20 Eastern-by-Pass, Manchester, M11",
         "Bradford-with-Beswick", "2","1500", "Area cannot be blank.")
                          .chooseListingsFromDropDownMenu();
-        verificationHelper.verifyAddedProperty("Manchester M11 3FF, UK");
+        verificationHelper.verifyAddedProperty("20 Eastern-by-Pass, Manchester, M11 ");
 
         addPropertyHelper.removeListingClick("0");
 
@@ -196,11 +193,11 @@ public class AddListingTests extends TestBase {
                          .viewListing();
 
         verificationHelper.photoListingExist();
-        verificationHelper.verifyAddedPropertyWithAllFields("February", "Room 1", "Room 2", "Room 3",
+        verificationHelper.verifyAddedPropertyWithAllFields("August ", "Room 1", "Room 2", "Room 3",
                 "3 of 4 bedrooms available\n" + "Garden\n" + "Communal living room\n" +  "Balcony/patio\n" +
                         "Parking space\n" + "Smokers Accepted\n" +  "Suitable for couples\n" + "Pets Accepted\n" +
                         "LGBT Friendly\n" + "Trans Friendly\n" + "Family Friendly\n" + "Vegan Household\n" +
-                        "Vegetarian Household\n" + "DSS Accepted", "Location\n"+"London SE8 5HY, UK - see more rooms to rent in Deptford");
+                        "Vegetarian Household\n" + "DSS Accepted", "Location\n"+"40 Foreshore, london, SE8 3AG, UK - see more rooms to rent in Evelyn");
 
         removeListing();
     }
@@ -219,7 +216,8 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.chooseListingsFromDropDownMenu()
                          .clickEdit()
-                         .changeWholeOfProperty("No, by the room only", "Yes")
+                         .changeWholeOfProperty()
+                         .scrollPropertySection()
                          .changeAboutOptions(" Garden", " Communal living room", " Balcony/patio",
     " Parking", "Pets Accepted", "Smokers Accepted", "Suitable for couples", "LGBT Friendly", "Family Friendly",
                                  "Trans Friendly", "Vegan Household", "Vegetarian Household", "DSS Accepted");
@@ -238,15 +236,9 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.chooseListingsFromDropDownMenu()
                          .clickEdit()
-                         .changeWholeOfProperty("Yes", "No, by the room only");
-
-        helperBase.clickButton("Decline", "a");
-
-        addPropertyHelper.changeWholeOfProperty("Yes", "No, by the room only");
-
-        helperBase.clickButton("Accept", "a");
-
-        addPropertyHelper.changeAboutOptions(" Garden", " Communal living room", " Balcony/patio", " Parking", "Pets Accepted", "Smokers Accepted", "Suitable for couples", "LGBT Friendly", "Family Friendly", "Trans Friendly", "Vegan Household", "Vegetarian Household", "DSS Accepted");
+                         .changeRoomToWholeOfProperty()
+                         .scrollPropertySection()
+                         .changeAboutOptions(" Garden", " Communal living room", " Balcony/patio", " Parking", "Pets Accepted", "Smokers Accepted", "Suitable for couples", "LGBT Friendly", "Family Friendly", "Trans Friendly", "Vegan Household", "Vegetarian Household", "DSS Accepted");
 
         //addPropertyHelper.changeRoomsProperty();
         helperBase.clickButton("Save and update", "button");
@@ -292,6 +284,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyAboutPropertyRooms("3 rooms available in 3 bed property in Birmingham. " +
                 "Room 1 is £1900.00 per month. Room 2 is £1950.00 per month, the deposit is £500.00. " +
                 "Room 3 is £1950.00 per month, the deposit is £700.00 and bills are an additional £1200.00 per month.");
+        addPropertyHelper.clickRoomsSection();
         verificationHelper.roomVerification("Room 1", "1900", "no", "no",
                                             "Now", "", "", "no",
                                             "no");
@@ -305,6 +298,7 @@ public class AddListingTests extends TestBase {
 
         String citySearch = "Birmingham";
         addPropertyHelper.goByLink(citySearch);
+        searchHelper.verifSearchHasLocation("Birmingham");
         propertySortBy("Price low to high");
         //searchHelper.verificationSearchProperty("Found " + getNumberOfListing() + " rooms to rent in "+citySearch);
         searchHelper.verificationSearchProperty("Find A Room To Rent",
@@ -340,7 +334,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.activateVerifyRoom(roomId3);
         addPropertyHelper.clickEditRoom(roomId2);
         addPropertyHelper.availableEdiRoomCheck(roomId2);
-        clickButton("Save", "button");
+        clickButton(save, button);
         addPropertyHelper.clickEditRoom(roomId3);
         addPropertyHelper.availableEdiRoomCheck(roomId3);
         clickButton(save, button);
@@ -353,6 +347,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyAboutPropertyRooms("3 rooms available in 3 bed property in Birmingham. " +
                 "Room 1 is £1900.00 per month. Room 2 is £1950.00 per month, the deposit is £500.00. " +
                 "Room 3 is £1950.00 per month, the deposit is £700.00 and bills are an additional £1200.00 per month.");
+        addPropertyHelper.clickRoomsSection();
 
         verificationHelper.roomVerification("Room 1", "1900", "no", "no",
                                             "Now", "", "", "no",
@@ -369,6 +364,7 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.goByLink(citySearch);
         propertySortBy("Most recent");
+        searchHelper.selectRadius("+3 km");
         int searchResultNewActivRooms = Integer.parseInt(getNumberOfListingFound());
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
@@ -489,7 +485,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.viewListing();
         verificationHelper.verifyAboutProperty("3 of 1 bedroom available\n" +   "Parking space\n" +                "Pets Accepted\n" +
                                                 "Trans Friendly\n" +  "DSS Accepted");
-        verificationHelper.verifyAboutPropertyRooms("Rome, 35 is a male professional . 3 rooms available in 1" +
+        verificationHelper.verifyAboutPropertyRooms("Rome, 36 is a male professional . 3 rooms available in 1" +
                 " bed property in Birmingham. Room 1 is £999.00 per month. " +
                 "Room 2 is £1300.00 per month, the deposit is £300.00 and bills are an additional £120.00 per month." +
                 " Room 3 is £1500.00 per month, the deposit is £700.00 and bills are an additional £120.00 per month.");
@@ -513,7 +509,8 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.viewListing();
         verificationHelper.verifyAboutProperty("1 bedroom available\n" + "Parking space\n" + "Pets Accepted\n" +
                                                 "Trans Friendly\n" + "DSS Accepted");
-        verificationHelper.verifyAboutPropertyRooms("Rome, 35 is a male professional . 1 room available in" +
+
+        verificationHelper.verifyAboutPropertyRooms("Rome, 36 is a male professional . 1 room available in" +
                                                         " 1 bed property in Birmingham. Room 1 is £999.00 per month.");
         addPropertyHelper.clickRoomsSection();
         verificationHelper.roomVerification("Room 1", "999", "no", "no", "Now",
@@ -535,10 +532,10 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyNoProperty();
 
         addPropertyHelper.addListingFromListingPage()
-                         .setPostalCode("Knowsl","Knowsley Safari, Prescot, UK")
+                         .setPostalCode("Knowsl","2 Knowsley Close, Lancaster, LA1")
                          .pressContinue();
 
-        addPropertyHelper.chooseRoadFor("testRoad");
+        //addPropertyHelper.chooseRoadFor("testRoad");
         //verificationHelper.addingListFlowCity("London");
         //verificationHelper.addingListFlowArea("Shoreditch");
         getAddPropertyHelper().pressContinue();
@@ -577,16 +574,16 @@ public class AddListingTests extends TestBase {
     public void allFields() {
 
         addPropertyHelper.pressAddListingFromBody()
-                         .setPostalCode("Se8", "London SE8 5HY, UK")
+                         .setPostalCode("Se8 ", "40 Foreshore, London, SE8")
                          .pressContinue()
-                         .chooseRoadFor("Idealstreet")
-                         .chooseArea("Deptford")
-                         .pressContinue()
+                         //.chooseRoadFor("Idealstreet")
+                         //.chooseArea("Deptford")
+                         //.pressContinue()
                          .setTotalBedrooms("4")
                          .isCheckedSutableFore("Professionals and/or Students")
                          .clickSutableFore("Professionals Only")
                          .isCheckedSutableFore("Professionals Only");
-        scrollDownPageOn("600");
+        scrollDownPageOn("100");
         addPropertyHelper.setAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
                                             "Pet Friendly", "Smoker Friendly", "Family Friendly",
                                             "LGBT Friendly", "Trans Friendly", "Vegan Household",
@@ -609,7 +606,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.setAnotherMonthlyRent("800", "800")
                          .availabaleChecked("3")
                          .setAvailablePeriodRoom("3", "2025", "15", "Next");
-        scrollDownPageOn("400");
+        scrollDownPageOn("600");
         addPropertyHelper.setPhoneNumber1("+44 20 7234 3456")
                          .pressContinue()
                          .uploadProperty3Photos()

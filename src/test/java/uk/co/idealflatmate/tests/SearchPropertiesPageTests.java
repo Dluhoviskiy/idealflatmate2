@@ -1,13 +1,18 @@
 package uk.co.idealflatmate.tests;
 
+import com.codeborne.selenide.Condition;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.SearchHelper;
 
 //import static org.seleniumhq.jetty7.util.LazyList.getList;
+import java.io.IOException;
+import java.util.Collections;
+
 import static com.codeborne.selenide.Selenide.*;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 import static uk.co.idealflatmate.appmanager.SearchHelper.*;
 //import static uk.co.idealflatmate.appmanager.TespageUrlVerifLiveGoStage;
@@ -197,8 +202,40 @@ public class SearchPropertiesPageTests extends TestBase{
         searchHelper.activeFiltersIs("Select");
         clickApply();
         sleep(2000);
+
+
+        try {
+            Assert.assertEquals(getCardUserType(), cardsUserTypeSelect());
+        }catch (AssertionError e) {
+            throw new AssertionError("list of 1 users doesn't match");
+        }
         Assert.assertEquals(getCardUserType(), cardsUserTypeSelect());
+
+        /*
+
+        Assert.assertEquals(getCardUserType(), cardsUserTypeAll());
         Assert.assertEquals(getCardUserSelectLabel(), cardsUserTypeSelectLabel());
+        if (getCardUserType().contains("Live-out landlords")){
+            throw new NullPointerException("Not only Select");
+        }
+
+        if (!Collections.disjoint(getCardUserType(), cardsUserTypeAll())){
+            throw new NullPointerException("Not only Select");
+        }
+        if (!getCardUserType().containsAll(cardsUserTypeAll())) {
+            try {
+                throw new IOException("Not only Select");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("verificationHelper = " + Collections.disjoint(getCardUserType(), cardsUserTypeAll()));
+        setCardUserType().waitUntil(Condition.visible, 10000);
+        try {
+            Assert.assertEquals(getCardUserType(), cardsUserTypeSelect());
+        }catch (AssertionError e) {
+            throw new AssertionError("list of users doesn't match");
+        }*/
 
         searchHelper.moveToPage(1, "1");
         Assert.assertEquals(getCardUserType(), cardsUserTypeSelect());

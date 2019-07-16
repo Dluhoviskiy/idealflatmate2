@@ -1,13 +1,12 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.*;
-//import ru.yandex.qatools.allure.annotations.Parameter;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.sleep;
-import static uk.co.idealflatmate.appmanager.HelperBase.closeListRenewPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.*;
+
+//import ru.yandex.qatools.allure.annotations.Parameter;
 
 
 public class AbclearDataTests extends TestBase {
@@ -51,10 +50,15 @@ public class AbclearDataTests extends TestBase {
 
     }
 
+
+
+
+
     //@Test (dataProvider = "dasf")
 
 
     @Parameters ({ "confEmail", "confPassword" })
+    @Test
     public void removeAccountBeforeTestLive(@Optional("qqqqqq") String confPassword,@Optional("proideal@ukr.net") String confEmail) {
 
         authorizationHelper.loginHeader2(confEmail, confPassword);

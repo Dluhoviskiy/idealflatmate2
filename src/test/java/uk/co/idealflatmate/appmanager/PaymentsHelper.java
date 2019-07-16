@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,20 +21,20 @@ public class PaymentsHelper extends HelperBase {
 
 
     public void fillinDebitCardData(String name, String cardNumber, String month, String year, String cvc) {
-        switchTo().frame("_iframe_holder");
+        //switchTo().frame("_iframe_holder");
 
         //fillInField(name, $(byXpath("//div[@id='_el_input_nameoncard']/input))")));
-        $(byXpath("//div[@id='_el_input_nameoncard']/input")).setValue(name);
+        $(byXpath("//label[contains(.,'Name on Card')]//parent::div/input")).setValue(name);
         sleep(1000);
-        $(byXpath("//div[@id='_el_input_cardnumber']/input")).setValue(cardNumber);
+        $(byXpath("//label[contains(.,'Card Number')]//parent::div/input")).setValue(cardNumber);
         sleep(1000);
-        $(byXpath("//div[@id='_el_input_expirationmonth']/input")).setValue(month);
+        $(byXpath("//input[@data-worldpay='exp-month']")).setValue(month);
         sleep(1000);
-        $(byXpath("//div[@id='_el_input_expirationyear']/input")).setValue(year);
+        $(byXpath("//input[@data-worldpay='exp-year']")).setValue(year);
         sleep(1000);
-        $(byXpath("//div[@id='_el_input_cvc']/input")).setValue(cvc);
+        $(byXpath("//input[@data-worldpay='cvc']")).setValue(cvc);
         sleep(1000);
-        $(byXpath("//div[@id='_el_button_save']/button")).click();
+        $(byId("js-process-payment")).click();
         sleep(3000);
     }
 

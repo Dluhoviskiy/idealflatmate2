@@ -2,10 +2,12 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper;
 import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.getWebDriverLogs;
 import static com.codeborne.selenide.Selenide.open;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickLogInButtonInForm;
@@ -49,6 +51,7 @@ public class AuthorizationTests extends TestBase {
     @Test
     public void logInOutOnPropertyPage() {
 
+        AuthorHeaderMenuHelper homepage = open("http://front.idealflatmate4test.demo.devplatform2.com/", AuthorHeaderMenuHelper.class);
         authorizationHelper.goToPropertyPage();
 
 
@@ -58,7 +61,10 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.submitLogin();
 
         verificationHelper.verificationUserNameOnHomePage("Borris");
-        authorizationHelper.logoutFromApp();
+
+
+        homepage.logoutFromApp1();
+        //AuthorHeaderMenuHelper.logoutFromApp1();
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
@@ -187,8 +193,9 @@ public class AuthorizationTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("FM_Manch_2");
         verificationHelper.verifyPageMessage();
-
-        messageHelper.clickMessageOwnerIcon();
+        //clearCache();
+        messageHelper.clickMessagePropOwnerIcon();
+        messageHelper.clickImgOwnerOnPropertyPage();
         verificationHelper.profileDisplays(new ProfileData("percentComplete14",  "myProfile14",
                 "name14", "age14","lookingFor14", "aboutMe14","rooms14",
                 "amountPropCards14"));

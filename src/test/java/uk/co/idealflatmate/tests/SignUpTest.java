@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.HelperBase;
 import uk.co.idealflatmate.appmanager.ProfileData;
 
-//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
+
+//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class SignUpTest extends TestBase {
@@ -66,7 +66,7 @@ public class SignUpTest extends TestBase {
     }
 
     @Test
-    public void testHeaderRoomSignUpHomePageTenant() {
+    public void testHeaderRoomSignUpHomePageFM() {
         String location1 = "Watford";
         String name = "Ronaldina";
 
@@ -87,18 +87,19 @@ public class SignUpTest extends TestBase {
         signUpHelper.profilePhotoAddJpg();
         signUpHelper.profilePhotoRemove();
 
-        signUpHelper.profilePhotoAddJpeg10Mb();
-        verificationHelper.profilePhoto10Mb();
-        signUpHelper.profilePhotoAddPdf();
-        verificationHelper.profilePhotoPdf();
+        //signUpHelper.profilePhotoAddJpeg10Mb();
+       // verificationHelper.profilePhoto10Mb();
+       // signUpHelper.profilePhotoAddPdf();
+       // verificationHelper.profilePhotoPdf();
 
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
         verificationHelper.phoneVerification("Phone cannot be blank.", "          ");
         verificationHelper.phoneVerification("Phone is invalid.", "55555555d");
-        verificationHelper.phoneVerification("Phone is invalid.", "00000000000");
-        verificationHelper.phoneVerification("Phone is invalid.", "555555555");
-        verificationHelper.phoneVerification("Phone is invalid.", "d5555555");
-        verificationHelper.phoneVerification("Phone is invalid.", "+()55555555");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "00000000000");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "555555555");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "d5555555");
+        verificationHelper.phoneVerification("Phone is invalid.", "dfsfdfsdf");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "+()55555555");
 
         signUpHelper.profilePhone("3456666666");
 
@@ -227,19 +228,60 @@ public class SignUpTest extends TestBase {
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickFM();
-
         addPropertyHelper.selectTypeUser("A current tenant");
-
         signUpHelper.clickEmail();
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMnew1", "Female");
-
         signUpHelper.clickYourInformationContinue();
         verificationHelper.dateMonthYearPhoneOccupationBlankError();
 
         signUpHelper.quit();
         verificationHelper.ListingStart("Start your listing here");
         signUpHelper.quit();
+
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+
+    @Test
+    public void testTenantProfileChanging() {
+
+        authorizationHelper.clickJoinFreeButton();
+
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("A current tenant");
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("passwUniv", "Molly", "TenantP", "Female");
+
+        signUpHelper.profilePhotoAddJpeg();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        signUpHelper.profilePhone("03456666666");
+        signUpHelper.occupation("19", "Professional", "Student");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        noCloseMatchPopUp();
+
+        verificationHelper.verificationUserNameOnHomePage("Molly");
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseMenu_My_profile();
+
+        verificationHelper.profileDisplays(new ProfileData("percentComplete16",  "myProfile16",
+                "name16", "age16","lookingFor16", "aboutMe16","rooms16",
+                "amountPropCards16"));
+
+        authorizationHelper.changeProfile();
+        String newMoveInDate = authorizationHelper.getDateMoveIn();
+        authorizationHelper.clickSaveProfile.click();
+
+        verificationHelper.profileDisplaysForEdit(new ProfileData("percentComplete17",  "myProfile16",
+                "name17", "age16","lookingFor17", "aboutMe18","rooms16",
+                "amountPropCards16"), newMoveInDate);
+
+        authorizationHelper.removeAnyAccount();
+
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 

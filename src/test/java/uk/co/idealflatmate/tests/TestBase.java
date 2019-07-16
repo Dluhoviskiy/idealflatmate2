@@ -2,11 +2,10 @@ package uk.co.idealflatmate.tests;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import uk.co.idealflatmate.appmanager.*;
 
-
-import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
@@ -58,18 +57,31 @@ public class TestBase {
 
     public void setupClass() {
         //ChromeDriverManager.getInstance().setup();
+
         WebDriverManager.chromedriver().setup();
+        Configuration.browser = "chrome";
+
+
         //WebDriverManager.firefoxdriver().setup();
+        //Configuration.browser = "firefox";
+
+        //WebDriverManager.edgedriver().setup();
+        //Configuration.browser = "edge";
+
+
         //WebDriverManager.safaridr().setup();
        // FirefoxDriverManager.getInstance().setup();
        // EdgeDriverManager.getInstance().setup();
         //Configuration.browser = "webdriver";
-        Configuration.browser = "chrome";
+
+
+
+        //this.browser = Configuration.browser;
 
         //Configurations.startmaximized=true;
         //Configuration.browser = "firefox";
-
-      //  Configuration.browser = "edge";
+        //WebDriverManager.edgedriver().setup();
+        //Configuration.browser = "edge";
 
        // Configuration.assertionMode = Configuration.AssertionMode.SOFT;
 
@@ -77,7 +89,9 @@ public class TestBase {
         open("http://front.idealflatmate4test.demo.devplatform2.com");
         //HelperBase.closeAdvPopUp();
 
-    }
+
+
+        }
 
 
 
@@ -85,6 +99,7 @@ public class TestBase {
     public void tearDown() {
         //screenshot("screenshotFail1");
         closeWebDriver();
+        
 
     }
 

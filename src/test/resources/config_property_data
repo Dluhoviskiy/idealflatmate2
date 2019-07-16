@@ -93,7 +93,7 @@ amountPropCards8=0
 rooms8=1
 
 
-//testHeaderRoomSignUpHomePageTenant
+//testHeaderRoomSignUpHomePageFM
 percentComplete9=80% complete
 myProfile9=User Type\nPersonal Details\nProperty Preferences\nBudget & Availability\nYour ideal flatmate
 name9=Ronaldina
@@ -151,7 +151,7 @@ myProfile14=User Type\nPersonal Details\nYour ideal flatmate
 name14=Property1
 age14=22
 lookingFor14=I have a room available
-aboutMe14=About me\Property1, 22 is a male professional looking for flatmates in Crewe or Crofton Park, South London or Notting Hill, West London or Ealing, West London or Nottingham or Hounslow, West Hounslow.
+aboutMe14=About me\nProperty1, 22 is a male professional looking for flatmates in Crewe or Crofton Park, South London or Notting Hill, West London.\nMy available rooms are\nWeston Rd, Crewe CW1 6NA, UK\nCrofton Park, SE4 2BY\nNotting Hill, W11 4UL\nEaling, W13 0DD\nUpper Parliament Street (Stop U1), Nottingham NG1 6LD, UK\n80-82 Staines Road, Hounslow, TW3 3LF, UK
 amountPropCards14=6
 rooms14=6
 
@@ -165,3 +165,17 @@ aboutMe15=About us\nI am an agent
 amountPropCards15=0
 rooms15=0
 
+//testHeaderRoomSignUpHomePageTenant
+percentComplete16=70% complete
+myProfile16=User Type\nPersonal Details\nProperty Preferences\nBudget & Availability\nYour ideal flatmate
+name16=Molly
+age16=19
+lookingFor16=I'm looking for a room
+aboutMe16=About me\nTell us about yourself\nMaximum budget: 2500/month\nReady to move in: Immediately
+amountPropCards16=0
+rooms16=0
+percentComplete17=70% complete
+name17=Tolly
+lookingFor17=I am looking to buddy up
+aboutMe17=About me\nTolly, 19 is a female other looking for a room in Watchetts.\nMaximum budget: 1500/month\nReady to move in: 11-01-2020\nLooking for a room in\nWatchetts
+aboutMe18=Ready to move in:

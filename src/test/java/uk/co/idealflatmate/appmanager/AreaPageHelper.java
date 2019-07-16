@@ -25,14 +25,16 @@ public class AreaPageHelper extends HelperBase {
     static SelenideElement container = $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow u_ep-relative']"));
 
     public void clickArea(int number_of_area) {
+        $(byXpath("//div[@class='homepage-quiz-container']/h2")).waitUntil(appears, 4000);
+        $$("div.card-btr-amenities.text-white").get(number_of_area).click();
 
-        $$("#hp-areas div.card-btr-amenities.text-white").get(number_of_area).click();
+
     }
 
-    public void clickHeaderItem(String select1, String select2, String select3, final String select4) {
+    public void clickHeaderItem(String select1, final String select2, final String area) {
 
 
-        switchTo().window(1);
+        //switchTo().window(1);
 
 
         $(byXpath("//a[@href='#top']")).click();
@@ -42,39 +44,41 @@ public class AreaPageHelper extends HelperBase {
         container.scrollIntoView(true).$(byXpath("//a[@href='#" + select1 + "']")).click();
         $(byXpath("//h2[contains(text(), 'Top Spots')]")).shouldBe(visible);
 
+        container.scrollIntoView(true).$(byXpath("//a[@href='/spare-room/london/south/clapham/rooms']")).click();
+        $(byXpath("//h1[starts-with(@class,'splash-title')]")).shouldHave(text("Rooms for rent in " + area));
+        navigator.back();
+        sleep(3000);
+
+        container.scrollIntoView(true).$(byXpath("//a[@href='/spare-room/london/south/clapham/flatmates']")).click();
+        $(byXpath("//h1[starts-with(@class,'splash-title')]")).shouldHave(text("Flatmates in " + area));
+        navigator.back();
+        sleep(3000);
+
         container.scrollIntoView(true).$(byXpath("//a[@href='#" + select2 + "']")).click();
-        $(byXpath("//h2[contains(text(), 'Available rooms')]")).shouldBe(visible);
-        sleep(3000);
-
-        container.scrollIntoView(true).$(byXpath("//a[@href='#" + select3 + "']")).click();
-        $(byXpath("//h2[contains(text(), 'Flathunters')]")).shouldBe(visible);
-        sleep(3000);
-
-        container.scrollIntoView(true).$(byXpath("//a[@href='#" + select4 + "']")).click();
         $(byXpath("//div[@class='scrollspy clearfix scrollspy-horizontal']")).shouldBe(visible);
 
     }
 
-    public void clickHeaderItemColiving(String select5) {
+    public void clickBlockColiving() {
 
 
-        switchTo().window(1);
+        //switchTo().window(1);
 
-        container.scrollIntoView(true).$(byXpath("//a[@href='#" + select5 + "']")).click();
+        container.scrollIntoView(true).$(byXpath("//h2[@class='u_m0']")).click();
 
     }
 
     public void checklinkMap() {
-        switchTo().window(1);
+        //switchTo().window(1);
         switchTo().frame(0);
         $(byXpath("//a[contains(text(), 'View larger map')]")).waitUntil(appears, 10000).click();
-        switchTo().window(2);
+        switchTo().window(1);
         sleep(1000);
         $(byXpath("//link[@title='Google Maps']")).shouldBe(exist);
     }
 
     public void clicklinkNearbyAreas() {
-        switchTo().window(1);
+        //switchTo().window(1);
         sleep(3000);
         $(byXpath("//a[contains(text(), 'Click to search nearby areas')]")).waitUntil(exist, 5000).click();
         sleep(3000);
@@ -142,10 +146,9 @@ public class AreaPageHelper extends HelperBase {
     }
 
     public void checklinkFH(String area1) {
-        switchTo().window(1);
+        //switchTo().window(1);
         closeAdvPopUp();
-        container.scrollIntoView(true).$(byXpath("//a[@href='#flatmates']")).click();
-        $(byXpath("//h2[contains(text(), 'Flathunters')]")).shouldBe(visible);
+        container.scrollIntoView(true).$(byXpath("//h2[contains(text(), 'Flathunters')]")).click();
         sleep(2000);
 
         $(byXpath("//a[contains(text(), 'See more flathunters')]")).waitUntil(exist, 5000).click();
@@ -168,7 +171,7 @@ public class AreaPageHelper extends HelperBase {
 
     public void checkAreaName(String area1) {
         //String areaNameOnPageH1 = $("h1.splash-title.text-white.text-center.u_m0-top").text();
-        switchTo().window(1);
+        //switchTo().window(1);
         String areaNameOnPageH1 = $(byXpath("//h1")).text();
         String area2 = (areaNameOnPageH1.substring(0, 9) + " " + area1);
         Assert.assertEquals(areaNameOnPageH1, area2);
@@ -187,10 +190,10 @@ public class AreaPageHelper extends HelperBase {
     }
 
     public void clickMoreRooms() {
-        switchTo().window(1);
+        //switchTo().window(1);
 
-        container.scrollIntoView(true).$(byXpath("//a[@href='#rooms']")).click();
-        $(byXpath("//h2[contains(text(), 'Available rooms')]")).shouldBe(visible);
+        container.scrollIntoView(true).$(byXpath("//h2[contains(text(), 'Available rooms')]")).click();
+        //$(byXpath("//h2[contains(text(), 'Available rooms')]")).click();
         sleep(3000);
 
         $(byXpath("(//a[@class='btn btn-primary'])[1]")).click();
@@ -215,7 +218,7 @@ public class AreaPageHelper extends HelperBase {
     public void checkArrowsBrowsAll(final String tab1click, final String tab2click, final String linkClick) {
         SelenideElement arrow = $(byXpath("//div[@class='owl-carousel item-carousel js-carousel owl-theme owl-loaded']//button[@role='presentation' and @class='owl-next']"));
 
-        switchTo().window(1);
+        //switchTo().window(1);
         $(byXpath("//a[contains(.,'" + tab2click + "')]")).click();
 
         sleep(2000);
@@ -249,7 +252,7 @@ public class AreaPageHelper extends HelperBase {
 
         $(byXpath("//a[contains(.,'" + area + "')]")).click();
         //switchTo().window(2);
-
+        closeAdvPopUp();
         if($(byXpath("//div[@class='search-panel hidden-xs']//input")).exists()){
             $(byXpath("//div[@class='search-panel hidden-xs']//input")).shouldHave(value(area));
         }
@@ -260,7 +263,7 @@ public class AreaPageHelper extends HelperBase {
 
         $(byXpath("//h2[contains(.,'Explore cities and areas across the UK')]")).click();
         $(byXpath("//section[@id='press-logos']")).click();
-        sleep(2000);
+
     }
 
     public void h1_HeaderTextIsExist(final String text) {

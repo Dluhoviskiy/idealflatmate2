@@ -31,7 +31,7 @@ public class AddPropertyHelper extends HelperBase {
     private String header_dropMenu_Payments = "//ul[@class='dropdown-menu']//li/a[contains(., 'Payments')]";
     private String header_dropMenu_My_Saved = "//ul[@class='dropdown-menu']//li/a[contains(., 'My saved')]";
     private String tab_Header_AddListing = "//ul[contains(@class,'nav-aux hidden-xs hidden-sm')]//a[contains(.,'Add a Listing')]";
-    private String input_listingFlow_postcode = "//input[contains(@class,'select2-search')]";
+    private String input_listingFlow_postcode = "//input[contains(@class,'form-control')]";
     private String input_listingFlow_postcode_inner = "//span[contains(@id,'select2-property-location-container')]";
     private String input_listingFlow_postcode2 = "//span[@class='selection']//span[contains(@class,'select2-selection__rendered')]";
     private String drop_postcode_location1 = "//li[contains(.,'";
@@ -125,7 +125,7 @@ public class AddPropertyHelper extends HelperBase {
     private String input_roomDescr_editPage = "//textarea[@id='room-description']";
     private String check_edit_addingRoom_Available = "//form[@id='property_add_room']//input[contains(@id,'room-available_from') and @name='Room[availability]']";
     private String check_edit_roomDate_Available1 = "//tr[@data-room-id='";
-    private String check_edit_roomDate_Available1_end = "']//label[input[contains(@id,'room-available_from')]]";
+    private String check_edit_roomDate_Available1_end = "']//h3[contains(.,'Lease')]//parent::div[@class='row']//label[input[contains(@id,'room-available_from')]]";
     private String icon_edit_room = "//a[@aria-controls='room_editor_";
     private String text_available_Room = "//td[@data-state='availability_";
     private String text_available_Room_2 = "//span[@class='serial' and contains(.,'2')]/../../..//td[2]";
@@ -137,7 +137,12 @@ public class AddPropertyHelper extends HelperBase {
     private String icon_remove_room = "(//a[@title='Delete'])[";
     private String room__listing_block = "//div[@class='row']//a[contains(.,'Rooms')]";
     private static String room_number = "//table[contains(@class,'table u_m20-bottom-xs u_m0-bottom-sm')]";
-    private String check_whole = "//label[contains(.,'";
+    private String check_whole = "//label[contains(.,'No, the whole property must be let as a whole')]/child::input";
+    private String check_room_only = "//label[contains(.,'Yes, rooms are available separately')]/child::input";
+    private String click_Room_separatly = "//label[contains(.,'Yes, rooms are available separately')]";
+    private String click_Whole = "//label[contains(.,'No, the whole property must be let as a whole')]";
+    private String click_Room_only_accept = "//a[@data-action='accept']";
+    private String scroll_property_up = "//a[@href=\"#section1\"]";
     private String check_featured = "//label/input[@id='";
     private String check_label_featured = "//label[input[@id='";
     private String tab_header_quit = "//header//a[contains(.,'Save & quit')]";
@@ -164,8 +169,8 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public AddPropertyHelper chooseListingsFromDropDownMenu() {
-        sleep(2000);
-        tab_openDropDownMenuHeader.click();
+
+        tab_openDropDownMenuHeader.waitUntil(appear, 5000).click();
         choose_My_listings();
         return this;
     }
@@ -194,12 +199,13 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper setPostalCode(String postCode, final String location) {
         String val = postCode;
-        SelenideElement element = $(By.xpath(input_listingFlow_postcode));
+        SelenideElement inputPostCode = $(By.xpath(input_listingFlow_postcode));
 
         sleep(2000);
 
-        $(By.xpath(input_listingFlow_postcode_inner)).click();
-        element.clear();
+        //$(By.xpath(input_listingFlow_postcode_inner)).click();
+        inputPostCode.click();
+        inputPostCode.clear();
         sleep(1000);
         for (int i = 0; i < val.length(); i++) {
 
@@ -207,7 +213,7 @@ public class AddPropertyHelper extends HelperBase {
             sleep(500);
             //String s = new StringBuilder().append(c).toString();
             String s = String.valueOf(c);
-            element.sendKeys(s);
+            inputPostCode.sendKeys(s);
             //$(By.xpath(input_listingFlow_postcode)).setValue(postCode);
             //$(By.xpath(input_listingFlow_postcode)).sendKeys(postCode);
         }
@@ -580,13 +586,13 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper addListingWithoutPhotoEmptyAreaVerif(String postCode, String locationDropInDown, String area, String totalBedrooms,
                                                      String rent, final String errorMessage) {
-        setPostalCode1(postCode, locationDropInDown);
+        setPostalCode(postCode, locationDropInDown);
         pressContinue();
         sleep(2000);
-        pressContinue1();
-        VerificationHelper.areaBlank(errorMessage);
-        chooseArea(area);
-        pressContinue();
+        //pressContinue1();
+        //VerificationHelper.areaBlank(errorMessage);
+        //chooseArea(area);
+        //pressContinue();
         setTotalBedrooms(totalBedrooms);
         scrollDownPageOn("1300");
         setMonthlyRent(rent);
@@ -598,7 +604,7 @@ public class AddPropertyHelper extends HelperBase {
     public AddPropertyHelper addListingWithoutAreaDefault(String postCode, String totalBedrooms, String rent, String locationDropInDown, final String city) {
         setPostalCode(postCode, locationDropInDown);
         pressContinue();
-        verifyCity(city);
+        //verifyCity(city);
         pressContinue1();
         //verificationHelper.areaBlank();
         pressContinue();
@@ -617,6 +623,7 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper clickEdit() {
         $(byXpath(button_listingEdit)).click();
+        scrollDownPageOn("600");
         return this;
     }
 
@@ -695,6 +702,7 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper goByLink(final String areaSearch) {
         $(byXpath(link_breadCrumb+areaSearch+end_string)).click();
+
         return this;
     }
 
@@ -838,18 +846,43 @@ public class AddPropertyHelper extends HelperBase {
     }
 
 
-    public AddPropertyHelper changeWholeOfProperty(final String defaultListingIs, final String clickChangeTo) {
-        checkerPropertyWhole(defaultListingIs);
-        $(byXpath(check_whole+clickChangeTo+end_string)).click();
+    public AddPropertyHelper changeWholeOfProperty() {
+        checkerPropertyWhole();
+        $(byXpath(click_Room_separatly)).click();
+        $(byXpath(click_Room_only_accept)).click();
+        checkerPropertyRoomOnly();
+
         return this;
     }
 
-    public AddPropertyHelper checkerPropertyWhole(final String listingIs) {
-        $(byXpath(check_whole+listingIs+end_string_input)).shouldBe(checked);
+    public AddPropertyHelper scrollPropertySection(){
+
+        $(byXpath(scroll_property_up)).click();
+        sleep(1000);
         return this;
 
     }
 
+    public AddPropertyHelper changeRoomToWholeOfProperty() {
+        $(byXpath(click_Whole)).click();
+
+        checkerPropertyWhole();
+        return this;
+    }
+
+    public AddPropertyHelper checkerPropertyWhole() {
+        sleep(1000);
+        $(byXpath(check_whole)).shouldBe(checked);
+        return this;
+
+    }
+
+    public AddPropertyHelper checkerPropertyRoomOnly() {
+        sleep(1000);
+        $(byXpath(check_room_only)).shouldBe(checked);
+        return this;
+
+    }
 
     public AddPropertyHelper featuresPropertyClick(final String featureIdName, final Condition conditionNot) {
 

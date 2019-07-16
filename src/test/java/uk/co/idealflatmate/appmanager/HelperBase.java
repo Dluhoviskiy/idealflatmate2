@@ -5,14 +5,12 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.util.List;
 
-
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.appears;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.url;
-import static java.util.ResourceBundle.clearCache;
 import static uk.co.idealflatmate.tests.TestBase.newPage;
 
 
@@ -74,6 +72,12 @@ public class HelperBase  {
     public static List<String> getCardUserType() {
 
         return $$(byXpath("//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted']")).texts();
+
+    }
+
+    public static SelenideElement setCardUserType() {
+
+        return $(byXpath("(//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted'])[1]"));
 
     }
 
@@ -211,6 +215,7 @@ public class HelperBase  {
     public static void clickButton(final String textButton, final String byTag) {
         sleep(1000);
         $(byXpath("//" + byTag + "[contains(.,'" + textButton + "')]")).click();
+        sleep(1000);
     }
 
     public static  ElementsCollection cardsOnThePage() {

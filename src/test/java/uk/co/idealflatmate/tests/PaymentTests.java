@@ -122,7 +122,7 @@ public class PaymentTests extends TestBase {
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         addPropertyHelper.pressAddListingFromBody();
-        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("SE1", "London SE1, UK",
+        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("SE1", "5 Longfellow Way, London, SE1",
                 "Bermondsey", "2",  "900", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
@@ -174,7 +174,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("lon", "London Euston, London, UK",
+        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("lon", "2 Burnside, Longtown, Carlisle, CA6",
                 "Chalk Farm", "15","1333", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
@@ -236,7 +236,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         addPropertyHelper.pressAddListingFromBody();
         addPropertyHelper.addListingWithoutAreaDefault("C", "Studio",  "2100",
-                                                        "Eden, CA10 1AA, UK", "Lazonby");
+                                                        "Eden, CA10 1AB, UK", "Lazonby");
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
@@ -312,7 +312,7 @@ public class PaymentTests extends TestBase {
 
         addPropertyHelper.chooseListLoggedFromHeaderProfile();
         addPropertyHelper.addListingWithoutAreaDefault("Coventry", "3",  "2100",
-                "Coventry University, Priory Street, Coventry, UK", "Coventry");
+                "3 Coventry Close, Peterborough, PE4", "Coventry");
 
         addPropertyHelper.finishPropertyAgencyWithSubs("Your listing is now live!");
 

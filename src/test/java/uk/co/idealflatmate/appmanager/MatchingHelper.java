@@ -109,7 +109,7 @@ public class MatchingHelper extends HelperBase {
     }
 
     public void clickContinueMatching17() {
-        $(byXpath("" +match2+ "I am relaxed about the sexual choice of my flatmates" +match3+ "'17'][5]")).click();
+        $(byXpath("" +match2+ "I am relaxed about the sexual preference of my flatmates" +match3+ "'17'][5]")).click();
         sleep(1000);
     }
 

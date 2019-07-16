@@ -45,7 +45,7 @@ public class MessageHelper extends HelperBase {
 
     public void chooseMessageTab(final String massage) {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
-        $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).waitUntil(Condition.appears, 4000).click();
+        $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Inbox')]")).waitUntil(Condition.appears, 4000).click();
             if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
                 $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
                 $(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
@@ -59,7 +59,7 @@ public class MessageHelper extends HelperBase {
 
     public void chooseMesTabView() {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
-        $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Messages')]")).click();
+        $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Inbox')]")).click();
         sleep(3000);
         if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
             $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 15000).click();
@@ -140,6 +140,12 @@ public class MessageHelper extends HelperBase {
         sleep(2000);
     }
 
+    public void clickImgOwnerOnPropertyPage() {
+
+        $(By.xpath("//div[@class='text-center u_ep-relative']/a")).click();
+
+    }
+
     public void clickMessage(String text) {
          $(byText(text)).click();
     }
@@ -148,8 +154,8 @@ public class MessageHelper extends HelperBase {
         $(byXpath("//span/a[contains(., 'Messages')]")).click();
     }
 
-    public void clickMessageOwnerIcon() {
-        $(byXpath("(//a[@class='u_ed-inline-block messages-top-images--item']/ img)[1]")).click();
+    public void clickMessagePropOwnerIcon() {
+        $(byXpath("(//span[@class='u_m15-right u_m25-right-md conversation-v2-meta-images']/a/img)[2]")).click();
     }
 
     public void photoOfOwnerInMessage(String photo1) {

@@ -113,6 +113,7 @@ public class SearchHelper extends HelperBase {
     }
 
     public static String getNumberOfListingFound() {
+        $(byXpath("//h2[@class='text-14']")).waitUntil(appear, 5000);
         String getNumberOfListing = String.valueOf($(byXpath("//h2[@class='text-14']")).text().substring(0, 12).replaceAll("[^0-9]", ""));
         return getNumberOfListing;
     }
@@ -527,6 +528,12 @@ public class SearchHelper extends HelperBase {
     public static List<String> cardsUserTypeSelectLabel() {
         List<String> cardsUserType = Arrays.asList("SELECT", "SELECT",  "SELECT", "SELECT","SELECT", "SELECT",
                 "SELECT", "SELECT", "SELECT", "SELECT","SELECT");
+        return cardsUserType;
+
+    }
+
+    public static List<String> cardsUserTypeAll() {
+        List<String> cardsUserType = Arrays.asList("I own the property, but donʼt live here", "We are a representing agency", "Select provider");
         return cardsUserType;
 
     }

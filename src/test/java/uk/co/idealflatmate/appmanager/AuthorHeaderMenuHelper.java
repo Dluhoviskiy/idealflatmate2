@@ -2,7 +2,13 @@ package uk.co.idealflatmate.appmanager;
 
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import utils.ConfData;
+
+import java.io.File;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -10,13 +16,19 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorHeaderMenuHelper extends HelperBase {
 
+    @FindBy(how = How.XPATH, using = "//li/a[contains(text(), ' Log out')]")
+    private SelenideElement item_header_drop_Logout1;
 
+
+
+
+    private SelenideElement item_header_drop_Logout = $(byXpath("//li/a[contains(text(), ' Log out')]"));
     private SelenideElement tab_header_JoinFree = $(".btn.btn-primary.u_m10-top.hidden-xs.hidden-sm.u_m20-right-md.u_m20-right-lg.u_ef-right");
     private SelenideElement tab_header_Login = $(byXpath("//nav//ul[contains(@class, 'nav navbar-nav navbar-right ')]/li[contains(., 'Login')]"));
 
     public  SelenideElement tab_header_Username = $("li.dropdown.nav-ihm-profile-bars span.user-welcome--name");
 
-    private SelenideElement item_header_drop_Logout = $(byXpath("//li/a[contains(text(), ' Log out')]"));
+    //private SelenideElement item_header_drop_Logout = $(byXpath("//li/a[contains(text(), ' Log out')]"));
     private SelenideElement tab_header_FindHome = $(byXpath("//header//nav//ul//li//a[contains(text(), 'Find a home')]"));
     private SelenideElement tab_header_AllProperties = $(byXpath("//a[@href='/search' and contains(text(), 'All properties')]"));
     private SelenideElement tab_header_GoFMPage = $(byXpath("//ul[starts-with(@class, 'nav navbar-nav')]//a[contains(.,'Find a flatmate')]"));
@@ -32,9 +44,11 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     private String button_submit_Reset = "//button[@type='submit' and contains(text(), 'yes, reset my password ')]";
     private SelenideElement notif_incorrect_EmailPassword = $(byXpath("//body//div[contains(@class,' required has-error')]/div[contains(text(),'Incorrect email or password.')]"));
     private static SelenideElement link_SignIn = $(byXpath("//a[contains(., 'Sign in')]"));
-
+    private SelenideElement clickEditProfile = $(byXpath("//a[@href='/dashboard/profile']"));
+    private SelenideElement photoClick =  $(byXpath("//div[@id='profile-update-images']//input[@id='profile-image']"));
     private static SelenideElement link_LogIn = $(byXpath("//a[contains(., 'Login')]"));
-
+    private static SelenideElement button_savePhoto = $(byXpath("//button[@class='btn btn-primary send2' and contains(.,'Save')]"));
+    public  SelenideElement clickSaveProfile = $(byXpath("//button[@class='btn btn-success btn-wide' and contains(.,'Save')]"));
     private SelenideElement reset = $(byXpath("//a[contains(.,'Reset')]"));
     private SelenideElement popup_SignIn = $(byXpath("//div[@id='signupNeedspaceModal']//div//a[@class='text-bold' and contains(., 'Sign')]"));
     private SelenideElement popup_SignIn_phone = $(byXpath("//div[@id='signupRevealModal']//div//a[@class='text-bold' and contains(., 'Sign')]"));
@@ -50,11 +64,22 @@ public class AuthorHeaderMenuHelper extends HelperBase {
 
 
 
+
+
     public void logoutFromApp() {
         refresh();
         sleep(2000);
         tabHeaderUserName();
         item_header_drop_Logout.waitUntil(visible, 1000).click();
+
+    }
+
+    public AuthorHeaderMenuHelper logoutFromApp1() {
+        refresh();
+        sleep(2000);
+        tabHeaderUserName();
+        item_header_drop_Logout1.waitUntil(visible, 1000).click();
+        return page(AuthorHeaderMenuHelper.class);
     }
 
     public void tabHeaderUserName() {
@@ -194,9 +219,9 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         setPassword(confPassword);
     }
 
-    public void loginTest1(String confEmail, String confPassword) {
-        setLoginAsUserWithoutPackage1(confEmail);
-        setPassword1(confPassword);
+    public void loginTest1(String UserName, String Password) {
+        setLoginAsUserWithoutPackage1(UserName);
+        setPassword1(Password);
     }
 
     public void removeAnyAccount() {
@@ -218,9 +243,9 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         submitLogin();
     }
 
-    public void loginHeader1(String confPassword, String confEmail){
+    public void loginHeader1(String Password, String UserName){
         open("http://front.idealflatmate4test.demo.devplatform2.com/auth/login");
-        loginTest1(confEmail,confPassword);
+        loginTest1(UserName,Password);
         submitLogin();
     }
 
@@ -236,5 +261,52 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         fillInField(ConfData.getData(confEmail), $(field_reset_Email));
         $(byXpath(button_submit_Reset)).click();
 
+    }
+
+    public void changeProfile() {
+        clickEditProfile.click();
+        clickAfterWaitVisible($(byXpath("//h2[contains(.,'Profile Picture')]")), 3000);
+        photoClick.uploadFile(new File("src/test/resources/profile1.jpeg"));
+        clickAfterWaitAppear(button_savePhoto, 30000);
+
+        scrollDownPageOn("600");
+        $(byXpath("//label[input[@id='profile-looking_buddy']]")).click();
+
+        $(byXpath("//input[@id='profile-first_name']")).clear();
+        $(byXpath("//input[@id='profile-first_name']")).sendKeys("Tolly");
+        $(byXpath("//a[@href='#section3' or contains(.,'Property Preferences')]")).click();
+        $(byXpath("//select[@id='userspace-move_in_date']")).selectOptionContainingText("January (2020)");
+
+        $(byXpath("//select[@id='profile-occupation_id']")).selectOptionByValue("227");
+        $(byXpath("//textarea[@id='profile-bio']")).clear();
+        scrollDownPageOn("800");
+        $(byXpath("//input[@id='userspace-locationkeysearch']")).sendKeys("watch");
+        $(byXpath("//li[@class='ui-menu-item']/div[contains(.,'Watchetts')]")).click();
+        $(byXpath("//input[@id='userspace-budget_max']")).clear();
+        $(byXpath("//input[@id='userspace-budget_max']")).sendKeys("1500");
+        $(byXpath("//select[@id='flatmate_gender']")).selectOptionByValue("2");
+        $(byXpath("//a[@href='#section3' or contains(.,'Property Preferences')]")).click();
+    }
+
+    public String getDateMoveIn() {
+        String s =  $(byXpath("//select[@id='userspace-move_in_date']/option[contains(.,'January (2020)')]")).getValue();
+        //newMoveInDate.toCharArray();
+        char result1 = s.charAt(0);
+        char result2 = s.charAt(1);
+        char result3 = s.charAt(2);
+        char result4 = s.charAt(3);
+        char result5 = s.charAt(4);
+        char result6 = s.charAt(5);
+        char result7 = s.charAt(6);
+        char result8 = s.charAt(7);
+        char result9 = s.charAt(8);
+        char result10 = s.charAt(9);
+
+        char[] a = {result9,result10,result8,result6,result7,result5,result1,result2,result3,result4};
+        String b = new String(a);
+        Stream<Character> st = Stream.of(result9,result10,result8,result6,result7,result5,result1,result2,result3,result4);
+        String newMoveInDate = st.map(c->c.toString()).collect(Collectors.joining());
+        //return newMoveInDate;
+        return b;
     }
 }

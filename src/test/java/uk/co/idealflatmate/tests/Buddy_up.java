@@ -16,7 +16,7 @@ public class Buddy_up extends TestBase {
 
 
 
-    @BeforeMethod
+   // @BeforeMethod
 
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
@@ -25,7 +25,7 @@ public class Buddy_up extends TestBase {
 
 
 
-    @Test //(priority = 2)
+    //@Test //(priority = 2)
 
     public void testNewBuddy_Up() {
 
@@ -81,7 +81,7 @@ public class Buddy_up extends TestBase {
 
 
 
-    @Test //(priority = 1)
+   // @Test //(priority = 1)
 
 
 
@@ -118,7 +118,7 @@ public class Buddy_up extends TestBase {
     }
 
 
-    @Test //(priority = 2)
+    //@Test //(priority = 2)
 
     public void testBbbAaaMessageSignUpFMPageBuddy_Up() {
 
@@ -184,7 +184,7 @@ public class Buddy_up extends TestBase {
         authorizationHelper.removeAnyAccount();
     }
 
-    @Test //(priority = 3)
+   // @Test //(priority = 3)
     public void testCccButtonPropPage() {
 
         //searchHelper.searchPropertyBySelectfromList("Caernarfon", "Caernarfon");
@@ -213,7 +213,7 @@ public class Buddy_up extends TestBase {
     }
 
 
-    @Test //(priority = 4)
+    //@Test //(priority = 4)
     public void testDddGroupPropPageStartSignUp() {
 
         searchHelper.startBuddyUpSearch("ha0 1eh", "HA0 1EH", "+3 km",
@@ -246,7 +246,7 @@ public class Buddy_up extends TestBase {
 
 
 
-    @Test //(priority = 5)
+   // @Test //(priority = 5)
     public void testGggCardChatSignUpViaFB() {
         String id_property = "38204";
 
@@ -292,7 +292,7 @@ public class Buddy_up extends TestBase {
 
     }
 
-    @Test //(priority = 6)
+   // @Test //(priority = 6)
     //Facebook authorization doen`t work on staging
     public void Z_z_addLogInViaFBBuddy_up() {
         String id_property = "38204";
@@ -319,7 +319,7 @@ public class Buddy_up extends TestBase {
 
     }
 
-    @Test //(priority = 7)
+    //@Test //(priority = 7)
 
     public void testR_R_GroupCreate() {
         clearCache();
@@ -423,7 +423,7 @@ public class Buddy_up extends TestBase {
         //authorizationHelper.removeAnyAccount();
     }
 
-    @Test //(priority = 8)//(dependsOnMethods = { "testMessageSignUpGroupCreate" })
+    //@Test //(priority = 8)//(dependsOnMethods = { "testMessageSignUpGroupCreate" })
 
     public void testT_T_MmmSignUpGroupJoin() {
 
@@ -506,7 +506,7 @@ public class Buddy_up extends TestBase {
         authorizationHelper.logoutFromApp();
 
     }
-    @Test //(priority = 9)
+   // @Test //(priority = 9)
 
     public void testW_W_MessageLoginGroupFull() {
 
@@ -552,7 +552,7 @@ public class Buddy_up extends TestBase {
         authorizationHelper.logoutFromApp();
     }
 
-    @Test //(priority = 10)
+    //@Test //(priority = 10)
 
     public void testY_Y_MessageLoginGroupEditFull() {
 
@@ -598,7 +598,7 @@ public class Buddy_up extends TestBase {
     }
 
 
-    @Test //(priority = 11)
+    //@Test //(priority = 11)
 
     public void testZ_Z_ZMessageLoginPropertyRemove() {
 

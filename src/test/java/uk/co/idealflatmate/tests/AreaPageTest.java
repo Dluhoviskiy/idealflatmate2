@@ -1,13 +1,11 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import uk.co.idealflatmate.appmanager.HelperBase;
-import uk.co.idealflatmate.appmanager.SearchHelper;
 
 import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static uk.co.idealflatmate.appmanager.AreaPageHelper.areaNameInCarousel;
 import static uk.co.idealflatmate.appmanager.AreaPageHelper.numberOfPropAreaPage;
@@ -31,7 +29,7 @@ public class AreaPageTest extends TestBase {
         String area1 = collectionReturn(areaNameInCarousel()).get(2).text();
         areaPageHelper.clickArea(1);
         areaPageHelper.checkAreaName(area1);
-        areaPageHelper.clickHeaderItem("top-spots", "rooms", "flatmates", "explore");
+        areaPageHelper.clickHeaderItem("top-spots",  "explore", area1);
 
     }
 
@@ -41,11 +39,10 @@ public class AreaPageTest extends TestBase {
         String area1 = collectionReturn(areaNameInCarousel()).get(4).text();
         areaPageHelper.clickArea(2);
         areaPageHelper.checkAreaName(area1);
-        areaPageHelper.clickHeaderItemColiving("coliving");
+        areaPageHelper.clickBlockColiving();
         int amountPropOnAreaPage = numberOfPropAreaPage();
-        //Integer NumberColiving = collectionReturn(colivingCards()).size();
         clickButton("See more coliving properties", "a");
-        switchTo().window(1);
+        //switchTo().window(1);
         closeAdvPopUp();
         areaPageHelper.h1_HeaderTextIsExist("Co living in Barnet Gate");
         int NumberColiving1Cards = cardsOnThePage().size();
@@ -62,7 +59,7 @@ public class AreaPageTest extends TestBase {
         areaPageHelper.areaScroll();
         String areaName = collectionReturn(areaNameInCarousel()).get(2).text();
         areaPageHelper.clickArea(1);
-        switchTo().window(1);
+        //switchTo().window(1);
         int amountPropOnAreaPage = numberOfPropAreaPage();
 
         areaPageHelper.clicklinkNearbyAreas();
@@ -79,6 +76,7 @@ public class AreaPageTest extends TestBase {
 
     @Test
     public void firstFeaturedLinkMap() {
+        Reporter.log("Application started");
         areaPageHelper.areaScroll();
         areaPageHelper.clickArea(1);
         areaPageHelper.checklinkMap();
@@ -125,7 +123,7 @@ public class AreaPageTest extends TestBase {
         areaPageHelper.areaScroll();
         areaPageHelper.clickArea(1);
         areaPageHelper.checkArrowsBrowsAll("Coliving", "Explore", " more areas");
-        switchTo().window(2);
+        //switchTo().window(2);
         areaPageHelper.checkRestAreas("Browse all cities", "London");
 
     }

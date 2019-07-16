@@ -1,13 +1,7 @@
 package uk.co.idealflatmate.tests;
 
-import org.testng.annotations.DataProvider;
-import utils.ExcelUtils;
-
-import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-
-public class TestExcel extends TestBase {
-
+public class TestExcel  {
+/*
     private String sTestCaseName;
 
     private int iTestCaseRow;
@@ -16,7 +10,7 @@ public class TestExcel extends TestBase {
 
 
 
-    //@Test(dataProvider = "Authentication")
+    @Test(dataProvider = "Authentication")
 
     public void testExcel2(String sUserName, String sPassword) {
         $(byXpath("//nav//ul[contains(@class, 'nav navbar-nav navbar-right ')]/li[contains(., 'Login')]")).click();
@@ -62,7 +56,7 @@ public class TestExcel extends TestBase {
 
 
 
-/*
+
         @DataProvider
         public Object[][] testData1(Method method, String sheet){
             ExcelReader excelReader = new ExcelReader();
@@ -74,11 +68,11 @@ public class TestExcel extends TestBase {
         @Test(dataProvider = "testData1")
         public void userLogin(List data) {
             data.get(0);
-            data.get(1);*/
+            data.get(1);
 
 
         }
 
-
+*/
 }
 

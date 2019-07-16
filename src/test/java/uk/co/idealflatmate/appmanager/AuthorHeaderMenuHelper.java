@@ -7,7 +7,6 @@ import org.openqa.selenium.support.How;
 import utils.ConfData;
 
 import java.io.File;
-import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Condition.appears;
 import static com.codeborne.selenide.Condition.visible;
@@ -304,7 +303,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
 
         char[] a = {result9,result10,result8,result6,result7,result5,result1,result2,result3,result4};
         String b = new String(a);
-        Stream<Character> st = Stream.of(result9,result10,result8,result6,result7,result5,result1,result2,result3,result4);
+        //Stream<Character> st = Stream.of(result9,result10,result8,result6,result7,result5,result1,result2,result3,result4);
         //String newMoveInDate = st.map(c->c.toString()).collect(Collectors.joining());
         //return newMoveInDate;
         return b;

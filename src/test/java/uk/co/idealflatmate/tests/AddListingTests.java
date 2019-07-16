@@ -69,7 +69,7 @@ public class AddListingTests extends TestBase {
                          //.chooseArea("Knightsbridge")
                          //.pressContinue()
                          .setTotalBedrooms("4");
-        scrollDownPageOn("2000");
+        scrollDownPageOn("1500");
         addPropertyHelper.setMonthlyRent("500")
                          .pressContinue()
                          .continueListingWithoutPhoto();
@@ -485,7 +485,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.viewListing();
         verificationHelper.verifyAboutProperty("3 of 1 bedroom available\n" +   "Parking space\n" +                "Pets Accepted\n" +
                                                 "Trans Friendly\n" +  "DSS Accepted");
-        verificationHelper.verifyAboutPropertyRooms("Rome, 36 is a male professional . 3 rooms available in 1" +
+        verificationHelper.verifyAboutPropertyRooms("Rome, 36 is a male professional. 3 rooms available in 1" +
                 " bed property in Birmingham. Room 1 is £999.00 per month. " +
                 "Room 2 is £1300.00 per month, the deposit is £300.00 and bills are an additional £120.00 per month." +
                 " Room 3 is £1500.00 per month, the deposit is £700.00 and bills are an additional £120.00 per month.");
@@ -510,7 +510,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyAboutProperty("1 bedroom available\n" + "Parking space\n" + "Pets Accepted\n" +
                                                 "Trans Friendly\n" + "DSS Accepted");
 
-        verificationHelper.verifyAboutPropertyRooms("Rome, 36 is a male professional . 1 room available in" +
+        verificationHelper.verifyAboutPropertyRooms("Rome, 36 is a male professional. 1 room available in" +
                                                         " 1 bed property in Birmingham. Room 1 is £999.00 per month.");
         addPropertyHelper.clickRoomsSection();
         verificationHelper.roomVerification("Room 1", "999", "no", "no", "Now",
@@ -606,7 +606,7 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.setAnotherMonthlyRent("800", "800")
                          .availabaleChecked("3")
                          .setAvailablePeriodRoom("3", "2025", "15", "Next");
-        scrollDownPageOn("600");
+        scrollDownPageOn("1000");
         addPropertyHelper.setPhoneNumber1("+44 20 7234 3456")
                          .pressContinue()
                          .uploadProperty3Photos()

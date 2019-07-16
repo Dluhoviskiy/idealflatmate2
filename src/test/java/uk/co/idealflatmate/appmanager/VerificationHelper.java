@@ -2,17 +2,13 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.testng.Assert;
-
 
 import java.util.Arrays;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -51,11 +47,15 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void verifyTextMessage(String text) {
         sleep(5000);
-        $(byXpath("(//div[@class='msg msg-sent'][last()]//span[last()])[2]")).shouldHave(Condition.text(text));
+        $(byXpath("(//div[@class='color-1 text-12 messages-list-item--authorinfo']//following-sibling::div)[last()-1]")).shouldHave(Condition.text(text));
+    }
+
+    public void verifySafeMessage(){
+        safetyConfermMessage("//label[@for='safety-tip-confirm']//span", visible, 10000);
     }
     public void verifyPageMessage() {
 
-        $(byXpath("//label[@for='safety-tip-confirm']//span")).click();
+        verifySafeMessage();
 
         $(byXpath("//textarea[@placeholder='Type your message here']")).waitUntil(visible, 4000).sendKeys("test message");
         $(byXpath("//a[@title='Send']")).waitUntil(visible, 4000).click();
@@ -64,6 +64,10 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
         $(byXpath("//div[@class='ScrollbarsCustom-Content']//div[contains(text(),'test message')]")).exists();
 
 
+    }
+
+    private void safetyConfermMessage(String s, Condition visible, int i) {
+        $(byXpath(s)).waitUntil(visible, i).click();
     }
 
     public void verifyPageMessageToFM() {
@@ -213,7 +217,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void passwWrongAlertHome() {
         //sleep(2000);
-        $(byXpath("//label[contains(text(), 'Your password')]/../div")).waitUntil(exist, 4000).shouldHave(text("Incorrect email or password."));
+        $(byXpath("//input[@id='loginform-password']//following-sibling::div")).waitUntil(exist, 4000).shouldHave(text("Incorrect email or password."));
     }
 
     public void nameFirstBlankAlert() {
@@ -480,7 +484,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
     public void FMBlogPage() {
-        switchTo().window(1);
+        //switchTo().window(1);
         $(byXpath("//section[@class='page-heading blog-splash']//div[@class=" +
                 "'blog-hq-switch container']/a")).getText().contentEquals("You are a landlord? Head to our landlord HQ here");
 
@@ -489,7 +493,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void landlordBlogPage() {
 
-        switchTo().window(1);
+        //switchTo().window(1);
         $(byXpath("//section[@class='page-heading blog-splash']//div[@class=" +
                 "'blog-hq-switch container']/a")).getText().contentEquals("Are you a flatmate? Head to Flatmate HQ here");
 

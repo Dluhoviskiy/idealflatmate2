@@ -43,7 +43,7 @@ public class HelperBase  {
 
     public static void propertySortBy(String value) {
         SearchHelper searchHelper = new SearchHelper();
-        $(searchHelper.sortProperty).selectOptionContainingText(value);
+        $(searchHelper.sortProperty).waitUntil(visible, 5000).selectOptionContainingText(value);
     }
 
     public static void closeMatchPopUp() {
@@ -70,7 +70,7 @@ public class HelperBase  {
     }
 
     public static List<String> getCardUserType() {
-
+        $(byXpath("(//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted'])[1]")).waitUntil(visible, 10000);
         return $$(byXpath("//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted']")).texts();
 
     }
@@ -101,10 +101,10 @@ public class HelperBase  {
 
 
     public void fillInField(String text, SelenideElement selElem) {
-        sleep(1000);
-        selElem.waitUntil(visible, 20000).click();
-        selElem.waitUntil(visible, 20000).clear();
-        selElem.waitUntil(visible, 20000).setValue(text);
+        sleep(1500);
+        selElem.waitUntil(visible, 2000).click();
+        selElem.waitUntil(visible, 2000).clear();
+        selElem.waitUntil(visible, 2000).setValue(text);
     }
 
 

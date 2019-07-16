@@ -46,7 +46,7 @@ public class FooterHelper extends HelperBase{
     }
 
     public void verificationFB() {
-        switchTo().window(1);
+        //switchTo().window(1);
         String urlNla= url();
         Assert.assertEquals(urlCurrent, urlNla);
         toHomePage();
@@ -83,14 +83,14 @@ public class FooterHelper extends HelperBase{
 
 
     public void verificationAskLandlord() {
-        switchTo().window(1);
+        //switchTo().window(1);
         $(byXpath("//h1[contains(., '#AsktheLandlord')]")).should(exist);
 
 
     }
 
     public void verificationModern() {
-        switchTo().window(1);
+        //switchTo().window(1);
         $(byXpath("//h1[contains(., 'Modern Living Index')]")).should(exist);
 
     }

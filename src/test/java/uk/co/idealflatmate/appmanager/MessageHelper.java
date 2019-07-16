@@ -20,7 +20,7 @@ public class MessageHelper extends HelperBase {
     }
 
     public void typeAndSendMessage(String message) {
-        SelenideElement submit = $(byXpath("//button[@type='submit' and@class='btn btn-success btn-msg-send']"));
+        SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
 
         $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
 
@@ -42,20 +42,24 @@ public class MessageHelper extends HelperBase {
     public void click(By locator) {
         $(locator).click();
     }
-
+    VerificationHelper v = new  VerificationHelper();
     public void chooseMessageTab(final String massage) {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
+
+
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Inbox')]")).waitUntil(Condition.appears, 4000).click();
             if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
                 $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
-                $(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
-                    if ($(byXpath("//li/a[@page='2']")).isDisplayed()) {
-                        $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
-                        sleep(5000);
-                        $(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
-                }
-        }else{$(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();}
-   }
+                v.verifySafeMessage();
+                //$(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
+                    //if ($(byXpath("//li/a[@page='2']")).isDisplayed()) {
+                       // $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
+                       // sleep(5000);
+                       // $(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
+                }else{  v.verifySafeMessage();}
+                //$(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
+
+    }
 
     public void chooseMesTabView() {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
@@ -66,10 +70,10 @@ public class MessageHelper extends HelperBase {
         }
     }
 
-    public void clickPropertyCardMessageUnlogged(final int indexOfCard) {
+    public void clickPropertyCardMessageUnlogged(final String property_id) {
         //$(byXpath("(//h2)[4]")).hover();
-        $$("a.card-start-chat.btn.btn-circle").get(indexOfCard).click();
-
+        //$$("a.card-start-chat.btn.btn-circle").get(indexOfCard).click();
+        $("#property_card_" + property_id + " a.card-start-chat.btn.btn-circle").click();
     }
 
     public  void clickPropertyCardFirstOnPage(){

@@ -1,20 +1,18 @@
 package uk.co.idealflatmate.tests;
 
-import com.codeborne.selenide.Condition;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import uk.co.idealflatmate.appmanager.SearchHelper;
+
+import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.sleep;
+import static uk.co.idealflatmate.appmanager.HelperBase.cardsOnThePage;
+import static uk.co.idealflatmate.appmanager.HelperBase.getCardUserSelectLabel;
+import static uk.co.idealflatmate.appmanager.HelperBase.getCardUserType;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.SearchHelper.*;
 
 //import static org.seleniumhq.jetty7.util.LazyList.getList;
-import java.io.IOException;
-import java.util.Collections;
-
-import static com.codeborne.selenide.Selenide.*;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-import static uk.co.idealflatmate.appmanager.HelperBase.*;
-import static uk.co.idealflatmate.appmanager.SearchHelper.*;
 //import static uk.co.idealflatmate.appmanager.TespageUrlVerifLiveGoStage;
 
 public class SearchPropertiesPageTests extends TestBase{
@@ -78,7 +76,7 @@ public class SearchPropertiesPageTests extends TestBase{
 
         searchHelper.activeFiltersNumber();
 
-        searchHelper.clickMoreFilterVerify("Garden", 14, "1 month", "1 week ago");
+        searchHelper.clickMoreFilterVerify("Garden", 15, "1 month", "1 week ago");
 
         searchHelper.numberOfActiveFilters(2);
         searchHelper.verifyClearMoreFilter("Garden");

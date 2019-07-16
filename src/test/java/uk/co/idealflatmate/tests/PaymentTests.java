@@ -3,7 +3,6 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.$;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
@@ -174,7 +173,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("lon", "2 Burnside, Longtown, Carlisle, CA6",
+        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("lon", "2 Longrise, Billericay, CM12",
                 "Chalk Farm", "15","1333", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");

@@ -4,9 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
 
-import static com.codeborne.selenide.Selenide.$;
-import static uk.co.idealflatmate.appmanager.HelperBase.*;
-import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListing;
+import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class MessagesTest extends TestBase {
@@ -55,10 +53,10 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void answMesFmWithoutSubsToFM() {
-
+        clearCache();
         authorizationHelper.loginMessage("FMwithMatch", "passwUniv");
         messageHelper.chooseMessageTab("FM can answer to FM");
-        verificationHelper.noSendDecline();
+        //verificationHelper.noSendDecline();
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
         messageHelper.typeAndSendMessage("FM can answer to FM");
         verificationHelper.verifyTextMessage("FM can answer to FM");

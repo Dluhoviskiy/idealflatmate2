@@ -6,14 +6,13 @@ import uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper;
 import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.getWebDriverLogs;
 import static com.codeborne.selenide.Selenide.open;
-//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickLogInButtonInForm;
 import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickSignInButtonInForm;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
+
+//import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class AuthorizationTests extends TestBase {
@@ -185,7 +184,7 @@ public class AuthorizationTests extends TestBase {
 
         searchHelper.searchPropertyByEnter("Hounslow");
         searchHelper.closePopupSignup();
-        messageHelper.clickPropertyCardMessageUnlogged(0);
+        messageHelper.clickPropertyCardMessageUnlogged("52369");
         clickSignInButtonInForm();
         authorizationHelper.setLoginAsUserWithoutPackage("FMwithoutSub");
         authorizationHelper.setPassword("passwUniv");
@@ -207,7 +206,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void logInContactProperty() {
-
+        clearCache();
         searchHelper.searchPropertyByEnter("Hounslow");
         searchHelper.closePopupSignup();
 

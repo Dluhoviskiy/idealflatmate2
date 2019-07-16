@@ -1,7 +1,6 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 import utils.ExcelUtils;
 
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -17,7 +16,7 @@ public class TestExcel extends TestBase {
 
 
 
-    @Test(dataProvider = "Authentication")
+    //@Test(dataProvider = "Authentication")
 
     public void testExcel2(String sUserName, String sPassword) {
         $(byXpath("//nav//ul[contains(@class, 'nav navbar-nav navbar-right ')]/li[contains(., 'Login')]")).click();

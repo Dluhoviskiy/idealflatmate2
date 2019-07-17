@@ -210,7 +210,7 @@ public class AuthorizationTests extends TestBase {
         searchHelper.searchPropertyByEnter("Hounslow");
         searchHelper.closePopupSignup();
 
-        messageHelper.clickCardImgProperty("80-82 Staines Rd, Hounslow TW3 3LF, UK");
+        messageHelper.clickCardImgProperty("4 Hollygrove Close, Hounslow, TW3 3NE, UK");
         //authorizationHelper.clickClosePopupSignUp();
         messageHelper.clickPropertyContact();
         clickSignInButtonInForm();

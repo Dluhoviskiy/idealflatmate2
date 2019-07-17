@@ -25,7 +25,7 @@ public class AreaPageHelper extends HelperBase {
     static SelenideElement container = $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow u_ep-relative']"));
 
     public void clickArea(int number_of_area) {
-        $(byXpath("//div[@class='homepage-quiz-container']/h2")).waitUntil(appears, 4000);
+        $(byXpath("//div[@class='homepage-quiz-container']/h2")).waitUntil(appears, 10000);
         $$("div.card-btr-amenities.text-white").get(number_of_area).click();
 
 

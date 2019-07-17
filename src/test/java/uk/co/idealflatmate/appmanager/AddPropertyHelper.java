@@ -2,15 +2,13 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.apache.commons.lang3.ObjectUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import java.io.File;
 
-import static com.codeborne.selenide.Condition.checked;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AddPropertyHelper extends HelperBase {
@@ -871,14 +869,14 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public AddPropertyHelper checkerPropertyWhole() {
-        sleep(1000);
+        sleep(2000);
         $(byXpath(check_whole)).shouldBe(checked);
         return this;
 
     }
 
     public AddPropertyHelper checkerPropertyRoomOnly() {
-        sleep(1000);
+        sleep(2000);
         $(byXpath(check_room_only)).shouldBe(checked);
         return this;
 

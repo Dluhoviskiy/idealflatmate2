@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
@@ -13,13 +14,14 @@ public class MessagesTest extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
+        clearBrowserCookies();
     }
 
 
    public final MessageHelper messageHelper = new MessageHelper();
 
     @Test
-    public void readMessageByLandlWithoutSubsn() {
+    public void readMessageByLandlWithoutSubscription() {
 
         authorizationHelper.loginMessage("Live_in_Mes", "passwUniv");
         getMessageHelper().chooseMessageTab("Test Message to Landlord without subscription");
@@ -42,7 +44,7 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void lordWithSubsToFM() {
-
+        clearCache();
         authorizationHelper.loginMessage("AgencyPaid", "passwUniv");
         homePageHelper.scrollToBlockProperty();
         homePageHelper.clickFM();
@@ -53,7 +55,7 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void answMesFmWithoutSubsToFM() {
-        clearCache();
+
         authorizationHelper.loginMessage("FMwithMatch", "passwUniv");
         messageHelper.chooseMessageTab("FM can answer to FM");
         //verificationHelper.noSendDecline();
@@ -106,9 +108,9 @@ public class MessagesTest extends TestBase {
         messageHelper.clickPropertyContact();
         //messageHelper.clickPropertyPageMessage();
         //verificationHelper.upgradeToFasterReply();
-        verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
-        messageHelper.sendDecline("Unfortunately I have found a place elsewhere and no longer" + //FH to Lord
-                " interested in the room. Good luck finding a flatmate!");
+        //verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
+        //messageHelper.sendDecline("Unfortunately I have found a place elsewhere and no longer" + //FH to Lord" interested in the room. Good luck finding a flatmate!");
+
         messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
@@ -131,8 +133,8 @@ public class MessagesTest extends TestBase {
         messageHelper.clickFMPageMessage();
 
         //verificationHelper.upgradeToFasterReply();
-        verificationHelper.noSendDecline();
-        verificationHelper.messageGroup("No property");
+        //verificationHelper.noSendDecline();
+        //verificationHelper.messageGroup("No property");
         messageHelper.typeAndSendMessage("Test Message to Landlord without subscription");
         verificationHelper.verifyTextMessage("Test Message to Landlord without subscription");
         authorizationHelper.logoutFromApp();
@@ -149,7 +151,7 @@ public class MessagesTest extends TestBase {
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("A current tenant");
         signUpHelper.signListingFM_LiveIn("TenantSpam", "passwUniv",
-                "5", "5", "1959", "55555555", "19",
+                "5", "5", "1959", "03456666666", "19",
                 name, "Professional", "Student");
 
 
@@ -166,12 +168,12 @@ public class MessagesTest extends TestBase {
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         signUpHelper.click1CardMessage("2");
-        messageHelper.typeAndSendMessage("https://www.trend.az");
+        messageHelper.typeAndSendMessageWithoutTips("https://www.trend.az");
 
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
         signUpHelper.click1CardMessage("3");
-        messageHelper.typeAndSendMessage("https://www.trend.az");
+        messageHelper.typeAndSendMessageWithoutTips("https://www.trend.az");
 
         verificationHelper.notifSpamer("Message limit reached. Please contact help@idealflatmate.co.uk" +
                                          " to have your messaging restored.");

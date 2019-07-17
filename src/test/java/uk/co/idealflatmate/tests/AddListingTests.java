@@ -133,7 +133,7 @@ public class AddListingTests extends TestBase {
 
         searchHelper.searchPropertyHome1("N11 1GN ");
         searchHelper.selectRadius("+3 km");
-
+        //displaying "BILLS INCL.", "ZERO DEPOSIT", "GYM", "CONCIERGE", "STUDENT"
         verificationHelper.featuresOnTheCard();
 
         removeListing();

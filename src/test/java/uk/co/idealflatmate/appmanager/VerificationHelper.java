@@ -18,6 +18,8 @@ public class VerificationHelper extends HelperBase {
 SelenideElement phoneAlert = $(byXpath("//div[contains(@class,'password')]/div[@class='help-block']"));
 SelenideElement genderAlert = $(byXpath("//div[contains(@class,'gender')]/div[@class='help-block']"));
 SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div[@class='help-block']"));
+private SelenideElement chatInput = $(byXpath("//textarea[@placeholder='Type your message here']"));
+private String safeTip = "//label[@for='safety-tip-confirm']//span";
 
 
     public void verificationUserNameOnHomePage(String nameUser) {
@@ -47,17 +49,17 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void verifyTextMessage(String text) {
         sleep(5000);
-        $(byXpath("(//div[@class='color-1 text-12 messages-list-item--authorinfo']//following-sibling::div)[last()-1]")).shouldHave(Condition.text(text));
+        $(byXpath("(//div[@class='color-1 text-12 messages-list-item--authorinfo']//following-sibling::div)[last()]")).shouldHave(Condition.text(text));
     }
 
     public void verifySafeMessage(){
-        safetyConfermMessage("//label[@for='safety-tip-confirm']//span", visible, 10000);
+        safetyConfermMessage(safeTip, visible, 10000);
     }
     public void verifyPageMessage() {
 
         verifySafeMessage();
 
-        $(byXpath("//textarea[@placeholder='Type your message here']")).waitUntil(visible, 4000).sendKeys("test message");
+        chatInput.waitUntil(visible, 4000).sendKeys("test message");
         $(byXpath("//a[@title='Send']")).waitUntil(visible, 4000).click();
 
         $(byXpath("//div[@class='ScrollbarsCustom-Content']//div[contains(text(),'Hey, looks like we are well matched. When are you looking to move?')]")).exists();
@@ -72,9 +74,9 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
 
     public void verifyPageMessageToFM() {
 
-        $(byXpath("//label[@for='safety-tip-confirm']//span")).click();
+        verifySafeMessage();
 
-        $(byXpath("//textarea[@placeholder='Type your message here']")).waitUntil(visible, 4000).sendKeys("test message");
+        chatInput.waitUntil(visible, 4000).sendKeys("test message");
         $(byXpath("//a[@title='Send']")).waitUntil(visible, 4000).click();
 
         $(byXpath("//div[@class='ScrollbarsCustom-Content']//div[contains(text(),'Hey, looks like we are well matched. When are you looking to move?')]")).exists();
@@ -334,7 +336,9 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
     public void chatPage() {
-        $(byXpath("//textarea[@name='ConversationMessage[message]']")).waitUntil(exist, 4000).shouldBe(visible);
+
+        $(byXpath(safeTip)).shouldNot(exist);
+        chatInput.waitUntil(exist, 4000).shouldBe(visible);
     }
 
     public void verifyAddListingPage() {
@@ -643,7 +647,7 @@ SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div
     }
 
     public void featuresOnTheCard() {
-        List<String> featureProp = $$(byXpath("//div[starts-with(@class,'card-img--label')]/a/span")).texts();
+        List<String> featureProp = $$(byXpath("//div[span[contains(.,'AgentF')]]//ancestor::div[contains(@id,'property_card_')]//div[starts-with(@class,'card-img--label')]/a/span")).texts();
         List<String> featurePropExpected = Arrays.asList("BILLS INCL.", "ZERO DEPOSIT", "GYM", "CONCIERGE", "STUDENT");
         Assert.assertEquals(featurePropExpected,featureProp);
 

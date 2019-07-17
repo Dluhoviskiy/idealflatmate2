@@ -21,7 +21,23 @@ public class MessageHelper extends HelperBase {
 
     public void typeAndSendMessage(String message) {
         SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
+        v.verifySafeMessage();
+        $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
 
+        if ($(byXpath("//img[@id='imgSrc']")).is(exist)) {
+            $(byXpath("(//p[contains(., 'See the newest London')])[1]")).shouldBe(appear).hover();
+            $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
+            submit.shouldBe(visible).click();
+        } else {
+            submit.shouldBe(visible).click();
+        }
+
+
+    }
+
+    public void typeAndSendMessageWithoutTips(String message) {
+        SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
+        //v.verifySafeMessage();
         $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
 
         if ($(byXpath("//img[@id='imgSrc']")).is(exist)) {
@@ -117,8 +133,8 @@ public class MessageHelper extends HelperBase {
     }
 
     public void clickCardImgProperty(final String byLocation) {
-        sleep(3000);
-        $(byXpath("//div[contains(text(), '" + byLocation + "')]/../../../../../..//picture/img")).click();
+
+        $(byXpath("//div[div[contains(@class,'card-body clearfix')]//div[contains(text(), '"+byLocation+"')]]//picture/img")).waitUntil(visible, 5000).click();
     }
 
     public void clickPropertyCardFMnamePagelogged() {
@@ -128,6 +144,7 @@ public class MessageHelper extends HelperBase {
 
     public void clickFMPageMessage() {
         sleep(2000);
+
         $(byXpath("//div[@class='col-sm-4 u_m20-bottom-xs']//a[contains(., 'Message')]")).waitUntil(visible, 10000).click();
 
     }
@@ -237,6 +254,7 @@ public class MessageHelper extends HelperBase {
 
 
     public void sendDecline(String text) {
+        v.verifySafeMessage();
         $(byXpath("//button[@class='btn-cancel']")).click();
         $(byXpath("//button[@class='btn btn-success']")).click();
         sleep(2000);

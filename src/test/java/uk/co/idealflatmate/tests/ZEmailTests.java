@@ -30,13 +30,13 @@ public class ZEmailTests extends TestBase {
         emailHelper.tipCheckboxMessage("You have a new message!");
         //emailHelper.tipCheckboxMessage("You have a new enquiry!");
 
-        emailHelper.tipCheckboxMessage("ideal flatmate - Someone posted a group on your listing");
-        emailHelper.tipCheckboxMessage("ideal flatmate - Someone is interested in your property");
-        emailHelper.tipCheckboxMessage("ideal flatmate - A group was removed");
-        emailHelper.tipCheckboxMessage("Group reported");
-        emailHelper.tipCheckboxMessage("ideal flatmate - Someone joined your group");
-        emailHelper.tipCheckboxMessage("ideal flatmate - Premium Flathunter Subscription created");
-        emailHelper.tipCheckboxMessage("Premium Flathunter Subscription cancelled");
+        //emailHelper.tipCheckboxMessage("ideal flatmate - Someone posted a group on your listing");
+        //emailHelper.tipCheckboxMessage("ideal flatmate - Someone is interested in your property");
+        //emailHelper.tipCheckboxMessage("ideal flatmate - A group was removed");
+        //emailHelper.tipCheckboxMessage("Group reported");
+        //emailHelper.tipCheckboxMessage("ideal flatmate - Someone joined your group");
+        //emailHelper.tipCheckboxMessage("ideal flatmate - Premium Flathunter Subscription created");
+       // emailHelper.tipCheckboxMessage("Premium Flathunter Subscription cancelled");
         emailHelper.tipCheckboxMessage("ideal flatmate - Subscription created");
         emailHelper.tipCheckboxMessage("ideal flatmate - Subscription cancelled");
         emailHelper.tipCheckboxMessage("Your listing on ideal flatmate is pending.");

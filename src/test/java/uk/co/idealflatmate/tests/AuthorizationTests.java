@@ -6,6 +6,8 @@ import uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper;
 import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
 import static com.codeborne.selenide.Selenide.open;
 import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickLogInButtonInForm;
 import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickSignInButtonInForm;
@@ -22,6 +24,8 @@ public class AuthorizationTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
+        clearBrowserCookies();
+        clearBrowserLocalStorage();
     }
 
     @Test
@@ -120,8 +124,32 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickJoinFreeButton();
         clickSignInButtonInForm();
         authorizationHelper.clickSignUp_In_WithFacebook();
-        authorizationHelper.LoginFacebookWithActiveAccount(ConfData.getData("FB1"), ConfData.getData("passwFB1"));
+        authorizationHelper.LoginFacebookWithActiveAccount("FB1","passwFB1");
         verificationHelper.verificationUserNameOnHomePage("Alex");
+        authorizationHelper.logoutFromApp();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+
+    }
+    @Test
+    public void addLogInViaGoogle() {
+
+        authorizationHelper.clickJoinFreeButton();
+        clickSignInButtonInForm();
+        authorizationHelper.clickSignUp_In_WithGoogle();
+        authorizationHelper.LoginGoogleWithNewAccount("Google1", "passwGoogle1");
+        verificationHelper.verificationUserNameOnHomePage("Met Damon");
+        authorizationHelper.logoutFromApp();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+
+    }
+    @Test
+    public void addLogInViaLinkedLn() {
+
+        authorizationHelper.clickJoinFreeButton();
+        clickSignInButtonInForm();
+        authorizationHelper.clickSignUp_In_WithLinkedLn();
+        authorizationHelper.LoginLinkedLnWithActiveAccount("LinkedLn1","passwLinkedLn1");
+        verificationHelper.verificationUserNameOnHomePage("Met Daimon");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
@@ -206,7 +234,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     public void logInContactProperty() {
-        clearCache();
+
         searchHelper.searchPropertyByEnter("Hounslow");
         searchHelper.closePopupSignup();
 

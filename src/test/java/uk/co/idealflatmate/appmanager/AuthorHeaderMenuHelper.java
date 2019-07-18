@@ -32,13 +32,23 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     private SelenideElement tab_header_AllProperties = $(byXpath("//a[@href='/search' and contains(text(), 'All properties')]"));
     private SelenideElement tab_header_GoFMPage = $(byXpath("//ul[starts-with(@class, 'nav navbar-nav')]//a[contains(.,'Find a flatmate')]"));
     private SelenideElement button_popup_login_Submit = $(byXpath("//button[contains(., 'Log in with email ')]"));
-    private SelenideElement button_popup_FB = $(byXpath("//a[contains(@id,'js-signup-facebook')]"));
+    private SelenideElement button_popup_FB = $(byXpath("//a[contains(@class,'js-signup btn__with-icon btn__color--2 invert text-center text-14 u_br-4 text-bold')]"));
+    private SelenideElement button_popup_Google = $(byXpath("//a[@class='js-signup btn__with-icon btn__color--1 invert text-center text-14 u_br-4 text-bold']"));
+    private SelenideElement button_popup_LinkedLn = $(byXpath("//a[@class='js-signup btn__with-icon btn__color--28 invert text-center text-14 u_br-4 text-bold']"));
     private SelenideElement field_fb_Email = $("#email");
+    private SelenideElement field_G_Email = $("#identifierId");
+    private SelenideElement field_LinledLn_Email = $("#username");
     private SelenideElement field_fb_Password = $("#pass");
+    private SelenideElement field_G_Password = $("#password input");
+    private SelenideElement field_L_Password = $("#password");
     private SelenideElement field_login_Username = $("input#loginform-username");
     private String field_reset_Email ="input#passwordresetrequestform-email";
     private SelenideElement field_login_Password = $("input#loginform-password");
-    private SelenideElement button_login_FB = $(byXpath("//input[@value='Log In']"));
+    private SelenideElement button_G_Email_next = $("#identifierNext");
+    private SelenideElement button_L_Email_next = $("#identifierNext");
+    private SelenideElement button_G_Password_next = $("#passwordNext");
+    private SelenideElement button_L_Password_next = $("button.btn__primary--large.from__button--floating");
+    private SelenideElement button_login_FB = $(byXpath("//button[@id='loginbutton']"));
     private SelenideElement button_listing_Remove = $(byXpath("//button[@type='submit' and contains(text(), 'Delete')]"));
     private String button_submit_Reset = "//button[@type='submit' and contains(text(), 'yes, reset my password ')]";
     private SelenideElement notif_incorrect_EmailPassword = $(byXpath("//body//div[contains(@class,' required has-error')]/div[contains(text(),'Incorrect email or password.')]"));
@@ -108,15 +118,41 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         button_login_FB.click();
     }
 
+
+
     public void LoginFacebookWithNewAccount(String confEmail, String confPassword) {
         sleep(2000);
         field_fb_Email.setValue(ConfData.getData(confEmail));
         field_fb_Password.setValue(ConfData.getData(confPassword)).pressEnter();
     }
 
+    public void LoginGoogleWithNewAccount(String confEmail, String confPassword) {
+        sleep(2000);
+        field_G_Email.setValue(ConfData.getData(confEmail));
+        button_G_Email_next.click();
+        field_G_Password.setValue(ConfData.getData(confPassword));
+        button_G_Password_next.click();
+    }
+
+    public void LoginLinkedLnWithActiveAccount(String confEmail, String confPassword) {
+        sleep(2000);
+        field_LinledLn_Email.setValue(ConfData.getData(confEmail));
+        field_L_Password.setValue(ConfData.getData(confPassword));
+        button_L_Password_next.click();
+    }
+
     public void clickSignUp_In_WithFacebook() {
         clickAfterWaitVisible(button_popup_FB, 4000);
 
+    }
+
+
+
+    public void clickSignUp_In_WithGoogle() {
+        clickAfterWaitVisible(button_popup_Google, 4000);
+    }
+    public void clickSignUp_In_WithLinkedLn() {
+        clickAfterWaitVisible(button_popup_LinkedLn, 4000);
     }
 
     public void clickJoinFreeButton() {
@@ -308,4 +344,6 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         //return newMoveInDate;
         return b;
     }
+
+
 }

@@ -179,3 +179,23 @@ name17=Tolly
 lookingFor17=I am looking to buddy up
 aboutMe17=About me\nTolly, 19 is a female other looking for a room in Watchetts.\nMaximum budget: 1500/month\nReady to move in: 11-01-2020\nLooking for a room in\nWatchetts
 aboutMe18=Ready to move in:
+
+//testHeaderSignUpViaGoogle
+percentComplete19=70% complete
+myProfile19=User Type\nPersonal Details\nProperty Preferences\nBudget & Availability\nYour ideal flatmate
+name19=Met Ramond
+age19=60
+lookingFor19=I'm looking for a room
+aboutMe19=About me\nMet Ramond, 60 freelancer/self employed is looking for a room in Zone 1 or Watford or North London.\nMaximum budget: 400/month\nReady to move in: Immediately\nLooking for a room in\nZone 1\nWatford\nNorth London
+amountPropCards19=0
+rooms19=3
+
+//testHeaderSignUpViaGoogle
+percentComplete20=70% complete
+myProfile20=User Type\nPersonal Details\nProperty Preferences\nBudget & Availability\nYour ideal flatmate
+name20=Ned Daimon
+age20=60
+lookingFor20=I'm looking for a room
+aboutMe20=About me\nNed Daimon, 60 freelancer/self employed is looking for a room in Zone 1 or Watford or North London.\nMaximum budget: 400/month\nReady to move in: Immediately\nLooking for a room in\nZone 1\nWatford\nNorth London
+amountPropCards20=0
+rooms20=3

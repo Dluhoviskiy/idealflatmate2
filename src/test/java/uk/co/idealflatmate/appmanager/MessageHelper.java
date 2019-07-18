@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -11,6 +12,7 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MessageHelper extends HelperBase {
+    private SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
 
 
     public void chooseAnyMessageFromList() {
@@ -21,34 +23,21 @@ public class MessageHelper extends HelperBase {
 
     public void typeAndSendMessage(String message) {
         SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
-        v.verifySafeMessage();
+        v.closeSafeTip();
         $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
-
-        if ($(byXpath("//img[@id='imgSrc']")).is(exist)) {
-            $(byXpath("(//p[contains(., 'See the newest London')])[1]")).shouldBe(appear).hover();
-            $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
-            submit.shouldBe(visible).click();
-        } else {
-            submit.shouldBe(visible).click();
-        }
-
-
+        submit.shouldBe(visible).click();
     }
 
     public void typeAndSendMessageWithoutTips(String message) {
-        SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
-        //v.verifySafeMessage();
-        $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
-
-        if ($(byXpath("//img[@id='imgSrc']")).is(exist)) {
-            $(byXpath("(//p[contains(., 'See the newest London')])[1]")).shouldBe(appear).hover();
-            $(byXpath("//div[@id='idclose-headsup']")).shouldBe(visible).click();
+        VerificationHelper safe = new VerificationHelper();
+        sleep(1000);
+        if ($(byXpath(safe.safeTip)).exists()){
+            v.closeSafeTip();
+            $("textarea.form-control.msgbox").waitUntil(visible, 3000).setValue(message);
             submit.shouldBe(visible).click();
-        } else {
-            submit.shouldBe(visible).click();
-        }
-
-
+        }else {
+            $("textarea.form-control.msgbox").waitUntil(visible, 3000).setValue(message);
+             submit.shouldBe(visible).click();}
     }
 
     public void chooseAnyMessageFromPopup() {
@@ -66,15 +55,23 @@ public class MessageHelper extends HelperBase {
         $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Inbox')]")).waitUntil(Condition.appears, 4000).click();
             if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
                 $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
-                v.verifySafeMessage();
+                v.closeSafeTip();
                 //$(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
                     //if ($(byXpath("//li/a[@page='2']")).isDisplayed()) {
                        // $(byXpath("//li/a[@page='2']")).waitUntil(Condition.appears, 8000).click();
                        // sleep(5000);
                        // $(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
-                }else{  v.verifySafeMessage();}
+                }else{  v.closeSafeTip();}
                 //$(byXpath("//p[contains(.,'" + massage + "')]")).waitUntil(Condition.appears, 8000).click();
 
+    }
+
+    public void chooseMessageTabLordWithoutSubscr() {
+        $(byXpath("//a[@class='dropdown-toggle' and contains(text(), 'Inbox')]")).waitUntil(Condition.appears, 4000).click();
+        if ($(byXpath("//div[contains(text(), 'New messages')]")).isDisplayed()) {
+            $(byXpath("//a[contains(text(), 'View all')]")).waitUntil(Condition.appears, 4000).click();
+
+        }else{  }
     }
 
     public void chooseMesTabView() {
@@ -254,7 +251,7 @@ public class MessageHelper extends HelperBase {
 
 
     public void sendDecline(String text) {
-        v.verifySafeMessage();
+        v.closeSafeTip();
         $(byXpath("//button[@class='btn-cancel']")).click();
         $(byXpath("//button[@class='btn btn-success']")).click();
         sleep(2000);
@@ -278,5 +275,18 @@ public class MessageHelper extends HelperBase {
 
     public void backToInbox() {
         $(byXpath("//a[contains(text(), ' Back to inbox')]")).click();
+    }
+
+    public void messageSearchFM(final String cardNumber, final String url) {
+        SignUpHelper s = new SignUpHelper();
+        s.click1CardMessage(ConfData.getData(cardNumber));
+        typeAndSendMessageWithoutTips(ConfData.getData(url));
+    }
+
+    public void messageSearchFM1(final int cardNumber, final String message1) {
+        SignUpHelper s = new SignUpHelper();
+        sleep(1000);
+        s.click1CardMessage1(cardNumber);
+        typeAndSendMessageWithoutTips(ConfData.getData(message1));
     }
 }

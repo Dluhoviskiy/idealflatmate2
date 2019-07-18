@@ -185,11 +185,12 @@ public class SearchHelper extends HelperBase {
     }
 
     public void moveToPage(int pageNumberInd, String pageNumber) {
+        sleep(1000);
         $$("div ul.pagination li a").findBy(text(pageNumber)).click();
-        sleep(5000);
-
+        sleep(1000);
+        $("ul.pagination li").waitUntil(visible, 5000);
         $$("ul.pagination li").get(pageNumberInd).shouldHave(cssClass("active"));
-
+        sleep(1000);
 
     }
 

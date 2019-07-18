@@ -114,10 +114,11 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.featuresPropertyClick("property-is_bills_included", checked)
                          .featuresPropertyClick("property-has_no_deposit", checked);
 
-        scrollDownPageOn("1000");
+        scrollDownPageOn("600");
 
-        addPropertyHelper.setMonthlyRent("1700")
-                         .pressContinue();
+        addPropertyHelper.setMonthlyRent("1700");
+        scrollDownPageOn("300");
+        addPropertyHelper.pressContinue();
         sleep(1000);
 
         addPropertyHelper.pressBack();
@@ -194,7 +195,7 @@ public class AddListingTests extends TestBase {
 
         verificationHelper.photoListingExist();
         verificationHelper.verifyAddedPropertyWithAllFields("August ", "Room 1", "Room 2", "Room 3",
-                "3 of 4 bedrooms available\n" + "Garden\n" + "Communal living room\n" +  "Balcony/patio\n" +
+                "En-suite available\n" + "Garden\n" + "Communal living room\n" +  "Balcony/patio\n" +
                         "Parking space\n" + "Smokers Accepted\n" +  "Suitable for couples\n" + "Pets Accepted\n" +
                         "LGBT Friendly\n" + "Trans Friendly\n" + "Family Friendly\n" + "Vegan Household\n" +
                         "Vegetarian Household\n" + "DSS Accepted", "Location\n"+"40 Foreshore, london, SE8 3AG, UK - see more rooms to rent in Evelyn");
@@ -588,7 +589,7 @@ public class AddListingTests extends TestBase {
                                             "Pet Friendly", "Smoker Friendly", "Family Friendly",
                                             "LGBT Friendly", "Trans Friendly", "Vegan Household",
                                             "Vegetarian Household", "DSS Accepted", "Suitable for couples",
-                                             "Gym", "Concierge")
+                                             "Gym", "Concierge", "En-suite")
                          .setPropertyDescription("Very good flat");
         scrollDownPageOn("600");
         addPropertyHelper.setMonthlyRent("500")
@@ -614,12 +615,13 @@ public class AddListingTests extends TestBase {
                          .uploadPropertyLargePhoto()
                          .uploadPropertyNotPhoto()
                          .checkPhotos()
-                         .pressBack()
-                         .checkAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
+                         .pressBack();
+        scrollDownPageOn("100");
+        addPropertyHelper.checkAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
                                             "property-pets_accepted", "property-smokers_accepted",
                                             "property-family_friendly", "property-lgbt_friendly",
                                             "property-trans_friendly", "property-vegan_household",
-                                            "property-vegetarian_household", "DSS Accepted", "Suitable for couples")
+                                            "property-vegetarian_household", "DSS Accepted", "Suitable for couples", "En-suite")
                          .pressContinue()
                          .checkPhotos()
                          .finishPropertyCreatingAgency();

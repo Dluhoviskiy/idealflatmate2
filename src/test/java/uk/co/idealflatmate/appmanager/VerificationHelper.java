@@ -19,7 +19,7 @@ SelenideElement phoneAlert = $(byXpath("//div[contains(@class,'password')]/div[@
 SelenideElement genderAlert = $(byXpath("//div[contains(@class,'gender')]/div[@class='help-block']"));
 SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div[@class='help-block']"));
 private SelenideElement chatInput = $(byXpath("//textarea[@placeholder='Type your message here']"));
-private String safeTip = "//label[@for='safety-tip-confirm']//span";
+public String safeTip = "//label[@for='safety-tip-confirm']//span";
 
 
     public void verificationUserNameOnHomePage(String nameUser) {
@@ -52,12 +52,12 @@ private String safeTip = "//label[@for='safety-tip-confirm']//span";
         $(byXpath("(//div[@class='color-1 text-12 messages-list-item--authorinfo']//following-sibling::div)[last()]")).shouldHave(Condition.text(text));
     }
 
-    public void verifySafeMessage(){
+    public void closeSafeTip(){
         safetyConfermMessage(safeTip, visible, 10000);
     }
     public void verifyPageMessage() {
 
-        verifySafeMessage();
+        closeSafeTip();
 
         chatInput.waitUntil(visible, 4000).sendKeys("test message");
         $(byXpath("//a[@title='Send']")).waitUntil(visible, 4000).click();
@@ -74,7 +74,7 @@ private String safeTip = "//label[@for='safety-tip-confirm']//span";
 
     public void verifyPageMessageToFM() {
 
-        verifySafeMessage();
+        closeSafeTip();
 
         chatInput.waitUntil(visible, 4000).sendKeys("test message");
         $(byXpath("//a[@title='Send']")).waitUntil(visible, 4000).click();
@@ -416,7 +416,8 @@ private String safeTip = "//label[@for='safety-tip-confirm']//span";
 
 
     public void isFMPage() {
-        $(byXpath("//h1[@class='h4' and contains(.,'Find Flatmates')]")).shouldBe(visible);
+
+        $(byXpath("//h1[@class='h4' and contains(.,'Find Flatmates')]")).waitUntil(visible, 10000).shouldBe(visible);
     }
 
     public void isPropertyPageLocation(String searchLocation) {
@@ -657,6 +658,12 @@ private String safeTip = "//label[@for='safety-tip-confirm']//span";
     public void notifSpamer(final String mesToSpamer) {
 
         $(byXpath("//div[@class='alert alert-danger']")).shouldHave(text(mesToSpamer));
+
+    }
+
+    public void notifSpamerNotExist() {
+
+        $(byXpath("//div[@class='alert alert-danger']")).shouldNot(exist);
 
     }
 

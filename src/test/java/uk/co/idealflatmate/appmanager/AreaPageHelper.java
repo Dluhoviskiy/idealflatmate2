@@ -39,20 +39,20 @@ public class AreaPageHelper extends HelperBase {
 
         $(byXpath("//a[@href='#top']")).click();
         $(byXpath("//h2[contains(text(), 'Overview')]")).shouldBe(visible);
-        sleep(3000);
+        sleep(1000);
 
         container.scrollIntoView(true).$(byXpath("//a[@href='#" + select1 + "']")).click();
         $(byXpath("//h2[contains(text(), 'Top Spots')]")).shouldBe(visible);
-
+        sleep(1000);
         container.scrollIntoView(true).$(byXpath("//a[@href='/spare-room/london/south/clapham/rooms']")).click();
         $(byXpath("//h1[starts-with(@class,'splash-title')]")).shouldHave(text("Rooms for rent in " + area));
         navigator.back();
-        sleep(3000);
+        sleep(1000);
 
         container.scrollIntoView(true).$(byXpath("//a[@href='/spare-room/london/south/clapham/flatmates']")).click();
         $(byXpath("//h1[starts-with(@class,'splash-title')]")).shouldHave(text("Flatmates in " + area));
         navigator.back();
-        sleep(3000);
+        sleep(1000);
 
         container.scrollIntoView(true).$(byXpath("//a[@href='#" + select2 + "']")).click();
         $(byXpath("//div[@class='scrollspy clearfix scrollspy-horizontal']")).shouldBe(visible);

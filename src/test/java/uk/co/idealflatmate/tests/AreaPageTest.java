@@ -19,7 +19,7 @@ public class AreaPageTest extends TestBase {
     @BeforeMethod
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
-        clearCache();
+        clearBrowserCookies();
 
     }
 

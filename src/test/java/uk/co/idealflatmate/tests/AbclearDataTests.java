@@ -3,6 +3,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.*;
 import utils.ConfData;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
@@ -60,7 +61,7 @@ public class AbclearDataTests extends TestBase {
     @Parameters ({ "confEmail", "confPassword" })
     @Test
     public void removeAccountBeforeTestLive(@Optional("qqqqqq") String confPassword,@Optional("proideal@ukr.net") String confEmail) {
-
+        clearBrowserCookies();
         authorizationHelper.loginHeader2(confEmail, confPassword);
         authorizationHelper.removeAccountBeforeTest();
 

@@ -283,7 +283,7 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper setAllAmanities(String text1, String text2, String text3, String text4, String text5,
                                 String text6, String text7, String text8, String text9, String text10,
-                                String text11, String text12, String text13, String text14, String text15) {
+                                String text11, String text12, String text13, String text14, String text15, String text16) {
 
 
         $(byXpath(setAmanity_string1 + text1 + end_string)).click();
@@ -316,6 +316,7 @@ public class AddPropertyHelper extends HelperBase {
         sleep(1000);
         $(byXpath(setAmanity_string1 + text15 + end_string)).click();
         sleep(1000);
+        $(byXpath(setAmanity_string1 + text16 + end_string)).click();
         return  this;
     }
 
@@ -330,15 +331,16 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper checkAllAmanities(String text1, String text2, String text3, String text4, String text5,
                                 String text6, String text7, String text8, String text9, String text10,
-                                String text11, String text12, String text13) {
+                                String text11, String text12, String text13, String text14) {
         Condition attribute = attribute("checked");
-
+        $(byXpath("//label[@class='control-label' and contains(.,'Property Amenities')]")).waitUntil(visible, 5000);
         $(byXpath(check_Amanity+text1+check_Amanity_end)).shouldHave(attribute);
         $(byXpath(check_Amanity+text2+check_Amanity_end)).shouldHave(attribute);
         $(byXpath(check_Amanity+text3+check_Amanity_end)).shouldHave(attribute);
         $(byXpath(check_Amanity+text4+check_Amanity_end)).shouldHave(attribute);
         $(byXpath(check_Amanity+text12+check_Amanity_end)).shouldHave(attribute);
         $(byXpath(check_Amanity+text13+check_Amanity_end)).shouldHave(attribute);
+        $(byXpath(check_Amanity+text14+check_Amanity_end)).shouldHave(attribute);
         $(check_Amanity1+text5+check_Amanity_end1).shouldBe(selected);
         $(check_Amanity1+text6+check_Amanity_end1).shouldBe(selected);
         $(check_Amanity1+text7+check_Amanity_end1).shouldBe(selected);
@@ -357,6 +359,8 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public AddPropertyHelper setMonthlyRent(String rent) {
+
+        $(input_ListFlow_roomPrice).waitUntil(visible, 5000);
         fillInField(rent, $(input_ListFlow_roomPrice));
         return this;
      }

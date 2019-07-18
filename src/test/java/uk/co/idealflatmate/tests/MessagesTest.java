@@ -5,7 +5,9 @@ import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+import static uk.co.idealflatmate.appmanager.HelperBase.scrollDownPageOn;
 
 
 public class MessagesTest extends TestBase {
@@ -15,6 +17,7 @@ public class MessagesTest extends TestBase {
         pageUrlVerifLiveGoStage();
         clearCache();
         clearBrowserCookies();
+        clearBrowserLocalStorage();
     }
 
 
@@ -24,7 +27,7 @@ public class MessagesTest extends TestBase {
     public void readMessageByLandlWithoutSubscription() {
 
         authorizationHelper.loginMessage("Live_in_Mes", "passwUniv");
-        getMessageHelper().chooseMessageTab("Test Message to Landlord without subscription");
+        getMessageHelper().chooseMessageTabLordWithoutSubscr();
         verificationHelper.verifyUpgradeButton();
         authorizationHelper.logoutFromApp();
     }
@@ -60,7 +63,7 @@ public class MessagesTest extends TestBase {
         messageHelper.chooseMessageTab("FM can answer to FM");
         //verificationHelper.noSendDecline();
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
-        messageHelper.typeAndSendMessage("FM can answer to FM");
+        messageHelper.typeAndSendMessageWithoutTips("FM can answer to FM");
         verificationHelper.verifyTextMessage("FM can answer to FM");
         authorizationHelper.logoutFromApp();
     }
@@ -72,7 +75,7 @@ public class MessagesTest extends TestBase {
         messageHelper.chooseMessageTab("Landlord Answer to Prem FM");
         //paymentsHelper.addPropertyHelper.messageHepler.chooseAnyMessageFromList();
         messageHelper.sendDecline("Unfortunately this listing is no longer available. Good luck with your search!");//Lord to FH
-        messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
+        messageHelper.typeAndSendMessageWithoutTips("Landlord Answer to Prem FM");
         verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
@@ -87,14 +90,14 @@ public class MessagesTest extends TestBase {
         //messageHelper.clickPropertyPageMessage();
         verificationHelper.noTextUpgradeToFasterReply();
         verificationHelper.messageGroup("# 0012947 Newport PO30 2DN, UK");
-        messageHelper.typeAndSendMessage("Landlord Answer to Prem FM");
+        messageHelper.typeAndSendMessageWithoutTips("Landlord Answer to Prem FM");
         verificationHelper.verifyTextMessage("Landlord Answer to Prem FM");
         authorizationHelper.logoutFromApp();
     }
 
     @Test
     public void fmWithoutSubsToLandlordWithoutSubsWithListFromList() {
-
+        clearBrowserCookies();
         authorizationHelper.loginMessage("FMNotPaid", "passwUniv");
 
         authorizationHelper.goToPropertyPage();
@@ -144,8 +147,6 @@ public class MessagesTest extends TestBase {
     public void spamFmWithoutSubsToFMLink() {
 
         String name = "Mash";
-        pageUrlVerifLiveGoStage();
-        clearCache();
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -159,21 +160,16 @@ public class MessagesTest extends TestBase {
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
         verificationHelper.verifyAddListingPage();
         verificationHelper.verificationUserNameOnHomePage(name);
-
         authorizationHelper.goToFMpage();
         searchHelper.closePopupSignup();
-        signUpHelper.click1CardMessage("1");
-        messageHelper.typeAndSendMessage("https://www.trend.az");
 
+        //@Parameter({"Card1", "Url1"})
+        messageHelper.messageSearchFM("Card1", "url1");
         authorizationHelper.goToFMpage();
-        searchHelper.closePopupSignup();
-        signUpHelper.click1CardMessage("2");
-        messageHelper.typeAndSendMessageWithoutTips("https://www.trend.az");
+        messageHelper.messageSearchFM("Card2", "url2");
+        authorizationHelper.goToFMpage();
+        messageHelper.messageSearchFM("Card3", "url3");
 
-        authorizationHelper.goToFMpage();
-        searchHelper.closePopupSignup();
-        signUpHelper.click1CardMessage("3");
-        messageHelper.typeAndSendMessageWithoutTips("https://www.trend.az");
 
         verificationHelper.notifSpamer("Message limit reached. Please contact help@idealflatmate.co.uk" +
                                          " to have your messaging restored.");
@@ -183,5 +179,63 @@ public class MessagesTest extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
+
+    @Test
+    public void spamFmUnboundMessages() {
+
+        String name = "Mash";
+
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("A current tenant");
+        signUpHelper.signListingFM_LiveIn("TenantMesSpam", "passwUniv",
+                "5", "5", "1959", "03456666666", "19",
+                name, "Professional", "Student");
+
+
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        getAddPropertyHelper().chooseListingsFromDropDownMenu();
+        verificationHelper.verifyAddListingPage();
+        verificationHelper.verificationUserNameOnHomePage(name);
+        authorizationHelper.goToFMpage();
+        searchHelper.closePopupSignup();
+
+        for (int card = 1; card < 6; card++) {
+            scrollDownPageOn("200");
+            messageHelper.messageSearchFM1(card, "message");
+            authorizationHelper.goToFMpage();
+        }
+
+        searchHelper.moveToPage(2, "2");
+
+        for (int card = 1; card < 6; card++) {
+            scrollDownPageOn("200");
+
+            messageHelper.messageSearchFM1(card, "message");
+            authorizationHelper.goToFMpage();
+            scrollDownPageOn("2000");
+            searchHelper.moveToPage(2, "2");
+        }
+
+        for (int card = 1; card < 6; card++) {
+            scrollDownPageOn("200");
+            messageHelper.messageSearchFM1(card, "message");
+            authorizationHelper.goToFMpage();
+            scrollDownPageOn("2000");
+            searchHelper.moveToPage(3, "3");
+        }
+        searchHelper.moveToPage(4, "4");
+        messageHelper.messageSearchFM1(2, "message");
+        verificationHelper.notifSpamerNotExist();
+
+
+        authorizationHelper.removeAnyAccount();
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+
+    }
+
+
+
+
 
 }

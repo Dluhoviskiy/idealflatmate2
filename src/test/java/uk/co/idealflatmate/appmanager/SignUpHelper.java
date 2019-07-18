@@ -304,6 +304,11 @@ public class SignUpHelper extends HelperBase {
 
     }
 
+    public void click1CardMessage1(final int numberOfCard) {
+        $(byXpath("(//div[@class='card-infos-flex-row']/a[2][@href])[" + numberOfCard + "]")).click();
+
+    }
+
     public void click1PropCardMes(String property_id) {
         $(byXpath("//div[@id='property_card_"+ConfData.getData(property_id)+"']//div[@class='card-infos-flex-row']/a[2][@href]")).click();
 

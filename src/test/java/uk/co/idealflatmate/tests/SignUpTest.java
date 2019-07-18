@@ -355,8 +355,6 @@ public class SignUpTest extends TestBase {
 
 
     @Test
-    //Facebook authorization doen`t work on staging
-
     public void testHeaderSignUpViaFacebook() {
         String location1 = "Zone 1";
         String location2 = "Watford";
@@ -364,7 +362,6 @@ public class SignUpTest extends TestBase {
         String name = "Francine";
         String age = "60";
 
-        pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
         authorizationHelper.clickSignUp_In_WithFacebook();
@@ -396,6 +393,96 @@ public class SignUpTest extends TestBase {
         verificationHelper.profileDisplays(new ProfileData("percentComplete11",  "myProfile11",
                 "name11", "age11","lookingFor11", "aboutMe11","rooms11",
                 "amountPropCards11"));
+        signUpHelper.verificationDataProfileFotoDashboard();
+
+
+        authorizationHelper.removeAnyAccount();
+
+    }
+
+    @Test
+    public void testHeaderSignUpViaGoogle() {
+        String location1 = "Zone 1";
+        String location2 = "Watford";
+        String location3 = "North London";
+        String name = "Met Ramond";
+        String age = "60";
+
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickRoom();
+        authorizationHelper.clickSignUp_In_WithGoogle();
+        authorizationHelper.LoginGoogleWithNewAccount("Google1New", "passwGoogle1New");
+        //signUpHelper.setSignPassword("passwUniv");
+        //signUpHelper.genderMaleSelect();
+        //signUpHelper.clickYourInformationContinue();
+        signUpHelper.profileDateBirthAdd("5", "2", "1959");
+        signUpHelper.profilePhone("03456666666");
+        signUpHelper.occupation("20", "Professional", "Freelancer/self employed");
+        //signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.preferredLocationButton(location1);
+        signUpHelper.preferredLocation("Watf",location2);
+        signUpHelper.preferredLocationButton(location3);
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.budgetMin();
+        //signUpHelper.budgetMax();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.clickYourInformationContinue();
+
+        verificationHelper.verificationUserNameOnHomePage(name);
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseMenu_My_profile();
+        //matchingHelper.closePopupMatching();
+        verificationHelper.profileDisplays(new ProfileData("percentComplete19",  "myProfile19",
+                "name19", "age19","lookingFor19", "aboutMe19","rooms19",
+                "amountPropCards19"));
+        signUpHelper.verificationDataProfileFotoDashboard();
+
+
+        authorizationHelper.removeAnyAccount();
+
+    }
+
+    @Test
+    public void testHeaderSignUpViaLinkedLn() {
+        String location1 = "Zone 1";
+        String location2 = "Watford";
+        String location3 = "North London";
+        String name = "Ned Daimon";
+        String age = "60";
+
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickRoom();
+        authorizationHelper.clickSignUp_In_WithGoogle();
+        authorizationHelper.LoginGoogleWithNewAccount("LinkedLn1New", "passwLinkedLn1New");
+        //signUpHelper.setSignPassword("passwUniv");
+        //signUpHelper.genderMaleSelect();
+        //signUpHelper.clickYourInformationContinue();
+        signUpHelper.profileDateBirthAdd("5", "2", "1959");
+        signUpHelper.profilePhone("03456666666");
+        signUpHelper.occupation("20", "Professional", "Freelancer/self employed");
+        //signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.preferredLocationButton(location1);
+        signUpHelper.preferredLocation("Watf",location2);
+        signUpHelper.preferredLocationButton(location3);
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.budgetMin();
+        //signUpHelper.budgetMax();
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.clickYourInformationContinue();
+
+        verificationHelper.verificationUserNameOnHomePage(name);
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseMenu_My_profile();
+        //matchingHelper.closePopupMatching();
+        verificationHelper.profileDisplays(new ProfileData("percentComplete20",  "myProfile20",
+                "name20", "age20","lookingFor20", "aboutMe20","rooms20",
+                "amountPropCards20"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
 

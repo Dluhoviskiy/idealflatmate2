@@ -1,15 +1,11 @@
 package uk.co.idealflatmate.tests;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickSignInButtonInForm;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
-import static uk.co.idealflatmate.appmanager.HelperBase.postCodeFromCard;
+import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
 
 public class Buddy_up extends TestBase {
@@ -39,7 +35,7 @@ public class Buddy_up extends TestBase {
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlert();
-        verificationHelper.nameFirstBlankAlertMessage();
+        verificationHelper.nameFirstBlankAlert();
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
         //verificationHelper.passwordBlankAlertMessage();
@@ -142,7 +138,7 @@ public class Buddy_up extends TestBase {
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlert();
-        verificationHelper.nameFirstBlankAlertMessage();
+        verificationHelper.nameFirstBlankAlert();
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
         //verificationHelper.passwordBlankAlertMessage();

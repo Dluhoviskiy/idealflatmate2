@@ -9,6 +9,28 @@
         <classes>
             <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
             <class name="uk.co.idealflatmate.tests.AddListingTests" />
+            <class name="uk.co.idealflatmate.tests.AreaPageTest" />
+            <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
+            <class name="uk.co.idealflatmate.tests.FooterTest" />
+            <class name="uk.co.idealflatmate.tests.HomePageTest" />
+            <class name="uk.co.idealflatmate.tests.MatchingTests" />
+            <class name="uk.co.idealflatmate.tests.MessagesTest" />
+            <class name="uk.co.idealflatmate.tests.PaymentTests" />
+            <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
+            <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
+            <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
+            <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessage" />
+            <class name="uk.co.idealflatmate.tests.SignUpMatching" />
+            <class name="uk.co.idealflatmate.tests.SignUpTest"/>
+            <class name="uk.co.idealflatmate.tests.ZEmailTests" />
+
+        </classes>
+
+
+        </test>
+    <!--
+    <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+            <class name="uk.co.idealflatmate.tests.AddListingTests" />
              <class name="uk.co.idealflatmate.tests.AreaPageTest" />
             <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
              <class name="uk.co.idealflatmate.tests.FooterTest" />
@@ -19,14 +41,9 @@
              <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
              <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
              <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
-             <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessage" />
-             <class name="uk.co.idealflatmate.tests.SignUpMatching" />
-             <class name="uk.co.idealflatmate.tests.SignUpTest"/>
-            <class name="uk.co.idealflatmate.tests.SignUpBuddy_up" />
-             <class name="uk.co.idealflatmate.tests.ZEmailTests" />
-        </classes>
-        </test>
-    <!--
+            <class name="uk.co.idealflatmate.tests.ZEmailTests" />
+
+
         <test name="Test2">
 
 

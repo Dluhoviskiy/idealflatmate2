@@ -120,12 +120,11 @@ public class AuthorizationTests extends TestBase {
     //Facebook authorization doen`t work on staging
     public void addLogInViaFacebook() {
 
-        pageUrlVerifStageGoLive();
         authorizationHelper.clickJoinFreeButton();
         clickSignInButtonInForm();
         authorizationHelper.clickSignUp_In_WithFacebook();
-        authorizationHelper.LoginFacebookWithActiveAccount("FB1","passwFB1");
-        verificationHelper.verificationUserNameOnHomePage("Alex");
+        authorizationHelper.LoginFacebookWithNewAccount("FB1","passwFB1");
+        verificationHelper.verificationUserNameOnHomePage("Aleksandr");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
 

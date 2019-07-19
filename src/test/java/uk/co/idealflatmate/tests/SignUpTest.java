@@ -367,8 +367,10 @@ public class SignUpTest extends TestBase {
         authorizationHelper.clickSignUp_In_WithFacebook();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
         authorizationHelper.LoginFacebookWithNewAccount("FB2", "passwFB2");
+        signUpHelper.backClick();
         signUpHelper.setSignPassword("passwUniv");
-        //signUpHelper.genderMaleSelect();
+        signUpHelper.genderCheckerPrefer();
+        signUpHelper.genderMaleSelect();
         signUpHelper.clickYourInformationContinue();
         signUpHelper.profileDateBirthAdd("5", "2", "1959");
         signUpHelper.profilePhone("03456666666");
@@ -495,7 +497,7 @@ public class SignUpTest extends TestBase {
 
     public void testSignUpViaFBlistingAgent() {
         String name = "Kron";
-        pageUrlVerifStageGoLive();
+
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser( "An agency");
 
@@ -503,6 +505,7 @@ public class SignUpTest extends TestBase {
 
 
         authorizationHelper.LoginFacebookWithNewAccount("FB3", "passwFB2");
+        signUpHelper.backClick();
         signUpHelper.setSignPassword("passwUniv");
         signUpHelper.clickYourInformationContinue();
 

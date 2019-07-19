@@ -663,6 +663,7 @@ public class AddPropertyHelper extends HelperBase {
         checkWholeProperty("-300");
         setTotalBedrooms(totalBedrooms);
         scrollDownPageOn("1300");
+        sleep(1000);
         setMonthlyRent(rent);
         pressContinue();
         continueListingWithoutPhoto();
@@ -848,7 +849,7 @@ public class AddPropertyHelper extends HelperBase {
     }
 
 
-    public AddPropertyHelper changeWholeOfProperty() {
+    public AddPropertyHelper changeWholeToRoomOfProperty() {
         checkerPropertyWhole();
         $(byXpath(click_Room_separatly)).click();
         $(byXpath(click_Room_only_accept)).click();
@@ -860,7 +861,7 @@ public class AddPropertyHelper extends HelperBase {
     public AddPropertyHelper scrollPropertySection(){
 
         $(byXpath(scroll_property_up)).click();
-        sleep(1000);
+        sleep(2000);
         return this;
 
     }

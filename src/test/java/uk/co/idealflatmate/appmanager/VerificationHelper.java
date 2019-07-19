@@ -20,10 +20,12 @@ SelenideElement genderAlert = $(byXpath("//div[contains(@class,'gender')]/div[@c
 SelenideElement emailExistAlert = $(byXpath("//div[contains(@class,'email')]/div[@class='help-block']"));
 private SelenideElement chatInput = $(byXpath("//textarea[@placeholder='Type your message here']"));
 public String safeTip = "//label[@for='safety-tip-confirm']//span";
+public SelenideElement userName = $("span.user-welcome--name");
+public SelenideElement lastMessage = $(byXpath("(//div[@class='color-1 text-12 messages-list-item--authorinfo']//following-sibling::div)[last()]"));
 
 
     public void verificationUserNameOnHomePage(String nameUser) {
-        $("span.user-welcome--name").waitUntil(visible, 30000).shouldHave(text(nameUser));
+        userName.waitUntil(visible, 30000).shouldHave(text(nameUser));
     }
 
     public void verificationUserIsUnlogged(String SignUp) {
@@ -32,7 +34,7 @@ public String safeTip = "//label[@for='safety-tip-confirm']//span";
     }
 
     public void VerificationPasswordError() {
-        $(byXpath("//div[input[@id='loginform-username']]/div")).waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[input[@id='loginform-username']]/div")).waitUntil(visible, 4000).shouldHave(text("First Name cannot be blank."));
     }
 
     public void VerificationLoginError() {
@@ -49,7 +51,7 @@ public String safeTip = "//label[@for='safety-tip-confirm']//span";
 
     public void verifyTextMessage(String text) {
         sleep(5000);
-        $(byXpath("(//div[@class='color-1 text-12 messages-list-item--authorinfo']//following-sibling::div)[last()]")).shouldHave(Condition.text(text));
+        lastMessage.shouldHave(Condition.text(text));
     }
 
     public void closeSafeTip(){
@@ -223,15 +225,9 @@ public String safeTip = "//label[@for='safety-tip-confirm']//span";
     }
 
     public void nameFirstBlankAlert() {
-        $(byXpath("//div[contains(@class,'username')]/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
+        $(byXpath("//div[contains(@class,'first_name')]/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("First Name cannot be blank."));
     }
 
-    public void nameFirstBlankAlertMessage() {
-        $(byXpath("//div[contains(@class,'username')]/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
-    }
-    public void nameFirstBlankAlertPhone() {
-        $(byXpath("//div[contains(@class,'username')]/div[@class='help-block']")).waitUntil(exist, 10000).shouldHave(text("Username cannot be blank."));
-    }
 
     public void emailBlankAlert() {
         emailExistAlert.waitUntil(exist, 4000).shouldHave(text("Email cannot be blank."));
@@ -545,6 +541,8 @@ public String safeTip = "//label[@for='safety-tip-confirm']//span";
     }
 
     public void verifyAboutProperty(String aboutListing) {
+        scrollDownPageOn("200");
+        sleep(1000);
         $(byXpath("//div[@id='property_about']/div[@class='row']")).shouldHave(text(aboutListing));
     }
 

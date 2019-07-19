@@ -61,7 +61,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlert();
-        verificationHelper.nameFirstBlankAlertMessage();
+        verificationHelper.nameFirstBlankAlert();
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
         //verificationHelper.passwordBlankAlertMessage();
@@ -108,10 +108,10 @@ public class SignUpLikeOrMessage extends TestBase {
         messageHelper.clickMenuMessages();
         messageHelper.nameOfOwnerInMessage(name1, userName());
 
-        messageHelper.clickMessage1Inbox();
-        messageHelper.photoOfOwnerInMessage(photo1);
-        messageHelper.messageVerifying(message1);
-        messageHelper.propertyPostcodeVerifMes(postCode);
+        //messageHelper.clickMessage1Inbox();
+        //messageHelper.photoOfOwnerInMessage(photo1);
+        //messageHelper.messageVerifying(message1);
+       // messageHelper.propertyPostcodeVerifMes(postCode);
 
         getAddPropertyHelper().openDropDownMenu();
         authorizationHelper.chooseMenu_My_profile();
@@ -146,6 +146,7 @@ public class SignUpLikeOrMessage extends TestBase {
         String page = $(byXpath("//a[@class='undefined']")).getText();
 
         signUpHelper.clickLikePropertyCard();
+        signUpHelper.clickRoom();
         signUpHelper.clickEmail();
 
         signUpHelper.clickYourInformationContinue();
@@ -157,7 +158,7 @@ public class SignUpLikeOrMessage extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
-    @Test
+    //@Test
     public void signUpLikeHomePage() {
         String name = "Ronald";
         String location = "Leeds";
@@ -169,7 +170,7 @@ public class SignUpLikeOrMessage extends TestBase {
         String referNumber = $$(byXpath("//div[@class='u_p0-left text-13']")).get(2).getText();
         signUpHelper.clickLikePropertyCardHomePage(2);
 
-
+        signUpHelper.clickRoom();
         signUpHelper.clickEmail();
 
         signUpHelper.setSignUpNameF(name);
@@ -186,7 +187,17 @@ public class SignUpLikeOrMessage extends TestBase {
         signUpHelper.aboutYourself(about);
         signUpHelper.clickYourInformationContinue();
 
-        signUpHelper.backToSearch();
+        //signUpHelper.backToSearch();
+        signUpHelper.preferredLocation("leed", location);
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.budgetMin();
+
+        signUpHelper.verifyToMoveCheckboxDisabled();
+        signUpHelper.toMoveCheckboxEnabled();
+        signUpHelper.selectMoveDate("8", "8", "2019");
+        signUpHelper.selectHappyReceiveNews();
+        signUpHelper.clickYourInformationContinue();
 
         //signUpHelper.clickShowMeMyMatches();
         getAddPropertyHelper().openDropDownMenu();
@@ -295,7 +306,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlert();
-        verificationHelper.nameFirstBlankAlertMessage();
+        verificationHelper.nameFirstBlankAlert();
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
         //verificationHelper.passwordBlankAlertMessage();
@@ -382,7 +393,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
         signUpHelper.clickYourInformationContinue();
         verificationHelper.emailBlankAlert();
-        verificationHelper.nameFirstBlankAlertPhone();
+        verificationHelper.nameFirstBlankAlert();
         verificationHelper.genderBlankAlert();
         verificationHelper.passwordBlankAlert();
         verificationHelper.dateMonthYearPhoneBlankErrorPhone();

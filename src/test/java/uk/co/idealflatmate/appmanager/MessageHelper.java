@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MessageHelper extends HelperBase {
+    VerificationHelper v = new VerificationHelper();
     private SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
 
 
@@ -29,9 +30,9 @@ public class MessageHelper extends HelperBase {
     }
 
     public void typeAndSendMessageWithoutTips(String message) {
-        VerificationHelper safe = new VerificationHelper();
+
         sleep(1000);
-        if ($(byXpath(safe.safeTip)).exists()){
+        if ($(byXpath(v.safeTip)).exists()){
             v.closeSafeTip();
             $("textarea.form-control.msgbox").waitUntil(visible, 3000).setValue(message);
             submit.shouldBe(visible).click();
@@ -47,7 +48,7 @@ public class MessageHelper extends HelperBase {
     public void click(By locator) {
         $(locator).click();
     }
-    VerificationHelper v = new  VerificationHelper();
+
     public void chooseMessageTab(final String massage) {
         //$(byXpath("/html/body/header/div/ul[2]/li[3]")).waitUntil(Condition.appears, 4000).click();
 
@@ -169,7 +170,13 @@ public class MessageHelper extends HelperBase {
     }
 
     public void clickMenuMessages() {
-        $(byXpath("//span/a[contains(., 'Messages')]")).click();
+
+        $(byXpath("//span/a[contains(., 'Inbox')]")).click();
+        sleep(2000);
+        if($(byXpath(v.safeTip)).exists()){
+            v.closeSafeTip();
+        }
+
     }
 
     public void clickMessagePropOwnerIcon() {
@@ -211,7 +218,7 @@ public class MessageHelper extends HelperBase {
             //String nameInMessage = $(byXpath("//p[@class='quickMessage']")).getText();
             //String nameInMessage1 = (nameInMessage.split("\\|"))[0].replaceAll("\\|",  "");
             //String nameInMessage1 = (nameInMessage.substring(11, 22));
-            $(byXpath("//p[@class='quickMessage']")).shouldHave(text(userName + ": Hi " +name2+", your room looks great! Are you holding viewings?"));
+            v.lastMessage.shouldHave(text("Hi " +name2+", your room looks great! Are you holding viewings?"));
             //String nameInMessage1 = (nameInMessage.replaceAll("\\|",  ""));
             //Assert.assertEquals(name2, nameInMessage1);
 

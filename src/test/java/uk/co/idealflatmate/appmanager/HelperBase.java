@@ -98,6 +98,10 @@ public class HelperBase  {
         executeJavaScript("scrollBy(0," + points + ")");
     }
 
+    public static void scrollUpPage(final String points) {
+        executeJavaScript("scrollBy(0," + points + ")");
+    }
+
 
 
     public void fillInField(String text, SelenideElement selElem) {

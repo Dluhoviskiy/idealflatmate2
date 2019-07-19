@@ -217,11 +217,12 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.chooseListingsFromDropDownMenu()
                          .clickEdit()
-                         .changeWholeOfProperty()
+                         .changeWholeToRoomOfProperty()
                          .scrollPropertySection()
                          .changeAboutOptions(" Garden", " Communal living room", " Balcony/patio",
     " Parking", "Pets Accepted", "Smokers Accepted", "Suitable for couples", "LGBT Friendly", "Family Friendly",
                                  "Trans Friendly", "Vegan Household", "Vegetarian Household", "DSS Accepted");
+        sleep(1000);
 
 
         clickButton("Save and update", "button");
@@ -250,8 +251,10 @@ public class AddListingTests extends TestBase {
         buddyUpHelper.groupSectionIsVisible(false);
         String areaSearch = "Bankside";
         addPropertyHelper.verifyBreadCrumbs("Search Rooms", "London", areaSearch,
-                                            "3 bedrooms for rent in "+areaSearch+", South London from ")
-                         .goByLink(areaSearch);
+                                            "3 bedrooms for rent in "+areaSearch+", South London from ");
+        scrollUpPage("-200");
+        sleep(1000);
+        addPropertyHelper.goByLink(areaSearch);
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
 
@@ -300,7 +303,9 @@ public class AddListingTests extends TestBase {
         String citySearch = "Birmingham";
         addPropertyHelper.goByLink(citySearch);
         searchHelper.verifSearchHasLocation("Birmingham");
-        propertySortBy("Price low to high");
+        propertySortBy("Top matched");
+        searchHelper.moveToPage(3, "3");
+        sleep(3000);
         //searchHelper.verificationSearchProperty("Found " + getNumberOfListing() + " rooms to rent in "+citySearch);
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
@@ -321,7 +326,9 @@ public class AddListingTests extends TestBase {
                 "Balcony/patio\n" + "Parking space\n" + "Smokers Accepted\n" + "Suitable for couples\n"+"Pets Accepted\n" +
                 "LGBT Friendly\n" +"Trans Friendly\n" +"Family Friendly\n" + "Vegan Household\n" +"DSS Accepted");
         addPropertyHelper.goByLink(citySearch);
-        propertySortBy("Top matched");
+        propertySortBy("Most recent");
+        searchHelper.moveToPage(5, "5");
+        sleep(3000);
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
         int searchResultDeactivRooms = Integer.parseInt(getNumberOfListingFound());
@@ -366,6 +373,8 @@ public class AddListingTests extends TestBase {
         addPropertyHelper.goByLink(citySearch);
         propertySortBy("Most recent");
         searchHelper.selectRadius("+3 km");
+        searchHelper.moveToPage(4, "4");
+        sleep(3000);
         int searchResultNewActivRooms = Integer.parseInt(getNumberOfListingFound());
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
@@ -549,7 +558,7 @@ public class AddListingTests extends TestBase {
 
         addPropertyHelper.setTotalBedrooms("4");
         scrollDownPageOn("1300");
-
+        sleep(1000);
         addPropertyHelper.setMonthlyRent("500");
 
         String text1 = "Test_Property_Title";
@@ -592,6 +601,7 @@ public class AddListingTests extends TestBase {
                                              "Gym", "Concierge", "En-suite")
                          .setPropertyDescription("Very good flat");
         scrollDownPageOn("600");
+        sleep(1000);
         addPropertyHelper.setMonthlyRent("500")
                          .setDeposit("1000")
                          .setTotalBills("400")
@@ -600,10 +610,12 @@ public class AddListingTests extends TestBase {
                          .setRoomDescription("Very comfortable room")
                          .copySecondRoom();
         scrollDownPageOn("400");
+        sleep(1000);
         addPropertyHelper.removeSecondRoom()
                          .copySecondRoom()
                          .addAnotherRoom();
         scrollDownPageOn("400");
+        sleep(1000);
         addPropertyHelper.setAnotherMonthlyRent("800", "800")
                          .availabaleChecked("3")
                          .setAvailablePeriodRoom("3", "2025", "15", "Next");
@@ -617,6 +629,7 @@ public class AddListingTests extends TestBase {
                          .checkPhotos()
                          .pressBack();
         scrollDownPageOn("100");
+        sleep(1000);
         addPropertyHelper.checkAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
                                             "property-pets_accepted", "property-smokers_accepted",
                                             "property-family_friendly", "property-lgbt_friendly",

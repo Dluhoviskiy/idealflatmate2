@@ -126,9 +126,9 @@ public class PaymentTests extends TestBase {
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
 
-        paymentsHelper.defaultPlanActiveIs("Monthly", "16", "22", "34");
+        paymentsHelper.defaultPlanActiveChangeToMonth("Monthly", "16", "22", "34");
         paymentsHelper.clickPlan("Weekly");
-        paymentsHelper.defaultPlanActiveIs("Weekly", "8", "12", "disabled");
+        paymentsHelper.defaultPlanActiveChangeToMonth("Weekly", "8", "12", "disabled");
         paymentsHelper.clickSelectPlan("Essential", "button");
 
         paymentsHelper.verificationCheckoutNewTotal(price);
@@ -182,11 +182,11 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseMenu_My_profile();
         paymentsHelper.goToPaymentsTabInnerMenuUpgrade();
 
-        paymentsHelper.defaultPlanActiveIs("Monthly", "16", "22", "34");
+        paymentsHelper.defaultPlanActiveChangeToMonth("Monthly", "16", "22", "34");
         paymentsHelper.clickPlan("Weekly");
-        paymentsHelper.defaultPlanActiveIs("Weekly", "8", "12", "disabled");
+        paymentsHelper.defaultPlanActiveChangeToMonth("Weekly", "8", "12", "disabled");
         paymentsHelper.clickPlan("Monthly");
-        paymentsHelper.defaultPlanActiveIs("Monthly", "16", "22", "34");
+        paymentsHelper.defaultPlanActiveChangeToMonth("Monthly", "16", "22", "34");
         paymentsHelper.clickSelectPlan("Premium", "button");
 
         paymentsHelper.verificationCheckoutNewTotal(price);
@@ -241,7 +241,7 @@ public class PaymentTests extends TestBase {
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
         //paymentsHelper.selectPremiumFlathunterPlan();
-        paymentsHelper.defaultPlanActiveIs("Monthly", "16", "22", "34");
+        paymentsHelper.defaultPlanActiveChangeToMonth("Weekly", "8", "12", "34");
         paymentsHelper.clickPlan("Yearly");
         paymentsHelper.defaultPlanProf("249");//essential and premium are disabled
         paymentsHelper.clickSelectPlan("Professional", "a");

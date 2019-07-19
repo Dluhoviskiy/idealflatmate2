@@ -5,6 +5,7 @@ import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.sleep;
+import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickSignInButtonInForm;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
 //import ru.yandex.qatools.allure.annotations.Parameter;
@@ -95,6 +96,19 @@ public class AbclearDataTests extends TestBase {
         closeMatchPopUp();
         verifyNoPropertyOrRemove();
 
+    }
+
+    @Test
+    public void removeFB_BeforeTest() {
+
+        authorizationHelper.clickJoinFreeButton();
+        clickSignInButtonInForm();
+        authorizationHelper.clickSignUp_In_WithFacebook();
+        authorizationHelper.LoginFacebookWithNewAccount("FB3","passwFB2");
+        if(verificationHelper.userName.exists()){
+            closeMatchPopUp();
+            authorizationHelper.removeAccountBeforeTest();
+        }else  signUpHelper.quit();
     }
 
     @Test

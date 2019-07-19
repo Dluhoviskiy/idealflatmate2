@@ -6,6 +6,7 @@ import uk.co.idealflatmate.appmanager.MessageHelper;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
+import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.scrollDownPageOn;
 
@@ -120,7 +121,26 @@ public class MessagesTest extends TestBase {
     }
 
     @Test
-    public void fmWithoutSubsTolordWithoutSubsDirectly() {
+    public void fmDirectToProperty() {
+        String location = "Leeds";
+        clearBrowserCookies();
+        authorizationHelper.loginMessage("FMNotPaid", "passwUniv");
+
+        authorizationHelper.goToPropertyPage();
+        closeAdvPopUp();
+        searchHelper.clearSearch();
+        //searchHelper.searchPropertyBySelectfromList(location, location);
+        //searchHelper.verificationSearchPropertyMes("location1", "property_id1");
+
+        signUpHelper.click1PropCardMes("property_id1");
+
+        messageHelper.typeAndSendMessage("Test Message to Property without subscription");
+        verificationHelper.verifyTextMessage("Test Message to Property without subscription");
+        authorizationHelper.logoutFromApp();
+    }
+
+    @Test
+    public void fmWithoutSubsToLordWithoutSubsDirectly() {
 
         String location = "Whitton";
         authorizationHelper.loginMessage("FMNotPaid", "passwUniv");

@@ -28,7 +28,8 @@ public class SignUpHelper extends HelperBase {
     public void clickEmailPopup() {
         $(byXpath("//div[@id='signupRevealModal']//a[span[contains (text(), 'Sign up with email')]]")).click();
     }
-    public void clickEmail() { $(byXpath("//span[contains (text(), 'Sign up with email')]")).click();
+    public void clickEmail() {
+        $(byXpath("//span[contains (text(), 'Sign up with email')]")).waitUntil(visible, 5000).click();
 
     }
     public void clickEmailMatching1() {
@@ -36,11 +37,11 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void setSignUpNameF(String nameF) {
-        fillInField (nameF, $(byXpath("//input[contains(@id,'-username')]")));
+        fillInField (nameF, $(byXpath("//input[contains(@id,'-first_name')]")));
     }
 
     public void setSignUpNameFMessage(String nameF) {
-        fillInField(nameF, $(byXpath("//input[contains(@id,'-username')]")));
+        fillInField(nameF, $(byXpath("//input[contains(@id,'-first_name')]")));
     }
 
     public void genderFemaleSelect(final String gender) {
@@ -61,6 +62,10 @@ public class SignUpHelper extends HelperBase {
 
     public void genderMaleSelect() {
         $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Male')]")).click();
+    }
+
+    public void genderCheckerPrefer() {
+        $(byXpath("//div[@class='form-group field-yourinfosignupform-gender required']/div[1]/label[contains(text(), 'Prefer not to say')]/input")).is(checked);
     }
 
     public void setSignEmail(String confEmail) {
@@ -84,7 +89,7 @@ public class SignUpHelper extends HelperBase {
         sleep(2000);
     }
     public void clickYourInformationContinue() {
-
+        sleep(1000);
         $(byXpath("//button[contains(text(), 'Continue')]")).waitUntil(appears, 4000).click();
         sleep(2000);
     }
@@ -196,7 +201,7 @@ public class SignUpHelper extends HelperBase {
 
     public void backClick() {
         $(byXpath("//a[contains (., 'back')]")).click();
-
+        sleep(1000);
     }
 
     public  void budgetMin() {
@@ -239,12 +244,6 @@ public class SignUpHelper extends HelperBase {
        $(byXpath("//h3[@class='u_m0' and contains (text(), 'A flatmate for my vacant room')]")).click();
     }
 
-    public void verificationDataFBYourInf(String FirstName, String email, String password) {
-        $(byXpath("//input[@id='yourinfosignupform-username']")).shouldHave(value(FirstName));
-        $(byXpath("//input[@id='yourinfosignupform-email']")).shouldHave(value(email));
-        $(byXpath("yourinfosignupform-password")).shouldHave(value(password));
-    }
-
     public void quit() {
         $(byXpath("//a[starts-with(@class,'btn btn--type-2')]")).click();
     }
@@ -284,11 +283,11 @@ public class SignUpHelper extends HelperBase {
     }
 
     public void clearFirstname() {
-        $(byXpath("//input[contains(@id,'-username')]")).clear();
+        $(byXpath("//input[contains(@id,'-first_name')]")).clear();
     }
 
     public void clearFirstnameMessage() {
-        $(byXpath("//input[contains(@id,'-username')]")).clear();
+        $(byXpath("//input[contains(@id,'-first_name')]")).clear();
     }
 
     public void clearPassword() {
@@ -392,11 +391,12 @@ public class SignUpHelper extends HelperBase {
 
     public void clickMessageProperty(String buttonText) {
 
-        $(byXpath("//section//a[contains(.,'" + buttonText + "')]")).click();
+        $(byXpath("//section//a[contains(.,'" + buttonText + "')]")).waitUntil(visible, 5000).click();
 
     }
 
     public void clickLikePropertyCard() {
+        $(byXpath("//a[starts-with(@class,'buddy')]")).waitUntil(visible, 5000);
         $$(byXpath("//a[starts-with(@class,'buddy')]")).get(3).click();
 
     }

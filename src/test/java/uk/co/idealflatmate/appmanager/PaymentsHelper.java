@@ -4,12 +4,9 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byId;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
-import static com.codeborne.selenide.Selenide.switchTo;
 
 public class PaymentsHelper extends HelperBase {
 
@@ -172,17 +169,19 @@ public class PaymentsHelper extends HelperBase {
 
     }
 
-    public void defaultPlanActiveIs(String plan,final String priceEssenIs, final String pricePremIs,
-                                         final String priceProfIs) {
+    public void defaultPlanActiveChangeToMonth(String plan, final String priceEssenIs, final String pricePremIs,
+                                               final String priceProfIs) {
         sleep(2000);
+        $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Weekly')]")).exists();
+        $(byXpath("//form[@id='ProfessionalPaymentForm' and @class='col-sm-4 col-xs-12 js-plan-block" +
+                " plan-block disabled']")).should(exist);
         $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'"+plan+"')]")).should(exist);
         $(byXpath("//span[@id='essentials-big-price' and contains(.,'"+priceEssenIs+"')]")).should(exist);
         $(byXpath("//span[@id='premium-big-price' and contains(.,'"+pricePremIs+"')]")).should(exist);
-        if($(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Monthly')]")).exists()){
-        $(byXpath("//span[@id='professional-big-price' and contains(.,'"+priceProfIs+"')]")).should(exist);}
-        else if($(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Weekly')]")).exists()){
-            $(byXpath("//form[@id='ProfessionalPaymentForm' and @class='col-sm-4 col-xs-12 js-plan-block" +
-                    " plan-block disabled']")).should(exist);}
+        $(byXpath("//a[contains(@class,'js-duration') and contains(.,'Monthly')]")).click();
+        $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Monthly')]")).exists();
+        $(byXpath("//span[@id='professional-big-price' and contains(.,'"+priceProfIs+"')]")).should(exist);
+
     }
 
     public void defaultPlanProf(final String priceProfIs) {

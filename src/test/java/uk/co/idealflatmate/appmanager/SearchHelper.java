@@ -113,20 +113,21 @@ public class SearchHelper extends HelperBase {
     }
 
     public static String getNumberOfListingFound() {
+        sleep(1000);
         $(byXpath("//h2[@class='text-14']")).waitUntil(appear, 5000);
         String getNumberOfListing = String.valueOf($(byXpath("//h2[@class='text-14']")).text().substring(0, 12).replaceAll("[^0-9]", ""));
         return getNumberOfListing;
     }
 
     public void verificationSearchProperty(String listingNumber, final String text, final String text1) {
-
-
-
+        sleep(1000);
         $(byXpath("//h1[@class='h4']")).waitUntil(visible, 15000).shouldHave(text(listingNumber));
         String number = getNumberOfListingFound();
         if(number.equals("1") || number.equals("0")){
+            sleep(1000);
             $(byXpath("//h2[@class='text-14']")).waitUntil(visible, 15000).shouldHave(text(text1));
-        } else $(byXpath("//h2[@class='text-14']")).waitUntil(visible, 15000).shouldHave(text(text));
+        } else sleep(1000);
+        $(byXpath("//h2[@class='text-14']")).waitUntil(visible, 15000).shouldHave(text(text));
     }
 
     public void verificationSearchPropertyMap(String location) {

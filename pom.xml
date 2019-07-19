@@ -161,10 +161,10 @@
                     <!--<properties>
                         <suiteXmlFile>src/test/resources/suites/${suiteXml}</suiteXmlFile>
                     </properties>-->
-                    <suiteXmlFiles>
+                    <!--<suiteXmlFiles>
                         <suiteXmlFile>/testNG.xml</suiteXmlFile>
 
-                    </suiteXmlFiles>
+                    </suiteXmlFiles>-->
                     <!--
                     <suiteXmlFiles>
                         <suiteXmlFile>\src\test\resources\${suite}.xml</suiteXmlFile>

@@ -162,7 +162,7 @@
                         <suiteXmlFile>src/test/resources/suites/${suiteXml}</suiteXmlFile>
                     </properties>-->
                     <suiteXmlFiles>
-                        <suiteXmlFile>C:\Users\lukhovytskyi\Documents\GitHub\idealflatmate2\testNG.xml</suiteXmlFile>
+                        <suiteXmlFile>jenkinsmobile.zfort.net:8080/job/Idealflatmate_live_Test/ws/testNG.xml</suiteXmlFile>
 
                     </suiteXmlFiles>
                     <!--

@@ -4,7 +4,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFound;
@@ -27,11 +26,11 @@ public class SearchHomePageTests extends TestBase {
     @Test
     public void searchHomeByButton() {
 
-        searchHelper.searchPropertyHome1("PO30 2DN");
+        searchHelper.searchPropertyHome1("london");
         searchHelper.closePopupSignup();
 
         searchHelper.verificationSearchProperty("Find A Room To Rent",
-                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
+                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" rooms to rent available");
 
     }
 
@@ -70,7 +69,7 @@ public class SearchHomePageTests extends TestBase {
         searchHelper.closePopupSignup();
 
         searchHelper.verificationSearchProperty("Find A Room To Rent",
-                getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
+                getNumberOfListingFound()+ " room to rent available", getNumberOfListingFound()+" room to rent available");
 
     }
     @Test

@@ -125,10 +125,8 @@ public class PaymentTests extends TestBase {
                 "Bermondsey", "2",  "900", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
+        paymentsHelper.activePlanVerification("Weekly", "8", "12", " disabled", "N/A");
 
-        paymentsHelper.defaultPlanActiveChangeToMonth("Monthly", "16", "22", "34");
-        paymentsHelper.clickPlan("Weekly");
-        paymentsHelper.defaultPlanActiveChangeToMonth("Weekly", "8", "12", "disabled");
         paymentsHelper.clickSelectPlan("Essential", "button");
 
         paymentsHelper.verificationCheckoutNewTotal(price);
@@ -173,7 +171,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("lon", "2 Longrise, Billericay, CM12",
+        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("longrise", "2 Longrise, Billericay, CM12",
                 "Chalk Farm", "15","1333", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
@@ -181,12 +179,10 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.openDropDownMenu();
         authorizationHelper.chooseMenu_My_profile();
         paymentsHelper.goToPaymentsTabInnerMenuUpgrade();
-
-        paymentsHelper.defaultPlanActiveChangeToMonth("Monthly", "16", "22", "34");
-        paymentsHelper.clickPlan("Weekly");
-        paymentsHelper.defaultPlanActiveChangeToMonth("Weekly", "8", "12", "disabled");
+        paymentsHelper.activePlanVerification("Weekly", "8", "12", " disabled", "N/A");
         paymentsHelper.clickPlan("Monthly");
-        paymentsHelper.defaultPlanActiveChangeToMonth("Monthly", "16", "22", "34");
+        paymentsHelper.activePlanVerification("Monthly", "16", "22", "", "34");
+
         paymentsHelper.clickSelectPlan("Premium", "button");
 
         paymentsHelper.verificationCheckoutNewTotal(price);
@@ -241,7 +237,7 @@ public class PaymentTests extends TestBase {
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
         //paymentsHelper.selectPremiumFlathunterPlan();
-        paymentsHelper.defaultPlanActiveChangeToMonth("Weekly", "8", "12", "34");
+        paymentsHelper.activePlanVerification("Weekly", "8", "12", " disabled", "N/A");
         paymentsHelper.clickPlan("Yearly");
         paymentsHelper.defaultPlanProf("249");//essential and premium are disabled
         paymentsHelper.clickSelectPlan("Professional", "a");

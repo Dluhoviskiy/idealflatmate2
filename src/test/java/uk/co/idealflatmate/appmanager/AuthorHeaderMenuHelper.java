@@ -42,7 +42,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     private SelenideElement field_G_Password = $("#password input");
     private SelenideElement field_L_Password = $("#password");
     private SelenideElement field_login_Username = $("input#loginform-username");
-    private String field_reset_Email ="input[name='password']";
+    private String field_reset_Email ="input[name='PasswordResetRequestForm[email]']";
     private SelenideElement field_login_Password = $("input#loginform-password");
     private SelenideElement button_G_Email_next = $("#identifierNext");
     private SelenideElement button_L_Email_next = $("#identifierNext");
@@ -137,8 +137,9 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         button_G_Password_next.click();
         sleep(2000);
        if(button_G_allow_birth.exists()){
+           sleep(1000);
             button_G_allow_birth.click();
-            sleep(2000);
+            sleep(1000);
             button_G_allow_birth2.click();
        }
 

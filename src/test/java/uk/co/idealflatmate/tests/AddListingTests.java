@@ -288,6 +288,7 @@ public class AddListingTests extends TestBase {
         verificationHelper.verifyAboutPropertyRooms("3 rooms available in 3 bed property in Birmingham. " +
                 "Room 1 is £1900.00 per month. Room 2 is £1950.00 per month, the deposit is £500.00. " +
                 "Room 3 is £1950.00 per month, the deposit is £700.00 and bills are an additional £1200.00 per month.");
+
         addPropertyHelper.clickRoomsSection();
         verificationHelper.roomVerification("Room 1", "1900", "no", "no",
                                             "Now", "", "", "no",
@@ -499,6 +500,7 @@ public class AddListingTests extends TestBase {
                 " bed property in Birmingham. Room 1 is £999.00 per month. " +
                 "Room 2 is £1300.00 per month, the deposit is £300.00 and bills are an additional £120.00 per month." +
                 " Room 3 is £1500.00 per month, the deposit is £700.00 and bills are an additional £120.00 per month.");
+
         addPropertyHelper.clickRoomsSection();
         verificationHelper.roomVerification("Room 1", "999", "no", "no", "Now",
                                             "", "", "no", "no");
@@ -593,7 +595,7 @@ public class AddListingTests extends TestBase {
                          .isCheckedSutableFore("Professionals and/or Students")
                          .clickSutableFore("Professionals Only")
                          .isCheckedSutableFore("Professionals Only");
-        scrollDownPageOn("100");
+        scrollDownPageOn("200");
         addPropertyHelper.setAllAmanities("Garden", "Parking", "Communal living room", "Balcony/patio",
                                             "Pet Friendly", "Smoker Friendly", "Family Friendly",
                                             "LGBT Friendly", "Trans Friendly", "Vegan Household",

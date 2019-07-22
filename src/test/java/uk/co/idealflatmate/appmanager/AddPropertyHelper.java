@@ -168,7 +168,7 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper chooseListingsFromDropDownMenu() {
 
-        tab_openDropDownMenuHeader.waitUntil(appear, 5000).click();
+        tab_openDropDownMenuHeader.waitUntil(visible, 5000).click();
         choose_My_listings();
         return this;
     }
@@ -271,9 +271,8 @@ public class AddPropertyHelper extends HelperBase {
 
     public AddPropertyHelper setTotalBedrooms(final String amount) {
         SelenideElement totalbedrooms = $(drop_totalRoom);
-        sleep(2000);
 
-        totalbedrooms.click();
+        totalbedrooms.waitUntil(visible, 5000).click();
         sleep(1000);
         totalbedrooms.selectOptionContainingText(amount);
         sleep(1000);
@@ -286,7 +285,7 @@ public class AddPropertyHelper extends HelperBase {
                                 String text11, String text12, String text13, String text14, String text15, String text16) {
 
 
-        $(byXpath(setAmanity_string1 + text1 + end_string)).click();
+        $(byXpath(setAmanity_string1 + text1 + end_string)).waitUntil(visible, 5000).click();
         sleep(1000);
         $(byXpath(setAmanity_string1 + text2 + end_string)).click();
         sleep(1000);
@@ -574,9 +573,9 @@ public class AddPropertyHelper extends HelperBase {
 
 
     public AddPropertyHelper closeRenewPopup() {
-        sleep(2000);
+
         if ($(byXpath(button_closeRenewPopup)).exists()) {
-            $(byXpath(button_closeRenewPopup)).waitUntil(visible, 2000).click();
+            $(byXpath(button_closeRenewPopup)).waitUntil(visible, 5000).click();
         }
         return this;
     }
@@ -704,6 +703,7 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public AddPropertyHelper goByLink(final String areaSearch) {
+        scrollUpPage("-200");
         $(byXpath(link_breadCrumb+areaSearch+end_string)).click();
 
         return this;
@@ -829,7 +829,8 @@ public class AddPropertyHelper extends HelperBase {
     }
 
     public AddPropertyHelper clickRoomsSection() {
-        $(byXpath(room__listing_block)).click();
+         scrollUpPage("-200");
+         $(byXpath(room__listing_block)).waitUntil(visible, 5000).click();
         return this;
     }
 

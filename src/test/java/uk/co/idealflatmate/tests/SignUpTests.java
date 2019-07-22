@@ -407,7 +407,7 @@ public class SignUpTests extends TestBase {
         String location1 = "Zone 1";
         String location2 = "Watford";
         String location3 = "North London";
-        String name = "Met Ramond";
+        String name = "Met";
         String age = "60";
 
         authorizationHelper.clickJoinFreeButton();
@@ -452,7 +452,7 @@ public class SignUpTests extends TestBase {
         String location1 = "Zone 1";
         String location2 = "Watford";
         String location3 = "North London";
-        String name = "Ned Daimon";
+        String name = "Ned";
         String age = "60";
 
         authorizationHelper.clickJoinFreeButton();

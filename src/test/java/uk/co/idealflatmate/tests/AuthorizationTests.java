@@ -199,8 +199,8 @@ public class AuthorizationTests extends TestBase {
         authorizationHelper.clickJoinFreeButton();
         clickSignInButtonInForm();
         authorizationHelper.submitLogin();
-        verificationHelper.VerificationLoginError();
-        verificationHelper.VerificationPasswordError();
+        verificationHelper.VerificationLoginPassError();
+        verificationHelper.VerificationLoginNameError();
         signUpHelper.quit();
        //verificationHelper.VerificationMessagesTabIsAbsent();
     }

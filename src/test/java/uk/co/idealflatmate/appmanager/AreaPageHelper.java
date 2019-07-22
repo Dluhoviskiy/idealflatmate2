@@ -260,9 +260,9 @@ public class AreaPageHelper extends HelperBase {
     }
 
     public void areaScroll() {
-
-        $(byXpath("//h2[contains(.,'Explore cities and areas across the UK')]")).click();
-        $(byXpath("//section[@id='press-logos']")).click();
+        scrollDownPageOn("2300");
+        $(byXpath("//h2[contains(.,'Explore cities and areas across the UK')]")).waitUntil(visible, 5000);
+        $(byXpath("//section[@id='press-logos']")).waitUntil(visible, 5000);
 
     }
 

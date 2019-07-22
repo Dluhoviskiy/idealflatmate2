@@ -24,7 +24,14 @@ public class MessageHelper extends HelperBase {
 
     public void typeAndSendMessage(String message) {
         SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
-        v.closeSafeTip();
+        sleep(1000);
+        if($(byXpath("//span[@class='close-link text-28']")).exists()){
+            $(byXpath("//span[@class='close-link text-28']")).waitUntil(visible, 3000).click();
+        }
+        sleep(1000);
+        if($(byXpath(v.safeTip)).exists()){
+            $(byXpath(v.safeTip)).waitUntil(visible, 3000).click();
+        }
         $("textarea.form-control.msgbox").shouldBe(visible).setValue(message);
         submit.shouldBe(visible).click();
     }

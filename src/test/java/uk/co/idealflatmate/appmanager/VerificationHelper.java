@@ -33,11 +33,11 @@ public SelenideElement lastMessage = $(byXpath("(//div[@class='color-1 text-12 m
         $(byXpath("//nav/a[@class]")).waitUntil(visible, 10000).shouldHave(text(SignUp));
     }
 
-    public void VerificationPasswordError() {
-        $(byXpath("//div[input[@id='loginform-username']]/div")).waitUntil(visible, 4000).shouldHave(text("First Name cannot be blank."));
+    public void VerificationLoginNameError() {
+        $(byXpath("//div[input[@id='loginform-username']]/div")).waitUntil(visible, 4000).shouldHave(text("Username cannot be blank."));
     }
 
-    public void VerificationLoginError() {
+    public void VerificationLoginPassError() {
         $(byXpath("//div[input[@id='loginform-password']]/div")).waitUntil(visible, 4000).shouldHave(text("Password cannot be blank."));
     }
 

@@ -169,18 +169,14 @@ public class PaymentsHelper extends HelperBase {
 
     }
 
-    public void defaultPlanActiveChangeToMonth(String plan, final String priceEssenIs, final String pricePremIs,
-                                               final String priceProfIs) {
-        sleep(2000);
-        $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Weekly')]")).exists();
-        $(byXpath("//form[@id='ProfessionalPaymentForm' and @class='col-sm-4 col-xs-12 js-plan-block" +
-                " plan-block disabled']")).should(exist);
-        $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'"+plan+"')]")).should(exist);
+    public void activePlanVerification(final String plan, final String priceEssenIs, final String pricePremIs,
+                                       final String profIs, final String priceProf) {
+
+        $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'" + plan + "')]")).waitUntil(visible, 5000).should(exist);
+        $(byXpath("//form[@class='col-sm-4 col-xs-12 js-plan-block plan-block"+profIs+ "' and contains(.,'" + priceProf + "')]")).should(exist);
         $(byXpath("//span[@id='essentials-big-price' and contains(.,'"+priceEssenIs+"')]")).should(exist);
         $(byXpath("//span[@id='premium-big-price' and contains(.,'"+pricePremIs+"')]")).should(exist);
-        $(byXpath("//a[contains(@class,'js-duration') and contains(.,'Monthly')]")).click();
-        $(byXpath("//a[contains(@class,'js-duration active') and contains(.,'Monthly')]")).exists();
-        $(byXpath("//span[@id='professional-big-price' and contains(.,'"+priceProfIs+"')]")).should(exist);
+
 
     }
 

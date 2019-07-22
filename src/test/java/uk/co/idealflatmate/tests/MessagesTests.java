@@ -11,7 +11,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.scrollDownPageOn;
 
 
-public class MessagesTest extends TestBase {
+public class MessagesTests extends TestBase {
     @BeforeMethod
 
     public void setupMethod() {
@@ -122,16 +122,16 @@ public class MessagesTest extends TestBase {
 
     @Test
     public void fmDirectToProperty() {
-        String location = "Leeds";
+        String location = "LS2 7DT";
         clearBrowserCookies();
         authorizationHelper.loginMessage("FMNotPaid", "passwUniv");
 
         authorizationHelper.goToPropertyPage();
-        closeAdvPopUp();
-        searchHelper.clearSearch();
-        //searchHelper.searchPropertyBySelectfromList(location, location);
-        //searchHelper.verificationSearchPropertyMes("location1", "property_id1");
 
+        closeAdvPopUp();
+
+        searchHelper.clearSearch();
+        searchHelper.clickSearchPropPage(location);
         signUpHelper.click1PropCardMes("property_id1");
 
         messageHelper.typeAndSendMessage("Test Message to Property without subscription");

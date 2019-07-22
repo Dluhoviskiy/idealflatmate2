@@ -26,7 +26,7 @@ public class SignUpMatchingTests extends TestBase {
 
     @Test
     public void tastSignUpMatchingWithRequiredFieldsRoom() {
-        String name = "Donald";
+        String name = "Ronaldina";
         String location = "Watford";
         String age = "42";
 

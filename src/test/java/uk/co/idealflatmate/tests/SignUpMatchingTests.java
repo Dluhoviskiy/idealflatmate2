@@ -6,7 +6,7 @@ import uk.co.idealflatmate.appmanager.ProfileData;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
-public class SignUpMatching extends TestBase {
+public class SignUpMatchingTests extends TestBase {
     @BeforeMethod
 
     public void setupMethod() {
@@ -17,7 +17,7 @@ public class SignUpMatching extends TestBase {
 
     @Test
 
-    public void signUpMatchingWithBlankFirstName() {
+    public void testSignUpMatchingWithBlankFirstName() {
 
         matchingHelper.clickHomePageMatching();
         matchingHelper.verifyBlankNameMatchSign();
@@ -25,7 +25,7 @@ public class SignUpMatching extends TestBase {
     }
 
     @Test
-    public void SignUpMatchingWithRequiredFieldsRoom() {
+    public void tastSignUpMatchingWithRequiredFieldsRoom() {
         String name = "Donald";
         String location = "Watford";
         String age = "42";
@@ -83,7 +83,7 @@ public class SignUpMatching extends TestBase {
 
 
     @Test
-    public void SignUpMatchingWithRequiredFieldsFMRoom() {
+    public void testSignUpMatchingWithRequiredFieldsFMRoom() {
 
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
@@ -113,7 +113,7 @@ public class SignUpMatching extends TestBase {
     }
 
     @Test
-    public void SignUpMatchingWithRequiredFieldsFMRoomSearchFM() {
+    public void testSignUpMatchingWithRequiredFieldsFMRoomSearchFM() {
 
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
@@ -144,7 +144,7 @@ public class SignUpMatching extends TestBase {
 
 
     @Test
-    public void SignUpWithMatchingWithBlankRequiredFields() {
+    public void testSignUpWithMatchingWithBlankRequiredFields() {
         pageUrlVerifLiveGoStage();
         clearCache();
         matchingHelper.clickHomePageMatching();

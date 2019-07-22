@@ -10,7 +10,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.*;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
-public class SignUpTest extends TestBase {
+public class SignUpTests extends TestBase {
 
 
 

@@ -16,7 +16,7 @@ public class PaymentTests extends TestBase {
 
 
     @Test
-    public void abilityToSeePhone() {
+    public void testAbilityToSeePhone() {
 
 
         authorizationHelper.login("passwUniv", "FH_Not_paid");
@@ -31,7 +31,7 @@ public class PaymentTests extends TestBase {
     }
 
     @Test
-    public void goPremiumFHPaymentOnPhone() {
+    public void testGoPremiumFHPaymentOnPhone() {
 
         authorizationHelper.login("passwUniv", "FMNotPaid");
 
@@ -105,7 +105,7 @@ public class PaymentTests extends TestBase {
     }
 
     @Test
-    public void lordInWorldPaylistingEssen() {
+    public void testLordInWorldPaylistingEssen() {
         String price = "8";
 
         authorizationHelper.clickJoinFreeButton();
@@ -156,7 +156,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
     @Test
-    public void lordOutWorldPaylistingPrem() {
+    public void testLordOutWorldPaylistingPrem() {
         String price = "22";
 
         authorizationHelper.goToFMpage();
@@ -217,7 +217,7 @@ public class PaymentTests extends TestBase {
 
 
     @Test
-    public void lordInWorldPaidListingProf() {
+    public void testLordInWorldPaidListingProf() {
         String price = "319";
 
         authorizationHelper.clickJoinFreeButton();
@@ -282,7 +282,7 @@ public class PaymentTests extends TestBase {
 
 
     @Test
-    public void agentProfWorldPay() {
+    public void testAgentProfWorldPay() {
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();

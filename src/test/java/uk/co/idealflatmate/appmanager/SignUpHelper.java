@@ -29,7 +29,8 @@ public class SignUpHelper extends HelperBase {
         $(byXpath("//div[@id='signupRevealModal']//a[span[contains (text(), 'Sign up with email')]]")).click();
     }
     public void clickEmail() {
-        $(byXpath("//span[contains (text(), 'Sign up with email')]")).waitUntil(visible, 5000).click();
+        $(byXpath("//span[contains (text(), 'Sign up with email')]")).waitUntil(appear, 10000);
+        $(byXpath("//span[contains (text(), 'Sign up with email')]")).waitUntil(visible, 10000).click();
 
     }
     public void clickEmailMatching1() {

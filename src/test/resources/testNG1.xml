@@ -18,14 +18,14 @@
         </test>
     <!--
     <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
-    <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessage" />
-                 <class name="uk.co.idealflatmate.tests.SignUpMatching" />
-             <class name="uk.co.idealflatmate.tests.SignUpTest"/>
+    <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessageTestTest" />
+                 <class name="uk.co.idealflatmate.tests.SignUpMatchingTestsTests" />
+             <class name="uk.co.idealflatmate.tests.SignUpTestss"/>
             <class name="uk.co.idealflatmate.tests.AddListingTests" />
-             <class name="uk.co.idealflatmate.tests.AreaPageTest" />
+             <class name="uk.co.idealflatmate.tests.AreaPageTestss" />
             <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
-             <class name="uk.co.idealflatmate.tests.FooterTest" />
-             <class name="uk.co.idealflatmate.tests.HomePageTest" />
+             <class name="uk.co.idealflatmate.tests.testFooterTestsTests" />
+             <class name="uk.co.idealflatmate.tests.testHomePageTestsTests" />
              <class name="uk.co.idealflatmate.tests.MatchingTests" />
              <class name="uk.co.idealflatmate.tests.MessagesTest" />
              <class name="uk.co.idealflatmate.tests.PaymentTests" />
@@ -55,7 +55,7 @@
     </test>-->
     <!--<test name="Test2">
         <classes>
-            <class name="uk.co.idealflatmate.tests.FooterTest">
+            <class name="uk.co.idealflatmate.tests.testFooterTestsTests">
                 <methods>
                     <include name="footerInstagramLink" />
                     <include name="footerTwitterLink" />
@@ -65,7 +65,7 @@
     </test>
 <test name="ToolsQA">
     <classes>
-    <class name="uk.co.idealflatmate.tests.SignUpTest"/>
+    <class name="uk.co.idealflatmate.tests.SignUpTestss"/>
         <parameter name="firstName1" value="Ronaldina"/>
 
         <parameter name="sPassword" value="Test@123"/>

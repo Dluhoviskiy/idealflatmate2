@@ -14,7 +14,7 @@ import static uk.co.idealflatmate.appmanager.SearchHelper.field_searchBar_listin
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
-public class AreaPageTest extends TestBase {
+public class AreaPageTests extends TestBase {
 
     @BeforeMethod
     public void setupMethod() {

@@ -8,7 +8,7 @@ import static uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper.clickSignInB
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
 
-public class Buddy_up extends TestBase {
+public class Buddy_upTests extends TestBase {
 
 
 
@@ -56,7 +56,7 @@ public class Buddy_up extends TestBase {
         verificationHelper.dateMonthYearBlankErrorMessage();
 
         signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "20",
-                "I want to Buddy_up", "Professional", "Freelancer/self employed");
+                "I want to Buddy_upTests", "Professional", "Freelancer/self employed");
 
         //signUpHelper.clickBackToSearch();
         buddyUpHelper.closeIntrodGroupsPopup();
@@ -159,7 +159,7 @@ public class Buddy_up extends TestBase {
         verificationHelper.dateMonthYearBlankErrorMessage();
 
         signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "20",
-                "I want to Buddy_up", "Professional", "Freelancer/self employed");
+                "I want to Buddy_upTests", "Professional", "Freelancer/self employed");
 
         //signUpHelper.clickBackToSearch();
         buddyUpHelper.closeIntrodGroupsPopup();
@@ -338,7 +338,7 @@ public class Buddy_up extends TestBase {
 
         signUpHelper.yourInformation("passwUniv", "Ronald", "FMupsBuddy2", "Female");
         sleep(2000);
-        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "19", "I want to Buddy_up", "Professional", "Student");
+        signUpHelper.moreAboutYou("10", "3", "1955", "58885588", "19", "I want to Buddy_upTests", "Professional", "Student");
         messageHelper.photoOfOwnerInMesBuddy_up(photo1);
         messageHelper.propertyPostcodeVerifying(postCode);
 
@@ -439,7 +439,7 @@ public class Buddy_up extends TestBase {
 
         signUpHelper.yourInformation("passwUniv", "Trump", "FMupsBuddy3", "Female");
         sleep(2000);
-        signUpHelper.moreAboutYou2("25", "12", "1985", "777777777", "227", "I an interested in Buddy_up", "Professional", "Other");
+        signUpHelper.moreAboutYou2("25", "12", "1985", "777777777", "227", "I an interested in Buddy_upTests", "Professional", "Other");
 
         messageHelper.photoOfOwnerInMesBuddy_up(photo1);
         messageHelper.propertyPostcodeVerifying(postCode);

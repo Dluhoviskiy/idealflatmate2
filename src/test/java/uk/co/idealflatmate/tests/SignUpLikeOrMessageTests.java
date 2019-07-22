@@ -13,7 +13,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.SignUpHelper.userName;
 
 
-public class SignUpLikeOrMessage extends TestBase {
+public class SignUpLikeOrMessageTests extends TestBase {
     @BeforeMethod
 
     public void setupMethod() {
@@ -23,7 +23,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
 
     @Test
-    public void mesPropSignUpHomeStart() {
+    public void testMesPropSignUpHomeStart() {
 
         homePageHelper.scrollToBlockProperty();
 
@@ -38,7 +38,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
 
     @Test
-    public void mesPropSignUpNotBuddy_Up() {
+    public void testMesPropSignUpNotBuddy_Up() {
         String name = "Trouble";
         String location = "Leeds";
         String age = "60";
@@ -132,7 +132,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
 
     @Test
-    public void signUpLike3rdPageQuit() {
+    public void testSignUpLike3rdPageQuit() {
 
 
         authorizationHelper.goToPropertyPage();
@@ -224,7 +224,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
     }
     @Test
-    public void popupPropertyPage() {
+    public void testPopupPropertyPage() {
         String name = "Ronald";
         String location = "Watford";
         String age = "19";
@@ -273,7 +273,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
     @Test
-    public void popupWithExistingEmail() {
+    public void testPopupWithExistingEmail() {
 
         authorizationHelper.goToFMpage();
 
@@ -291,7 +291,7 @@ public class SignUpLikeOrMessage extends TestBase {
 
 
     @Test
-    public void popupExistingEmailPropertyPage() {
+    public void testPopupExistingEmailPropertyPage() {
 
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickClosePopupSignUp();
@@ -319,7 +319,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
     @Test
-    public void popupWithBlankRequiredFields() {
+    public void testPopupWithBlankRequiredFields() {
 
         authorizationHelper.goToFMpage();
 
@@ -379,7 +379,7 @@ public class SignUpLikeOrMessage extends TestBase {
     }
 
     @Test
-    public void popupExistingEmailPropertyPhone() {
+    public void testPopupExistingEmailPropertyPhone() {
 
         authorizationHelper.FindHomeInMenu();
         authorizationHelper.clickClosePopupSignUp();

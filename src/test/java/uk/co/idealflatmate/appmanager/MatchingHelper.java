@@ -1,5 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
+import ru.yandex.qatools.allure.annotations.Step;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -11,6 +13,7 @@ public class MatchingHelper extends HelperBase {
         String match2 = "//div[@class='quiz-question-inner' and contains(text(),  '";
         String match3 = "')]/../../..//label[@data-questionid=";
 
+    @Step
     public void clickHomePageMatching() {
         if($(byXpath("//div[@class='lp-element lp-pom-root']")).is(visible)){
             $(byXpath("(//button[@class='ub-emb-close'])[1]")).waitUntil(visible, 4000).click();
@@ -20,13 +23,14 @@ public class MatchingHelper extends HelperBase {
             //$(byXpath("//button[contains(text(), 'Start the match test')] ")).waitUntil(visible, 4000).click();
         }
     }
-
+    @Step
     public void enterFirstName(String Name) {
         Field2("input#addnamematchform-username", Name);
         $("input#addnamematchform-username").click();
 
 
     }
+
     public void clickContinueMatching1() {
         $(byXpath("" +match2+ "I tend to go out to meet friends, socialize or network most evenings"+match3+"'1'][1]")).click();
         sleep(1000);

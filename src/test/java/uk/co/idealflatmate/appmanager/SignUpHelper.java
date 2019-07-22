@@ -2,6 +2,7 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
+import ru.yandex.qatools.allure.annotations.Step;
 import utils.ConfData;
 
 import java.io.File;
@@ -454,6 +455,7 @@ public class SignUpHelper extends HelperBase {
         clickYourInformationContinue();
     }
 
+    @Step
     public void moreAboutYou(String day, String month, String year, String phone, String newOccupation, String text, String defaultOccupation, String occupationNew) {
         profilePhotoAddJpeg();
         profileDateBirthAdd(day, month, year);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="idealflatmatetest" verbose="5">
+<suite name="idealflatmatetest2" verbose="5">
 
         <test name="Test1">
 
@@ -9,19 +9,19 @@
         <classes>
             <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
             <class name="uk.co.idealflatmate.tests.AddListingTests" />
-            <class name="uk.co.idealflatmate.tests.AreaPageTest" />
+            <class name="uk.co.idealflatmate.tests.AreaPageTests" />
             <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
-            <class name="uk.co.idealflatmate.tests.FooterTest" />
-            <class name="uk.co.idealflatmate.tests.HomePageTest" />
+            <class name="uk.co.idealflatmate.tests.testFooterTests" />
+            <class name="uk.co.idealflatmate.tests.testHomePageTests" />
             <class name="uk.co.idealflatmate.tests.MatchingTests" />
-            <class name="uk.co.idealflatmate.tests.MessagesTest" />
+            <class name="uk.co.idealflatmate.tests.MessagesTests" />
             <class name="uk.co.idealflatmate.tests.PaymentTests" />
             <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
             <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
             <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
-            <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessage" />
-            <class name="uk.co.idealflatmate.tests.SignUpMatching" />
-            <class name="uk.co.idealflatmate.tests.SignUpTest"/>
+            <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessageTests" />
+            <class name="uk.co.idealflatmate.tests.SignUpMatchingTests" />
+            <class name="uk.co.idealflatmate.tests.SignUpTests"/>
             <class name="uk.co.idealflatmate.tests.ZEmailTests" />
 
         </classes>
@@ -31,12 +31,12 @@
     <!--
     <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
             <class name="uk.co.idealflatmate.tests.AddListingTests" />
-             <class name="uk.co.idealflatmate.tests.AreaPageTest" />
+             <class name="uk.co.idealflatmate.tests.AreaPageTests" />
             <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
-             <class name="uk.co.idealflatmate.tests.FooterTest" />
-             <class name="uk.co.idealflatmate.tests.HomePageTest" />
+             <class name="uk.co.idealflatmate.tests.testFooterTests" />
+             <class name="uk.co.idealflatmate.tests.testHomePageTests" />
              <class name="uk.co.idealflatmate.tests.MatchingTests" />
-             <class name="uk.co.idealflatmate.tests.MessagesTest" />
+             <class name="uk.co.idealflatmate.tests.MessagesTests" />
              <class name="uk.co.idealflatmate.tests.PaymentTests" />
              <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
              <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
@@ -64,7 +64,7 @@
     </test>-->
     <!--<test name="Test2">
         <classes>
-            <class name="uk.co.idealflatmate.tests.FooterTest">
+            <class name="uk.co.idealflatmate.tests.testFooterTests">
                 <methods>
                     <include name="footerInstagramLink" />
                     <include name="footerTwitterLink" />
@@ -74,7 +74,7 @@
     </test>
 <test name="ToolsQA">
     <classes>
-    <class name="uk.co.idealflatmate.tests.SignUpTest"/>
+    <class name="uk.co.idealflatmate.tests.SignUpTests"/>
         <parameter name="firstName1" value="Ronaldina"/>
 
         <parameter name="sPassword" value="Test@123"/>

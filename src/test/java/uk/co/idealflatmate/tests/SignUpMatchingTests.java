@@ -25,6 +25,8 @@ public class SignUpMatchingTests extends TestBase {
     }
 
     @Test
+
+
     public void tastSignUpMatchingWithRequiredFieldsRoom() {
         String name = "Ronaldina";
         String location = "Watford";
@@ -98,8 +100,8 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                     "Tell us about yourself", "Professional", "Other");
 
-        signUpHelper.clickListYourRoomMatching();
-        addPropertyHelper.saveQuitHeaderMenuListing();
+        //signUpHelper.clickListYourRoomMatching();
+        //addPropertyHelper.saveQuitHeaderMenuListing();
         addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyAddListingPage();
         addPropertyHelper.openDropDownMenu();
@@ -128,7 +130,7 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                      "Tell us about yourself", "Professional", "Other");
 
-        signUpHelper.clickSearchFMMatching();
+        //signUpHelper.clickSearchFMMatching();
         verificationHelper.verifySearchFMPage();
         //verificationHelper.verifyAddListingPage();
 

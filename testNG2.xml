@@ -3,8 +3,8 @@
 
 <suite name="idealflatmatetest" verbose="5">
 
-    <!--
-            <test name="Test2">
+
+        <test name="Test2">
 
         <parameter name="confEmail" value="proideal@ukr.net"/>
         <parameter name="confPassword" value="qqqqqq666D"/>
@@ -33,7 +33,7 @@
         </test>
         <!--<test name="Test2">
             <classes>
-                <class name="uk.co.idealflatmate.tests.FooterTest">
+                <class name="uk.co.idealflatmate.tests.testFooterTests">
                     <methods>
                         <include name="footerInstagramLink" />
                         <include name="footerTwitterLink" />
@@ -43,12 +43,12 @@
         </test>
     <test name="ToolsQA">
         <classes>
-        <class name="uk.co.idealflatmate.tests.SignUpTest"/>
+        <class name="uk.co.idealflatmate.tests.SignUpTests"/>
             <parameter name="firstName1" value="Ronaldina"/>
 
             <parameter name="sPassword" value="Test@123"/>
         </classes>-->
 
-    -->
+
 
     </suite>

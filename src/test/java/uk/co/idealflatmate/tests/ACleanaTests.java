@@ -129,6 +129,8 @@ public class ACleanaTests extends TestBase {
 
 
     public void verifyNoPropertyOrRemove() {
+        closeListRenewPopUp();
+        closeMatchPopUp();
         addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoUnfinishedProperty();
         verificationHelper.verifyNoPropertyPending();

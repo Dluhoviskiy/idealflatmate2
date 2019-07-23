@@ -17,7 +17,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifStageGoLive;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
-public class AuthorizationTests extends TestBase {
+public class RegistrationTests extends TestBase {
 
     @BeforeMethod
 

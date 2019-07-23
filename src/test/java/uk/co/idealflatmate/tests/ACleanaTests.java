@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.*;
+import ru.yandex.qatools.allure.annotations.Step;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
@@ -11,7 +12,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.*;
 //import ru.yandex.qatools.allure.annotations.Parameter;
 
 
-public class AbclearDataTests extends TestBase {
+public class ACleanaTests extends TestBase {
 
     @BeforeMethod
 
@@ -42,7 +43,7 @@ public class AbclearDataTests extends TestBase {
 
     @Test(dataProvider = "Authentication" )
     
-
+    @Step
     public void removeAccountBeforeTest(String confEmail, String confPassword) {
 
         authorizationHelper.loginHeader1(confEmail, confPassword);
@@ -61,6 +62,7 @@ public class AbclearDataTests extends TestBase {
 
     @Parameters ({ "confEmail", "confPassword" })
     @Test
+    @Step
     public void removeAccountBeforeTestLive(@Optional("qqqqqq") String confPassword,@Optional("proideal@ukr.net") String confEmail) {
         clearBrowserCookies();
         authorizationHelper.loginHeader2(confEmail, confPassword);
@@ -73,6 +75,7 @@ public class AbclearDataTests extends TestBase {
 
 
     @Test
+    @Step()
     public void removeListingBeforeTest() {
 
         authorizationHelper.login("passwUniv", "agentNotPaid");

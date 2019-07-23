@@ -65,7 +65,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     private SelenideElement popup_SignIn_phone = $(byXpath("//div[@id='signupRevealModal']//div//a[@class='text-bold' and contains(., 'Sign')]"));
     private SelenideElement drop_Menu_My_profile = $(byXpath("//ul[@class='dropdown-menu']//a[contains(., 'My profile')]"));
 
-    private String  tab_inner_header1 = "//body//div[@class='inner-menu--scroll']//li/a[contains(., '";
+    private String  tab_inner_header1 = "//body//div[@class='inner-menu--scroll']//li/a[@href='/dashboard/settings' and contains(., '";
     private String  tab_inner_header2 = "')]";
     private SelenideElement popup_button_close_SignUp = $(byXpath("//div[@id='signupNeedspaceModal']//button[@class='btn btn-sm close u_m15']"));
 

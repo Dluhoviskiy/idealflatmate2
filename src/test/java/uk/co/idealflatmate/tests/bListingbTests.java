@@ -14,7 +14,7 @@ import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFoun
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.AddPropertyHelper.monthAvailableFrom;
 
-public class AddListingTests extends TestBase {
+public class bListingbTests extends TestBase {
 
     @BeforeMethod
 
@@ -27,7 +27,7 @@ public class AddListingTests extends TestBase {
     public void loginStartListing() {
 
         authorizationHelper.login("passwUniv","userNotpaid1");
-
+        closeListRenewPopUp();
         verificationHelper.closeMatchingPopup();
 
         //verificationHelper.verifyNoProperty();
@@ -58,6 +58,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.login("passwUniv","userNotpaid");
 
         verificationHelper.closeMatchingPopup();
+        closeListRenewPopUp();
 
         addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoProperty();
@@ -93,7 +94,7 @@ public class AddListingTests extends TestBase {
         authorizationHelper.login("passwUniv","agentNotpaid1");
 
         verificationHelper.verificationUserNameOnHomePage("AgentF");
-
+        closeListRenewPopUp();
         addPropertyHelper.chooseListingsFromDropDownMenu();
 
         verificationHelper.verifyNoProperty();
@@ -539,7 +540,9 @@ public class AddListingTests extends TestBase {
 
         authorizationHelper.login("passwUniv", "userTitle");
         verificationHelper.verificationUserNameOnHomePage("Title");
+        closeListRenewPopUp();
         verificationHelper.closeMatchingPopup();
+
         paymentsHelper.addPropertyHelper.chooseListingsFromDropDownMenu();
         verificationHelper.verifyNoProperty();
 

@@ -35,7 +35,7 @@ public class HelperBase  {
     public static void closeListRenewPopUp() {
         PopUpHelper popUpHelper = new PopUpHelper();
         String buttonRenew = popUpHelper.closeRenewPopup;
-        sleep(2000);
+        sleep(1000);
         if($(byXpath(buttonRenew)).isDisplayed()){
             $(byXpath(buttonRenew)).waitUntil(visible, 2000).click();
         }

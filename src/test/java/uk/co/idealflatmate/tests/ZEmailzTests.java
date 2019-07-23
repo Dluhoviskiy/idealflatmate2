@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
-public class ZEmailTests extends TestBase {
+public class ZEmailzTests extends TestBase {
     @BeforeMethod
 
     public void setupMethod() {

@@ -7,7 +7,7 @@
 
 
         <classes>
-            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+            <class name="uk.co.idealflatmate.tests.ACleanaTests" />
 
 
 
@@ -17,13 +17,13 @@
 
         </test>
     <!--
-    <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+    <class name="uk.co.idealflatmate.tests.AabclearDataTestss" />
     <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessageTestTest" />
                  <class name="uk.co.idealflatmate.tests.SignUpMatchingTestsTests" />
              <class name="uk.co.idealflatmate.tests.SignUpTestss"/>
-            <class name="uk.co.idealflatmate.tests.AddListingTests" />
+            <class name="uk.co.idealflatmate.tests.bListingbTests />
              <class name="uk.co.idealflatmate.tests.AreaPageTestss" />
-            <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
+            <class name="uk.co.idealflatmate.tests.RegistrationTests />
              <class name="uk.co.idealflatmate.tests.testFooterTestsTests" />
              <class name="uk.co.idealflatmate.tests.testHomePageTestsTests" />
              <class name="uk.co.idealflatmate.tests.MatchingTests" />
@@ -32,7 +32,7 @@
              <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
              <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
              <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
-            <class name="uk.co.idealflatmate.tests.ZEmailTests" />
+            <class name="uk.co.idealflatmate.tests.ZEmailzTestss" />
 
 
         <test name="Test2">
@@ -41,7 +41,7 @@
             <parameter name="confEmail" value="proideal@ukr.net"/>
             <parameter name="confPassword" value="qqqqqq666D"/>
             <classes>
-            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+            <class name="uk.co.idealflatmate.tests.AabclearDataTestss" />
             </classes>
         </test>
     <test name="Test3">
@@ -50,7 +50,7 @@
         <parameter name="confEmail" value="ron666ddd@gmail.com"/>
         <parameter name="confPassword" value="qqqqqq666D"/>
         <classes>
-            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+            <class name="uk.co.idealflatmate.tests.AabclearDataTestss" />
         </classes>
     </test>-->
     <!--<test name="Test2">

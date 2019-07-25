@@ -2,7 +2,9 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utils.ConfData;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
@@ -61,7 +63,7 @@ public class PaymentTests extends TestBase {
 
     //@Test
     public void premiumFHPaymentWorldPay() {
-
+        String newEmail = ConfData.getData("fmNotPaid3");
         authorizationHelper.goToPropertyPage();
         //authorizationHelper.clickCloseSignUpFMPage();
 
@@ -81,6 +83,10 @@ public class PaymentTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         //signUpHelper.priceMove("15", "12", "2019");
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         verificationHelper.verificationUserNameOnHomePage("Ronald");
         addPropertyHelper.openDropDownMenu()
@@ -107,14 +113,20 @@ public class PaymentTests extends TestBase {
     @Test
     public void testLordInWorldPaylistingEssen() {
         String price = "8";
+        String newEmail = ConfData.getData("live-In3");
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.signListingFM_LiveIn("live-In1", "passwUniv",
+        signUpHelper.signListingFM_LiveIn("live-In3", "passwUniv",
                 "5", "5", "1959", "3456666666", "19", "Ronald",
                 "Professional", "Student");
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
         closeMatchPopUp();
@@ -156,6 +168,7 @@ public class PaymentTests extends TestBase {
     @Test
     public void testLordOutWorldPaylistingPrem() {
         String price = "22";
+        String newEmail = ConfData.getData("liv-Out4");
 
         authorizationHelper.goToFMpage();
 
@@ -164,7 +177,7 @@ public class PaymentTests extends TestBase {
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser();
         addPropertyHelper.selectTypeUser("Live-out landlord");
 
-        signUpHelper.signListingLiveOut("liv-Out1", "passwUniv",
+        signUpHelper.signListingLiveOut("liv-Out4", "passwUniv",
                 "2Ronald", "897876567");
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -173,6 +186,11 @@ public class PaymentTests extends TestBase {
 
         addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("longrise", "2 Longrise, Billericay, CM12",
                 "Chalk Farm", "15","1333", "Area cannot be blank.");
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
 
@@ -215,6 +233,7 @@ public class PaymentTests extends TestBase {
     @Test
     public void testLordInWorldPaidListingProf() {
         String price = "319";
+        String newEmail = ConfData.getData("fmNotPaid4");
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -224,6 +243,11 @@ public class PaymentTests extends TestBase {
         signUpHelper.signListingFM_LiveIn("fmNotPaid4", "passwUniv",
                 "5", "5", "1959", "3456666666", "19", "Ronald",
                 "Professional", "Student");
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
         closeMatchPopUp();
@@ -251,6 +275,7 @@ public class PaymentTests extends TestBase {
         //paymentsHelper.choosePayPal();
         paymentsHelper.chooseWorldPay("or Credit / Debit Card");
         paymentsHelper.fillinDebitCardData("Alex", "5454545454545454", "11", "2020", "123");
+
         closeMatchPopUp();
 
         verificationHelper.verifyPackagePurchaseList("ideal flatmate Professional");
@@ -279,7 +304,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void testAgentProfWorldPay() {
-
+        String newEmail = ConfData.getData("agent2");
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
 
@@ -287,6 +312,12 @@ public class PaymentTests extends TestBase {
 
         signUpHelper.agentSignListing("Ronald", "agent2", "passwUniv",
                 "3456666666", "Tell us about yourself");
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         addPropertyHelper.saveQuitHeaderMenuListing();
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 

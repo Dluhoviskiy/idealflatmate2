@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
@@ -67,6 +68,8 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         //signUpHelper.clickShowMeMyMatches();
@@ -107,6 +110,8 @@ public class SignUpMatchingTests extends TestBase {
 
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
         //signUpHelper.clickListYourRoomMatching();
         //addPropertyHelper.saveQuitHeaderMenuListing();
@@ -140,6 +145,8 @@ public class SignUpMatchingTests extends TestBase {
 
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
         //signUpHelper.clickSearchFMMatching();
         verificationHelper.verifySearchFMPage();

@@ -613,6 +613,8 @@ public SelenideElement lastMessage = $(byXpath("(//div[@class='color-1 text-12 m
                     String dateNumber, String month, String yearNumber, String lenthOfStay, String descriptionOfRoom) {
         String room = "//span[contains(.,'"+roomNumber+"')]/../..//";
 
+        $(byXpath(room+"div[@class='col-xs-4 u_p0-left']")).waitUntil(visible, 5000);
+
         if($(byXpath(room+"div[@class='col-xs-4 u_p0-left']")).exists()){
             $(byXpath(room+"div[@class='col-xs-4 u_p0-left']")).shouldHave(text(roomPrice + "\n" +   "month")); }
 

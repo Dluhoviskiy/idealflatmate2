@@ -3,6 +3,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
@@ -165,7 +166,7 @@ public class MessagesTests extends TestBase {
 
     @Test
     public void spamFmWithoutSubsToFMLink() {
-
+        String newEmail = ConfData.getData("TenantSpam");
         String name = "Mash";
 
         authorizationHelper.clickJoinFreeButton();
@@ -175,6 +176,10 @@ public class MessagesTests extends TestBase {
                 "5", "5", "1959", "03456666666", "19",
                 name, "Professional", "Student");
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
@@ -202,7 +207,7 @@ public class MessagesTests extends TestBase {
 
     @Test
     public void spamFmUnboundMessages() {
-
+        String newEmail = ConfData.getData("TenantMesSpam");
         String name = "Mash";
 
         authorizationHelper.clickJoinFreeButton();
@@ -212,6 +217,10 @@ public class MessagesTests extends TestBase {
                 "5", "5", "1959", "03456666666", "19",
                 name, "Professional", "Student");
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
         getAddPropertyHelper().chooseListingsFromDropDownMenu();

@@ -6,9 +6,7 @@ import uk.co.idealflatmate.appmanager.SearchHelper;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 import static uk.co.idealflatmate.appmanager.HelperBase.cardsOnThePage;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.SignUpHelper.userName;
@@ -122,6 +120,8 @@ public class SignUpLikeOrMessageTests extends TestBase {
                 "amountPropCards1"));
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         verificationHelper.verificationUserNameOnHomePage(name);
@@ -207,6 +207,8 @@ public class SignUpLikeOrMessageTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         //signUpHelper.clickShowMeMyMatches();
@@ -273,6 +275,8 @@ public class SignUpLikeOrMessageTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         verificationHelper.verifySearchListingPage();

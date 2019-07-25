@@ -120,6 +120,9 @@ public class SignUpTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         authorizationHelper.clickClosePopupSignUp();
@@ -153,7 +156,7 @@ public class SignUpTests extends TestBase {
 
         signUpHelper.clickEmail();
 
-        signUpHelper.yourInformation("passwUniv", name, "Tenant1", "Female");
+        signUpHelper.yourInformation("passwUniv", name, "Photo1", "Female");
 
         signUpHelper.profilePhotoAddJpeg();
         signUpHelper.profilePhotoRemove();
@@ -176,7 +179,7 @@ public class SignUpTests extends TestBase {
     public void testPhoneSignUpHomePageFM() {
         String location1 = "Watford";
         String name = "Ronaldina";
-        String newEmail = ConfData.getData("Tenant1");
+        String newEmail = ConfData.getData("Phone1");
 
         authorizationHelper.clickJoinFreeButton();
 
@@ -227,6 +230,8 @@ public class SignUpTests extends TestBase {
                                         name, "Professional", "Student");
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -267,6 +272,8 @@ public class SignUpTests extends TestBase {
                 name, "Professional", "Student");
 
         signUpHelper.confirmNewGmailSignUp(oldEmail, oldEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -394,6 +401,8 @@ public class SignUpTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -702,6 +711,8 @@ public class SignUpTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
@@ -741,6 +752,8 @@ public class SignUpTests extends TestBase {
         signUpHelper.clickYourInformationContinue();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();

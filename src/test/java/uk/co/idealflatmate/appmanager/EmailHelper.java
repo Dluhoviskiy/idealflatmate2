@@ -184,12 +184,16 @@ public class EmailHelper extends HelperBase {
         sleep(2000);
         scrollDownPageOn("500");
         if(!$(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).isDisplayed()){
+            scrollDownPageOn("1000");
             $(byXpath("(//div[@class='ajR']/img)[last()]")).click();
             $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
-        }else $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
-
-
-        switchTo().window(1);
-        sleep(1000);
+            sleep(1000);
+            switchTo().window(1);
+            sleep(1000);
+        }else {scrollDownPageOn("1000");
+              $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
+              sleep(1000);
+              switchTo().window(1);
+              sleep(1000);}
     }
 }

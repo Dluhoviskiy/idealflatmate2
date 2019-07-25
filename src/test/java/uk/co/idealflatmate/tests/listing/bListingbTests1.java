@@ -1,4 +1,4 @@
-package uk.co.idealflatmate.tests;
+package uk.co.idealflatmate.tests.listing;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 import uk.co.idealflatmate.appmanager.ProfileData;
+import uk.co.idealflatmate.tests.TestBase;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Condition.checked;
@@ -18,7 +19,7 @@ import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFoun
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.AddPropertyHelper.monthAvailableFrom;
 
-public class bListingbTests extends TestBase {
+public class bListingbTests1 extends TestBase {
 
     @BeforeMethod
 
@@ -162,6 +163,8 @@ public class bListingbTests extends TestBase {
                                       "07399042641", "Tell us about yourself");
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing()

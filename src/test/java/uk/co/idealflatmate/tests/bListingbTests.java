@@ -177,6 +177,7 @@ public class bListingbTests extends TestBase {
 
         addPropertyHelper.removeListingClick("0");
 
+
         authorizationHelper.chooseTabFromInnerMenuDashboard("My profile");
         verificationHelper.profileDisplays(new ProfileData("percentComplete4",  "myProfile4",
                 "name4", "age4","lookingFor4", "aboutMe4","rooms4",

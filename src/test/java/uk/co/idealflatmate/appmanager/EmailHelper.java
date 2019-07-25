@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.appmanager;
 
 
+import com.codeborne.selenide.SelenideElement;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.Condition.*;
@@ -11,6 +12,8 @@ public class EmailHelper extends HelperBase {
 
     String tip = "//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//div//span[contains(., \'";
     String tip2 = "\')]//ancestor::tr//td/div[@role='checkbox']";
+    public SelenideElement button_Inbox = $(byXpath("(//span[starts-with(@class, 'nU ')])[1]"));
+
     public final VerificationHelper verificationHelper = new VerificationHelper();
     @Step
     public void openGmailPage() {
@@ -34,7 +37,7 @@ public class EmailHelper extends HelperBase {
 
     @Step
     public void enterInbox() {
-        $(byXpath("(//span[starts-with(@class, 'nU ')])[1]")).waitUntil(visible, 6000).click();
+        button_Inbox.waitUntil(visible, 6000).click();
         sleep(1000);
     }
 
@@ -163,19 +166,27 @@ public class EmailHelper extends HelperBase {
     }
     @Step
     public void confirmGmailAccount(final String email, final String password) {
+        EmailHelper e = new EmailHelper();
         openGmailPage();
-        sleep(1000);
-        setLoginAsUserEmail(email);
-        sleep(1000);
-        setLoginAsUserPassword(password);
-        enterInbox();
+        if(e.button_Inbox.exists()){
+            verifyEmail();
+        } else {sleep(1000);
+            setLoginAsUserEmail(email);
+            sleep(1000);
+            setLoginAsUserPassword(password);
+            enterInbox();
+            verifyEmail();}
+
+    }
+
+    private void verifyEmail() {
         $(byXpath("(//span[contains(.,'Please verify your email address')])[2]")).waitUntil(visible, 10000).click();
         sleep(2000);
         scrollDownPageOn("500");
         if(!$(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).isDisplayed()){
             $(byXpath("(//div[@class='ajR']/img)[last()]")).click();
             $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
-            }else $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
+        }else $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
 
 
         switchTo().window(1);

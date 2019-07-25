@@ -9,6 +9,7 @@ import uk.co.idealflatmate.appmanager.HelperBase;
 import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
@@ -23,6 +24,7 @@ public class SignUpTests extends TestBase {
 
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
+        clearBrowserCookies();
         clearCache();
     }
     @Features("without removing account")

@@ -3,6 +3,7 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -23,14 +24,14 @@ public class AreaPageHelper extends HelperBase {
     SelenideElement sortOption = $(byXpath("//select[@id='property-sort']/option[1]"));
 
     static SelenideElement container = $(byXpath("//div[@class='container text-center u_p20-xs u_p40-sm text-shadow u_ep-relative']"));
-
+    @Step
     public void clickArea(int number_of_area) {
         $(byXpath("//div[@class='homepage-quiz-container']/h2")).waitUntil(appears, 10000);
         $$("div.card-btr-amenities.text-white").get(number_of_area).click();
 
 
     }
-
+    @Step
     public void clickHeaderItem(String select1, final String select2, final String area) {
 
 
@@ -58,7 +59,7 @@ public class AreaPageHelper extends HelperBase {
         $(byXpath("//div[@class='scrollspy clearfix scrollspy-horizontal']")).shouldBe(visible);
 
     }
-
+    @Step
     public void clickBlockColiving() {
 
 
@@ -67,7 +68,7 @@ public class AreaPageHelper extends HelperBase {
         container.scrollIntoView(true).$(byXpath("//h2[@class='u_m0']")).click();
 
     }
-
+    @Step
     public void checklinkMap() {
         //switchTo().window(1);
         switchTo().frame(0);
@@ -76,7 +77,7 @@ public class AreaPageHelper extends HelperBase {
         sleep(1000);
         $(byXpath("//link[@title='Google Maps']")).shouldBe(exist);
     }
-
+    @Step
     public void clicklinkNearbyAreas() {
         //switchTo().window(1);
         sleep(3000);
@@ -84,7 +85,7 @@ public class AreaPageHelper extends HelperBase {
         sleep(3000);
 
     }
-
+    @Step
     public static int numberOfPropAreaPage() {
 
        int numberOfPropAreaPage = Integer.parseInt($(byXpath("//div[@class='col-sm-5 col-md-4']//span[@class='u_ed-block text-11']")).text().
@@ -92,7 +93,7 @@ public class AreaPageHelper extends HelperBase {
        return numberOfPropAreaPage;
 
     }
-
+    @Step
     public static String textOfPropAreaPage() {
 
         String textOfPropAreaPage = $(byXpath("//h2[@class='text-14']")).text().
@@ -100,7 +101,7 @@ public class AreaPageHelper extends HelperBase {
         return textOfPropAreaPage;
 
     }
-
+    @Step
     public void checklinkNearbyAreas(String area1, final String mapState) {
         //closeAdvPopUp();
         $(byXpath("//span[@class='map-toggle-button open-map-button']")).shouldHave(text(mapState));
@@ -109,7 +110,7 @@ public class AreaPageHelper extends HelperBase {
     }
 
 
-
+    @Step
     public void checkLinkSeeMoreRooms(String area1) {
 
         closeAdvPopUp();
@@ -130,7 +131,7 @@ public class AreaPageHelper extends HelperBase {
 
 
     }
-
+    @Step
     public void mapAreaPageCheck() {
         sleep(2000);
         SelenideElement openMap = $(byXpath("//span[@class='map-toggle-button open-map-button']"));
@@ -144,7 +145,7 @@ public class AreaPageHelper extends HelperBase {
         sleep(2000);
         openMap.shouldHave(text("Display map"));
     }
-
+    @Step
     public void checklinkFH(String area1) {
         //switchTo().window(1);
         closeAdvPopUp();
@@ -161,14 +162,14 @@ public class AreaPageHelper extends HelperBase {
 
         $(byXpath("//h1[@class='h4']")).shouldHave(text("Find Flatmates"));
     }
-
+    @Step
     public void checklinkAreaslinkFooter() {
         $(byXpath("(//div[@class='card-btr-amenities text-white'])[1]')]")).waitUntil(exist, 5000).click();
         switchTo().window(1);
         $(byXpath("//h1[@class='splash-title text-white text-center u_m0-top']")).shouldHave(text("Stratford"));
 
     }
-
+    @Step
     public void checkAreaName(String area1) {
         //String areaNameOnPageH1 = $("h1.splash-title.text-white.text-center.u_m0-top").text();
         //switchTo().window(1);
@@ -176,7 +177,7 @@ public class AreaPageHelper extends HelperBase {
         String area2 = (areaNameOnPageH1.substring(0, 9) + " " + area1);
         Assert.assertEquals(areaNameOnPageH1, area2);
     }
-
+    @Step
     public void numberPropertiesUnderSearchEqualsCards() {
 
         String areaNameOnPageH1 = $(byXpath("//h2[@class='text-14']")).text().replaceAll("[^0-9]", "");
@@ -188,7 +189,7 @@ public class AreaPageHelper extends HelperBase {
 
 
     }
-
+    @Step
     public void clickMoreRooms() {
         //switchTo().window(1);
 
@@ -198,23 +199,23 @@ public class AreaPageHelper extends HelperBase {
 
         $(byXpath("(//a[@class='btn btn-primary'])[1]")).click();
     }
-
+    @Step
     public void checkSortDropDownFM() {
         checkSortDropDownRoom("5", "Top Matched");
 
     }
-
+    @Step
     public void checkSortDropDownRoom(final String expectedValue, final String defaultText) {
         closeAdvPopUp();
         sortOption.shouldHave(value(expectedValue));
         sortOption.shouldHave(text(defaultText));
     }
-
+    @Step
     public void pagination(final Condition condition) {
         $(byXpath("//ul[@class='pagination']/li/a[@class='btn pagination-button pagination-button--prev btn-lg']")).should(condition);
 
     }
-
+    @Step
     public void checkArrowsBrowsAll(final String tab1click, final String tab2click, final String linkClick) {
         SelenideElement arrow = $(byXpath("//div[@class='owl-carousel item-carousel js-carousel owl-theme owl-loaded']//button[@role='presentation' and @class='owl-next']"));
 
@@ -232,7 +233,7 @@ public class AreaPageHelper extends HelperBase {
     }
 
 
-
+    @Step
     public void checkAllAreas(String City) {
         $$(byXpath("//h2")).shouldHaveSize(6);
         $(byXpath("//div/p[contains(.,'Payment methods we accept:')]")).click();
@@ -246,7 +247,7 @@ public class AreaPageHelper extends HelperBase {
         $(byXpath("//div[@class='search-panel hidden-xs']//input")).shouldHave(value(City));
         $$(byXpath("//a[@class='buddy-star u_ed-inline-block float-right u_m15-right u_m10-top text-26 ']")).shouldHaveSize(11);
     }
-
+    @Step
     public void checkRestAreas(final String text, final String area) {
         $(byXpath("//h1")).shouldHave(text(text));
 
@@ -258,14 +259,14 @@ public class AreaPageHelper extends HelperBase {
         }
 
     }
-
+    @Step
     public void areaScroll() {
         scrollDownPageOn("2300");
         $(byXpath("//h2[contains(.,'Explore cities and areas across the UK')]")).waitUntil(visible, 5000);
         $(byXpath("//section[@id='press-logos']")).waitUntil(visible, 5000);
 
     }
-
+    @Step
     public void h1_HeaderTextIsExist(final String text) {
         $(byXpath("//h1[contains(.,'" + text + "')]")).exists();
     }

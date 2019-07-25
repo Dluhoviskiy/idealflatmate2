@@ -4,9 +4,11 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 
 import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static uk.co.idealflatmate.appmanager.AreaPageHelper.areaNameInCarousel;
 import static uk.co.idealflatmate.appmanager.AreaPageHelper.numberOfPropAreaPage;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
@@ -23,6 +25,8 @@ public class AreaPageTests extends TestBase {
 
     }
 
+    @Features("Area")
+    @Stories("homepage")
     @Test
     public void firstFeaturedAreasHomePageHeader() {
         areaPageHelper.areaScroll();
@@ -32,7 +36,8 @@ public class AreaPageTests extends TestBase {
         areaPageHelper.clickHeaderItem("top-spots",  "explore", area1);
 
     }
-
+    @Features("Area")
+    @Stories("coliving")
     @Test
     public void firstFeaturedAreas_Coliving_HomePageHeader() {
         areaPageHelper.areaScroll();
@@ -52,8 +57,8 @@ public class AreaPageTests extends TestBase {
 
     }
 
-
-
+    @Features("Area")
+    @Stories("map")
     @Test
     public void firstFeaturedLinkArea() {
         areaPageHelper.areaScroll();
@@ -73,7 +78,8 @@ public class AreaPageTests extends TestBase {
         areaPageHelper.pagination(exist);
 
     }
-
+    @Features("Area")
+    @Stories("map")
     @Test
     public void firstFeaturedLinkMap() {
         Reporter.log("Application started");
@@ -82,7 +88,8 @@ public class AreaPageTests extends TestBase {
         areaPageHelper.checklinkMap();
 
     }
-
+    @Features("Area")
+    @Stories("homepage")
     @Test
     public void seeMoreRooms() {
         areaPageHelper.areaScroll();
@@ -96,7 +103,8 @@ public class AreaPageTests extends TestBase {
         areaPageHelper.pagination(exist);
 
     }
-
+    @Features("Area")
+    @Stories("homepage")
     @Test
     public void linkFH() {
         areaPageHelper.areaScroll();
@@ -108,8 +116,10 @@ public class AreaPageTests extends TestBase {
         areaPageHelper.pagination(exist);
 
     }
-    
-   @Test
+
+    @Features("Area")
+    @Stories("coliving")
+    @Test
     public void exploreMoreArea() {
         areaPageHelper.areaScroll();
         areaPageHelper.clickArea(1);
@@ -117,7 +127,8 @@ public class AreaPageTests extends TestBase {
         areaPageHelper.checkRestAreas("Rest of the UK", "Brixham");
 
     }
-
+    @Features("Area")
+    @Stories("homepage")
     @Test
     public void exploreMoreAreaCity() {
         areaPageHelper.areaScroll();

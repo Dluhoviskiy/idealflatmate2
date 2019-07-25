@@ -1,8 +1,13 @@
 package uk.co.idealflatmate.tests;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
+import uk.co.idealflatmate.appmanager.AuthorHeaderMenuHelper;
 import uk.co.idealflatmate.appmanager.HelperBase;
 import uk.co.idealflatmate.appmanager.ProfileData;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
@@ -20,7 +25,8 @@ public class SignUpTests extends TestBase {
         pageUrlVerifLiveGoStage();
         clearCache();
     }
-
+    @Features("without removing account")
+    @Stories("blankFields")
     @Test
     public void testSignUpBlankFieldsPropAddRentBlock() {
 
@@ -43,7 +49,8 @@ public class SignUpTests extends TestBase {
 
 
     }
-
+    @Features("without removing account")
+    @Stories("blankFields")
     @Test
     public void testSignUpBlankFieldsPropAddWorkBlock() {
 
@@ -64,11 +71,13 @@ public class SignUpTests extends TestBase {
         verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-
+    @Features("with removing account")
+    @Stories("Home")
     @Test
     public void testHeaderRoomSignUpHomePageFM() {
         String location1 = "Watford";
         String name = "Ronaldina";
+        String newEmail = ConfData.getData("Tenant1");
 
         authorizationHelper.clickJoinFreeButton();
 
@@ -80,12 +89,6 @@ public class SignUpTests extends TestBase {
 
         signUpHelper.yourInformation("passwUniv", name, "Tenant1", "Female");
 
-        signUpHelper.profilePhotoAddJpeg();
-        signUpHelper.profilePhotoRemove();
-        signUpHelper.profilePhotoAddPng();
-        signUpHelper.profilePhotoRemove();
-        signUpHelper.profilePhotoAddJpg();
-        signUpHelper.profilePhotoRemove();
 
         //signUpHelper.profilePhotoAddJpeg10Mb();
        // verificationHelper.profilePhoto10Mb();
@@ -93,16 +96,8 @@ public class SignUpTests extends TestBase {
        // verificationHelper.profilePhotoPdf();
 
         signUpHelper.profileDateBirthAdd("2", "5", "2000");
-        verificationHelper.phoneVerification("Phone cannot be blank.", "          ");
-        verificationHelper.phoneVerification("Phone is invalid.", "55555555d");
-        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "00000000000");
-        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "555555555");
-        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "d5555555");
-        verificationHelper.phoneVerification("Phone is invalid.", "dfsfdfsdf");
-        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "+()55555555");
 
         signUpHelper.profilePhone("3456666666");
-
 
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
@@ -122,9 +117,12 @@ public class SignUpTests extends TestBase {
         signUpHelper.selectHappyReceiveNews();
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         authorizationHelper.clickClosePopupSignUp();
 
-        verificationHelper.verifySearchListingPage();
+        //verificationHelper.verifySearchListingPage();
         verificationHelper.verificationUserNameOnHomePage(name);
 
         getAddPropertyHelper().openDropDownMenu();
@@ -137,10 +135,86 @@ public class SignUpTests extends TestBase {
 
         authorizationHelper.removeAnyAccount();
     }
+    @Features("without removing account")
+    @Stories("blankPhoto")
+    @Test
+    public void testPhotoVerificationSignUpHomePageFM() {
 
+        String name = "Ronaldina";
+
+
+        authorizationHelper.clickJoinFreeButton();
+
+        signUpHelper.clickRoom();
+        signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickRoom();
+
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("passwUniv", name, "Tenant1", "Female");
+
+        signUpHelper.profilePhotoAddJpeg();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profilePhotoAddPng();
+        signUpHelper.profilePhotoRemove();
+        signUpHelper.profilePhotoAddJpg();
+        signUpHelper.profilePhotoRemove();
+
+        signUpHelper.occupation("19", "Professional", "Student");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.quit();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+    @Features("without removing account")
+    @Stories("blankPhone")
+    @Test
+    public void testPhoneSignUpHomePageFM() {
+        String location1 = "Watford";
+        String name = "Ronaldina";
+        String newEmail = ConfData.getData("Tenant1");
+
+        authorizationHelper.clickJoinFreeButton();
+
+        signUpHelper.clickRoom();
+        signUpHelper.backFromEmailToRoom();
+        signUpHelper.clickRoom();
+
+        signUpHelper.clickEmail();
+
+        signUpHelper.yourInformation("passwUniv", name, "Tenant1", "Female");
+
+
+        signUpHelper.profilePhotoAddJpg();
+
+        signUpHelper.profileDateBirthAdd("2", "5", "2000");
+        verificationHelper.phoneVerification("Phone cannot be blank.", "          ");
+        verificationHelper.phoneVerification("Phone is invalid.", "55555555d");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "00000000000");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "555555555");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "d5555555");
+        verificationHelper.phoneVerification("Phone is invalid.", "dfsfdfsdf");
+        verificationHelper.phoneVerification("Please enter a valid phone number (Need Help?)", "+()55555555");
+
+        signUpHelper.profilePhone("3456666666");
+
+
+        signUpHelper.occupation("19", "Professional", "Student");
+        signUpHelper.aboutYourself("Tell us about yourself");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.quit();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
+    @Features("with removing account")
+    @Stories("Listing flow")
     @Test
     public void testHeaderSignUpHomePageFMSearchLiv_inWithoutAbout() {
         String name = "Donald";
+        String newEmail = ConfData.getData("LiveIn2");
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -149,6 +223,10 @@ public class SignUpTests extends TestBase {
         signUpHelper.signListingFM_LiveIn("LiveIn2", "passwUniv",
                                         "5", "5", "1959", "03456666666", "19",
                                         name, "Professional", "Student");
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         addPropertyHelper.saveQuitHeaderMenuListing();
         closeMatchPopUp();
 
@@ -161,16 +239,63 @@ public class SignUpTests extends TestBase {
                 "name10", "age10","lookingFor10", "aboutMe10","rooms10",
                 "amountPropCards10"));
 
-        matchingHelper.closePopupMatching();
+        //matchingHelper.closePopupMatching();
+        closeMatchPopUp();
 
         //signUpHelper.verificationDataProfileNameUser("live-in landlord");
 
         authorizationHelper.removeAnyAccount();
     }
 
+    @Features("with removing account")
+    @Stories("Listing flow")
+    @Test
+    public void testHeaderSignUpHomePageConfirmNewEmail() {
+        AuthorHeaderMenuHelper a = new AuthorHeaderMenuHelper();
+        String name = "Donald";
+        String newEmail = ConfData.getData("LiveInChange");
+        String oldEmail = ConfData.getData("LiveInOld");
+
+        authorizationHelper.clickJoinFreeButton();
+        signUpHelper.clickFM();
+        addPropertyHelper.selectTypeUser("Live-in landlord");
+
+        signUpHelper.signListingFM_LiveIn("LiveInOld", "passwUniv",
+                "5", "5", "1959", "03456666666", "19",
+                name, "Professional", "Student");
+
+        signUpHelper.confirmNewGmailSignUp(oldEmail, oldEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
+        addPropertyHelper.saveQuitHeaderMenuListing();
+        closeMatchPopUp();
+
+        //verificationHelper.verifyAddListingPage();
+        verificationHelper.verificationUserNameOnHomePage(name);
+
+        getAddPropertyHelper().openDropDownMenu();
+        authorizationHelper.chooseMenu_My_profile();
+        verificationHelper.profileDisplays(new ProfileData("percentComplete10",  "myProfile10",
+                "name10", "age10","lookingFor10", "aboutMe10","rooms10",
+                "amountPropCards10"));
+
+        //matchingHelper.closePopupMatching();
+        closeMatchPopUp();
+
+        //signUpHelper.verificationDataProfileNameUser("live-in landlord");
+
+        authorizationHelper.chooseSettingsMenu();
+        Assert.assertEquals(signUpHelper.getEmailfromSettings(), newEmail);
+
+        a.removeAccount();
+        verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
+        verificationHelper.verificationUserIsUnlogged("Join Free");
+    }
 
 
 
+    @Features("without removing account")
+    @Stories("blankFields")
     @Test
     public void testHeaderSignUpWithExistingEmail() {
 
@@ -199,7 +324,8 @@ public class SignUpTests extends TestBase {
         verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
      }
-
+    @Features("without removing account")
+    @Stories("blankFields")
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsYourInf() {
 
@@ -222,6 +348,9 @@ public class SignUpTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
+
+    @Features("without removing account")
+    @Stories("blankFields")
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsMoreAboutYou() {
 
@@ -241,10 +370,11 @@ public class SignUpTests extends TestBase {
 
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-
+    @Features("with removing account")
+    @Stories("Listing flow")
     @Test
     public void testTenantProfileChanging() {
-
+        String newEmail = ConfData.getData("TenantP");
         authorizationHelper.clickJoinFreeButton();
 
         signUpHelper.clickFM();
@@ -260,6 +390,9 @@ public class SignUpTests extends TestBase {
         signUpHelper.occupation("19", "Professional", "Student");
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing();
         noCloseMatchPopUp();
@@ -284,7 +417,8 @@ public class SignUpTests extends TestBase {
 
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-
+    @Features("without removing account")
+    @Stories("blankFields")
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsLocation() {
 
@@ -316,7 +450,8 @@ public class SignUpTests extends TestBase {
         verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-
+    @Features("without removing account")
+    @Stories("blankFields")
     @Test
     public void testHeaderSignUpWithBlankRequiredFieldsBudget() {
 
@@ -353,20 +488,20 @@ public class SignUpTests extends TestBase {
     }
 
 
-
+    @Features("with removing account")
+    @Stories("social")
     @Test
     public void testHeaderSignUpViaFacebook() {
         String location1 = "Zone 1";
         String location2 = "Watford";
         String location3 = "North London";
         String name = "Francine";
-        String age = "60";
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
         authorizationHelper.clickSignUp_In_WithFacebook();
         //authorizationHelper.LoginFacebookWithNewAccount("ron1991d@gmail.com", "qqqqqq666D");
-        authorizationHelper.LoginFacebookWithNewAccount("FB2", "passwFB2");
+        authorizationHelper.LoginFacebookWithNewAccount("FBook2", "passwFB2");
         signUpHelper.backClick();
         signUpHelper.setSignPassword("passwUniv");
         signUpHelper.genderCheckerPrefer();
@@ -397,11 +532,11 @@ public class SignUpTests extends TestBase {
                 "amountPropCards11"));
         signUpHelper.verificationDataProfileFotoDashboard();
 
-
         authorizationHelper.removeAnyAccount();
 
     }
-
+    @Features("with removing account")
+    @Stories("social")
     @Test
     public void testHeaderSignUpViaGoogle() {
         String location1 = "Zone 1";
@@ -447,6 +582,9 @@ public class SignUpTests extends TestBase {
 
     }
 
+
+    @Features("with removing account")
+    @Stories("social")
     @Test
     public void testHeaderSignUpViaLinkedLn() {
         String location1 = "Zone 1";
@@ -457,8 +595,8 @@ public class SignUpTests extends TestBase {
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
-        authorizationHelper.clickSignUp_In_WithGoogle();
-        authorizationHelper.LoginGoogleWithNewAccount("LinkedLn1New", "passwLinkedLn1New");
+        authorizationHelper.clickSignUp_In_WithLinkedLn();
+        authorizationHelper.LoginLinkedLnWithNewAccount("LinkedLn1New", "passwLinkedLn1New");
         //signUpHelper.setSignPassword("passwUniv");
         //signUpHelper.genderMaleSelect();
         //signUpHelper.clickYourInformationContinue();
@@ -491,7 +629,8 @@ public class SignUpTests extends TestBase {
         authorizationHelper.removeAnyAccount();
 
     }
-
+    @Features("with removing account")
+    @Stories("social")
     @Test
     //Facebook authorization doen`t work on staging
 
@@ -505,9 +644,9 @@ public class SignUpTests extends TestBase {
 
 
         authorizationHelper.LoginFacebookWithNewAccount("FB3", "passwFB2");
-        signUpHelper.backClick();
-        signUpHelper.setSignPassword("passwUniv");
-        signUpHelper.clickYourInformationContinue();
+        //signUpHelper.backClick();
+        //signUpHelper.setSignPassword("passwUniv");
+        //signUpHelper.clickYourInformationContinue();
 
         signUpHelper.profilePhone("03456666666");
         signUpHelper.aboutAgency("I am an agent", "About your agency");
@@ -540,10 +679,12 @@ public class SignUpTests extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-
+    @Features("with removing account")
+    @Stories("Listing flow")
     @Test
     public void testListingSignUpHeader() {
         String name = "Kron";
+        String newEmail = ConfData.getData("LiveOut2");
         //helperBase.closeOpen("http://front.idealflatmate4test.demo.devplatform2.com/");
         addPropertyHelper.bottomAddListing();
         addPropertyHelper.selectTypeUser("Live-out landlord");
@@ -558,6 +699,9 @@ public class SignUpTests extends TestBase {
         signUpHelper.profilePhone("03456666666");
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         addPropertyHelper.saveQuitHeaderMenuListing();
         closeMatchPopUp();
 
@@ -571,11 +715,13 @@ public class SignUpTests extends TestBase {
                 "amountPropCards12"));
         authorizationHelper.removeAnyAccount();
     }
-
+    @Features("with removing account")
+    @Stories("Listing flow")
     @Test
     public void testListingSignUpFromHomepage() {
         String name = "Kron";
         String age = "18";
+        String newEmail = ConfData.getData("live-In1");
 
         addPropertyHelper.pressAddListingNotLogged();
         addPropertyHelper.selectTypeUser("Live-in landlord"); //LiveInLord
@@ -592,6 +738,9 @@ public class SignUpTests extends TestBase {
         signUpHelper.aboutYourself("Tell us about yourself");
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         addPropertyHelper.saveQuitHeaderMenuListing();
         closeMatchPopUp();
 
@@ -601,7 +750,7 @@ public class SignUpTests extends TestBase {
         getAddPropertyHelper().openDropDownMenu();
         //verificationHelper.verifyProfComplMenu("80% complete");
         authorizationHelper.chooseMenu_My_profile();
-        matchingHelper.closePopupMatching();
+        closeMatchPopUp();
         verificationHelper.profileDisplays(new ProfileData("percentComplete13",  "myProfile13",
                 "name13", "age13","lookingFor13", "aboutMe13","rooms13",
                 "amountPropCards13"));

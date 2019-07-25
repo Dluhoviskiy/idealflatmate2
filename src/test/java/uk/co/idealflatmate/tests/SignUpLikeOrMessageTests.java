@@ -3,6 +3,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
 import uk.co.idealflatmate.appmanager.SearchHelper;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -43,6 +44,7 @@ public class SignUpLikeOrMessageTests extends TestBase {
         String location = "Leeds";
         String age = "60";
         //String property_id = "18868";
+        String newEmail = ConfData.getData("mes1Email");
 
         searchHelper.searchPropertyBySelectfromList(location, location);//input field, name in drop-down
         searchHelper.closePopupSignup();
@@ -118,6 +120,10 @@ public class SignUpLikeOrMessageTests extends TestBase {
         verificationHelper.profileDisplays(new ProfileData("percentComplete1",  "myProfile1",
                 "name1", "age1","lookingFor1", "aboutMe1","rooms1",
                 "amountPropCards1"));
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         verificationHelper.verificationUserNameOnHomePage(name);
 
         getAddPropertyHelper().openDropDownMenu();
@@ -164,6 +170,7 @@ public class SignUpLikeOrMessageTests extends TestBase {
         String location = "Leeds";
         String age = "19";
         String about = "Tell us about yourself";
+        String newEmail = ConfData.getData("mes2Email");
 
         homePageHelper.scrollToBlockProperty();
         sleep(2000);
@@ -199,6 +206,9 @@ public class SignUpLikeOrMessageTests extends TestBase {
         signUpHelper.selectHappyReceiveNews();
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         //signUpHelper.clickShowMeMyMatches();
         getAddPropertyHelper().openDropDownMenu();
         verificationHelper.verificationUserNameOnHomePage(name);
@@ -229,6 +239,7 @@ public class SignUpLikeOrMessageTests extends TestBase {
         String location = "Watford";
         String age = "19";
         String about = "Tell us about yourself";
+        String newEmail = ConfData.getData("mes3Email");
 
         authorizationHelper.goToPropertyPage();
 
@@ -260,6 +271,9 @@ public class SignUpLikeOrMessageTests extends TestBase {
         signUpHelper.selectMoveDate("8", "8", "2019");
         signUpHelper.selectHappyReceiveNews();
         signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         verificationHelper.verifySearchListingPage();
         getAddPropertyHelper().openDropDownMenu();

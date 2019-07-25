@@ -148,7 +148,7 @@ public class RegistrationTests extends TestBase {
         clickSignInButtonInForm();
         authorizationHelper.clickSignUp_In_WithLinkedLn();
         authorizationHelper.LoginLinkedLnWithActiveAccount("LinkedLn1","passwLinkedLn1");
-        verificationHelper.verificationUserNameOnHomePage("Met Daimon");
+        verificationHelper.verificationUserNameOnHomePage("Met");
         authorizationHelper.logoutFromApp();
         verificationHelper.verificationUserIsUnlogged("Join Free");
 

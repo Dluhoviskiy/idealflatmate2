@@ -2,6 +2,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
+import utils.ConfData;
 
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
@@ -31,6 +32,7 @@ public class SignUpMatchingTests extends TestBase {
         String name = "Ronaldina";
         String location = "Watford";
         String age = "42";
+        String newEmail = ConfData.getData("FMMatch5");
 
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName(name);
@@ -64,6 +66,9 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.selectHappyReceiveNews();
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         //signUpHelper.clickShowMeMyMatches();
         verificationHelper.verifySearchListingPageMatching();
 
@@ -86,7 +91,7 @@ public class SignUpMatchingTests extends TestBase {
 
     @Test
     public void testSignUpMatchingWithRequiredFieldsFMRoom() {
-
+        String newEmail = ConfData.getData("FMMatch4");
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         //matchingHelper.clickARoom();
@@ -100,6 +105,9 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                     "Tell us about yourself", "Professional", "Other");
 
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
         //signUpHelper.clickListYourRoomMatching();
         //addPropertyHelper.saveQuitHeaderMenuListing();
         addPropertyHelper.chooseListingsFromDropDownMenu();
@@ -116,7 +124,7 @@ public class SignUpMatchingTests extends TestBase {
 
     @Test
     public void testSignUpMatchingWithRequiredFieldsFMRoomSearchFM() {
-
+        String newEmail = ConfData.getData("FMMatch6");
         matchingHelper.clickHomePageMatching();
         matchingHelper.enterFirstName("Donald");
         //matchingHelper.clickARoom();
@@ -130,6 +138,9 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                      "Tell us about yourself", "Professional", "Other");
 
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
         //signUpHelper.clickSearchFMMatching();
         verificationHelper.verifySearchFMPage();
         //verificationHelper.verifyAddListingPage();

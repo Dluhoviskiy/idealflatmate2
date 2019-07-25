@@ -27,4 +27,5 @@ target
 *.tar.gz
 *.rar
 *.class
+*.target
 

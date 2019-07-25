@@ -4,6 +4,7 @@ package uk.co.idealflatmate.appmanager;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import ru.yandex.qatools.allure.annotations.Step;
 import utils.ConfData;
 
 import java.io.File;
@@ -77,7 +78,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
 
 
 
-
+    @Step
     public void logoutFromApp() {
         refresh();
         sleep(2000);
@@ -85,7 +86,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         item_header_drop_Logout.waitUntil(visible, 1000).click();
 
     }
-
+    @Step
     public AuthorHeaderMenuHelper logoutFromApp1() {
         refresh();
         sleep(2000);
@@ -93,26 +94,26 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         item_header_drop_Logout1.waitUntil(visible, 1000).click();
         return page(AuthorHeaderMenuHelper.class);
     }
-
+    @Step
     public void tabHeaderUserName() {
         clickAfterWaitVisible(tab_header_Username, 10000);
     }
-
+    @Step
     public void goToPropertyPage() {
         tab_header_FindHome.waitUntil(appears, 1000).hover();
         sleep(1000);
         tab_header_AllProperties.waitUntil(appears, 1000).click();
     }
-
+    @Step
     public void goToFMpage() {
         tab_header_GoFMPage.waitUntil(appears, 1000).click();
      }
-
+    @Step
     public void submitLogin() {
         button_popup_login_Submit.click();
         sleep(1000);
     }
-
+    @Step
     public void LoginFacebookWithActiveAccount(String email, String password) {
         sleep(2000);
         field_fb_Email.setValue(email);
@@ -122,13 +123,13 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     }
 
 
-
+    @Step
     public void LoginFacebookWithNewAccount(String confEmail, String confPassword) {
         sleep(2000);
         field_fb_Email.setValue(ConfData.getData(confEmail));
         field_fb_Password.setValue(ConfData.getData(confPassword)).pressEnter();
     }
-
+    @Step
     public void LoginGoogleWithNewAccount(String confEmail, String confPassword) {
         sleep(2000);
         field_G_Email.setValue(ConfData.getData(confEmail));
@@ -145,37 +146,55 @@ public class AuthorHeaderMenuHelper extends HelperBase {
 
     }
 
+    @Step
+    public void LoginLinkedLnWithNewAccount(String confEmail, String confPassword) {
+        sleep(2000);
+        field_LinledLn_Email.setValue(ConfData.getData(confEmail));
+        field_L_Password.setValue(ConfData.getData(confPassword));
+        button_L_Password_next.click();
+        sleep(2000);
+        /*if(button_G_allow_birth.exists()){
+            sleep(1000);
+            button_G_allow_birth.click();
+            sleep(1000);
+            button_G_allow_birth2.click();
+        }*/
+
+    }
+    @Step
     public void LoginLinkedLnWithActiveAccount(String confEmail, String confPassword) {
         sleep(2000);
         field_LinledLn_Email.setValue(ConfData.getData(confEmail));
         field_L_Password.setValue(ConfData.getData(confPassword));
         button_L_Password_next.click();
     }
-
+    @Step
     public void clickSignUp_In_WithFacebook() {
         clickAfterWaitVisible(button_popup_FB, 4000);
 
     }
 
 
-
+    @Step
     public void clickSignUp_In_WithGoogle() {
         clickAfterWaitVisible(button_popup_Google, 4000);
     }
+    @Step
     public void clickSignUp_In_WithLinkedLn() {
         clickAfterWaitVisible(button_popup_LinkedLn, 4000);
     }
 
+    @Step("Verifying Join on Free button")
     public void clickJoinFreeButton() {
         tab_header_JoinFree.click();
     }
-
+    @Step
     public void removeAccount() {
         button_listing_Remove.waitUntil(appears, 4000).click();
         confirm(" Are you sure you want to  fully delete the account? The account can not be restored after this.");
         sleep(2000);
     }
-
+    @Step
     public void removeAccountBeforeTest() {
         sleep(1000);
         if(notif_incorrect_EmailPassword.exists()){
@@ -184,68 +203,68 @@ public class AuthorHeaderMenuHelper extends HelperBase {
             removeAnyAccount();
         }
     }
-
+    @Step
     public static void clickSignInButtonInForm() {
         //clickAfterWaitVisible(link_SignIn, 10000);
         link_SignIn.waitUntil(visible, 10000).click();
     }
-
+    @Step
     public static void clickLogInButtonInForm() {
         link_LogIn.waitUntil(visible, 10000).click();
     }
 
 
-
+    @Step
     public void clickSignInButtonInPopup() {
         sleep(2000);
         hoverClick1(popup_SignIn);
 
     }
-
+    @Step
     public void clickSignInButtonInPopupPhone() {
         sleep(2000);
         popup_SignIn_phone.waitUntil(visible, 1000).hover().click();
     }
-
+    @Step
     public void chooseMenu_My_profile() {
         clickAfterWaitVisible(drop_Menu_My_profile, 5000);
     }
-
+    @Step
     public void chooseTabFromInnerMenuDashboard(final String item) {
         $(byXpath(tab_inner_header1 + item + tab_inner_header2)).click();
     }
-
+    @Step
     public void clickClosePopupSignUp() {
-        sleep(5000);
+        sleep(1000);
         if (popup_button_close_SignUp.isDisplayed()){
             popup_button_close_SignUp.click();
         }else {}
     }
-
+    @Step
     public void FindHomeInMenu() {
         tab_header_FindHome.waitUntil(appears, 1000).click();
     }
-
+    @Step
     public void headerLogin() {
         tab_header_Login.waitUntil(appears, 1000).click();
     }
-
+    @Step
     public void setLoginAsUserWithoutPackage(String confEmail) {
         fillInField(ConfData.getData(confEmail), field_login_Username);
     }
-
+    @Step
     public void setLoginAsUserWithoutPackage1(String confEmail) {
         fillInField(confEmail, field_login_Username);
     }
-
+    @Step
     public void setPassword1(String confPassword) {
         field_login_Password.waitUntil(visible, 1000).setValue(confPassword);
     }
-
+    @Step
     public void setPassword(String confPassword) {
        field_login_Password.waitUntil(visible, 1000).setValue(ConfData.getData(confPassword));
     }
-
+    @Step
     public void login(String confPassword, String confEmail){
         clickJoinFreeButton();
         clickSignInButtonInForm();
@@ -253,23 +272,23 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         submitLogin();
     }
 
-
+    @Step
     public void loginMessage(String confEmail, String confPassword) {
         login(confPassword, confEmail);
         closeListRenewPopUp();
         closeMatchPopUp();
     }
-
+    @Step
     public void login2(String confEmail, String confPassword) {
         setLoginAsUserWithoutPackage(confEmail);
         setPassword(confPassword);
     }
-
+    @Step
     public void loginTest1(String UserName, String Password) {
         setLoginAsUserWithoutPackage1(UserName);
         setPassword1(Password);
     }
-
+    @Step
     public void removeAnyAccount() {
         closeListRenewPopUp();
         closeMatchPopUp();
@@ -283,32 +302,43 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
 
+    @Step
+    public void chooseSettingsMenu() {
+        closeListRenewPopUp();
+        closeMatchPopUp();
+        addPropertyHelper.openDropDownMenu();
+        //verificationHelper.verifyProfComplMenu("70% complete");
+        chooseMenu_My_profile();
+        chooseTabFromInnerMenuDashboard("Settings");
+
+    }
+    @Step
     public void loginBuddy_up(String confPassword, String confEmail){
 
         login2(confEmail,confPassword);
         submitLogin();
     }
-
+    @Step
     public void loginHeader1(String Password, String UserName){
         open("http://front.idealflatmate4test.demo.devplatform2.com/auth/login");
         loginTest1(UserName,Password);
         submitLogin();
     }
-
+    @Step
     public void loginHeader2(String confPassword, String confEmail){
         pageUrlVerifStageGoLive();
         headerLogin();
         loginTest1(confEmail,confPassword);
         submitLogin();
     }
-
+    @Step
     public void checkResetEmail(String confEmail) {
         reset.click();
         fillInField(ConfData.getData(confEmail), $(field_reset_Email));
         $(byXpath(button_submit_Reset)).click();
 
     }
-
+    @Step("click and change profile")
     public void changeProfile() {
         clickEditProfile.click();
         clickAfterWaitVisible($(byXpath("//h2[contains(.,'Profile Picture')]")), 3000);
@@ -333,7 +363,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
         $(byXpath("//select[@id='flatmate_gender']")).selectOptionByValue("2");
         $(byXpath("//a[@href='#section3' or contains(.,'Property Preferences')]")).click();
     }
-
+    @Step
     public String getDateMoveIn() {
         String s =  $(byXpath("//select[@id='userspace-move_in_date']/option[contains(.,'January (2020)')]")).getValue();
         //newMoveInDate.toCharArray();

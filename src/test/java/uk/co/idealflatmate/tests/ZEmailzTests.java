@@ -16,14 +16,7 @@ public class ZEmailzTests extends TestBase {
 
     @Test
     public void zSuccesEmailReceivingWelcomeListingMessageSubscriptionCancSub() {
-        emailHelper.openGmailPage();
-        emailHelper.setLoginAsUserEmail("cro.gen.idealflatmate@gmail.com");
-        emailHelper.setLoginAsUserPassword("qqqqqq666D");
-        //emailHelper.enterEmail();
-        emailHelper.enterInbox();
-        //emailHelper.verificationWelcome();
-        //emailHelper.verificationListingisLive();
-       // emailHelper.verificationMessage();
+        emailHelper.enterGmail("cro.gen.idealflatmate@gmail.com", "qqqqqq666D");
         emailHelper.tipCheckboxWelcome();
         emailHelper.tipCheckboxListingisLive();
 
@@ -47,4 +40,6 @@ public class ZEmailzTests extends TestBase {
         //emailHelper.verificationNoMessageEmail("You have a new message!");
 
     }
+
+
 }

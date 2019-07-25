@@ -2,6 +2,7 @@ package uk.co.idealflatmate.appmanager;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import static uk.co.idealflatmate.tests.TestBase.newPage;
 
 
 public class HelperBase  {
-
+    @Step
     public static void closeAdvPopUp() {
         PopUpHelper popUpHelper = new PopUpHelper();
         String needSpace = popUpHelper.closeAdvPopup;
@@ -31,7 +32,7 @@ public class HelperBase  {
         }
 
     }
-
+    @Step
     public static void closeListRenewPopUp() {
         PopUpHelper popUpHelper = new PopUpHelper();
         String buttonRenew = popUpHelper.closeRenewPopup;
@@ -40,12 +41,12 @@ public class HelperBase  {
             $(byXpath(buttonRenew)).waitUntil(visible, 2000).click();
         }
     }
-
+    @Step
     public static void propertySortBy(String value) {
         SearchHelper searchHelper = new SearchHelper();
         $(searchHelper.sortProperty).waitUntil(visible, 5000).selectOptionContainingText(value);
     }
-
+    @Step
     public static void closeMatchPopUp() {
         PopUpHelper popUpHelper = new PopUpHelper();
         SelenideElement buttonMatch = $(byXpath(popUpHelper.closeMatching));
@@ -54,27 +55,28 @@ public class HelperBase  {
             buttonMatch.waitUntil(visible, 3000).click();
         }
     }
+    @Step
     public static void noCloseMatchPopUp() {
         PopUpHelper popUpHelper = new PopUpHelper();
         SelenideElement buttonMatch = $(byXpath(popUpHelper.closeMatching));
         buttonMatch.shouldNotBe(visible);
 
     }
-
+    @Step
     public static void closeButtonRenew() {
         $(byXpath("(//button[@aria-label='Close'])[2]")).click();
     }
-
+    @Step
     public static List<String> getFMcardSearchText() {
         return $$(byXpath("//div[@class='card-profile-text']")).texts();
     }
-
+    @Step
     public static List<String> getCardUserType() {
         $(byXpath("(//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted'])[1]")).waitUntil(visible, 10000);
         return $$(byXpath("//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted']")).texts();
 
     }
-
+    @Step
     public static SelenideElement setCardUserType() {
 
         return $(byXpath("(//div[@class='card-profile-text']/span[@class='card-top-username u_ed-block text-11 text-muted'])[1]"));
@@ -113,8 +115,8 @@ public class HelperBase  {
 
 
     public void gmailLogin(String text, String field, String next) {
-        $(byXpath(field)).waitUntil(appears, 4000).click();
-        $(byXpath(field)).waitUntil(appears, 4000);
+        $(byXpath(field)).waitUntil(appears, 10000).click();
+        $(byXpath(field)).waitUntil(appears, 10000);
         $(byXpath(field)).shouldBe(visible);
         $(byXpath(field)).setValue(text);
         $(byXpath(next)).click();

@@ -85,7 +85,7 @@ public class Buddy_upTests extends TestBase {
 
         authorizationHelper.login("passwUniv", "agentBuddyUp");
         verificationHelper.verificationUserNameOnHomePage("Ronald");
-        matchingHelper.closePopupMatching();
+        closeMatchPopUp();
         addPropertyHelper.closeRenewPopup();
 
         //getAddPropertyHelper().openDropDownMenu();

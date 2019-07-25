@@ -1,20 +1,19 @@
 package uk.co.idealflatmate.appmanager;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchHelperFM extends HelperBase {
 
-
+    @Step
     public void clickMoreFilterVerify(String About, String AboutProp) {
 
         SelenideElement checkBox = $(byXpath("//label[@for='no-photo']/../input"));
@@ -38,7 +37,7 @@ public class SearchHelperFM extends HelperBase {
         clickClose();
 
     }
-
+    @Step
     public void clickMoreFilterVerifyPhotoNoListing(String About) {
 
         SelenideElement checkBox = $(byXpath("//label[@for='no-photo']/../input"));
@@ -72,7 +71,7 @@ public class SearchHelperFM extends HelperBase {
         clickClose();
 
     }
-
+    @Step
     public void clickMoreFilterVerifyPhotoListing(String About, String AboutProp) {
 
         SelenideElement checkBox = $(byXpath("//label[@for='no-photo']/../input"));
@@ -114,7 +113,7 @@ public class SearchHelperFM extends HelperBase {
         clickClose();
 
     }
-
+    @Step
     public void activeGender(String gender) {
         SelenideElement genderAct = $(By.xpath("//div[@class='gender-filter ']"));
         SelenideElement genderActive = $(By.xpath("//div[@class='gender-filter selected']"));
@@ -143,7 +142,7 @@ public class SearchHelperFM extends HelperBase {
         clickApply();
 
     }
-
+    @Step
     public void activeAgeFM() {
 
         List<String> noAge = getFMcardSearchText();
@@ -162,7 +161,7 @@ public class SearchHelperFM extends HelperBase {
         activeAge();
 
     }
-
+    @Step
     public void activeOccupationFM(String occupation) {
         SelenideElement occupationAct = $(By.xpath("//div[@class='occupation-flatmate-filter ']"));
         SelenideElement occupationActive = $(By.xpath("//div[@class='occupation-flatmate-filter selected']"));
@@ -191,17 +190,17 @@ public class SearchHelperFM extends HelperBase {
         occupSelect.click();
         clickApply();
     }
-
+    @Step
     public void verifSearchHasNoLocationFM(String location) {
         sleep(3000);
         $(byXpath("//div[@class='container']//input")).shouldNotHave(value(location));
     }
-
+    @Step
     public void verifSearchHasLocationFM(String location) {
 
         $(byXpath("//div[@class='container']//input")).waitUntil(visible, 15000).shouldHave(value(location));
     }
-
+    @Step
     public static void activeAge() {
         SignUpHelper signUpHelper = new SignUpHelper();
 
@@ -210,22 +209,22 @@ public class SearchHelperFM extends HelperBase {
         $(byXpath(signUpHelper.dragUpper)).dragAndDropTo($(byXpath("//span[contains(.,'Apply')]")));
         clickApply();
     }
-
+    @Step
     public static void clearFilter() {
         sleep(2000);
         $(byXpath("//span[contains(.,'Clear')]")).click();
 
     }
-
+    @Step
     public static void clickApply() {
         $(byXpath("//span[contains(.,'Apply')]")).click();
 
     }
-
+    @Step
     public void verifyMoreFilterActive() {
         $(By.xpath("//div[@class='flatmate-type-filter selected']//span[@class='active-filters-count']")).shouldBe(exist);
     }
-
+    @Step
     private void clickClose() {
         $(By.xpath("//div[@class='flatmate-type-filter  opened ']")).click();
     }

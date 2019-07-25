@@ -3,9 +3,13 @@ package uk.co.idealflatmate.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 import uk.co.idealflatmate.appmanager.ProfileData;
+import utils.ConfData;
 
 import static com.codeborne.selenide.Condition.checked;
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.AddPropertyHelper.roomAmountIs;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
@@ -21,8 +25,10 @@ public class bListingbTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
+        clearBrowserCookies();
     }
-
+    @Features("Listing")
+    @Stories("login")
     @Test
     public void loginStartListing() {
 
@@ -52,7 +58,8 @@ public class bListingbTests extends TestBase {
 
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-
+    @Features("Listing")
+    @Stories("pending")
     @Test
     public void loginPendingListing() {
         authorizationHelper.login("passwUniv","userNotpaid");
@@ -88,7 +95,8 @@ public class bListingbTests extends TestBase {
         verificationHelper.verificationUserIsUnlogged("Join Free");
 
     }
-
+    @Features("Listing")
+    @Stories("change")
     @Test
     public void houseFeaturesListing() {
         authorizationHelper.login("passwUniv","agentNotpaid1");
@@ -141,16 +149,20 @@ public class bListingbTests extends TestBase {
         removeListing();
 
     }
-
-
+    @Features("Listing")
+    @Stories("sign up")
     @Test
     public void signUpPropertyAdding() {
+        String newEmail = ConfData.getData("agentRemoved");
 
         addPropertyHelper.pressAddListingFromHeaderNotLoggedUser()
                          .selectTypeUser("An agency");
 
         signUpHelper.agentSignListing("Ronald", "agentRemoved", "passwUniv",
                                       "07399042641", "Tell us about yourself");
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         addPropertyHelper.saveQuitHeaderMenuListing()
                          .chooseListingsFromDropDownMenu();
@@ -174,15 +186,14 @@ public class bListingbTests extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
-
-
-
+    @Features("Listing")
+    @Stories("new")
     @Test
     public void propertyAddWithAllFields() {
 
         authorizationHelper.login("passwUniv", "agentNotPaid");
 
-        matchingHelper.closePopupMatching();
+        closeMatchPopUp();
         addPropertyHelper.closeRenewPopup();
 
         //getAddPropertyHelper().openDropDownMenu();
@@ -203,12 +214,13 @@ public class bListingbTests extends TestBase {
 
         removeListing();
     }
-
+    @Features("Listing")
+    @Stories("new")
     @Test
     public void propertyEditAllFieldsAbout() {
 
         authorizationHelper.login("passwUniv", "agentEdit");
-        matchingHelper.closePopupMatching();
+        closeMatchPopUp();
         addPropertyHelper.closeRenewPopup()
                          .chooseListingsFromDropDownMenu()
                          .viewListing();
@@ -263,7 +275,8 @@ public class bListingbTests extends TestBase {
 
         authorizationHelper.logoutFromApp();
     }
-
+    @Features("Listing")
+    @Stories("change")
     @Test
     public void propertyDeactivateRooms() {
 
@@ -276,7 +289,7 @@ public class bListingbTests extends TestBase {
 
 
         authorizationHelper.login("passwUniv", "agentDeactivateRoom");
-        matchingHelper.closePopupMatching();
+        closeMatchPopUp();
         addPropertyHelper.closeRenewPopup();
 
         getAddPropertyHelper().chooseListingsFromDropDownMenu();
@@ -384,7 +397,8 @@ public class bListingbTests extends TestBase {
 
         authorizationHelper.logoutFromApp();
     }
-
+    @Features("Listing")
+    @Stories("change")
     @Test
     public void propertyEditRooms() {
         String idRoom = "24324";
@@ -399,7 +413,7 @@ public class bListingbTests extends TestBase {
 
         authorizationHelper.login("passwUniv", "agentEditRoom");
 
-        matchingHelper.closePopupMatching();
+        closeMatchPopUp();
         addPropertyHelper.closeRenewPopup();
 
         //getAddPropertyHelper().openDropDownMenu();
@@ -445,7 +459,8 @@ public class bListingbTests extends TestBase {
 
         authorizationHelper.logoutFromApp();
     }
-
+    @Features("Listing")
+    @Stories("change")
     @Test
     public void propertyAddRooms() {
 
@@ -455,7 +470,7 @@ public class bListingbTests extends TestBase {
 
         sleep(2000);
         addPropertyHelper.closeRenewPopup();
-        matchingHelper.closePopupMatching();
+        closeMatchPopUp();
 
 
         //getAddPropertyHelper().openDropDownMenu();
@@ -532,9 +547,8 @@ public class bListingbTests extends TestBase {
 
         authorizationHelper.logoutFromApp();
     }
-
-
-
+    @Features("Listing")
+    @Stories("new")
     @Test
     public void titleListing() {
 

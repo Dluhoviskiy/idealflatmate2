@@ -62,7 +62,7 @@ public class ACleanaTests extends TestBase {
 
     @Parameters ({ "confEmail", "confPassword" })
     @Test
-    @Step
+    @Step()
     public void removeAccountBeforeTestLive(@Optional("qqqqqq") String confPassword,@Optional("proideal@ukr.net") String confEmail) {
         clearBrowserCookies();
         authorizationHelper.loginHeader2(confEmail, confPassword);

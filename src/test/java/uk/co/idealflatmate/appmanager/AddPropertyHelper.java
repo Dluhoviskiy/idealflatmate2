@@ -626,7 +626,8 @@ public class AddPropertyHelper extends HelperBase {
     @Step
     public AddPropertyHelper clickEdit() {
         $(byXpath(button_listingEdit)).click();
-        scrollDownPageOn("600");
+        scrollDownPageOn("700");
+        sleep(1000);
         return this;
     }
 
@@ -834,7 +835,9 @@ public class AddPropertyHelper extends HelperBase {
     @Step
     public AddPropertyHelper clickRoomsSection() {
          scrollUpPage("-300");
-         $(byXpath(room__listing_block)).waitUntil(visible, 5000).click();
+        sleep(1000);
+        $(byXpath(room__listing_block)).waitUntil(visible, 5000).click();
+        sleep(1000);
         return this;
     }
     @Step
@@ -856,8 +859,11 @@ public class AddPropertyHelper extends HelperBase {
     @Step
     public AddPropertyHelper changeWholeToRoomOfProperty() {
         checkerPropertyWhole();
+        sleep(1000);
         $(byXpath(click_Room_separatly)).waitUntil(visible, 5000).click();
+        sleep(1000);
         $(byXpath(click_Room_only_accept)).waitUntil(visible, 5000).click();
+        sleep(1000);
         checkerPropertyRoomOnly();
 
         return this;

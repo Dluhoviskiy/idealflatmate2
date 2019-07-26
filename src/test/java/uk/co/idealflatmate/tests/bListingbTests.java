@@ -1,4 +1,4 @@
-package uk.co.idealflatmate.tests.listing;
+package uk.co.idealflatmate.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 import uk.co.idealflatmate.appmanager.ProfileData;
-import uk.co.idealflatmate.tests.TestBase;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Condition.checked;
@@ -19,7 +18,7 @@ import static uk.co.idealflatmate.appmanager.SearchHelper.getNumberOfListingFoun
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.AddPropertyHelper.monthAvailableFrom;
 
-public class bListingbTests1 extends TestBase {
+public class bListingbTests extends TestBase {
 
     @BeforeMethod
 

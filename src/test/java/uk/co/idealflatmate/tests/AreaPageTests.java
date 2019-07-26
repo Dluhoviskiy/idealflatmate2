@@ -1,4 +1,4 @@
-package uk.co.idealflatmate.tests.area;
+package uk.co.idealflatmate.tests;
 
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
-import uk.co.idealflatmate.tests.TestBase;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;

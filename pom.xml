@@ -17,6 +17,22 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
 
+        <suiteXmlFile>testMes.xml</suiteXmlFile>
+        <suiteXmlFile>testClear.xml</suiteXmlFile>
+        <suiteXmlFile>testArea.xml</suiteXmlFile>
+        <suiteXmlFile>testList.xml</suiteXmlFile>
+        <suiteXmlFile>testFooter.xml</suiteXmlFile>
+        <suiteXmlFile>testMatching.xml</suiteXmlFile>
+        <suiteXmlFile>testPayment.xml</suiteXmlFile>
+        <suiteXmlFile>testRegist.xml</suiteXmlFile>
+        <suiteXmlFile>testSearchFM.xml</suiteXmlFile>
+        <suiteXmlFile>testSearchFMHome.xml</suiteXmlFile>
+        <suiteXmlFile>testProp.xml</suiteXmlFile>
+        <suiteXmlFile>testSignLike.xml</suiteXmlFile>
+        <suiteXmlFile>testSignMatch.xml</suiteXmlFile>
+        <suiteXmlFile>testSign.xml</suiteXmlFile>
+        <suiteXmlFile>testEmail.xml</suiteXmlFile>
+
     </properties>
 
     <dependencies>
@@ -103,6 +119,7 @@
     </dependencies>
 
     <build>
+
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -168,6 +185,11 @@
                 <configuration>
 
 
+
+
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <systemPropertyVariables>
                         <WSNSHELL_HOME>myVariable</WSNSHELL_HOME>
                     </systemPropertyVariables>
@@ -178,16 +200,40 @@
                         <suiteXmlFile>/testNG.xml</suiteXmlFile>
 
                     </suiteXmlFiles>-->
-                    <!--
-                    <suiteXmlFiles>
-                        <suiteXmlFile>\src\test\resources\${suite}.xml</suiteXmlFile>
 
-                    </suiteXmlFiles>
+
+
                     <properties>
 
-                        <suiteXmlFile>src/test/resources/testXml1.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testXml2.xml</suiteXmlFile>
-                    </properties>-->
+                        <!--
+                        src/test/resources/
+                        <suiteXmlFile>testNG.xml</suiteXmlFile>
+
+
+
+                        <properties>
+                            <suiteXml>testClear.xml</suiteXml>
+                        </properties>
+                        <suiteXmlFile>testMes.xml</suiteXmlFile>
+                        <suiteXmlFile>testClear.xml</suiteXmlFile>
+                        <suiteXmlFile>testArea.xml</suiteXmlFile>
+                        <suiteXmlFile>testList.xml</suiteXmlFile>
+                        <suiteXmlFile>testFooter.xml</suiteXmlFile>
+                        <suiteXmlFile>testMatching.xml</suiteXmlFile>
+                        <suiteXmlFile>testPayment.xml</suiteXmlFile>
+                        <suiteXmlFile>testRegist.xml</suiteXmlFile>
+                        <suiteXmlFile>testSearchFM.xml</suiteXmlFile>
+                        <suiteXmlFile>testSearchFMHome.xml</suiteXmlFile>
+                        <suiteXmlFile>testProp.xml</suiteXmlFile>
+                        <suiteXmlFile>testSignLike.xml</suiteXmlFile>
+                        <suiteXmlFile>testSignMatch.xml</suiteXmlFile>
+                        <suiteXmlFile>testSign.xml</suiteXmlFile>
+                        <suiteXmlFile>testEmail.xml</suiteXmlFile>
+
+                        -->
+
+
+                    </properties>
 
 
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>

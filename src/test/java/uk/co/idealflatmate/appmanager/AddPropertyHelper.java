@@ -911,7 +911,7 @@ public class AddPropertyHelper extends HelperBase {
     }
     @Step
     public AddPropertyHelper saveQuitHeaderMenuListing() {
-
+        sleep(1000);
         $(byXpath(tab_header_quit)).waitUntil(visible, 15000).click();
         //$(byXpath("//header//ul[@class='nav navbar-right']/a")).click();
         return this;

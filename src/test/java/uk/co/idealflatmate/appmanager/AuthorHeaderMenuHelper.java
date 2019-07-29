@@ -165,7 +165,9 @@ public class AuthorHeaderMenuHelper extends HelperBase {
     public void LoginLinkedLnWithActiveAccount(String confEmail, String confPassword) {
         sleep(2000);
         field_LinledLn_Email.setValue(ConfData.getData(confEmail));
+        sleep(1000);
         field_L_Password.setValue(ConfData.getData(confPassword));
+        sleep(1000);
         button_L_Password_next.click();
     }
     @Step
@@ -186,7 +188,7 @@ public class AuthorHeaderMenuHelper extends HelperBase {
 
     @Step("Verifying Join on Free button")
     public void clickJoinFreeButton() {
-        tab_header_JoinFree.click();
+        tab_header_JoinFree.waitUntil(visible, 5000).click();
     }
     @Step
     public void removeAccount() {

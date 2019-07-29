@@ -3,46 +3,131 @@
 
 <suite name="idealflatmatetest2" verbose="5">
 
-        <test name="Test1">
-
-
+    <test name="clean">
         <classes>
-            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
-            <class name="uk.co.idealflatmate.tests.AddListingTests" />
-            <class name="uk.co.idealflatmate.tests.AreaPageTests" />
-            <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
-            <class name="uk.co.idealflatmate.tests.testFooterTests" />
-            <class name="uk.co.idealflatmate.tests.testHomePageTests" />
-            <class name="uk.co.idealflatmate.tests.MatchingTests" />
-            <class name="uk.co.idealflatmate.tests.MessagesTests" />
-            <class name="uk.co.idealflatmate.tests.PaymentTests" />
-            <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
-            <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
-            <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
-            <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessageTests" />
-            <class name="uk.co.idealflatmate.tests.SignUpMatchingTests" />
-            <class name="uk.co.idealflatmate.tests.SignUpTests"/>
-            <class name="uk.co.idealflatmate.tests.ZEmailTests" />
-
+            <class name="uk.co.idealflatmate.tests.ACleanaTests" />
         </classes>
+    </test>
+<!--
+    <test name="listing">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.bListingbTests" />
+        </classes>
+    </test>
+
+    <test name="area">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.AreaPageTests" />
+        </classes>
+    </test>
+
+    <test name="registration">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.RegistrationTests" />
+        </classes>
+    </test>
+
+    <test name="footer">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.FooterTests" />
+        </classes>
+    </test>
+
+    <test name="home">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.testHomePageTests" />
+        </classes>
+    </test>
+
+    <test name="matching">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.MatchingTests" />
+        </classes>
+    </test>
+
+    <test name="message">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.MessagesTests" />
+        </classes>
+    </test>
+
+    <test name="payment">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.PaymentTests" />
+        </classes>
+    </test>
+
+    <test name="searchFM">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
+        </classes>
+    </test>
+
+
+    <test name="searchHome">
+    <classes>
+        <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
+    </classes>
+</test>
+
+    <test name="searchProperties">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
+        </classes>
+    </test>
+
+    <test name="signLike">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessageTests" />
+        </classes>
+    </test>
+
+    <test name="signMatching">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.SignUpMatchingTests" />
+        </classes>
+    </test>
+
+    <test name="signUp">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.SignUpTests"/>
+        </classes>
+    </test>
+-->
+    <test name="email">
+        <classes>
+            <class name="uk.co.idealflatmate.tests.ZEmailzTests" />
+        </classes>
+    </test>
+
+
+
+
+
+    <!--
+    <test name="registration">
+                <classes>
+                    <class name="uk.co.idealflatmate.tests.ACleanaTests" />
+                    <class name="uk.co.idealflatmate.tests.bListingbTests" />
+                    <class name="uk.co.idealflatmate.tests.AreaPageTests" />
+                    <class name="uk.co.idealflatmate.tests.RegistrationTests" />
+                    <class name="uk.co.idealflatmate.tests.FooterTests" />
+                    <class name="uk.co.idealflatmate.tests.testHomePageTests" />
+                    <class name="uk.co.idealflatmate.tests.MatchingTests" />
+                    <class name="uk.co.idealflatmate.tests.MessagesTests" />
+                    <class name="uk.co.idealflatmate.tests.PaymentTests" />
+                    <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
+                    <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
+                    <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
+                    <class name="uk.co.idealflatmate.tests.SignUpLikeOrMessageTests" />
+                    <class name="uk.co.idealflatmate.tests.SignUpMatchingTests" />
+                    <class name="uk.co.idealflatmate.tests.SignUpTests"/>
+                    <class name="uk.co.idealflatmate.tests.ZEmailzTests" />
+
+                </classes>
 
 
         </test>
-    <!--
-    <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
-            <class name="uk.co.idealflatmate.tests.AddListingTests" />
-             <class name="uk.co.idealflatmate.tests.AreaPageTests" />
-            <class name="uk.co.idealflatmate.tests.AuthorizationTests" />
-             <class name="uk.co.idealflatmate.tests.testFooterTests" />
-             <class name="uk.co.idealflatmate.tests.testHomePageTests" />
-             <class name="uk.co.idealflatmate.tests.MatchingTests" />
-             <class name="uk.co.idealflatmate.tests.MessagesTests" />
-             <class name="uk.co.idealflatmate.tests.PaymentTests" />
-             <class name="uk.co.idealflatmate.tests.SearchFMPageTests" />
-             <class name="uk.co.idealflatmate.tests.SearchHomePageTests" />
-             <class name="uk.co.idealflatmate.tests.SearchPropertiesPageTests" />
-            <class name="uk.co.idealflatmate.tests.ZEmailTests" />
-
 
         <test name="Test2">
 
@@ -50,7 +135,7 @@
             <parameter name="confEmail" value="proideal@ukr.net"/>
             <parameter name="confPassword" value="qqqqqq666D"/>
             <classes>
-            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+            <class name="uk.co.idealflatmate.tests.ACleanaTests" />
             </classes>
         </test>
     <test name="Test3">
@@ -59,12 +144,12 @@
         <parameter name="confEmail" value="ron666ddd@gmail.com"/>
         <parameter name="confPassword" value="qqqqqq666D"/>
         <classes>
-            <class name="uk.co.idealflatmate.tests.AbclearDataTests" />
+            <class name="uk.co.idealflatmate.tests.ACleanaTests" />
         </classes>
     </test>-->
     <!--<test name="Test2">
         <classes>
-            <class name="uk.co.idealflatmate.tests.testFooterTests">
+            <class name="uk.co.idealflatmate.tests.FooterTests">
                 <methods>
                     <include name="footerInstagramLink" />
                     <include name="footerTwitterLink" />
@@ -82,5 +167,5 @@
 
 
 
+</suite>
 
-    </suite>

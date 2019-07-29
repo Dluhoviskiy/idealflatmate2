@@ -3,9 +3,9 @@ package uk.co.idealflatmate.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utils.ConfData;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
@@ -19,7 +19,7 @@ public class MatchingTests extends TestBase {
 
     @Test
     public void fullMenuNewUserWithVerifPercent() {
-
+        String newEmail = ConfData.getData("fmMatch");
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickRoom();
 
@@ -34,6 +34,11 @@ public class MatchingTests extends TestBase {
         //signUpHelper.budgetMax();
         signUpHelper.verifyToMoveCheckboxDisabled();
         signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         verificationHelper.verificationUserNameOnHomePage("Ronaldina");
 

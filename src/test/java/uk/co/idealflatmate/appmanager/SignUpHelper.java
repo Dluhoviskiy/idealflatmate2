@@ -21,6 +21,7 @@ public class SignUpHelper extends HelperBase {
     public SelenideElement link_conf_sendAgain = $(byXpath("//a[contains(.,'Click here to send again')]"));
     public SelenideElement buttonSubmitSendConf = $(byXpath("//button[@class='confirm']"));
     public SelenideElement link_conf_change = $(byXpath("//a[@href='#edit-email']"));
+    public SelenideElement emailInput = $(byXpath("//input[contains(@id,'-email')]"));
 
     @Step
     public void clickRoom() {
@@ -60,7 +61,8 @@ public class SignUpHelper extends HelperBase {
     }
     @Step
     public void genderFemaleSelectMessage() {
-        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-gender required']/div[1]/label[contains(text(), 'Female')]")).click();
+        sleep(1000);
+        $(byXpath("//div[@class='form-group field-yourinfoadditionalsignupform-gender required']/div[1]/label[contains(text(), 'Female')]")).waitUntil(visible, 5000).click();
     }
     @Step
     public void genderMaleSelectAfterBlank() {
@@ -79,11 +81,12 @@ public class SignUpHelper extends HelperBase {
     }
     @Step
     public void setSignEmail(String confEmail) {
-        fillInField(ConfData.getData(confEmail), $(byXpath("//input[contains(@id,'-email')]")));
+        fillInField(ConfData.getData(confEmail), emailInput);
     }
+
     @Step
     public void setSignEmailMessage(String confEmail) {
-        fillInField(ConfData.getData(confEmail), $(byXpath("//input[contains(@id,'-email')]")));
+        fillInField(ConfData.getData(confEmail), emailInput);
     }
     @Step
     public void setSignPassword(String confPassword) {
@@ -291,12 +294,12 @@ public class SignUpHelper extends HelperBase {
     }
     @Step
     public void clearEmail() {
-        $(byXpath("//input[contains(@id,'-email')]")).clear();
+        emailInput.clear();
         
     }
     @Step
     public void clearEmailMessage() {
-        $(byXpath("//input[contains(@id,'-email')]")).clear();
+        emailInput.clear();
     }
     @Step
 
@@ -331,7 +334,8 @@ public class SignUpHelper extends HelperBase {
     }
     @Step
     public void click1PropCardMes(String property_id) {
-
+        scrollDownPageOn("600");
+        sleep(1000);
         $(byXpath("//div[@id='property_card_"+ConfData.getData(property_id)+"']//div[@class='card-infos-flex-row']/a[2][@href]")).click();
     }
 
@@ -411,7 +415,7 @@ public class SignUpHelper extends HelperBase {
     }
     @Step
     public void clickMessageProperty(String buttonText) {
-
+        sleep(1000);
         $(byXpath("//section//a[contains(.,'" + buttonText + "')]")).waitUntil(visible, 5000).click();
 
     }
@@ -550,6 +554,27 @@ public class SignUpHelper extends HelperBase {
         //signUpHelper.aboutYourself("Tell us about yourself");
         clickYourInformationContinue();
     }
+
+    public void signListingFM_LiveInRandom(String confPassword, String firstName) {
+
+
+        clickEmail();
+
+        setSignUpNameF(firstName);
+        genderMaleSelect();
+        loginRandom(confPassword);
+
+        //signUpHelper.aboutYourself("Tell us about yourself");
+
+    }
+
+    public void More_about_you(String day, String month, String year, String phone, String newOccupation, String defaultOccupation, String occupationNew) {
+        profilePhotoAddJpeg();
+        profileDateBirthAdd(day, month, year);
+        profilePhone(phone);
+        occupation(newOccupation, defaultOccupation, occupationNew);
+    }
+
     @Step
     public void signListingLiveOut(String confEmail, String confPassword, String firstName, String phone) {
 
@@ -589,6 +614,11 @@ public class SignUpHelper extends HelperBase {
     @Step
     public void login1(String confEmail, String confPassword) {
         setSignEmail(confEmail);
+        setSignPassword(confPassword);
+    }
+
+    @Step
+    public void loginRandom(String confPassword) {
         setSignPassword(confPassword);
     }
     @Step

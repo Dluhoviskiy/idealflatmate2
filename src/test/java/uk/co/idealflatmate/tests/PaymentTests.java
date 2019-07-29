@@ -180,17 +180,17 @@ public class PaymentTests extends TestBase {
         signUpHelper.signListingLiveOut("liv-Out4", "passwUniv",
                 "2Ronald", "897876567");
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         addPropertyHelper.saveQuitHeaderMenuListing();
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         addPropertyHelper.pressAddListingFromBody();
 
         addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("longrise", "2 Longrise, Billericay, CM12",
                 "Chalk Farm", "15","1333", "Area cannot be blank.");
-
-        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
-        clearBrowserCookies();
-        clearCache();
-        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
 

@@ -57,17 +57,17 @@ public class TestBase {
 
     public void setupClass() {
         //ChromeDriverManager.getInstance().setup();
+        init("chrome");
 
-        WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
 
+        //WebDriverManager.chromedriver().setup();
+        // Configuration.browser = "chrome";
 
         //WebDriverManager.firefoxdriver().setup();
         //Configuration.browser = "firefox";
 
         //WebDriverManager.edgedriver().setup();
         //Configuration.browser = "edge";
-
 
         //WebDriverManager.safaridr().setup();
        // FirefoxDriverManager.getInstance().setup();
@@ -93,6 +93,17 @@ public class TestBase {
 
         }
 
+        public void init(String br) {
+
+            if(br.equals("chrome")){
+                Configuration.browser = br;
+                WebDriverManager.chromedriver().setup();
+            }else if(br.equals("firefox")) {
+                Configuration.browser = br;
+                WebDriverManager.firefoxdriver().setup();
+            }
+
+        }
 
 
     @AfterSuite

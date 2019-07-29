@@ -57,7 +57,7 @@ public class PaymentsHelper extends HelperBase {
     }
     @Step
     public void goToPaymentsTabNoProperty() {
-        tab_Upgrade_Header.click();
+        tab_Upgrade_Header.waitUntil(visible, 5000).click();
     }
     @Step
     public void goToPaymentsTabInnerMenuUpgrade() {
@@ -135,6 +135,7 @@ public class PaymentsHelper extends HelperBase {
     }
 
     public void upgradeListingProfOld(String option) {
+        $(byXpath("//select[@class='form-control pro-property-no']")).waitUntil(visible, 5000);
         $(byXpath("//select[@class='form-control pro-property-no']")).selectOptionContainingText(option);
 
     }

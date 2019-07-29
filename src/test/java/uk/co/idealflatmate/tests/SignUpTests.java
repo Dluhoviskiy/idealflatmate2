@@ -261,17 +261,23 @@ public class SignUpTests extends TestBase {
         AuthorHeaderMenuHelper a = new AuthorHeaderMenuHelper();
         String name = "Donald";
         String newEmail = ConfData.getData("LiveInChange");
-        String oldEmail = ConfData.getData("LiveInOld");
+        String emailRandom = randomString(8) + ConfData.getData("baseGmail");
 
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
         addPropertyHelper.selectTypeUser("Live-in landlord");
 
-        signUpHelper.signListingFM_LiveIn("LiveInOld", "passwUniv",
-                "5", "5", "1959", "03456666666", "19",
-                name, "Professional", "Student");
+        signUpHelper.signListingFM_LiveInRandom( "passwUniv", name);
 
-        signUpHelper.confirmNewGmailSignUp(oldEmail, oldEmail, newEmail);
+
+        helperBase.fillInField(emailRandom, signUpHelper.emailInput);
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.More_about_you("5", "5", "1959", "03456666666", "19",
+                "Professional", "Student");
+        signUpHelper.clickYourInformationContinue();
+
+        signUpHelper.confirmNewGmailSignUp(emailRandom, emailRandom, newEmail);
         clearBrowserCookies();
         clearCache();
         emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));

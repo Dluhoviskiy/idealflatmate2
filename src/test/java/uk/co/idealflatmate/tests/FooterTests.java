@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.switchTo;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
-public class testFooterTests extends TestBase {
+public class FooterTests extends TestBase {
 
     @BeforeMethod
 

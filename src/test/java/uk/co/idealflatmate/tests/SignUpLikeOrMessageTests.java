@@ -101,6 +101,11 @@ public class SignUpLikeOrMessageTests extends TestBase {
         signUpHelper.profilePhoneMessage("03456666666");
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
+        clearBrowserCookies();
+        clearCache();
+        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
+
         signUpHelper.clickBackToSearch();
         signUpHelper.titleOfSearchPage(title1);
         //String userName = $("span.user-welcome--name").text();
@@ -118,11 +123,6 @@ public class SignUpLikeOrMessageTests extends TestBase {
         verificationHelper.profileDisplays(new ProfileData("percentComplete1",  "myProfile1",
                 "name1", "age1","lookingFor1", "aboutMe1","rooms1",
                 "amountPropCards1"));
-
-        signUpHelper.confirmGmailSignUp(newEmail, newEmail);
-        clearBrowserCookies();
-        clearCache();
-        emailHelper.confirmGmailAccount(ConfData.getData("gmailStage"), ConfData.getData("passwGmail"));
 
         verificationHelper.verificationUserNameOnHomePage(name);
 

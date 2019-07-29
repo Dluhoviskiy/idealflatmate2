@@ -181,16 +181,19 @@ public class EmailHelper extends HelperBase {
 
     private void verifyEmail() {
         $(byXpath("(//span[contains(.,'Please verify your email address')])[2]")).waitUntil(visible, 10000).click();
-        sleep(2000);
+        sleep(1000);
         scrollDownPageOn("500");
+        sleep(1000);
         if(!$(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).isDisplayed()){
             scrollDownPageOn("1000");
+            sleep(1000);
             $(byXpath("(//div[@class='ajR']/img)[last()]")).click();
             $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
             sleep(1000);
             switchTo().window(1);
             sleep(1000);
         }else {scrollDownPageOn("1000");
+              sleep(1000);
               $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
               sleep(1000);
               switchTo().window(1);

@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.close;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeMatchPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
@@ -15,7 +16,6 @@ public class PaymentTests extends TestBase {
         pageUrlVerifLiveGoStage();
         clearCache();
     }
-
 
     @Test
     public void testAbilityToSeePhone() {
@@ -108,6 +108,8 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        close();
+
     }
 
     @Test
@@ -164,6 +166,8 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        close();
+
     }
     @Test
     public void testLordOutWorldPaylistingPrem() {
@@ -189,7 +193,7 @@ public class PaymentTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("2Ronald");
         addPropertyHelper.pressAddListingFromBody();
 
-        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("longrise", "2 Longrise, Billericay, CM12",
+        addPropertyHelper.addListingWithoutPhotoEmptyAreaVerif("1 longrise", "1 Longrise, Billericay, CM12",
                 "Chalk Farm", "15","1333", "Area cannot be blank.");
 
         paymentsHelper.verificationPaymentPageFeatureListing("Now choose the plan that is right for you.");
@@ -225,6 +229,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        close();
     }
 
 
@@ -232,6 +237,7 @@ public class PaymentTests extends TestBase {
 
     @Test
     public void testLordInWorldPaidListingProf() {
+
         String price = "319";
         String newEmail = ConfData.getData("fmNotPaid4");
 
@@ -298,12 +304,14 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+        close();
     }
 
 
 
     @Test
     public void testAgentProfWorldPay() {
+
         String newEmail = ConfData.getData("agent2");
         authorizationHelper.clickJoinFreeButton();
         signUpHelper.clickFM();
@@ -358,7 +366,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-
+        close();
 
     }
 

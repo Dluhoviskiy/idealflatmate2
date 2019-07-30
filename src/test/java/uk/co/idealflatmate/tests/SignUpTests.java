@@ -1,5 +1,7 @@
 package uk.co.idealflatmate.tests;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
@@ -9,15 +11,18 @@ import uk.co.idealflatmate.appmanager.HelperBase;
 import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
-import static com.codeborne.selenide.Selenide.clearBrowserCookies;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
 public class SignUpTests extends TestBase {
+    @AfterMethod
 
+    public void closeMethod() {
+        close();
+    }
 
 
     @BeforeMethod
@@ -137,8 +142,8 @@ public class SignUpTests extends TestBase {
                 "name9", "age9","lookingFor9", "aboutMe9","rooms9",
                 "amountPropCards9"));
 
-
         authorizationHelper.removeAnyAccount();
+
     }
     @Features("without removing account")
     @Stories("blankPhoto")
@@ -252,6 +257,7 @@ public class SignUpTests extends TestBase {
         //signUpHelper.verificationDataProfileNameUser("live-in landlord");
 
         authorizationHelper.removeAnyAccount();
+
     }
 
     @Features("with removing account")
@@ -305,6 +311,7 @@ public class SignUpTests extends TestBase {
         a.removeAccount();
         verificationHelper.isHomePage("Flatshare and Houseshare Across the UK: ideal flatmate");
         verificationHelper.verificationUserIsUnlogged("Join Free");
+
     }
 
 
@@ -431,8 +438,8 @@ public class SignUpTests extends TestBase {
                 "amountPropCards16"), newMoveInDate);
 
         authorizationHelper.removeAnyAccount();
-
         verificationHelper.verificationUserIsUnlogged("Join Free");
+
     }
     @Features("without removing account")
     @Stories("blankFields")
@@ -551,6 +558,7 @@ public class SignUpTests extends TestBase {
 
         authorizationHelper.removeAnyAccount();
 
+
     }
     @Features("with removing account")
     @Stories("social")
@@ -596,6 +604,7 @@ public class SignUpTests extends TestBase {
 
 
         authorizationHelper.removeAnyAccount();
+
 
     }
 
@@ -645,6 +654,7 @@ public class SignUpTests extends TestBase {
 
         authorizationHelper.removeAnyAccount();
 
+
     }
     @Features("with removing account")
     @Stories("social")
@@ -683,6 +693,7 @@ public class SignUpTests extends TestBase {
 
 
         authorizationHelper.removeAnyAccount();
+
     }
 
     //@Test
@@ -695,6 +706,7 @@ public class SignUpTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
+
     }
     @Features("with removing account")
     @Stories("Listing flow")
@@ -733,6 +745,7 @@ public class SignUpTests extends TestBase {
                 "name12", "age12","lookingFor12", "aboutMe12","rooms12",
                 "amountPropCards12"));
         authorizationHelper.removeAnyAccount();
+
     }
     @Features("with removing account")
     @Stories("Listing flow")
@@ -776,6 +789,7 @@ public class SignUpTests extends TestBase {
                 "name13", "age13","lookingFor13", "aboutMe13","rooms13",
                 "amountPropCards13"));
         authorizationHelper.removeAnyAccount();
+
     }
 
 

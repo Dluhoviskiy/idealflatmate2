@@ -34,7 +34,8 @@ public class ACleanaTests extends TestBase {
                 {"qqqqqq", "FMupsBuddy5@gmail.com" }, {"qqqqqq", "TerezaHQ5@gmail.com"}, {"qqqqqq", "TerezaHQ2@gmail.com"},
                 {"qqqqqq", "FMnew124o@gmail.com"}, {"qqqqqq", "Tenanttyrrr1r@gmail.com"}, {"qqqqqq", "Live_inNewy733430@gmail.com"},
                 {"qqqqqq", "FMnewuy7233@gmail.com"}, {"qqqqqq", "FMnew33riiq@gmail.com"}, {"qqqqqq", "LiveOut7t111r21@gmail.com"},
-                {"qqqqqq", "FMupsBuddy6@gmail.com"}, {"qqqqqq", "FMupsBuddy7@gmail.com"}};
+                {"qqqqqq", "FMupsBuddy6@gmail.com"}, {"qqqqqq", "FMupsBuddy7@gmail.com"}, {"qqqqqq", "Live_inChange@gmail.com"},
+                {"qqqqqq", "TenantMesSpam2@gmail.com"}, {"qqqqqq", "TenantSpam11@gmail.com"}};
 
         }
 

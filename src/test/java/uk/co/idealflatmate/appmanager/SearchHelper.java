@@ -606,5 +606,27 @@ public class SearchHelper extends HelperBase {
 
     }
 
+    @Step
+    public static void getImage1() {
+        $$(byXpath("//div[@class='card-img with-overlay']")).findBy(cssClass("card-img--label-holder text-12 text-uppercase text-right")).getSize();
+        $$(byXpath("//div[@class='card-img with-overlay']")).findBy(cssClass("card-img--label-holder text-12 text-uppercase text-right")).text();
+        $$(byXpath("//div[@class='card-img with-overlay']")).get(0);
+        $$(byXpath("//div[@class='card-img with-overlay']")).findBy(cssClass("card-img--label-holder text-12 text-uppercase text-right")).getSize();
+        //System.out.println("cardProp_Image = " + cardProp_Image1);
+
+    }
+
+    @Step
+    public List<String> getCardTexts(){
+
+
+        List<String> elements = $$(byXpath("//div[@class='card-img with-overlay']")).texts();
+        Assert.assertEquals((elements), (elements));
+        return elements;
+
+        //$$("#list li").filterBy(cssClass("enabled")).findBy(exactText("foo")).find(".remove").click();
+        //$$(byXpath("")).filterBy((cssClass(""))).findBy(exactText("")).find("").click();
+
+    }
 }
 

@@ -8,6 +8,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -691,4 +692,6 @@ public SelenideElement lastMessage = $(byXpath("(//div[@class='color-1 text-12 m
     public static byte[] getBytes(String resourceName) throws IOException {
         return Files.readAllBytes(Paths.get("src/test/resources/", resourceName));
     }
+
+
 }

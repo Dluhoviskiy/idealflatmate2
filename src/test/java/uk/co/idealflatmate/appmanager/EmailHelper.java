@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class EmailHelper extends HelperBase {
 
-    String tip = "//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//div//span[contains(., \'";
-    String tip2 = "\')]//ancestor::tr//td/div[@role='checkbox']";
+    String tip = "(//span[contains(., 'AM') or contains(., 'PM')]//ancestor::tr//div//div//span[contains(., \'";
+    String tip2 = "\')]//ancestor::tr//td/div[@role='checkbox'])[1]";
     public SelenideElement button_Inbox = $(byXpath("(//span[starts-with(@class, 'nU ')])[1]"));
 
     public final VerificationHelper verificationHelper = new VerificationHelper();
@@ -188,15 +188,16 @@ public class EmailHelper extends HelperBase {
             scrollDownPageOn("1000");
             sleep(1000);
             $(byXpath("(//div[@class='ajR']/img)[last()]")).click();
+            sleep(1000);
             $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
             sleep(1000);
             switchTo().window(1);
-            sleep(1000);
+            sleep(2000);
         }else {scrollDownPageOn("1000");
               sleep(1000);
               $(byXpath("(//a[span[contains(.,'Verify my email address')]])[last()]")).click();
               sleep(1000);
               switchTo().window(1);
-              sleep(1000);}
+              sleep(2000);}
     }
 }

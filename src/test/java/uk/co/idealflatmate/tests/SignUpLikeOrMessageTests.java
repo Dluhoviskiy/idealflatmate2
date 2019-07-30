@@ -131,9 +131,8 @@ public class SignUpLikeOrMessageTests extends TestBase {
         authorizationHelper.chooseMenu_My_profile();
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
-
         verificationHelper.verificationUserIsUnlogged("Join Free");
-
+        close();
     }
 
 
@@ -230,10 +229,9 @@ public class SignUpLikeOrMessageTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         sleep(5000);
-
         verificationHelper.verificationUserIsUnlogged("Join Free");
         verificationHelper.isHomePage1();
-
+        close();
     }
     @Test
     public void testPopupPropertyPage() {
@@ -286,8 +284,8 @@ public class SignUpLikeOrMessageTests extends TestBase {
                 "name3", "age3","lookingFor3", "aboutMe3","rooms3",
                 "amountPropCards3"));
         verificationHelper.verificationUserNameOnHomePage(name);
-
         authorizationHelper.removeAnyAccount();
+        close();
     }
 
     @Test

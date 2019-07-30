@@ -7,6 +7,7 @@ import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
+import static com.codeborne.selenide.Selenide.close;
 import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 import static uk.co.idealflatmate.appmanager.HelperBase.scrollDownPageOn;
@@ -202,7 +203,7 @@ public class MessagesTests extends TestBase {
 
         authorizationHelper.removeAnyAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-
+        close();
     }
 
     @Test
@@ -260,7 +261,7 @@ public class MessagesTests extends TestBase {
 
         authorizationHelper.removeAnyAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-
+        close();
     }
 
 

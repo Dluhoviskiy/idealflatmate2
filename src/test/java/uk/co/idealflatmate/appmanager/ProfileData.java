@@ -55,3 +55,5 @@ public class ProfileData {
         return ConfDataProperty.getData(amountPropertiesCard);
     }
 }
+
+

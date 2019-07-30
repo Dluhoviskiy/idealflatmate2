@@ -411,7 +411,8 @@ public class SignUpHelper extends HelperBase {
     public void clickPropertyCard1(int indexOfCard) {
         $(byXpath("//h1")).click();
         $$(byXpath("//div[@class='card-img']")).get(indexOfCard).click();
-
+        //ElementsCollection states = $$(byXpath("//div[@class='card-img']"));
+        //LinkedList<String> state1 = new LinkedList<>();
     }
     @Step
     public void clickMessageProperty(String buttonText) {

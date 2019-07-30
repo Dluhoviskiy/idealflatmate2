@@ -17,6 +17,6 @@
         <suite-file path="testSignLike.xml"/>
         <suite-file path="testSignMatch.xml"/>
         <suite-file path="testSign.xml"/>
-        <suite-file path="testEmail.xml"/>
+        <suite-file path="testzEmail.xml"/>
     </suite-files>
 </suite>

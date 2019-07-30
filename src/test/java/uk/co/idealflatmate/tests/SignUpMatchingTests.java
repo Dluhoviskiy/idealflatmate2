@@ -5,6 +5,7 @@ import uk.co.idealflatmate.appmanager.ProfileData;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.close;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
@@ -29,7 +30,7 @@ public class SignUpMatchingTests extends TestBase {
     @Test
 
 
-    public void tastSignUpMatchingWithRequiredFieldsRoom() {
+    public void testSignUpMatchingWithRequiredFieldsRoom() {
         String name = "Ronaldina";
         String location = "Watford";
         String age = "42";
@@ -67,6 +68,8 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.selectHappyReceiveNews();
         signUpHelper.clickYourInformationContinue();
 
+        signUpHelper.clickShowMeMyMatches();
+
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
         clearBrowserCookies();
         clearCache();
@@ -89,6 +92,7 @@ public class SignUpMatchingTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage(name);
 
         authorizationHelper.removeAnyAccount();
+        close();
     }
 
 
@@ -108,6 +112,7 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                     "Tell us about yourself", "Professional", "Other");
 
+        signUpHelper.clickShowMeMyMatches();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
         clearBrowserCookies();
@@ -125,6 +130,7 @@ public class SignUpMatchingTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
+        close();
     }
 
     @Test
@@ -143,6 +149,7 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                      "Tell us about yourself", "Professional", "Other");
 
+        signUpHelper.clickShowMeMyMatches();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
         clearBrowserCookies();
@@ -160,6 +167,7 @@ public class SignUpMatchingTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
+        close();
     }
 
 

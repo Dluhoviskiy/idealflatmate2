@@ -168,13 +168,14 @@ public class AddPropertyHelper extends HelperBase {
     }
     @Step
     public AddPropertyHelper chooseListingsFromDropDownMenu() {
-
-        tab_openDropDownMenuHeader.waitUntil(visible, 5000).click();
+        sleep(1000);
+        tab_openDropDownMenuHeader.waitUntil(appear, 5000).click();
         choose_My_listings();
         return this;
     }
     @Step
     public AddPropertyHelper choose_My_listings() {
+        sleep(1000);
         String header_dropMenu_My_listings = "//ul[@class='dropdown-menu']//li/a[contains(., 'My listings')]";
         $(byXpath(header_dropMenu_My_listings)).click();
         return this;
@@ -547,7 +548,7 @@ public class AddPropertyHelper extends HelperBase {
     public AddPropertyHelper uploadPropertyLargePhoto() {
         int before = $$(byXpath(listing_preview_Photo)).size();
         $(byXpath(input_Photo)).uploadFile(new File("src/test/resources/8mb-artwork.jpg"));
-        sleep(2000);
+        sleep(4000);
         $(byXpath(listing_preview_Photo1)).shouldBe(Condition.visible);
         sleep(6000);
         int after = $$(byXpath(listing_preview_Photo)).size();
@@ -911,7 +912,7 @@ public class AddPropertyHelper extends HelperBase {
     }
     @Step
     public AddPropertyHelper saveQuitHeaderMenuListing() {
-        sleep(1000);
+        sleep(3000);
         $(byXpath(tab_header_quit)).waitUntil(visible, 15000).click();
         //$(byXpath("//header//ul[@class='nav navbar-right']/a")).click();
         return this;

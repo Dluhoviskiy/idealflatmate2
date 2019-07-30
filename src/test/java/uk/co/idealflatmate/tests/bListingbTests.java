@@ -349,8 +349,8 @@ public class bListingbTests extends TestBase {
         sleep(3000);
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");
+        sleep(1000);
         int searchResultDeactivRooms = Integer.parseInt(getNumberOfListingFound());
-
 
         Assert.assertEquals(searchWithActivatedRooms, searchResultDeactivRooms+1);
 
@@ -390,9 +390,11 @@ public class bListingbTests extends TestBase {
 
         addPropertyHelper.goByLink(citySearch);
         propertySortBy("Most recent");
+        sleep(1000);
         searchHelper.selectRadius("+3 km");
+        sleep(1000);
         searchHelper.moveToPage(4, "4");
-        sleep(3000);
+        sleep(4000);
         int searchResultNewActivRooms = Integer.parseInt(getNumberOfListingFound());
         searchHelper.verificationSearchProperty("Find A Room To Rent",
                 getNumberOfListingFound()+ " rooms to rent available", getNumberOfListingFound()+" room to rent available");

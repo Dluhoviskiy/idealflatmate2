@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.close;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
@@ -65,6 +66,7 @@ public class MatchingTests extends TestBase {
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
         helperBase.toHomePage();
+        close();
     }
 
 

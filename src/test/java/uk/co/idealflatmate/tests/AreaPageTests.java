@@ -3,6 +3,7 @@ package uk.co.idealflatmate.tests;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
@@ -15,6 +16,7 @@ import static uk.co.idealflatmate.appmanager.HelperBase.*;
 import static uk.co.idealflatmate.appmanager.SearchHelper.field_searchBar_listing;
 
 //import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
+
 
 public class AreaPageTests extends TestBase {
 

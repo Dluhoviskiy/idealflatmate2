@@ -4,13 +4,14 @@ import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 import uk.co.idealflatmate.appmanager.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
-
+@Listeners({ScreenshotListener.class})
 public class TestBase {
 
     public final VerificationHelper verificationHelper = new VerificationHelper();
@@ -50,8 +51,12 @@ public class TestBase {
 
         open("http://front.idealflatmate4test.demo.devplatform2.com");
 
+    }
+    @Attachment(type = "image/png")
+    public byte[] screenshot() throws IOException {
+        Resource.File screenshot = Screenshots.getScreenShotAsFile();
+        return Files.toByteArray(screenshot);
     }*/
-
 
     @BeforeSuite
 

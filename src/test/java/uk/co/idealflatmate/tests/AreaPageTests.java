@@ -3,13 +3,13 @@ package uk.co.idealflatmate.tests;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.refresh;
 import static uk.co.idealflatmate.appmanager.AreaPageHelper.areaNameInCarousel;
 import static uk.co.idealflatmate.appmanager.AreaPageHelper.numberOfPropAreaPage;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
@@ -24,6 +24,7 @@ public class AreaPageTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearBrowserCookies();
+        refresh();
 
     }
 

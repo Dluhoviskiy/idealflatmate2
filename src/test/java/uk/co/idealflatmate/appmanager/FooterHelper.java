@@ -77,8 +77,9 @@ public class FooterHelper extends HelperBase{
     }
     @Step
     public void verificationYoutube() {
+        sleep(1000);
         switchTo().window(1);
-        $(byXpath("//span[@id='channel-title' and contains(text(), 'ideal flatmate')]")).waitUntil(exist, 30000).should(exist);
+        $(byXpath("//span[@id='channel-title' and contains(text(), 'ideal flatmate')]")).waitUntil(visible, 10000).should(exist);
 
     }
 

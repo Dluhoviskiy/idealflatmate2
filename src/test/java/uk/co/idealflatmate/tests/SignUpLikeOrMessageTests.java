@@ -1,4 +1,5 @@
 package uk.co.idealflatmate.tests;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
@@ -19,7 +20,11 @@ public class SignUpLikeOrMessageTests extends TestBase {
         pageUrlVerifLiveGoStage();
         clearCache();
     }
+    @AfterMethod
 
+    public void closeMethod() {
+        close();
+    }
 
     @Test
     public void testMesPropSignUpHomeStart() {
@@ -132,7 +137,7 @@ public class SignUpLikeOrMessageTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
     }
 
 
@@ -231,7 +236,7 @@ public class SignUpLikeOrMessageTests extends TestBase {
         sleep(5000);
         verificationHelper.verificationUserIsUnlogged("Join Free");
         verificationHelper.isHomePage1();
-        close();
+
     }
     @Test
     public void testPopupPropertyPage() {
@@ -285,7 +290,7 @@ public class SignUpLikeOrMessageTests extends TestBase {
                 "amountPropCards3"));
         verificationHelper.verificationUserNameOnHomePage(name);
         authorizationHelper.removeAnyAccount();
-        close();
+
     }
 
     @Test

@@ -7,6 +7,7 @@ import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.close;
+import static com.codeborne.selenide.Selenide.refresh;
 import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
 
 
@@ -16,6 +17,7 @@ public class MatchingTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
+        refresh();
     }
 
     @Test

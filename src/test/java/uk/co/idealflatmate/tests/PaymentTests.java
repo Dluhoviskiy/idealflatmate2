@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.ConfData;
@@ -15,6 +16,11 @@ public class PaymentTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
+    }
+    @AfterMethod
+
+    public void closeMethod() {
+        close();
     }
 
     @Test
@@ -108,7 +114,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
 
     }
 
@@ -166,7 +172,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
 
     }
     @Test
@@ -229,7 +235,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
     }
 
 
@@ -304,7 +310,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
     }
 
 
@@ -366,7 +372,7 @@ public class PaymentTests extends TestBase {
         authorizationHelper.chooseTabFromInnerMenuDashboard("Settings");
         authorizationHelper.removeAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
 
     }
 

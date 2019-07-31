@@ -1,5 +1,6 @@
 package uk.co.idealflatmate.tests;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.MessageHelper;
@@ -7,10 +8,8 @@ import utils.ConfData;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
-import static com.codeborne.selenide.Selenide.close;
-import static uk.co.idealflatmate.appmanager.HelperBase.closeAdvPopUp;
-import static uk.co.idealflatmate.appmanager.HelperBase.pageUrlVerifLiveGoStage;
-import static uk.co.idealflatmate.appmanager.HelperBase.scrollDownPageOn;
+import static com.codeborne.selenide.Selenide.refresh;
+import static uk.co.idealflatmate.appmanager.HelperBase.*;
 
 
 public class MessagesTests extends TestBase {
@@ -21,6 +20,12 @@ public class MessagesTests extends TestBase {
         clearCache();
         clearBrowserCookies();
         clearBrowserLocalStorage();
+        refresh();
+    }
+    @AfterMethod
+
+    public void closeMethod() {
+
     }
 
 
@@ -203,7 +208,7 @@ public class MessagesTests extends TestBase {
 
         authorizationHelper.removeAnyAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
     }
 
     @Test
@@ -261,7 +266,7 @@ public class MessagesTests extends TestBase {
 
         authorizationHelper.removeAnyAccount();
         verificationHelper.verificationUserIsUnlogged("Join Free");
-        close();
+
     }
 
 

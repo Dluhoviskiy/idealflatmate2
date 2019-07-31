@@ -282,8 +282,10 @@ public class SignUpHelper extends HelperBase {
     }
     @Step
     public void clickShowMeMyMatches() {
-        $(byXpath("//a[contains(., 'Show me my matches! ')]")).click();
+        $(byXpath("//a[contains(.,'List your room')]")).click();
     }
+
+
     @Step
     public void clickListYourRoomMatching() {
         $(byXpath("//a[contains(., 'List your room! ')]")).click();

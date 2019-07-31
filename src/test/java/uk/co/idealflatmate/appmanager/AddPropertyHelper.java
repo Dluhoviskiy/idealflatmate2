@@ -168,7 +168,7 @@ public class AddPropertyHelper extends HelperBase {
     }
     @Step
     public AddPropertyHelper chooseListingsFromDropDownMenu() {
-        sleep(1000);
+        sleep(2000);
         tab_openDropDownMenuHeader.waitUntil(appear, 5000).click();
         choose_My_listings();
         return this;
@@ -579,7 +579,8 @@ public class AddPropertyHelper extends HelperBase {
 
         if ($(byXpath(button_closeRenewPopup)).exists()) {
             $(byXpath(button_closeRenewPopup)).waitUntil(visible, 5000).click();
-        }
+
+        } else {}
         return this;
     }
     @Step

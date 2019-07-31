@@ -1,4 +1,5 @@
 package uk.co.idealflatmate.tests;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uk.co.idealflatmate.appmanager.ProfileData;
@@ -15,6 +16,11 @@ public class SignUpMatchingTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
+    }
+    @AfterMethod
+
+    public void closeMethod() {
+        close();
     }
 
 
@@ -48,6 +54,7 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.yourInformation("passwUniv", name, "FMMatch5", "Female");
         signUpHelper.moreAboutYou("15","2","1977","3456666666","20","Tell us about yourself",
                                                 "Professional", "Freelancer/self employed");
+
 
         signUpHelper.backClick();
         signUpHelper.profilePhotoAddJpeg();
@@ -92,7 +99,7 @@ public class SignUpMatchingTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage(name);
 
         authorizationHelper.removeAnyAccount();
-        close();
+
     }
 
 
@@ -112,7 +119,7 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                     "Tell us about yourself", "Professional", "Other");
 
-        signUpHelper.clickShowMeMyMatches();
+        signUpHelper.clickListYourRoomMatching();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
         clearBrowserCookies();
@@ -130,7 +137,7 @@ public class SignUpMatchingTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
-        close();
+
     }
 
     @Test
@@ -149,7 +156,7 @@ public class SignUpMatchingTests extends TestBase {
         signUpHelper.moreAboutYou("15","2","1977","3456666666","227",
                      "Tell us about yourself", "Professional", "Other");
 
-        signUpHelper.clickShowMeMyMatches();
+        signUpHelper.clickSearchFMMatching();
 
         signUpHelper.confirmGmailSignUp(newEmail, newEmail);
         clearBrowserCookies();
@@ -167,7 +174,7 @@ public class SignUpMatchingTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("Ronald");
 
         authorizationHelper.removeAnyAccount();
-        close();
+
     }
 
 

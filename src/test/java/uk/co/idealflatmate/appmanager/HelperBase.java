@@ -170,6 +170,7 @@ public class HelperBase  {
 
         if (!url().equals("http://front.idealflatmate4test.demo.devplatform2.com/")) {
             sleep(1000);
+            close();
             newPage("http://front.idealflatmate4test.demo.devplatform2.com");
             //open("http://front.idealflatmate4test.demo.devplatform2.com");
 

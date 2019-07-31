@@ -1,6 +1,7 @@
 package uk.co.idealflatmate.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
@@ -10,6 +11,7 @@ import utils.ConfData;
 
 import static com.codeborne.selenide.Condition.checked;
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.sleep;
 import static uk.co.idealflatmate.appmanager.AddPropertyHelper.roomAmountIs;
 import static uk.co.idealflatmate.appmanager.HelperBase.*;
@@ -27,6 +29,12 @@ public class bListingbTests extends TestBase {
         clearCache();
         clearBrowserCookies();
     }
+    @AfterMethod
+    public void closeMethod() {
+        close();
+    }
+
+
     @Features("Listing")
     @Stories("login")
     @Test
@@ -55,7 +63,6 @@ public class bListingbTests extends TestBase {
         verificationHelper.verificationUserNameOnHomePage("John");
 
         authorizationHelper.logoutFromApp();
-
         verificationHelper.verificationUserIsUnlogged("Join Free");
     }
     @Features("Listing")
@@ -566,7 +573,7 @@ public class bListingbTests extends TestBase {
         verificationHelper.verifyNoProperty();
 
         addPropertyHelper.addListingFromListingPage()
-                         .setPostalCode("Knowsl","2 Knowsley Close, Lancaster, LA1")
+                         .setPostalCode("2 Knowsley ","2 Knowsley Close, Lancaster, LA1")
                          .pressContinue();
 
         //addPropertyHelper.chooseRoadFor("testRoad");

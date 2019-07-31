@@ -15,6 +15,7 @@ public class FooterTests extends TestBase {
     public void setupMethod() {
         pageUrlVerifLiveGoStage();
         clearCache();
+        refresh();
     }
 
     @Test

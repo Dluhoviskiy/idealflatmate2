@@ -57,7 +57,8 @@ public class PaymentsHelper extends HelperBase {
     }
     @Step
     public void goToPaymentsTabNoProperty() {
-        tab_Upgrade_Header.waitUntil(visible, 5000).click();
+        sleep(2000);
+        tab_Upgrade_Header.waitUntil(appear, 5000).click();
     }
     @Step
     public void goToPaymentsTabInnerMenuUpgrade() {

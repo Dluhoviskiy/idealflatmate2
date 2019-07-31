@@ -13,6 +13,9 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MessageHelper extends HelperBase {
+
+
+
     VerificationHelper v = new VerificationHelper();
     private SelenideElement submit = $(byXpath("//a[@class='btn btn-success btn-msg-send']"));
 

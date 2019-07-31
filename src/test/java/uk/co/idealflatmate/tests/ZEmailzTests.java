@@ -20,7 +20,7 @@ public class ZEmailzTests extends TestBase {
         emailHelper.tipCheckboxWelcome();
         emailHelper.tipCheckboxListingisLive();
 
-        emailHelper.tipCheckboxMessage("You have a new message");
+
         //emailHelper.tipCheckboxMessage("You have a new enquiry!");
 
         //emailHelper.tipCheckboxMessage("ideal flatmate - Someone posted a group on your listing");
@@ -33,7 +33,7 @@ public class ZEmailzTests extends TestBase {
         emailHelper.tipCheckboxMessage("ideal flatmate - Subscription created");
         emailHelper.tipCheckboxMessage("ideal flatmate - Subscription cancelled");
         emailHelper.tipCheckboxMessage("Your listing on ideal flatmate is pending.");
-
+        emailHelper.tipCheckboxMessage("You have a new message");
         emailHelper.removeAllEmails();
         emailHelper.verificationNoWelcome();
         emailHelper.verificationNoListingisLive();
